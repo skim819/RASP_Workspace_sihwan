@@ -1,0 +1,12 @@
+.model test_0610_ota_iopad
+.inputs dummy1 net1_1 net2_1
+.outputs dummy2 net3_1
+.clocks
+  
+.names dummy1 dummy2
+1 0
+  
+# ota
+.subckt ota in[0]=net2_1 in[1]=net1_1 out[0]=net3_1 #ota_bias =0.000001
+  
+.end

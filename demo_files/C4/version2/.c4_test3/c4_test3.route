@@ -1,0 +1,38 @@
+Array size: 14 x 14 logic blocks.
+
+Routing:
+
+Net 0 (net1_1)
+
+SOURCE (9,0)  Pad: 4  
+  OPIN (9,0)  Pad: 4  
+ CHANX (9,0)  Track: 15  
+ CHANX (8,0)  Track: 15  
+ CHANY (7,1)  Track: 15  
+  IPIN (7,1)  Pin: 6  
+  SINK (7,1)  Class: 6  
+
+
+Net 1 (net2_1)
+
+SOURCE (9,0)  Pad: 1  
+  OPIN (9,0)  Pad: 1  
+ CHANX (9,0)  Track: 16  
+ CHANX (8,0)  Track: 16  
+ CHANX (7,0)  Track: 16  
+  IPIN (7,1)  Pin: 12  
+  SINK (7,1)  Class: 12  
+
+
+Net 2 (net3_1)
+
+SOURCE (7,1)  Class: 20  
+  OPIN (7,1)  Pin: 20  
+ CHANX (7,1)  Track: 16  
+ CHANX (8,1)  Track: 16  
+ CHANX (9,1)  Track: 16  
+ CHANX (10,1)  Track: 16  
+ CHANY (10,1)  Track: 16  
+ CHANX (11,0)  Track: 16  
+  IPIN (11,0)  Pad: 0  
+  SINK (11,0)  Pad: 0  

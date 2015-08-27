@@ -1,0 +1,5 @@
+rm *.net *.place *.route -f;
+rm test_1025_vmm_wta_sr.blif -f;
+rm *.mem -f;
+cp test_1025_vmm_wta_sr.blif_modified test_1025_vmm_wta_sr.blif;
+cp test_1025_vmm_wta_sr.pads_modified test_1025_vmm_wta_sr.pads;

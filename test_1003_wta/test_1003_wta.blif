@@ -1,0 +1,5 @@
+.model test_1003_wta
+.inputs net1_1 net2_1 net3_1 net4_1
+.outputs net1_1 net2_1 net3_1 net4_1
+  
+.end

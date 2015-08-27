@@ -1,0 +1,269 @@
+Array size: 14 x 14 logic blocks.
+
+Routing:
+
+Net 0 (dac_vdd)
+
+SOURCE (10,0)  Pad: 7  
+  OPIN (10,0)  Pad: 7  
+ CHANX (10,0)  Track: 16  
+  IPIN (10,1)  Pin: 11  
+  SINK (10,1)  Class: 11  
+ CHANX (10,0)  Track: 16  
+  IPIN (10,1)  Pin: 10  
+  SINK (10,1)  Class: 10  
+ CHANX (10,0)  Track: 16  
+ CHANY (10,1)  Track: 16  
+  IPIN (10,1)  Pin: 5  
+  SINK (10,1)  Class: 5  
+ CHANY (10,1)  Track: 16  
+  IPIN (10,1)  Pin: 4  
+  SINK (10,1)  Class: 4  
+ CHANX (10,0)  Track: 16  
+ CHANY (9,1)  Track: 16  
+  IPIN (10,1)  Pin: 3  
+  SINK (10,1)  Class: 3  
+ CHANY (9,1)  Track: 16  
+  IPIN (10,1)  Pin: 2  
+  SINK (10,1)  Class: 2  
+ CHANY (9,1)  Track: 16  
+  IPIN (10,1)  Pin: 1  
+  SINK (10,1)  Class: 1  
+ CHANY (9,1)  Track: 16  
+  IPIN (10,1)  Pin: 0  
+  SINK (10,1)  Class: 0  
+
+
+Net 1 (wta_Vout1)
+
+SOURCE (11,3)  Class: 20  
+  OPIN (11,3)  Pin: 20  
+ CHANX (11,3)  Track: 15  
+ CHANY (10,3)  Track: 15  
+ CHANY (10,2)  Track: 15  
+ CHANY (10,1)  Track: 15  
+  IPIN (10,1)  Pin: 6  
+  SINK (10,1)  Class: 6  
+
+
+Net 2 (wta_Vout2)
+
+SOURCE (10,3)  Class: 20  
+  OPIN (10,3)  Pin: 20  
+ CHANX (10,3)  Track: 0  
+ CHANY (10,3)  Track: 0  
+ CHANY (10,2)  Track: 0  
+ CHANY (10,1)  Track: 0  
+  IPIN (10,1)  Pin: 7  
+  SINK (10,1)  Class: 7  
+
+
+Net 3 (wta_Vout3)
+
+SOURCE (11,2)  Class: 20  
+  OPIN (11,2)  Pin: 20  
+ CHANX (11,2)  Track: 6  
+ CHANY (10,2)  Track: 6  
+ CHANX (10,1)  Track: 6  
+  IPIN (10,1)  Pin: 8  
+  SINK (10,1)  Class: 8  
+
+
+Net 4 (wta_Vout4)
+
+SOURCE (11,1)  Class: 20  
+  OPIN (11,1)  Pin: 20  
+ CHANX (11,1)  Track: 16  
+ CHANX (10,1)  Track: 16  
+  IPIN (10,1)  Pin: 9  
+  SINK (10,1)  Class: 9  
+
+
+Net 5 (clk)
+
+SOURCE (9,0)  Pad: 16  
+  OPIN (9,0)  Pad: 16  
+ CHANX (9,0)  Track: 14  
+ CHANY (9,1)  Track: 14  
+ CHANX (10,1)  Track: 14  
+  IPIN (10,1)  Pin: 13  
+  SINK (10,1)  Class: 13  
+
+
+Net 6 (en)
+
+SOURCE (10,0)  Pad: 1  
+  OPIN (10,0)  Pad: 1  
+ CHANX (10,0)  Track: 5  
+ CHANY (10,1)  Track: 5  
+ CHANX (10,1)  Track: 5  
+  IPIN (10,1)  Pin: 14  
+  SINK (10,1)  Class: 14  
+
+
+Net 7 (data)
+
+SOURCE (10,0)  Pad: 4  
+  OPIN (10,0)  Pad: 4  
+ CHANX (10,0)  Track: 2  
+ CHANY (10,1)  Track: 2  
+ CHANX (10,1)  Track: 2  
+  IPIN (10,1)  Pin: 15  
+  SINK (10,1)  Class: 15  
+
+
+Net 8 (Vout)
+
+SOURCE (10,1)  Class: 20  
+  OPIN (10,1)  Pin: 20  
+ CHANX (10,1)  Track: 12  
+ CHANX (11,1)  Track: 12  
+ CHANY (11,1)  Track: 12  
+ CHANX (12,0)  Track: 12  
+  IPIN (12,0)  Pad: 0  
+  SINK (12,0)  Pad: 0  
+
+
+Net 9 (clk_out)
+
+SOURCE (10,1)  Class: 21  
+  OPIN (10,1)  Pin: 21  
+ CHANX (10,0)  Track: 15  
+ CHANX (11,0)  Track: 15  
+ CHANX (12,0)  Track: 15  
+  IPIN (12,0)  Pad: 9  
+  SINK (12,0)  Pad: 9  
+
+
+Net 10 (Vin1)
+
+SOURCE (9,0)  Pad: 4  
+  OPIN (9,0)  Pad: 4  
+ CHANX (9,0)  Track: 3  
+ CHANY (9,1)  Track: 3  
+ CHANY (9,2)  Track: 3  
+ CHANX (10,2)  Track: 3  
+  IPIN (10,2)  Pin: 8  
+  SINK (10,2)  Class: 8  
+
+
+Net 11 (Vin2)
+
+SOURCE (9,0)  Pad: 7  
+  OPIN (9,0)  Pad: 7  
+ CHANX (9,0)  Track: 1  
+ CHANY (9,1)  Track: 1  
+ CHANY (9,2)  Track: 1  
+ CHANX (10,2)  Track: 1  
+  IPIN (10,2)  Pin: 9  
+  SINK (10,2)  Class: 9  
+
+
+Net 12 (Vin3)
+
+SOURCE (9,0)  Pad: 10  
+  OPIN (9,0)  Pad: 10  
+ CHANX (9,0)  Track: 15  
+ CHANY (9,1)  Track: 15  
+ CHANX (10,1)  Track: 15  
+  IPIN (10,2)  Pin: 11  
+  SINK (10,2)  Class: 11  
+
+
+Net 13 (Vin4)
+
+SOURCE (9,0)  Pad: 13  
+  OPIN (9,0)  Pad: 13  
+ CHANX (9,0)  Track: 8  
+ CHANY (9,1)  Track: 8  
+ CHANX (10,1)  Track: 8  
+  IPIN (10,2)  Pin: 12  
+  SINK (10,2)  Class: 12  
+
+
+Net 14 (vmm_out1)
+
+SOURCE (10,2)  Class: 16  
+  OPIN (10,2)  Pin: 16  
+ CHANY (9,2)  Track: 16  
+ CHANX (10,2)  Track: 16  
+ CHANX (11,2)  Track: 16  
+  IPIN (11,3)  Pin: 12  
+  SINK (11,3)  Class: 12  
+
+
+Net 15 (vmm_out2)
+
+SOURCE (10,2)  Class: 17  
+  OPIN (10,2)  Pin: 17  
+ CHANY (9,2)  Track: 15  
+ CHANX (10,2)  Track: 15  
+  IPIN (10,3)  Pin: 12  
+  SINK (10,3)  Class: 12  
+
+
+Net 16 (vmm_out3)
+
+SOURCE (10,2)  Class: 18  
+  OPIN (10,2)  Pin: 18  
+ CHANY (10,2)  Track: 5  
+ CHANX (11,1)  Track: 5  
+  IPIN (11,2)  Pin: 12  
+  SINK (11,2)  Class: 12  
+
+
+Net 17 (vmm_out4)
+
+SOURCE (10,2)  Class: 19  
+  OPIN (10,2)  Pin: 19  
+ CHANY (10,2)  Track: 12  
+ CHANY (10,1)  Track: 12  
+ CHANX (11,0)  Track: 12  
+  IPIN (11,1)  Pin: 12  
+  SINK (11,1)  Class: 12  
+
+
+Net 18 (gnd): global net connecting:
+
+Block gnd (#9) at (0, 2), Pin class 1.
+Block nfet_d (#2) at (7, 1), Pin class 11.
+
+
+Net 19 (nbias)
+
+SOURCE (11,0)  Pad: 1  
+  OPIN (11,0)  Pad: 1  
+ CHANX (11,0)  Track: 9  
+ CHANX (10,0)  Track: 9  
+ CHANX (9,0)  Track: 9  
+ CHANX (8,0)  Track: 9  
+ CHANX (7,0)  Track: 9  
+  IPIN (7,1)  Pin: 12  
+  SINK (7,1)  Class: 12  
+
+
+Net 20 (nfet_d)
+
+SOURCE (7,1)  Class: 20  
+  OPIN (7,1)  Pin: 20  
+ CHANX (7,1)  Track: 13  
+ CHANX (8,1)  Track: 13  
+ CHANX (9,1)  Track: 13  
+ CHANX (10,1)  Track: 13  
+ CHANY (10,1)  Track: 13  
+ CHANX (11,0)  Track: 13  
+  IPIN (11,1)  Pin: 11  
+  SINK (11,1)  Class: 11  
+ CHANX (10,1)  Track: 13  
+ CHANX (11,1)  Track: 13  
+  IPIN (11,2)  Pin: 11  
+  SINK (11,2)  Class: 11  
+ CHANX (11,1)  Track: 13  
+ CHANY (11,2)  Track: 13  
+ CHANX (11,2)  Track: 13  
+  IPIN (11,3)  Pin: 11  
+  SINK (11,3)  Class: 11  
+ CHANX (11,2)  Track: 13  
+ CHANX (10,2)  Track: 13  
+  IPIN (10,3)  Pin: 11  
+  SINK (10,3)  Class: 11  

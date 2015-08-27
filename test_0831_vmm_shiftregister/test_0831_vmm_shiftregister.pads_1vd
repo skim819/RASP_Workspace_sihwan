@@ -1,0 +1,3 @@
+net1 9 0 1 #int[1]
+vref 9 0 0 #tgate[0]
+out:in0 11 0 0 #ana_buff_out[0]

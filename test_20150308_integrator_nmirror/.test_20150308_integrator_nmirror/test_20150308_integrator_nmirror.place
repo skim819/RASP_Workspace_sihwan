@@ -1,0 +1,11 @@
+Netlist file: /home/ubuntu/RASP_Workspace/test_20150308_integrator_nmirror//test_20150308_integrator_nmirror.net   Architecture file: /home/ubuntu/rasp30/vpr2swcs/./arch/rasp3_vmm_arch.xml
+Array size: 14 x 14 logic blocks
+
+#block name	x	y	subblk	block number
+#----------	--	--	------	------------
+net5_1		7	1	0	#0
+net3_1		11	1	0	#1
+out:net5_1	15	2	2	#2
+net4_1		15	1	5	#3
+net2_1		9	0	1	#4
+net1_1		15	1	2	#5

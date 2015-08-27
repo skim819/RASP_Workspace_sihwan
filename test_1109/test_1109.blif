@@ -1,0 +1,8 @@
+.model test_1109
+.inputs net1_1
+.outputs net2_1
+  
+# LPF
+.subckt ota in[0]=net1_1 in[1]=net2_1 out[0]=net2_1 #ota_bias =0.000000000040
+  
+.end

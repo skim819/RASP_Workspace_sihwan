@@ -1,0 +1,72 @@
+clear DAC00;clear DAC01; clear DAC02; clear DAC03; clear DAC04; clear DAC05; clear DAC06; clear DAC07; clear DAC08; clear DAC09;
+sine_wave_x1 = [linspace(1.5,1.8,4) linspace(1.7,1.3,5) linspace(1.2,1.4,3) ];
+sine_wave_x1r = [linspace(1.5,1.2,4) linspace(1.3,1.7,5) linspace(1.8,1.6,3) ];
+sine_wave_x4 = [ sine_wave_x1 sine_wave_x1 sine_wave_x1 sine_wave_x1 ];
+sine_wave_x4r = [ sine_wave_x1r sine_wave_x1r sine_wave_x1r sine_wave_x1r ];
+sine_wave_x16 = [ sine_wave_x4 sine_wave_x4 sine_wave_x4 sine_wave_x4 ];
+sine_wave_x16r = [ sine_wave_x4r sine_wave_x4r sine_wave_x4r sine_wave_x4r ];
+default_x1 = [linspace(1.5,1.5,12)];
+zero_x1 = [0.2 0.2];
+zero_x2 = [zero_x1 zero_x1 ];
+zero_x3 = [zero_x1 zero_x1 zero_x1 ];
+zero_x4 = [zero_x1 zero_x1 zero_x1 zero_x1 ];
+zero_x5 = [zero_x1 zero_x1 zero_x1 zero_x1 zero_x1 ];
+zero_x6 = [zero_x1 zero_x1 zero_x1 zero_x1 zero_x1 zero_x1 ];
+zero_x7 = [zero_x4 zero_x1 zero_x1 zero_x1 ];
+zero_x8 = [zero_x4 zero_x4];
+zero_x9 = [zero_x4 zero_x4 zero_x1];
+zero_x11 = [zero_x4 zero_x4 zero_x1 zero_x1 zero_x1 ];
+zero_x12 = [zero_x4 zero_x4 zero_x4 ];
+zero_x13 = [zero_x4 zero_x4 zero_x4 zero_x1 ];
+zero_x14 = [zero_x4 zero_x4 zero_x4 zero_x1 zero_x1 ];
+zero_x15 = [zero_x4 zero_x4 zero_x4 zero_x1 zero_x1 zero_x1 ];
+zero_x16 = [zero_x4 zero_x4 zero_x4 zero_x4 ];
+zero_x27 = [zero_x15 zero_x12 ];
+clk__x1 = [0.2 2.5];
+clk__x2 = [clk__x1 clk__x1]; 
+clk__x3 = [clk__x1 clk__x1 clk__x1]; 
+clk__x4 = [clk__x1 clk__x1 clk__x1 clk__x1]; 
+clk__x5 = [clk__x1 clk__x1 clk__x1 clk__x1 clk__x1]; 
+clk__x6 = [clk__x1 clk__x1 clk__x1 clk__x1 clk__x1 clk__x1]; 
+clk__x7 = [clk__x1 clk__x1 clk__x1 clk__x1 clk__x1 clk__x1 clk__x1]; 
+clk__x8 = [clk__x4 clk__x4]; 
+clk__x12 = [clk__x4 clk__x4 clk__x4 ]; 
+clk__x13 = [clk__x4 clk__x4 clk__x4 clk__x1]; 
+clk__x15 = [clk__x4 clk__x4 clk__x4 clk__x1 clk__x1 clk__x1]; 
+clk__x16 = [clk__x4 clk__x4 clk__x4 clk__x4]; 
+data_x1 = [2.5 2.5];
+data_x4 = [data_x1 data_x1 data_x1 data_x1 ];
+data_x8 = [data_x4 data_x4];
+data_x15 = [data_x4 data_x4 data_x4 data_x1 data_x1 data_x1 ];
+data_x16 = [data_x4 data_x4 data_x4 data_x4 ];
+cle__x1 = [2.5 0.2];
+d11_x1 = [2.5 2.5];
+d00_x1 = [0.2 0.2];
+dclk_x4 = [d11_x1 d00_x1 d11_x1 d00_x1 ];
+dclk_x16 = [dclk_x4 dclk_x4 dclk_x4 dclk_x4 ];
+z1_d2z1 = [zero_x1 data_x1 data_x1 zero_x1 ];
+
+DAC00 = [ linspace(1,1,230) ];
+DAC01 = [ linspace(1,1,230) ];
+
+DAC02 = [ linspace(2.1,2.1,6) linspace(2.5,2.5,56) linspace(2.1,2.1,56) linspace(2.1,2.1,56) linspace(2.1,2.1,56) ]; // Vin1
+DAC03 = [ linspace(2.1,2.1,6) linspace(2.1,2.1,56) linspace(2.5,2.5,56) linspace(2.1,2.1,56) linspace(2.1,2.1,56) ]; // Vin2
+DAC04 = [ linspace(2.1,2.1,6) linspace(2.1,2.1,56) linspace(2.1,2.1,56) linspace(2.5,2.5,56) linspace(2.1,2.1,56) ]; // Vin3
+DAC05 = [ linspace(2.1,2.1,6) linspace(2.1,2.1,56) linspace(2.1,2.1,56) linspace(2.1,2.1,56) linspace(2.5,2.5,56) ]; // Vin4
+
+clk_zero_clk = [clk__x1 zero_x3 clk__x1 zero_x3 clk__x1 zero_x3 clk__x1 zero_x3 clk__x12];
+DAC06 = [ zero_x3 clk_zero_clk      clk_zero_clk     clk_zero_clk     clk_zero_clk     ]; // clk
+DAC08 = [ zero_x3 data_x1 zero_x27  data_x1 zero_x27 data_x1 zero_x27 data_x1 zero_x27 ]; // data
+DAC07 = [ linspace(0.2,0.2,230) ]; // en
+DAC09 = [ linspace(2.5,2.5,230) ]; // dac_vdd
+
+disp(size(DAC00));
+disp(size(DAC01));
+disp(size(DAC02));
+disp(size(DAC03));
+disp(size(DAC04));
+disp(size(DAC05));
+disp(size(DAC06));
+disp(size(DAC07));
+disp(size(DAC08));
+disp(size(DAC09));

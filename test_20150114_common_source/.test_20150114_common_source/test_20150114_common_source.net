@@ -1,0 +1,168 @@
+<block name="/home/ubuntu/RASP_Workspace/test_20150114_common_source//test_20150114_common_source.net" instance="FPGA_packed_netlist[0]">
+	<inputs>
+		vcc net1_1 net2_1 
+	</inputs>
+
+	<outputs>
+		out:net4_1 out:net5_1 
+	</outputs>
+
+	<globals>
+		
+	</globals>
+
+	<block name="net4_1" instance="cab[0]" mode="cab">
+		<inputs>
+			<port name="I">open open open open open open open open open open net1_1 vcc net2_1 open open open </port>
+		</inputs>
+		<outputs>
+			<port name="O">nfet[0].out[0]->crossbar  pfet[0].out[0]->crossbar  open open open open open open </port>
+		</outputs>
+		<globals>
+			<port name="gnd">open </port>
+			<port name="vdd">open </port>
+		</globals>
+		<block name="open" instance="fgota[0]"/>
+		<block name="open" instance="fgota[1]"/>
+		<block name="open" instance="ota_buf[0]"/>
+		<block name="open" instance="ota[0]"/>
+		<block name="open" instance="cap[0]"/>
+		<block name="open" instance="cap[1]"/>
+		<block name="open" instance="cap[2]"/>
+		<block name="open" instance="cap[3]"/>
+		<block name="net5_1" instance="nfet[0]">
+			<inputs>
+				<port name="in">cab.I[10]->crossbar  pfet[0].out[0]->crossbar  </port>
+			</inputs>
+			<outputs>
+				<port name="out">net5_1 </port>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+		<block name="open" instance="nfet[1]"/>
+		<block name="net4_1" instance="pfet[0]">
+			<inputs>
+				<port name="in">cab.I[12]->crossbar  cab.I[11]->crossbar  </port>
+			</inputs>
+			<outputs>
+				<port name="out">net4_1 </port>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+		<block name="open" instance="pfet[1]"/>
+		<block name="open" instance="tgate[0]"/>
+		<block name="open" instance="tgate[1]"/>
+		<block name="open" instance="tgate[2]"/>
+		<block name="open" instance="tgate[3]"/>
+		<block name="open" instance="nmirror[0]"/>
+		<block name="open" instance="nmirror[1]"/>
+		<block name="open" instance="volswc[0]"/>
+		<block name="open" instance="volswc[1]"/>
+		<block name="open" instance="lpf[0]"/>
+		<block name="open" instance="ramp_fe[0]"/>
+		<block name="open" instance="sigma_delta_fe[0]"/>
+	</block>
+	<block name="out:net5_1" instance="io[1]" mode="outpad">
+		<inputs>
+			<port name="outpad">net5_1 </port>
+		</inputs>
+		<outputs>
+			<port name="inpad">open </port>
+		</outputs>
+		<globals>
+			<port name="clock">open </port>
+		</globals>
+		<block name="out:net5_1" instance="outpad[0]">
+			<inputs>
+				<port name="outpad">io.outpad[0]->outpad  </port>
+			</inputs>
+			<outputs>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+	</block>
+	<block name="out:net4_1" instance="io[2]" mode="outpad">
+		<inputs>
+			<port name="outpad">net4_1 </port>
+		</inputs>
+		<outputs>
+			<port name="inpad">open </port>
+		</outputs>
+		<globals>
+			<port name="clock">open </port>
+		</globals>
+		<block name="out:net4_1" instance="outpad[0]">
+			<inputs>
+				<port name="outpad">io.outpad[0]->outpad  </port>
+			</inputs>
+			<outputs>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+	</block>
+	<block name="net2_1" instance="io[3]" mode="inpad">
+		<inputs>
+			<port name="outpad">open </port>
+		</inputs>
+		<outputs>
+			<port name="inpad">inpad[0].inpad[0]->inpad  </port>
+		</outputs>
+		<globals>
+			<port name="clock">open </port>
+		</globals>
+		<block name="net2_1" instance="inpad[0]">
+			<inputs>
+			</inputs>
+			<outputs>
+				<port name="inpad">net2_1 </port>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+	</block>
+	<block name="net1_1" instance="io[4]" mode="inpad">
+		<inputs>
+			<port name="outpad">open </port>
+		</inputs>
+		<outputs>
+			<port name="inpad">inpad[0].inpad[0]->inpad  </port>
+		</outputs>
+		<globals>
+			<port name="clock">open </port>
+		</globals>
+		<block name="net1_1" instance="inpad[0]">
+			<inputs>
+			</inputs>
+			<outputs>
+				<port name="inpad">net1_1 </port>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+	</block>
+	<block name="vcc" instance="io[5]" mode="inpad">
+		<inputs>
+			<port name="outpad">open </port>
+		</inputs>
+		<outputs>
+			<port name="inpad">inpad[0].inpad[0]->inpad  </port>
+		</outputs>
+		<globals>
+			<port name="clock">open </port>
+		</globals>
+		<block name="vcc" instance="inpad[0]">
+			<inputs>
+			</inputs>
+			<outputs>
+				<port name="inpad">vcc </port>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+	</block>
+</block>
+

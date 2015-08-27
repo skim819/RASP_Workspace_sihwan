@@ -1,0 +1,32 @@
+.model vmm4x4_test
+.inputs Vin clk1 clk2 clk3 en D1 D2 D3 Vclear int_Vref vd_Vref nfet_Vref 
+.outputs in1_vmm Vout1 Vout2 Vout3 Vout4 gnd
+
+# Voltage Divider 1
+.subckt volt_div in[0]=Vin in[1]=vd_Vref out[0]=vd1 #volt_div_fg =0&fgota_biasfb =2E-06&ota_p_bias =250E-06&ota_n_bias =245E-06&fgota_small_cap =0&cap_1x_vd =0&vd_target =20e-09
+
+# 4-bit shift register (input)
+.subckt SR4 in[0]=vd1 in[1]=clk1 in[2]=en in[3]=D1 out[0]=in1_vmm out[1]=in2_vmm out[2]=in3_vmm out[3]=in4_vmm out[4]=clk_out_h out[5]=en_out_h out[6]=Q_h #SR_fg =0&vmm_volatile =0
+
+# VMM4X4_SR 1
+.subckt vmm4x4_SR in[0]=in1_vmm in[1]=in2_vmm in[2]=in3_vmm in[3]=in4_vmm in[4]=clk2 in[5]=en in[6]=D2 out[0]=vmm_Vout out[1]=clk_out_v1 out[2]=en_out_v1 out[3]=Q_v1 #vmm4x4_target =100E-09,500E-09,1E-06,6E-06,6E-06,6E-06,6E-06,6E-06,6E-06,6E-06,6E-06,6E-06,6E-06,6E-06,6E-06,6E-06&vmm_volatile =0
+
+# 4-bit shift register (output)
+.subckt SR4 in[0]=vmm_Vout in[1]=clk3 in[2]=en in[3]=D3 out[0]=Vout1_int out[1]=Vout2_int out[2]=Vout3_int out[3]=Vout4_int out[4]=clk_out_v2 out[5]=en_out_v2 out[6]=Q_v2 #SR_fg =0&vmm_volatile =0
+
+# nfet
+.subckt nfet in[0]=nfet_Vref in[1]=vmm_Vout out[0]=gnd
+
+# Integrator 1
+.subckt integrator in[0]=int_Vref in[1]=Vout1_int in[2]=Vclear out[0]=Vout1 #integrator_fg =0&cap_2x =0&cap_3x =0&integrator_ota0 =1E-06&integrator_ota1 =3E-06
+
+# Integrator 2
+.subckt integrator in[0]=int_Vref in[1]=Vout2_int in[2]=Vclear out[0]=Vout2 #integrator_fg =0&cap_2x =0&cap_3x =0&integrator_ota0 =1E-06&integrator_ota1 =3E-06
+
+# Integrator 3
+.subckt integrator in[0]=int_Vref in[1]=Vout3_int in[2]=Vclear out[0]=Vout3 #integrator_fg =0&cap_2x =0&cap_3x =0&integrator_ota0 =1E-06&integrator_ota1 =3E-06
+
+# Integrator 4
+.subckt integrator in[0]=int_Vref in[1]=Vout4_int in[2]=Vclear out[0]=Vout4 #integrator_fg =0&cap_2x =0&cap_3x =0&integrator_ota0 =1E-06&integrator_ota1 =3E-06
+
+.end 	

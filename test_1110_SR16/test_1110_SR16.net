@@ -1,0 +1,512 @@
+<block name="/home/ubuntu/RASP_Workspace/test_1110_SR16/test_1110_SR16.net" instance="FPGA_packed_netlist[0]">
+	<inputs>
+		clk en D 
+	</inputs>
+
+	<outputs>
+		out:com_out out:clk_out out:cs_out out:Q out:dummy1 out:dummy2 out:dummy3 out:dummy4 out:dummy5 out:dummy6 out:dummy7 out:dummy8 out:dummy9 out:dummy10 out:dummy11 out:dummy12 out:dummy13 out:dummy14 out:dummy15 out:dummy16 
+	</outputs>
+
+	<globals>
+		
+	</globals>
+
+	<block name="com_out" instance="cab_vmm[0]" mode="cab_vmm">
+		<inputs>
+			<port name="I">open open open open open open open open open open open open open clk en D </port>
+		</inputs>
+		<outputs>
+			<port name="O">sftreg2[0].out[18]->crossbar  sftreg2[0].out[19]->crossbar  sftreg2[0].out[10]->crossbar  sftreg2[0].out[11]->crossbar  sftreg2[0].out[0]->crossbar  sftreg2[0].out[1]->crossbar  sftreg2[0].out[2]->crossbar  sftreg2[0].out[3]->crossbar  </port>
+			<port name="so">sftreg2[0].out[12]->crossbar  sftreg2[0].out[13]->crossbar  sftreg2[0].out[14]->crossbar  sftreg2[0].out[15]->crossbar  sftreg2[0].out[16]->crossbar  sftreg2[0].out[17]->crossbar  sftreg2[0].out[4]->crossbar  sftreg2[0].out[5]->crossbar  sftreg2[0].out[6]->crossbar  sftreg2[0].out[7]->crossbar  sftreg2[0].out[8]->crossbar  sftreg2[0].out[9]->crossbar  </port>
+		</outputs>
+		<globals>
+		</globals>
+		<block name="open" instance="vmm_16x16[0]"/>
+		<block name="open" instance="vmm_2x2[0]"/>
+		<block name="open" instance="volt_div[0]"/>
+		<block name="open" instance="volt_div[1]"/>
+		<block name="open" instance="vmm_senseamp1[0]"/>
+		<block name="open" instance="vmm_senseamp2[0]"/>
+		<block name="open" instance="wta[0]"/>
+		<block name="open" instance="integrator[0]"/>
+		<block name="open" instance="tgate_so[0]"/>
+		<block name="open" instance="vmm4x4_SR[0]"/>
+		<block name="open" instance="vmm4x4_SR2[0]"/>
+		<block name="open" instance="vmm8x4_SR[0]"/>
+		<block name="open" instance="SR4[0]"/>
+		<block name="open" instance="vmm4x4[0]"/>
+		<block name="open" instance="sftreg[0]"/>
+		<block name="open" instance="sftreg[1]"/>
+		<block name="com_out" instance="sftreg2[0]">
+			<inputs>
+				<port name="in">cab_vmm.I[13]->crossbar  cab_vmm.I[14]->crossbar  cab_vmm.I[15]->crossbar  </port>
+			</inputs>
+			<outputs>
+				<port name="out">com_out clk_out cs_out Q dummy1 dummy2 dummy3 dummy4 dummy5 dummy6 dummy7 dummy8 dummy9 dummy10 dummy11 dummy12 dummy13 dummy14 dummy15 dummy16 </port>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+	</block>
+	<block name="out:dummy16" instance="io[1]" mode="outpad">
+		<inputs>
+			<port name="outpad">dummy16 </port>
+		</inputs>
+		<outputs>
+			<port name="inpad">open </port>
+		</outputs>
+		<globals>
+			<port name="clock">open </port>
+		</globals>
+		<block name="out:dummy16" instance="outpad[0]">
+			<inputs>
+				<port name="outpad">io.outpad[0]->outpad  </port>
+			</inputs>
+			<outputs>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+	</block>
+	<block name="out:dummy15" instance="io[2]" mode="outpad">
+		<inputs>
+			<port name="outpad">dummy15 </port>
+		</inputs>
+		<outputs>
+			<port name="inpad">open </port>
+		</outputs>
+		<globals>
+			<port name="clock">open </port>
+		</globals>
+		<block name="out:dummy15" instance="outpad[0]">
+			<inputs>
+				<port name="outpad">io.outpad[0]->outpad  </port>
+			</inputs>
+			<outputs>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+	</block>
+	<block name="out:dummy14" instance="io[3]" mode="outpad">
+		<inputs>
+			<port name="outpad">dummy14 </port>
+		</inputs>
+		<outputs>
+			<port name="inpad">open </port>
+		</outputs>
+		<globals>
+			<port name="clock">open </port>
+		</globals>
+		<block name="out:dummy14" instance="outpad[0]">
+			<inputs>
+				<port name="outpad">io.outpad[0]->outpad  </port>
+			</inputs>
+			<outputs>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+	</block>
+	<block name="out:dummy13" instance="io[4]" mode="outpad">
+		<inputs>
+			<port name="outpad">dummy13 </port>
+		</inputs>
+		<outputs>
+			<port name="inpad">open </port>
+		</outputs>
+		<globals>
+			<port name="clock">open </port>
+		</globals>
+		<block name="out:dummy13" instance="outpad[0]">
+			<inputs>
+				<port name="outpad">io.outpad[0]->outpad  </port>
+			</inputs>
+			<outputs>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+	</block>
+	<block name="out:dummy12" instance="io[5]" mode="outpad">
+		<inputs>
+			<port name="outpad">dummy12 </port>
+		</inputs>
+		<outputs>
+			<port name="inpad">open </port>
+		</outputs>
+		<globals>
+			<port name="clock">open </port>
+		</globals>
+		<block name="out:dummy12" instance="outpad[0]">
+			<inputs>
+				<port name="outpad">io.outpad[0]->outpad  </port>
+			</inputs>
+			<outputs>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+	</block>
+	<block name="out:dummy11" instance="io[6]" mode="outpad">
+		<inputs>
+			<port name="outpad">dummy11 </port>
+		</inputs>
+		<outputs>
+			<port name="inpad">open </port>
+		</outputs>
+		<globals>
+			<port name="clock">open </port>
+		</globals>
+		<block name="out:dummy11" instance="outpad[0]">
+			<inputs>
+				<port name="outpad">io.outpad[0]->outpad  </port>
+			</inputs>
+			<outputs>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+	</block>
+	<block name="out:dummy10" instance="io[7]" mode="outpad">
+		<inputs>
+			<port name="outpad">dummy10 </port>
+		</inputs>
+		<outputs>
+			<port name="inpad">open </port>
+		</outputs>
+		<globals>
+			<port name="clock">open </port>
+		</globals>
+		<block name="out:dummy10" instance="outpad[0]">
+			<inputs>
+				<port name="outpad">io.outpad[0]->outpad  </port>
+			</inputs>
+			<outputs>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+	</block>
+	<block name="out:dummy9" instance="io[8]" mode="outpad">
+		<inputs>
+			<port name="outpad">dummy9 </port>
+		</inputs>
+		<outputs>
+			<port name="inpad">open </port>
+		</outputs>
+		<globals>
+			<port name="clock">open </port>
+		</globals>
+		<block name="out:dummy9" instance="outpad[0]">
+			<inputs>
+				<port name="outpad">io.outpad[0]->outpad  </port>
+			</inputs>
+			<outputs>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+	</block>
+	<block name="out:dummy8" instance="io[9]" mode="outpad">
+		<inputs>
+			<port name="outpad">dummy8 </port>
+		</inputs>
+		<outputs>
+			<port name="inpad">open </port>
+		</outputs>
+		<globals>
+			<port name="clock">open </port>
+		</globals>
+		<block name="out:dummy8" instance="outpad[0]">
+			<inputs>
+				<port name="outpad">io.outpad[0]->outpad  </port>
+			</inputs>
+			<outputs>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+	</block>
+	<block name="out:dummy7" instance="io[10]" mode="outpad">
+		<inputs>
+			<port name="outpad">dummy7 </port>
+		</inputs>
+		<outputs>
+			<port name="inpad">open </port>
+		</outputs>
+		<globals>
+			<port name="clock">open </port>
+		</globals>
+		<block name="out:dummy7" instance="outpad[0]">
+			<inputs>
+				<port name="outpad">io.outpad[0]->outpad  </port>
+			</inputs>
+			<outputs>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+	</block>
+	<block name="out:dummy6" instance="io[11]" mode="outpad">
+		<inputs>
+			<port name="outpad">dummy6 </port>
+		</inputs>
+		<outputs>
+			<port name="inpad">open </port>
+		</outputs>
+		<globals>
+			<port name="clock">open </port>
+		</globals>
+		<block name="out:dummy6" instance="outpad[0]">
+			<inputs>
+				<port name="outpad">io.outpad[0]->outpad  </port>
+			</inputs>
+			<outputs>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+	</block>
+	<block name="out:dummy5" instance="io[12]" mode="outpad">
+		<inputs>
+			<port name="outpad">dummy5 </port>
+		</inputs>
+		<outputs>
+			<port name="inpad">open </port>
+		</outputs>
+		<globals>
+			<port name="clock">open </port>
+		</globals>
+		<block name="out:dummy5" instance="outpad[0]">
+			<inputs>
+				<port name="outpad">io.outpad[0]->outpad  </port>
+			</inputs>
+			<outputs>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+	</block>
+	<block name="out:dummy4" instance="io[13]" mode="outpad">
+		<inputs>
+			<port name="outpad">dummy4 </port>
+		</inputs>
+		<outputs>
+			<port name="inpad">open </port>
+		</outputs>
+		<globals>
+			<port name="clock">open </port>
+		</globals>
+		<block name="out:dummy4" instance="outpad[0]">
+			<inputs>
+				<port name="outpad">io.outpad[0]->outpad  </port>
+			</inputs>
+			<outputs>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+	</block>
+	<block name="out:dummy3" instance="io[14]" mode="outpad">
+		<inputs>
+			<port name="outpad">dummy3 </port>
+		</inputs>
+		<outputs>
+			<port name="inpad">open </port>
+		</outputs>
+		<globals>
+			<port name="clock">open </port>
+		</globals>
+		<block name="out:dummy3" instance="outpad[0]">
+			<inputs>
+				<port name="outpad">io.outpad[0]->outpad  </port>
+			</inputs>
+			<outputs>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+	</block>
+	<block name="out:dummy2" instance="io[15]" mode="outpad">
+		<inputs>
+			<port name="outpad">dummy2 </port>
+		</inputs>
+		<outputs>
+			<port name="inpad">open </port>
+		</outputs>
+		<globals>
+			<port name="clock">open </port>
+		</globals>
+		<block name="out:dummy2" instance="outpad[0]">
+			<inputs>
+				<port name="outpad">io.outpad[0]->outpad  </port>
+			</inputs>
+			<outputs>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+	</block>
+	<block name="out:dummy1" instance="io[16]" mode="outpad">
+		<inputs>
+			<port name="outpad">dummy1 </port>
+		</inputs>
+		<outputs>
+			<port name="inpad">open </port>
+		</outputs>
+		<globals>
+			<port name="clock">open </port>
+		</globals>
+		<block name="out:dummy1" instance="outpad[0]">
+			<inputs>
+				<port name="outpad">io.outpad[0]->outpad  </port>
+			</inputs>
+			<outputs>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+	</block>
+	<block name="out:Q" instance="io[17]" mode="outpad">
+		<inputs>
+			<port name="outpad">Q </port>
+		</inputs>
+		<outputs>
+			<port name="inpad">open </port>
+		</outputs>
+		<globals>
+			<port name="clock">open </port>
+		</globals>
+		<block name="out:Q" instance="outpad[0]">
+			<inputs>
+				<port name="outpad">io.outpad[0]->outpad  </port>
+			</inputs>
+			<outputs>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+	</block>
+	<block name="out:cs_out" instance="io[18]" mode="outpad">
+		<inputs>
+			<port name="outpad">cs_out </port>
+		</inputs>
+		<outputs>
+			<port name="inpad">open </port>
+		</outputs>
+		<globals>
+			<port name="clock">open </port>
+		</globals>
+		<block name="out:cs_out" instance="outpad[0]">
+			<inputs>
+				<port name="outpad">io.outpad[0]->outpad  </port>
+			</inputs>
+			<outputs>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+	</block>
+	<block name="out:clk_out" instance="io[19]" mode="outpad">
+		<inputs>
+			<port name="outpad">clk_out </port>
+		</inputs>
+		<outputs>
+			<port name="inpad">open </port>
+		</outputs>
+		<globals>
+			<port name="clock">open </port>
+		</globals>
+		<block name="out:clk_out" instance="outpad[0]">
+			<inputs>
+				<port name="outpad">io.outpad[0]->outpad  </port>
+			</inputs>
+			<outputs>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+	</block>
+	<block name="out:com_out" instance="io[20]" mode="outpad">
+		<inputs>
+			<port name="outpad">com_out </port>
+		</inputs>
+		<outputs>
+			<port name="inpad">open </port>
+		</outputs>
+		<globals>
+			<port name="clock">open </port>
+		</globals>
+		<block name="out:com_out" instance="outpad[0]">
+			<inputs>
+				<port name="outpad">io.outpad[0]->outpad  </port>
+			</inputs>
+			<outputs>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+	</block>
+	<block name="D" instance="io[21]" mode="inpad">
+		<inputs>
+			<port name="outpad">open </port>
+		</inputs>
+		<outputs>
+			<port name="inpad">inpad[0].inpad[0]->inpad  </port>
+		</outputs>
+		<globals>
+			<port name="clock">open </port>
+		</globals>
+		<block name="D" instance="inpad[0]">
+			<inputs>
+			</inputs>
+			<outputs>
+				<port name="inpad">D </port>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+	</block>
+	<block name="en" instance="io[22]" mode="inpad">
+		<inputs>
+			<port name="outpad">open </port>
+		</inputs>
+		<outputs>
+			<port name="inpad">inpad[0].inpad[0]->inpad  </port>
+		</outputs>
+		<globals>
+			<port name="clock">open </port>
+		</globals>
+		<block name="en" instance="inpad[0]">
+			<inputs>
+			</inputs>
+			<outputs>
+				<port name="inpad">en </port>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+	</block>
+	<block name="clk" instance="io[23]" mode="inpad">
+		<inputs>
+			<port name="outpad">open </port>
+		</inputs>
+		<outputs>
+			<port name="inpad">inpad[0].inpad[0]->inpad  </port>
+		</outputs>
+		<globals>
+			<port name="clock">open </port>
+		</globals>
+		<block name="clk" instance="inpad[0]">
+			<inputs>
+			</inputs>
+			<outputs>
+				<port name="inpad">clk </port>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+	</block>
+</block>
+

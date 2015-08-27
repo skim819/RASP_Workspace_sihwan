@@ -1,0 +1,8 @@
+.model test_1120_input2input
+.inputs net3_1 net1_1 net2_1
+.outputs net2_1
+  
+# Input 2 Input x1
+.subckt in2in_x1 in[0]=net3_fbout_1 in[1]=net3_1 in[2]=net1_1 out[0]=net3_fbout_1
+  
+.end

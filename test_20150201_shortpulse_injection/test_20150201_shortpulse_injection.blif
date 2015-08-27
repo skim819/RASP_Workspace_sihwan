@@ -1,0 +1,8 @@
+.model test_20150201_shortpulse_injection
+.inputs net2_1 net1_1
+.outputs net3_1
+  
+# TGATE
+.subckt tgate in[0]=net2_1 in[1]=net1_1 out=net3_1
+  
+.end

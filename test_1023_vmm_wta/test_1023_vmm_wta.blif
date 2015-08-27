@@ -1,0 +1,23 @@
+.model wta
+.inputs Vin1 Vin2 Vin3 Vin4 nbias gnd
+.outputs Vout1 Vout2 Vout3 Vout4
+
+# VMM
+.subckt vmm4x4 in[0]=Vin1 in[1]=Vin2 in[2]=Vin3 in[3]=Vin4 out[0]=vmm_out1 out[1]=vmm_out2 out[2]=vmm_out3 out[3]=vmm_out4 #vmm4x4_target =500e-09,5e-09,5e-09,5e-09,5e-09,500e-09,5e-09,5e-09,5e-09,5e-09,500e-09,5e-09,5e-09,5e-09,5e-09,500e-09
+
+# WTA_1
+.subckt wta in[0]=vmm_out1 in[1]=nfet_d out[0]=Vout1 #wta_fg =0&wta_bufbias =2e-06&wta_pfetbias =20e-09
+  
+# WTA_2
+.subckt wta in[0]=vmm_out2 in[1]=nfet_d out[0]=Vout2 #wta_fg =0&wta_bufbias =2e-06&wta_pfetbias =20e-09
+
+# WTA_3
+.subckt wta in[0]=vmm_out3 in[1]=nfet_d out[0]=Vout3 #wta_fg =0&wta_bufbias =2e-06&wta_pfetbias =20e-09
+
+# WTA_4
+.subckt wta in[0]=vmm_out4 in[1]=nfet_d out[0]=Vout4 #wta_fg =0&wta_bufbias =2e-06&wta_pfetbias =20e-09
+ 
+# NFET
+.subckt nfet in[0]=nbias in[1]=gnd out=nfet_d
+  
+.end

@@ -1,0 +1,37 @@
+Netlist file: /home/ubuntu/RASP_Workspace/test_1106_image_convolution_4x4/test_1106_image_convolution_4x4.net   Architecture file: vpr2swcs/./arch/rasp3_vmm_arch.xml
+Array size: 14 x 14 logic blocks
+
+#block name	x	y	subblk	block number
+#----------	--	--	------	------------
+Vout_tgate	10	2	0	#0
+vmm_Vout	10	1	0	#1
+Vout1_int	10	3	0	#2
+in1_vmm		11	1	0	#3
+Vout4		11	5	0	#4
+Vout3		11	4	0	#5
+Vout2		11	3	0	#6
+Vout1		10	4	0	#7
+int_Vref_buf2	7	2	0	#8
+nfet_s		6	1	0	#9
+vd1		11	2	0	#10
+int_Vref_buf	7	1	0	#11
+out:Vout_tgate	3	0	0	#12
+out:Vout4	13	0	3	#13
+out:Vout3	13	0	0	#14
+out:Vout2	12	0	3	#15
+out:Vout1	12	0	0	#16
+out:vd1		11	0	0	#17
+gnd		0	2	0	#18
+Vdisch		9	0	3	#19
+nfet_Vref	14	0	3	#20
+vd_Vref		14	0	0	#21
+int_Vref	10	0	2	#22
+Vclear		10	0	1	#23
+D3		10	0	0	#24
+D2		9	0	5	#25
+D1		9	0	4	#26
+en		4	0	0	#27
+clk3		9	0	2	#28
+clk2		9	0	1	#29
+clk1		9	0	0	#30
+Vin		8	0	5	#31

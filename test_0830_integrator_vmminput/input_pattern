@@ -1,0 +1,12 @@
+clear Vnfet_bias; clear Vref_integrator; clear Vreset;
+//Vnfet_bias = [ linspace(0.2,0.2,310) ]; 
+//Vnfet_bias = [ linspace(0.3,0.3,310) ]; 
+//Vnfet_bias = [ linspace(0.4,0.4,310) ]; 
+Vnfet_bias = [ linspace(0.5,0.5,310) ]; 
+//Vnfet_bias = [ linspace(0.6,0.6,310) ]; 
+Vref_integrator = [ linspace(1.5,1.5,310) ]; 
+Vreset = [ linspace(0.2,0.2,10) 2.5 linspace(0.2,0.2,299) ];
+
+disp(size(Vnfet_bias));
+disp(size(Vref_integrator));
+disp(size(Vreset));

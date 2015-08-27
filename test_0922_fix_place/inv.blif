@@ -1,0 +1,11 @@
+.model newclb
+.inputs net1
+.outputs out2
+.clocks
+
+.names net1 out1
+0 1
+
+.subckt ota_buffer in[0]= out1 out[0]=out2
+
+.end

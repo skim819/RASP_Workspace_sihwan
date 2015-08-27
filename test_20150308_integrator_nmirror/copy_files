@@ -1,0 +1,5 @@
+rm *.net *.place *.route *.mem -f;
+cp .test_1202_image_convolution_16x16/test_1202_image_convolution_16x16.net .;
+cp .test_1202_image_convolution_16x16/test_1202_image_convolution_16x16.pads .;
+cp .test_1202_image_convolution_16x16/test_1202_image_convolution_16x16.place .;
+cp .test_1202_image_convolution_16x16/input_vector .

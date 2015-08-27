@@ -1,0 +1,11 @@
+.model vmm4x4_test
+.inputs net1 net2 net3 net4 clk cs D
+.outputs clk_out csn_out Q vout
+
+#VMM4X4_SR
+.subckt vmm4x4_SR in[0]=net1 in[1]=net2 in[2]=net3 in[3]=net4 in[4]=clk in[5]=cs in[6]=D out[0]=net5 out[1]=clk_out out[2]=csn_out out[3]=Q #vmm4x4_target =10e-09,10e-09,10e-09,10e-09,20e-09,20e-09,20e-09,20e-09,30e-09,30e-09,30e-09,30e-09,40e-09,40e-09,40e-09,40e-09&vmm_bias =1e-09,2e-09,3e-09,4e-09&vmm_volatile =0
+ 
+# ota
+.subckt ota_buf in[0]=net5 out[0]=vout #ota_biasfb =2E-06
+   
+.end 	

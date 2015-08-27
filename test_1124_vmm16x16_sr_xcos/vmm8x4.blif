@@ -1,0 +1,9 @@
+.model vmm4x4_test
+.inputs in0 in1 in2 in3 in4 in5 in6 in7 in8 in9 in10 in11 in12
+.outputs Q
+
+
+#VMM8X4
+.subckt vmm8x4 in[0]=in0 in[1]=in1 in[2]=in2 in[3]=in3 in[4]=in4 in[5]=in5 in[6]=in6 in[7]=in7 in[8]=in8 in[9]=in9 in[10]=in10 in[11]=in11 in[12]=in12 out[0]=Q #vmm8x4_target =10e-09,10e-09,10e-09,10e-09,11e-09,11e-09,11e-09,11e-09,20e-09,20e-09,20e-09,20e-09,22e-09,22e-09,22e-09,22e-09,30e-09,30e-09,30e-09,30e-09,33e-09,33e-09,33e-09,33e-09,40e-09,40e-09,40e-09,40e-09,44e-09,44e-09,44e-09,44e-09
+   
+.end 	

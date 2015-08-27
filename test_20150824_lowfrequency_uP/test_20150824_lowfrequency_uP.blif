@@ -1,0 +1,8 @@
+.model test_20150824_lowfrequency_uP
+.inputs net1_1 net2_1 net3_1
+.outputs net1_1 net4_1
+  
+# NFET
+.subckt nfet in[0]=net2_1 in[1]=net3_1 out[0]=net4_1
+  
+.end

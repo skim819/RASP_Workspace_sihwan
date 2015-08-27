@@ -1,0 +1,50 @@
+.model wta_vmm
+.inputs net4_1 net6_1 net5_1 net11_1 dum1 dum2 gnd 
+.outputs net9_1 net10_1 net12_1 net13_1 null_vdd null_out
+
+#mite1
+.subckt mite in[0]=net6_1 in[1]=net6_1 out[0]=net6_11
+
+#mite2
+.subckt mite in[0]=net5_1 in[1]=net5_1 out[0]=net5_11
+ 
+#WTA1
+.subckt wta in[0]=net3_1 in[1]=net1_1 out[0]=net7_1 #wta_fg =0
+  
+#WTA2
+.subckt wta in[0]=net2_1 in[1]=net1_1 out[0]=net8_1 #wta_fg =0
+
+#WTA3
+.subckt wta in[0]=nets_1 in[1]=net1_1 out[0]=null #wta_fg =0  
+
+# NFET
+.subckt nfet in[0]=net4_1 in[1]=gnd out=net1_1
+  
+# PFET
+#.subckt pfet in[0]=net5_1 in[1]=vcc out=net2_1
+
+#vmm
+.subckt vmm4x4 in[0]=net6_11 in[1]=net5_11 in[2]=dum1 in[3]=dum2 out[0]=net3_1 out[1]=net2_1 out[2]=nets_1 out[3]=nets_2 #vmm4x4_target =200e-09,1e-09,1e-09,1e-09,2e-09,200e-09,100e-09,2e-09,3e-09,200e-09,100e-09,3e-09,4e-09,40e-09,4e-09,4e-09
+  
+# PFET
+#.subckt pfet in[0]=net6_1 in[1]=vcc out=net3_1
+  
+# ota
+.subckt ota_buf in[0]=net7_1 out[0]=net12_1 #ota_biasfb =0.000002000000
+  
+# ota
+.subckt ota_buf in[0]=net8_1 out[0]=net13_1 #ota_biasfb =0.000002000000
+
+# ota
+.subckt ota_buf in[0]=null out[0]=null_out #ota_biasfb =0.000002000000
+  
+# PFET
+.subckt pfet in[0]=net11_1 in[1]=net8_1 out=net10_1
+
+# PFET3
+.subckt pfet in[0]=net11_1 in[1]=null out=null_vdd
+  
+# PFET
+.subckt pfet in[0]=net11_1 in[1]=net7_1 out=net9_1
+  
+.end

@@ -1,0 +1,34 @@
+Netlist file: /home/ubuntu/RASP_Workspace/test_1110_SR16_DFF/test_1110_SR16_DFF.net   Architecture file: vpr2swcs/./arch/rasp3_vmm_arch.xml
+Array size: 14 x 14 logic blocks
+
+#block name	x	y	subblk	block number
+#----------	--	--	------	------------
+DF1_D		12	1	0	#0
+com_out		10	1	0	#1
+out:DF1_Q	4	0	3	#2
+out:Din		13	0	3	#3
+out:clk_in	13	0	0	#4
+out:dummy16	6	0	4	#5
+out:dummy15	6	0	3	#6
+out:dummy14	8	0	4	#7
+out:dummy13	10	0	2	#8
+out:dummy12	8	0	3	#9
+out:dummy11	8	0	2	#10
+out:dummy10	8	0	1	#11
+out:dummy9	10	0	1	#12
+out:dummy8	8	0	0	#13
+out:dummy7	7	0	5	#14
+out:dummy6	7	0	4	#15
+out:dummy5	10	0	0	#16
+out:dummy4	2	0	2	#17
+out:dummy3	2	0	1	#18
+out:dummy2	7	0	3	#19
+out:dummy1	9	0	5	#20
+out:cs_out	3	0	0	#21
+out:com_out	11	0	0	#22
+aaa		9	0	4	#23
+Ini_CLK		9	0	3	#24
+Ini_D		9	0	2	#25
+DF_reset	8	0	5	#26
+en		9	0	1	#27
+clk		9	0	0	#28

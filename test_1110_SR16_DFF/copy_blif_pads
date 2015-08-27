@@ -1,0 +1,4 @@
+rm *.net *.place *.route *.mem -f;
+rm test_1110_SR16_DFF.blif -f;
+cp test_1110_SR16_DFF.blif_modified test_1110_SR16_DFF.blif;
+cp test_1110_SR16_DFF.pads_modified test_1110_SR16_DFF.pads

@@ -1,0 +1,7 @@
+net4_1 9 0 1 #int[1]
+net6_1 9 0 2 #int[2]
+net7_1 8 0 5 #int[5]
+net5_1 15 1 2 #tgate[0]
+out:net2_1 15 1 5 #tgate[1]
+out:net1_1 15 2 2 #tgate[0]
+out:net3_1 15 2 5 #tgate[1]

@@ -1,0 +1,16 @@
+.model test
+.inputs net1_1 net2_1 vcc gnd
+.outputs net3_1
+  
+# tgates for logic
+.subckt tgate in[0]=vcc in[1]=gnd out=tg4logic_1
+  
+.subckt tgate in[0]=vcc in[1]=gnd out=tg4logic_2
+  
+# LOOKUP Table-> OR_D_1
+.names net2_1 net1_1 tg4logic_1 tg4logic_2 net3_1
+01-- 1
+10-- 1
+11-- 1
+  
+.end

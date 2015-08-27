@@ -1,0 +1,9 @@
+.model test_20150724_miteADC
+.inputs net1_1
+.outputs gnd
+.globals gnd vcc
+  
+# MEAS_VOLT_2MITE*
+.subckt meas_volt_mite in[0]=net1_1 out[0]=gnd #meas_fg =0.00001
+  
+.end

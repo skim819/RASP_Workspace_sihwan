@@ -1,0 +1,23 @@
+.model vmm4x4_test
+.inputs net1 net2 net3 net4 clk cs D vref
+.outputs clk_out csn_out Q vout in1 in2 in3 in4 
+
+# Voltage Divider 1
+.subckt volt_div in[0]=net1 in[1]=vref out[0]=in1 #volt_div_fg =0&fgota_biasfb =5E-06&ota_p_bias =100E-06&ota_n_bias =113E-06&fgota_small_cap =0&cap_1x_vd =0&vd_target =8e-09
+
+# Voltage Divider 2
+.subckt volt_div in[0]=net2 in[1]=vref out[0]=in2 #volt_div_fg =0&fgota_biasfb =5E-06&ota_p_bias =100E-06&ota_n_bias =91E-06&fgota_small_cap =0&cap_1x_vd =0&vd_target =5e-09
+
+# Voltage Divider 3
+.subckt volt_divin[0]=net3 in[1]=vref out[0]=in3 #volt_div_fg =0&fgota_biasfb =5E-06&ota_p_bias =100E-06&ota_n_bias =85E-06&fgota_small_cap =0&cap_1x_vd =0&vd_target =5e-09
+
+# Voltage Divider 4
+.subckt volt_div in[0]=net4 in[1]=vref out[0]=in4 #volt_div_fg =0&fgota_biasfb =5E-06&ota_p_bias =100E-06&ota_n_bias =115E-06&fgota_small_cap =0&cap_1x_vd =0&vd_target =7e-09
+
+#VMM4X4_SR
+.subckt vmm4x4_SR in[0]=in1 in[1]=in2 in[2]=in3 in[3]=in4 in[4]=clk in[5]=cs in[6]=D out[0]=net5 out[1]=clk_out out[2]=csn_out out[3]=Q #vmm4x4_target =790E-09,1120E-09,800E-09,800E-09,790E-09,1060E-09,1040E-09,740E-09,800E-09,850E-09,800E-09,800E-09,800E-09,830E-09,1040E-09,740E-09&vmm_bias =200E-06,210E-06,200E-06,210E-06&vmm_volatile =0
+ 
+# ota
+.subckt ota_buf in[0]=net5 out[0]=vout #ota_biasfb =3E-06
+   
+.end 	

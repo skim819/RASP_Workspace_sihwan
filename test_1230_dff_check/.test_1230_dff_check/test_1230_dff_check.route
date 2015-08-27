@@ -1,0 +1,152 @@
+Array size: 14 x 14 logic blocks.
+
+Routing:
+
+Net 0 (net9_1)
+
+SOURCE (9,0)  Pad: 7  
+  OPIN (9,0)  Pad: 7  
+ CHANX (9,0)  Track: 6  
+ CHANY (8,1)  Track: 6  
+  IPIN (9,1)  Pin: 0  
+  SINK (9,1)  Class: 0  
+
+
+Net 1 (tg4logic_2)
+
+SOURCE (6,1)  Class: 20  
+  OPIN (6,1)  Pin: 20  
+ CHANX (6,1)  Track: 10  
+ CHANX (7,1)  Track: 10  
+ CHANY (7,1)  Track: 10  
+ CHANX (8,0)  Track: 10  
+  IPIN (8,1)  Pin: 1  
+  SINK (8,1)  Class: 1  
+ CHANX (8,0)  Track: 10  
+ CHANX (9,0)  Track: 10  
+  IPIN (9,1)  Pin: 1  
+  SINK (9,1)  Class: 1  
+
+
+Net 2 (tg4logic_3)
+
+SOURCE (7,2)  Class: 20  
+  OPIN (7,2)  Pin: 20  
+ CHANX (7,2)  Track: 13  
+ CHANY (7,2)  Track: 13  
+ CHANX (8,1)  Track: 13  
+ CHANY (8,1)  Track: 13  
+  IPIN (8,1)  Pin: 2  
+  SINK (8,1)  Class: 2  
+ CHANY (8,1)  Track: 13  
+ CHANX (9,0)  Track: 13  
+ CHANY (9,1)  Track: 13  
+  IPIN (9,1)  Pin: 2  
+  SINK (9,1)  Class: 2  
+
+
+Net 3 (tg4logic_1)
+
+SOURCE (10,2)  Class: 20  
+  OPIN (10,2)  Pin: 20  
+ CHANX (10,2)  Track: 16  
+ CHANY (9,2)  Track: 16  
+ CHANX (9,1)  Track: 16  
+  IPIN (9,1)  Pin: 3  
+  SINK (9,1)  Class: 3  
+ CHANX (9,1)  Track: 16  
+ CHANX (8,1)  Track: 16  
+  IPIN (8,1)  Pin: 3  
+  SINK (8,1)  Class: 3  
+
+
+Net 4 (net2_1)
+
+SOURCE (9,0)  Pad: 4  
+  OPIN (9,0)  Pad: 4  
+ CHANX (9,0)  Track: 14  
+ CHANY (9,1)  Track: 14  
+  IPIN (9,1)  Pin: 14  
+  SINK (9,1)  Class: 14  
+
+
+Net 5 (net1_1)
+
+SOURCE (10,1)  Class: 20  
+  OPIN (10,1)  Pin: 20  
+ CHANX (10,1)  Track: 15  
+ CHANX (9,1)  Track: 15  
+  IPIN (9,1)  Pin: 15  
+  SINK (9,1)  Class: 15  
+
+
+Net 6 (net8_1)
+
+SOURCE (9,1)  Class: 18  
+  OPIN (9,1)  Pin: 18  
+ CHANY (9,1)  Track: 16  
+ CHANX (9,0)  Track: 16  
+  IPIN (9,0)  Pad: 0  
+  SINK (9,0)  Pad: 0  
+
+
+Net 7 (net4_1)
+
+SOURCE (9,0)  Pad: 10  
+  OPIN (9,0)  Pad: 10  
+ CHANX (9,0)  Track: 4  
+ CHANX (8,0)  Track: 4  
+ CHANY (7,1)  Track: 4  
+  IPIN (8,1)  Pin: 0  
+  SINK (8,1)  Class: 0  
+
+
+Net 8 (net5_1)
+
+SOURCE (8,0)  Pad: 16  
+  OPIN (8,0)  Pad: 16  
+ CHANX (8,0)  Track: 16  
+ CHANY (8,1)  Track: 16  
+  IPIN (8,1)  Pin: 14  
+  SINK (8,1)  Class: 14  
+
+
+Net 9 (net3_1)
+
+SOURCE (7,1)  Class: 20  
+  OPIN (7,1)  Pin: 20  
+ CHANX (7,1)  Track: 9  
+ CHANX (8,1)  Track: 9  
+  IPIN (8,1)  Pin: 15  
+  SINK (8,1)  Class: 15  
+
+
+Net 10 (net6_1)
+
+SOURCE (8,1)  Class: 16  
+  OPIN (8,1)  Pin: 16  
+ CHANY (7,1)  Track: 15  
+ CHANX (8,0)  Track: 15  
+ CHANX (9,0)  Track: 15  
+ CHANX (10,0)  Track: 15  
+ CHANX (11,0)  Track: 15  
+  IPIN (11,0)  Pad: 0  
+  SINK (11,0)  Pad: 0  
+
+
+Net 11 (vcc): global net connecting:
+
+Block vcc (#10) at (7, 0), Pin class 16.
+Block net3_1 (#2) at (7, 1), Pin class 12.
+Block net1_1 (#3) at (10, 1), Pin class 12.
+Block tg4logic_3 (#4) at (7, 2), Pin class 12.
+Block tg4logic_2 (#5) at (6, 1), Pin class 12.
+Block tg4logic_1 (#6) at (10, 2), Pin class 12.
+
+
+Net 12 (gnd): global net connecting:
+
+Block gnd (#9) at (7, 0), Pin class 13.
+Block tg4logic_3 (#4) at (7, 2), Pin class 11.
+Block tg4logic_2 (#5) at (6, 1), Pin class 11.
+Block tg4logic_1 (#6) at (10, 2), Pin class 11.

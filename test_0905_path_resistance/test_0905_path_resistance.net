@@ -1,0 +1,55 @@
+<block name="/home/ubuntu/RASP_Workspace/test_0905_path_resistance//test_0905_path_resistance.net" instance="FPGA_packed_netlist[0]">
+	<inputs>
+		net1_1 
+	</inputs>
+
+	<outputs>
+		out:net1_1 
+	</outputs>
+
+	<globals>
+		
+	</globals>
+
+	<block name="out:net1_1" instance="io[0]" mode="outpad">
+		<inputs>
+			<port name="outpad">net1_1 </port>
+		</inputs>
+		<outputs>
+			<port name="inpad">open </port>
+		</outputs>
+		<globals>
+			<port name="clock">open </port>
+		</globals>
+		<block name="out:net1_1" instance="outpad[0]">
+			<inputs>
+				<port name="outpad">io.outpad[0]->outpad  </port>
+			</inputs>
+			<outputs>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+	</block>
+	<block name="net1_1" instance="io[1]" mode="inpad">
+		<inputs>
+			<port name="outpad">open </port>
+		</inputs>
+		<outputs>
+			<port name="inpad">inpad[0].inpad[0]->inpad  </port>
+		</outputs>
+		<globals>
+			<port name="clock">open </port>
+		</globals>
+		<block name="net1_1" instance="inpad[0]">
+			<inputs>
+			</inputs>
+			<outputs>
+				<port name="inpad">net1_1 </port>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+	</block>
+</block>
+

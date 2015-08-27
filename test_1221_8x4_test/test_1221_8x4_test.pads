@@ -1,0 +1,6 @@
+net1_1 9 0 1 #int[1]
+net2_1 9 0 2 #int[2]
+net3_1 9 0 3 #int[3]
+net4_1 9 0 4 #int[4]
+net5_1 9 0 5 #int[5]
+out:fbout 9 0 0 #ana_buff_out[0]

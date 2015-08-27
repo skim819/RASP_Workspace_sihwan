@@ -1,0 +1,8 @@
+.model test_20150113_30a_test2
+.inputs net2_1 gnd
+.outputs net1_1
+
+# NFET
+.subckt nfet in[0]=net2_1 in[1]=gnd out[0]=net1_1
+
+.end

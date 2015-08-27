@@ -1,0 +1,12 @@
+.model test_0805_sensing_amplifier
+.inputs dummy1 net4_1 net2_1 net3_1
+.outputs dummy2 net1_1 net4_1
+.clocks
+  
+.names dummy1 dummy2
+0 1
+  
+# ota
+.subckt ota in[0]=net2_1 in[1]=net3_1 out[0]=net1_1 #ota_bias =0.000000010000
+  
+.end

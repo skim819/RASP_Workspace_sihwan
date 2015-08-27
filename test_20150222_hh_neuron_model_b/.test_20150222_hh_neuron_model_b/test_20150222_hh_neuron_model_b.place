@@ -1,0 +1,13 @@
+Netlist file: /home/ubuntu/RASP_Workspace/test_20150222_hh_neuron_model_b/test_20150222_hh_neuron_model_b.net   Architecture file: /home/ubuntu/rasp30/vpr2swcs/./arch/rasp3_arch.xml
+Array size: 14 x 14 logic blocks
+
+#block name	x	y	subblk	block number
+#----------	--	--	------	------------
+net2_1 11 1 0
+out:net3_1	15	2	5	#1
+out:net1_1	15	2	2	#2
+out:net2_1	15	1	5	#3
+net7_1		8	0	5	#4
+net6_1		9	0	2	#5
+net5_1		15	1	2	#6
+net4_1		9	0	1	#7

@@ -1,0 +1,33 @@
+.model test_0908_wta
+.inputs net4_1 net6_1 net5_1 net11_1 vdd gnd
+.outputs net9_1 net10_1 net12_1 net13_1
+.globals gnd vcc
+  
+#WTA
+.subckt wta in[0]=net3_1 in[1]=net1_1 out[0]=net7_1 #wta_fg =0
+  
+#WTA
+.subckt wta in[0]=net2_1 in[1]=net1_1 out[0]=net8_1 #wta_fg =0
+  
+# NFET
+.subckt nfet in[0]=net4_1 in[1]=gnd out=net1_1
+  
+# PFET
+.subckt pfet in[0]=net5_1 in[1]=vcc out=net2_1
+  
+# PFET
+.subckt pfet in[0]=net6_1 in[1]=vcc out=net3_1
+  
+# ota
+.subckt ota_buf in[0]=net7_1 out[0]=net12_1 #ota_biasfb =0.000002000000
+  
+# ota
+.subckt ota_buf in[0]=net8_1 out[0]=net13_1 #ota_biasfb =0.000002000000
+  
+# PFET
+.subckt pfet in[0]=net11_1 in[1]=net8_1 out=net10_1
+  
+# PFET
+.subckt pfet in[0]=net11_1 in[1]=net7_1 out=net9_1
+  
+.end

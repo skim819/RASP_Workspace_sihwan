@@ -1,0 +1,46 @@
+Netlist file: /home/ubuntu/RASP_Workspace/test_1202_image_convolution_16x16/test_1202_image_convolution_16x16.net   Architecture file: vpr2swcs/./arch/rasp3_vmm_arch.xml
+Array size: 14 x 14 logic blocks
+
+#block name	x	y	subblk	block number
+#----------	--	--	------	------------
+net27_1		4	2	0	#0
+net25_1		9	3	0	#1
+net23_1		5	3	0	#2
+net19_1		8	4	0	#3
+net16_1		4	4	0	#4
+net9_1		8	2	0	#5
+net37_1		4	1	0	#6
+net12_1		4	3	0	#7
+net35_1		9	2	0	#8
+net33_1		8	3	0	#9
+net31_1		5	4	0	#10
+net3_1		9	1	0	#11
+net6_1		5	1	0	#12
+net13_1		9	4	0	#13
+internal_2_1	5	2	0	#14
+internal_1_1	8	1	0	#15
+net33_internal	11	1	0	#16
+net17_internal	10	1	0	#17
+net44_1		6	3	0	#18
+net43_1		7	4	0	#19
+net36_1		2	1	0	#20
+net38_1		3	1	0	#21
+fbout_6_1	6	2	0	#22
+fbout_5_1	7	2	0	#23
+fbout_4_1	7	3	0	#24
+fbout_3_1	7	1	0	#25
+net40_1		6	1	0	#26
+out:net35_1	14	0	3	#27
+out:net21_1	12	0	0	#28
+out:net12_1	13	0	0	#29
+out:net13_1	12	0	3	#30
+out:net6_1	9	0	0	#31
+gnd		7	0	4	#32
+vcc		7	0	5	#33
+net42_1		11	0	0	#34
+net39_1		9	0	5	#35
+net28_1		9	0	4	#36
+net26_1		9	0	3	#37
+net17_1		8	0	5	#38
+net24_1		9	0	2	#39
+net22_1		9	0	1	#40

@@ -1,0 +1,12 @@
+.model test_0618_c4_bcg_input
+.inputs dummy1 net3_1 net2_1
+.outputs dummy2 net1_1
+.clocks
+  
+.names dummy1 dummy2
+1 0
+  
+# C4
+.subckt c4_blk in[0]=net2_1 in[1]=net3_1 out[0]=net1_1 #c4_ota_bias[1] =0.000000000300&c4_ota_bias[0] =0.000000000035&c4_fg[0] =0&c4_cap_3x[0] =0&c4_cap_2x[0] =0&c4_cap_1x[0] =0&c4_cap_3x[2] =0&c4_cap_2x[2] =0&c4_cap_1x[2] =0&c4_cap_3x[3] =0&c4_cap_2x[3] =0&c4_cap_1x[3] =0&c4_cap_3x[1] =0&c4_cap_2x[1] =0&c4_cap_1x[1] =0
+  
+.end

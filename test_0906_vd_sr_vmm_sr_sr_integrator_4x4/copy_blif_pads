@@ -1,0 +1,1 @@
+rm *.net *.place *.route;rm test_0906_vd_sr_vmm_sr_sr_integrator_4x4.blif -f; cp test_0906_vd_sr_vmm_sr_sr_integrator_4x4.blif_final test_0906_vd_sr_vmm_sr_sr_integrator_4x4.blif; cp test_0906_vd_sr_vmm_sr_sr_integrator_4x4.pads_final test_0906_vd_sr_vmm_sr_sr_integrator_4x4.pads

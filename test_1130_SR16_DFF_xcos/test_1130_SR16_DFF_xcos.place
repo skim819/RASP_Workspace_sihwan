@@ -1,0 +1,38 @@
+Netlist file: /home/ubuntu/RASP_Workspace/test_1130_SR16_DFF_xcos/test_1130_SR16_DFF_xcos.net   Architecture file: vpr2swcs/./arch/rasp3_vmm_arch.xml
+Array size: 14 x 14 logic blocks
+
+#block name	x	y	subblk	block number
+#----------	--	--	------	------------
+net12_1		5	1	0	#0
+net9_1		8	2	0	#1
+net2_internal	10	1	0	#2
+net14_infix4_1	6	2	0	#3
+net14_infix3_1	2	1	0	#4
+net14_infix2_1	6	4	0	#5
+net10_infix4_1	3	1	0	#6
+net10_infix3_1	3	3	0	#7
+net8_infix4_1	7	5	0	#8
+net8_infix3_1	7	4	0	#9
+net13_1		7	3	0	#10
+net8_1		7	2	0	#11
+net3_1		3	2	0	#12
+net1_1		7	1	0	#13
+net16_infix4_1	2	2	0	#14
+net16_infix3_1	6	1	0	#15
+net16_infix2_1	6	3	0	#16
+out:net16_1	4	0	3	#17
+out:net15_1	4	0	0	#18
+out:net6_15	14	0	3	#19
+out:net6_13	14	0	0	#20
+out:net6_11	13	0	3	#21
+out:net6_9	13	0	0	#22
+out:net6_7	12	0	3	#23
+out:net6_5	12	0	0	#24
+out:net6_3	11	0	0	#25
+out:net6_1	9	0	0	#26
+gnd		7	0	4	#27
+vcc		7	0	5	#28
+net10_1		9	0	3	#29
+net2_1		8	0	5	#30
+net7_1		9	0	2	#31
+net11_1		9	0	1	#32

@@ -1,0 +1,10 @@
+sudo tclsh ~/rasp30/prog_assembly/libs/tcl/write_mem2_NoRelease.tcl -start_address 0x4000 -input_file_name sram_test_input
+sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x4000 -length 8192 -output_file_name read_output.txt
+
+sudo tclsh ~/rasp30/prog_assembly/libs/tcl/write_mem2_NoRelease.tcl -start_address 0x47fe -input_file_name sram_test_input_3words
+sudo tclsh ~/rasp30/prog_assembly/libs/tcl/write_mem2_NoRelease.tcl -start_address 0x47fc -input_file_name sram_test_input_3words
+
+sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x47fe -length 10 -output_file_name read_output.txt
+sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x57fe -length 10 -output_file_name read_output.txt
+sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x67fe -length 10 -output_file_name read_output.txt
+sudo tclsh ~/rasp30/prog_assembly/libs/tcl/read_mem2_NoRelease.tcl -start_address 0x77fe -length 10 -output_file_name read_output.txt

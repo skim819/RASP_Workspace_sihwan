@@ -1,0 +1,8 @@
+.model vmm4x4_test
+.inputs net1 
+.outputs net2 
+
+# ota
+.subckt ota_buf in[0]=net1 out[0]=net2 #ota_biasfb =2E-06
+
+.end 	

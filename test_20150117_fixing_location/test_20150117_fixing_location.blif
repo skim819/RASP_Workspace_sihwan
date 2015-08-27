@@ -1,0 +1,22 @@
+.model test_20150117_fixing_location
+.inputs net1_1 net3_1 net4_1 net6_1 vcc gnd
+.outputs net2_1 net5_1
+  
+# tgates for logic
+.subckt tgate in[0]=vcc in[1]=gnd out=tg4logic_1
+  
+.subckt tgate in[0]=vcc in[1]=gnd out=tg4logic_2
+  
+.subckt tgate in[0]=vcc in[1]=gnd out=tg4logic_3
+  
+# D Flip Flop 
+.names net6_1 tg4logic_1 tg4logic_2 tg4logic_3 internal_1_1
+1--- 1
+  
+.subckt latch_custom D[0]=internal_1_1 clk[0]=net3_1 reset[0]=net4_1 Q[0]=net2_1
+  
+# LOOKUP Table-> a
+.names net1_1 tg4logic_1 tg4logic_2 tg4logic_3 net5_1
+1--- 1
+  
+.end

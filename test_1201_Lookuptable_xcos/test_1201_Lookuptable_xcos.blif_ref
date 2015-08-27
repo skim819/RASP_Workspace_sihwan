@@ -1,0 +1,17 @@
+.model test_1201_Lookuptable_xcos
+.inputs net1_1 net2_1 vcc gnd
+.outputs net5_1
+  
+# LOOKUP Table-> LookUp Table
+.names net1_1 net2_1 net3_1 net4_1 net5_1
+01-- 1
+10-- 1
+11-- 1
+  
+# gnd_dig
+.subckt tgate in[0]=vcc in[1]=gnd out=net3_1
+  
+# gnd_dig
+.subckt tgate in[0]=vcc in[1]=gnd out=net4_1
+  
+.end

@@ -1,0 +1,8 @@
+.model c4_test3
+.inputs net1_1 net2_1
+.outputs net3_1
+  
+# C4
+.subckt c4_blk in[0]=net1_1 in[1]=net2_1 out[0]=net3_1 #c4_ota_bias[0] =2.770e-08&c4_ota_bias[1] =2.770e-10&c4_fg[0] =0&c4_ota_small_cap[0] =0&c4_ota_small_cap[1] =0&c4_ota_p_bias[0] =1.000e-07&c4_ota_n_bias[0] =1.000e-07&c4_ota_p_bias[1] =1.000e-07&c4_ota_n_bias[1] =1.000e-07&c4_cap_3x[0] =0&c4_cap_2x[0] =0&c4_cap_1x[0] =0
+  
+.end

@@ -1,0 +1,10 @@
+.model SR16_test
+.inputs clk en DF_reset Ini_CLK 
+.outputs clk_in clk 
+.clocks
+
+# DF1
+.names clk Ini_CLK DF_reset en clk_in
+1--- 1
+
+.end

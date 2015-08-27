@@ -1,0 +1,9 @@
+.model test_0714_arbgen_iopad
+.inputs dummy1 net1_1
+.outputs dummy2 net1_1
+.clocks
+  
+.names dummy1 dummy2
+1 0
+  
+.end

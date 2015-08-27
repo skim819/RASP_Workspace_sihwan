@@ -1,0 +1,13 @@
+.model test_0624_calibration
+.inputs dummy1 net2_1 vdd
+.outputs dummy2 net1_1
+.globals gnd vdd
+.clocks vdd
+  
+.names dummy1 dummy2
+1 0
+  
+# ota
+.subckt ota_buf in[0]=net2_1 out[0]=net1_1 clk=vdd #ota_biasfb =0.000002
+  
+.end

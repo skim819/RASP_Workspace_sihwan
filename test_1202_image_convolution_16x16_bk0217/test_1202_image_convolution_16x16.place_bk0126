@@ -1,0 +1,71 @@
+Netlist file: /home/ubuntu/RASP_Workspace/test_1202_image_convolution_16x16/test_1202_image_convolution_16x16.net   Architecture file: /home/ubuntu/rasp30/vpr2swcs/./arch/rasp3_vmm_arch.xml
+Array size: 14 x 14 logic blocks
+
+#block name	x	y	subblk	block number
+#----------	--	--	------	------------
+net38_1 10 7 0
+net21_1 4 2 0
+net49_1 4 1 0
+net44_1 8 4 0
+net11_1 12 1 0
+net25_1 12 2 0
+net28_1 8 2 0
+net27_1 8 3 0
+net13_1 9 1 0
+net2_1 8 1 0
+internal_3_1 5 1 0
+internal_2_1 9 3 0
+internal_1_1 9 2 0
+net52_16 7 8 0
+net52_15 7 7 0
+net52_14 7 6 0
+net52_13 6 8 0
+net52_12 6 7 0
+net52_11 6 6 0
+net52_10 3 8 0
+net52_9 3 7 0
+net52_8 3 6 0
+net52_7 3 5 0
+net52_6 3 4 0
+net52_5 2 8 0
+net52_4 2 7 0
+net52_3 2 6 0
+net52_2 2 5 0
+net52_1 2 4 0
+net12_1 10 4 0
+net12_internal 10 2 0
+net7_internal 10 1 0
+fbout_7_1	2	2	0	#32
+net32_1 6 2 0
+net35_1		6	1	0	#41
+fbout_6_1	2	3	0	#35
+net47_1 3 2 0
+fbout_5_1		7	3	0	#39
+fbout_4_1		3	1	0	#40
+net24_1 7 4 0
+net42_1 7 1 0
+net10_1 7 2 0
+vcc_dig		6 5 0 #16
+gnd_dig		7	9	0	#43
+tg4logic_3	3	3	0	#44
+tg4logic_2		7	5	0	#22
+tg4logic_1		2	1	0	#33
+out:net38_1	13	0	3	#47
+out:net48_1	14	0	3	#48
+out:net49_1	3	0	3	#49
+out:net47_1	14	0	0	#50
+out:net46_1	13	0	0	#51
+out:net42_1	12	0	0	#52
+gnd		7	0	4	#53
+vcc		7	0	5	#54
+net54_1		12	0	3	#55
+net43_1		3	0	0	#56
+net18_1		4	0	0	#57
+net55_1		8	0	5	#58
+net34_1		4	0	3	#59
+net7_1		11	0	0	#60
+net30_1		9	0	0	#61
+net37_1		9	0	4	#62
+net36_1		9	0	3	#63
+net8_1		9	0	2	#64
+net9_1		9	0	1	#65

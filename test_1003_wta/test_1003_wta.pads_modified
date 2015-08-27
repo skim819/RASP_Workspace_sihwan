@@ -1,0 +1,10 @@
+nbias 9 0 1 #int[1]
+in1 9 0 0 #tgate[0]
+in0 11 0 0 #tgate[0]
+pbias 9 0 2 #int[2]
+out:vcc0 8 0 5 #int[5]
+out:vcc1 9 0 3 #int[3]
+out:out1 12 0 0 #tgate[0]
+out:out0 13 0 0 #tgate[0]
+vcc 0 1 0
+gnd 0 2 0

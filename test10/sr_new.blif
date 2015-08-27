@@ -1,0 +1,8 @@
+.model and_test
+.inputs clk cs D d0 d1 d2 d3 d4 d5 d6 d7 d8 d9 d10 d11
+.outputs com_out clk_out cs_out Q
+.clocks
+  
+.subckt sftreg in[0]=d0 in[1]=d1 in[2]=d2 in[3]=d3 in[4]=d4 in[5]=d5 in[6]=d6 in[7]=d7 in[8]=d8 in[9]=d9 in[10]=d10 in[11]=d11 in[12]=clk in[13]=cs in[14]=D out[0]=com_out out[1]=clk_out out[2]=cs_out out[3]=Q #sftreg_fg =0
+
+.end

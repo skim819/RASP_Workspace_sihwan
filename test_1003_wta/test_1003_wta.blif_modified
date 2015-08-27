@@ -1,0 +1,32 @@
+.model wta
+.inputs nbias in0 in1 pbias vcc gnd
+.outputs vcc0 vcc1 out1 out0
+  
+#WTA
+.subckt wta in[0]=net3_1 in[1]=net1_1 out[0]=sout1 #wta_fg =0
+  
+#WTA
+.subckt wta in[0]=net2_1 in[1]=net1_1 out[0]=sout0 #wta_fg =0
+  
+# NFET
+.subckt nfet in[0]=nbias in[1]=gnd out=net1_1
+  
+# PFET
+.subckt pfet in[0]=in0 in[1]=vcc out=net2_1
+  
+# PFET
+.subckt pfet in[0]=in1 in[1]=vcc out=net3_1
+  
+# PFET
+.subckt pfet in[0]=pbias in[1]=sout0 out=vcc1
+  
+# PFET
+.subckt pfet in[0]=pbias in[1]=sout1 out=vcc0
+
+#OTA
+.subckt ota_buf in[0]=sout0 out[0]=out0 #ota_biasfb =1e-6
+
+#OTA
+.subckt ota_buf in[0]=sout1 out[0]=out1 #ota_biasfb =1e-6
+
+.end

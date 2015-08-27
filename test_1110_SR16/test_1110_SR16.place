@@ -1,0 +1,29 @@
+Netlist file: /home/ubuntu/RASP_Workspace/test_1110_SR16/test_1110_SR16.net   Architecture file: vpr2swcs/./arch/rasp3_vmm_arch.xml
+Array size: 14 x 14 logic blocks
+
+#block name	x	y	subblk	block number
+#----------	--	--	------	------------
+com_out		10	1	0	#0
+out:dummy16	6	0	4	#1
+out:dummy15	6	0	3	#2
+out:dummy14	8	0	4	#3
+out:dummy13	10	0	2	#4
+out:dummy12	8	0	3	#5
+out:dummy11	8	0	2	#6
+out:dummy10	8	0	1	#7
+out:dummy9	10	0	1	#8
+out:dummy8	8	0	0	#9
+out:dummy7	7	0	5	#10
+out:dummy6	7	0	4	#11
+out:dummy5	10	0	0	#12
+out:dummy4	9	0	5	#13
+out:dummy3	9	0	4	#14
+out:dummy2	9	0	3	#15
+out:dummy1	9	0	2	#16
+out:Q		13	0	0	#17
+out:cs_out	12	0	3	#18
+out:clk_out	12	0	0	#19
+out:com_out	11	0	0	#20
+D		8	0	5	#21
+en		9	0	1	#22
+clk		9	0	0	#23

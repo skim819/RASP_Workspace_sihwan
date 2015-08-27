@@ -1,0 +1,8 @@
+.model test_20150113_30a_pfet_gnd
+.inputs net3_1 gnd
+.outputs net1_1
+
+# PFET GOLDEN
+.subckt pfet in[0]=net3_1 in[1]=gnd out=net1_1
+
+.end

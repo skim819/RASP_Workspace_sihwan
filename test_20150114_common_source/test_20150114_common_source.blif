@@ -1,0 +1,11 @@
+.model test_20150114_common_source
+.inputs vcc net1_1 net2_1
+.outputs net4_1 net5_1
+
+# NFET
+.subckt nfet in[0]=net1_1 in[1]=net4_1 out[0]=net5_1
+
+# PFET
+.subckt pfet in[0]=net2_1 in[1]=vcc out=net4_1
+
+.end

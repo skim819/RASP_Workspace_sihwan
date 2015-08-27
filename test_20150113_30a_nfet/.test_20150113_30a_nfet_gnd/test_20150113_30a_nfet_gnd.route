@@ -1,0 +1,33 @@
+Array size: 7 x 14 logic blocks.
+
+Routing:
+
+Net 0 (gnd): global net connecting:
+
+Block gnd (#2) at (7, 0), Pin class 13.
+Block net2_1 (#0) at (5, 1), Pin class 11.
+
+
+Net 1 (net1_1)
+
+SOURCE (8,1)  Pad: 7  
+  OPIN (8,1)  Pad: 7  
+ CHANY (7,1)  Track: 15  
+ CHANX (7,0)  Track: 15  
+ CHANX (6,0)  Track: 15  
+ CHANX (5,0)  Track: 15  
+  IPIN (5,1)  Pin: 12  
+  SINK (5,1)  Class: 12  
+
+
+Net 2 (net2_1)
+
+SOURCE (5,1)  Class: 17  
+  OPIN (5,1)  Pin: 17  
+ CHANY (4,1)  Track: 16  
+ CHANX (5,1)  Track: 16  
+ CHANX (6,1)  Track: 16  
+ CHANX (7,1)  Track: 16  
+ CHANY (7,1)  Track: 16  
+  IPIN (8,1)  Pad: 15  
+  SINK (8,1)  Pad: 15  

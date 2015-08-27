@@ -1,0 +1,8 @@
+Vin 8 0 5 #int[5]
+clk 9 0 2 #int[2]
+en 9 0 3 #int[3]
+D1 9 0 4 #int[4]
+D2 9 0 5 #int[5]
+vd_Vref 9 0 0 #tgate[0]
+out:vd1 11 0 0 #ana_buff_out[0]
+out:vmm_Vout 11 0 3 #ana_buff_out[1]

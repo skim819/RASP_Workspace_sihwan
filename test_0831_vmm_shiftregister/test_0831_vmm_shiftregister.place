@@ -1,0 +1,27 @@
+Netlist file: /home/ubuntu/RASP_Workspace/test_0831_vmm_shiftregister/test_0831_vmm_shiftregister.net   Architecture file: vpr2swcs/./arch/rasp3_vmm_arch.xml
+Array size: 14 x 14 logic blocks
+
+#block name	x	y	subblk	block number
+#----------	--	--	------	------------
+net5		11	1	0	#0
+in4		7	1	0	#1
+in3		10	1	0	#2
+in2		11	2	0	#3
+in1		10	2	0	#4
+vout		3	1	0	#5
+out:in4		13	0	3	#6
+out:in3		13	0	0	#7
+out:in2		12	0	3	#8
+out:in1		12	0	0	#9
+out:vout	11	0	0	#10
+out:Q		14	0	3	#11
+out:csn_out	11	0	3	#12
+out:clk_out	14	0	0	#13
+vref		9	0	0	#14
+D		10	0	1	#15
+cs		10	0	0	#16
+clk		9	0	5	#17
+net4		9	0	4	#18
+net3		9	0	3	#19
+net2		9	0	2	#20
+net1		9	0	1	#21

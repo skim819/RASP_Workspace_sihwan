@@ -1,0 +1,8 @@
+.model test_20150113_30a_pfet_vdd
+.inputs vcc net2_1
+.outputs net1_1
+
+# PFET GOLDEN
+.subckt pfet in[0]=net2_1 in[1]=vcc out=net1_1
+
+.end

@@ -1,0 +1,71 @@
+.model test_1130_SR16_DFF_xcos
+.inputs net4_1 net10_1 net2_1 net3_1 vcc gnd
+.outputs net23_1 net23_3 net23_5 net23_7 net23_9 net23_11 net23_13 net23_15 net22_1 net13_1
+  
+# Shift register 1input 16outputs
+.subckt in2in_x1 in[0]=net2_fbout in[1]=net2_1 in[2]=net2_internal out[0]=net2_fbout
+  
+.subckt sftreg2 in[0]=net5_1 in[1]=net1_1 in[2]=net11_1 out[0]=net2_internal out[1]=net22_1 out[2]=net18_1 out[3]=net13_1 out[4]=net23_1 out[5]=net23_2 out[6]=net23_3 out[7]=net23_4 out[8]=net23_5 out[9]=net23_6 out[10]=net23_7 out[11]=net23_8 out[12]=net23_9 out[13]=net23_10 out[14]=net23_11 out[15]=net23_12 out[16]=net23_13 out[17]=net23_14 out[18]=net23_15 out[19]=net23_16 #sftreg2_fg =0
+  
+# gnd_dig
+.subckt tgate in[0]=vcc in[1]=gnd out=net1_1
+  
+# LOOKUP Table-> 2 Input OR
+.names net3_1 net4_1 net6_1 net7_1 net5_1
+01-- 1
+10-- 1
+11-- 1
+  
+# gnd_dig
+.subckt tgate in[0]=vcc in[1]=gnd out=net6_1
+  
+# gnd_dig
+.subckt tgate in[0]=vcc in[1]=gnd out=net7_1
+  
+# D Flip Flop 
+.subckt tgate in[0]=vcc in[1]=gnd out=net13_infix2_1
+  
+.subckt tgate in[0]=vcc in[1]=gnd out=net13_infix3_1
+  
+.subckt tgate in[0]=vcc in[1]=gnd out=net13_infix4_1
+  
+.names net13_1 net13_infix2_1 net13_infix3_1 net13_infix4_1 net13_internal_1
+1--- 1
+  
+.subckt latch_custom D[0]=net13_internal_1 clk[0]=net17_1 reset[0]=net12_1 Q[0]=net20_1
+  
+# LOOKUP Table-> 2 Input OR
+.names net21_1 net10_1 net9_1 net8_1 net11_1
+01-- 1
+10-- 1
+11-- 1
+  
+# gnd_dig
+.subckt tgate in[0]=vcc in[1]=gnd out=net9_1
+  
+# gnd_dig
+.subckt tgate in[0]=vcc in[1]=gnd out=net8_1
+  
+# LOOKUP Table-> 1 Input INV
+.names net22_1 net14_1 net15_1 net16_1 net17_1
+0--- 1
+  
+# vdd_dig
+.subckt tgate in[0]=vcc in[1]=vcc out=net12_1
+  
+# gnd_dig
+.subckt tgate in[0]=vcc in[1]=gnd out=net15_1
+  
+# gnd_dig
+.subckt tgate in[0]=vcc in[1]=gnd out=net16_1
+  
+# gnd_dig
+.subckt tgate in[0]=vcc in[1]=gnd out=net14_1
+  
+# TGATE
+.subckt tgate in[0]=net19_1 in[1]=net20_1 out=net21_1
+  
+# vdd_dig
+.subckt tgate in[0]=vcc in[1]=vcc out=net19_1
+  
+.end

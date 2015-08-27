@@ -1,0 +1,95 @@
+Array size: 14 x 14 logic blocks.
+
+Routing:
+
+Net 0 (net2_1)
+
+SOURCE (9,0)  Pad: 1  
+  OPIN (9,0)  Pad: 1  
+ CHANX (9,0)  Track: 3  
+ CHANX (8,0)  Track: 3  
+ CHANX (7,0)  Track: 3  
+ CHANX (6,0)  Track: 3  
+ CHANX (5,0)  Track: 3  
+ CHANY (4,1)  Track: 3  
+  IPIN (5,1)  Pin: 0  
+  SINK (5,1)  Class: 0  
+
+
+Net 1 (tg4logic_1)
+
+SOURCE (11,2)  Class: 20  
+  OPIN (11,2)  Pin: 20  
+ CHANX (11,2)  Track: 1  
+ CHANX (10,2)  Track: 1  
+ CHANX (9,2)  Track: 1  
+ CHANX (8,2)  Track: 1  
+ CHANX (7,2)  Track: 1  
+ CHANX (6,2)  Track: 1  
+ CHANY (5,2)  Track: 1  
+ CHANY (5,1)  Track: 1  
+ CHANX (5,0)  Track: 1  
+  IPIN (5,1)  Pin: 1  
+  SINK (5,1)  Class: 1  
+
+
+Net 2 (tg4logic_2)
+
+SOURCE (11,1)  Class: 20  
+  OPIN (11,1)  Pin: 20  
+ CHANX (11,1)  Track: 16  
+ CHANX (10,1)  Track: 16  
+ CHANX (9,1)  Track: 16  
+ CHANX (8,1)  Track: 16  
+ CHANX (7,1)  Track: 16  
+ CHANX (6,1)  Track: 16  
+ CHANY (5,1)  Track: 16  
+  IPIN (5,1)  Pin: 2  
+  SINK (5,1)  Class: 2  
+
+
+Net 3 (net1_1)
+
+SOURCE (11,0)  Pad: 1  
+  OPIN (11,0)  Pad: 1  
+ CHANX (11,0)  Track: 15  
+ CHANX (10,0)  Track: 15  
+ CHANX (9,0)  Track: 15  
+ CHANX (8,0)  Track: 15  
+ CHANX (7,0)  Track: 15  
+ CHANX (6,0)  Track: 15  
+ CHANY (5,1)  Track: 15  
+ CHANX (5,1)  Track: 15  
+  IPIN (5,1)  Pin: 3  
+  SINK (5,1)  Class: 3  
+
+
+Net 4 (net3_1)
+
+SOURCE (5,1)  Class: 16  
+  OPIN (5,1)  Pin: 16  
+ CHANY (4,1)  Track: 16  
+ CHANX (5,0)  Track: 16  
+ CHANX (6,0)  Track: 16  
+ CHANX (7,0)  Track: 16  
+ CHANX (8,0)  Track: 16  
+ CHANX (9,0)  Track: 16  
+ CHANX (10,0)  Track: 16  
+ CHANX (11,0)  Track: 16  
+ CHANX (12,0)  Track: 16  
+  IPIN (12,0)  Pad: 0  
+  SINK (12,0)  Pad: 0  
+
+
+Net 5 (gnd): global net connecting:
+
+Block gnd (#4) at (7, 0), Pin class 13.
+Block tg4logic_2 (#1) at (11, 1), Pin class 11.
+Block tg4logic_1 (#2) at (11, 2), Pin class 11.
+
+
+Net 6 (vcc): global net connecting:
+
+Block vcc (#5) at (7, 0), Pin class 16.
+Block tg4logic_2 (#1) at (11, 1), Pin class 12.
+Block tg4logic_1 (#2) at (11, 2), Pin class 12.

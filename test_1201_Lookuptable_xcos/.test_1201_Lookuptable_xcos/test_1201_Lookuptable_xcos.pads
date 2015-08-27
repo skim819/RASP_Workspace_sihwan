@@ -1,0 +1,5 @@
+gnd 7 0 4 #int[4]
+vcc 7 0 5 #int[5]
+net2_1 9 0 0 #tgate[0]
+out:net1_1 11 0 0 #tgate[0]
+net3_1 12 0 0 #tgate[0]

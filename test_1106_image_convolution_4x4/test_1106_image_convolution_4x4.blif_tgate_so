@@ -1,0 +1,8 @@
+.model tgate_so_test
+.inputs Vin1 Vin2 Vin3 Vin4
+.outputs Vout
+
+# tgate_so
+.subckt tgate_so in[0]=Vin1 in[1]=Vin2 in[2]=Vin3 in[3]=Vin4 in[4]=Vin4 in[5]=Vin4 in[6]=Vin4 in[7]=Vin4 out[0]=Vout #tgate_so_fg =0 
+
+.end

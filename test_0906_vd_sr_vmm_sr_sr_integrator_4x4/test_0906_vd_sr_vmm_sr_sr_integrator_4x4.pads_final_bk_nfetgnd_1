@@ -1,0 +1,2 @@
+Vin 8 0 5 #int[5]
+out:nfet_Vref 14 0 3 #tgate[1]

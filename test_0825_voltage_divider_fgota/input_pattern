@@ -1,0 +1,1 @@
+input = [ linspace(1.5,1.5,500) linspace(1.5,1.8,4) linspace(1.7,1.3,5) linspace(1.2,1.4,3) linspace(1.5,1.8,4) linspace(1.7,1.3,5) linspace(1.2,1.4,3) linspace(1.5,1.8,4) linspace(1.7,1.3,5) linspace(1.2,1.4,3) linspace(1.5,1.8,4) linspace(1.7,1.3,5) linspace(1.2,1.4,3) linspace(1.5,1.8,4) linspace(1.7,1.3,5) linspace(1.2,1.4,3)  linspace(1.5,1.5,100) ];

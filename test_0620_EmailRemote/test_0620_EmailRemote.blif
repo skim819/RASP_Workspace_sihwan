@@ -1,0 +1,12 @@
+.model test_0620_EmailRemote
+.inputs dummy1 net1_1
+.outputs dummy2 net2_1
+.clocks
+  
+.names dummy1 dummy2
+1 0
+  
+# lpf
+.subckt lpf in[0]=net1_1 out[0]=net2_1 #ota_biasfb[0] =0.000001000000 &lpf_fg[0] =0&lpf_cap_3x[0] =0&lpf_cap_2x[0] =0&lpf_cap_1x[0] =0&lpf_cap_3x[2] =0&lpf_cap_2x[2] =0&lpf_cap_1x[2] =0&lpf_cap_3x[3] =0&lpf_cap_2x[3] =0&lpf_cap_1x[3] =0
+  
+.end

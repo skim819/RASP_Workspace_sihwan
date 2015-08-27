@@ -1,0 +1,4 @@
+rm *.net *.place *.route;
+rm test_1106_image_convolution_4x4_logic.blif -f;
+cp test_1106_image_convolution_4x4_logic.blif_modified test_1106_image_convolution_4x4_logic.blif;
+cp test_1106_image_convolution_4x4_logic.pads_modified test_1106_image_convolution_4x4_logic.pads

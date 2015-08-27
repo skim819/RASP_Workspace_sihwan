@@ -1,0 +1,21 @@
+.model test
+.inputs net32_1 net11_1 net3_1 vcc gnd
+.outputs net8_1 
+  
+.subckt tgate in[0]=vcc in[1]=gnd out=aaa
+
+.subckt tgate in[0]=vcc in[1]=vcc out=bbb
+
+# D Flip Flop 
+.subckt tgate in[0]=bbb in[1]=aaa out=dff1_infix2_1
+  
+.subckt tgate in[0]=bbb in[1]=aaa out=dff1_infix3_1
+  
+.subckt tgate in[0]=bbb in[1]=aaa out=dff1_infix4_1
+  
+.names net32_1 dff1_infix2_1 dff1_infix3_1 dff1_infix4_1 internal_1_1
+1--- 1
+  
+.subckt latch_custom D[0]=internal_1_1 clk[0]=net11_1 reset[0]=net3_1 Q[0]=net8_1
+  
+.end

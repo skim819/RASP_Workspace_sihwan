@@ -1,0 +1,27 @@
+.model SR16_test
+.inputs clk en DF_reset Ini_D Ini_CLK aaa 
+.outputs com_out clk_out cs_out Qout dummy1 dummy2 dummy3 dummy4 dummy5 dummy6 dummy7 dummy8 dummy9 dummy10 dummy11 dummy12 dummy13 dummy14 dummy15 dummy16 clk_in Din DF1_Q 
+.clocks
+
+# DF1
+.names DF_reset en clk Ini_CLK clk_in
+--01 1
+--11 1
+--10 1
+
+# DF1
+.names DF_reset en Ini_D DF1_Q Din
+--01 1
+--11 1
+--10 1
+
+# 16-bit shift register 1
+.subckt sftreg2 in[0]=clk_in in[1]=en in[2]=Din out[0]=com_out out[1]=clk_out out[2]=cs_out out[3]=Qout out[4]=dummy1 out[5]=dummy2 out[6]=dummy3 out[7]=dummy4 out[8]=dummy5 out[9]=dummy6 out[10]=dummy7 out[11]=dummy8 out[12]=dummy9 out[13]=dummy10 out[14]=dummy11 out[15]=dummy12 out[16]=dummy13 out[17]=dummy14 out[18]=dummy15 out[19]=dummy16 #sftreg2_fg =0
+
+# DF1
+.names DF_reset en aaa Qout DF1_Q
+--01 1
+--11 1
+--10 1
+
+.end

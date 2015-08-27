@@ -1,0 +1,10 @@
+.model test_1124_integrator_xcos
+.inputs net2_1 net2_2 net1_1 net3_1
+.outputs net4_1 net4_2
+  
+# INTEGRATOR
+.subckt integrator in[0]=net1_1 in[1]=net2_1 in[2]=net3_1 out[0]=net4_1 #integrator_fg =0&cap_3x =0&cap_2x =0&integrator_ota0 =1.00e-06&integrator_ota1 =2.00e-06
+  
+.subckt integrator in[0]=net1_1 in[1]=net2_2 in[2]=net3_1 out[0]=net4_2 #integrator_fg =0&cap_3x =0&cap_2x =0&integrator_ota0 =1.00e-06&integrator_ota1 =2.00e-06
+  
+.end

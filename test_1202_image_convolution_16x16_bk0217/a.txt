@@ -1,0 +1,6 @@
+
+Connecting with the openMSP430 (/dev/ttyUSB1/, 115200 bps)... done
+Connected: target device has 16384B Program Memory and 16384B Data Memory
+
+Load Program Memory... done
+Verify Program Memory... ERROR

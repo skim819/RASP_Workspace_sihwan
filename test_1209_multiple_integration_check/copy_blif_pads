@@ -1,0 +1,4 @@
+rm *.net *.place *.route -f;
+rm test_1130_SR16_DFF_xcos.blif -f;
+cp test_1130_SR16_DFF_xcos.blif_modified test_1130_SR16_DFF_xcos.blif;
+cp test_1130_SR16_DFF_xcos.pads_modified test_1130_SR16_DFF_xcos.pads

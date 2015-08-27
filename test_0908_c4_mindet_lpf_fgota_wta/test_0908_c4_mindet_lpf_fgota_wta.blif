@@ -1,0 +1,25 @@
+.model test_0908_c4_mindet_lpf_fgota_wta
+.inputs vcc net2_1 net5_1
+.outputs net1_1 net4_1 net6_1 net7_1 net8_1
+  
+# C4
+.subckt ota in[0]=net2_1 in[1]=c4sp_1 out[0]=net3_1 #ota_bias =0.000000010000
+  
+.subckt ota in[0]=net3_1 in[1]=c4sp_1 out[0]=c4sp_1 #ota_bias =0.000000000100
+  
+.subckt cap in[0]=c4sp_1 out[0]=net1_1 #cap_3x =0&cap_2x =0&cap_1x =0
+  
+# PEAK DETECTOR
+.subckt ota in[0]=net3_1 in[1]=net8_1 out[0]=peak2_1 #ota_bias =0.000001000000
+  
+.subckt pfet in[0]=net5_1 in[1]=vcc out=net8_1
+  
+.subckt pfet in[0]=peak2_1 in[1]=net8_1 out=net4_1
+  
+# LPF
+.subckt ota in[0]=net8_1 in[1]=net6_1 out[0]=net6_1 #ota_bias =0.000000900000
+  
+# FG OTA
+.subckt fgota in[0]=net6_1 in[1]=net7_1 out[0]=net7_1 #fgota_biasfb =3e-6&ota_p_bias =3e-6&ota_n_bias =8e-9&ota_small_cap =0
+  
+.end

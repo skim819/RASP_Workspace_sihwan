@@ -1,0 +1,7 @@
+.model aa 
+.inputs net1_1 net2_1 net3_1 net4_1 net5_1
+.outputs fbout 
+
+.subckt vmm8x4_in in[0]=net1_1 in[1]=net1_1 in[2]=net1_1 in[3]=net1_1 in[4]=net1_1 in[5]=net1_1 in[6]=net1_1 in[7]=net1_1 in[8]=net2_1 in[9]=net3_1 in[10]=net4_1 in[11]=net5_1 in[12]=fbout out[0]=fbout #vmm8x4_in_target =1.10e-08,2.10e-08,3.10e-08,4.10e-08,5.10e-08,6.10e-08,7.10e-08,8.10e-08,1.20e-08,2.20e-08,3.20e-08,4.20e-08,5.20e-08,6.20e-08,7.20e-08,8.20e-08,1.30e-08,2.30e-08,3.30e-08,4.30e-08,5.30e-08,6.30e-08,7.30e-08,8.30e-08,1.40e-08,2.40e-08,3.40e-08,4.40e-08,5.40e-08,6.40e-08,7.40e-08,8.40e-08
+
+.end

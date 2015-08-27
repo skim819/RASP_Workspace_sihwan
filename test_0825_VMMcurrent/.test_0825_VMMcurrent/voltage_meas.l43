@@ -1,0 +1,1457 @@
+GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43 			page 1
+
+
+   1               	.include "pmem_defs.asm"
+   1               	/*===========================================================================*/
+   2               	/* Copyright (C) 2001 Authors                                                */
+   3               	/*                                                                           */
+   4               	/* This source file may be used and distributed without restriction provided */
+   5               	/* that this copyright statement is not removed from the file and that any   */
+   6               	/* derivative work contains the original copyright notice and the associated */
+   7               	/* disclaimer.                                                               */
+   8               	/*                                                                           */
+   9               	/* This source file is free software; you can redistribute it and/or modify  */
+  10               	/* it under the terms of the GNU Lesser General Public License as published  */
+  11               	/* by the Free Software Foundation; either version 2.1 of the License, or    */
+  12               	/* (at your option) any later version.                                       */
+  13               	/*                                                                           */
+  14               	/* This source is distributed in the hope that it will be useful, but WITHOUT*/
+  15               	/* ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or     */
+  16               	/* FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public       */
+  17               	/* License for more details.                                                 */
+  18               	/*                                                                           */
+  19               	/* You should have received a copy of the GNU Lesser General Public License  */
+  20               	/* along with this source; if not, write to the Free Software Foundation,    */
+  21               	/* Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA        */
+  22               	/*                                                                           */
+  23               	/*===========================================================================*/
+  24               	/*                          MEMORY DEFINITION FILE                           */
+  25               	/*---------------------------------------------------------------------------*/
+  26               	/*                                                                           */
+  27               	/* Author(s):                                                                */
+  28               	/*             - Olivier Girard,    olgirard@gmail.com                       */
+  29               	/*                                                                           */
+  30               	/*---------------------------------------------------------------------------*/
+  31               	/* $Rev: 19 $                                                                */
+  32               	/* $LastChangedBy: olivier.girard $                                          */
+  33               	/* $LastChangedDate: 2009-08-04 23:47:15 +0200 (Tue, 04 Aug 2009) $          */
+  34               	/*===========================================================================*/
+  35               	
+  36               	/*---------------------------------------------------------------------------*/
+  37               	/*                                   SFR                                     */
+  38               	/*---------------------------------------------------------------------------*/
+  39               	.set    IE1,       0x0000
+  40               	.set    IE1_HI,    0x0001
+  41               	.set    IFG1,      0x0002
+  42               	.set    IFG1_HI,   0x0003
+  43               	.set    CPU_ID_LO, 0x0004
+  44               	.set    CPU_ID_HI, 0x0006
+  45               	.set    CPU_NR,    0x0008
+  46               	
+  47               	/*---------------------------------------------------------------------------*/
+  48               	/*                                    GPIOs                                  */
+  49               	/*---------------------------------------------------------------------------*/
+  50               	.set    P1IN,      0x0020
+  51               	.set    P1OUT,     0x0021
+  52               	.set    P1DIR,     0x0022
+  53               	.set    P1IFG,     0x0023
+  54               	.set    P1IES,     0x0024
+  55               	.set    P1IE,      0x0025
+  56               	.set    P1SEL,     0x0026
+GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43 			page 2
+
+
+  57               	
+  58               	.set    P2IN,      0x0028
+  59               	.set    P2OUT,     0x0029
+  60               	.set    P2DIR,     0x002A
+  61               	.set    P2IFG,     0x002B
+  62               	.set    P2IES,     0x002C
+  63               	.set    P2IE,      0x002D
+  64               	.set    P2SEL,     0x002E
+  65               	
+  66               	.set    P3IN,      0x0018
+  67               	.set    P3OUT,     0x0019
+  68               	.set    P3DIR,     0x001A
+  69               	.set    P3SEL,     0x001B
+  70               	
+  71               	.set    P4IN,      0x001C
+  72               	.set    P4OUT,     0x001D
+  73               	.set    P4DIR,     0x001E
+  74               	.set    P4SEL,     0x001F
+  75               		
+  76               	.set    P5IN,      0x0030
+  77               	.set    P5OUT,     0x0031
+  78               	.set    P5DIR,     0x0032
+  79               	.set    P5SEL,     0x0033
+  80               	
+  81               	.set    P6IN,      0x0034
+  82               	.set    P6OUT,     0x0035
+  83               	.set    P6DIR,     0x0036
+  84               	.set    P6SEL,     0x0037
+  85               	
+  86               	/*---------------------------------------------------------------------------*/
+  87               	/*                           BASIC CLOCK MODULE                              */
+  88               	/*---------------------------------------------------------------------------*/
+  89               	.set    BCSCTL1,   0x0057
+  90               	.set    BCSCTL2,   0x0058
+  91               	
+  92               	/*---------------------------------------------------------------------------*/
+  93               	/*                             WATCHDOG TIMER                                */
+  94               	/*---------------------------------------------------------------------------*/
+  95               	.set    WDTCTL,    0x0120
+  96               	
+  97               	/*---------------------------------------------------------------------------*/
+  98               	/*                           HARDWARE MULTIPLIER                             */
+  99               	/*---------------------------------------------------------------------------*/
+ 100               	.set    MPY,       0x0130
+ 101               	.set    MPYS,      0x0132
+ 102               	.set    MAC,       0x0134
+ 103               	.set    MACS,      0x0136
+ 104               	.set    OP2,       0x0138
+ 105               	.set    RESLO,     0x013A
+ 106               	.set    RESHI,     0x013C
+ 107               	.set    SUMEXT,    0x013E
+ 108               	
+ 109               	/*---------------------------------------------------------------------------*/
+ 110               	/*                                 TIMER A                                   */
+ 111               	/*---------------------------------------------------------------------------*/
+ 112               	.set    TACTL,     0x0160
+ 113               	.set    TAR,       0x0170
+GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43 			page 3
+
+
+ 114               	.set    TACCTL0,   0x0162
+ 115               	.set    TACCR0,    0x0172
+ 116               	.set    TACCTL1,   0x0164
+ 117               	.set    TACCR1,    0x0174
+ 118               	.set    TACCTL2,   0x0166
+ 119               	.set    TACCR2,    0x0176
+ 120               	.set    TAIV,      0x012E
+ 121               	
+ 122               	/*---------------------------------------------------------------------------*/
+ 123               	/*                          DATA MEMORY MAPPING                              */
+ 124               	/*---------------------------------------------------------------------------*/
+ 125               	.set    DMEM_BASE, 16384
+ 126               	
+ 127               	.set    DMEM_200,  (DMEM_BASE+0x00)
+ 128               	.set    DMEM_201,  (DMEM_BASE+0x01)
+ 129               	.set    DMEM_202,  (DMEM_BASE+0x02)
+ 130               	.set    DMEM_203,  (DMEM_BASE+0x03)
+ 131               	.set    DMEM_204,  (DMEM_BASE+0x04)
+ 132               	.set    DMEM_205,  (DMEM_BASE+0x05)
+ 133               	.set    DMEM_206,  (DMEM_BASE+0x06)
+ 134               	.set    DMEM_207,  (DMEM_BASE+0x07)
+ 135               	.set    DMEM_208,  (DMEM_BASE+0x08)
+ 136               	.set    DMEM_209,  (DMEM_BASE+0x09)
+ 137               	.set    DMEM_20A,  (DMEM_BASE+0x0A)
+ 138               	.set    DMEM_20B,  (DMEM_BASE+0x0B)
+ 139               	.set    DMEM_20C,  (DMEM_BASE+0x0C)
+ 140               	.set    DMEM_20D,  (DMEM_BASE+0x0D)
+ 141               	.set    DMEM_20E,  (DMEM_BASE+0x0E)
+ 142               	.set    DMEM_20F,  (DMEM_BASE+0x0F)
+ 143               	
+ 144               	.set    DMEM_210,  (DMEM_BASE+0x10)
+ 145               	.set    DMEM_211,  (DMEM_BASE+0x11)
+ 146               	.set    DMEM_212,  (DMEM_BASE+0x12)
+ 147               	.set    DMEM_213,  (DMEM_BASE+0x13)
+ 148               	.set    DMEM_214,  (DMEM_BASE+0x14)
+ 149               	.set    DMEM_215,  (DMEM_BASE+0x15)
+ 150               	.set    DMEM_216,  (DMEM_BASE+0x16)
+ 151               	.set    DMEM_217,  (DMEM_BASE+0x17)
+ 152               	.set    DMEM_218,  (DMEM_BASE+0x18)
+ 153               	.set    DMEM_219,  (DMEM_BASE+0x19)
+ 154               	.set    DMEM_21A,  (DMEM_BASE+0x1A)
+ 155               	.set    DMEM_21B,  (DMEM_BASE+0x1B)
+ 156               	.set    DMEM_21C,  (DMEM_BASE+0x1C)
+ 157               	.set    DMEM_21D,  (DMEM_BASE+0x1D)
+ 158               	.set    DMEM_21E,  (DMEM_BASE+0x1E)
+ 159               	.set    DMEM_21F,  (DMEM_BASE+0x1F)
+ 160               	
+ 161               	.set    DMEM_220,  (DMEM_BASE+0x20)
+ 162               	.set    DMEM_221,  (DMEM_BASE+0x21)
+ 163               	.set    DMEM_222,  (DMEM_BASE+0x22)
+ 164               	.set    DMEM_223,  (DMEM_BASE+0x23)
+ 165               	.set    DMEM_224,  (DMEM_BASE+0x24)
+ 166               	.set    DMEM_225,  (DMEM_BASE+0x25)
+ 167               	.set    DMEM_226,  (DMEM_BASE+0x26)
+ 168               	.set    DMEM_227,  (DMEM_BASE+0x27)
+ 169               	.set    DMEM_228,  (DMEM_BASE+0x28)
+ 170               	.set    DMEM_229,  (DMEM_BASE+0x29)
+GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43 			page 4
+
+
+ 171               	.set    DMEM_22A,  (DMEM_BASE+0x2A)
+ 172               	.set    DMEM_22B,  (DMEM_BASE+0x2B)
+ 173               	.set    DMEM_22C,  (DMEM_BASE+0x2C)
+ 174               	.set    DMEM_22D,  (DMEM_BASE+0x2D)
+ 175               	.set    DMEM_22E,  (DMEM_BASE+0x2E)
+ 176               	.set    DMEM_22F,  (DMEM_BASE+0x2F)
+ 177               	
+ 178               	.set    DMEM_230,  (DMEM_BASE+0x30)
+ 179               	.set    DMEM_231,  (DMEM_BASE+0x31)
+ 180               	.set    DMEM_232,  (DMEM_BASE+0x32)
+ 181               	.set    DMEM_233,  (DMEM_BASE+0x33)
+ 182               	.set    DMEM_234,  (DMEM_BASE+0x34)
+ 183               	.set    DMEM_235,  (DMEM_BASE+0x35)
+ 184               	.set    DMEM_236,  (DMEM_BASE+0x36)
+ 185               	.set    DMEM_237,  (DMEM_BASE+0x37)
+ 186               	.set    DMEM_238,  (DMEM_BASE+0x38)
+ 187               	.set    DMEM_239,  (DMEM_BASE+0x39)
+ 188               	.set    DMEM_23A,  (DMEM_BASE+0x3A)
+ 189               	.set    DMEM_23B,  (DMEM_BASE+0x3B)
+ 190               	.set    DMEM_23C,  (DMEM_BASE+0x3C)
+ 191               	.set    DMEM_23D,  (DMEM_BASE+0x3D)
+ 192               	.set    DMEM_23E,  (DMEM_BASE+0x3E)
+ 193               	.set    DMEM_23F,  (DMEM_BASE+0x3F)
+ 194               	
+ 195               	.set    DMEM_240,  (DMEM_BASE+0x40)
+ 196               	.set    DMEM_241,  (DMEM_BASE+0x41)
+ 197               	.set    DMEM_242,  (DMEM_BASE+0x42)
+ 198               	.set    DMEM_243,  (DMEM_BASE+0x43)
+ 199               	.set    DMEM_244,  (DMEM_BASE+0x44)
+ 200               	.set    DMEM_245,  (DMEM_BASE+0x45)
+ 201               	.set    DMEM_246,  (DMEM_BASE+0x46)
+ 202               	.set    DMEM_247,  (DMEM_BASE+0x47)
+ 203               	.set    DMEM_248,  (DMEM_BASE+0x48)
+ 204               	.set    DMEM_249,  (DMEM_BASE+0x49)
+ 205               	.set    DMEM_24A,  (DMEM_BASE+0x4A)
+ 206               	.set    DMEM_24B,  (DMEM_BASE+0x4B)
+ 207               	.set    DMEM_24C,  (DMEM_BASE+0x4C)
+ 208               	.set    DMEM_24D,  (DMEM_BASE+0x4D)
+ 209               	.set    DMEM_24E,  (DMEM_BASE+0x4E)
+ 210               	.set    DMEM_24F,  (DMEM_BASE+0x4F)
+ 211               	
+ 212               	.set    DMEM_250,  (DMEM_BASE+0x50)
+ 213               	.set    DMEM_251,  (DMEM_BASE+0x51)
+ 214               	.set    DMEM_252,  (DMEM_BASE+0x52)
+ 215               	.set    DMEM_253,  (DMEM_BASE+0x53)
+ 216               	.set    DMEM_254,  (DMEM_BASE+0x54)
+ 217               	.set    DMEM_255,  (DMEM_BASE+0x55)
+ 218               	.set    DMEM_256,  (DMEM_BASE+0x56)
+ 219               	.set    DMEM_257,  (DMEM_BASE+0x57)
+ 220               	.set    DMEM_258,  (DMEM_BASE+0x58)
+ 221               	.set    DMEM_259,  (DMEM_BASE+0x59)
+ 222               	.set    DMEM_25A,  (DMEM_BASE+0x5A)
+ 223               	.set    DMEM_25B,  (DMEM_BASE+0x5B)
+ 224               	.set    DMEM_25C,  (DMEM_BASE+0x5C)
+ 225               	.set    DMEM_25D,  (DMEM_BASE+0x5D)
+ 226               	.set    DMEM_25E,  (DMEM_BASE+0x5E)
+ 227               	.set    DMEM_25F,  (DMEM_BASE+0x5F)
+GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43 			page 5
+
+
+ 228               	
+ 229               	.set    DMEM_260,  (DMEM_BASE+0x60)
+ 230               	.set    DMEM_261,  (DMEM_BASE+0x61)
+ 231               	.set    DMEM_262,  (DMEM_BASE+0x62)
+ 232               	.set    DMEM_263,  (DMEM_BASE+0x63)
+ 233               	.set    DMEM_264,  (DMEM_BASE+0x64)
+ 234               	.set    DMEM_265,  (DMEM_BASE+0x65)
+ 235               	.set    DMEM_266,  (DMEM_BASE+0x66)
+ 236               	.set    DMEM_267,  (DMEM_BASE+0x67)
+ 237               	.set    DMEM_268,  (DMEM_BASE+0x68)
+ 238               	.set    DMEM_269,  (DMEM_BASE+0x69)
+ 239               	.set    DMEM_26A,  (DMEM_BASE+0x6A)
+ 240               	.set    DMEM_26B,  (DMEM_BASE+0x6B)
+ 241               	.set    DMEM_26C,  (DMEM_BASE+0x6C)
+ 242               	.set    DMEM_26D,  (DMEM_BASE+0x6D)
+ 243               	.set    DMEM_26E,  (DMEM_BASE+0x6E)
+ 244               	.set    DMEM_26F,  (DMEM_BASE+0x6F)
+ 245               	
+ 246               	.set    DMEM_300,  (DMEM_BASE+0x100)
+ 247               	
+ 248               	/*---------------------------------------------------------------------------*/
+ 249               	/*                        PROGRAM MEMORY MAPPING                             */
+ 250               	/*---------------------------------------------------------------------------*/
+ 251               	.set    PMEM_LENGTH, 16384
+ 252               	
+ 253               	/*---------------------------------------------------------------------------*/
+ 254               	/*                        Programming register addresses                     */
+ 255               	/*---------------------------------------------------------------------------*/
+ 256               	.set    DRAIN_CTRL,     0x0B00
+ 257               	.set    GATE_S,         0x0B02
+ 258               	.set    ADC,            0x0B04
+ 259               	.set    PULSE_CTRL,     0x0B06
+ 260               	.set    ROW_SEL,        0x0B08
+ 261               	.set    COL_SEL,        0x0B0A
+ 262               	.set    PROG_BITS,      0x0B0C
+ 263               	.set    TUN_MUX,        0x0B0E
+ 264               	.set    GATE_US_P,      0x0B10
+ 265               	.set    GATE_US_N,      0x0B12
+ 266               	.set    BIAS_DACS,      0x0B14
+ 267               	.set    GP_PER_1,       0x0160
+ 268               	.set    GP_PER_2,       0x0162
+ 269               	.set    GP_PER_3,       0x0164
+ 270               	.set    GP_PER_4,       0x0166
+ 271               	
+   2               		
+   3               	.set	DAC_01_00, 0x01D0
+   4               	.set	DAC_03_02, 0x01D2
+   5               	.set	DAC_05_04, 0x01D4
+   6               	.set	DAC_07_06, 0x01D6
+   7               	.set	DAC_09_08, 0x01D8
+   8               	
+   9               	.global main
+  10               	
+  11               	main:
+  12 0000 3140 5040 	        mov     #DMEM_250, r1           ; Initialize stack pointer
+  13 0004 3740 0060 		mov	#0x6000, r7
+  14 0008 B240 1000 	        mov	#0x0010, &BCSCTL2	; Divide clock 20MHz
+GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43 			page 6
+
+
+  14      5800 
+  15 000e B240 805A 		mov	#0x5A80, &WDTCTL	; Watchdog controller 
+  15      2001 
+  16 0014 32C2      		dint
+  17 0016 B240 6400 	        mov     #0x0064, &GP_PER_1      ; sel_avd_25 = On, IVDD to 2.5V, Set vtun_ext = On
+  17      6001 
+  18 001c A243 0E0B 		mov	#0x0002, &TUN_MUX
+  19 0020 8243 080B 	 	mov     #0, &ROW_SEL
+  20 0024 8243 0A0B 	        mov     #0, &COL_SEL
+  21               		;mov	#0x0000, &GATE_S	; gate_s = 0.6V (@ IVDD 2.5V)
+  22 0028 B240 4000 		mov	#0x0040, &GATE_S	; gate_s = gnd
+  22      020B 
+  23               		;mov	#0x0000, &GATE_US_P	; gate_us_p = 0.6V (@ IVDD 2.5V)
+  24 002e B240 4000 		mov	#0x0040, &GATE_US_P	; gate_us_p = gnd
+  24      100B 
+  25               		;mov	#0x0000, &GATE_US_N	; gate_us_n = 0.6V (@ IVDD 2.5V)
+  26 0034 B240 4000 		mov	#0x0040, &GATE_US_N	; gate_us_n = gnd
+  26      120B 
+  27               		;mov     #0xBF04, &GP_PER_3      ; Vtun_ext = 5V, enable 6V, esd=6v, dvdd2.5=On,
+  28               	
+  29 003a B240 043F 	        mov     #0x3F04, &GP_PER_3      ; Vtun_ext = 5V, enable 6V, esd=6v, dvdd2.5=On, loc_dreset=
+  29      6401 
+  30 0040 1543      	        mov     #1, r5             	; Number of ms
+  31 0042 B012 0000 		call    #wait_ms                ; Call the waiting function
+  32               	
+  33 0046 B240 041F 		mov     #0x1F04, &GP_PER_3      ; Vtun_ext = 5V, enable 6V, esd=6v, dvdd2.5=On, loc_dreset=0,
+  33      6401 
+  34               						; adc_pwd<1> = 0 (ADC_0, 0: normal, 1: power down)
+  35 004c B240 A400 		mov	#0x00A4, &DRAIN_CTRL	; 101 cascode off, no use DAC, i2v mux control=fg_inn
+  35      000B 
+  36 0052 8243 0C0B 		mov     #0x0000, &PROG_BITS     ; PROG = 0, OV_N = don't care, MEAS_ADC = 0, CLEAR_N = 0
+  37               	
+  38               	;	mov     #0x0000, &PROG_BITS     ; PROG = 0, OV_N = don't care, MEAS_ADC = 0, CLEAR_N = 0
+  39 0056 3540 3200 		mov     #50, r5             	; Number of ms
+  40 005a B012 0000 		call    #wait_ms                ; Call the waiting function
+  41               	
+  42 005e 3B40 0043 	        mov	#0x4300, r11
+  43 0062 2C4B      		mov	@r11, r12		; length of vector 
+  44 0064 2B53      		incd	r11
+  45 0066 2D4B      		mov	@r11, r13		; DAC information
+  46 0068 2B53      		incd	r11
+  47 006a 2E4B      		mov	@r11, r14		; Time interval (ms)
+  48               	loop_start:
+  49               	;	mov     #0x0000, &PROG_BITS     ; PROG = 0, OV_N = don't care, MEAS_ADC = 0, CLEAR_N = 0
+  50               	
+  51 006c 094D      	        mov     r13, r9
+  52 006e 39C0 FEFF 		bic	#0xfffe, r9
+  53 0072 0993      	        cmp	#0, r9  	        ; If DAC0 = 0, skip setting DAC0
+  54 0074 0A24      		jeq	skip_DAC0_set
+  55 0076 2B53      	        incd	r11
+  56 0078 294B      	        mov     @r11, r9
+  57 007a 0969      	        rlc     r9                     ; 4 rlc & 4 rrc to make the calculation same!
+  58 007c 0969      	        rlc     r9
+  59 007e 0969      	        rlc     r9
+  60 0080 0969      	        rlc     r9
+  61 0082 0910      	        rrc     r9
+  62 0084 0910      	        rrc     r9
+GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43 			page 7
+
+
+  63 0086 0910      	        rrc     r9
+  64 0088 0910      	        rrc     r9
+  65               	skip_DAC0_set:
+  66 008a 0A4D      	        mov     r13, r10
+  67 008c 0A10      	        rrc     r10
+  68 008e 3AC0 FEFF 		bic	#0xfffe, r10
+  69 0092 0A93      	        cmp	#0, r10  	        ; If DAC1 = 0, skip setting DAC1
+  70 0094 0A24      		jeq	skip_DAC1_set
+  71 0096 2B53      	        incd	r11
+  72 0098 2A4B      	        mov     @r11, r10
+  73 009a 0A6A      	        rlc     r10
+  74 009c 0A6A      	        rlc     r10
+  75 009e 0A6A      	        rlc     r10
+  76 00a0 0A6A      	        rlc     r10
+  77 00a2 0A6A      	        rlc     r10
+  78 00a4 0A6A      	        rlc     r10
+  79 00a6 0A6A      	        rlc     r10
+  80 00a8 0A6A      	        rlc     r10
+  81               	skip_DAC1_set:
+  82 00aa 0A59      	        add     r9, r10
+  83 00ac 824A D001 	        mov	r10, &DAC_01_00	        ; get the DAC_01_00's value
+  84               	
+  85 00b0 094D      	        mov     r13, r9
+  86 00b2 0910      	        rrc     r9
+  87 00b4 0910      	        rrc     r9
+  88 00b6 39C0 FEFF 		bic	#0xfffe, r9
+  89 00ba 0993      	        cmp	#0, r9  	        ; If DAC2 = 0, skip setting DAC2
+  90 00bc 0A24      		jeq	skip_DAC2_set
+  91 00be 2B53      	        incd	r11
+  92 00c0 294B      	        mov     @r11, r9
+  93 00c2 0969      	        rlc     r9                     ; 4 rlc & 4 rrc to make the calculation same!
+  94 00c4 0969      	        rlc     r9
+  95 00c6 0969      	        rlc     r9
+  96 00c8 0969      	        rlc     r9
+  97 00ca 0910      	        rrc     r9
+  98 00cc 0910      	        rrc     r9
+  99 00ce 0910      	        rrc     r9
+ 100 00d0 0910      	        rrc     r9
+ 101               	skip_DAC2_set:
+ 102 00d2 0A4D      	        mov     r13, r10
+ 103 00d4 0A10      	        rrc     r10
+ 104 00d6 0A10      	        rrc     r10
+ 105 00d8 0A10      	        rrc     r10
+ 106 00da 3AC0 FEFF 		bic	#0xfffe, r10
+ 107 00de 0A93      	        cmp	#0, r10  	        ; If DAC3 = 0, skip setting DAC3
+ 108 00e0 0A24      		jeq	skip_DAC3_set
+ 109 00e2 2B53      	        incd	r11
+ 110 00e4 2A4B      	        mov     @r11, r10
+ 111 00e6 0A6A      	        rlc     r10
+ 112 00e8 0A6A      	        rlc     r10
+ 113 00ea 0A6A      	        rlc     r10
+ 114 00ec 0A6A      	        rlc     r10
+ 115 00ee 0A6A      	        rlc     r10
+ 116 00f0 0A6A      	        rlc     r10
+ 117 00f2 0A6A      	        rlc     r10
+ 118 00f4 0A6A      	        rlc     r10
+ 119               	skip_DAC3_set:
+GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43 			page 8
+
+
+ 120 00f6 0A59      	        add     r9, r10
+ 121 00f8 824A D201 	        mov	r10, &DAC_03_02	        ; get the DAC_03_02's value
+ 122               	
+ 123 00fc 094D      	        mov     r13, r9
+ 124 00fe 0910      	        rrc     r9
+ 125 0100 0910      	        rrc     r9
+ 126 0102 0910      	        rrc     r9
+ 127 0104 0910      	        rrc     r9
+ 128 0106 39C0 FEFF 		bic	#0xfffe, r9
+ 129 010a 0993      	        cmp	#0, r9  	        ; If DAC4 = 0, skip setting DAC4
+ 130 010c 0A24      		jeq	skip_DAC4_set
+ 131 010e 2B53      	        incd	r11
+ 132 0110 294B      	        mov     @r11, r9
+ 133 0112 0969      	        rlc     r9                     ; 4 rlc & 4 rrc to make the calculation same!
+ 134 0114 0969      	        rlc     r9
+ 135 0116 0969      	        rlc     r9
+ 136 0118 0969      	        rlc     r9
+ 137 011a 0910      	        rrc     r9
+ 138 011c 0910      	        rrc     r9
+ 139 011e 0910      	        rrc     r9
+ 140 0120 0910      	        rrc     r9
+ 141               	skip_DAC4_set:
+ 142 0122 0A4D      	        mov     r13, r10
+ 143 0124 0A10      	        rrc     r10
+ 144 0126 0A10      	        rrc     r10
+ 145 0128 0A10      	        rrc     r10
+ 146 012a 0A10      	        rrc     r10
+ 147 012c 0A10      	        rrc     r10
+ 148 012e 3AC0 FEFF 		bic	#0xfffe, r10
+ 149 0132 0A93      	        cmp	#0, r10  	        ; If DAC5 = 0, skip setting DAC5
+ 150 0134 0A24      		jeq	skip_DAC5_set
+ 151 0136 2B53      	        incd	r11
+ 152 0138 2A4B      	        mov     @r11, r10
+ 153 013a 0A6A      	        rlc     r10
+ 154 013c 0A6A      	        rlc     r10
+ 155 013e 0A6A      	        rlc     r10
+ 156 0140 0A6A      	        rlc     r10
+ 157 0142 0A6A      	        rlc     r10
+ 158 0144 0A6A      	        rlc     r10
+ 159 0146 0A6A      	        rlc     r10
+ 160 0148 0A6A      	        rlc     r10
+ 161               	skip_DAC5_set:
+ 162 014a 0A59      	        add     r9, r10
+ 163 014c 824A D401 	        mov	r10, &DAC_05_04	        ; get the DAC_05_04's value
+ 164               	
+ 165 0150 094D      	        mov     r13, r9
+ 166 0152 0910      	        rrc     r9
+ 167 0154 0910      	        rrc     r9
+ 168 0156 0910      	        rrc     r9
+ 169 0158 0910      	        rrc     r9
+ 170 015a 0910      	        rrc     r9
+ 171 015c 0910      	        rrc     r9
+ 172 015e 39C0 FEFF 		bic	#0xfffe, r9
+ 173 0162 0993      	        cmp	#0, r9  	        ; If DAC6 = 0, skip setting DAC6
+ 174 0164 0A24      		jeq	skip_DAC6_set
+ 175 0166 2B53      	        incd	r11
+ 176 0168 294B      	        mov     @r11, r9
+GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43 			page 9
+
+
+ 177 016a 0969      	        rlc     r9                     ; 4 rlc & 4 rrc to make the calculation same!
+ 178 016c 0969      	        rlc     r9
+ 179 016e 0969      	        rlc     r9
+ 180 0170 0969      	        rlc     r9
+ 181 0172 0910      	        rrc     r9
+ 182 0174 0910      	        rrc     r9
+ 183 0176 0910      	        rrc     r9
+ 184 0178 0910      	        rrc     r9
+ 185               	skip_DAC6_set:
+ 186 017a 0A4D      	        mov     r13, r10
+ 187 017c 0A10      	        rrc     r10
+ 188 017e 0A10      	        rrc     r10
+ 189 0180 0A10      	        rrc     r10
+ 190 0182 0A10      	        rrc     r10
+ 191 0184 0A10      	        rrc     r10
+ 192 0186 0A10      	        rrc     r10
+ 193 0188 0A10      	        rrc     r10
+ 194 018a 3AC0 FEFF 		bic	#0xfffe, r10
+ 195 018e 0A93      	        cmp	#0, r10  	        ; If DAC7 = 0, skip setting DAC7
+ 196 0190 0A24      		jeq	skip_DAC7_set
+ 197 0192 2B53      	        incd	r11
+ 198 0194 2A4B      	        mov     @r11, r10
+ 199 0196 0A6A      	        rlc     r10
+ 200 0198 0A6A      	        rlc     r10
+ 201 019a 0A6A      	        rlc     r10
+ 202 019c 0A6A      	        rlc     r10
+ 203 019e 0A6A      	        rlc     r10
+ 204 01a0 0A6A      	        rlc     r10
+ 205 01a2 0A6A      	        rlc     r10
+ 206 01a4 0A6A      	        rlc     r10
+ 207               	skip_DAC7_set:
+ 208 01a6 0A59      	        add     r9, r10
+ 209 01a8 824A D601 	        mov	r10, &DAC_07_06	        ; get the DAC_07_06's value
+ 210               	
+ 211 01ac 094D      	        mov     r13, r9
+ 212 01ae 0910      	        rrc     r9
+ 213 01b0 0910      	        rrc     r9
+ 214 01b2 0910      	        rrc     r9
+ 215 01b4 0910      	        rrc     r9
+ 216 01b6 0910      	        rrc     r9
+ 217 01b8 0910      	        rrc     r9
+ 218 01ba 0910      	        rrc     r9
+ 219 01bc 0910      	        rrc     r9
+ 220 01be 39C0 FEFF 		bic	#0xfffe, r9
+ 221 01c2 0993      	        cmp	#0, r9  	        ; If DAC8 = 0, skip setting DAC8
+ 222 01c4 0A24      		jeq	skip_DAC8_set
+ 223 01c6 2B53      	        incd	r11
+ 224 01c8 294B      	        mov     @r11, r9
+ 225 01ca 0969      	        rlc     r9                     ; 4 rlc & 4 rrc to make the calculation same!
+ 226 01cc 0969      	        rlc     r9
+ 227 01ce 0969      	        rlc     r9
+ 228 01d0 0969      	        rlc     r9
+ 229 01d2 0910      	        rrc     r9
+ 230 01d4 0910      	        rrc     r9
+ 231 01d6 0910      	        rrc     r9
+ 232 01d8 0910      	        rrc     r9
+ 233               	skip_DAC8_set:
+GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43 			page 10
+
+
+ 234 01da 0A4D      	        mov     r13, r10
+ 235 01dc 0A10      	        rrc     r10
+ 236 01de 0A10      	        rrc     r10
+ 237 01e0 0A10      	        rrc     r10
+ 238 01e2 0A10      	        rrc     r10
+ 239 01e4 0A10      	        rrc     r10
+ 240 01e6 0A10      	        rrc     r10
+ 241 01e8 0A10      	        rrc     r10
+ 242 01ea 0A10      	        rrc     r10
+ 243 01ec 0A10      	        rrc     r10
+ 244 01ee 3AC0 FEFF 		bic	#0xfffe, r10
+ 245 01f2 0A93      	        cmp	#0, r10  	        ; If DAC9 = 0, skip setting DAC9
+ 246 01f4 0A24      		jeq	skip_DAC9_set
+ 247 01f6 2B53      	        incd	r11
+ 248 01f8 2A4B      	        mov     @r11, r10
+ 249 01fa 0A6A      	        rlc     r10
+ 250 01fc 0A6A      	        rlc     r10
+ 251 01fe 0A6A      	        rlc     r10
+ 252 0200 0A6A      	        rlc     r10
+ 253 0202 0A6A      	        rlc     r10
+ 254 0204 0A6A      	        rlc     r10
+ 255 0206 0A6A      	        rlc     r10
+ 256 0208 0A6A      	        rlc     r10
+ 257               	skip_DAC9_set:
+ 258 020a 0A59      	        add     r9, r10
+ 259 020c 824A D801 	        mov	r10, &DAC_09_08	        ; get the DAC_09_08's value
+ 260               	
+ 261 0210 054E      	        mov     r14, r5             	; Number of ms
+ 262 0212 1583      	        sub     #1, r5
+ 263 0214 0593      		cmp	#0, r5
+ 264 0216 0224      		jeq	wait_skip
+ 265               	        ;call    #wait_ms                ; Call the waiting function
+ 266 0218 B012 0000 	        call    #wait_10us                ; Call the waiting function
+ 267               	wait_skip:
+ 268               	
+ 269               	;	mov	#0x4200, r8
+ 270               	;	mov	@r8, r15		; No. of FGs 
+ 271               	;measure_start:
+ 272               	;	incd	r8
+ 273               	;	mov     @r8,    &ROW_SEL
+ 274               	;	incd	r8
+ 275               	;        mov     @r8,    &COL_SEL
+ 276               	;
+ 277               	;	mov     #0x0000, &PROG_BITS     ; PROG = 0, OV_N = don't care, MEAS_ADC = 0, CLEAR_N = 0
+ 278               	;        mov     #0x3000, &PROG_BITS     ; PROG = 0, OV_N = don't care, MEAS_ADC = 1, CLEAR_N = 1
+ 279               	;        mov     #5, r5             	; Number of ms
+ 280               	;	call    #wait_ms                ; Call the waiting function
+ 281               	;        mov     #0, &ADC                ; Write counter value into ADC via dummy write
+ 282               	;	mov     &ADC, @r7	        ; Get value in counter
+ 283               	;        incd	r7
+ 284               	;        dec.w   r15
+ 285               	;        jz      measure_end
+ 286               	;	jmp	measure_start
+ 287               	;measure_end:
+ 288 021c 1C83      	        dec.w   r12
+ 289 021e 0124      	        jz      loop_end
+ 290 0220 253F      		jmp	loop_start
+GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43 			page 11
+
+
+ 291               	loop_end:
+ 292 0222 B743 0000 	        mov	#0xFFFF, @r7		; Data End
+ 293               	
+ 294               	        /* ----------------------         END OF TEST        --------------- */
+ 295               	end_of_test:
+ 296 0226 8243 5800 		mov	#0x0000, &BCSCTL2
+ 297 022a 0343      		nop
+ 298 022c 3043      		br #0xffff
+ 299               	
+ 300               	wait_ms:
+ 301 022e 3440 FC0C 	        mov     #3324, r4               ; Number of clock cycles in a ms (chariterized by pulse mea
+ 302 0232 0644      	        mov     r4, r6                  ; Get number of inner loop iterations
+ 303               	wait_loop:
+ 304 0234 1683      	        dec.w   r6                      ; Subtract from number of clk cycles.Execution takes 2 cloc
+ 305 0236 FE23      	        jnz     wait_loop               ; Test for loop termination. Execution takes 2 clock cycles
+ 306 0238 0644      	        mov     r4, r6                  ; Reset number of clock cycles
+ 307 023a 1583      	        dec.w   r5                      ; Decrement number of ms total
+ 308 023c FB23      	        jnz     wait_loop               ; Keep looping if necessary
+ 309 023e 3041      	        ret     
+ 310               	
+ 311               	wait_10us:
+ 312 0240 3440 2200 	        mov     #34, r4                 ; Number of clock cycles in 100 us (3324 was divided by 100
+ 313 0244 0644      	        mov     r4, r6                  ; Get number of inner loop iterations
+ 314               	wait_10us_loop:
+ 315 0246 1683      	        dec.w   r6                      ; Subtract from number of clk cycles.Execution takes 2 cloc
+ 316 0248 FE23      	        jnz     wait_10us_loop          ; Test for loop termination. Execution takes 2 clock cycles
+ 317 024a 0644      	        mov     r4, r6                  ; Reset number of clock cycles
+ 318 024c 1583      	        dec.w   r5                      ; Decrement number of ms total
+ 319 024e FB23      	        jnz     wait_10us_loop          ; Keep looping if necessary
+ 320 0250 3041      	        ret   
+ 321               	 
+ 322               	        /* ----------------------         INTERRUPT VECTORS  --------------- */
+ 323               	
+ 324               	.section .vectors, "a"
+ 325 0000 0000      	.word end_of_test  ; Interrupt  0 (lowest priority)    <unused>
+ 326 0002 0000      	.word end_of_test  ; Interrupt  1                      <unused>
+ 327 0004 0000      	.word end_of_test  ; Interrupt  2                      <unused>
+ 328 0006 0000      	.word end_of_test  ; Interrupt  3                      <unused>
+ 329 0008 0000      	.word end_of_test  ; Interrupt  4                      <unused>
+ 330 000a 0000      	.word end_of_test  ; Interrupt  5                      <unused>
+ 331 000c 0000      	.word end_of_test  ; Interrupt  6                      <unused>
+ 332 000e 0000      	.word end_of_test  ; Interrupt  7                      <unused>
+ 333 0010 0000      	.word end_of_test  ; Interrupt  8                      <unused>
+ 334 0012 0000      	.word end_of_test  ; Interrupt  9                      <unused>
+ 335 0014 0000      	.word end_of_test  ; Interrupt 10                      Watchdog timer
+ 336 0016 0000      	.word end_of_test  ; Interrupt 11                      <unused>
+ 337 0018 0000      	.word end_of_test  ; Interrupt 12                      <unused>
+ 338 001a 0000      	.word end_of_test  ; Interrupt 13                      <unused>
+ 339 001c 0000      	.word end_of_test  ; Interrupt 14                      NMI
+ 340 001e 0000      	.word main         ; Interrupt 15 (highest priority)   RESET
+GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43 			page 12
+
+
+DEFINED SYMBOLS
+       pmem_defs.asm:39     *ABS*:00000000 IE1
+       pmem_defs.asm:40     *ABS*:00000001 IE1_HI
+       pmem_defs.asm:41     *ABS*:00000002 IFG1
+       pmem_defs.asm:42     *ABS*:00000003 IFG1_HI
+       pmem_defs.asm:43     *ABS*:00000004 CPU_ID_LO
+       pmem_defs.asm:44     *ABS*:00000006 CPU_ID_HI
+       pmem_defs.asm:45     *ABS*:00000008 CPU_NR
+       pmem_defs.asm:50     *ABS*:00000020 P1IN
+       pmem_defs.asm:51     *ABS*:00000021 P1OUT
+       pmem_defs.asm:52     *ABS*:00000022 P1DIR
+       pmem_defs.asm:53     *ABS*:00000023 P1IFG
+       pmem_defs.asm:54     *ABS*:00000024 P1IES
+       pmem_defs.asm:55     *ABS*:00000025 P1IE
+       pmem_defs.asm:56     *ABS*:00000026 P1SEL
+       pmem_defs.asm:58     *ABS*:00000028 P2IN
+       pmem_defs.asm:59     *ABS*:00000029 P2OUT
+       pmem_defs.asm:60     *ABS*:0000002a P2DIR
+       pmem_defs.asm:61     *ABS*:0000002b P2IFG
+       pmem_defs.asm:62     *ABS*:0000002c P2IES
+       pmem_defs.asm:63     *ABS*:0000002d P2IE
+       pmem_defs.asm:64     *ABS*:0000002e P2SEL
+       pmem_defs.asm:66     *ABS*:00000018 P3IN
+       pmem_defs.asm:67     *ABS*:00000019 P3OUT
+       pmem_defs.asm:68     *ABS*:0000001a P3DIR
+       pmem_defs.asm:69     *ABS*:0000001b P3SEL
+       pmem_defs.asm:71     *ABS*:0000001c P4IN
+       pmem_defs.asm:72     *ABS*:0000001d P4OUT
+       pmem_defs.asm:73     *ABS*:0000001e P4DIR
+       pmem_defs.asm:74     *ABS*:0000001f P4SEL
+       pmem_defs.asm:76     *ABS*:00000030 P5IN
+       pmem_defs.asm:77     *ABS*:00000031 P5OUT
+       pmem_defs.asm:78     *ABS*:00000032 P5DIR
+       pmem_defs.asm:79     *ABS*:00000033 P5SEL
+       pmem_defs.asm:81     *ABS*:00000034 P6IN
+       pmem_defs.asm:82     *ABS*:00000035 P6OUT
+       pmem_defs.asm:83     *ABS*:00000036 P6DIR
+       pmem_defs.asm:84     *ABS*:00000037 P6SEL
+       pmem_defs.asm:89     *ABS*:00000057 BCSCTL1
+       pmem_defs.asm:90     *ABS*:00000058 BCSCTL2
+       pmem_defs.asm:95     *ABS*:00000120 WDTCTL
+       pmem_defs.asm:100    *ABS*:00000130 MPY
+       pmem_defs.asm:101    *ABS*:00000132 MPYS
+       pmem_defs.asm:102    *ABS*:00000134 MAC
+       pmem_defs.asm:103    *ABS*:00000136 MACS
+       pmem_defs.asm:104    *ABS*:00000138 OP2
+       pmem_defs.asm:105    *ABS*:0000013a RESLO
+       pmem_defs.asm:106    *ABS*:0000013c RESHI
+       pmem_defs.asm:107    *ABS*:0000013e SUMEXT
+       pmem_defs.asm:112    *ABS*:00000160 TACTL
+       pmem_defs.asm:113    *ABS*:00000170 TAR
+       pmem_defs.asm:114    *ABS*:00000162 TACCTL0
+       pmem_defs.asm:115    *ABS*:00000172 TACCR0
+       pmem_defs.asm:116    *ABS*:00000164 TACCTL1
+       pmem_defs.asm:117    *ABS*:00000174 TACCR1
+       pmem_defs.asm:118    *ABS*:00000166 TACCTL2
+       pmem_defs.asm:119    *ABS*:00000176 TACCR2
+GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43 			page 13
+
+
+       pmem_defs.asm:120    *ABS*:0000012e TAIV
+       pmem_defs.asm:125    *ABS*:00004000 DMEM_BASE
+       pmem_defs.asm:127    *ABS*:00004000 DMEM_200
+       pmem_defs.asm:128    *ABS*:00004001 DMEM_201
+       pmem_defs.asm:129    *ABS*:00004002 DMEM_202
+       pmem_defs.asm:130    *ABS*:00004003 DMEM_203
+       pmem_defs.asm:131    *ABS*:00004004 DMEM_204
+       pmem_defs.asm:132    *ABS*:00004005 DMEM_205
+       pmem_defs.asm:133    *ABS*:00004006 DMEM_206
+       pmem_defs.asm:134    *ABS*:00004007 DMEM_207
+       pmem_defs.asm:135    *ABS*:00004008 DMEM_208
+       pmem_defs.asm:136    *ABS*:00004009 DMEM_209
+       pmem_defs.asm:137    *ABS*:0000400a DMEM_20A
+       pmem_defs.asm:138    *ABS*:0000400b DMEM_20B
+       pmem_defs.asm:139    *ABS*:0000400c DMEM_20C
+       pmem_defs.asm:140    *ABS*:0000400d DMEM_20D
+       pmem_defs.asm:141    *ABS*:0000400e DMEM_20E
+       pmem_defs.asm:142    *ABS*:0000400f DMEM_20F
+       pmem_defs.asm:144    *ABS*:00004010 DMEM_210
+       pmem_defs.asm:145    *ABS*:00004011 DMEM_211
+       pmem_defs.asm:146    *ABS*:00004012 DMEM_212
+       pmem_defs.asm:147    *ABS*:00004013 DMEM_213
+       pmem_defs.asm:148    *ABS*:00004014 DMEM_214
+       pmem_defs.asm:149    *ABS*:00004015 DMEM_215
+       pmem_defs.asm:150    *ABS*:00004016 DMEM_216
+       pmem_defs.asm:151    *ABS*:00004017 DMEM_217
+       pmem_defs.asm:152    *ABS*:00004018 DMEM_218
+       pmem_defs.asm:153    *ABS*:00004019 DMEM_219
+       pmem_defs.asm:154    *ABS*:0000401a DMEM_21A
+       pmem_defs.asm:155    *ABS*:0000401b DMEM_21B
+       pmem_defs.asm:156    *ABS*:0000401c DMEM_21C
+       pmem_defs.asm:157    *ABS*:0000401d DMEM_21D
+       pmem_defs.asm:158    *ABS*:0000401e DMEM_21E
+       pmem_defs.asm:159    *ABS*:0000401f DMEM_21F
+       pmem_defs.asm:161    *ABS*:00004020 DMEM_220
+       pmem_defs.asm:162    *ABS*:00004021 DMEM_221
+       pmem_defs.asm:163    *ABS*:00004022 DMEM_222
+       pmem_defs.asm:164    *ABS*:00004023 DMEM_223
+       pmem_defs.asm:165    *ABS*:00004024 DMEM_224
+       pmem_defs.asm:166    *ABS*:00004025 DMEM_225
+       pmem_defs.asm:167    *ABS*:00004026 DMEM_226
+       pmem_defs.asm:168    *ABS*:00004027 DMEM_227
+       pmem_defs.asm:169    *ABS*:00004028 DMEM_228
+       pmem_defs.asm:170    *ABS*:00004029 DMEM_229
+       pmem_defs.asm:171    *ABS*:0000402a DMEM_22A
+       pmem_defs.asm:172    *ABS*:0000402b DMEM_22B
+       pmem_defs.asm:173    *ABS*:0000402c DMEM_22C
+       pmem_defs.asm:174    *ABS*:0000402d DMEM_22D
+       pmem_defs.asm:175    *ABS*:0000402e DMEM_22E
+       pmem_defs.asm:176    *ABS*:0000402f DMEM_22F
+       pmem_defs.asm:178    *ABS*:00004030 DMEM_230
+       pmem_defs.asm:179    *ABS*:00004031 DMEM_231
+       pmem_defs.asm:180    *ABS*:00004032 DMEM_232
+       pmem_defs.asm:181    *ABS*:00004033 DMEM_233
+       pmem_defs.asm:182    *ABS*:00004034 DMEM_234
+       pmem_defs.asm:183    *ABS*:00004035 DMEM_235
+       pmem_defs.asm:184    *ABS*:00004036 DMEM_236
+GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43 			page 14
+
+
+       pmem_defs.asm:185    *ABS*:00004037 DMEM_237
+       pmem_defs.asm:186    *ABS*:00004038 DMEM_238
+       pmem_defs.asm:187    *ABS*:00004039 DMEM_239
+       pmem_defs.asm:188    *ABS*:0000403a DMEM_23A
+       pmem_defs.asm:189    *ABS*:0000403b DMEM_23B
+       pmem_defs.asm:190    *ABS*:0000403c DMEM_23C
+       pmem_defs.asm:191    *ABS*:0000403d DMEM_23D
+       pmem_defs.asm:192    *ABS*:0000403e DMEM_23E
+       pmem_defs.asm:193    *ABS*:0000403f DMEM_23F
+       pmem_defs.asm:195    *ABS*:00004040 DMEM_240
+       pmem_defs.asm:196    *ABS*:00004041 DMEM_241
+       pmem_defs.asm:197    *ABS*:00004042 DMEM_242
+       pmem_defs.asm:198    *ABS*:00004043 DMEM_243
+       pmem_defs.asm:199    *ABS*:00004044 DMEM_244
+       pmem_defs.asm:200    *ABS*:00004045 DMEM_245
+       pmem_defs.asm:201    *ABS*:00004046 DMEM_246
+       pmem_defs.asm:202    *ABS*:00004047 DMEM_247
+       pmem_defs.asm:203    *ABS*:00004048 DMEM_248
+       pmem_defs.asm:204    *ABS*:00004049 DMEM_249
+       pmem_defs.asm:205    *ABS*:0000404a DMEM_24A
+       pmem_defs.asm:206    *ABS*:0000404b DMEM_24B
+       pmem_defs.asm:207    *ABS*:0000404c DMEM_24C
+       pmem_defs.asm:208    *ABS*:0000404d DMEM_24D
+       pmem_defs.asm:209    *ABS*:0000404e DMEM_24E
+       pmem_defs.asm:210    *ABS*:0000404f DMEM_24F
+       pmem_defs.asm:212    *ABS*:00004050 DMEM_250
+       pmem_defs.asm:213    *ABS*:00004051 DMEM_251
+       pmem_defs.asm:214    *ABS*:00004052 DMEM_252
+       pmem_defs.asm:215    *ABS*:00004053 DMEM_253
+       pmem_defs.asm:216    *ABS*:00004054 DMEM_254
+       pmem_defs.asm:217    *ABS*:00004055 DMEM_255
+       pmem_defs.asm:218    *ABS*:00004056 DMEM_256
+       pmem_defs.asm:219    *ABS*:00004057 DMEM_257
+       pmem_defs.asm:220    *ABS*:00004058 DMEM_258
+       pmem_defs.asm:221    *ABS*:00004059 DMEM_259
+       pmem_defs.asm:222    *ABS*:0000405a DMEM_25A
+       pmem_defs.asm:223    *ABS*:0000405b DMEM_25B
+       pmem_defs.asm:224    *ABS*:0000405c DMEM_25C
+       pmem_defs.asm:225    *ABS*:0000405d DMEM_25D
+       pmem_defs.asm:226    *ABS*:0000405e DMEM_25E
+       pmem_defs.asm:227    *ABS*:0000405f DMEM_25F
+       pmem_defs.asm:229    *ABS*:00004060 DMEM_260
+       pmem_defs.asm:230    *ABS*:00004061 DMEM_261
+       pmem_defs.asm:231    *ABS*:00004062 DMEM_262
+       pmem_defs.asm:232    *ABS*:00004063 DMEM_263
+       pmem_defs.asm:233    *ABS*:00004064 DMEM_264
+       pmem_defs.asm:234    *ABS*:00004065 DMEM_265
+       pmem_defs.asm:235    *ABS*:00004066 DMEM_266
+       pmem_defs.asm:236    *ABS*:00004067 DMEM_267
+       pmem_defs.asm:237    *ABS*:00004068 DMEM_268
+       pmem_defs.asm:238    *ABS*:00004069 DMEM_269
+       pmem_defs.asm:239    *ABS*:0000406a DMEM_26A
+       pmem_defs.asm:240    *ABS*:0000406b DMEM_26B
+       pmem_defs.asm:241    *ABS*:0000406c DMEM_26C
+       pmem_defs.asm:242    *ABS*:0000406d DMEM_26D
+       pmem_defs.asm:243    *ABS*:0000406e DMEM_26E
+       pmem_defs.asm:244    *ABS*:0000406f DMEM_26F
+GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43 			page 15
+
+
+       pmem_defs.asm:246    *ABS*:00004100 DMEM_300
+       pmem_defs.asm:251    *ABS*:00004000 PMEM_LENGTH
+       pmem_defs.asm:256    *ABS*:00000b00 DRAIN_CTRL
+       pmem_defs.asm:257    *ABS*:00000b02 GATE_S
+       pmem_defs.asm:258    *ABS*:00000b04 ADC
+       pmem_defs.asm:259    *ABS*:00000b06 PULSE_CTRL
+       pmem_defs.asm:260    *ABS*:00000b08 ROW_SEL
+       pmem_defs.asm:261    *ABS*:00000b0a COL_SEL
+       pmem_defs.asm:262    *ABS*:00000b0c PROG_BITS
+       pmem_defs.asm:263    *ABS*:00000b0e TUN_MUX
+       pmem_defs.asm:264    *ABS*:00000b10 GATE_US_P
+       pmem_defs.asm:265    *ABS*:00000b12 GATE_US_N
+       pmem_defs.asm:266    *ABS*:00000b14 BIAS_DACS
+       pmem_defs.asm:267    *ABS*:00000160 GP_PER_1
+       pmem_defs.asm:268    *ABS*:00000162 GP_PER_2
+       pmem_defs.asm:269    *ABS*:00000164 GP_PER_3
+       pmem_defs.asm:270    *ABS*:00000166 GP_PER_4
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:3      *ABS*:000001d0 DAC_01_00
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:4      *ABS*:000001d2 DAC_03_02
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:5      *ABS*:000001d4 DAC_05_04
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:6      *ABS*:000001d6 DAC_07_06
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:7      *ABS*:000001d8 DAC_09_08
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:11     .text:00000000 main
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:300    .text:0000022e wait_ms
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:48     .text:0000006c loop_start
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:65     .text:0000008a skip_DAC0_set
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:81     .text:000000aa skip_DAC1_set
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:101    .text:000000d2 skip_DAC2_set
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:119    .text:000000f6 skip_DAC3_set
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:141    .text:00000122 skip_DAC4_set
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:161    .text:0000014a skip_DAC5_set
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:185    .text:0000017a skip_DAC6_set
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:207    .text:000001a6 skip_DAC7_set
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:233    .text:000001da skip_DAC8_set
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:257    .text:0000020a skip_DAC9_set
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:267    .text:0000021c wait_skip
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:311    .text:00000240 wait_10us
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:291    .text:00000222 loop_end
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:295    .text:00000226 end_of_test
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:303    .text:00000234 wait_loop
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withoutMITE.s43:314    .text:00000246 wait_10us_loop
+
+NO UNDEFINED SYMBOLS
+
+voltage_meas.o:     file format elf32-msp430
+voltage_meas.o
+architecture: msp430:430, flags 0x00000011:
+HAS_RELOC, HAS_SYMS
+start address 0x00000000
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000252  00000000  00000000  00000034  2**0
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  1 .data         00000000  00000000  00000000  00000286  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000000  00000000  00000000  00000286  2**0
+                  ALLOC
+  3 .vectors      00000020  00000000  00000000  00000286  2**0
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, DATA
+SYMBOL TABLE:
+00000000 l    d  .text	00000000 .text
+00000000 l    d  .data	00000000 .data
+00000000 l    d  .bss	00000000 .bss
+00000000 l       *ABS*	00000000 IE1
+00000001 l       *ABS*	00000000 IE1_HI
+00000002 l       *ABS*	00000000 IFG1
+00000003 l       *ABS*	00000000 IFG1_HI
+00000004 l       *ABS*	00000000 CPU_ID_LO
+00000006 l       *ABS*	00000000 CPU_ID_HI
+00000008 l       *ABS*	00000000 CPU_NR
+00000020 l       *ABS*	00000000 P1IN
+00000021 l       *ABS*	00000000 P1OUT
+00000022 l       *ABS*	00000000 P1DIR
+00000023 l       *ABS*	00000000 P1IFG
+00000024 l       *ABS*	00000000 P1IES
+00000025 l       *ABS*	00000000 P1IE
+00000026 l       *ABS*	00000000 P1SEL
+00000028 l       *ABS*	00000000 P2IN
+00000029 l       *ABS*	00000000 P2OUT
+0000002a l       *ABS*	00000000 P2DIR
+0000002b l       *ABS*	00000000 P2IFG
+0000002c l       *ABS*	00000000 P2IES
+0000002d l       *ABS*	00000000 P2IE
+0000002e l       *ABS*	00000000 P2SEL
+00000018 l       *ABS*	00000000 P3IN
+00000019 l       *ABS*	00000000 P3OUT
+0000001a l       *ABS*	00000000 P3DIR
+0000001b l       *ABS*	00000000 P3SEL
+0000001c l       *ABS*	00000000 P4IN
+0000001d l       *ABS*	00000000 P4OUT
+0000001e l       *ABS*	00000000 P4DIR
+0000001f l       *ABS*	00000000 P4SEL
+00000030 l       *ABS*	00000000 P5IN
+00000031 l       *ABS*	00000000 P5OUT
+00000032 l       *ABS*	00000000 P5DIR
+00000033 l       *ABS*	00000000 P5SEL
+00000034 l       *ABS*	00000000 P6IN
+00000035 l       *ABS*	00000000 P6OUT
+00000036 l       *ABS*	00000000 P6DIR
+00000037 l       *ABS*	00000000 P6SEL
+00000057 l       *ABS*	00000000 BCSCTL1
+00000058 l       *ABS*	00000000 BCSCTL2
+00000120 l       *ABS*	00000000 WDTCTL
+00000130 l       *ABS*	00000000 MPY
+00000132 l       *ABS*	00000000 MPYS
+00000134 l       *ABS*	00000000 MAC
+00000136 l       *ABS*	00000000 MACS
+00000138 l       *ABS*	00000000 OP2
+0000013a l       *ABS*	00000000 RESLO
+0000013c l       *ABS*	00000000 RESHI
+0000013e l       *ABS*	00000000 SUMEXT
+00000160 l       *ABS*	00000000 TACTL
+00000170 l       *ABS*	00000000 TAR
+00000162 l       *ABS*	00000000 TACCTL0
+00000172 l       *ABS*	00000000 TACCR0
+00000164 l       *ABS*	00000000 TACCTL1
+00000174 l       *ABS*	00000000 TACCR1
+00000166 l       *ABS*	00000000 TACCTL2
+00000176 l       *ABS*	00000000 TACCR2
+0000012e l       *ABS*	00000000 TAIV
+00004000 l       *ABS*	00000000 DMEM_BASE
+00004000 l       *ABS*	00000000 DMEM_200
+00004001 l       *ABS*	00000000 DMEM_201
+00004002 l       *ABS*	00000000 DMEM_202
+00004003 l       *ABS*	00000000 DMEM_203
+00004004 l       *ABS*	00000000 DMEM_204
+00004005 l       *ABS*	00000000 DMEM_205
+00004006 l       *ABS*	00000000 DMEM_206
+00004007 l       *ABS*	00000000 DMEM_207
+00004008 l       *ABS*	00000000 DMEM_208
+00004009 l       *ABS*	00000000 DMEM_209
+0000400a l       *ABS*	00000000 DMEM_20A
+0000400b l       *ABS*	00000000 DMEM_20B
+0000400c l       *ABS*	00000000 DMEM_20C
+0000400d l       *ABS*	00000000 DMEM_20D
+0000400e l       *ABS*	00000000 DMEM_20E
+0000400f l       *ABS*	00000000 DMEM_20F
+00004010 l       *ABS*	00000000 DMEM_210
+00004011 l       *ABS*	00000000 DMEM_211
+00004012 l       *ABS*	00000000 DMEM_212
+00004013 l       *ABS*	00000000 DMEM_213
+00004014 l       *ABS*	00000000 DMEM_214
+00004015 l       *ABS*	00000000 DMEM_215
+00004016 l       *ABS*	00000000 DMEM_216
+00004017 l       *ABS*	00000000 DMEM_217
+00004018 l       *ABS*	00000000 DMEM_218
+00004019 l       *ABS*	00000000 DMEM_219
+0000401a l       *ABS*	00000000 DMEM_21A
+0000401b l       *ABS*	00000000 DMEM_21B
+0000401c l       *ABS*	00000000 DMEM_21C
+0000401d l       *ABS*	00000000 DMEM_21D
+0000401e l       *ABS*	00000000 DMEM_21E
+0000401f l       *ABS*	00000000 DMEM_21F
+00004020 l       *ABS*	00000000 DMEM_220
+00004021 l       *ABS*	00000000 DMEM_221
+00004022 l       *ABS*	00000000 DMEM_222
+00004023 l       *ABS*	00000000 DMEM_223
+00004024 l       *ABS*	00000000 DMEM_224
+00004025 l       *ABS*	00000000 DMEM_225
+00004026 l       *ABS*	00000000 DMEM_226
+00004027 l       *ABS*	00000000 DMEM_227
+00004028 l       *ABS*	00000000 DMEM_228
+00004029 l       *ABS*	00000000 DMEM_229
+0000402a l       *ABS*	00000000 DMEM_22A
+0000402b l       *ABS*	00000000 DMEM_22B
+0000402c l       *ABS*	00000000 DMEM_22C
+0000402d l       *ABS*	00000000 DMEM_22D
+0000402e l       *ABS*	00000000 DMEM_22E
+0000402f l       *ABS*	00000000 DMEM_22F
+00004030 l       *ABS*	00000000 DMEM_230
+00004031 l       *ABS*	00000000 DMEM_231
+00004032 l       *ABS*	00000000 DMEM_232
+00004033 l       *ABS*	00000000 DMEM_233
+00004034 l       *ABS*	00000000 DMEM_234
+00004035 l       *ABS*	00000000 DMEM_235
+00004036 l       *ABS*	00000000 DMEM_236
+00004037 l       *ABS*	00000000 DMEM_237
+00004038 l       *ABS*	00000000 DMEM_238
+00004039 l       *ABS*	00000000 DMEM_239
+0000403a l       *ABS*	00000000 DMEM_23A
+0000403b l       *ABS*	00000000 DMEM_23B
+0000403c l       *ABS*	00000000 DMEM_23C
+0000403d l       *ABS*	00000000 DMEM_23D
+0000403e l       *ABS*	00000000 DMEM_23E
+0000403f l       *ABS*	00000000 DMEM_23F
+00004040 l       *ABS*	00000000 DMEM_240
+00004041 l       *ABS*	00000000 DMEM_241
+00004042 l       *ABS*	00000000 DMEM_242
+00004043 l       *ABS*	00000000 DMEM_243
+00004044 l       *ABS*	00000000 DMEM_244
+00004045 l       *ABS*	00000000 DMEM_245
+00004046 l       *ABS*	00000000 DMEM_246
+00004047 l       *ABS*	00000000 DMEM_247
+00004048 l       *ABS*	00000000 DMEM_248
+00004049 l       *ABS*	00000000 DMEM_249
+0000404a l       *ABS*	00000000 DMEM_24A
+0000404b l       *ABS*	00000000 DMEM_24B
+0000404c l       *ABS*	00000000 DMEM_24C
+0000404d l       *ABS*	00000000 DMEM_24D
+0000404e l       *ABS*	00000000 DMEM_24E
+0000404f l       *ABS*	00000000 DMEM_24F
+00004050 l       *ABS*	00000000 DMEM_250
+00004051 l       *ABS*	00000000 DMEM_251
+00004052 l       *ABS*	00000000 DMEM_252
+00004053 l       *ABS*	00000000 DMEM_253
+00004054 l       *ABS*	00000000 DMEM_254
+00004055 l       *ABS*	00000000 DMEM_255
+00004056 l       *ABS*	00000000 DMEM_256
+00004057 l       *ABS*	00000000 DMEM_257
+00004058 l       *ABS*	00000000 DMEM_258
+00004059 l       *ABS*	00000000 DMEM_259
+0000405a l       *ABS*	00000000 DMEM_25A
+0000405b l       *ABS*	00000000 DMEM_25B
+0000405c l       *ABS*	00000000 DMEM_25C
+0000405d l       *ABS*	00000000 DMEM_25D
+0000405e l       *ABS*	00000000 DMEM_25E
+0000405f l       *ABS*	00000000 DMEM_25F
+00004060 l       *ABS*	00000000 DMEM_260
+00004061 l       *ABS*	00000000 DMEM_261
+00004062 l       *ABS*	00000000 DMEM_262
+00004063 l       *ABS*	00000000 DMEM_263
+00004064 l       *ABS*	00000000 DMEM_264
+00004065 l       *ABS*	00000000 DMEM_265
+00004066 l       *ABS*	00000000 DMEM_266
+00004067 l       *ABS*	00000000 DMEM_267
+00004068 l       *ABS*	00000000 DMEM_268
+00004069 l       *ABS*	00000000 DMEM_269
+0000406a l       *ABS*	00000000 DMEM_26A
+0000406b l       *ABS*	00000000 DMEM_26B
+0000406c l       *ABS*	00000000 DMEM_26C
+0000406d l       *ABS*	00000000 DMEM_26D
+0000406e l       *ABS*	00000000 DMEM_26E
+0000406f l       *ABS*	00000000 DMEM_26F
+00004100 l       *ABS*	00000000 DMEM_300
+00004000 l       *ABS*	00000000 PMEM_LENGTH
+00000b00 l       *ABS*	00000000 DRAIN_CTRL
+00000b02 l       *ABS*	00000000 GATE_S
+00000b04 l       *ABS*	00000000 ADC
+00000b06 l       *ABS*	00000000 PULSE_CTRL
+00000b08 l       *ABS*	00000000 ROW_SEL
+00000b0a l       *ABS*	00000000 COL_SEL
+00000b0c l       *ABS*	00000000 PROG_BITS
+00000b0e l       *ABS*	00000000 TUN_MUX
+00000b10 l       *ABS*	00000000 GATE_US_P
+00000b12 l       *ABS*	00000000 GATE_US_N
+00000b14 l       *ABS*	00000000 BIAS_DACS
+00000160 l       *ABS*	00000000 GP_PER_1
+00000162 l       *ABS*	00000000 GP_PER_2
+00000164 l       *ABS*	00000000 GP_PER_3
+00000166 l       *ABS*	00000000 GP_PER_4
+000001d0 l       *ABS*	00000000 DAC_01_00
+000001d2 l       *ABS*	00000000 DAC_03_02
+000001d4 l       *ABS*	00000000 DAC_05_04
+000001d6 l       *ABS*	00000000 DAC_07_06
+000001d8 l       *ABS*	00000000 DAC_09_08
+0000022e l       .text	00000000 wait_ms
+0000006c l       .text	00000000 loop_start
+0000008a l       .text	00000000 skip_DAC0_set
+000000aa l       .text	00000000 skip_DAC1_set
+000000d2 l       .text	00000000 skip_DAC2_set
+000000f6 l       .text	00000000 skip_DAC3_set
+00000122 l       .text	00000000 skip_DAC4_set
+0000014a l       .text	00000000 skip_DAC5_set
+0000017a l       .text	00000000 skip_DAC6_set
+000001a6 l       .text	00000000 skip_DAC7_set
+000001da l       .text	00000000 skip_DAC8_set
+0000020a l       .text	00000000 skip_DAC9_set
+0000021c l       .text	00000000 wait_skip
+00000240 l       .text	00000000 wait_10us
+00000222 l       .text	00000000 loop_end
+00000226 l       .text	00000000 end_of_test
+00000234 l       .text	00000000 wait_loop
+00000246 l       .text	00000000 wait_10us_loop
+00000000 l    d  .vectors	00000000 .vectors
+00000000 g       .text	00000000 main
+
+
+Contents of section .text:
+ 0000 31405040 37400060 b2401000 5800b240  1@P@7@.`.@..X..@
+ 0010 805a2001 32c2b240 64006001 a2430e0b  .Z .2..@d.`..C..
+ 0020 8243080b 82430a0b b2404000 020bb240  .C...C...@@....@
+ 0030 4000100b b2404000 120bb240 043f6401  @....@@....@.?d.
+ 0040 1543b012 0000b240 041f6401 b240a400  .C.....@..d..@..
+ 0050 000b8243 0c0b3540 3200b012 00003b40  ...C..5@2.....;@
+ 0060 00432c4b 2b532d4b 2b532e4b 094d39c0  .C,K+S-K+S.K.M9.
+ 0070 feff0993 0a242b53 294b0969 09690969  .....$+S)K.i.i.i
+ 0080 09690910 09100910 09100a4d 0a103ac0  .i.........M..:.
+ 0090 feff0a93 0a242b53 2a4b0a6a 0a6a0a6a  .....$+S*K.j.j.j
+ 00a0 0a6a0a6a 0a6a0a6a 0a6a0a59 824ad001  .j.j.j.j.j.Y.J..
+ 00b0 094d0910 091039c0 feff0993 0a242b53  .M....9......$+S
+ 00c0 294b0969 09690969 09690910 09100910  )K.i.i.i.i......
+ 00d0 09100a4d 0a100a10 0a103ac0 feff0a93  ...M......:.....
+ 00e0 0a242b53 2a4b0a6a 0a6a0a6a 0a6a0a6a  .$+S*K.j.j.j.j.j
+ 00f0 0a6a0a6a 0a6a0a59 824ad201 094d0910  .j.j.j.Y.J...M..
+ 0100 09100910 091039c0 feff0993 0a242b53  ......9......$+S
+ 0110 294b0969 09690969 09690910 09100910  )K.i.i.i.i......
+ 0120 09100a4d 0a100a10 0a100a10 0a103ac0  ...M..........:.
+ 0130 feff0a93 0a242b53 2a4b0a6a 0a6a0a6a  .....$+S*K.j.j.j
+ 0140 0a6a0a6a 0a6a0a6a 0a6a0a59 824ad401  .j.j.j.j.j.Y.J..
+ 0150 094d0910 09100910 09100910 091039c0  .M............9.
+ 0160 feff0993 0a242b53 294b0969 09690969  .....$+S)K.i.i.i
+ 0170 09690910 09100910 09100a4d 0a100a10  .i.........M....
+ 0180 0a100a10 0a100a10 0a103ac0 feff0a93  ..........:.....
+ 0190 0a242b53 2a4b0a6a 0a6a0a6a 0a6a0a6a  .$+S*K.j.j.j.j.j
+ 01a0 0a6a0a6a 0a6a0a59 824ad601 094d0910  .j.j.j.Y.J...M..
+ 01b0 09100910 09100910 09100910 091039c0  ..............9.
+ 01c0 feff0993 0a242b53 294b0969 09690969  .....$+S)K.i.i.i
+ 01d0 09690910 09100910 09100a4d 0a100a10  .i.........M....
+ 01e0 0a100a10 0a100a10 0a100a10 0a103ac0  ..............:.
+ 01f0 feff0a93 0a242b53 2a4b0a6a 0a6a0a6a  .....$+S*K.j.j.j
+ 0200 0a6a0a6a 0a6a0a6a 0a6a0a59 824ad801  .j.j.j.j.j.Y.J..
+ 0210 054e1583 05930224 b0120000 1c830124  .N.....$.......$
+ 0220 253fb743 00008243 58000343 30433440  %?.C...CX..C0C4@
+ 0230 fc0c0644 1683fe23 06441583 fb233041  ...D...#.D...#0A
+ 0240 34402200 06441683 fe230644 1583fb23  4@"..D...#.D...#
+ 0250 3041                                 0A              
+Contents of section .vectors:
+ 0000 00000000 00000000 00000000 00000000  ................
+ 0010 00000000 00000000 00000000 00000000  ................
+
+Disassembly of section .text:
+
+00000000 <main>:
+   0:	31 40 50 40 	mov	#16464,	r1	;#0x4050
+   4:	37 40 00 60 	mov	#24576,	r7	;#0x6000
+   8:	b2 40 10 00 	mov	#16,	&0x0058	;#0x0010
+   c:	58 00 
+   e:	b2 40 80 5a 	mov	#23168,	&0x0120	;#0x5a80
+  12:	20 01 
+  14:	32 c2       	dint			
+  16:	b2 40 64 00 	mov	#100,	&0x0160	;#0x0064
+  1a:	60 01 
+  1c:	a2 43 0e 0b 	mov	#2,	&0x0b0e	;r3 As==10
+  20:	82 43 08 0b 	mov	#0,	&0x0b08	;r3 As==00
+  24:	82 43 0a 0b 	mov	#0,	&0x0b0a	;r3 As==00
+  28:	b2 40 40 00 	mov	#64,	&0x0b02	;#0x0040
+  2c:	02 0b 
+  2e:	b2 40 40 00 	mov	#64,	&0x0b10	;#0x0040
+  32:	10 0b 
+  34:	b2 40 40 00 	mov	#64,	&0x0b12	;#0x0040
+  38:	12 0b 
+  3a:	b2 40 04 3f 	mov	#16132,	&0x0164	;#0x3f04
+  3e:	64 01 
+  40:	15 43       	mov	#1,	r5	;r3 As==01
+  42:	b0 12 00 00 	call	#0x0000	
+			44: R_MSP430_16_BYTE	.text+0x22e
+  46:	b2 40 04 1f 	mov	#7940,	&0x0164	;#0x1f04
+  4a:	64 01 
+  4c:	b2 40 a4 00 	mov	#164,	&0x0b00	;#0x00a4
+  50:	00 0b 
+  52:	82 43 0c 0b 	mov	#0,	&0x0b0c	;r3 As==00
+  56:	35 40 32 00 	mov	#50,	r5	;#0x0032
+  5a:	b0 12 00 00 	call	#0x0000	
+			5c: R_MSP430_16_BYTE	.text+0x22e
+  5e:	3b 40 00 43 	mov	#17152,	r11	;#0x4300
+  62:	2c 4b       	mov	@r11,	r12	
+  64:	2b 53       	incd	r11		
+  66:	2d 4b       	mov	@r11,	r13	
+  68:	2b 53       	incd	r11		
+  6a:	2e 4b       	mov	@r11,	r14	
+
+0000006c <loop_start>:
+  6c:	09 4d       	mov	r13,	r9	
+  6e:	39 c0 fe ff 	bic	#-2,	r9	;#0xfffe
+  72:	09 93       	tst	r9		
+  74:	0a 24       	jz	$+22     	;abs 0x8a
+  76:	2b 53       	incd	r11		
+  78:	29 4b       	mov	@r11,	r9	
+  7a:	09 69       	rlc	r9		
+  7c:	09 69       	rlc	r9		
+  7e:	09 69       	rlc	r9		
+  80:	09 69       	rlc	r9		
+  82:	09 10       	rrc	r9		
+  84:	09 10       	rrc	r9		
+  86:	09 10       	rrc	r9		
+  88:	09 10       	rrc	r9		
+
+0000008a <skip_DAC0_set>:
+  8a:	0a 4d       	mov	r13,	r10	
+  8c:	0a 10       	rrc	r10		
+  8e:	3a c0 fe ff 	bic	#-2,	r10	;#0xfffe
+  92:	0a 93       	tst	r10		
+  94:	0a 24       	jz	$+22     	;abs 0xaa
+  96:	2b 53       	incd	r11		
+  98:	2a 4b       	mov	@r11,	r10	
+  9a:	0a 6a       	rlc	r10		
+  9c:	0a 6a       	rlc	r10		
+  9e:	0a 6a       	rlc	r10		
+  a0:	0a 6a       	rlc	r10		
+  a2:	0a 6a       	rlc	r10		
+  a4:	0a 6a       	rlc	r10		
+  a6:	0a 6a       	rlc	r10		
+  a8:	0a 6a       	rlc	r10		
+
+000000aa <skip_DAC1_set>:
+  aa:	0a 59       	add	r9,	r10	
+  ac:	82 4a d0 01 	mov	r10,	&0x01d0	
+  b0:	09 4d       	mov	r13,	r9	
+  b2:	09 10       	rrc	r9		
+  b4:	09 10       	rrc	r9		
+  b6:	39 c0 fe ff 	bic	#-2,	r9	;#0xfffe
+  ba:	09 93       	tst	r9		
+  bc:	0a 24       	jz	$+22     	;abs 0xd2
+  be:	2b 53       	incd	r11		
+  c0:	29 4b       	mov	@r11,	r9	
+  c2:	09 69       	rlc	r9		
+  c4:	09 69       	rlc	r9		
+  c6:	09 69       	rlc	r9		
+  c8:	09 69       	rlc	r9		
+  ca:	09 10       	rrc	r9		
+  cc:	09 10       	rrc	r9		
+  ce:	09 10       	rrc	r9		
+  d0:	09 10       	rrc	r9		
+
+000000d2 <skip_DAC2_set>:
+  d2:	0a 4d       	mov	r13,	r10	
+  d4:	0a 10       	rrc	r10		
+  d6:	0a 10       	rrc	r10		
+  d8:	0a 10       	rrc	r10		
+  da:	3a c0 fe ff 	bic	#-2,	r10	;#0xfffe
+  de:	0a 93       	tst	r10		
+  e0:	0a 24       	jz	$+22     	;abs 0xf6
+  e2:	2b 53       	incd	r11		
+  e4:	2a 4b       	mov	@r11,	r10	
+  e6:	0a 6a       	rlc	r10		
+  e8:	0a 6a       	rlc	r10		
+  ea:	0a 6a       	rlc	r10		
+  ec:	0a 6a       	rlc	r10		
+  ee:	0a 6a       	rlc	r10		
+  f0:	0a 6a       	rlc	r10		
+  f2:	0a 6a       	rlc	r10		
+  f4:	0a 6a       	rlc	r10		
+
+000000f6 <skip_DAC3_set>:
+  f6:	0a 59       	add	r9,	r10	
+  f8:	82 4a d2 01 	mov	r10,	&0x01d2	
+  fc:	09 4d       	mov	r13,	r9	
+  fe:	09 10       	rrc	r9		
+ 100:	09 10       	rrc	r9		
+ 102:	09 10       	rrc	r9		
+ 104:	09 10       	rrc	r9		
+ 106:	39 c0 fe ff 	bic	#-2,	r9	;#0xfffe
+ 10a:	09 93       	tst	r9		
+ 10c:	0a 24       	jz	$+22     	;abs 0x122
+ 10e:	2b 53       	incd	r11		
+ 110:	29 4b       	mov	@r11,	r9	
+ 112:	09 69       	rlc	r9		
+ 114:	09 69       	rlc	r9		
+ 116:	09 69       	rlc	r9		
+ 118:	09 69       	rlc	r9		
+ 11a:	09 10       	rrc	r9		
+ 11c:	09 10       	rrc	r9		
+ 11e:	09 10       	rrc	r9		
+ 120:	09 10       	rrc	r9		
+
+00000122 <skip_DAC4_set>:
+ 122:	0a 4d       	mov	r13,	r10	
+ 124:	0a 10       	rrc	r10		
+ 126:	0a 10       	rrc	r10		
+ 128:	0a 10       	rrc	r10		
+ 12a:	0a 10       	rrc	r10		
+ 12c:	0a 10       	rrc	r10		
+ 12e:	3a c0 fe ff 	bic	#-2,	r10	;#0xfffe
+ 132:	0a 93       	tst	r10		
+ 134:	0a 24       	jz	$+22     	;abs 0x14a
+ 136:	2b 53       	incd	r11		
+ 138:	2a 4b       	mov	@r11,	r10	
+ 13a:	0a 6a       	rlc	r10		
+ 13c:	0a 6a       	rlc	r10		
+ 13e:	0a 6a       	rlc	r10		
+ 140:	0a 6a       	rlc	r10		
+ 142:	0a 6a       	rlc	r10		
+ 144:	0a 6a       	rlc	r10		
+ 146:	0a 6a       	rlc	r10		
+ 148:	0a 6a       	rlc	r10		
+
+0000014a <skip_DAC5_set>:
+ 14a:	0a 59       	add	r9,	r10	
+ 14c:	82 4a d4 01 	mov	r10,	&0x01d4	
+ 150:	09 4d       	mov	r13,	r9	
+ 152:	09 10       	rrc	r9		
+ 154:	09 10       	rrc	r9		
+ 156:	09 10       	rrc	r9		
+ 158:	09 10       	rrc	r9		
+ 15a:	09 10       	rrc	r9		
+ 15c:	09 10       	rrc	r9		
+ 15e:	39 c0 fe ff 	bic	#-2,	r9	;#0xfffe
+ 162:	09 93       	tst	r9		
+ 164:	0a 24       	jz	$+22     	;abs 0x17a
+ 166:	2b 53       	incd	r11		
+ 168:	29 4b       	mov	@r11,	r9	
+ 16a:	09 69       	rlc	r9		
+ 16c:	09 69       	rlc	r9		
+ 16e:	09 69       	rlc	r9		
+ 170:	09 69       	rlc	r9		
+ 172:	09 10       	rrc	r9		
+ 174:	09 10       	rrc	r9		
+ 176:	09 10       	rrc	r9		
+ 178:	09 10       	rrc	r9		
+
+0000017a <skip_DAC6_set>:
+ 17a:	0a 4d       	mov	r13,	r10	
+ 17c:	0a 10       	rrc	r10		
+ 17e:	0a 10       	rrc	r10		
+ 180:	0a 10       	rrc	r10		
+ 182:	0a 10       	rrc	r10		
+ 184:	0a 10       	rrc	r10		
+ 186:	0a 10       	rrc	r10		
+ 188:	0a 10       	rrc	r10		
+ 18a:	3a c0 fe ff 	bic	#-2,	r10	;#0xfffe
+ 18e:	0a 93       	tst	r10		
+ 190:	0a 24       	jz	$+22     	;abs 0x1a6
+ 192:	2b 53       	incd	r11		
+ 194:	2a 4b       	mov	@r11,	r10	
+ 196:	0a 6a       	rlc	r10		
+ 198:	0a 6a       	rlc	r10		
+ 19a:	0a 6a       	rlc	r10		
+ 19c:	0a 6a       	rlc	r10		
+ 19e:	0a 6a       	rlc	r10		
+ 1a0:	0a 6a       	rlc	r10		
+ 1a2:	0a 6a       	rlc	r10		
+ 1a4:	0a 6a       	rlc	r10		
+
+000001a6 <skip_DAC7_set>:
+ 1a6:	0a 59       	add	r9,	r10	
+ 1a8:	82 4a d6 01 	mov	r10,	&0x01d6	
+ 1ac:	09 4d       	mov	r13,	r9	
+ 1ae:	09 10       	rrc	r9		
+ 1b0:	09 10       	rrc	r9		
+ 1b2:	09 10       	rrc	r9		
+ 1b4:	09 10       	rrc	r9		
+ 1b6:	09 10       	rrc	r9		
+ 1b8:	09 10       	rrc	r9		
+ 1ba:	09 10       	rrc	r9		
+ 1bc:	09 10       	rrc	r9		
+ 1be:	39 c0 fe ff 	bic	#-2,	r9	;#0xfffe
+ 1c2:	09 93       	tst	r9		
+ 1c4:	0a 24       	jz	$+22     	;abs 0x1da
+ 1c6:	2b 53       	incd	r11		
+ 1c8:	29 4b       	mov	@r11,	r9	
+ 1ca:	09 69       	rlc	r9		
+ 1cc:	09 69       	rlc	r9		
+ 1ce:	09 69       	rlc	r9		
+ 1d0:	09 69       	rlc	r9		
+ 1d2:	09 10       	rrc	r9		
+ 1d4:	09 10       	rrc	r9		
+ 1d6:	09 10       	rrc	r9		
+ 1d8:	09 10       	rrc	r9		
+
+000001da <skip_DAC8_set>:
+ 1da:	0a 4d       	mov	r13,	r10	
+ 1dc:	0a 10       	rrc	r10		
+ 1de:	0a 10       	rrc	r10		
+ 1e0:	0a 10       	rrc	r10		
+ 1e2:	0a 10       	rrc	r10		
+ 1e4:	0a 10       	rrc	r10		
+ 1e6:	0a 10       	rrc	r10		
+ 1e8:	0a 10       	rrc	r10		
+ 1ea:	0a 10       	rrc	r10		
+ 1ec:	0a 10       	rrc	r10		
+ 1ee:	3a c0 fe ff 	bic	#-2,	r10	;#0xfffe
+ 1f2:	0a 93       	tst	r10		
+ 1f4:	0a 24       	jz	$+22     	;abs 0x20a
+ 1f6:	2b 53       	incd	r11		
+ 1f8:	2a 4b       	mov	@r11,	r10	
+ 1fa:	0a 6a       	rlc	r10		
+ 1fc:	0a 6a       	rlc	r10		
+ 1fe:	0a 6a       	rlc	r10		
+ 200:	0a 6a       	rlc	r10		
+ 202:	0a 6a       	rlc	r10		
+ 204:	0a 6a       	rlc	r10		
+ 206:	0a 6a       	rlc	r10		
+ 208:	0a 6a       	rlc	r10		
+
+0000020a <skip_DAC9_set>:
+ 20a:	0a 59       	add	r9,	r10	
+ 20c:	82 4a d8 01 	mov	r10,	&0x01d8	
+ 210:	05 4e       	mov	r14,	r5	
+ 212:	15 83       	dec	r5		
+ 214:	05 93       	tst	r5		
+ 216:	02 24       	jz	$+6      	;abs 0x21c
+ 218:	b0 12 00 00 	call	#0x0000	
+			21a: R_MSP430_16_BYTE	.text+0x240
+
+0000021c <wait_skip>:
+ 21c:	1c 83       	dec	r12		
+ 21e:	01 24       	jz	$+4      	;abs 0x222
+ 220:	25 3f       	jmp	$-436    	;abs 0x6c
+
+00000222 <loop_end>:
+ 222:	b7 43 00 00 	mov	#-1,	0(r7)	;r3 As==11, 0x0000(r7)
+
+00000226 <end_of_test>:
+ 226:	82 43 58 00 	mov	#0,	&0x0058	;r3 As==00
+ 22a:	03 43       	nop			
+ 22c:	30 43       	br	#-1		;r3 As==11
+
+0000022e <wait_ms>:
+ 22e:	34 40 fc 0c 	mov	#3324,	r4	;#0x0cfc
+ 232:	06 44       	mov	r4,	r6	
+
+00000234 <wait_loop>:
+ 234:	16 83       	dec	r6		
+ 236:	fe 23       	jnz	$-2      	;abs 0x234
+ 238:	06 44       	mov	r4,	r6	
+ 23a:	15 83       	dec	r5		
+ 23c:	fb 23       	jnz	$-8      	;abs 0x234
+ 23e:	30 41       	ret			
+
+00000240 <wait_10us>:
+ 240:	34 40 22 00 	mov	#34,	r4	;#0x0022
+ 244:	06 44       	mov	r4,	r6	
+
+00000246 <wait_10us_loop>:
+ 246:	16 83       	dec	r6		
+ 248:	fe 23       	jnz	$-2      	;abs 0x246
+ 24a:	06 44       	mov	r4,	r6	
+ 24c:	15 83       	dec	r5		
+ 24e:	fb 23       	jnz	$-8      	;abs 0x246
+ 250:	30 41       	ret			

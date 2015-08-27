@@ -1,0 +1,9 @@
+Netlist file: /home/ubuntu/RASP_Workspace/test_20150113_30a_pfet/test_20150113_30a_pfet_vdd.net   Architecture file: /home/ubuntu/rasp30/vpr2swcs//arch/rasp3a_arch.xml
+Array size: 7 x 14 logic blocks
+
+#block name	x	y	subblk	block number
+#----------	--	--	------	------------
+net1_1 5 1 0
+out:net1_1	8	1	5	#1
+net2_1		8	1	2	#2
+vcc		0	10	3	#3

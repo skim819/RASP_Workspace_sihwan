@@ -1,0 +1,12 @@
+Netlist file: /home/ubuntu/RASP_Workspace/test_20150115_output_gndvdd//test_20150115_output_gndvd.net   Architecture file: /home/ubuntu/rasp30/vpr2swcs/./arch/rasp3_arch.xml
+Array size: 14 x 14 logic blocks
+
+#block name	x	y	subblk	block number
+#----------	--	--	------	------------
+vdd_out		10	1	0	#0
+fb_vddout	10	2	0	#1
+net4_1		11	1	0	#2
+out:net4_1	12	0	3	#3
+net1_1		12	0	0	#4
+net2_1		11	0	0	#5
+net3_1		9	0	0	#6

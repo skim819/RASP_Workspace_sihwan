@@ -1,0 +1,23 @@
+clear DAC00; clear DAC02; clear DAC03; clear DAC04; clear DAC05; clear DAC06; clear DAC07; clear DAC08; clear DAC09;
+
+DAC00 = [ linspace(2.5,2.5,100) ];
+DAC02 = [ linspace(1.5,1.5,100) ];
+DAC03 = [ linspace(2.5,1.5,100) ];
+DAC04 = [ linspace(2.5,1.5,100) ];
+DAC05 = [ linspace(2.0,2.0,100) ];
+DAC06 = [ linspace(2.5,2.5,100) ];
+DAC07 = [ linspace(2.5,2.5,100) ];
+
+DAC01 = [ linspace(2.5,2.5,100) ];
+DAC08 = [ linspace(2.5,2.5,100) ];
+DAC09 = [ linspace(2.5,2.5,100) ];
+
+disp(size(DAC00));
+disp(size(DAC02));
+disp(size(DAC03));
+disp(size(DAC04));
+disp(size(DAC05));
+disp(size(DAC06));
+disp(size(DAC07));
+disp(size(DAC08));
+disp(size(DAC09));

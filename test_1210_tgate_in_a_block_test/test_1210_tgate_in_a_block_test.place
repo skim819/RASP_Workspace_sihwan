@@ -1,0 +1,17 @@
+Netlist file: /home/ubuntu/RASP_Workspace/test_1210_tgate_in_a_block_test/test_1210_tgate_in_a_block_test.net   Architecture file: vpr2swcs/./arch/rasp3_vmm_arch.xml
+Array size: 14 x 14 logic blocks
+
+#block name	x	y	subblk	block number
+#----------	--	--	------	------------
+internal_1_1	9	1	0	#0
+dff1_infix4_1	7	2	0	#1
+dff1_infix3_1	6	1	0	#2
+dff1_infix2_1	7	1	0	#3
+bbb		6	3	0	#4
+aaa		6	2	0	#5
+out:net8_1	9	0	0	#6
+gnd		7	0	4	#7
+vcc		7	0	5	#8
+net3_1		9	0	3	#9
+net11_1		9	0	2	#10
+net32_1		9	0	1	#11

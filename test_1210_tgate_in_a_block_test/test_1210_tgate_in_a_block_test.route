@@ -1,0 +1,135 @@
+Array size: 14 x 14 logic blocks.
+
+Routing:
+
+Net 0 (dff1_infix4_1)
+
+SOURCE (7,2)  Class: 16  
+  OPIN (7,2)  Pin: 16  
+ CHANY (6,2)  Track: 1  
+ CHANX (7,1)  Track: 1  
+ CHANX (8,1)  Track: 1  
+ CHANY (8,1)  Track: 1  
+  IPIN (9,1)  Pin: 0  
+  SINK (9,1)  Class: 0  
+
+
+Net 1 (net32_1)
+
+SOURCE (9,0)  Pad: 4  
+  OPIN (9,0)  Pad: 4  
+ CHANX (9,0)  Track: 13  
+ CHANY (9,1)  Track: 13  
+  IPIN (9,1)  Pin: 2  
+  SINK (9,1)  Class: 2  
+
+
+Net 2 (dff1_infix2_1)
+
+SOURCE (7,1)  Class: 16  
+  OPIN (7,1)  Pin: 16  
+ CHANY (6,1)  Track: 0  
+ CHANX (7,0)  Track: 0  
+ CHANX (8,0)  Track: 0  
+ CHANX (9,0)  Track: 0  
+  IPIN (9,1)  Pin: 5  
+  SINK (9,1)  Class: 5  
+
+
+Net 3 (dff1_infix3_1)
+
+SOURCE (6,1)  Class: 16  
+  OPIN (6,1)  Pin: 16  
+ CHANY (5,1)  Track: 9  
+ CHANX (6,1)  Track: 9  
+ CHANX (7,1)  Track: 9  
+ CHANX (8,1)  Track: 9  
+ CHANX (9,1)  Track: 9  
+ CHANY (9,1)  Track: 9  
+  IPIN (9,1)  Pin: 6  
+  SINK (9,1)  Class: 6  
+
+
+Net 4 (net11_1)
+
+SOURCE (9,0)  Pad: 7  
+  OPIN (9,0)  Pad: 7  
+ CHANX (9,0)  Track: 14  
+ CHANY (9,1)  Track: 14  
+  IPIN (9,1)  Pin: 14  
+  SINK (9,1)  Class: 14  
+
+
+Net 5 (net3_1)
+
+SOURCE (9,0)  Pad: 10  
+  OPIN (9,0)  Pad: 10  
+ CHANX (9,0)  Track: 15  
+ CHANY (8,1)  Track: 15  
+ CHANX (9,1)  Track: 15  
+  IPIN (9,1)  Pin: 15  
+  SINK (9,1)  Class: 15  
+
+
+Net 6 (net8_1)
+
+SOURCE (9,1)  Class: 16  
+  OPIN (9,1)  Pin: 16  
+ CHANY (8,1)  Track: 16  
+ CHANX (9,0)  Track: 16  
+  IPIN (9,0)  Pad: 0  
+  SINK (9,0)  Pad: 0  
+
+
+Net 7 (aaa)
+
+SOURCE (6,2)  Class: 16  
+  OPIN (6,2)  Pin: 16  
+ CHANY (5,2)  Track: 5  
+ CHANY (5,1)  Track: 5  
+ CHANX (6,0)  Track: 5  
+  IPIN (6,1)  Pin: 11  
+  SINK (6,1)  Class: 11  
+ CHANX (6,0)  Track: 5  
+ CHANX (7,0)  Track: 5  
+  IPIN (7,1)  Pin: 11  
+  SINK (7,1)  Class: 11  
+ CHANY (5,2)  Track: 5  
+ CHANX (6,1)  Track: 5  
+ CHANX (7,1)  Track: 5  
+  IPIN (7,2)  Pin: 11  
+  SINK (7,2)  Class: 11  
+
+
+Net 8 (bbb)
+
+SOURCE (6,3)  Class: 16  
+  OPIN (6,3)  Pin: 16  
+ CHANY (5,3)  Track: 4  
+ CHANY (5,2)  Track: 4  
+ CHANY (5,1)  Track: 4  
+ CHANX (6,0)  Track: 4  
+  IPIN (6,1)  Pin: 12  
+  SINK (6,1)  Class: 12  
+ CHANX (6,0)  Track: 4  
+ CHANX (7,0)  Track: 4  
+  IPIN (7,1)  Pin: 12  
+  SINK (7,1)  Class: 12  
+ CHANX (7,0)  Track: 4  
+ CHANY (6,1)  Track: 4  
+ CHANX (7,1)  Track: 4  
+  IPIN (7,2)  Pin: 12  
+  SINK (7,2)  Class: 12  
+
+
+Net 9 (vcc): global net connecting:
+
+Block vcc (#8) at (7, 0), Pin class 16.
+Block bbb (#4) at (6, 3), Pin class 12.
+Block aaa (#5) at (6, 2), Pin class 12.
+
+
+Net 10 (gnd): global net connecting:
+
+Block gnd (#7) at (7, 0), Pin class 13.
+Block aaa (#5) at (6, 2), Pin class 11.

@@ -1,0 +1,12 @@
+.model test_0608
+.inputs dummy1 net1_1 net2_1 net4_1
+.outputs dummy2 net3_1
+.globals gnd vdd
+  
+.names dummy1 dummy2
+1 0
+  
+# peak_detector
+.subckt peak_detector in[0]=net1_1 in[1]=net2_1 in[2]=net4_1 out[0]=net3_1  #ota_bias[0] =0.00001&peak_detector_fg[0] =0&c4_cap_1x[0] =0
+  
+.end

@@ -1,0 +1,64 @@
+.model test_1130_SR16_DFF_xcos
+.inputs net11_1 net7_1 net2_1 net10_1 vcc gnd
+.outputs net6_1 net6_3 net6_5 net6_7 net6_9 net6_11 net6_13 net6_15 net15_1 net16_1
+  
+# D Flip Flop 
+.subckt tgate in[0]=vcc in[1]=gnd out=net16_infix2_1
+  
+.subckt tgate in[0]=vcc in[1]=gnd out=net16_infix3_1
+  
+.subckt tgate in[0]=vcc in[1]=gnd out=net16_infix4_1
+  
+.names net16_1 net16_infix2_1 net16_infix3_1 net16_infix4_1 net16_internal_1
+1--- 1
+  
+.subckt latch_custom D[0]=net16_internal_1 clk[0]=net12_1 reset[0]=net3_1 Q[0]=net5_1
+  
+# Shift register 1input 16outputs
+.subckt in2in_x1 in[0]=net2_fbout in[1]=net2_1 in[2]=net2_internal out[0]=net2_fbout
+  
+.subckt sftreg2 in[0]=net15_1 in[1]=net1_1 in[2]=net9_1 out[0]=net2_internal out[1]=net14_1 out[2]=net4_1 out[3]=net16_1 out[4]=net6_1 out[5]=net6_2 out[6]=net6_3 out[7]=net6_4 out[8]=net6_5 out[9]=net6_6 out[10]=net6_7 out[11]=net6_8 out[12]=net6_9 out[13]=net6_10 out[14]=net6_11 out[15]=net6_12 out[16]=net6_13 out[17]=net6_14 out[18]=net6_15 out[19]=net6_16 #sftreg2_fg =0
+  
+# gnd_dig
+.subckt tgate in[0]=vcc in[1]=gnd out=net1_1
+  
+# vdd_dig
+.subckt tgate in[0]=vcc in[1]=vcc out=net3_1
+  
+# TGATE
+.subckt tgate in[0]=net13_1 in[1]=net5_1 out=net8_1
+  
+# vdd_dig
+.subckt tgate in[0]=vcc in[1]=vcc out=net13_1
+  
+# LOOKUP Table-> 2 Input OR
+.subckt tgate in[0]=vcc in[1]=gnd out=net8_infix3_1
+  
+.subckt tgate in[0]=vcc in[1]=gnd out=net8_infix4_1
+  
+.names net8_1 net7_1 net8_infix3_1 net8_infix4_1 net9_1
+01-- 1
+10-- 1
+11-- 1
+  
+# LOOKUP Table-> 2 Input OR
+.subckt tgate in[0]=vcc in[1]=gnd out=net10_infix3_1
+  
+.subckt tgate in[0]=vcc in[1]=gnd out=net10_infix4_1
+  
+.names net10_1 net11_1 net10_infix3_1 net10_infix4_1 net15_1
+01-- 1
+10-- 1
+11-- 1
+  
+# LOOKUP Table-> 1 Input INV
+.subckt tgate in[0]=vcc in[1]=gnd out=net14_infix2_1
+  
+.subckt tgate in[0]=vcc in[1]=gnd out=net14_infix3_1
+  
+.subckt tgate in[0]=vcc in[1]=gnd out=net14_infix4_1
+  
+.names net14_1 net14_infix2_1 net14_infix3_1 net14_infix4_1 net12_1
+0--- 1
+  
+.end

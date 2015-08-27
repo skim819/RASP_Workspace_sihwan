@@ -1,0 +1,12 @@
+.model test_0817_nfet_test
+.inputs dummy1 net2_1 net3_1
+.outputs dummy2 net1_1
+.clocks
+  
+.names dummy1 dummy2
+0 1
+  
+# NFET
+.subckt nfet in[0]=net3 in[1]=net2 out=net1
+  
+.end

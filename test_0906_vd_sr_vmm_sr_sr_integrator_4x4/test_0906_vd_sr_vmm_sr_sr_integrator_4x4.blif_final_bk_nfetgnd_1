@@ -1,0 +1,8 @@
+.model vmm4x4_test
+.inputs Vin 
+.outputs nfet_Vref 
+
+# nfet_gnd
+.subckt nfet_gnd in[0]=Vin out[0]=nfet_Vref #nfet_gnd_fg =0 
+
+.end

@@ -1,0 +1,8 @@
+.model test_1127_dc_fgota_block_xcos
+.inputs net2_1
+.outputs net1_1
+  
+# dc_in
+.subckt fgota in[0]=net2_1 in[1]=net1_1 out[0]=net1_1 #ota_bias =2e-6&ota_p_bias =3e-6&ota_n_bias =3e-06&ota_small_cap =0
+  
+.end

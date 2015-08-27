@@ -1,0 +1,9 @@
+.model test_0825_VMMcurrent
+.inputs dummy1 net1_1
+.outputs dummy2 net1_1
+.clocks
+  
+.names dummy1 dummy2
+0 1
+  
+.end

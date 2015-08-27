@@ -1,0 +1,203 @@
+.model test_1202_image_convolution_16x16
+.inputs net40_1 net42_1 net35_1 net44_1 net24_1 net18_1 net23_1 net31_1 vcc gnd
+.outputs net13_1 net17_1 net17_2 net17_3 net17_4 net17_5 net17_6 net17_7 net17_8 net17_9 net17_10 net17_11 net17_12 net17_13 net17_14 net17_15 net17_16 net29_1 net39_1 net50_1
+.globals gnd vcc
+
+# tgates for logic
+.subckt tgate in[0]=vcc in[1]=gnd out=tg4logic_1
+
+.subckt tgate in[0]=vcc in[1]=gnd out=tg4logic_2
+
+.subckt tgate in[0]=vcc in[1]=gnd out=tg4logic_3
+
+# D Flip Flop
+.names net32_1 tg4logic_1 tg4logic_2 tg4logic_3 internal_1_1
+1--- 1
+
+.subckt latch_custom D[0]=internal_1_1 clk[0]=net3_1 reset[0]=net19_1 Q[0]=net39_1
+
+# D Flip Flop
+.names net9_1 tg4logic_1 tg4logic_2 tg4logic_3 internal_2_1
+1--- 1
+
+.subckt latch_custom D[0]=internal_2_1 clk[0]=net8_1 reset[0]=net46_1 Q[0]=net11_1
+
+# D Flip Flop
+.names net36_1 tg4logic_1 tg4logic_2 tg4logic_3 internal_3_1
+1--- 1
+
+.subckt latch_custom D[0]=internal_3_1 clk[0]=net47_1 reset[0]=net21_1 Q[0]=net49_1
+
+# Shift register 1input 16outputs
+.subckt in2in_x1 in[0]=fbout_4_1 in[1]=net35_1 in[2]=net35_internal out[0]=fbout_4_1
+
+.subckt sftreg2 in[0]=net13_1 in[1]=net20_1 in[2]=net48_1 out[0]=net35_internal out[1]=net2_1 out[2]=net1_1 out[3]=net32_1 out[4]=net4_1 out[5]=net4_2 out[6]=net4_3 out[7]=net4_4 out[8]=net4_5 out[9]=net4_6 out[10]=net4_7 out[11]=net4_8 out[12]=net4_9 out[13]=net4_10 out[14]=net4_11 out[15]=net4_12 out[16]=net4_13 out[17]=net4_14 out[18]=net4_15 out[19]=net4_16 #sftreg2_fg =0
+
+# vdd_dig
+.subckt tgate in[0]=vcc in[1]=vcc out=net19_1
+
+# LOOKUP Table-> 2In_OR_D_1
+.names net33_1 net42_1 tg4logic_1 tg4logic_2 net48_1
+01-- 1
+10-- 1
+11-- 1
+
+# LOOKUP Table-> 2In_OR_clk_1
+.names net44_1 net40_1 tg4logic_1 tg4logic_2 net13_1
+01-- 1
+10-- 1
+11-- 1
+
+# LOOKUP Table-> 1 Input INV
+.names net2_1 tg4logic_1 tg4logic_2 tg4logic_3 net3_1
+0--- 1
+
+# VMM 16x16 with shift register
+.subckt vmm8x4_in in[0]=net4_1 in[1]=net4_2 in[2]=net4_3 in[3]=net4_4 in[4]=net4_5 in[5]=net4_6 in[6]=net4_7 in[7]=net4_8 in[8]=net4_internal_1 in[9]=net4_internal_2 in[10]=net4_internal_3 in[11]=net4_internal_4 in[12]=net4_1_fbout out[0]=net4_1_fbout #vmm8x4_in_target =1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07
+
+.subckt vmm8x4_in in[0]=net4_9 in[1]=net4_10 in[2]=net4_11 in[3]=net4_12 in[4]=net4_13 in[5]=net4_14 in[6]=net4_15 in[7]=net4_16 in[8]=net4_internal_1 in[9]=net4_internal_2 in[10]=net4_internal_3 in[11]=net4_internal_4 in[12]=net4_2_fbout out[0]=net4_2_fbout #vmm8x4_in_target =1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07
+
+.subckt vmm8x4_in in[0]=net4_1 in[1]=net4_2 in[2]=net4_3 in[3]=net4_4 in[4]=net4_5 in[5]=net4_6 in[6]=net4_7 in[7]=net4_8 in[8]=net4_internal_5 in[9]=net4_internal_6 in[10]=net4_internal_7 in[11]=net4_internal_8 in[12]=net4_3_fbout out[0]=net4_3_fbout #vmm8x4_in_target =1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07
+
+.subckt vmm8x4_in in[0]=net4_9 in[1]=net4_10 in[2]=net4_11 in[3]=net4_12 in[4]=net4_13 in[5]=net4_14 in[6]=net4_15 in[7]=net4_16 in[8]=net4_internal_5 in[9]=net4_internal_6 in[10]=net4_internal_7 in[11]=net4_internal_8 in[12]=net4_4_fbout out[0]=net4_4_fbout #vmm8x4_in_target =1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07
+
+.subckt vmm8x4_in in[0]=net4_1 in[1]=net4_2 in[2]=net4_3 in[3]=net4_4 in[4]=net4_5 in[5]=net4_6 in[6]=net4_7 in[7]=net4_8 in[8]=net4_internal_9 in[9]=net4_internal_10 in[10]=net4_internal_11 in[11]=net4_internal_12 in[12]=net4_5_fbout out[0]=net4_5_fbout #vmm8x4_in_target =1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07
+
+.subckt vmm8x4_in in[0]=net4_9 in[1]=net4_10 in[2]=net4_11 in[3]=net4_12 in[4]=net4_13 in[5]=net4_14 in[6]=net4_15 in[7]=net4_16 in[8]=net4_internal_9 in[9]=net4_internal_10 in[10]=net4_internal_11 in[11]=net4_internal_12 in[12]=net4_6_fbout out[0]=net4_6_fbout #vmm8x4_in_target =1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07
+
+.subckt vmm8x4_in in[0]=net4_1 in[1]=net4_2 in[2]=net4_3 in[3]=net4_4 in[4]=net4_5 in[5]=net4_6 in[6]=net4_7 in[7]=net4_8 in[8]=net4_internal_13 in[9]=net4_internal_14 in[10]=net4_internal_15 in[11]=net4_internal_16 in[12]=net4_7_fbout out[0]=net4_7_fbout #vmm8x4_in_target =1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07
+
+.subckt vmm8x4_in in[0]=net4_9 in[1]=net4_10 in[2]=net4_11 in[3]=net4_12 in[4]=net4_13 in[5]=net4_14 in[6]=net4_15 in[7]=net4_16 in[8]=net4_internal_13 in[9]=net4_internal_14 in[10]=net4_internal_15 in[11]=net4_internal_16 in[12]=net4_8_fbout out[0]=net4_8_fbout #vmm8x4_in_target =1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07,1.00e-07
+
+.subckt sftreg2 in[0]=net30_1 in[1]=net20_1 in[2]=net10_1 out[0]=net25_1 out[1]=net15_1 out[2]=net6_1 out[3]=net9_1 out[4]=net4_internal_1 out[5]=net4_internal_2 out[6]=net4_internal_3 out[7]=net4_internal_4 out[8]=net4_internal_5 out[9]=net4_internal_6 out[10]=net4_internal_7 out[11]=net4_internal_8 out[12]=net4_internal_9 out[13]=net4_internal_10 out[14]=net4_internal_11 out[15]=net4_internal_12 out[16]=net4_internal_13 out[17]=net4_internal_14 out[18]=net4_internal_15 out[19]=net4_internal_16 #sftreg2_fg =0
+
+# TGATE
+.subckt tgate in[0]=net19_1 in[1]=net39_1 out=net33_1
+
+# Shift register 1input 16outputs
+.subckt in2in_x1 in[0]=fbout_5_1 in[1]=net25_1 in[2]=net25_internal out[0]=fbout_5_1
+
+.subckt sftreg2 in[0]=net29_1 in[1]=net5_1 in[2]=net50_1 out[0]=net25_internal out[1]=net14_1 out[2]=net7_1 out[3]=net36_1 out[4]=net16_1 out[5]=net16_2 out[6]=net16_3 out[7]=net16_4 out[8]=net16_5 out[9]=net16_6 out[10]=net16_7 out[11]=net16_8 out[12]=net16_9 out[13]=net16_10 out[14]=net16_11 out[15]=net16_12 out[16]=net16_13 out[17]=net16_14 out[18]=net16_15 out[19]=net16_16 #sftreg2_fg =0
+
+# gnd_dig
+.subckt tgate in[0]=vcc in[1]=gnd out=net20_1
+
+# gnd_dig
+.subckt tgate in[0]=vcc in[1]=gnd out=net5_1
+  
+# LOOKUP Table-> 2In_OR_clk_3
+.names net45_1 net37_1 tg4logic_1 tg4logic_2 net30_1
+01-- 1
+10-- 1
+11-- 1
+
+# LOOKUP Table-> 1 Input INV
+.names net15_1 tg4logic_1 tg4logic_2 tg4logic_3 net8_1
+0--- 1
+
+# LOOKUP Table-> 2In_OR_D_3
+.names net43_1 net12_1 tg4logic_1 tg4logic_2 net10_1
+01-- 1
+10-- 1
+11-- 1
+
+# TGATE
+.subckt tgate in[0]=net46_1 in[1]=net11_1 out=net12_1
+
+# LOOKUP Table-> 2In_OR_clk_2
+.names net45_1 net34_1 tg4logic_1 tg4logic_2 net29_1
+01-- 1
+10-- 1
+11-- 1
+
+# LOOKUP Table-> 1 Input INV
+.names net14_1 tg4logic_1 tg4logic_2 tg4logic_3 net47_1
+0--- 1
+
+# vdd_dig
+.subckt tgate in[0]=vcc in[1]=vcc out=net21_1
+  
+# LOOKUP Table-> 2In_OR_D_2
+.names net43_1 net38_1 tg4logic_1 tg4logic_2 net50_1
+01-- 1
+10-- 1
+11-- 1
+
+# TGATE
+.subckt tgate in[0]=net21_1 in[1]=net49_1 out=net38_1
+
+# INTEGRATOR
+.subckt integrator in[0]=net24_1 in[1]=net16_1 in[2]=net18_1 out[0]=net17_1 #integrator_fg =0&cap_3x =0&cap_2x =0&integrator_ota0 =1.00e-06&integrator_ota1 =2.00e-06
+
+.subckt integrator in[0]=net24_1 in[1]=net16_2 in[2]=net18_1 out[0]=net17_2 #integrator_fg =0&cap_3x =0&cap_2x =0&integrator_ota0 =1.00e-06&integrator_ota1 =2.00e-06
+
+.subckt integrator in[0]=net24_1 in[1]=net16_3 in[2]=net18_1 out[0]=net17_3 #integrator_fg =0&cap_3x =0&cap_2x =0&integrator_ota0 =1.00e-06&integrator_ota1 =2.00e-06
+
+.subckt integrator in[0]=net24_1 in[1]=net16_4 in[2]=net18_1 out[0]=net17_4 #integrator_fg =0&cap_3x =0&cap_2x =0&integrator_ota0 =1.00e-06&integrator_ota1 =2.00e-06
+
+.subckt integrator in[0]=net24_1 in[1]=net16_5 in[2]=net18_1 out[0]=net17_5 #integrator_fg =0&cap_3x =0&cap_2x =0&integrator_ota0 =1.00e-06&integrator_ota1 =2.00e-06
+
+.subckt integrator in[0]=net24_1 in[1]=net16_6 in[2]=net18_1 out[0]=net17_6 #integrator_fg =0&cap_3x =0&cap_2x =0&integrator_ota0 =1.00e-06&integrator_ota1 =2.00e-06
+
+.subckt integrator in[0]=net24_1 in[1]=net16_7 in[2]=net18_1 out[0]=net17_7 #integrator_fg =0&cap_3x =0&cap_2x =0&integrator_ota0 =1.00e-06&integrator_ota1 =2.00e-06
+
+.subckt integrator in[0]=net24_1 in[1]=net16_8 in[2]=net18_1 out[0]=net17_8 #integrator_fg =0&cap_3x =0&cap_2x =0&integrator_ota0 =1.00e-06&integrator_ota1 =2.00e-06
+
+.subckt integrator in[0]=net24_1 in[1]=net16_9 in[2]=net18_1 out[0]=net17_9 #integrator_fg =0&cap_3x =0&cap_2x =0&integrator_ota0 =1.00e-06&integrator_ota1 =2.00e-06
+
+.subckt integrator in[0]=net24_1 in[1]=net16_10 in[2]=net18_1 out[0]=net17_10 #integrator_fg =0&cap_3x =0&cap_2x =0&integrator_ota0 =1.00e-06&integrator_ota1 =2.00e-06
+
+.subckt integrator in[0]=net24_1 in[1]=net16_11 in[2]=net18_1 out[0]=net17_11 #integrator_fg =0&cap_3x =0&cap_2x =0&integrator_ota0 =1.00e-06&integrator_ota1 =2.00e-06
+
+.subckt integrator in[0]=net24_1 in[1]=net16_12 in[2]=net18_1 out[0]=net17_12 #integrator_fg =0&cap_3x =0&cap_2x =0&integrator_ota0 =1.00e-06&integrator_ota1 =2.00e-06
+
+.subckt integrator in[0]=net24_1 in[1]=net16_13 in[2]=net18_1 out[0]=net17_13 #integrator_fg =0&cap_3x =0&cap_2x =0&integrator_ota0 =1.00e-06&integrator_ota1 =2.00e-06
+
+.subckt integrator in[0]=net24_1 in[1]=net16_14 in[2]=net18_1 out[0]=net17_14 #integrator_fg =0&cap_3x =0&cap_2x =0&integrator_ota0 =1.00e-06&integrator_ota1 =2.00e-06
+
+.subckt integrator in[0]=net24_1 in[1]=net16_15 in[2]=net18_1 out[0]=net17_15 #integrator_fg =0&cap_3x =0&cap_2x =0&integrator_ota0 =1.00e-06&integrator_ota1 =2.00e-06
+
+.subckt integrator in[0]=net24_1 in[1]=net16_16 in[2]=net18_1 out[0]=net17_16 #integrator_fg =0&cap_3x =0&cap_2x =0&integrator_ota0 =1.00e-06&integrator_ota1 =2.00e-06
+
+# ota
+.subckt ota_buf in[0]=net24_1 out[0]=net22_1 #ota_biasfb =0.000002000000
+
+# Input 2 Input x1
+.subckt in2in_x1 in[0]=fbout_6_1 in[1]=net26_1 in[2]=net28_1 out[0]=fbout_6_1
+
+# gnd_dig
+.subckt tgate in[0]=vcc in[1]=gnd out=net27_1
+  
+# TGATE
+.subckt tgate in[0]=net23_1 in[1]=net22_1 out=net26_1
+
+# Input 2 Input x1
+.subckt in2in_x1 in[0]=fbout_7_1 in[1]=net28_1 in[2]=net25_1 out[0]=fbout_7_1
+
+# NFET
+.subckt nfet in[0]=net31_1 in[1]=net27_1 out[0]=net28_1
+
+# LOOKUP Table-> 2In_AND_clk_2
+.names net33_1 net41_1 tg4logic_1 tg4logic_2 net34_1
+11-- 1
+
+# LOOKUP Table-> 2In_AND_clk_3
+.names net41_1 net38_1 tg4logic_1 tg4logic_2 net37_1
+11-- 1
+
+# vdd_dig
+.subckt tgate in[0]=vcc in[1]=vcc out=net46_1
+  
+# LOOKUP Table-> 1in_pass
+.names net40_1 tg4logic_1 tg4logic_2 tg4logic_3 net41_1
+1--- 1
+
+# LOOKUP Table-> 1in_pass
+.names net42_1 tg4logic_1 tg4logic_2 tg4logic_3 net43_1
+1--- 1
+
+# LOOKUP Table-> 1in_pass
+.names net44_1 tg4logic_1 tg4logic_2 tg4logic_3 net45_1
+1--- 1
+
+.end

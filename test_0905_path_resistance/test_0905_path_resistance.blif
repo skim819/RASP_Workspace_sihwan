@@ -1,0 +1,5 @@
+.model test_0905_path_resistance
+.inputs net1_1
+.outputs net1_1
+  
+.end

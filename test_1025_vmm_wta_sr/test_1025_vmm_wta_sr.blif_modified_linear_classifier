@@ -1,0 +1,26 @@
+.model wta
+.inputs Vin1 Vin2 Vin3 Vin4 nbias dac_vdd clk en data gnd
+.outputs clk_out Vout
+
+# VMM
+.subckt vmm4x4 in[0]=Vin1 in[1]=Vin2 in[2]=Vin3 in[3]=Vin4 out[0]=vmm_out1 out[1]=vmm_out2 out[2]=vmm_out3 out[3]=vmm_out4 #vmm4x4_target =4e-06,1e-09,1e-09,1e-09,1e-09,3e-06,3e-06,1e-09,1e-09,1e-09,1e-09,1e-09,1e-09,1e-09,1e-09,1e-09
+
+# WTA_1
+.subckt wta in[0]=vmm_out1 in[1]=nfet_d out[0]=wta_Vout1 #wta_fg =0&wta_bufbias =2e-06&wta_pfetbias =8.5e-09
+  
+# WTA_2
+.subckt wta in[0]=vmm_out2 in[1]=nfet_d out[0]=wta_Vout2 #wta_fg =0&wta_bufbias =2e-06&wta_pfetbias =10.5e-09
+
+# WTA_3
+.subckt wta in[0]=vmm_out3 in[1]=nfet_d out[0]=wta_Vout3 #wta_fg =0&wta_bufbias =2e-06&wta_pfetbias =10e-09
+
+# WTA_4
+.subckt wta in[0]=vmm_out4 in[1]=nfet_d out[0]=wta_Vout4 #wta_fg =0&wta_bufbias =2e-06&wta_pfetbias =10e-09
+ 
+# NFET
+.subckt nfet in[0]=nbias in[1]=gnd out=nfet_d
+
+# 12x1 shift register
+.subckt sftreg in[0]=dac_vdd in[1]=dac_vdd in[2]=dac_vdd in[3]=dac_vdd in[4]=dac_vdd in[5]=dac_vdd in[6]=wta_Vout1 in[7]=wta_Vout2 in[8]=wta_Vout3 in[9]=wta_Vout4 in[10]=dac_vdd in[11]=dac_vdd in[12]=clk in[13]=en in[14]=data out[0]=Vout out[1]=clk_out out[2]=cs_out out[3]=Q #sftreg_fg =0
+
+.end

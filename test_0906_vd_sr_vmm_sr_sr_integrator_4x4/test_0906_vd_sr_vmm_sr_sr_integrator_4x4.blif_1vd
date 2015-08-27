@@ -1,0 +1,9 @@
+.model vmm4x4_test
+.inputs Vin vd_Vref 
+.outputs vd1 
+
+# Voltage Divider 1
+.subckt volt_div in[0]=Vin in[1]=vd_Vref out[0]=vd1 #volt_div_fg =0&fgota_biasfb =5E-06&ota_p_bias =100E-06&ota_n_bias =115E-06&fgota_small_cap =0&cap_1x_vd =0&vd_target =7e-09
+
+
+.end 	

@@ -1,0 +1,577 @@
+<block name="/home/ubuntu/RASP_Workspace/test_1124_vmm16x16_sr_xcos//test_1124_vmm16x16_sr_xcos.net" instance="FPGA_packed_netlist[0]">
+	<inputs>
+		net1_1 net2_1 net3_1 net4_1 
+	</inputs>
+
+	<outputs>
+		out:net9_1 
+	</outputs>
+
+	<globals>
+		
+	</globals>
+
+	<block name="net8_8_fbout" instance="cab_vmm[0]" mode="cab_vmm">
+		<inputs>
+			<port name="I">net8_internal_13 net8_13 net8_14 net8_15 net8_internal_14 net8_16 net8_internal_15 net8_8_fbout net8_9 net8_10 net8_internal_16 net8_11 net8_12 open open open </port>
+			<port name="si">open open open open </port>
+		</inputs>
+		<outputs>
+			<port name="O">open open open open vmm8x4[0].out[0]->crossbar  open open open </port>
+			<port name="so">open open open open open open open open open open open open </port>
+		</outputs>
+		<globals>
+		</globals>
+		<block name="open" instance="vmm_16x16[0]"/>
+		<block name="open" instance="vmm_2x2[0]"/>
+		<block name="open" instance="volt_div[0]"/>
+		<block name="open" instance="volt_div[1]"/>
+		<block name="open" instance="in2in_x1[0]"/>
+		<block name="open" instance="in2in_x6[0]"/>
+		<block name="open" instance="vmm_senseamp1[0]"/>
+		<block name="open" instance="vmm_senseamp2[0]"/>
+		<block name="open" instance="wta[0]"/>
+		<block name="open" instance="wta_primary[0]"/>
+		<block name="open" instance="integrator[0]"/>
+		<block name="open" instance="common_source[0]"/>
+		<block name="open" instance="tgate_so[0]"/>
+		<block name="open" instance="vmm4x4_SR[0]"/>
+		<block name="open" instance="vmm4x4_SR2[0]"/>
+		<block name="open" instance="vmm8x4_SR[0]"/>
+		<block name="open" instance="SR4[0]"/>
+		<block name="open" instance="vmm4x4[0]"/>
+		<block name="net8_8_fbout" instance="vmm8x4[0]">
+			<inputs>
+				<port name="in">cab_vmm.I[8]->direct05  cab_vmm.I[9]->direct05  cab_vmm.I[11]->direct04  cab_vmm.I[12]->direct04  cab_vmm.I[1]->crossbar  cab_vmm.I[2]->crossbar  cab_vmm.I[3]->crossbar  cab_vmm.I[5]->crossbar  cab_vmm.I[0]->crossbar  cab_vmm.I[4]->crossbar  cab_vmm.I[6]->crossbar  cab_vmm.I[10]->crossbar  cab_vmm.I[7]->direct05  </port>
+			</inputs>
+			<outputs>
+				<port name="out">net8_8_fbout </port>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+		<block name="open" instance="sftreg[0]"/>
+		<block name="open" instance="sftreg2[0]"/>
+	</block>
+	<block name="net8_7_fbout" instance="cab_vmm[1]" mode="cab_vmm">
+		<inputs>
+			<port name="I">net8_internal_13 net8_5 net8_6 net8_7 net8_internal_14 net8_8 net8_internal_15 net8_7_fbout net8_1 net8_2 net8_internal_16 net8_3 net8_4 open open open </port>
+			<port name="si">open open open open </port>
+		</inputs>
+		<outputs>
+			<port name="O">open open open open vmm8x4[0].out[0]->crossbar  open open open </port>
+			<port name="so">open open open open open open open open open open open open </port>
+		</outputs>
+		<globals>
+		</globals>
+		<block name="open" instance="vmm_16x16[0]"/>
+		<block name="open" instance="vmm_2x2[0]"/>
+		<block name="open" instance="volt_div[0]"/>
+		<block name="open" instance="volt_div[1]"/>
+		<block name="open" instance="in2in_x1[0]"/>
+		<block name="open" instance="in2in_x6[0]"/>
+		<block name="open" instance="vmm_senseamp1[0]"/>
+		<block name="open" instance="vmm_senseamp2[0]"/>
+		<block name="open" instance="wta[0]"/>
+		<block name="open" instance="wta_primary[0]"/>
+		<block name="open" instance="integrator[0]"/>
+		<block name="open" instance="common_source[0]"/>
+		<block name="open" instance="tgate_so[0]"/>
+		<block name="open" instance="vmm4x4_SR[0]"/>
+		<block name="open" instance="vmm4x4_SR2[0]"/>
+		<block name="open" instance="vmm8x4_SR[0]"/>
+		<block name="open" instance="SR4[0]"/>
+		<block name="open" instance="vmm4x4[0]"/>
+		<block name="net8_7_fbout" instance="vmm8x4[0]">
+			<inputs>
+				<port name="in">cab_vmm.I[8]->direct05  cab_vmm.I[9]->direct05  cab_vmm.I[11]->direct04  cab_vmm.I[12]->direct04  cab_vmm.I[1]->crossbar  cab_vmm.I[2]->crossbar  cab_vmm.I[3]->crossbar  cab_vmm.I[5]->crossbar  cab_vmm.I[0]->crossbar  cab_vmm.I[4]->crossbar  cab_vmm.I[6]->crossbar  cab_vmm.I[10]->crossbar  cab_vmm.I[7]->direct05  </port>
+			</inputs>
+			<outputs>
+				<port name="out">net8_7_fbout </port>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+		<block name="open" instance="sftreg[0]"/>
+		<block name="open" instance="sftreg2[0]"/>
+	</block>
+	<block name="net8_6_fbout" instance="cab_vmm[2]" mode="cab_vmm">
+		<inputs>
+			<port name="I">net8_internal_9 net8_13 net8_14 net8_15 net8_internal_10 net8_16 net8_internal_11 net8_6_fbout net8_9 net8_10 net8_internal_12 net8_11 net8_12 open open open </port>
+			<port name="si">open open open open </port>
+		</inputs>
+		<outputs>
+			<port name="O">open open open open vmm8x4[0].out[0]->crossbar  open open open </port>
+			<port name="so">open open open open open open open open open open open open </port>
+		</outputs>
+		<globals>
+		</globals>
+		<block name="open" instance="vmm_16x16[0]"/>
+		<block name="open" instance="vmm_2x2[0]"/>
+		<block name="open" instance="volt_div[0]"/>
+		<block name="open" instance="volt_div[1]"/>
+		<block name="open" instance="in2in_x1[0]"/>
+		<block name="open" instance="in2in_x6[0]"/>
+		<block name="open" instance="vmm_senseamp1[0]"/>
+		<block name="open" instance="vmm_senseamp2[0]"/>
+		<block name="open" instance="wta[0]"/>
+		<block name="open" instance="wta_primary[0]"/>
+		<block name="open" instance="integrator[0]"/>
+		<block name="open" instance="common_source[0]"/>
+		<block name="open" instance="tgate_so[0]"/>
+		<block name="open" instance="vmm4x4_SR[0]"/>
+		<block name="open" instance="vmm4x4_SR2[0]"/>
+		<block name="open" instance="vmm8x4_SR[0]"/>
+		<block name="open" instance="SR4[0]"/>
+		<block name="open" instance="vmm4x4[0]"/>
+		<block name="net8_6_fbout" instance="vmm8x4[0]">
+			<inputs>
+				<port name="in">cab_vmm.I[8]->direct05  cab_vmm.I[9]->direct05  cab_vmm.I[11]->direct04  cab_vmm.I[12]->direct04  cab_vmm.I[1]->crossbar  cab_vmm.I[2]->crossbar  cab_vmm.I[3]->crossbar  cab_vmm.I[5]->crossbar  cab_vmm.I[0]->crossbar  cab_vmm.I[4]->crossbar  cab_vmm.I[6]->crossbar  cab_vmm.I[10]->crossbar  cab_vmm.I[7]->direct05  </port>
+			</inputs>
+			<outputs>
+				<port name="out">net8_6_fbout </port>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+		<block name="open" instance="sftreg[0]"/>
+		<block name="open" instance="sftreg2[0]"/>
+	</block>
+	<block name="net8_5_fbout" instance="cab_vmm[3]" mode="cab_vmm">
+		<inputs>
+			<port name="I">net8_internal_9 net8_5 net8_6 net8_7 net8_internal_10 net8_8 net8_internal_11 net8_5_fbout net8_1 net8_2 net8_internal_12 net8_3 net8_4 open open open </port>
+			<port name="si">open open open open </port>
+		</inputs>
+		<outputs>
+			<port name="O">open open open open vmm8x4[0].out[0]->crossbar  open open open </port>
+			<port name="so">open open open open open open open open open open open open </port>
+		</outputs>
+		<globals>
+		</globals>
+		<block name="open" instance="vmm_16x16[0]"/>
+		<block name="open" instance="vmm_2x2[0]"/>
+		<block name="open" instance="volt_div[0]"/>
+		<block name="open" instance="volt_div[1]"/>
+		<block name="open" instance="in2in_x1[0]"/>
+		<block name="open" instance="in2in_x6[0]"/>
+		<block name="open" instance="vmm_senseamp1[0]"/>
+		<block name="open" instance="vmm_senseamp2[0]"/>
+		<block name="open" instance="wta[0]"/>
+		<block name="open" instance="wta_primary[0]"/>
+		<block name="open" instance="integrator[0]"/>
+		<block name="open" instance="common_source[0]"/>
+		<block name="open" instance="tgate_so[0]"/>
+		<block name="open" instance="vmm4x4_SR[0]"/>
+		<block name="open" instance="vmm4x4_SR2[0]"/>
+		<block name="open" instance="vmm8x4_SR[0]"/>
+		<block name="open" instance="SR4[0]"/>
+		<block name="open" instance="vmm4x4[0]"/>
+		<block name="net8_5_fbout" instance="vmm8x4[0]">
+			<inputs>
+				<port name="in">cab_vmm.I[8]->direct05  cab_vmm.I[9]->direct05  cab_vmm.I[11]->direct04  cab_vmm.I[12]->direct04  cab_vmm.I[1]->crossbar  cab_vmm.I[2]->crossbar  cab_vmm.I[3]->crossbar  cab_vmm.I[5]->crossbar  cab_vmm.I[0]->crossbar  cab_vmm.I[4]->crossbar  cab_vmm.I[6]->crossbar  cab_vmm.I[10]->crossbar  cab_vmm.I[7]->direct05  </port>
+			</inputs>
+			<outputs>
+				<port name="out">net8_5_fbout </port>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+		<block name="open" instance="sftreg[0]"/>
+		<block name="open" instance="sftreg2[0]"/>
+	</block>
+	<block name="net8_4_fbout" instance="cab_vmm[4]" mode="cab_vmm">
+		<inputs>
+			<port name="I">net8_internal_5 net8_13 net8_14 net8_15 net8_internal_6 net8_16 net8_internal_7 net8_4_fbout net8_9 net8_10 net8_internal_8 net8_11 net8_12 open open open </port>
+			<port name="si">open open open open </port>
+		</inputs>
+		<outputs>
+			<port name="O">open open open open vmm8x4[0].out[0]->crossbar  open open open </port>
+			<port name="so">open open open open open open open open open open open open </port>
+		</outputs>
+		<globals>
+		</globals>
+		<block name="open" instance="vmm_16x16[0]"/>
+		<block name="open" instance="vmm_2x2[0]"/>
+		<block name="open" instance="volt_div[0]"/>
+		<block name="open" instance="volt_div[1]"/>
+		<block name="open" instance="in2in_x1[0]"/>
+		<block name="open" instance="in2in_x6[0]"/>
+		<block name="open" instance="vmm_senseamp1[0]"/>
+		<block name="open" instance="vmm_senseamp2[0]"/>
+		<block name="open" instance="wta[0]"/>
+		<block name="open" instance="wta_primary[0]"/>
+		<block name="open" instance="integrator[0]"/>
+		<block name="open" instance="common_source[0]"/>
+		<block name="open" instance="tgate_so[0]"/>
+		<block name="open" instance="vmm4x4_SR[0]"/>
+		<block name="open" instance="vmm4x4_SR2[0]"/>
+		<block name="open" instance="vmm8x4_SR[0]"/>
+		<block name="open" instance="SR4[0]"/>
+		<block name="open" instance="vmm4x4[0]"/>
+		<block name="net8_4_fbout" instance="vmm8x4[0]">
+			<inputs>
+				<port name="in">cab_vmm.I[8]->direct05  cab_vmm.I[9]->direct05  cab_vmm.I[11]->direct04  cab_vmm.I[12]->direct04  cab_vmm.I[1]->crossbar  cab_vmm.I[2]->crossbar  cab_vmm.I[3]->crossbar  cab_vmm.I[5]->crossbar  cab_vmm.I[0]->crossbar  cab_vmm.I[4]->crossbar  cab_vmm.I[6]->crossbar  cab_vmm.I[10]->crossbar  cab_vmm.I[7]->direct05  </port>
+			</inputs>
+			<outputs>
+				<port name="out">net8_4_fbout </port>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+		<block name="open" instance="sftreg[0]"/>
+		<block name="open" instance="sftreg2[0]"/>
+	</block>
+	<block name="net8_3_fbout" instance="cab_vmm[5]" mode="cab_vmm">
+		<inputs>
+			<port name="I">net8_internal_5 net8_5 net8_6 net8_7 net8_internal_6 net8_8 net8_internal_7 net8_3_fbout net8_1 net8_2 net8_internal_8 net8_3 net8_4 open open open </port>
+			<port name="si">open open open open </port>
+		</inputs>
+		<outputs>
+			<port name="O">open open open open vmm8x4[0].out[0]->crossbar  open open open </port>
+			<port name="so">open open open open open open open open open open open open </port>
+		</outputs>
+		<globals>
+		</globals>
+		<block name="open" instance="vmm_16x16[0]"/>
+		<block name="open" instance="vmm_2x2[0]"/>
+		<block name="open" instance="volt_div[0]"/>
+		<block name="open" instance="volt_div[1]"/>
+		<block name="open" instance="in2in_x1[0]"/>
+		<block name="open" instance="in2in_x6[0]"/>
+		<block name="open" instance="vmm_senseamp1[0]"/>
+		<block name="open" instance="vmm_senseamp2[0]"/>
+		<block name="open" instance="wta[0]"/>
+		<block name="open" instance="wta_primary[0]"/>
+		<block name="open" instance="integrator[0]"/>
+		<block name="open" instance="common_source[0]"/>
+		<block name="open" instance="tgate_so[0]"/>
+		<block name="open" instance="vmm4x4_SR[0]"/>
+		<block name="open" instance="vmm4x4_SR2[0]"/>
+		<block name="open" instance="vmm8x4_SR[0]"/>
+		<block name="open" instance="SR4[0]"/>
+		<block name="open" instance="vmm4x4[0]"/>
+		<block name="net8_3_fbout" instance="vmm8x4[0]">
+			<inputs>
+				<port name="in">cab_vmm.I[8]->direct05  cab_vmm.I[9]->direct05  cab_vmm.I[11]->direct04  cab_vmm.I[12]->direct04  cab_vmm.I[1]->crossbar  cab_vmm.I[2]->crossbar  cab_vmm.I[3]->crossbar  cab_vmm.I[5]->crossbar  cab_vmm.I[0]->crossbar  cab_vmm.I[4]->crossbar  cab_vmm.I[6]->crossbar  cab_vmm.I[10]->crossbar  cab_vmm.I[7]->direct05  </port>
+			</inputs>
+			<outputs>
+				<port name="out">net8_3_fbout </port>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+		<block name="open" instance="sftreg[0]"/>
+		<block name="open" instance="sftreg2[0]"/>
+	</block>
+	<block name="net8_2_fbout" instance="cab_vmm[6]" mode="cab_vmm">
+		<inputs>
+			<port name="I">net8_internal_1 net8_13 net8_14 net8_15 net8_internal_2 net8_16 net8_internal_3 net8_2_fbout net8_9 net8_10 net8_internal_4 net8_11 net8_12 open open open </port>
+			<port name="si">open open open open </port>
+		</inputs>
+		<outputs>
+			<port name="O">open open open open vmm8x4[0].out[0]->crossbar  open open open </port>
+			<port name="so">open open open open open open open open open open open open </port>
+		</outputs>
+		<globals>
+		</globals>
+		<block name="open" instance="vmm_16x16[0]"/>
+		<block name="open" instance="vmm_2x2[0]"/>
+		<block name="open" instance="volt_div[0]"/>
+		<block name="open" instance="volt_div[1]"/>
+		<block name="open" instance="in2in_x1[0]"/>
+		<block name="open" instance="in2in_x6[0]"/>
+		<block name="open" instance="vmm_senseamp1[0]"/>
+		<block name="open" instance="vmm_senseamp2[0]"/>
+		<block name="open" instance="wta[0]"/>
+		<block name="open" instance="wta_primary[0]"/>
+		<block name="open" instance="integrator[0]"/>
+		<block name="open" instance="common_source[0]"/>
+		<block name="open" instance="tgate_so[0]"/>
+		<block name="open" instance="vmm4x4_SR[0]"/>
+		<block name="open" instance="vmm4x4_SR2[0]"/>
+		<block name="open" instance="vmm8x4_SR[0]"/>
+		<block name="open" instance="SR4[0]"/>
+		<block name="open" instance="vmm4x4[0]"/>
+		<block name="net8_2_fbout" instance="vmm8x4[0]">
+			<inputs>
+				<port name="in">cab_vmm.I[8]->direct05  cab_vmm.I[9]->direct05  cab_vmm.I[11]->direct04  cab_vmm.I[12]->direct04  cab_vmm.I[1]->crossbar  cab_vmm.I[2]->crossbar  cab_vmm.I[3]->crossbar  cab_vmm.I[5]->crossbar  cab_vmm.I[0]->crossbar  cab_vmm.I[4]->crossbar  cab_vmm.I[6]->crossbar  cab_vmm.I[10]->crossbar  cab_vmm.I[7]->direct05  </port>
+			</inputs>
+			<outputs>
+				<port name="out">net8_2_fbout </port>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+		<block name="open" instance="sftreg[0]"/>
+		<block name="open" instance="sftreg2[0]"/>
+	</block>
+	<block name="net8_1_fbout" instance="cab_vmm[7]" mode="cab_vmm">
+		<inputs>
+			<port name="I">net8_internal_1 net8_5 net8_6 net8_7 net8_internal_2 net8_8 net8_internal_3 net8_1_fbout net8_1 net8_2 net8_internal_4 net8_3 net8_4 open open open </port>
+			<port name="si">open open open open </port>
+		</inputs>
+		<outputs>
+			<port name="O">open open open open vmm8x4[0].out[0]->crossbar  open open open </port>
+			<port name="so">open open open open open open open open open open open open </port>
+		</outputs>
+		<globals>
+		</globals>
+		<block name="open" instance="vmm_16x16[0]"/>
+		<block name="open" instance="vmm_2x2[0]"/>
+		<block name="open" instance="volt_div[0]"/>
+		<block name="open" instance="volt_div[1]"/>
+		<block name="open" instance="in2in_x1[0]"/>
+		<block name="open" instance="in2in_x6[0]"/>
+		<block name="open" instance="vmm_senseamp1[0]"/>
+		<block name="open" instance="vmm_senseamp2[0]"/>
+		<block name="open" instance="wta[0]"/>
+		<block name="open" instance="wta_primary[0]"/>
+		<block name="open" instance="integrator[0]"/>
+		<block name="open" instance="common_source[0]"/>
+		<block name="open" instance="tgate_so[0]"/>
+		<block name="open" instance="vmm4x4_SR[0]"/>
+		<block name="open" instance="vmm4x4_SR2[0]"/>
+		<block name="open" instance="vmm8x4_SR[0]"/>
+		<block name="open" instance="SR4[0]"/>
+		<block name="open" instance="vmm4x4[0]"/>
+		<block name="net8_1_fbout" instance="vmm8x4[0]">
+			<inputs>
+				<port name="in">cab_vmm.I[8]->direct05  cab_vmm.I[9]->direct05  cab_vmm.I[11]->direct04  cab_vmm.I[12]->direct04  cab_vmm.I[1]->crossbar  cab_vmm.I[2]->crossbar  cab_vmm.I[3]->crossbar  cab_vmm.I[5]->crossbar  cab_vmm.I[0]->crossbar  cab_vmm.I[4]->crossbar  cab_vmm.I[6]->crossbar  cab_vmm.I[10]->crossbar  cab_vmm.I[7]->direct05  </port>
+			</inputs>
+			<outputs>
+				<port name="out">net8_1_fbout </port>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+		<block name="open" instance="sftreg[0]"/>
+		<block name="open" instance="sftreg2[0]"/>
+	</block>
+	<block name="net9_1" instance="cab_vmm[8]" mode="cab_vmm">
+		<inputs>
+			<port name="I">open open open open open open open open open open open open open net5_1 net6_1 net7_1 </port>
+			<port name="si">open open open open </port>
+		</inputs>
+		<outputs>
+			<port name="O">sftreg2[0].out[18]->crossbar  sftreg2[0].out[19]->crossbar  sftreg2[0].out[10]->crossbar  sftreg2[0].out[11]->crossbar  sftreg2[0].out[0]->crossbar  open open open </port>
+			<port name="so">sftreg2[0].out[12]->crossbar  sftreg2[0].out[13]->crossbar  sftreg2[0].out[14]->crossbar  sftreg2[0].out[15]->crossbar  sftreg2[0].out[16]->crossbar  sftreg2[0].out[17]->crossbar  sftreg2[0].out[4]->crossbar  sftreg2[0].out[5]->crossbar  sftreg2[0].out[6]->crossbar  sftreg2[0].out[7]->crossbar  sftreg2[0].out[8]->crossbar  sftreg2[0].out[9]->crossbar  </port>
+		</outputs>
+		<globals>
+		</globals>
+		<block name="open" instance="vmm_16x16[0]"/>
+		<block name="open" instance="vmm_2x2[0]"/>
+		<block name="open" instance="volt_div[0]"/>
+		<block name="open" instance="volt_div[1]"/>
+		<block name="open" instance="in2in_x1[0]"/>
+		<block name="open" instance="in2in_x6[0]"/>
+		<block name="open" instance="vmm_senseamp1[0]"/>
+		<block name="open" instance="vmm_senseamp2[0]"/>
+		<block name="open" instance="wta[0]"/>
+		<block name="open" instance="wta_primary[0]"/>
+		<block name="open" instance="integrator[0]"/>
+		<block name="open" instance="common_source[0]"/>
+		<block name="open" instance="tgate_so[0]"/>
+		<block name="open" instance="vmm4x4_SR[0]"/>
+		<block name="open" instance="vmm4x4_SR2[0]"/>
+		<block name="open" instance="vmm8x4_SR[0]"/>
+		<block name="open" instance="SR4[0]"/>
+		<block name="open" instance="vmm4x4[0]"/>
+		<block name="open" instance="vmm8x4[0]"/>
+		<block name="open" instance="sftreg[0]"/>
+		<block name="net9_1" instance="sftreg2[0]">
+			<inputs>
+				<port name="in">cab_vmm.I[13]->crossbar  cab_vmm.I[14]->crossbar  cab_vmm.I[15]->crossbar  </port>
+			</inputs>
+			<outputs>
+				<port name="out">net9_1 open open open net8_internal_1 net8_internal_2 net8_internal_3 net8_internal_4 net8_internal_5 net8_internal_6 net8_internal_7 net8_internal_8 net8_internal_9 net8_internal_10 net8_internal_11 net8_internal_12 net8_internal_13 net8_internal_14 net8_internal_15 net8_internal_16 </port>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+	</block>
+	<block name="net4_internal" instance="cab_vmm[9]" mode="cab_vmm">
+		<inputs>
+			<port name="I">open open open open open open open open open open open open open net1_1 net2_1 net3_1 </port>
+			<port name="si">open open open open </port>
+		</inputs>
+		<outputs>
+			<port name="O">sftreg2[0].out[18]->crossbar  sftreg2[0].out[19]->crossbar  sftreg2[0].out[10]->crossbar  sftreg2[0].out[11]->crossbar  sftreg2[0].out[0]->crossbar  sftreg2[0].out[1]->crossbar  sftreg2[0].out[2]->crossbar  sftreg2[0].out[3]->crossbar  </port>
+			<port name="so">sftreg2[0].out[12]->crossbar  sftreg2[0].out[13]->crossbar  sftreg2[0].out[14]->crossbar  sftreg2[0].out[15]->crossbar  sftreg2[0].out[16]->crossbar  sftreg2[0].out[17]->crossbar  sftreg2[0].out[4]->crossbar  sftreg2[0].out[5]->crossbar  sftreg2[0].out[6]->crossbar  sftreg2[0].out[7]->crossbar  sftreg2[0].out[8]->crossbar  sftreg2[0].out[9]->crossbar  </port>
+		</outputs>
+		<globals>
+		</globals>
+		<block name="open" instance="vmm_16x16[0]"/>
+		<block name="open" instance="vmm_2x2[0]"/>
+		<block name="open" instance="volt_div[0]"/>
+		<block name="open" instance="volt_div[1]"/>
+		<block name="open" instance="in2in_x1[0]"/>
+		<block name="open" instance="in2in_x6[0]"/>
+		<block name="open" instance="vmm_senseamp1[0]"/>
+		<block name="open" instance="vmm_senseamp2[0]"/>
+		<block name="open" instance="wta[0]"/>
+		<block name="open" instance="wta_primary[0]"/>
+		<block name="open" instance="integrator[0]"/>
+		<block name="open" instance="common_source[0]"/>
+		<block name="open" instance="tgate_so[0]"/>
+		<block name="open" instance="vmm4x4_SR[0]"/>
+		<block name="open" instance="vmm4x4_SR2[0]"/>
+		<block name="open" instance="vmm8x4_SR[0]"/>
+		<block name="open" instance="SR4[0]"/>
+		<block name="open" instance="vmm4x4[0]"/>
+		<block name="open" instance="vmm8x4[0]"/>
+		<block name="open" instance="sftreg[0]"/>
+		<block name="net4_internal" instance="sftreg2[0]">
+			<inputs>
+				<port name="in">cab_vmm.I[13]->crossbar  cab_vmm.I[14]->crossbar  cab_vmm.I[15]->crossbar  </port>
+			</inputs>
+			<outputs>
+				<port name="out">net4_internal net5_1 net6_1 net7_1 net8_1 net8_2 net8_3 net8_4 net8_5 net8_6 net8_7 net8_8 net8_9 net8_10 net8_11 net8_12 net8_13 net8_14 net8_15 net8_16 </port>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+	</block>
+	<block name="net4_fbout" instance="cab_vmm[10]" mode="cab_vmm">
+		<inputs>
+			<port name="I">open open open open open open net4_1 open open open open net4_internal net4_fbout open open open </port>
+			<port name="si">open open open open </port>
+		</inputs>
+		<outputs>
+			<port name="O">open open open in2in_x1[0].out[0]->crossbar  open open open open </port>
+			<port name="so">open open open open open open open open open open open open </port>
+		</outputs>
+		<globals>
+		</globals>
+		<block name="open" instance="vmm_16x16[0]"/>
+		<block name="open" instance="vmm_2x2[0]"/>
+		<block name="open" instance="volt_div[0]"/>
+		<block name="open" instance="volt_div[1]"/>
+		<block name="net4_fbout" instance="in2in_x1[0]">
+			<inputs>
+				<port name="in">cab_vmm.I[12]->crossbar  cab_vmm.I[6]->crossbar  cab_vmm.I[11]->crossbar  </port>
+			</inputs>
+			<outputs>
+				<port name="out">net4_fbout </port>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+		<block name="open" instance="in2in_x6[0]"/>
+		<block name="open" instance="vmm_senseamp1[0]"/>
+		<block name="open" instance="vmm_senseamp2[0]"/>
+		<block name="open" instance="wta[0]"/>
+		<block name="open" instance="wta_primary[0]"/>
+		<block name="open" instance="integrator[0]"/>
+		<block name="open" instance="common_source[0]"/>
+		<block name="open" instance="tgate_so[0]"/>
+		<block name="open" instance="vmm4x4_SR[0]"/>
+		<block name="open" instance="vmm4x4_SR2[0]"/>
+		<block name="open" instance="vmm8x4_SR[0]"/>
+		<block name="open" instance="SR4[0]"/>
+		<block name="open" instance="vmm4x4[0]"/>
+		<block name="open" instance="vmm8x4[0]"/>
+		<block name="open" instance="sftreg[0]"/>
+		<block name="open" instance="sftreg2[0]"/>
+	</block>
+	<block name="out:net9_1" instance="io[11]" mode="outpad">
+		<inputs>
+			<port name="outpad">net9_1 </port>
+		</inputs>
+		<outputs>
+			<port name="inpad">open </port>
+		</outputs>
+		<globals>
+			<port name="clock">open </port>
+		</globals>
+		<block name="out:net9_1" instance="outpad[0]">
+			<inputs>
+				<port name="outpad">io.outpad[0]->outpad  </port>
+			</inputs>
+			<outputs>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+	</block>
+	<block name="net4_1" instance="io[12]" mode="inpad">
+		<inputs>
+			<port name="outpad">open </port>
+		</inputs>
+		<outputs>
+			<port name="inpad">inpad[0].inpad[0]->inpad  </port>
+		</outputs>
+		<globals>
+			<port name="clock">open </port>
+		</globals>
+		<block name="net4_1" instance="inpad[0]">
+			<inputs>
+			</inputs>
+			<outputs>
+				<port name="inpad">net4_1 </port>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+	</block>
+	<block name="net3_1" instance="io[13]" mode="inpad">
+		<inputs>
+			<port name="outpad">open </port>
+		</inputs>
+		<outputs>
+			<port name="inpad">inpad[0].inpad[0]->inpad  </port>
+		</outputs>
+		<globals>
+			<port name="clock">open </port>
+		</globals>
+		<block name="net3_1" instance="inpad[0]">
+			<inputs>
+			</inputs>
+			<outputs>
+				<port name="inpad">net3_1 </port>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+	</block>
+	<block name="net2_1" instance="io[14]" mode="inpad">
+		<inputs>
+			<port name="outpad">open </port>
+		</inputs>
+		<outputs>
+			<port name="inpad">inpad[0].inpad[0]->inpad  </port>
+		</outputs>
+		<globals>
+			<port name="clock">open </port>
+		</globals>
+		<block name="net2_1" instance="inpad[0]">
+			<inputs>
+			</inputs>
+			<outputs>
+				<port name="inpad">net2_1 </port>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+	</block>
+	<block name="net1_1" instance="io[15]" mode="inpad">
+		<inputs>
+			<port name="outpad">open </port>
+		</inputs>
+		<outputs>
+			<port name="inpad">inpad[0].inpad[0]->inpad  </port>
+		</outputs>
+		<globals>
+			<port name="clock">open </port>
+		</globals>
+		<block name="net1_1" instance="inpad[0]">
+			<inputs>
+			</inputs>
+			<outputs>
+				<port name="inpad">net1_1 </port>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+	</block>
+</block>
+

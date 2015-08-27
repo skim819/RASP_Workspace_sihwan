@@ -1,0 +1,13 @@
+.model test_0627_ARBGEN_MITE
+.inputs dummy1 net1_1
+.outputs dummy2 gnd
+.globals gnd vdd
+.clocks
+  
+.names dummy1 dummy2
+1 0
+  
+# MEAS_VOLT_2MITE*
+.subckt meas_volt_mite in[0]=net1_1 out[0]=gnd #meas_fg =0.00001
+  
+.end

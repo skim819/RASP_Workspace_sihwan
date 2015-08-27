@@ -1,0 +1,148 @@
+.model test_1202_image_convolution_16x16
+.inputs net22_1 net24_1 net17_1 net26_1 net28_1 net39_1 net42_1 vcc gnd
+.outputs net6_1 net13_1 net12_1 net21_1 net35_1
+.globals gnd vcc
+  
+# tgates for logic
+.subckt tgate in[0]=vcc in[1]=gnd out=tg4logic_1
+  
+.subckt tgate in[0]=vcc in[1]=gnd out=tg4logic_2
+  
+.subckt tgate in[0]=vcc in[1]=gnd out=tg4logic_3
+  
+# D Flip Flop 
+.names net14_1 tg4logic_1 tg4logic_2 tg4logic_3 internal_1_1
+1--- 1
+  
+.subckt latch_custom D[0]=internal_1_1 clk[0]=net3_1 reset[0]=net10_1 Q[0]=net21_1
+  
+# D Flip Flop 
+.names net18_1 tg4logic_1 tg4logic_2 tg4logic_3 internal_2_1
+1--- 1
+  
+.subckt latch_custom D[0]=internal_2_1 clk[0]=net38_1 reset[0]=net11_1 Q[0]=net8_1
+  
+# Shift register 1input 16outputs
+.subckt in2in_x1 in[0]=fbout_3_1 in[1]=net17_1 in[2]=net17_internal out[0]=fbout_3_1
+  
+.subckt sftreg2 in[0]=net6_1 in[1]=net32_1 in[2]=net13_1 out[0]=net17_internal out[1]=net2_1 out[2]=net1_1 out[3]=net14_1 out[4]=net29_1 out[5]=net29_2 out[6]=net29_3 out[7]=net29_4 out[8]=net29_5 out[9]=net29_6 out[10]=net29_7 out[11]=net29_8 out[12]=net29_9 out[13]=net29_10 out[14]=net29_11 out[15]=net29_12 out[16]=net29_13 out[17]=net29_14 out[18]=net29_15 out[19]=net29_16 #sftreg2_fg =0
+  
+# vdd_dig
+.subckt tgate in[0]=vcc in[1]=vcc out=net10_1
+  
+# LOOKUP Table-> 2In_OR_D_1
+.names net15_1 net24_1 tg4logic_1 tg4logic_2 net13_1
+01-- 1
+10-- 1
+11-- 1
+  
+# LOOKUP Table-> 2In_OR_clk_1
+.names net26_1 net22_1 tg4logic_1 tg4logic_2 net6_1
+01-- 1
+10-- 1
+11-- 1
+  
+# LOOKUP Table-> 1 Input INV
+.names net2_1 tg4logic_1 tg4logic_2 tg4logic_3 net3_1
+0--- 1
+  
+# TGATE
+.subckt tgate in[0]=net10_1 in[1]=net21_1 out=net15_1
+  
+# Shift register 1input 16outputs
+.subckt in2in_x1 in[0]=fbout_4_1 in[1]=net33_1 in[2]=net33_internal out[0]=fbout_4_1
+  
+.subckt sftreg2 in[0]=net12_1 in[1]=net4_1 in[2]=net9_1 out[0]=net33_internal out[1]=net7_1 out[2]=net5_1 out[3]=net18_1 out[4]=net30_1 out[5]=net30_2 out[6]=net30_3 out[7]=net30_4 out[8]=net30_5 out[9]=net30_6 out[10]=net30_7 out[11]=net30_8 out[12]=net30_9 out[13]=net30_10 out[14]=net30_11 out[15]=net30_12 out[16]=net30_13 out[17]=net30_14 out[18]=net30_15 out[19]=net30_16 #sftreg2_fg =0
+  
+# gnd_dig
+.subckt tgate in[0]=vcc in[1]=gnd out=net32_1
+  
+# gnd_dig
+.subckt tgate in[0]=vcc in[1]=gnd out=net4_1
+  
+# LOOKUP Table-> 2In_OR_clk_3
+.names net27_1 net19_1 tg4logic_1 tg4logic_2 net31_1
+01-- 1
+10-- 1
+11-- 1
+  
+# LOOKUP Table-> 1 Input INV
+.names net31_1 tg4logic_1 tg4logic_2 tg4logic_3 net33_1
+0--- 1
+  
+# LOOKUP Table-> 2In_OR_D_3
+.names net25_1 net32_1 tg4logic_1 tg4logic_2 net35_1
+01-- 1
+10-- 1
+11-- 1
+  
+# LOOKUP Table-> 2In_OR_clk_2
+.names net27_1 net16_1 tg4logic_1 tg4logic_2 net12_1
+01-- 1
+10-- 1
+11-- 1
+  
+# LOOKUP Table-> 1 Input INV
+.names net7_1 tg4logic_1 tg4logic_2 tg4logic_3 net37_1
+0--- 1
+  
+# vdd_dig
+.subckt tgate in[0]=vcc in[1]=vcc out=net11_1
+  
+# LOOKUP Table-> 2In_OR_D_2
+.names net25_1 net20_1 tg4logic_1 tg4logic_2 net9_1
+01-- 1
+10-- 1
+11-- 1
+  
+# TGATE
+.subckt tgate in[0]=net11_1 in[1]=net8_1 out=net20_1
+  
+# ota
+.subckt ota_buf in[0]=net28_1 out[0]=net40_1 #ota_biasfb =0.000002000000
+  
+# Input 2 Input x1
+.subckt in2in_x1 in[0]=fbout_5_1 in[1]=net34_1 in[2]=net43_1 out[0]=fbout_5_1
+  
+# TGATE
+.subckt tgate in[0]=net39_1 in[1]=net40_1 out=net34_1
+  
+# Input 2 Input x1
+.subckt in2in_x1 in[0]=fbout_6_1 in[1]=net44_1 in[2]=net34_1 out[0]=fbout_6_1
+  
+# LOOKUP Table-> 2In_AND_clk_2
+.names net15_1 net23_1 tg4logic_1 tg4logic_2 net16_1
+11-- 1
+  
+# LOOKUP Table-> 2In_AND_clk_3
+.names net23_1 net20_1 tg4logic_1 tg4logic_2 net19_1
+11-- 1
+  
+# LOOKUP Table-> 1in_pass
+.names net22_1 tg4logic_1 tg4logic_2 tg4logic_3 net23_1
+1--- 1
+  
+# LOOKUP Table-> 1in_pass
+.names net24_1 tg4logic_1 tg4logic_2 tg4logic_3 net25_1
+1--- 1
+  
+# LOOKUP Table-> 1in_pass
+.names net26_1 tg4logic_1 tg4logic_2 tg4logic_3 net27_1
+1--- 1
+  
+# TGATE
+.subckt tgate in[0]=net36_1 in[1]=net37_1 out=net38_1
+  
+# vdd_dig
+.subckt tgate in[0]=vcc in[1]=vcc out=net36_1
+  
+# gnd_dig
+.subckt tgate in[0]=vcc in[1]=gnd out=net41_1
+  
+# NFET
+.subckt nfet in[0]=net42_1 in[1]=net41_1 out[0]=net43_1
+  
+# gnd_dig
+.subckt tgate in[0]=vcc in[1]=gnd out=net44_1
+  
+.end

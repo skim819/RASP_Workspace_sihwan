@@ -1,0 +1,15 @@
+clear pre_vmmwta;
+
+pre_vmmwta = [
+linspace(2.3,2.3,5) linspace(2.3,2.3,5) linspace(2.3,2.3,5) linspace(2.3,2.3,5) ;
+linspace(2.1,2.1,5) linspace(2.1,2.1,5) linspace(2.3,2.3,5) linspace(2.3,2.3,5) ;
+linspace(2.1,2.1,5) linspace(2.3,2.3,5) linspace(2.1,2.1,5) linspace(2.3,2.3,5) ;
+linspace(2.1,2.1,5) linspace(2.1,2.1,5) linspace(2.1,2.1,5) linspace(2.1,2.1,5) ;
+ ];
+
+//pre_vmmwta = [
+//linspace(2.3,2.3,5) linspace(2.3,2.3,5) linspace(2.3,2.3,5) linspace(2.3,2.3,5) linspace(2.3,2.3,5);
+//linspace(2.1,2.1,5) linspace(2.1,2.1,5) linspace(2.3,2.3,5) linspace(2.1,2.1,5) linspace(2.3,2.3,5);
+//linspace(2.3,2.3,5) linspace(2.1,2.1,5) linspace(2.1,2.1,5) linspace(2.1,2.1,5) linspace(2.3,2.3,5);
+//linspace(2.1,2.1,5) linspace(2.1,2.1,5) linspace(2.1,2.1,5) linspace(2.1,2.1,5) linspace(2.3,2.3,5);
+// ];

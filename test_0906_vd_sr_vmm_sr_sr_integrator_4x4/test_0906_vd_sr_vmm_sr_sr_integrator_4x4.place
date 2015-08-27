@@ -1,0 +1,35 @@
+Netlist file: /home/ubuntu/RASP_Workspace/test_0906_vd_sr_vmm_sr_sr_integrator_4x4/test_0906_vd_sr_vmm_sr_sr_integrator_4x4.net   Architecture file: vpr2swcs/./arch/rasp3_vmm_arch.xml
+Array size: 14 x 14 logic blocks
+
+#block name	x	y	subblk	block number
+#----------	--	--	------	------------
+vmm_Vout	6	1	0	#0
+Vout1_int	10	2	0	#1
+in1_vmm		7	1	0	#2
+Vout4		11	4	0	#3
+Vout3		11	2	0	#4
+Vout2		10	3	0	#5
+Vout1		11	3	0	#6
+Vout_disch	10	1	0	#7
+nfet_s		3	1	0	#8
+vd1		11	1	0	#9
+out:Vout_disch	3	0	0	#10
+out:nfet_s	4	0	3	#11
+out:Vout4	13	0	3	#12
+out:Vout3	13	0	0	#13
+out:Vout2	12	0	3	#14
+out:Vout1	12	0	0	#15
+out:vd1		11	0	0	#16
+Vdisch		9	0	3	#17
+nfet_Vref	14	0	3	#18
+vd_Vref		14	0	0	#19
+int_Vref	10	0	2	#20
+Vclear		10	0	1	#21
+D3		10	0	0	#22
+D2		9	0	5	#23
+D1		9	0	4	#24
+en		4	0	0	#25
+clk3		9	0	2	#26
+clk2		9	0	1	#27
+clk1		9	0	0	#28
+Vin		8	0	5	#29

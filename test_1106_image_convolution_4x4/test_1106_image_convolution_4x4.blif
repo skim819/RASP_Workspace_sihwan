@@ -1,0 +1,12 @@
+.model test_1106_image_convolution_4x4
+.inputs net1_1 net2_1 net3_1 net4_1 net5_1 net6_1 net7_1 net8_1 net9_1 net10_1 net11_1
+.outputs net1_1 net2_1 net3_1 net4_1 net5_1 net6_1 net7_1 net8_1 net9_1 net10_1 gnd
+.globals gnd vcc
+  
+# MEAS_VOLT_2MITE*
+.subckt meas_volt_mite in[0]=net12_1 out[0]=gnd #meas_fg =0.00001
+  
+# LPF
+.subckt ota in[0]=net11_1 in[1]=net12_1 out[0]=net12_1 #ota_bias =0.000001000000
+  
+.end

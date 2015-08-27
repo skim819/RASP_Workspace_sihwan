@@ -1,0 +1,22 @@
+.model test_0609_cap_ota_otabuf_IOPAD
+.inputs dummy1 net3_1 net1_1 net6_1 vdd neta
+.outputs dummy2 net4_1 gnd
+.globals gnd vdd neta
+.clocks vdd neta
+  
+.names dummy1 dummy2
+1 0
+  
+# ota
+.subckt ota in[0]=net1_1 in[1]=net2_1 out[0]=net5_1 #ota_bias =0.000001
+  
+# CAP
+.subckt cap in[0]=net3_1 out[0]=net2_1
+  
+# ota
+.subckt ota_buf in[0]=net5_1 out[0]=net4_1 clk=neta #ota_biasfb =0.000002
+  
+# MEAS_VOLT_2MITE*
+.subckt meas_volt_mite in[0]=net6_1 out[0]=gnd #meas_fg =0.00001
+  
+.end

@@ -1,0 +1,40 @@
+// Vin
+DAC00 = [ linspace(1.5,1.5,10)];
+
+// clk1
+DAC01 = [ linspace(0.2,2.5,10) ];
+
+// clk2
+DAC02 = [ linspace(1.5,1.5,10) ];
+
+// clk3
+DAC03 = [ linspace(0.2,2.5,10) ];
+
+// en
+DAC04 = [ linspace(1.5,1.5,10) ];
+
+// D1
+DAC05 = [ linspace(1.5,1.5,10) ];
+
+// D2
+DAC06 = [ linspace(1.5,1.5,10) ];
+
+// D3
+DAC07 = [ linspace(1.5,1.5,10) ];
+
+// Vclear
+DAC08 = [ linspace(1.5,1.5,10) ];
+
+// int_Vref
+DAC09 = [ linspace(1.5,1.5,10) ];
+
+disp(size(DAC00));
+disp(size(DAC01));
+disp(size(DAC02));
+disp(size(DAC03));
+disp(size(DAC04));
+disp(size(DAC05));
+disp(size(DAC06));
+disp(size(DAC07));
+disp(size(DAC08));
+disp(size(DAC09));

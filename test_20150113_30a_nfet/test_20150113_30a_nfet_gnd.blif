@@ -1,0 +1,8 @@
+.model test_20150113_30a_nfet_gnd
+.inputs net1_1 gnd
+.outputs net2_1
+
+# NFET GOLDEN
+.subckt nfet in[0]=net1_1 in[1]=gnd out=net2_1
+
+.end

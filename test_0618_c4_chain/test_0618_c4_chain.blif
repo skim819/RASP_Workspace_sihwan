@@ -1,0 +1,15 @@
+.model test_0618_c4_chain
+.inputs dummy1 net1_1 net4_1
+.outputs dummy2 net2_1
+.clocks
+  
+.names dummy1 dummy2
+1 0
+  
+# C4
+.subckt c4_blk in[0]=net4_1 in[1]=net1_1 out[0]=net3_1 #c4_ota_bias[1] =0.000001000000&c4_ota_bias[0] =0.000000010000&c4_fg[0] =0&c4_cap_3x[0] =0&c4_cap_1x[1] =0
+  
+# C4
+.subckt c4_blk in[0]=net4_1 in[1]=net3_1 out[0]=net2_1 #c4_ota_bias[1] =0.000001000000&c4_ota_bias[0] =0.000000010000&c4_fg[0] =0&c4_cap_3x[0] =0&c4_cap_1x[1] =0
+  
+.end

@@ -1,0 +1,24 @@
+Netlist file: /home/ubuntu/RASP_Workspace/test_1025_vmm_wta_sr/test_1025_vmm_wta_sr.net   Architecture file: vpr2swcs/./arch/rasp3_vmm_arch.xml
+Array size: 14 x 14 logic blocks
+
+#block name	x	y	subblk	block number
+#----------	--	--	------	------------
+Vout		10	1	0	#0
+vmm_out1	10	2	0	#1
+nfet_d		7	1	0	#2
+wta_Vout4	11	1	0	#3
+wta_Vout3	11	2	0	#4
+wta_Vout2	10	3	0	#5
+wta_Vout1	11	3	0	#6
+out:Vout	12	0	0	#7
+out:clk_out	12	0	3	#8
+gnd		0	2	0	#9
+data		10	0	1	#10
+en		10	0	0	#11
+clk		9	0	5	#12
+dac_vdd		10	0	2	#13
+nbias		11	0	0	#14
+Vin4		9	0	4	#15
+Vin3		9	0	3	#16
+Vin2		9	0	2	#17
+Vin1		9	0	1	#18

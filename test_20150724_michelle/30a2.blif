@@ -1,0 +1,8 @@
+.model 30a2
+.inputs net3_1 net4_1 net1_1
+.outputs net4_1 net3_1 net2_1
+  
+# ota
+.subckt ota_buf in[0]=net1_1 out[0]=net2_1 #ota_biasfb =0.000002000000
+  
+.end

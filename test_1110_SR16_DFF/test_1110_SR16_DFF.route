@@ -1,0 +1,398 @@
+Array size: 14 x 14 logic blocks.
+
+Routing:
+
+Net 0 (Qout)
+
+SOURCE (10,1)  Class: 27  
+  OPIN (10,1)  Pin: 27  
+ CHANX (10,0)  Track: 10  
+ CHANX (11,0)  Track: 10  
+ CHANY (11,1)  Track: 10  
+  IPIN (12,1)  Pin: 0  
+  SINK (12,1)  Class: 0  
+
+
+Net 1 (en)
+
+SOURCE (9,0)  Pad: 4  
+  OPIN (9,0)  Pad: 4  
+ CHANX (9,0)  Track: 10  
+ CHANY (9,1)  Track: 10  
+ CHANX (10,1)  Track: 10  
+  IPIN (10,1)  Pin: 14  
+  SINK (10,1)  Class: 14  
+ CHANX (10,1)  Track: 10  
+ CHANX (11,1)  Track: 10  
+ CHANX (12,1)  Track: 10  
+ CHANY (12,1)  Track: 10  
+  IPIN (12,1)  Pin: 2  
+  SINK (12,1)  Class: 2  
+
+
+Net 2 (clk)
+
+SOURCE (9,0)  Pad: 1  
+  OPIN (9,0)  Pad: 1  
+ CHANX (9,0)  Track: 15  
+ CHANX (10,0)  Track: 15  
+ CHANX (11,0)  Track: 15  
+ CHANY (11,1)  Track: 15  
+  IPIN (12,1)  Pin: 4  
+  SINK (12,1)  Class: 4  
+
+
+Net 3 (aaa)
+
+SOURCE (9,0)  Pad: 13  
+  OPIN (9,0)  Pad: 13  
+ CHANX (9,0)  Track: 5  
+ CHANY (8,1)  Track: 5  
+ CHANX (9,1)  Track: 5  
+ CHANX (10,1)  Track: 5  
+ CHANX (11,1)  Track: 5  
+ CHANY (11,1)  Track: 5  
+ CHANX (12,0)  Track: 5  
+  IPIN (12,1)  Pin: 5  
+  SINK (12,1)  Class: 5  
+
+
+Net 4 (Ini_CLK)
+
+SOURCE (9,0)  Pad: 10  
+  OPIN (9,0)  Pad: 10  
+ CHANX (9,0)  Track: 11  
+ CHANX (10,0)  Track: 11  
+ CHANX (11,0)  Track: 11  
+ CHANX (12,0)  Track: 11  
+  IPIN (12,1)  Pin: 9  
+  SINK (12,1)  Class: 9  
+
+
+Net 5 (clk_out)
+
+SOURCE (10,1)  Class: 25  
+  OPIN (10,1)  Pin: 25  
+ CHANX (10,0)  Track: 13  
+ CHANX (11,0)  Track: 13  
+ CHANY (11,1)  Track: 13  
+ CHANX (12,1)  Track: 13  
+  IPIN (12,1)  Pin: 11  
+  SINK (12,1)  Class: 11  
+
+
+Net 6 (Ini_D)
+
+SOURCE (9,0)  Pad: 7  
+  OPIN (9,0)  Pad: 7  
+ CHANX (9,0)  Track: 16  
+ CHANX (10,0)  Track: 16  
+ CHANX (11,0)  Track: 16  
+ CHANY (11,1)  Track: 16  
+  IPIN (12,1)  Pin: 12  
+  SINK (12,1)  Class: 12  
+
+
+Net 7 (DF_reset)
+
+SOURCE (8,0)  Pad: 16  
+  OPIN (8,0)  Pad: 16  
+ CHANX (8,0)  Track: 8  
+ CHANX (9,0)  Track: 8  
+ CHANX (10,0)  Track: 8  
+ CHANX (11,0)  Track: 8  
+ CHANY (11,1)  Track: 8  
+ CHANX (12,1)  Track: 8  
+  IPIN (12,1)  Pin: 15  
+  SINK (12,1)  Class: 15  
+ CHANX (11,0)  Track: 8  
+ CHANX (12,0)  Track: 8  
+  IPIN (12,1)  Pin: 13  
+  SINK (12,1)  Class: 13  
+
+
+Net 8 (clk_out_inv)
+
+SOURCE (12,1)  Class: 17  
+  OPIN (12,1)  Pin: 17  
+ CHANX (12,0)  Track: 1  
+ CHANY (12,1)  Track: 1  
+  IPIN (12,1)  Pin: 14  
+  SINK (12,1)  Class: 14  
+
+
+Net 9 (DF1_Q)
+
+SOURCE (12,1)  Class: 16  
+  OPIN (12,1)  Pin: 16  
+ CHANY (11,1)  Track: 14  
+ CHANX (11,0)  Track: 14  
+ CHANX (10,0)  Track: 14  
+ CHANX (9,0)  Track: 14  
+ CHANX (8,0)  Track: 14  
+ CHANX (7,0)  Track: 14  
+ CHANX (6,0)  Track: 14  
+ CHANX (5,0)  Track: 14  
+ CHANX (4,0)  Track: 14  
+  IPIN (4,0)  Pad: 9  
+  SINK (4,0)  Pad: 9  
+
+
+Net 10 (Din)
+
+SOURCE (12,1)  Class: 18  
+  OPIN (12,1)  Pin: 18  
+ CHANY (12,1)  Track: 15  
+ CHANX (13,0)  Track: 15  
+  IPIN (13,0)  Pad: 9  
+  SINK (13,0)  Pad: 9  
+ CHANY (12,1)  Track: 15  
+ CHANX (12,1)  Track: 15  
+ CHANX (11,1)  Track: 15  
+ CHANX (10,1)  Track: 15  
+  IPIN (10,1)  Pin: 15  
+  SINK (10,1)  Class: 15  
+
+
+Net 11 (clk_in)
+
+SOURCE (12,1)  Class: 19  
+  OPIN (12,1)  Pin: 19  
+ CHANX (12,1)  Track: 16  
+ CHANY (12,1)  Track: 16  
+ CHANX (13,0)  Track: 16  
+  IPIN (13,0)  Pad: 0  
+  SINK (13,0)  Pad: 0  
+ CHANX (12,1)  Track: 16  
+ CHANX (11,1)  Track: 16  
+ CHANX (10,1)  Track: 16  
+  IPIN (10,1)  Pin: 13  
+  SINK (10,1)  Class: 13  
+
+
+Net 12 (dummy15)
+
+SOURCE (10,1)  Class: 20  
+  OPIN (10,1)  Pin: 20  
+ CHANY (9,1)  Track: 13  
+ CHANX (9,0)  Track: 13  
+ CHANX (8,0)  Track: 13  
+ CHANX (7,0)  Track: 13  
+ CHANX (6,0)  Track: 13  
+  IPIN (6,0)  Pad: 9  
+  SINK (6,0)  Pad: 9  
+
+
+Net 13 (dummy16)
+
+SOURCE (10,1)  Class: 21  
+  OPIN (10,1)  Pin: 21  
+ CHANY (9,1)  Track: 1  
+ CHANX (9,0)  Track: 1  
+ CHANX (8,0)  Track: 1  
+ CHANX (7,0)  Track: 1  
+ CHANX (6,0)  Track: 1  
+  IPIN (6,0)  Pad: 12  
+  SINK (6,0)  Pad: 12  
+
+
+Net 14 (dummy7)
+
+SOURCE (10,1)  Class: 22  
+  OPIN (10,1)  Pin: 22  
+ CHANY (10,1)  Track: 0  
+ CHANX (10,0)  Track: 0  
+ CHANX (9,0)  Track: 0  
+ CHANX (8,0)  Track: 0  
+ CHANX (7,0)  Track: 0  
+  IPIN (7,0)  Pad: 15  
+  SINK (7,0)  Pad: 15  
+
+
+Net 15 (dummy8)
+
+SOURCE (10,1)  Class: 23  
+  OPIN (10,1)  Pin: 23  
+ CHANY (10,1)  Track: 11  
+ CHANX (10,1)  Track: 11  
+ CHANX (9,1)  Track: 11  
+ CHANY (8,1)  Track: 11  
+ CHANX (8,0)  Track: 11  
+  IPIN (8,0)  Pad: 0  
+  SINK (8,0)  Pad: 0  
+
+
+Net 16 (com_out)
+
+SOURCE (10,1)  Class: 24  
+  OPIN (10,1)  Pin: 24  
+ CHANX (10,1)  Track: 12  
+ CHANY (10,1)  Track: 12  
+ CHANX (11,0)  Track: 12  
+  IPIN (11,0)  Pad: 0  
+  SINK (11,0)  Pad: 0  
+
+
+Net 17 (cs_out)
+
+SOURCE (10,1)  Class: 26  
+  OPIN (10,1)  Pin: 26  
+ CHANX (10,0)  Track: 4  
+ CHANX (9,0)  Track: 4  
+ CHANX (8,0)  Track: 4  
+ CHANX (7,0)  Track: 4  
+ CHANX (6,0)  Track: 4  
+ CHANX (5,0)  Track: 4  
+ CHANX (4,0)  Track: 4  
+ CHANX (3,0)  Track: 4  
+  IPIN (3,0)  Pad: 0  
+  SINK (3,0)  Pad: 0  
+
+
+Net 18 (dummy9)
+
+SOURCE (10,1)  Class: 28  
+  OPIN (10,1)  Pin: 28  
+ CHANY (9,1)  Track: 5  
+ CHANX (10,0)  Track: 5  
+  IPIN (10,0)  Pad: 3  
+  SINK (10,0)  Pad: 3  
+
+
+Net 19 (dummy10)
+
+SOURCE (10,1)  Class: 29  
+  OPIN (10,1)  Pin: 29  
+ CHANY (9,1)  Track: 7  
+ CHANX (9,0)  Track: 7  
+ CHANX (8,0)  Track: 7  
+  IPIN (8,0)  Pad: 3  
+  SINK (8,0)  Pad: 3  
+
+
+Net 20 (dummy11)
+
+SOURCE (10,1)  Class: 30  
+  OPIN (10,1)  Pin: 30  
+ CHANY (9,1)  Track: 6  
+ CHANX (9,0)  Track: 6  
+ CHANX (8,0)  Track: 6  
+  IPIN (8,0)  Pad: 6  
+  SINK (8,0)  Pad: 6  
+
+
+Net 21 (dummy12)
+
+SOURCE (10,1)  Class: 31  
+  OPIN (10,1)  Pin: 31  
+ CHANY (9,1)  Track: 12  
+ CHANX (9,0)  Track: 12  
+ CHANX (8,0)  Track: 12  
+  IPIN (8,0)  Pad: 9  
+  SINK (8,0)  Pad: 9  
+
+
+Net 22 (dummy13)
+
+SOURCE (10,1)  Class: 32  
+  OPIN (10,1)  Pin: 32  
+ CHANY (10,1)  Track: 1  
+ CHANX (10,0)  Track: 1  
+  IPIN (10,0)  Pad: 6  
+  SINK (10,0)  Pad: 6  
+
+
+Net 23 (dummy14)
+
+SOURCE (10,1)  Class: 33  
+  OPIN (10,1)  Pin: 33  
+ CHANY (10,1)  Track: 9  
+ CHANX (10,0)  Track: 9  
+ CHANX (9,0)  Track: 9  
+ CHANX (8,0)  Track: 9  
+  IPIN (8,0)  Pad: 12  
+  SINK (8,0)  Pad: 12  
+
+
+Net 24 (dummy1)
+
+SOURCE (10,1)  Class: 34  
+  OPIN (10,1)  Pin: 34  
+ CHANY (10,1)  Track: 3  
+ CHANX (10,0)  Track: 3  
+ CHANX (9,0)  Track: 3  
+  IPIN (9,0)  Pad: 15  
+  SINK (9,0)  Pad: 15  
+
+
+Net 25 (dummy2)
+
+SOURCE (10,1)  Class: 35  
+  OPIN (10,1)  Pin: 35  
+ CHANY (10,1)  Track: 2  
+ CHANX (10,0)  Track: 2  
+ CHANX (9,0)  Track: 2  
+ CHANX (8,0)  Track: 2  
+ CHANX (7,0)  Track: 2  
+  IPIN (7,0)  Pad: 9  
+  SINK (7,0)  Pad: 9  
+
+
+Net 26 (dummy3)
+
+SOURCE (10,1)  Class: 36  
+  OPIN (10,1)  Pin: 36  
+ CHANX (10,1)  Track: 14  
+ CHANX (9,1)  Track: 14  
+ CHANX (8,1)  Track: 14  
+ CHANX (7,1)  Track: 14  
+ CHANX (6,1)  Track: 14  
+ CHANX (5,1)  Track: 14  
+ CHANX (4,1)  Track: 14  
+ CHANX (3,1)  Track: 14  
+ CHANY (2,1)  Track: 14  
+ CHANX (2,0)  Track: 14  
+  IPIN (2,0)  Pad: 3  
+  SINK (2,0)  Pad: 3  
+
+
+Net 27 (dummy4)
+
+SOURCE (10,1)  Class: 37  
+  OPIN (10,1)  Pin: 37  
+ CHANX (10,1)  Track: 13  
+ CHANX (9,1)  Track: 13  
+ CHANX (8,1)  Track: 13  
+ CHANX (7,1)  Track: 13  
+ CHANX (6,1)  Track: 13  
+ CHANX (5,1)  Track: 13  
+ CHANX (4,1)  Track: 13  
+ CHANX (3,1)  Track: 13  
+ CHANY (2,1)  Track: 13  
+ CHANX (2,0)  Track: 13  
+  IPIN (2,0)  Pad: 6  
+  SINK (2,0)  Pad: 6  
+
+
+Net 28 (dummy5)
+
+SOURCE (10,1)  Class: 38  
+  OPIN (10,1)  Pin: 38  
+ CHANX (10,0)  Track: 12  
+  IPIN (10,0)  Pad: 0  
+  SINK (10,0)  Pad: 0  
+
+
+Net 29 (dummy6)
+
+SOURCE (10,1)  Class: 39  
+  OPIN (10,1)  Pin: 39  
+ CHANX (10,0)  Track: 7  
+ CHANY (10,1)  Track: 7  
+ CHANX (10,1)  Track: 7  
+ CHANX (9,1)  Track: 7  
+ CHANX (8,1)  Track: 7  
+ CHANY (7,1)  Track: 7  
+ CHANX (7,0)  Track: 7  
+  IPIN (7,0)  Pad: 12  
+  SINK (7,0)  Pad: 12  

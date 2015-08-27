@@ -1,0 +1,20 @@
+Netlist file: /home/ubuntu/RASP_Workspace/test_1230_dff_check//test_1230_dff_check.net   Architecture file: /home/ubuntu/rasp30/vpr2swcs//arch/rasp3_arch.xml
+Array size: 14 x 14 logic blocks
+
+#block name	x	y	subblk	block number
+#----------	--	--	------	------------
+net10_1		9	1	0	#0
+internal_2_1	8	1	0	#1
+net3_1		7	1	0	#2
+net1_1		10	1	0	#3
+tg4logic_3	7	2	0	#4
+tg4logic_2	6	1	0	#5
+tg4logic_1	10	2	0	#6
+out:net6_1	11	0	0	#7
+out:net8_1	9	0	0	#8
+gnd		7	0	4	#9
+vcc		7	0	5	#10
+net4_1		9	0	3	#11
+net5_1		8	0	5	#12
+net9_1		9	0	2	#13
+net2_1		9	0	1	#14

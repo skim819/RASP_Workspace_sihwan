@@ -1,0 +1,12 @@
+nbias 11 0 0 #tgate[0]
+Vin1 9 0 1 #int[1]
+Vin2 9 0 2 #int[2]
+Vin3 9 0 3 #int[3]
+Vin4 9 0 4 #int[4]
+clk 9 0 5 #int[5]
+en 10 0 0 #int[0]
+data 10 0 1 #int[1]
+dac_vdd 10 0 2 #int[2]
+out:Vout 12 0 0 #ana_buff_out[0]
+out:clk_out 12 0 3 #ana_buff_out[1]
+gnd 0 2 0

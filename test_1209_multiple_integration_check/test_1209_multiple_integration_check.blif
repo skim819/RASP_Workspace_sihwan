@@ -1,0 +1,97 @@
+.model test_1209_multiple_integration_check
+.inputs net6_1 net17_1 net2_1 net16_1 net15_1 net14_1 vcc gnd
+.outputs net12_1 net13_1 net13_2 net13_3 net13_4 net13_5 net13_6 net13_7 net13_8 net13_9 net13_10 net13_11 net13_12 net13_13 net13_14 net13_15 net13_16
+  
+# D Flip Flop 
+.subckt tgate in[0]=vcc in[1]=gnd out=dff1_infix2_1
+  
+.subckt tgate in[0]=vcc in[1]=gnd out=dff1_infix3_1
+  
+.subckt tgate in[0]=vcc in[1]=gnd out=dff1_infix4_1
+  
+.names net18_1 dff1_infix2_1 dff1_infix3_1 dff1_infix4_1 internal_1_1
+1--- 1
+  
+.subckt latch_custom D[0]=internal_1_1 clk[0]=net11_1 reset[0]=net3_1 Q[0]=net8_1
+  
+# Shift register 1input 16outputs
+.subckt in2in_x1 in[0]=fbout_2_1 in[1]=net2_1 in[2]=net2_internal out[0]=fbout_2_1
+  
+.subckt sftreg2 in[0]=net12_1 in[1]=net1_1 in[2]=net5_1 out[0]=net2_internal out[1]=net10_1 out[2]=net4_1 out[3]=net18_1 out[4]=net19_1 out[5]=net19_2 out[6]=net19_3 out[7]=net19_4 out[8]=net19_5 out[9]=net19_6 out[10]=net19_7 out[11]=net19_8 out[12]=net19_9 out[13]=net19_10 out[14]=net19_11 out[15]=net19_12 out[16]=net19_13 out[17]=net19_14 out[18]=net19_15 out[19]=net19_16 #sftreg2_fg =0
+  
+# gnd_dig
+.subckt tgate in[0]=vcc in[1]=gnd out=net1_1
+  
+# vdd_dig
+.subckt tgate in[0]=vcc in[1]=vcc out=net3_1
+  
+# vdd_dig
+.subckt tgate in[0]=vcc in[1]=vcc out=net7_1
+  
+# LOOKUP Table-> 2In_OR_D_1
+.subckt tgate in[0]=vcc in[1]=gnd out=lkuptb_3_infix3_1
+  
+.subckt tgate in[0]=vcc in[1]=gnd out=lkuptb_3_infix4_1
+  
+.names net9_1 net17_1 lkuptb_3_infix3_1 lkuptb_3_infix4_1 net5_1
+01-- 1
+10-- 1
+11-- 1
+  
+# LOOKUP Table-> 2In_OR_clk_1
+.subckt tgate in[0]=vcc in[1]=gnd out=lkuptb_4_infix3_1
+  
+.subckt tgate in[0]=vcc in[1]=gnd out=lkuptb_4_infix4_1
+  
+.names net16_1 net6_1 lkuptb_4_infix3_1 lkuptb_4_infix4_1 net12_1
+01-- 1
+10-- 1
+11-- 1
+  
+# LOOKUP Table-> 1 Input INV
+.subckt tgate in[0]=vcc in[1]=gnd out=lkuptb_5_infix2_1
+  
+.subckt tgate in[0]=vcc in[1]=gnd out=lkuptb_5_infix3_1
+  
+.subckt tgate in[0]=vcc in[1]=gnd out=lkuptb_5_infix4_1
+  
+.names net10_1 lkuptb_5_infix2_1 lkuptb_5_infix3_1 lkuptb_5_infix4_1 net11_1
+0--- 1
+  
+# TGATE
+.subckt tgate in[0]=net7_1 in[1]=net8_1 out=net9_1
+  
+# INTEGRATOR
+.subckt integrator in[0]=net15_1 in[1]=net19_1 in[2]=net14_1 out[0]=net13_1 #integrator_fg =0&cap_3x =0&cap_2x =0&integrator_ota0 =1.00e-06&integrator_ota1 =2.00e-06
+  
+.subckt integrator in[0]=net15_1 in[1]=net19_2 in[2]=net14_1 out[0]=net13_2 #integrator_fg =0&cap_3x =0&cap_2x =0&integrator_ota0 =1.00e-06&integrator_ota1 =2.00e-06
+  
+.subckt integrator in[0]=net15_1 in[1]=net19_3 in[2]=net14_1 out[0]=net13_3 #integrator_fg =0&cap_3x =0&cap_2x =0&integrator_ota0 =1.00e-06&integrator_ota1 =2.00e-06
+  
+.subckt integrator in[0]=net15_1 in[1]=net19_4 in[2]=net14_1 out[0]=net13_4 #integrator_fg =0&cap_3x =0&cap_2x =0&integrator_ota0 =1.00e-06&integrator_ota1 =2.00e-06
+  
+.subckt integrator in[0]=net15_1 in[1]=net19_5 in[2]=net14_1 out[0]=net13_5 #integrator_fg =0&cap_3x =0&cap_2x =0&integrator_ota0 =1.00e-06&integrator_ota1 =2.00e-06
+  
+.subckt integrator in[0]=net15_1 in[1]=net19_6 in[2]=net14_1 out[0]=net13_6 #integrator_fg =0&cap_3x =0&cap_2x =0&integrator_ota0 =1.00e-06&integrator_ota1 =2.00e-06
+  
+.subckt integrator in[0]=net15_1 in[1]=net19_7 in[2]=net14_1 out[0]=net13_7 #integrator_fg =0&cap_3x =0&cap_2x =0&integrator_ota0 =1.00e-06&integrator_ota1 =2.00e-06
+  
+.subckt integrator in[0]=net15_1 in[1]=net19_8 in[2]=net14_1 out[0]=net13_8 #integrator_fg =0&cap_3x =0&cap_2x =0&integrator_ota0 =1.00e-06&integrator_ota1 =2.00e-06
+  
+.subckt integrator in[0]=net15_1 in[1]=net19_9 in[2]=net14_1 out[0]=net13_9 #integrator_fg =0&cap_3x =0&cap_2x =0&integrator_ota0 =1.00e-06&integrator_ota1 =2.00e-06
+  
+.subckt integrator in[0]=net15_1 in[1]=net19_10 in[2]=net14_1 out[0]=net13_10 #integrator_fg =0&cap_3x =0&cap_2x =0&integrator_ota0 =1.00e-06&integrator_ota1 =2.00e-06
+  
+.subckt integrator in[0]=net15_1 in[1]=net19_11 in[2]=net14_1 out[0]=net13_11 #integrator_fg =0&cap_3x =0&cap_2x =0&integrator_ota0 =1.00e-06&integrator_ota1 =2.00e-06
+  
+.subckt integrator in[0]=net15_1 in[1]=net19_12 in[2]=net14_1 out[0]=net13_12 #integrator_fg =0&cap_3x =0&cap_2x =0&integrator_ota0 =1.00e-06&integrator_ota1 =2.00e-06
+  
+.subckt integrator in[0]=net15_1 in[1]=net19_13 in[2]=net14_1 out[0]=net13_13 #integrator_fg =0&cap_3x =0&cap_2x =0&integrator_ota0 =1.00e-06&integrator_ota1 =2.00e-06
+  
+.subckt integrator in[0]=net15_1 in[1]=net19_14 in[2]=net14_1 out[0]=net13_14 #integrator_fg =0&cap_3x =0&cap_2x =0&integrator_ota0 =1.00e-06&integrator_ota1 =2.00e-06
+  
+.subckt integrator in[0]=net15_1 in[1]=net19_15 in[2]=net14_1 out[0]=net13_15 #integrator_fg =0&cap_3x =0&cap_2x =0&integrator_ota0 =1.00e-06&integrator_ota1 =2.00e-06
+  
+.subckt integrator in[0]=net15_1 in[1]=net19_16 in[2]=net14_1 out[0]=net13_16 #integrator_fg =0&cap_3x =0&cap_2x =0&integrator_ota0 =1.00e-06&integrator_ota1 =2.00e-06
+  
+.end

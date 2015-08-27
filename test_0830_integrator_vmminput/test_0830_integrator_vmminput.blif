@@ -1,0 +1,9 @@
+.model test_0830_integrator_vmminput
+.inputs dummy1 net1_1 net2_1 net3_1
+.outputs dummy2 net1_1 net2_1 net3_1
+.clocks
+  
+.names dummy1 dummy2
+0 1
+  
+.end

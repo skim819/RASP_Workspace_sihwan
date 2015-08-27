@@ -1,0 +1,6 @@
+Tgate sel=net7 in=net8
+Tgate sel=net23 in=net24
+Tgate sel=net27 in=net26
+Tgate sel=net27 in=net28
+Tgate sel=net38 in=net37
+Tgate sel=net43 in=net42

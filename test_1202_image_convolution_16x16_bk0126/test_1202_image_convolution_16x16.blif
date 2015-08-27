@@ -1,0 +1,131 @@
+.model test_1202_image_convolution_16x16
+.inputs net9_1 net8_1 net36_1 net37_1 net30_1 net7_1 net34_1 net55_1 net18_1 net43_1 net54_1 vcc gnd
+.outputs net42_1 net46_1 net47_1 net49_1 net48_1 net38_1
+
+# tgates for logic
+.subckt tgate in[0]=vcc in[1]=gnd out=tg4logic_1
+
+.subckt tgate in[0]=vcc in[1]=gnd out=tg4logic_2
+
+.subckt tgate in[0]=vcc in[1]=gnd out=tg4logic_3
+
+# D Flip Flop
+.names net48_1 tg4logic_1 tg4logic_2 tg4logic_3 internal_1_1
+1--- 1
+
+.subckt latch_custom D[0]=internal_1_1 clk[0]=net49_1 reset[0]=vcc_dig Q[0]=net46_1
+
+# D Flip Flop
+.names net20_1 tg4logic_1 tg4logic_2 tg4logic_3 internal_2_1
+1--- 1
+
+.subckt latch_custom D[0]=internal_2_1 clk[0]=net21_1 reset[0]=vcc_dig Q[0]=net23_1
+
+# D Flip Flop
+.names net10_1 tg4logic_1 tg4logic_2 tg4logic_3 internal_3_1
+1--- 1
+
+.subckt latch_custom D[0]=internal_3_1 clk[0]=net13_1 reset[0]=vcc_dig Q[0]=net50_1
+
+# gnd_dig
+.subckt tgate in[0]=vcc in[1]=gnd out=gnd_dig
+
+# vdd_dig
+.subckt tgate in[0]=vcc in[1]=vcc out=vcc_dig
+
+# LOOKUP Table-> OR_D_1
+.names net10_1 net8_1 tg4logic_1 tg4logic_2 net2_1
+01-- 1
+10-- 1
+11-- 1
+
+# LOOKUP Table-> OR_clk_1
+.names net9_1 net42_1 tg4logic_1 tg4logic_2 net13_1
+01-- 1
+10-- 1
+11-- 1
+
+# LOOKUP Table-> OR_clk_2
+.names net47_1 net11_1 tg4logic_1 tg4logic_2 net27_1
+10-- 1
+01-- 1
+11-- 1
+
+# LOOKUP Table-> OR_D_2
+.names net25_1 net24_1 tg4logic_1 tg4logic_2 net28_1
+01-- 1
+10-- 1
+11-- 1
+
+# LOOKUP Table-> Pass_Ini_D
+.names net8_1 tg4logic_1 tg4logic_2 tg4logic_3 net25_1
+1--- 1
+
+# LOOKUP Table-> Pass_Ini_clk
+.names net9_1 tg4logic_1 tg4logic_2 tg4logic_3 net11_1
+1--- 1
+
+# TGATE
+.subckt tgate in[0]=vcc in[1]=net46_1 out=net10_1
+
+# TGATE
+.subckt tgate in[0]=net18_1 in[1]=net30_1 out=net42_1
+
+# TGATE
+.subckt tgate in[0]=vcc in[1]=net23_1 out=net24_1
+
+# Shift register 1input 16outputs
+.subckt in2in_x1 in[0]=fbout_4_1 in[1]=net7_1 in[2]=net7_internal out[0]=fbout_4_1
+
+.subckt sftreg2 in[0]=net13_1 in[1]=gnd_dig in[2]=net2_1 out[0]=net7_internal out[1]=net16_1 out[2]=net1_1 out[3]=net48_1 out[4]=net51_1 out[5]=net51_2 out[6]=net51_3 out[7]=net51_4 out[8]=net51_5 out[9]=net51_6 out[10]=net51_7 out[11]=net51_8 out[12]=net51_9 out[13]=net51_10 out[14]=net51_11 out[15]=net51_12 out[16]=net51_13 out[17]=net51_14 out[18]=net51_15 out[19]=net51_16 #sftreg2_fg =0
+
+# Shift register 1input 16outputs
+.subckt in2in_x1 in[0]=fbout_5_1 in[1]=net12_1 in[2]=net12_internal out[0]=fbout_5_1
+
+.subckt sftreg2 in[0]=net27_1 in[1]=gnd_dig in[2]=net28_1 out[0]=net12_internal out[1]=net17_1 out[2]=net3_1 out[3]=net20_1 out[4]=net53_1 out[5]=net53_2 out[6]=net53_3 out[7]=net53_4 out[8]=net53_5 out[9]=net53_6 out[10]=net53_7 out[11]=net53_8 out[12]=net53_9 out[13]=net53_10 out[14]=net53_11 out[15]=net53_12 out[16]=net53_13 out[17]=net53_14 out[18]=net53_15 out[19]=net53_16 #sftreg2_fg =0
+
+# VMM 16x16 with shift register
+.subckt sftreg2 in[0]=net44_1 in[1]=gnd_dig in[2]=net25_1 out[0]=net12_1 out[1]=net14_1 out[2]=net5_1 out[3]=net45_1 out[4]=net51_internal_1 out[5]=net51_internal_2 out[6]=net51_internal_3 out[7]=net51_internal_4 out[8]=net51_internal_5 out[9]=net51_internal_6 out[10]=net51_internal_7 out[11]=net51_internal_8 out[12]=net51_internal_9 out[13]=net51_internal_10 out[14]=net51_internal_11 out[15]=net51_internal_12 out[16]=net51_internal_13 out[17]=net51_internal_14 out[18]=net51_internal_15 out[19]=net51_internal_16 #sftreg2_fg =0
+
+# LOOKUP Table-> OR_clk_3
+.names net24_1 net11_1 tg4logic_1 tg4logic_2 net44_1
+10-- 1
+01-- 1
+11-- 1
+
+# TGATE
+.subckt tgate in[0]=vcc in[1]=net50_1 out=net47_1
+
+# Input 2 Input x1
+.subckt in2in_x1 in[0]=fbout_6_1 in[1]=net35_1 in[2]=net12_1 out[0]=fbout_6_1
+
+# NFET
+.subckt nfet in[0]=net34_1 in[1]=gnd out[0]=net35_1
+
+# TGATE
+.subckt tgate in[0]=net43_1 in[1]=net55_1 out=net32_1
+
+# Input 2 Input x1
+.subckt in2in_x1 in[0]=fbout_7_1 in[1]=net32_1 in[2]=net35_1 out[0]=fbout_7_1
+
+# LOOKUP Table-> Delay
+.names net16_1 tg4logic_1 tg4logic_2 tg4logic_3 net49_1
+1--- 1
+
+# LOOKUP Table-> INV_1
+.names net17_1 tg4logic_1 tg4logic_2 tg4logic_3 net21_1
+0--- 1
+
+# Shift register 16inputs 1output
+.subckt sftreg in[0]=net52_1 in[1]=net52_2 in[2]=net52_3 in[3]=net52_4 in[4]=net53_5 in[5]=net53_6 in[6]=net53_7 in[7]=net53_8 in[8]=net53_9 in[9]=net53_10 in[10]=net53_11 in[11]=net53_12 in[12]=net53_13 in[13]=net53_14 in[14]=net53_15 in[15]=net53_16 in[16]=net36_1 in[17]=gnd_dig in[18]=net37_1 out[0]=net38_1 out[1]=net39_1 out[2]=net40_1 out[3]=net41_1 #sftreg_fg =0
+
+# INTEGRATOR
+.subckt integrator in[0]=net55_1 in[1]=net53_1 in[2]=net54_1 out[0]=net52_1 #integrator_fg =0&cap_3x =0&cap_2x =0&integrator_ota0 =1.00e-06&integrator_ota1 =2.00e-06
+
+.subckt integrator in[0]=net55_1 in[1]=net53_2 in[2]=net54_1 out[0]=net52_2 #integrator_fg =0&cap_3x =0&cap_2x =0&integrator_ota0 =1.00e-06&integrator_ota1 =2.00e-06
+
+.subckt integrator in[0]=net55_1 in[1]=net53_3 in[2]=net54_1 out[0]=net52_3 #integrator_fg =0&cap_3x =0&cap_2x =0&integrator_ota0 =1.00e-06&integrator_ota1 =2.00e-06
+
+.subckt integrator in[0]=net55_1 in[1]=net53_4 in[2]=net54_1 out[0]=net52_4 #integrator_fg =0&cap_3x =0&cap_2x =0&integrator_ota0 =1.00e-06&integrator_ota1 =2.00e-06
+
+.end

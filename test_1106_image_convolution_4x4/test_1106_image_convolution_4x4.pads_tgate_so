@@ -1,0 +1,5 @@
+Vin1 12 0 0 #tgate[0]
+Vin2 12 0 3 #tgate[1]
+Vin3 13 0 0 #tgate[0]
+Vin4 13 0 3 #tgate[1]
+out:Vout 4 0 3 #tgate[1]

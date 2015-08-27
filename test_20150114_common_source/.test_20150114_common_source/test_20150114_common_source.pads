@@ -1,0 +1,5 @@
+vcc 0 10 3
+net1_1 8 1 5 #tgate[1]
+net2_1 8 1 2 #tgate[0]
+out:net4_1 1 0 3 #tgate[1]
+out:net5_1 8 2 2 #tgate[0]

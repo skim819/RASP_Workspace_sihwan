@@ -1,0 +1,11 @@
+.model test_1127_gnd_vdd_xcos
+.inputs vcc gnd
+.outputs net1_1 net2_1
+  
+# vdd_in
+.subckt tgate in[0]=vcc in[1]=vcc out=net1_1
+  
+# gnd_in
+.subckt tgate in[0]=vcc in[1]=gnd out=net2_1
+  
+.end

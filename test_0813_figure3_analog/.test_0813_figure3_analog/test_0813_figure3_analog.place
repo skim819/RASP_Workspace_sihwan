@@ -1,0 +1,14 @@
+Netlist file: /home/ubuntu/RASP_Workspace/test_0813_figure3_analog//test_0813_figure3_analog.net   Architecture file: /home/ubuntu/rasp30/vpr2swcs/./arch/rasp3_arch_meas_volt_mite.xml
+Array size: 14 x 14 logic blocks
+
+#block name	x	y	subblk	block number
+#----------	--	--	------	------------
+net4_1		11	1	0	#0
+net3_1		10	1	0	#1
+dummy2		9	1	0	#2
+out:net4_1	14	0	0	#3
+out:net3_1	9	0	0	#4
+out:dummy2	10	0	1	#5
+net1_1		13	0	0	#6
+net2_1		11	0	0	#7
+dummy1		10	0	0	#8

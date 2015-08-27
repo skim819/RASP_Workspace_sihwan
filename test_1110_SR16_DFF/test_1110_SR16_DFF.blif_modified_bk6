@@ -1,0 +1,12 @@
+.model SR16_test
+.inputs clk en DF_reset Ini_D aaa 
+.outputs clk DF1_Q
+.clocks
+
+# DF1
+.names DF_reset en aaa Ini_D DF1_D
+---1 1
+
+.subckt latch_custom D[0]=DF1_D clk[0]=clk reset[0]=DF_reset Q[0]=DF1_Q
+
+.end

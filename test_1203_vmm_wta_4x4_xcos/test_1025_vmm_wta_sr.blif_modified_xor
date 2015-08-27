@@ -1,0 +1,18 @@
+.model test_1203_vmm_wta_4x4_xcos
+.inputs net1_1 net1_2 net1_3 net1_4 nbias gnd
+.outputs net3_1 net3_2 net3_3 net3_4
+
+# VMM + WTA
+.subckt vmm4x4 in[0]=net1_1 in[1]=net1_2 in[2]=net1_3 in[3]=net1_4 out[0]=vmm_out1 out[1]=vmm_out2 out[2]=vmm_out3 out[3]=vmm_out4 #vmm4x4_target =4e-06,1e-09,1e-09,1e-09,1e-09,2.75e-06,3.0e-06,1e-09,2.12e-06,2.89e-06,2.98e-06,1e-09,1e-09,1e-09,1e-09,1e-09
+
+.subckt wta in[0]=vmm_out1 in[1]=nfet_d out[0]=net3_1 #wta_fg =0&wta_bufbias =2.0e-06&wta_pfetbias =6e-09
+  
+.subckt wta in[0]=vmm_out2 in[1]=nfet_d out[0]=net3_2 #wta_fg =0&wta_bufbias =2.0e-06&wta_pfetbias =10.5e-09
+
+.subckt wta in[0]=vmm_out3 in[1]=nfet_d out[0]=net3_3 #wta_fg =0&wta_bufbias =2.0e-06&wta_pfetbias =5e-09
+
+.subckt wta in[0]=vmm_out4 in[1]=nfet_d out[0]=net3_4 #wta_fg =0&wta_bufbias =2.0e-06&wta_pfetbias =10e-09
+ 
+.subckt nfet in[0]=nbias in[1]=gnd out=nfet_d
+
+.end

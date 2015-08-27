@@ -1,0 +1,19 @@
+.model test_0608
+.inputs dummy1 net2_1 net1_1 vdd
+.outputs dummy2 gnd
+.globals gnd vdd
+.clocks vdd
+  
+.names dummy1 dummy2
+1 0
+  
+# MEAS_VOLT_2MITE*
+.subckt meas_volt_mite in[0]=net3_1 out[0]=gnd #meas_fg =0.00001
+  
+# ota
+.subckt ota in[0]=net1_1 in[1]=net2_1 out[0]=net4_1 #ota_bias =0.000001
+  
+# OTA Buffer
+.subckt ota_buf in[0]=net4_1 out[0]=net3_1 clk=vdd #ota_biasfb =0.000002
+  
+.end

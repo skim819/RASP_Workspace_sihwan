@@ -1,0 +1,8 @@
+.model test_20150206_south_io_check
+.inputs net2_1 vcc
+.outputs net3_1
+
+# TGATE
+.subckt tgate in[0]=vcc in[1]=net2_1 out=net3_1
+
+.end

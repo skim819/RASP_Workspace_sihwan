@@ -1,0 +1,4 @@
+gnd 11 0 2
+out:net1_1 9 0 0 #tgate[0]
+out:net2_1 11 0 0 #tgate[0]
+vcc 7 0 0 #tgate[0]

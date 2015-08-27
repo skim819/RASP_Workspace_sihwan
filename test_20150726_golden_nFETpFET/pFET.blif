@@ -1,0 +1,6 @@
+.model pFET
+.inputs net2_1 net1_1 vcc
+.outputs net4_1 net1_1
+.subckt pfet in[0]=net2_1 in[1]=vcc out=net4_1
+
+.end

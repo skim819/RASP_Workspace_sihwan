@@ -1,0 +1,1 @@
+Nfet gate=net1 drain=net2

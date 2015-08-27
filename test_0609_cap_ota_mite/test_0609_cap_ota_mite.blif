@@ -1,0 +1,18 @@
+.model test_0609_cap_ota_mite
+.inputs dummy1 net4_1 net1_1
+.outputs dummy2 gnd
+.globals gnd vdd
+  
+.names dummy1 dummy2
+1 0
+  
+# ota
+.subckt ota in[0]=net1_1 in[1]=net3_1 out[0]=net2_1 #ota_bias =0.000001
+  
+# MEAS_VOLT_2MITE*
+.subckt meas_volt_mite in[0]=net2_1 out[0]=gnd #meas_fg =0.00001
+  
+# CAP
+.subckt cap in[0]=net4_1 out[0]=net3_1
+  
+.end

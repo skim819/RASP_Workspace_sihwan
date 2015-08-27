@@ -1,0 +1,8 @@
+.model test_1106_image_convolution_4x4_logic
+.inputs net1_1 net2_1
+.outputs net3_1
+  
+# Voltage Divider
+.subckt volt_div in[0]=net1_1 in[1]=net2_1 out[0]=net3_1 #volt_div_fg =0&fgota_biasfb =2.000000000e-06&ota_p_bias =2.500000000e-04&ota_n_bias =2.450000000e-04&fgota_small_cap =0&cap_1x_vd =0&vd_target =2.000000000e-08
+  
+.end

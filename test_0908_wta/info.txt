@@ -1,0 +1,5 @@
+Nfet gate=net4 drain=net0
+Pfet gate=net5 source=net0
+Pfet gate=net6 source=net0
+Pfet gate=net11 source=net8
+Pfet gate=net11 source=net7

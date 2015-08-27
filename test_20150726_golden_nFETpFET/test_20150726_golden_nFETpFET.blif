@@ -1,0 +1,8 @@
+.model test_20150726_golden_nFETpFET
+.inputs net2_1 net4_1 gnd
+.outputs net3_1 net4_1
+
+# NFET GOLDEN
+.subckt nfet in[0]=net2_1 in[1]=gnd out=net3_1
+
+.end

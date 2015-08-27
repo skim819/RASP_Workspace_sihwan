@@ -1,0 +1,54 @@
+clear DAC00; clear DAC02; clear DAC03; clear DAC04; clear DAC05; clear DAC06; clear DAC07;
+sine_wave_x1 = [linspace(1.5,1.8,4) linspace(1.7,1.3,5) linspace(1.2,1.4,3) ];
+sine_wave_x1r = [linspace(1.5,1.2,4) linspace(1.3,1.7,5) linspace(1.8,1.6,3) ];
+sine_wave_x4 = [ sine_wave_x1 sine_wave_x1 sine_wave_x1 sine_wave_x1 ];
+sine_wave_x4r = [ sine_wave_x1r sine_wave_x1r sine_wave_x1r sine_wave_x1r ];
+sine_wave_x16 = [ sine_wave_x4 sine_wave_x4 sine_wave_x4 sine_wave_x4 ];
+sine_wave_x16r = [ sine_wave_x4r sine_wave_x4r sine_wave_x4r sine_wave_x4r ];
+default_x1 = [linspace(1.5,1.5,12)];
+zero_x1 = [linspace(0.2,0.2,12)];
+zero_x4 = [zero_x1 zero_x1 zero_x1 zero_x1 ];
+
+DAC00= [ linspace(0.8,0.8,1068) ];
+
+// input of VD1
+//DAC02 = [ linspace(1.5,1.5,1068) ];
+DAC02 = [ linspace(1.5,1.5,100) sine_wave_x16 sine_wave_x16 sine_wave_x16 sine_wave_x16 linspace(1.5,1.5,200) ];
+
+// input of VD2
+//DAC03 = [ linspace(1.5,1.5,1068) ];
+DAC03 = [ linspace(1.5,1.5,100) sine_wave_x16r sine_wave_x16r sine_wave_x16r sine_wave_x16r linspace(1.5,1.5,200) ];
+
+// input of VD3
+//DAC04 = [ linspace(1.5,1.5,1068) ];
+DAC04 = [ linspace(1.5,1.5,100) sine_wave_x16 sine_wave_x16 sine_wave_x16 sine_wave_x16 linspace(1.5,1.5,200) ];
+
+// input of VD4
+//DAC05 = [ linspace(1.5,1.5,1068) ];
+DAC05 = [ linspace(1.5,1.5,100) sine_wave_x16r sine_wave_x16r sine_wave_x16r sine_wave_x16r linspace(1.5,1.5,200) ];
+
+// clk
+clk_u = [0.2 2.5];
+clk_u_x4 = [clk_u clk_u clk_u clk_u]; 
+//DAC06 = [ linspace(0.2,0.2,100) clk_u 0.2 0.2 0.2 linspace(0.2,0.2,963) ];
+DAC06 = [ linspace(0.2,0.2,100) clk_u 0.2 0.2 0.2 zero_x4 clk_u_x4 zero_x4 clk_u_x4 zero_x4 clk_u_x4 zero_x4 clk_u_x4 linspace(0.2,0.2,739) ];
+
+// en
+en_u = [2.5 0.2];
+//DAC07 = [ linspace(2.5,2.5,100) 2.5 2.5 en_u 2.5 2.5 2.5 2.5 2.5 2.5 2.5 2.5 2.5 2.5 2.5 linspace(2.5,2.5,953) ];
+DAC07 = [ linspace(2.5,2.5,100) 2.5 2.5 en_u 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 linspace(0.2,0.2,953) ];
+
+// D
+data_u = [2.5 2.5];
+//DAC08 = [ linspace(0.2,0.2,100) 0.2 0.2 linspace(0.2,0.2,306) ];
+DAC08 = [ linspace(0.2,0.2,100) data_u linspace(0.2,0.2,966) ];
+
+
+disp(size(DAC00));
+disp(size(DAC02));
+disp(size(DAC03));
+disp(size(DAC04));
+disp(size(DAC05));
+disp(size(DAC06));
+disp(size(DAC07));
+disp(size(DAC08));

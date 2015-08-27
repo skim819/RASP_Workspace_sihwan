@@ -1,0 +1,13 @@
+Netlist file: /home/ubuntu/RASP_Workspace/test_0608_cap_ota_mite//test_0608_cap_ota_mite.net   Architecture file: /home/ubuntu/rasp30/vpr2swcs/./arch/rasp3_arch_meas_volt_mite.xml
+Array size: 14 x 14 logic blocks
+
+#block name	x	y	subblk	block number
+#----------	--	--	------	------------
+out:gnd		11	0	2	#0
+gnd		14	1	0	#1
+net1_1		11	1	0	#2
+net3_1		9	0	1	#3
+net4_1		9	0	2	#4
+out:dummy2	10	0	1	#5
+dummy2		9	1	0	#6
+dummy1		10	0	0	#7

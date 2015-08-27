@@ -1,0 +1,3 @@
+rm *.net *.place *.route *.mem -f;
+cp swcs_temp test_20150201_shortpulse_injection.swcs;
+cp .test_20150201_shortpulse_injection/input_vector .

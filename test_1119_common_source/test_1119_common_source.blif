@@ -1,0 +1,8 @@
+.model test_1119_common_source
+.inputs net1_1
+.outputs net2_1
+  
+# Common Source
+.subckt common_source in[0]=net1_1 out=net2_1 #common_source_fg =0&cs_bias =0.000000010000
+  
+.end

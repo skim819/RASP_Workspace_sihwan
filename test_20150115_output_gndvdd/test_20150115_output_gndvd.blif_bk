@@ -1,0 +1,14 @@
+.model test_20150115_output_gndvd
+.inputs net3_1 net2_1 net1_1
+.outputs net4_1 
+
+# NFET
+.subckt nfet in[0]=net3_1 in[1]=net2_1 out[0]=gnd_out
+
+# LPF
+.subckt ota in[0]=net1_1 in[1]=net4_1 out[0]=net4_1 #ota_bias =0.000001000000
+
+# gnd_out
+.subckt vdd_out in[0]=fb in[1]=gnd_out out[0]=fb #vdd_out_c =0
+
+.end

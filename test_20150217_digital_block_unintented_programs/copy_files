@@ -1,0 +1,2 @@
+rm *.net *.place *.route *.mem -f;
+cp .test/input_vector .

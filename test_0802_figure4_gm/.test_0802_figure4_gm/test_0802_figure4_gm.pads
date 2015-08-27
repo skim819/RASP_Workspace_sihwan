@@ -1,0 +1,5 @@
+dummy1 10 0 0 #int[0]
+out:dummy2 10 0 1 #int[1]
+net2_1 9 0 1 #int[1]
+out:net1_1 9 0 0 #tgate[0]
+net3_1 9 0 2 #int[2]

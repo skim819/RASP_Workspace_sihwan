@@ -1,0 +1,8 @@
+clear Vref_input; clear Vref_integrator; clear Vreset;
+Vref_input = [ linspace(1.5,1.5,210) ]; 
+Vref_integrator = [ linspace(1.5,1.5,210) ]; 
+Vreset = [ linspace(0.2,0.2,10) 2.5 linspace(0.2,0.2,299) ];
+
+disp(size(Vref_input));
+disp(size(Vref_integrator));
+disp(size(Vreset));

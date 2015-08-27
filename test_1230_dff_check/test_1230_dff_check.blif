@@ -1,0 +1,35 @@
+.model test_1230_dff_check
+.inputs net2_1 net8_1 net5_1 net4_1 vcc gnd
+.outputs net7_1
+
+# tgates for logic
+.subckt tgate in[0]=vcc in[1]=gnd out=tg4logic_1
+
+.subckt tgate in[0]=vcc in[1]=gnd out=tg4logic_2
+
+.subckt tgate in[0]=vcc in[1]=gnd out=tg4logic_3
+
+# D Flip Flop
+.names net9_1 tg4logic_1 tg4logic_2 tg4logic_3 internal_1_1
+1--- 1
+
+.subckt latch_custom D[0]=internal_1_1 clk[0]=net2_1 reset[0]=vcc_dig Q[0]=net6_1
+
+# D Flip Flop
+.names net4_1 tg4logic_1 tg4logic_2 tg4logic_3 internal_2_1
+1--- 1
+
+.subckt latch_custom D[0]=internal_2_1 clk[0]=net5_1 reset[0]=vcc_dig Q[0]=net11_1
+
+# vdd_dig
+.subckt tgate in[0]=vcc in[1]=vcc out=vcc_dig
+
+# LOOKUP Table-> B
+.names net6_1 net11_1 tg4logic_1 tg4logic_2 net7_1
+11-- 1
+
+# LOOKUP Table-> A
+.names net8_1 vcc_dig tg4logic_1 tg4logic_2 net9_1
+01--- 1
+
+.end

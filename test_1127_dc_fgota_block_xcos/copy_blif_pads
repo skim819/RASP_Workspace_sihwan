@@ -1,0 +1,4 @@
+rm *.net *.place *.route *.mem -f;
+rm test_1127_dc_fgota_block_xcos.blif -f;
+cp test_1127_dc_fgota_block_xcos.blif_modified test_1127_dc_fgota_block_xcos.blif;
+cp test_1127_dc_fgota_block_xcos.pads_modified test_1127_dc_fgota_block_xcos.pads

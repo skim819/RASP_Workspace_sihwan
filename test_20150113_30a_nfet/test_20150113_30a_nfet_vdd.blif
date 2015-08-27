@@ -1,0 +1,8 @@
+.model test_20150113_30a_nfet_vdd
+.inputs vcc net1_1
+.outputs net2_1
+
+# NFET GOLDEN
+.subckt nfet in[0]=net1_1 in[1]=vcc out=net2_1
+
+.end

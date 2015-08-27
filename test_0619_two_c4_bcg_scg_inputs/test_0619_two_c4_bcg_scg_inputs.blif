@@ -1,0 +1,30 @@
+.model test_0619_two_c4_bcg_scg_inputs
+.inputs dummy1 net8_1 net7_1 net5_1 net10_1
+.outputs dummy2 net4_1 net9_1 net6_1 net11_1
+.clocks
+  
+.names dummy1 dummy2
+1 0
+  
+# C4
+.subckt c4_blk in[0]=net5_1 in[1]=net9_1 out[0]=net1_1 #c4_ota_bias[1] =0.000000000300&c4_ota_bias[0] =0.000000000035&c4_fg[0] =0&c4_cap_3x[0] =0&c4_cap_2x[0] =0&c4_cap_1x[0] =0&c4_cap_3x[2] =0&c4_cap_2x[2] =0&c4_cap_1x[2] =0&c4_cap_3x[3] =0&c4_cap_2x[3] =0&c4_cap_1x[3] =0&c4_cap_3x[1] =0&c4_cap_2x[1] =0&c4_cap_1x[1] =0
+  
+# lpf
+.subckt lpf in[0]=net8_1 out[0]=net9_1 #ota_biasfb[0] =0.000000100000 &lpf_fg[0] =0&lpf_cap_3x[0] =0&lpf_cap_2x[0] =0&lpf_cap_1x[0] =0&lpf_cap_3x[2] =0&lpf_cap_2x[2] =0&lpf_cap_1x[2] =0&lpf_cap_3x[3] =0&lpf_cap_2x[3] =0&lpf_cap_1x[3] =0
+  
+# C4
+.subckt c4_blk in[0]=net5_1 in[1]=net3_1 out[0]=net4_1 #c4_ota_bias[1] =0.000000000300&c4_ota_bias[0] =0.000000000035&c4_fg[0] =0&c4_cap_3x[0] =0&c4_cap_2x[0] =0&c4_cap_1x[0] =0&c4_cap_3x[2] =0&c4_cap_2x[2] =0&c4_cap_1x[2] =0&c4_cap_3x[3] =0&c4_cap_2x[3] =0&c4_cap_1x[3] =0&c4_cap_3x[1] =0&c4_cap_2x[1] =0&c4_cap_1x[1] =0
+  
+# lpf
+.subckt lpf in[0]=net1_1 out[0]=net2_1 #ota_biasfb[0] =0.000000600000 &lpf_fg[0] =0&lpf_cap_3x[0] =0&lpf_cap_2x[0] =0&lpf_cap_1x[0] =0&lpf_cap_3x[2] =0&lpf_cap_2x[2] =0&lpf_cap_1x[2] =0&lpf_cap_3x[3] =0&lpf_cap_2x[3] =0&lpf_cap_1x[3] =0
+  
+# lpf
+.subckt lpf in[0]=net2_1 out[0]=net3_1 #ota_biasfb[0] =0.000000600000 &lpf_fg[0] =0&lpf_cap_3x[0] =0&lpf_cap_2x[0] =0&lpf_cap_1x[0] =0&lpf_cap_3x[2] =0&lpf_cap_2x[2] =0&lpf_cap_1x[2] =0&lpf_cap_3x[3] =0&lpf_cap_2x[3] =0&lpf_cap_1x[3] =0
+  
+# lpf
+.subckt lpf in[0]=net7_1 out[0]=net11_1 #ota_biasfb[0] =0.000000000900 &lpf_fg[0] =0&lpf_cap_3x[0] =0&lpf_cap_2x[0] =0&lpf_cap_1x[0] =0&lpf_cap_3x[2] =0&lpf_cap_2x[2] =0&lpf_cap_1x[2] =0&lpf_cap_3x[3] =0&lpf_cap_2x[3] =0&lpf_cap_1x[3] =0
+  
+# C4
+.subckt c4_blk in[0]=net10_1 in[1]=net11_1 out[0]=net6_1 #c4_ota_bias[1] =0.000000400000&c4_ota_bias[0] =0.000000000035&c4_fg[0] =0&c4_cap_3x[0] =0&c4_cap_2x[0] =0&c4_cap_1x[0] =0&c4_cap_3x[1] =0&c4_cap_2x[1] =0&c4_cap_1x[1] =0
+  
+.end
