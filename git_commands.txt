@@ -1,0 +1,17 @@
+< Commit >
+git commit -m "commit"
+git remote -v
+git push
+
+< Add >
+git add *
+
+< Remove >
+git rm *
+
+< Update >
+git pull
+
+< Check-out >
+git clone URL Folder_name
+
