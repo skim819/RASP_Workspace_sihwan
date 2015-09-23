@@ -1,8 +1,11 @@
 .model test_20150805_mismatch_map
-.inputs net2_1 net3_1
-.outputs net1_1
-  
-# NFET
-.subckt nfet in[0]=net2_1 in[1]=net3_1 out[0]=net1_1
-  
+.inputs net1_1 net3_1 vcc gnd
+.outputs net4_1
+
+# mmap_local_swc
+.subckt mmap_local_swc in[0]=net1_1 in[1]=gnd_dig in[2]=net3_1 out[0]=net4_1 out[1]=net5_1 out[2]=net6_1 out[3]=net7_1 #mmap_ls_fg =0&mmap_ls_in_r0_vdd =0&mmap_ls_in_r0 =5.00e-08
+
+# gnd_dig
+.subckt tgate in[0]=vcc in[1]=gnd out=gnd_dig
+
 .end
