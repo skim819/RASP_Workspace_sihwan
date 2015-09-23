@@ -13,5 +13,6 @@ git rm *
 git pull
 
 < Check-out >
+git checkout -- <file>  // discard changes in working directory
 git clone URL Folder_name
 
