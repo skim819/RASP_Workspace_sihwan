@@ -1,0 +1,8 @@
+.model test_20150921_nfet_i2v
+.inputs in_tgate
+.outputs out_tgate
+
+# mismatch_map_local_swc 
+.subckt nfet_i2v in[0]=in_tgate out[0]=out_tgate #nfet_i2v_fg =0&nfet_i2v_otabias =2E-06
+
+.end

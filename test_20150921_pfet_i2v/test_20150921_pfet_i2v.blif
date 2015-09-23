@@ -1,0 +1,8 @@
+.model test_20150921_pfet_i2v
+.inputs net2_1
+.outputs net1_1
+  
+# pfet_i2v
+.subckt pfet_i2v in[0]=net2_1 out=net1_1 #pfet_i2v_fg =0&pfet_i2v_otabias =1.00e-05
+  
+.end

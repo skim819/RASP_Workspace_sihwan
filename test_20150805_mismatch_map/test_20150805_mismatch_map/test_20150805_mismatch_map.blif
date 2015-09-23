@@ -1,0 +1,8 @@
+.model test_20150805_mismatch_map
+.inputs net2_1 net3_1
+.outputs net1_1
+  
+# NFET
+.subckt nfet in[0]=net2_1 in[1]=net3_1 out[0]=net1_1
+  
+.end

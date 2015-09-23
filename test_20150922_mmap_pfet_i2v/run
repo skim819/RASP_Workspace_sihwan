@@ -1,0 +1,3 @@
+cp test_20150805_mismatch_map.blif_bk test_20150805_mismatch_map.blif;
+cp test_20150805_mismatch_map.pads_bk test_20150805_mismatch_map.pads;
+python /home/ubuntu/rasp30/vpr2swcs/genswcs.py -c /home/ubuntu/RASP_Workspace/test_20150805_mismatch_map/test_20150805_mismatch_map -d /home/ubuntu/RASP_Workspace/test_20150805_mismatch_map -vmm;

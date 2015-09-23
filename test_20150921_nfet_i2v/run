@@ -1,0 +1,1 @@
+python /home/ubuntu/rasp30/vpr2swcs/genswcs.py -c /home/ubuntu/RASP_Workspace/test_20150921_nfet_i2v/test_20150921_nfet_i2v -d /home/ubuntu/RASP_Workspace/test_20150921_nfet_i2v
