@@ -48,7 +48,7 @@ data_x15 = [data_x4 data_x4 data_x4 data_x1 data_x1 data_x1 ];
 data_x16 = [data_x4 data_x4 data_x4 data_x4 ];
 
 //clk1       = [ clk__x1 zero_x15 zero_x1 ];
-clk1       = [ clk__x14 zero_x2 zero_x1 ];
+clk1       = [ clk__x4 zero_x12 zero_x1 ];
 data1      = [ data_x1 zero_x15 zero_x1 ];
 //clk2       = [ clk__x1 zero_x15 zero_x1 ];
 //data2      = [ data_x1 zero_x15 zero_x1 ];

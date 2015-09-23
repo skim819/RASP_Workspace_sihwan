@@ -1,32 +1,8 @@
 .model test_20150805_mismatch_map
-.inputs net10_1 net7_1 net9_1 net8_1 vcc gnd
-.outputs net12_1
-
-# gnd_dig
-.subckt tgate in[0]=vcc in[1]=gnd out=gnd_dig
-
-# Shift register 1input 16outputs
-.subckt in2in_x1 in[0]=fbout_1_1 in[1]=vcc in[2]=vccnternal out[0]=fbout_1_1
-
-.subckt sftreg2 in[0]=net10_1 in[1]=gnd_dig in[2]=net7_1 out[0]=vccnternal out[1]=net13_1 out[2]=net3_1 out[3]=net4_1 out[4]=net1_1 out[5]=net1_2 out[6]=net1_3 out[7]=net1_4 out[8]=net1_5 out[9]=net1_6 out[10]=net1_7 out[11]=net1_8 out[12]=net1_9 out[13]=net1_10 out[14]=net1_11 out[15]=net1_12 out[16]=net1_13 out[17]=net1_14 out[18]=net1_15 out[19]=net1_16 #sftreg2_fg =0
-
-# VMM 16x16 with shift register
-.subckt vmm8x4_in in[0]=net1_1 in[1]=net1_2 in[2]=net1_3 in[3]=net1_4 in[4]=net1_5 in[5]=net1_6 in[6]=net1_7 in[7]=net1_8 in[8]=net1_internal_1 in[9]=net1_internal_2 in[10]=net1_internal_3 in[11]=net1_internal_4 in[12]=net1_1_fbout out[0]=net1_1_fbout #vmm8x4_in_target =5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08
-
-.subckt vmm8x4_in in[0]=net1_9 in[1]=net1_10 in[2]=net1_11 in[3]=net1_12 in[4]=net1_13 in[5]=net1_14 in[6]=net1_15 in[7]=net1_16 in[8]=net1_internal_1 in[9]=net1_internal_2 in[10]=net1_internal_3 in[11]=net1_internal_4 in[12]=net1_2_fbout out[0]=net1_2_fbout #vmm8x4_in_target =5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08
-
-.subckt vmm8x4_in in[0]=net1_1 in[1]=net1_2 in[2]=net1_3 in[3]=net1_4 in[4]=net1_5 in[5]=net1_6 in[6]=net1_7 in[7]=net1_8 in[8]=net1_internal_5 in[9]=net1_internal_6 in[10]=net1_internal_7 in[11]=net1_internal_8 in[12]=net1_3_fbout out[0]=net1_3_fbout #vmm8x4_in_target =5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08
-
-.subckt vmm8x4_in in[0]=net1_9 in[1]=net1_10 in[2]=net1_11 in[3]=net1_12 in[4]=net1_13 in[5]=net1_14 in[6]=net1_15 in[7]=net1_16 in[8]=net1_internal_5 in[9]=net1_internal_6 in[10]=net1_internal_7 in[11]=net1_internal_8 in[12]=net1_4_fbout out[0]=net1_4_fbout #vmm8x4_in_target =5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08
-
-.subckt vmm8x4_in in[0]=net1_1 in[1]=net1_2 in[2]=net1_3 in[3]=net1_4 in[4]=net1_5 in[5]=net1_6 in[6]=net1_7 in[7]=net1_8 in[8]=net1_internal_9 in[9]=net1_internal_10 in[10]=net1_internal_11 in[11]=net1_internal_12 in[12]=net1_5_fbout out[0]=net1_5_fbout #vmm8x4_in_target =5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08
-
-.subckt vmm8x4_in in[0]=net1_9 in[1]=net1_10 in[2]=net1_11 in[3]=net1_12 in[4]=net1_13 in[5]=net1_14 in[6]=net1_15 in[7]=net1_16 in[8]=net1_internal_9 in[9]=net1_internal_10 in[10]=net1_internal_11 in[11]=net1_internal_12 in[12]=net1_6_fbout out[0]=net1_6_fbout #vmm8x4_in_target =5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08
-
-.subckt vmm8x4_in in[0]=net1_1 in[1]=net1_2 in[2]=net1_3 in[3]=net1_4 in[4]=net1_5 in[5]=net1_6 in[6]=net1_7 in[7]=net1_8 in[8]=net1_internal_13 in[9]=net1_internal_14 in[10]=net1_internal_15 in[11]=net1_internal_16 in[12]=net1_7_fbout out[0]=net1_7_fbout #vmm8x4_in_target =5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08
-
-.subckt vmm8x4_in in[0]=net1_9 in[1]=net1_10 in[2]=net1_11 in[3]=net1_12 in[4]=net1_13 in[5]=net1_14 in[6]=net1_15 in[7]=net1_16 in[8]=net1_internal_13 in[9]=net1_internal_14 in[10]=net1_internal_15 in[11]=net1_internal_16 in[12]=net1_8_fbout out[0]=net1_8_fbout #vmm8x4_in_target =5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08
-
-.subckt sftreg2 in[0]=net9_1 in[1]=gnd_dig in[2]=net8_1 out[0]=net12_1 out[1]=net14_1 out[2]=net5_1 out[3]=net6_1 out[4]=net1_internal_1 out[5]=net1_internal_2 out[6]=net1_internal_3 out[7]=net1_internal_4 out[8]=net1_internal_5 out[9]=net1_internal_6 out[10]=net1_internal_7 out[11]=net1_internal_8 out[12]=net1_internal_9 out[13]=net1_internal_10 out[14]=net1_internal_11 out[15]=net1_internal_12 out[16]=net1_internal_13 out[17]=net1_internal_14 out[18]=net1_internal_15 out[19]=net1_internal_16 #sftreg2_fg =0
-
+.inputs net2_1 net3_1
+.outputs net1_1
+  
+# NFET
+.subckt nfet in[0]=net2_1 in[1]=net3_1 out[0]=net1_1
+  
 .end
