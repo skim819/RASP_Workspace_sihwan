@@ -1,0 +1,14 @@
+.model test_20150922_mmap_pfet_i2v
+.inputs net6_1 net8_1 vcc gnd
+.outputs net1_1
+
+# mmap_local_swc
+.subckt mmap_local_swc in[0]=net6_1 in[1]=gnd_dig in[2]=net8_1 out[0]=net2_1 out[1]=net3_1 out[2]=net4_1 out[3]=net5_1 #mmap_ls_fg =0&mmap_ls_in_r0_vdd =0&mmap_ls_in_r0 =1.00e-07
+
+# pfet_i2v
+.subckt pfet_i2v in[0]=net2_1 out=net1_1 #pfet_i2v_fg =0&pfet_i2v_otabias =1.00e-05
+
+# gnd_dig
+.subckt tgate in[0]=vcc in[1]=gnd out=gnd_dig
+
+.end

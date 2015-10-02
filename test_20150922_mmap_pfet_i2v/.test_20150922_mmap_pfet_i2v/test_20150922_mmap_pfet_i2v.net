@@ -54,6 +54,7 @@
 			<globals>
 			</globals>
 		</block>
+		<block name="open" instance="th_logic[0]"/>
 	</block>
 	<block name="gnd_dig" instance="cab[1]" mode="cab">
 		<inputs>
