@@ -1,0 +1,2 @@
+rm test_20150927_th_logic_test1.net test_20150927_th_logic_test1.route test_20150927_th_logic_test1.place test_20150927_th_logic_test1.swcs;
+python /home/ubuntu/rasp30/vpr2swcs/genswcs.py -c /home/ubuntu/RASP_Workspace/test_20150927_th_logic_test1/test_20150927_th_logic_test1 -d /home/ubuntu/RASP_Workspace/test_20150927_th_logic_test1 -vmm;

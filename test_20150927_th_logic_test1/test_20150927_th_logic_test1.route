@@ -1,0 +1,67 @@
+Array size: 14 x 14 logic blocks.
+
+Routing:
+
+Net 0 (in_tgate)
+
+SOURCE (9,0)  Pad: 1  
+  OPIN (9,0)  Pad: 1  
+ CHANX (9,0)  Track: 16  
+ CHANY (9,1)  Track: 16  
+  IPIN (10,1)  Pin: 0  
+  SINK (10,1)  Class: 0  
+
+
+Net 1 (gnd_dig)
+
+SOURCE (7,1)  Class: 20  
+  OPIN (7,1)  Pin: 20  
+ CHANX (7,1)  Track: 5  
+ CHANX (8,1)  Track: 5  
+ CHANX (9,1)  Track: 5  
+ CHANX (10,1)  Track: 5  
+ CHANY (10,1)  Track: 5  
+  IPIN (10,1)  Pin: 7  
+  SINK (10,1)  Class: 7  
+ CHANY (10,1)  Track: 5  
+  IPIN (10,1)  Pin: 6  
+  SINK (10,1)  Class: 6  
+ CHANY (10,1)  Track: 5  
+  IPIN (10,1)  Pin: 5  
+  SINK (10,1)  Class: 5  
+ CHANY (10,1)  Track: 5  
+  IPIN (10,1)  Pin: 4  
+  SINK (10,1)  Class: 4  
+ CHANX (10,1)  Track: 5  
+ CHANY (9,1)  Track: 5  
+  IPIN (10,1)  Pin: 3  
+  SINK (10,1)  Class: 3  
+ CHANY (9,1)  Track: 5  
+  IPIN (10,1)  Pin: 2  
+  SINK (10,1)  Class: 2  
+ CHANY (9,1)  Track: 5  
+  IPIN (10,1)  Pin: 1  
+  SINK (10,1)  Class: 1  
+
+
+Net 2 (out_tgate)
+
+SOURCE (10,1)  Class: 24  
+  OPIN (10,1)  Pin: 24  
+ CHANX (10,1)  Track: 16  
+ CHANY (10,1)  Track: 16  
+ CHANX (11,0)  Track: 16  
+  IPIN (11,0)  Pad: 0  
+  SINK (11,0)  Pad: 0  
+
+
+Net 3 (gnd): global net connecting:
+
+Block gnd (#3) at (7, 0), Pin class 13.
+Block gnd_dig (#1) at (7, 1), Pin class 11.
+
+
+Net 4 (vcc): global net connecting:
+
+Block vcc (#4) at (7, 0), Pin class 16.
+Block gnd_dig (#1) at (7, 1), Pin class 12.
