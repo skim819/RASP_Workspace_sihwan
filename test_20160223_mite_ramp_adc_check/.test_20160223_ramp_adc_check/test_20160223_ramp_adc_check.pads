@@ -1,0 +1,2 @@
+net1_1 9 0 1 #int[1]
+out:out_ramp_adc 15 1 5 #int[5]

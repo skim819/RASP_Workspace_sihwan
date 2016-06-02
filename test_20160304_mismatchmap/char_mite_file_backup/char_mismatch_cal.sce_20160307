@@ -1,0 +1,51 @@
+global file_name path fname extension chip_num board_num hex_1na;
+
+mkdir mmap_data_files;
+
+exec('/home/ubuntu/rasp30/prog_assembly/libs/scilab_code/dc_setup_gui.sce', -1);
+exec('/home/ubuntu/rasp30/prog_assembly/libs/scilab_code/voltage_measurement_gui.sce', -1);
+
+clear mite_adc_result;
+mite_adc_result=csvRead('MITE_ADC_Output_voltage.csv');
+
+clear mmap_data; clear j;
+j=[2 4 6 8 10 12 18 20 22 24 26 28];
+for i=1:12
+    mmap_data(i)=mean([mite_adc_result(j(i),4),mite_adc_result(j(i)+1,4)]); // take the mean of the voltage values
+end
+csvWrite(mmap_data,'mmap_data');
+
+
+
+
+
+
+
+
+//// Initialize the shift register (put 1 on the 1st register) and measure
+//AnDi_clk = [0 1 0]; AnDi_data = [1 1 0]; AnDi_pause = [1 1 1]; // ms 
+//AnDi_string="sudo dwfcmd connect target=digitalio oe=0x00003";
+//for i=1:3
+//    AnDi_string = AnDi_string + ' out=0x' + string(sprintf('%4.4x', AnDi_clk(i) + 2*AnDi_data(i))) +  " pause=" + string(AnDi_pause(i)) + "ms"; // 0:clk 1:data
+//end
+//AnDi_string=AnDi_string+" out=0x0000 in";
+//unix_w(AnDi_string);
+//unix_w('sudo dwfcmd connect watch=2s analogin record channel=1 enable=1 range=2V offset=0 frequency=1k run=0.01s start save=mmap_data_files/data_1.csv');
+//
+//// Measure next values from 2nd to 16th
+//for j=2:16
+//    AnDi_clk = [1 0]; AnDi_data = [0 0]; AnDi_pause = [1 1]; // ms 
+//    AnDi_string="sudo dwfcmd connect target=digitalio oe=0x00003";
+//    for i=1:2
+//        AnDi_string = AnDi_string + ' out=0x' + string(sprintf('%4.4x', AnDi_clk(i) + 2*AnDi_data(i))) +  " pause=" + string(AnDi_pause(i)) + "ms"; // 0:clk 1:data
+//    end
+//    AnDi_string=AnDi_string+" out=0x0000 in";
+//    unix_w(AnDi_string);
+//    unix_w('sudo dwfcmd connect watch=2s analogin record channel=1 enable=1 range=2V offset=0 frequency=1k run=0.01s start save=mmap_data_files/data_'+string(j)+'.csv');
+//    disp(j);
+//end
+//clear mmap_data; clear j;
+//j=[1 2 3 4 5 6 9 10 11 12 13 14];
+//for i=1:12
+//    M = csvRead('mmap_data_files/data_'+string(j(i))+'.csv'); M = mean(M(3:10)); mmap_data(i)=M; // take the mean of the voltage values
+//end

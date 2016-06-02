@@ -1,0 +1,11 @@
+.model test_20160113_waitbar
+.inputs net2_1 net4_1
+.outputs net1_1 net3_1
+  
+# LPF
+.subckt ota in[0]=net2_1 in[1]=net1_1 out[0]=net1_1 #ota_bias =0.000001000000
+  
+# LPF
+.subckt ota in[0]=net4_1 in[1]=net3_1 out[0]=net3_1 #ota_bias =0.000001000000
+  
+.end

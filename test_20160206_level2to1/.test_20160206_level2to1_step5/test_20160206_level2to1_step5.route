@@ -1,0 +1,81 @@
+Array size: 14 x 14 logic blocks.
+
+Routing:
+
+Net 0 (gnd): global net connecting:
+
+Block gnd (#5) at (7, 0), Pin class 13.
+Block net9_1 (#0) at (10, 1), Pin class 10.
+
+
+Net 1 (vcc): global net connecting:
+
+Block vcc (#6) at (7, 0), Pin class 16.
+Block net9_1 (#0) at (10, 1), Pin class 11.
+Block net3_1 (#1) at (11, 2), Pin class 12.
+
+
+Net 2 (net7_1)
+
+SOURCE (9,0)  Pad: 1  
+  OPIN (9,0)  Pad: 1  
+ CHANX (9,0)  Track: 16  
+ CHANX (10,0)  Track: 16  
+  IPIN (10,1)  Pin: 12  
+  SINK (10,1)  Class: 12  
+
+
+Net 3 (net11_1)
+
+SOURCE (10,1)  Class: 20  
+  OPIN (10,1)  Pin: 20  
+ CHANX (10,1)  Track: 13  
+ CHANY (10,1)  Track: 13  
+ CHANX (11,0)  Track: 13  
+  IPIN (11,1)  Pin: 11  
+  SINK (11,1)  Class: 11  
+
+
+Net 4 (net5_1)
+
+SOURCE (11,0)  Pad: 1  
+  OPIN (11,0)  Pad: 1  
+ CHANX (11,0)  Track: 15  
+ CHANY (11,1)  Track: 15  
+ CHANX (11,1)  Track: 15  
+  IPIN (11,2)  Pin: 11  
+  SINK (11,2)  Class: 11  
+
+
+Net 5 (net1_1)
+
+SOURCE (11,2)  Class: 20  
+  OPIN (11,2)  Pin: 20  
+ CHANX (11,2)  Track: 16  
+ CHANY (10,2)  Track: 16  
+  IPIN (10,2)  Pin: 4  
+  SINK (10,2)  Class: 4  
+
+
+Net 6 (net12_1)
+
+SOURCE (11,1)  Class: 20  
+  OPIN (11,1)  Pin: 20  
+ CHANX (11,1)  Track: 16  
+  IPIN (11,1)  Pin: 9  
+  SINK (11,1)  Class: 9  
+ CHANX (11,1)  Track: 16  
+ CHANY (11,1)  Track: 16  
+ CHANX (12,0)  Track: 16  
+  IPIN (12,0)  Pad: 0  
+  SINK (12,0)  Pad: 0  
+
+
+Net 7 (fb_vddout)
+
+SOURCE (10,2)  Class: 20  
+  OPIN (10,2)  Pin: 20  
+ CHANX (10,2)  Track: 12  
+ CHANY (10,2)  Track: 12  
+  IPIN (10,2)  Pin: 5  
+  SINK (10,2)  Class: 5  

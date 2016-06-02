@@ -1,0 +1,62 @@
+Array size: 14 x 14 logic blocks.
+
+Routing:
+
+Net 0 (vcc): global net connecting:
+
+Block vcc (#4) at (7, 0), Pin class 16.
+Block net5_1 (#0) at (10, 1), Pin class 11.
+
+
+Net 1 (net4_1)
+
+SOURCE (9,0)  Pad: 1  
+  OPIN (9,0)  Pad: 1  
+ CHANX (9,0)  Track: 16  
+ CHANX (10,0)  Track: 16  
+  IPIN (10,1)  Pin: 12  
+  SINK (10,1)  Class: 12  
+
+
+Net 2 (net2_1)
+
+SOURCE (10,1)  Class: 19  
+  OPIN (10,1)  Pin: 19  
+ CHANY (10,1)  Track: 12  
+ CHANX (11,0)  Track: 12  
+  IPIN (11,1)  Pin: 11  
+  SINK (11,1)  Class: 11  
+
+
+Net 3 (net5_1)
+
+SOURCE (10,1)  Class: 20  
+  OPIN (10,1)  Pin: 20  
+ CHANX (10,1)  Track: 1  
+ CHANY (10,2)  Track: 1  
+  IPIN (10,2)  Pin: 6  
+  SINK (10,2)  Class: 6  
+
+
+Net 4 (fb_gndout)
+
+SOURCE (10,2)  Class: 20  
+  OPIN (10,2)  Pin: 20  
+ CHANX (10,2)  Track: 12  
+ CHANY (10,2)  Track: 12  
+  IPIN (10,2)  Pin: 5  
+  SINK (10,2)  Class: 5  
+
+
+Net 5 (net3_1)
+
+SOURCE (11,1)  Class: 20  
+  OPIN (11,1)  Pin: 20  
+ CHANX (11,1)  Track: 16  
+  IPIN (11,1)  Pin: 9  
+  SINK (11,1)  Class: 9  
+ CHANX (11,1)  Track: 16  
+ CHANY (11,1)  Track: 16  
+ CHANX (11,0)  Track: 16  
+  IPIN (11,0)  Pad: 0  
+  SINK (11,0)  Pad: 0  

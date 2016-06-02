@@ -1,0 +1,81 @@
+global chip_num board_num brdtype;
+
+exec('~/rasp30/prog_assembly/libs/scilab_code/diodeADC_v2i.sce',-1);
+exec('~/rasp30/prog_assembly/libs/scilab_code/diodeADC_i2v.sce',-1);
+exec('~/rasp30/prog_assembly/libs/scilab_code/diodeADC_v2h.sce',-1);
+exec('~/rasp30/prog_assembly/libs/scilab_code/diodeADC_h2v.sce',-1);
+Vfg_50nA=diodeADC_i2v(50e-09,chip_num,brdtype);
+
+mmap_list=fscanfMat('mismatch_calibration_list');
+mmap_data=csvRead('mmap_data');
+
+vdd=2.5;
+Vout_diode=2*(vdd-diodeADC_i2v(50e-09, chip_num, brdtype)); // Vout = 2*(Vdd-Vfg)
+
+
+//exec('~/rasp30/prog_assembly/libs/scilab_code/linefit.sce',-1);
+//exec('~/rasp30/prog_assembly/libs/scilab_code/ekvfit_nfet.sce',-1);
+//pfet_iv=csvRead("~/rasp30/prog_assembly/libs/scilab_code/characterization/char_nFETpFET/data_pFET_IVg_curve_chip"+chip_num+brdtype);
+//pfet_iv_flip=flipdim(pfet_iv,1);
+//pfet_iv_flip(:,1)=2.5-pfet_iv_flip(:,1);
+//
+//temp_a=[0.2    2.360D-11; 0.3    2.466D-11; 0.4    3.783D-11; 0.45 8D-11; 0.5    2.327D-10; 0.55 8D-10; 0.6    3.325D-09; 0.66 1.5D-08; 0.7    3.947D-08; 0.75 1.1D-07; 0.8    0.0000003; 0.9    0.0000009; 1.     0.0000020; 1.1    0.0000036; 1.2    0.0000057; 1.3    0.0000069; 1.4    0.0000073; 1.5    0.0000075; 1.6    0.0000077; 1.7    0.0000078; 1.8    0.00000785; 1.9    0.0000079; 2.     0.0000079; 2.1    0.0000080; 2.2    0.0000081; 2.3    0.0000082; 2.4    0.0000083; 2.5    0.0000084;];
+//
+//plotting="on_final";
+//epsilon=0.002; // epsilon=0.005;
+//[Is, VT, kappa]=ekvfit_nfet(temp_a(:,1), temp_a(:,2), epsilon, plotting);
+////[Is, VT, kappa]=ekvfit_nfet(pfet_iv_flip(:,1), pfet_iv_flip(:,2), epsilon, plotting);
+
+
+//kappa = 0.74;
+kappa = 0.95;
+mmap_data(:,3)=mmap_data(:,1);
+mmap_data(:,1)=mmap_list(:,1);
+mmap_data(:,2)=mmap_list(:,2);
+mmap_data(:,3)=(mmap_data(:,3)-Vout_diode)/kappa;
+
+scf(3);clf(3);
+for i=1:12
+    plot2d("nn", i, mmap_data(i,3), style=1);p = get("hdl"); p.children.mark_style = 9; p.children.thickness = 3; p.children.line_mode="off";
+end
+//plot2d("nl",[1 12], [Vfg_100nA Vfg_100nA], style=1);p = get("hdl"); p.children.line_style = 1; p.children.thickness = 3; p.children.thickness = 3;p.children.line_mode="on";
+a=gca();a.data_bounds=[0 -0.2; 12 0.2];
+//legend(" Data1","Polynomial Model1","Data2","Polynomial Model2","in_upper_left");
+xtitle("","switch No.","Vth mismatch [V]");
+
+disp(Vfg_50nA);
+disp(mmap_data);
+
+csvWrite(mmap_data, 'mismatch_map');
+
+
+
+mmap_data_1=csvRead('before_mismatch_compensation_1/mmap_data');
+mmap_data_2=csvRead('after_mismatch_compensation_1_kappa074/mmap_data');
+mmap_data_3=csvRead('after_mismatch_compensation_1_kappa095/mmap_data');
+scf(4);clf(4);
+for i=1:12
+    plot2d("nn", i, mmap_data_1(i), style=1);p = get("hdl"); p.children.mark_style = 2; p.children.thickness = 3; p.children.line_mode="off";
+    plot2d("nn", i, mmap_data_2(i), style=2);p = get("hdl"); p.children.mark_style = 9; p.children.thickness = 3; p.children.line_mode="off";
+    plot2d("nn", i, mmap_data_3(i), style=3);p = get("hdl"); p.children.mark_style = 3; p.children.thickness = 3; p.children.line_mode="off";
+end
+a=gca();a.data_bounds=[0 1.2; 12 1.4];
+legend("w/o mismatch","with mismatch (k=0.74)","with mismatch (k=0.95)","in_upper_left");
+xtitle("","In No. in VMM 1st row","Vmeasure [V]");
+
+
+mmap_data_1=csvRead('before_mismatch_compensation_1/mmap_data');
+mmap_data_1(:,3)=mmap_data_1(:,1);
+mmap_data_1(:,4)=mmap_data_1(:,1);
+mmap_data_1(:,1)=mmap_list_1(:,1);
+mmap_data_1(:,2)=mmap_list_1(:,2);
+mmap_data_1(:,3)=(mmap_data_1(:,3)-Vout_diode)/0.74;
+mmap_data_1(:,4)=(mmap_data_1(:,4)-Vout_diode)/0.95;
+scf(5);clf(5);
+for i=1:12
+    plot2d("nn", i, mmap_data_1(i,3), style=1);p = get("hdl"); p.children.mark_style = 9; p.children.thickness = 3; p.children.line_mode="off";
+    plot2d("nn", i, mmap_data_1(i,4), style=1);p = get("hdl"); p.children.mark_style = 3; p.children.thickness = 3; p.children.line_mode="off";
+end
+a=gca();a.data_bounds=[0 -0.06; 12 0.06];
+legend("Vto mismatch (k=0.74)","Vto mismatch (k=0.95)","in_upper_left");
+xtitle("","In No. in VMM 1st row","Vth mismatch [V]");

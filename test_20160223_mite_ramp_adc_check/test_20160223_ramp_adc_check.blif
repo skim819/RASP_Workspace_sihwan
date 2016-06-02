@@ -1,0 +1,8 @@
+.model test_20160223_ramp_adc_check
+.inputs net1_1
+.outputs out_ramp_adc
+  
+# Ramp_ADC*
+.subckt ramp_fe in[0]=net1_1 out=out_ramp_adc #ramp_fe_fg[0] =0&ramp_pfetinput[0] =10e-9&c4_ota_bias[0] =2e-6&c4_ota_p_bias[0] =2e-6&c4_ota_n_bias[0] =1.5e-6&speech_peakotabias[0] =2e-6&c4_ota_bias[1] =2e-6&c4_ota_p_bias[1] =500e-9&c4_ota_n_bias[1] =500e-9&ramp_pfetinput[1] =30e-9
+  
+.end

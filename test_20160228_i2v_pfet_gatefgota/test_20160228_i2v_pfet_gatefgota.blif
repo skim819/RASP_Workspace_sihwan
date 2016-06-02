@@ -1,0 +1,8 @@
+.model test_20160228_i2v_pfet_gatefgota
+.inputs net1_1
+.outputs net2_1
+  
+#I2V_pfet_gatefgota
+.subckt i2v_pfet_gatefgota in[0]=net1_1 out[0]=net2_1 #i2v_pfet_gatefgota_fg =0&i2v_pfet_gatefgota_ota0bias =2e-06&i2v_pfet_gatefgota_fgotabias =2e-06&i2v_pfet_gatefgota_fgotapbias =2e-06&i2v_pfet_gatefgota_fgotanbias =2.71e-07
+  
+.end

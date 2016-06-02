@@ -1,0 +1,14 @@
+Netlist file: /home/ubuntu/RASP_Workspace/test_20151207_mmap_pfet_i2v_AnaDis//test_20151207_mmap_pfet_i2v_AnaDis.net   Architecture file: /home/ubuntu/rasp30/vpr2swcs/./arch/rasp3_vmm_arch.xml
+Array size: 14 x 14 logic blocks
+
+#block name	x	y	subblk	block number
+#----------	--	--	------	------------
+net5_1		10	1	0	#0
+gnd_dig		6	1	0	#1
+out_mite_adc	14	1	0	#2
+net6_1		7	1	0	#3
+out:out_mite_adc	7	0	0	#4
+gnd		7	0	4	#5
+vcc		7	0	5	#6
+net8_1		9	0	2	#7
+net7_1		9	0	1	#8

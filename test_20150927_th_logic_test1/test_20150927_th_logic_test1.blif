@@ -1,11 +1,8 @@
 .model test_20150927_th_logic_test1
-.inputs in_tgate vcc gnd
-.outputs out_tgate
-
-# threshold logic
-.subckt th_logic in[0]=in_tgate in[1]=gnd_dig in[2]=gnd_dig in[3]=gnd_dig in[4]=gnd_dig in[5]=gnd_dig in[6]=gnd_dig in[7]=gnd_dig out[0]=out_tgate #th_logic_fg =0&th_logic_otabias =10e-06&th_logic_inbias_0 =1.00e-09&th_logic_inbias_1 =2.00e-09
-
-# gnd_dig
-.subckt tgate in[0]=vcc in[1]=gnd out=gnd_dig
-
+.inputs net2_1
+.outputs net1_1
+  
+# nfet_i2v
+.subckt nfet_i2v in[0]=net2_1 out=net1_1 #nfet_i2v_fg =0&nfet_i2v_otabias =1.00e-05
+  
 .end

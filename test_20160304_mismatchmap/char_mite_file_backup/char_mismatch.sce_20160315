@@ -1,0 +1,68 @@
+global chip_num board_num brdtype;
+
+exec('~/rasp30/prog_assembly/libs/scilab_code/diodeADC_v2i.sce',-1);
+exec('~/rasp30/prog_assembly/libs/scilab_code/diodeADC_i2v.sce',-1);
+exec('~/rasp30/prog_assembly/libs/scilab_code/diodeADC_v2h.sce',-1);
+exec('~/rasp30/prog_assembly/libs/scilab_code/diodeADC_h2v.sce',-1);
+Vfg_50nA=diodeADC_i2v(50e-09,chip_num,brdtype);
+
+Vmeasure=csvRead('./mmap_data_files/Vmeasure_data');
+
+vdd=2.5;
+Vout_diode=2*(vdd-diodeADC_i2v(50e-09, chip_num, brdtype)); // Vout = 2*(Vdd-Vfg) @50nA
+
+//kappa = 0.74;
+kappa = 0.95;
+Vto_mismatch=Vmeasure;
+Vto_mismatch(:,3)=(Vto_mismatch(:,3)-Vout_diode)/kappa;
+
+scf(1);clf(1);
+for i=1:12
+    plot2d("nn", i, Vmeasure(i,3));p = get("hdl"); p.children.mark_style = 9; p.children.thickness = 3; p.children.line_mode="off"; p.children.mark_foreground = 1;
+    plot2d("nn", i, Vmeasure(i+12,3));p = get("hdl"); p.children.mark_style = 9; p.children.thickness = 3; p.children.line_mode="off"; p.children.mark_foreground = 2;
+    plot2d("nn", i, Vmeasure(i+24,3));p = get("hdl"); p.children.mark_style = 9; p.children.thickness = 3; p.children.line_mode="off"; p.children.mark_foreground = 3;
+    plot2d("nn", i, Vmeasure(i+36,3));p = get("hdl"); p.children.mark_style = 9; p.children.thickness = 3; p.children.line_mode="off"; p.children.mark_foreground = 4;
+    plot2d("nn", i, Vmeasure(i+48,3));p = get("hdl"); p.children.mark_style = 9; p.children.thickness = 3; p.children.line_mode="off"; p.children.mark_foreground = 5;
+    plot2d("nn", i, Vmeasure(i+60,3));p = get("hdl"); p.children.mark_style = 9; p.children.thickness = 3; p.children.line_mode="off"; p.children.mark_foreground = 6;
+    plot2d("nn", i, Vmeasure(i+72,3));p = get("hdl"); p.children.mark_style = 9; p.children.thickness = 3; p.children.line_mode="off"; p.children.mark_foreground = 7;
+    plot2d("nn", i, Vmeasure(i+84,3));p = get("hdl"); p.children.mark_style = 9; p.children.thickness = 3; p.children.line_mode="off"; p.children.mark_foreground = 9;
+    plot2d("nn", i, Vmeasure(i+96,3));p = get("hdl"); p.children.mark_style = 9; p.children.thickness = 3; p.children.line_mode="off"; p.children.mark_foreground = 10;
+    plot2d("nn", i, Vmeasure(i+108,3));p = get("hdl"); p.children.mark_style = 9; p.children.thickness = 3; p.children.line_mode="off"; p.children.mark_foreground = 11;
+end
+a=gca();a.data_bounds=[0 1; 12 1.5];
+legend("row 0","row 1","row 2","row 3","row 4","row 5","row 6","row 7","row 8","row 9","in_upper_left");
+xtitle("","switch No.","Vmeasure [V]");
+
+scf(3);clf(3);
+for i=1:12
+    plot2d("nn", i, Vto_mismatch(i,3));p = get("hdl"); p.children.mark_style = 9; p.children.thickness = 3; p.children.line_mode="off";p.children.mark_foreground = 1;
+    plot2d("nn", i, Vto_mismatch(i+12,3));p = get("hdl"); p.children.mark_style = 9; p.children.thickness = 3; p.children.line_mode="off";p.children.mark_foreground = 2;
+    plot2d("nn", i, Vto_mismatch(i+24,3));p = get("hdl"); p.children.mark_style = 9; p.children.thickness = 3; p.children.line_mode="off";p.children.mark_foreground = 3;
+    plot2d("nn", i, Vto_mismatch(i+36,3));p = get("hdl"); p.children.mark_style = 9; p.children.thickness = 3; p.children.line_mode="off";p.children.mark_foreground = 4;
+    plot2d("nn", i, Vto_mismatch(i+48,3));p = get("hdl"); p.children.mark_style = 9; p.children.thickness = 3; p.children.line_mode="off";p.children.mark_foreground = 5;
+    plot2d("nn", i, Vto_mismatch(i+60,3));p = get("hdl"); p.children.mark_style = 9; p.children.thickness = 3; p.children.line_mode="off";p.children.mark_foreground = 6;
+    plot2d("nn", i, Vto_mismatch(i+72,3));p = get("hdl"); p.children.mark_style = 9; p.children.thickness = 3; p.children.line_mode="off";p.children.mark_foreground = 7;
+    plot2d("nn", i, Vto_mismatch(i+84,3));p = get("hdl"); p.children.mark_style = 9; p.children.thickness = 3; p.children.line_mode="off";p.children.mark_foreground = 9;
+    plot2d("nn", i, Vto_mismatch(i+96,3));p = get("hdl"); p.children.mark_style = 9; p.children.thickness = 3; p.children.line_mode="off";p.children.mark_foreground = 10;
+    plot2d("nn", i, Vto_mismatch(i+108,3));p = get("hdl"); p.children.mark_style = 9; p.children.thickness = 3; p.children.line_mode="off";p.children.mark_foreground = 11;
+end
+b=gca();b.data_bounds=[0 -0.2; 12 0.2];
+legend("row 0","row 1","row 2","row 3","row 4","row 5","row 6","row 7","row 8","row 9","in_upper_left");
+xtitle("","switch No.","Vth mismatch [V]");
+
+disp(Vto_mismatch);
+csvWrite(Vto_mismatch, 'mismatch_map');
+
+//mismatchmap=csvRead('mismatch_map');
+//[a1,b1]=unix_g('ls ~/rasp30/prog_assembly/libs/chip_parameters/mismatch_map/mismatch_map_chip'+chip_num+brdtype);
+//if (b1==0) then // 0 if no error occurred, 1 if error.
+//    mismatch_map_pre = csvRead('~/rasp30/prog_assembly/libs/chip_parameters/mismatch_map/mismatch_map_chip'+chip_num+brdtype);
+//    combined_mismatchmap=[mismatch_map_pre;mismatchmap];
+//end
+//if (b1~=0) then // 0 if no error occurred, 1 if error.
+//    combined_mismatchmap=mismatchmap;
+//end
+//csvWrite(combined_mismatchmap, 'mismatch_map_combined');
+//unix_w("cp mismatch_map_combined ~/rasp30/prog_assembly/libs/chip_parameters/mismatch_map/mismatch_map_chip"+chip_num+brdtype);
+
+

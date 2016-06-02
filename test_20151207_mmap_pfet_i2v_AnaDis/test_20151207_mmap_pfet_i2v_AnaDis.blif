@@ -1,0 +1,17 @@
+.model test_20151207_mmap_pfet_i2v_AnaDis
+.inputs net7_1 net8_1 vcc gnd
+.outputs out_mite_adc
+
+# mmap_local_swc
+.subckt mmap_local_swc in[0]=net7_1 in[1]=gnd_dig in[2]=net8_1 out[0]=net5_1 out[1]=net1_1 out[2]=net2_1 out[3]=net3_1 #mmap_ls_fg =0&mmap_ls_in_r0_vdd =0&mmap_ls_in_r0 =5.00e-08
+
+#GND_DIG 3
+.subckt tgate in[0]=vcc in[1]=gnd out=gnd_dig
+
+#I2V_pfet_gatefgota
+.subckt i2v_pfet_gatefgota in[0]=net5_1 out[0]=net6_1 #i2v_pfet_gatefgota_fg =0&i2v_pfet_gatefgota_ota0bias =2e-06&i2v_pfet_gatefgota_fgotabias =2e-06&i2v_pfet_gatefgota_fgotapbias =2e-06&i2v_pfet_gatefgota_fgotanbias =2.71e-07
+
+# MITE_ADC*
+.subckt meas_volt_mite in[0]=net6_1 out[0]=out_mite_adc #meas_fg =0.00001
+
+.end

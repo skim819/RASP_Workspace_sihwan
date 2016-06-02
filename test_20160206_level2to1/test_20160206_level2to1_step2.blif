@@ -1,0 +1,17 @@
+.model test_20160206_level2to1_step2
+.inputs net3_1 net4_1
+.outputs net2_1 net6_1
+  
+#OTA 1
+.subckt ota in[0]=net1_1 in[1]=net2_1 out[0]=net2_1 #ota_bias =0.000000001000
+  
+#PFET 4
+.subckt pfet in[0]=net3_1 in[1]=net4_1 out=net1_1
+  
+#NFET 5
+.subckt nfet in[0]=net3_1 in[1]=net1_1 out[0]=net5_1
+  
+#OTA 11
+.subckt ota in[0]=net5_1 in[1]=net6_1 out[0]=net6_1 #ota_bias =0.000000002000
+  
+.end

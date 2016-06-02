@@ -1,0 +1,171 @@
+.model test_1202_image_convolution_16x16
+.inputs net5_1 net29_1 net13_1 net14_1 net4_1 net52_1 net49_1 net32_1 net48_1 net41_1 net53_1 vcc gnd
+.outputs net33_1 net37_1 net38_1 net40_1 net46_1 net47_1
+
+# tgates for logic
+.subckt tgate in[0]=vcc in[1]=gnd out=tg4logic_1
+
+.subckt tgate in[0]=vcc in[1]=gnd out=tg4logic_2
+
+.subckt tgate in[0]=vcc in[1]=gnd out=tg4logic_3
+
+# D Flip Flop
+.names net21_1 tg4logic_1 tg4logic_2 tg4logic_3 internal_1_1
+1--- 1
+
+.subckt latch_custom D[0]=internal_1_1 clk[0]=net20_1 reset[0]=vcc_dig Q[0]=net31_1
+
+# D Flip Flop
+.names net42_1 tg4logic_1 tg4logic_2 tg4logic_3 internal_2_1
+1--- 1
+
+.subckt latch_custom D[0]=internal_2_1 clk[0]=net39_1 reset[0]=vcc_dig Q[0]=net43_1
+
+# D Flip Flop
+.names net26_1 tg4logic_1 tg4logic_2 tg4logic_3 internal_3_1
+1--- 1
+
+.subckt latch_custom D[0]=internal_3_1 clk[0]=net7_1 reset[0]=vcc_dig Q[0]=net18_1
+
+#GND_DIG 2
+.subckt tgate in[0]=vcc in[1]=gnd out=gnd_dig
+
+#VDD_DIG 6
+.subckt tgate in[0]=vcc in[1]=vcc out=vcc_dig
+
+# LOOKUP Table-> OR_D_1
+.names net26_1 net29_1 tg4logic_1 tg4logic_2 net23_1
+01-- 1
+10-- 1
+11-- 1
+
+# LOOKUP Table-> OR_clk_1
+.names net5_1 net41_1 tg4logic_1 tg4logic_2 net7_1
+01-- 1
+10-- 1
+11-- 1
+
+# LOOKUP Table-> OR_clk_2
+.names net35_1 net28_1 tg4logic_1 tg4logic_2 net33_1
+10-- 1
+01-- 1
+11-- 1
+
+# LOOKUP Table-> OR_D_2
+.names net25_1 net11_1 tg4logic_1 tg4logic_2 net40_1
+01-- 1
+10-- 1
+11-- 1
+
+# LOOKUP Table-> Pass
+.names net29_1 tg4logic_1 tg4logic_2 tg4logic_3 net25_1
+1--- 1
+
+# LOOKUP Table-> Pass
+.names net5_1 tg4logic_1 tg4logic_2 tg4logic_3 net28_1
+1--- 1
+
+#TGATE 15
+.subckt tgate in[0]=vcc in[1]=net31_1 out=net26_1
+
+#TGATE 16
+.subckt tgate in[0]=vcc in[1]=net43_1 out=net11_1
+
+# Shift register 1input 16outputs
+.subckt in2in_x1 in[0]=fbout_4_1 in[1]=net4_1 in[2]=net4_internal out[0]=fbout_4_1
+
+.subckt sftreg2 in[0]=net7_1 in[1]=gnd_dig in[2]=net23_1 out[0]=net4_internal out[1]=net8_1 out[2]=net1_1 out[3]=net21_1 out[4]=net19_1 out[5]=net19_2 out[6]=net19_3 out[7]=net19_4 out[8]=net19_5 out[9]=net19_6 out[10]=net19_7 out[11]=net19_8 out[12]=net19_9 out[13]=net19_10 out[14]=net19_11 out[15]=net19_12 out[16]=net19_13 out[17]=net19_14 out[18]=net19_15 out[19]=net19_16 #sftreg2_fg =0
+
+# Shift register 1input 16outputs
+.subckt in2in_x1 in[0]=fbout_5_1 in[1]=net6_1 in[2]=net6_internal out[0]=fbout_5_1
+
+.subckt sftreg2 in[0]=net33_1 in[1]=gnd_dig in[2]=net40_1 out[0]=net6_internal out[1]=net44_1 out[2]=net22_1 out[3]=net42_1 out[4]=net50_1 out[5]=net50_2 out[6]=net50_3 out[7]=net50_4 out[8]=net50_5 out[9]=net50_6 out[10]=net50_7 out[11]=net50_8 out[12]=net50_9 out[13]=net50_10 out[14]=net50_11 out[15]=net50_12 out[16]=net50_13 out[17]=net50_14 out[18]=net50_15 out[19]=net50_16 #sftreg2_fg =0
+
+# LOOKUP Table-> OR_clk_3
+.names net11_1 net28_1 tg4logic_1 tg4logic_2 net36_1
+10-- 1
+01-- 1
+11-- 1
+
+#TGATE 27
+.subckt tgate in[0]=vcc in[1]=net18_1 out=net35_1
+
+# Input 2 Input x1
+.subckt in2in_x1 in[0]=fbout_6_1 in[1]=net54_1 in[2]=net6_1 out[0]=fbout_6_1
+
+#TGATE 29
+.subckt tgate in[0]=net32_1 in[1]=net49_1 out=net45_1
+
+# Input 2 Input x1
+.subckt in2in_x1 in[0]=fbout_7_1 in[1]=net45_1 in[2]=net54_1 out[0]=fbout_7_1
+
+# LOOKUP Table-> Delay
+.names net8_1 tg4logic_1 tg4logic_2 tg4logic_3 net20_1
+1--- 1
+
+# LOOKUP Table-> INV_1
+.names net44_1 tg4logic_1 tg4logic_2 tg4logic_3 net39_1
+0--- 1
+
+# Shift register 16inputs 1output
+.subckt sftreg in[0]=net51_1 in[1]=net51_2 in[2]=net51_3 in[3]=net51_4 in[4]=net51_5 in[5]=net51_6 in[6]=net51_7 in[7]=net51_8 in[8]=net51_9 in[9]=net51_10 in[10]=net51_11 in[11]=net51_12 in[12]=net51_13 in[13]=net51_14 in[14]=net51_15 in[15]=net51_16 in[16]=net13_1 in[17]=gnd_dig in[18]=net14_1 out[0]=net47_1 #sftreg_fg =0
+
+# ota_buf
+.subckt ota_buf in[0]=net45_1 out[0]=net46_1 #ota_biasfb =0.000002000000
+
+# INTEGRATOR
+.subckt integrator_nmirror in[0]=net49_1 in[1]=net50_1 in[2]=net48_1 out[0]=net51_1 #integrator_nmirror_fg =0&cap_3x =0&cap_2x =0&integrator_nmirror_ota0 =1.00e-06&integrator_nmirror_ota1 =2.00e-06&integrator_nmirror_ota2 =5.00e-11
+
+.subckt integrator_nmirror in[0]=net49_1 in[1]=net50_2 in[2]=net48_1 out[0]=net51_2 #integrator_nmirror_fg =0&cap_3x =0&cap_2x =0&integrator_nmirror_ota0 =1.00e-06&integrator_nmirror_ota1 =2.00e-06&integrator_nmirror_ota2 =5.00e-11
+
+.subckt integrator_nmirror in[0]=net49_1 in[1]=net50_3 in[2]=net48_1 out[0]=net51_3 #integrator_nmirror_fg =0&cap_3x =0&cap_2x =0&integrator_nmirror_ota0 =1.00e-06&integrator_nmirror_ota1 =2.00e-06&integrator_nmirror_ota2 =5.00e-11
+
+.subckt integrator_nmirror in[0]=net49_1 in[1]=net50_4 in[2]=net48_1 out[0]=net51_4 #integrator_nmirror_fg =0&cap_3x =0&cap_2x =0&integrator_nmirror_ota0 =1.00e-06&integrator_nmirror_ota1 =2.00e-06&integrator_nmirror_ota2 =5.00e-11
+
+.subckt integrator_nmirror in[0]=net49_1 in[1]=net50_5 in[2]=net48_1 out[0]=net51_5 #integrator_nmirror_fg =0&cap_3x =0&cap_2x =0&integrator_nmirror_ota0 =1.00e-06&integrator_nmirror_ota1 =2.00e-06&integrator_nmirror_ota2 =5.00e-11
+
+.subckt integrator_nmirror in[0]=net49_1 in[1]=net50_6 in[2]=net48_1 out[0]=net51_6 #integrator_nmirror_fg =0&cap_3x =0&cap_2x =0&integrator_nmirror_ota0 =1.00e-06&integrator_nmirror_ota1 =2.00e-06&integrator_nmirror_ota2 =5.00e-11
+
+.subckt integrator_nmirror in[0]=net49_1 in[1]=net50_7 in[2]=net48_1 out[0]=net51_7 #integrator_nmirror_fg =0&cap_3x =0&cap_2x =0&integrator_nmirror_ota0 =1.00e-06&integrator_nmirror_ota1 =2.00e-06&integrator_nmirror_ota2 =5.00e-11
+
+.subckt integrator_nmirror in[0]=net49_1 in[1]=net50_8 in[2]=net48_1 out[0]=net51_8 #integrator_nmirror_fg =0&cap_3x =0&cap_2x =0&integrator_nmirror_ota0 =1.00e-06&integrator_nmirror_ota1 =2.00e-06&integrator_nmirror_ota2 =5.00e-11
+
+.subckt integrator_nmirror in[0]=net49_1 in[1]=net50_9 in[2]=net48_1 out[0]=net51_9 #integrator_nmirror_fg =0&cap_3x =0&cap_2x =0&integrator_nmirror_ota0 =1.00e-06&integrator_nmirror_ota1 =2.00e-06&integrator_nmirror_ota2 =5.00e-11
+
+.subckt integrator_nmirror in[0]=net49_1 in[1]=net50_10 in[2]=net48_1 out[0]=net51_10 #integrator_nmirror_fg =0&cap_3x =0&cap_2x =0&integrator_nmirror_ota0 =1.00e-06&integrator_nmirror_ota1 =2.00e-06&integrator_nmirror_ota2 =5.00e-11
+
+.subckt integrator_nmirror in[0]=net49_1 in[1]=net50_11 in[2]=net48_1 out[0]=net51_11 #integrator_nmirror_fg =0&cap_3x =0&cap_2x =0&integrator_nmirror_ota0 =1.00e-06&integrator_nmirror_ota1 =2.00e-06&integrator_nmirror_ota2 =5.00e-11
+
+.subckt integrator_nmirror in[0]=net49_1 in[1]=net50_12 in[2]=net48_1 out[0]=net51_12 #integrator_nmirror_fg =0&cap_3x =0&cap_2x =0&integrator_nmirror_ota0 =1.00e-06&integrator_nmirror_ota1 =2.00e-06&integrator_nmirror_ota2 =5.00e-11
+
+.subckt integrator_nmirror in[0]=net49_1 in[1]=net50_13 in[2]=net48_1 out[0]=net51_13 #integrator_nmirror_fg =0&cap_3x =0&cap_2x =0&integrator_nmirror_ota0 =1.00e-06&integrator_nmirror_ota1 =2.00e-06&integrator_nmirror_ota2 =5.00e-11
+
+.subckt integrator_nmirror in[0]=net49_1 in[1]=net50_14 in[2]=net48_1 out[0]=net51_14 #integrator_nmirror_fg =0&cap_3x =0&cap_2x =0&integrator_nmirror_ota0 =1.00e-06&integrator_nmirror_ota1 =2.00e-06&integrator_nmirror_ota2 =5.00e-11
+
+.subckt integrator_nmirror in[0]=net49_1 in[1]=net50_15 in[2]=net48_1 out[0]=net51_15 #integrator_nmirror_fg =0&cap_3x =0&cap_2x =0&integrator_nmirror_ota0 =1.00e-06&integrator_nmirror_ota1 =2.00e-06&integrator_nmirror_ota2 =5.00e-11
+
+.subckt integrator_nmirror in[0]=net49_1 in[1]=net50_16 in[2]=net48_1 out[0]=net51_16 #integrator_nmirror_fg =0&cap_3x =0&cap_2x =0&integrator_nmirror_ota0 =1.00e-06&integrator_nmirror_ota1 =2.00e-06&integrator_nmirror_ota2 =5.00e-11
+
+#NFET 70
+.subckt nfet in[0]=net52_1 in[1]=net53_1 out[0]=net54_1
+
+# VMM 16x16 with shift register
+.subckt vmm8x4_in in[0]=net19_1 in[1]=net19_2 in[2]=net19_3 in[3]=net19_4 in[4]=net19_5 in[5]=net19_6 in[6]=net19_7 in[7]=net19_8 in[8]=net19_internal_1 in[9]=net19_internal_2 in[10]=net19_internal_3 in[11]=net19_internal_4 in[12]=net19_1_fbout out[0]=net19_1_fbout #vmm8x4_in_target =5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08
+
+.subckt vmm8x4_in in[0]=net19_9 in[1]=net19_10 in[2]=net19_11 in[3]=net19_12 in[4]=net19_13 in[5]=net19_14 in[6]=net19_15 in[7]=net19_16 in[8]=net19_internal_1 in[9]=net19_internal_2 in[10]=net19_internal_3 in[11]=net19_internal_4 in[12]=net19_2_fbout out[0]=net19_2_fbout #vmm8x4_in_target =5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08
+
+.subckt vmm8x4_in in[0]=net19_1 in[1]=net19_2 in[2]=net19_3 in[3]=net19_4 in[4]=net19_5 in[5]=net19_6 in[6]=net19_7 in[7]=net19_8 in[8]=net19_internal_5 in[9]=net19_internal_6 in[10]=net19_internal_7 in[11]=net19_internal_8 in[12]=net19_3_fbout out[0]=net19_3_fbout #vmm8x4_in_target =5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08
+
+.subckt vmm8x4_in in[0]=net19_9 in[1]=net19_10 in[2]=net19_11 in[3]=net19_12 in[4]=net19_13 in[5]=net19_14 in[6]=net19_15 in[7]=net19_16 in[8]=net19_internal_5 in[9]=net19_internal_6 in[10]=net19_internal_7 in[11]=net19_internal_8 in[12]=net19_4_fbout out[0]=net19_4_fbout #vmm8x4_in_target =5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08
+
+.subckt vmm8x4_in in[0]=net19_1 in[1]=net19_2 in[2]=net19_3 in[3]=net19_4 in[4]=net19_5 in[5]=net19_6 in[6]=net19_7 in[7]=net19_8 in[8]=net19_internal_9 in[9]=net19_internal_10 in[10]=net19_internal_11 in[11]=net19_internal_12 in[12]=net19_5_fbout out[0]=net19_5_fbout #vmm8x4_in_target =5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08
+
+.subckt vmm8x4_in in[0]=net19_9 in[1]=net19_10 in[2]=net19_11 in[3]=net19_12 in[4]=net19_13 in[5]=net19_14 in[6]=net19_15 in[7]=net19_16 in[8]=net19_internal_9 in[9]=net19_internal_10 in[10]=net19_internal_11 in[11]=net19_internal_12 in[12]=net19_6_fbout out[0]=net19_6_fbout #vmm8x4_in_target =5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08
+
+.subckt vmm8x4_in in[0]=net19_1 in[1]=net19_2 in[2]=net19_3 in[3]=net19_4 in[4]=net19_5 in[5]=net19_6 in[6]=net19_7 in[7]=net19_8 in[8]=net19_internal_13 in[9]=net19_internal_14 in[10]=net19_internal_15 in[11]=net19_internal_16 in[12]=net19_7_fbout out[0]=net19_7_fbout #vmm8x4_in_target =5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08
+
+.subckt vmm8x4_in in[0]=net19_9 in[1]=net19_10 in[2]=net19_11 in[3]=net19_12 in[4]=net19_13 in[5]=net19_14 in[6]=net19_15 in[7]=net19_16 in[8]=net19_internal_13 in[9]=net19_internal_14 in[10]=net19_internal_15 in[11]=net19_internal_16 in[12]=net19_8_fbout out[0]=net19_8_fbout #vmm8x4_in_target =5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08
+
+.subckt sftreg2 in[0]=net36_1 in[1]=gnd_dig in[2]=net25_1 out[0]=net6_1 out[1]=net37_1 out[2]=net3_1 out[3]=net38_1 out[4]=net19_internal_1 out[5]=net19_internal_2 out[6]=net19_internal_3 out[7]=net19_internal_4 out[8]=net19_internal_5 out[9]=net19_internal_6 out[10]=net19_internal_7 out[11]=net19_internal_8 out[12]=net19_internal_9 out[13]=net19_internal_10 out[14]=net19_internal_11 out[15]=net19_internal_12 out[16]=net19_internal_13 out[17]=net19_internal_14 out[18]=net19_internal_15 out[19]=net19_internal_16 #sftreg2_fg =0
+
+.end

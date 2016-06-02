@@ -1,0 +1,1 @@
+python /home/ubuntu/rasp30/vpr2swcs/genswcs.py -c /home/ubuntu/RASP_Workspace/test_20151207_mmap_pfet_i2v_AnaDis/test_20151207_mmap_pfet_i2v_AnaDis -d /home/ubuntu/RASP_Workspace/test_20151207_mmap_pfet_i2v_AnaDis -vmm;

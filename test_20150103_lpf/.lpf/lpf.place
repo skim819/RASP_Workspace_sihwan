@@ -1,0 +1,9 @@
+Netlist file: /home/ubuntu/RASP_Workspace/test_20150103_lpf//lpf.net   Architecture file: /home/ubuntu/rasp30/vpr2swcs/./arch/rasp3a_arch.xml
+Array size: 7 x 14 logic blocks
+
+#block name	x	y	subblk	block number
+#----------	--	--	------	------------
+net2_1		3	1	0	#0
+gnd		7	1	0	#1
+out:gnd		7	0	2	#2
+net1_1		0	8	3	#3

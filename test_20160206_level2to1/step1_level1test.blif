@@ -1,0 +1,17 @@
+.model step1_level1test
+.inputs net2_1 vcc
+.outputs net1_1
+  
+#ddd
+.subckt ota in[0]=net4_1_ddd_3 in[1]=net1_1 out[0]=net1_1 #ota_bias =0.000002
+  
+.subckt nfet in[0]=net2_1 in[1]=vcc_dig_ddd_3 out[0]=net6_1_ddd_3
+  
+.subckt pfet in[0]=net2_1 in[1]=vcc_dig_ddd_3 out=net4_1_ddd_3
+  
+.subckt vdd_out in[0]=fb_vddout_ddd_3 in[1]=net6_1_ddd_3 out[0]=fb_vddout_ddd_3 #vdd_out_c =0
+  
+.subckt tgate in[0]=vcc in[1]=vcc out=vcc_dig_ddd_3
+  
+
+.end

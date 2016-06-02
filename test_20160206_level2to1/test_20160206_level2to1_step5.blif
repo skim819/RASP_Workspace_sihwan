@@ -1,0 +1,29 @@
+.model test_20160206_level2to1_step5
+.inputs net7_1 net5_1 vcc gnd
+.outputs net12_1
+
+#CAP 9
+.subckt cap in[0]=net2_1 out[0]=net1_1 #cap_3x =0&cap_1x =0
+
+#FGOTA 15
+.subckt fgota in[0]=net9_1 in[1]=net10_1 out[0]=net11_1 #ota_bias =1e-9&ota_p_bias =2e-9&ota_n_bias =3e-9
+
+#VDD_OUT 3
+.subckt vdd_out in[0]=fb_vddout in[1]=net1_1 out[0]=fb_vddout #vdd_out_c =0
+
+#TGATE 8
+.subckt tgate in[0]=vcc in[1]=net5_1 out=net3_1
+
+#NMIRROR 10
+.subckt nmirror in[0]=net3_1 out=net2_1
+
+#NFET 11
+.subckt nfet in[0]=net7_1 in[1]=gnd out[0]=net10_1
+
+#PFET 12
+.subckt pfet in[0]=net7_1 in[1]=vcc out=net9_1
+
+#OTA 14
+.subckt ota in[0]=net11_1 in[1]=net12_1 out[0]=net12_1 #ota_bias =4.000000e-09
+
+.end

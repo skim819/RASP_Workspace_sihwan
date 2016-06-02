@@ -17,6 +17,7 @@
 		</inputs>
 		<outputs>
 			<port name="O">open open open open nfet[0].out[0]->crossbar  open open open </port>
+			<port name="so">open open open open open open open open open open open open open open open open </port>
 		</outputs>
 		<globals>
 			<port name="gnd">open </port>
@@ -31,7 +32,13 @@
 		<block name="open" instance="cap[2]"/>
 		<block name="open" instance="cap[3]"/>
 		<block name="open" instance="c4_blk[0]"/>
+		<block name="open" instance="Nagating_blk[0]"/>
 		<block name="open" instance="speech[0]"/>
+		<block name="open" instance="cap_sense[0]"/>
+		<block name="open" instance="lpf_2[0]"/>
+		<block name="open" instance="dendiff[0]"/>
+		<block name="open" instance="switch_cap[0]"/>
+		<block name="open" instance="hhneuron[0]"/>
 		<block name="open" instance="peak_detector[0]"/>
 		<block name="net1_1" instance="nfet[0]">
 			<inputs>
@@ -57,11 +64,21 @@
 		<block name="open" instance="volswc[0]"/>
 		<block name="open" instance="volswc[1]"/>
 		<block name="open" instance="lpf[0]"/>
+		<block name="open" instance="nfet_i2v[0]"/>
+		<block name="open" instance="pfet_i2v[0]"/>
+		<block name="open" instance="h_rect[0]"/>
 		<block name="open" instance="ramp_fe[0]"/>
 		<block name="open" instance="sigma_delta_fe[0]"/>
+		<block name="open" instance="HOP_bif[0]"/>
+		<block name="open" instance="ladder_filter[0]"/>
+		<block name="open" instance="hh_neuron_b_debug[0]"/>
+		<block name="open" instance="gnd_out[0]"/>
+		<block name="open" instance="vdd_out[0]"/>
 		<block name="open" instance="in2in_x1[0]"/>
 		<block name="open" instance="in2in_x6[0]"/>
 		<block name="open" instance="integrator[0]"/>
+		<block name="open" instance="integrator_nmirror[0]"/>
+		<block name="open" instance="vco[0]"/>
 	</block>
 	<block name="out:net1_1" instance="io[1]" mode="outpad">
 		<inputs>

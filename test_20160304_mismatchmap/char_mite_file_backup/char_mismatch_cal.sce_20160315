@@ -1,0 +1,67 @@
+global file_name path fname extension chip_num board_num hex_1na showprog;
+
+unix_g("mkdir ~/rasp30/prog_assembly/work/calibration_step4");
+cd("~/rasp30/prog_assembly/work/calibration_step4");
+path =  pwd();
+file_name = path + "/mismatchmap.xcos";
+mkdir .mismatchmap;
+[path,fname,extension]=fileparts(file_name);
+hid_dir=path+'.'+fname;
+
+mkdir mmap_data_files;
+showprog = 0;   // Program graph flag "on":1, "off":0
+
+mismatchmap_CTRL = ["r0";"r1";"r2";"r3";"r4";"r5";"r6";"r7";"r8";"r9";];
+
+size_mismatchmap_CTRL=size(mismatchmap_CTRL);
+for i_mismatchmap=1:size_mismatchmap_CTRL(1,1)
+    mismatchmap_blif = mopen('mismatchmap.blif','wb'); mputl('.model mismatchmap',mismatchmap_blif); mputl('.inputs net7_1 net8_1 vcc gnd',mismatchmap_blif); mputl('.outputs out_mite_adc',mismatchmap_blif); mputl('',mismatchmap_blif); mputl('#mmap_local_swc',mismatchmap_blif); mputl('.subckt mmap_local_swc in[0]=net7_1 in[1]=gnd_dig in[2]=net8_1 out[0]=net5_1 out[1]=net1_1 out[2]=net2_1 out[3]=net3_1 #mmap_ls_fg =0&mmap_ls_in_'+mismatchmap_CTRL(i_mismatchmap)+'_vdd =0&mmap_ls_in_'+mismatchmap_CTRL(i_mismatchmap)+' =5.00e-08',mismatchmap_blif); mputl('',mismatchmap_blif); mputl('#GND_DIG 3',mismatchmap_blif); mputl('.subckt tgate in[0]=vcc in[1]=gnd out=gnd_dig',mismatchmap_blif); mputl('',mismatchmap_blif); mputl('#I2V_pfet_gatefgota',mismatchmap_blif); mputl('.subckt i2v_pfet_gatefgota in[0]=net5_1 out[0]=net6_1 #i2v_pfet_gatefgota_fg =0&i2v_pfet_gatefgota_ota0bias =2e-06&i2v_pfet_gatefgota_fgotabias =2e-06&i2v_pfet_gatefgota_fgotapbias =2e-06&i2v_pfet_gatefgota_fgotanbias =7.18e-08',mismatchmap_blif); mputl('',mismatchmap_blif); mputl('#MITE_ADC',mismatchmap_blif); mputl('.subckt meas_volt_mite in[0]=net6_1 out[0]=out_mite_adc #meas_fg =0.00001',mismatchmap_blif); mputl('',mismatchmap_blif); mputl('.end',mismatchmap_blif); mclose(mismatchmap_blif);
+    
+    if board_num == 2 then
+        mismatchmap_pads = mopen('mismatchmap.pads','wb'); mputl('gnd 7 0 4',mismatchmap_pads); mputl('vcc 7 0 5',mismatchmap_pads); mputl('net7_1 9 0 1 #int[1]',mismatchmap_pads); mputl('net8_1 9 0 2 #int[2]',mismatchmap_pads); mputl('out:out_mite_adc 7 0 0 #tgate[0]',mismatchmap_pads); mclose(mismatchmap_pads);
+        unix_g('python ~/rasp30/vpr2swcs/genswcs.py -c '+path+'mismatchmap -d '+path+' -vmm');
+        //mismatchmap_place = mopen('miteADC.place','w'); mputl('Netlist file: /home/ubuntu/rasp30/prog_assembly/work/calibration_step3/miteADC.net   Architecture file: /home/ubuntu/rasp30/vpr2swcs/./arch/rasp3_arch.xml',mismatchmap_place); mputl('Array size: 14 x 14 logic blocks',mismatchmap_place); mputl('',mismatchmap_place); mputl('#block name	x	y	subblk	block number',mismatchmap_place); mputl('#----------	--	--	------	------------',mismatchmap_place); mputl('gnd  14 '+string(i_miteADC)+' 0 #0',mismatchmap_place); mputl('out:gnd  7 0 2 #1',mismatchmap_place); mputl('net1_1  9 0 1 #2',mismatchmap_place); mclose(mismatchmap_place);
+        unix_g('python ~/rasp30/vpr2swcs/genswcs.py -c '+path+'mismatchmap -d '+path+' -route -vmm');
+        DAC_INPUT = mopen('input_vector','wb'); mputl('0x0022 0x000c 0x01f4 0x107a 0x1003 0xf67a 0xf603 0xf67a 0xf603 0xf67a 0xf603 0xf67a 0xf603 0xf67a 0xf603 0xf67a 0xf603 0xf67a 0xf603 0xf67a 0xf603 0xf67a 0xf603 0xf67a 0xf603 0xf67a 0xf603 0xf67a 0xf603 0xf67a 0xf603 0xf67a 0xf603 0xf67a 0xf603 0xf67a 0xf67a 0xFFFF',DAC_INPUT); mclose(DAC_INPUT);
+    end
+    if board_num == 3 then
+        disp("It will be done");
+    end
+    
+    DAC_INPUT_graph = mopen('input_vector_for_graph','wb'); mputl('0x0022 0x000c 0x01f4 0x007a 0x0008 0x0003 0x0008 0x007a 0x007b 0x0003 0x007b 0x007a 0x007b 0x0003 0x007b 0x007a 0x007b 0x0003 0x007b 0x007a 0x007b 0x0003 0x007b 0x007a 0x007b 0x0003 0x007b 0x007a 0x007b 0x0003 0x007b 0x007a 0x007b 0x0003 0x007b 0x007a 0x007b 0x0003 0x007b 0x007a 0x007b 0x0003 0x007b 0x007a 0x007b 0x0003 0x007b 0x007a 0x007b 0x0003 0x007b 0x007a 0x007b 0x0003 0x007b 0x007a 0x007b 0x0003 0x007b 0x007a 0x007b 0x0003 0x007b 0x007a 0x007b 0x0003 0x007b 0x007a 0x007b 0x007a 0x007b 0xFFFF',DAC_INPUT_graph); mclose(DAC_INPUT_graph);
+    DAC_map=mopen('DAC_mapping_info','wb'); mputl('No_use No_use clk_1 data_1',DAC_map); mclose(DAC_map);
+    
+    exec("~/rasp30/prog_assembly/libs/scilab_code/MakeProgramlilst_CompileAssembly.sce",-1);
+    exec('/home/ubuntu/rasp30/prog_assembly/libs/scilab_code/tunnel_revtun_ver00_gui.sce', -1);
+    disp('tunnel , reverse tunnel done');
+    exec('/home/ubuntu/rasp30/prog_assembly/libs/scilab_code/switch_program_ver05_gui.sce', -1);
+    disp('switch_program done');
+    exec('/home/ubuntu/rasp30/prog_assembly/libs/scilab_code/target_program_ver02_gui.sce', -1);
+    disp('target_program done');
+    exec('/home/ubuntu/rasp30/prog_assembly/libs/scilab_code/dc_setup_gui.sce', -1);
+    disp('DC setup done');
+    
+    Take_Data_callback; // Take data
+    
+    clear mite_adc_result;
+    mite_adc_result=csvRead('MITE_ADC_Output_voltage.csv');
+    
+    clear Vmeasure_data; clear j;
+    mmap_list=fscanfMat('mismatch_calibration_list');
+    Vmeasure_data(:,1)=mmap_list(:,1);
+    Vmeasure_data(:,2)=mmap_list(:,2);
+    j=[2 4 6 8 10 12 18 20 22 24 26 28];
+    for i=1:12
+        Vmeasure_data(i,3)=mean([mite_adc_result(j(i),4),mite_adc_result(j(i)+1,4)]); // take the mean of the voltage values
+    end
+    csvWrite(Vmeasure_data,'./mmap_data_files/Vmeasure_data_'+mismatchmap_CTRL(i_mismatchmap));
+end
+
+temp_string="cat ";
+for i_mismatchmap=1:size_mismatchmap_CTRL(1,1)
+    temp_string=temp_string+"./mmap_data_files/Vmeasure_data_"+mismatchmap_CTRL(i_mismatchmap)+" ";
+end
+temp_string=temp_string+" > ./mmap_data_files/Vmeasure_data";
+unix_w(temp_string);
+
+disp("mismatch cal is done");
