@@ -22,6 +22,6 @@
 
 .subckt wta in[0]=vmm_out4 in[1]=nfet_d out[0]=net8_4 #wta_fg =0&wta_bufbias =2.0e-06&wta_pfetbias =5.00e-11
 
-.subckt nmirror_vmm in[0]=nfet_d out=nfet_d #nmirror_bias[0] =1.00e-08
+.subckt nmirror_vmm in[0]=nfet_d out=nfet_d #nmirror_bias[0] =2.00e-08
 
 .end

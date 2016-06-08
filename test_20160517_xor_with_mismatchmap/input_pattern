@@ -57,22 +57,22 @@ zero_x8_x15=[zero_x8_x4 zero_x8_x4 zero_x8_x4 zero_x8 zero_x8 zero_x8];
 one__25V=[2.5 2.5 2.5 2.5 2.5 2.5 2.5 2.5];
 zero_21V=[2.1 2.1 2.1 2.1 2.1 2.1 2.1 2.1];
 
-//// To chech the whole function.
-//clk_sr       = [clk__x16];
-//data_sr      = [data_x1 zero_x7 zero_x8];
-//input_vmmwta=[
-//one__25V one__25V one__25V one__25V; 
-//zero_21V zero_21V one__25V one__25V; 
-//one__25V zero_21V zero_21V one__25V; 
-//zero_21V zero_21V zero_21V zero_21V;];
-
-// Check only XOR output
-clk_sr       = [clk__x3 zero_x16];
-data_sr      = [data_x1 zero_x10 zero_x8];
+// To chech the whole function.
+clk_sr       = [clk__x16];
+data_sr      = [data_x1 zero_x7 zero_x8];
 input_vmmwta=[
-zero_x3 one__25V one__25V one__25V one__25V; 
-zero_x3 zero_21V zero_21V one__25V one__25V; 
-zero_x3 one__25V zero_21V zero_21V one__25V; 
-zero_x3 zero_21V zero_21V zero_21V zero_21V;];
+one__25V one__25V one__25V one__25V; 
+zero_21V zero_21V one__25V one__25V; 
+one__25V zero_21V zero_21V one__25V; 
+zero_21V zero_21V zero_21V zero_21V;];
+
+//// Check only XOR output
+//clk_sr       = [clk__x3 zero_x16];
+//data_sr      = [data_x1 zero_x10 zero_x8];
+//input_vmmwta=[
+//zero_x3 one__25V one__25V one__25V one__25V; 
+//zero_x3 zero_21V zero_21V one__25V one__25V; 
+//zero_x3 one__25V zero_21V zero_21V one__25V; 
+//zero_x3 zero_21V zero_21V zero_21V zero_21V;];
 
 

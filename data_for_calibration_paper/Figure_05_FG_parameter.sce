@@ -86,3 +86,12 @@ plot2d("nn", x_range1,p1_re_offset(1)*x_range1+p1_re_offset(2) );p = get("hdl");
 plot2d("nn", x_range2,p2_re_offset(1)*x_range2+p2_re_offset(2) );p = get("hdl");p.children.line_mode = 'on';p.children.mark_mode = 'off';
 a=gca();a.data_bounds=[1.1 0.08 ; 1.7 0.26];
 xtitle("","Vout[V]@Vg=0.6V", "Vout(@Vg=0V) - Vout(@Vg=0.6)");
+
+
+
+
+//2*(vdd-diodeADC_h2v(5459,chip_num,brdtype))-2*(vdd-diodeADC_h2v(4129,chip_num,brdtype))
+//2*(vdd-diodeADC_h2v(5533,chip_num,brdtype))-2*(vdd-diodeADC_h2v(4129,chip_num,brdtype))
+//2*(vdd-diodeADC_h2v(5675,chip_num,brdtype))-2*(vdd-diodeADC_h2v(4129,chip_num,brdtype))
+//2*(vdd-diodeADC_h2v(6252,chip_num,brdtype))-2*(vdd-diodeADC_h2v(4129,chip_num,brdtype))
+//2*(vdd-diodeADC_h2v(6459,chip_num,brdtype))-2*(vdd-diodeADC_h2v(4129,chip_num,brdtype))

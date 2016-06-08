@@ -4,7 +4,10 @@ m_graph=3;
 kapa_constant_or_not=1;
 vdd=2.5;
 
-cd("/home/ubuntu/RASP_Workspace/data_for_calibration_paper");
+//cd("/home/ubuntu/RASP_Workspace/data_for_calibration_paper/data_char_Scurve_chip16");
+//cd("/home/ubuntu/RASP_Workspace/data_for_calibration_paper/data_char_Scurve_chip21");
+cd("/home/ubuntu/RASP_Workspace/data_for_calibration_paper/data_char_Scurve_chip17");
+
 path =  pwd();
 exec('~/rasp30/prog_assembly/libs/scilab_code/diodeADC_v2i.sce',-1);
 exec('~/rasp30/prog_assembly/libs/scilab_code/diodeADC_i2v.sce',-1);
@@ -213,10 +216,13 @@ legend("swc","ota","otaref","mite","dirswc","in_lower_right");
 //a=gca();a.data_bounds(1,1)=0;a.data_bounds(1,2)51D-10;a.data_bounds(2,1)=a.data_bounds(2,1);a.data_bounds(2,2)=1D-04;
 a=gca();a.data_bounds(1,1)=0;a.data_bounds(1,2)=1;a.data_bounds(2,1)=2;a.data_bounds(2,2)=2.2;
 
+
+
+
+
 boundary=26;
 disp(2*(vdd-diodeADC_h2v(data_ota(boundary,3),chip_num,brdtype)));
 disp(diodeADC_v2i(diodeADC_h2v(data_ota(boundary,3),chip_num,brdtype),chip_num,brdtype)*1e6);
-
 
 [p1_re_Scurve_swc,S1_re_Scurve_swc]=polyfit(2*(vdd-diodeADC_h2v(data_swc(1:boundary-1,3),chip_num,brdtype)), 2*(vdd-diodeADC_h2v(data_swc(2:boundary,3),chip_num,brdtype)),1);
 [p1_re_Scurve_ota,S1_re_Scurve_ota]=polyfit(2*(vdd-diodeADC_h2v(data_ota(1:boundary-1,3),chip_num,brdtype)), 2*(vdd-diodeADC_h2v(data_ota(2:boundary,3),chip_num,brdtype)),1);
@@ -224,20 +230,21 @@ disp(diodeADC_v2i(diodeADC_h2v(data_ota(boundary,3),chip_num,brdtype),chip_num,b
 [p1_re_Scurve_mite,S1_re_Scurve_mite]=polyfit(2*(vdd-diodeADC_h2v(data_mite(1:boundary-1,3),chip_num,brdtype)), 2*(vdd-diodeADC_h2v(data_mite(2:boundary,3),chip_num,brdtype)),1);
 [p1_re_Scurve_dirswc,S1_re_Scurve_dirswc]=polyfit(2*(vdd-diodeADC_h2v(data_dirswc(1:boundary-1,3),chip_num,brdtype)), 2*(vdd-diodeADC_h2v(data_dirswc(2:boundary,3),chip_num,brdtype)),1);
 disp(p1_re_Scurve_swc);
-disp(p1_re_Scurve_ota);
-disp(p1_re_Scurve_otaref);
-disp(p1_re_Scurve_mite);
 disp(p1_re_Scurve_dirswc);
+disp(p1_re_Scurve_otaref);
+disp(p1_re_Scurve_ota);
+disp(p1_re_Scurve_mite);
 [p2_re_Scurve_swc,S2_re_Scurve_swc]=polyfit(2*(vdd-diodeADC_h2v(data_swc(boundary:data_size_temp(1,1)-1,3),chip_num,brdtype)), 2*(vdd-diodeADC_h2v(data_swc(boundary+1:data_size_temp(1,1),3),chip_num,brdtype)),1);
 [p2_re_Scurve_ota,S2_re_Scurve_ota]=polyfit(2*(vdd-diodeADC_h2v(data_ota(boundary:data_size_temp(1,1)-1,3),chip_num,brdtype)), 2*(vdd-diodeADC_h2v(data_ota(boundary+1:data_size_temp(1,1),3),chip_num,brdtype)),1);
 [p2_re_Scurve_otaref,S2_re_Scurve_otaref]=polyfit(2*(vdd-diodeADC_h2v(data_otaref(boundary:data_size_temp(1,1)-1,3),chip_num,brdtype)), 2*(vdd-diodeADC_h2v(data_otaref(boundary+1:data_size_temp(1,1),3),chip_num,brdtype)),1);
 [p2_re_Scurve_mite,S2_re_Scurve_mite]=polyfit(2*(vdd-diodeADC_h2v(data_mite(boundary:data_size_temp(1,1)-1,3),chip_num,brdtype)), 2*(vdd-diodeADC_h2v(data_mite(boundary+1:data_size_temp(1,1),3),chip_num,brdtype)),1);
 [p2_re_Scurve_dirswc,S2_re_Scurve_dirswc]=polyfit(2*(vdd-diodeADC_h2v(data_dirswc(boundary:data_size_temp(1,1)-1,3),chip_num,brdtype)), 2*(vdd-diodeADC_h2v(data_dirswc(boundary+1:data_size_temp(1,1),3),chip_num,brdtype)),1);
 disp(p2_re_Scurve_swc);
-disp(p2_re_Scurve_ota);
-disp(p2_re_Scurve_otaref);
-disp(p2_re_Scurve_mite);
 disp(p2_re_Scurve_dirswc);
+disp(p2_re_Scurve_otaref);
+disp(p2_re_Scurve_ota);
+disp(p2_re_Scurve_mite);
+
 
 x_range1=[1:0.1:2.1];
 x_range2=[1.2:0.1:2.2];
@@ -254,203 +261,3 @@ legend("ota_meas","polyfit1","polyfit2","in_lower_right");
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-//clear data_lowsubVt_swc; data_lowsubVt_swc=read_tar_pgm_result('char_Scurve_lowsubVt_swc.hex',m_graph,time_scale);
-//for i=3:m_graph
-//    data_lowsubVt_swc(:,i+2)=diodeADC_v2i(diodeADC_h2v(data_lowsubVt_swc(:,i),chip_num,brdtype),chip_num,brdtype)/kapa_constant_or_not;
-//end
-//// data_swc(:,3) Hex@Vgm=0.6V, data_swc(:,4) Hex@Vgm=0V, data_swc(:,5) Current@Vgm=0.6V, data_swc(:,6) Current@Vgm=0V
-//
-//scf(31);clf(31);
-//plot2d("nl", data_lowsubVt_swc(:,2), data_lowsubVt_swc(:,5));p = get("hdl"); p.children.mark_style = 9; p.children.mark_foreground = 1;p.children.line_mode = 'off';
-//xtitle("","time [s]", "Id [A]");
-//a=gca();a.data_bounds(1,1)=0;a.data_bounds(1,2)=1D-12;a.data_bounds(2,1)=a.data_bounds(2,1);a.data_bounds(2,2)=1D-04;
-//fprintfMat("Scurve_at_Vg3.6V_lowsubVt_swc.data", data_lowsubVt_swc, "%5.15f");
-//
-//data_size_temp=size(data_lowsubVt_swc) 
-//
-//scf(32);clf(32);
-//plot2d("nn", data_lowsubVt_swc(1:data_size_temp(1,1)-1,3), data_lowsubVt_swc(2:data_size_temp(1,1),3));p = get("hdl"); p.children.mark_style = 9; p.children.mark_foreground = 1;p.children.line_mode = 'off';
-//xtitle("","hex_start", "hex_end");
-//
-//pwt_lowsubVt_swc = [(0:64:64*255)'];
-//pwt_lowsubVt_swc = pwt_lowsubVt_swc + hex_1na;
-//pwt_lowsubVt_swc(1,2)=0;
-//offset=0;
-//fd_w = mopen('pulse_width_table_lowsubVt_swc','wt');
-//for k=1:255
-//    j=0;
-//    for i=2:data_size_temp(1,1)
-//        if data_lowsubVt_swc(i,3) > hex_1na then j=j+1; end
-//        if pwt_lowsubVt_swc(k,1) > data_lowsubVt_swc(i,3) then pwt_lowsubVt_swc(k,2)=max(0,(j+offset)/2); end
-//    end
-//    mputl('0x'+string(sprintf('%4.4x', pwt_lowsubVt_swc(k,2))),fd_w);
-//end
-//mclose(fd_w);
-//
-//
-//clear data_lowsubVt_ota; data_lowsubVt_ota=read_tar_pgm_result('char_Scurve_lowsubVt_ota.hex',m_graph,time_scale);
-//for i=3:m_graph
-//    data_lowsubVt_ota(:,i+2)=diodeADC_v2i(diodeADC_h2v(data_lowsubVt_ota(:,i),chip_num,brdtype),chip_num,brdtype)/kapa_constant_or_not;
-//end
-//
-//scf(33);clf(33);
-//plot2d("nl", data_lowsubVt_ota(:,2), data_lowsubVt_ota(:,5));p = get("hdl"); p.children.mark_style = 9; p.children.mark_foreground = 1;p.children.line_mode = 'off';
-//xtitle("","time [s]", "Id [A]");
-//a=gca();a.data_bounds(1,1)=0;a.data_bounds(1,2)=1D-12;a.data_bounds(2,1)=a.data_bounds(2,1);a.data_bounds(2,2)=1D-04;
-//
-//data_size_temp=size(data_lowsubVt_ota) 
-//fprintfMat("Scurve_at_Vg3.6V_lowsubVt_ota.data", data_lowsubVt_ota, "%5.15f");
-//
-//scf(34);clf(34);
-//plot2d("nn", data_lowsubVt_ota(1:data_size_temp(1,1)-1,3), data_lowsubVt_ota(2:data_size_temp(1,1),3));p = get("hdl"); p.children.mark_style = 9; p.children.mark_foreground = 1;p.children.line_mode = 'off';
-//xtitle("","hex_start", "hex_end");
-//
-//pwt_lowsubVt_ota = [(0:64:64*255)'];
-//pwt_lowsubVt_ota = pwt_lowsubVt_ota + hex_1na;
-//pwt_lowsubVt_ota(1,2)=0;
-//offset=0;
-//fd_w = mopen('pulse_width_table_lowsubVt_ota','wt');
-//for k=1:255
-//    j=0;
-//    for i=2:data_size_temp(1,1)
-//        if data_lowsubVt_ota(i,3) > hex_1na then j=j+1; end
-//        if pwt_lowsubVt_ota(k,1) > data_lowsubVt_ota(i,3) then pwt_lowsubVt_ota(k,2)=max(0,(j+offset)/2); end
-//    end
-//    mputl('0x'+string(sprintf('%4.4x', pwt_lowsubVt_ota(k,2))),fd_w);
-//end
-//mclose(fd_w);
-//
-//
-//clear data_lowsubVt_otaref; data_lowsubVt_otaref=read_tar_pgm_result('char_Scurve_lowsubVt_otaref.hex',m_graph,time_scale);
-//for i=3:m_graph
-//    data_lowsubVt_otaref(:,i+2)=diodeADC_v2i(diodeADC_h2v(data_lowsubVt_otaref(:,i),chip_num,brdtype),chip_num,brdtype)/kapa_constant_or_not;
-//end
-//// data_lowsubVt_otaref(:,3) Hex@Vgm=0.6V, data_lowsubVt_otaref(:,4) Hex@Vgm=0V, data_lowsubVt_otaref(:,5) Current@Vgm=0.6V, data_lowsubVt_otaref(:,6) Current@Vgm=0V
-//
-//scf(35);clf(35);
-//plot2d("nl", data_lowsubVt_otaref(:,2), data_lowsubVt_otaref(:,5));p = get("hdl"); p.children.mark_style = 9; p.children.mark_foreground = 1;p.children.line_mode = 'off';
-//xtitle("","time [s]", "Id [A]");
-//a=gca();a.data_bounds(1,1)=0;a.data_bounds(1,2)=1D-12;a.data_bounds(2,1)=a.data_bounds(2,1);a.data_bounds(2,2)=1D-04;
-//fprintfMat("Scurve_at_Vg3.6V_lowsubVt_otaref.data", data_lowsubVt_otaref, "%5.15f");
-//
-//data_size_temp=size(data_lowsubVt_otaref) 
-//
-//scf(36);clf(36);
-//plot2d("nn", data_lowsubVt_otaref(1:data_size_temp(1,1)-1,3), data_lowsubVt_otaref(2:data_size_temp(1,1),3));p = get("hdl"); p.children.mark_style = 9; p.children.mark_foreground = 1;p.children.line_mode = 'off';
-//xtitle("","hex_start", "hex_end");
-//
-//pwt_lowsubVt_otaref = [(0:64:64*255)'];
-//pwt_lowsubVt_otaref = pwt_lowsubVt_otaref + hex_1na;
-//pwt_lowsubVt_otaref(1,2)=0;
-//offset=0;
-//fd_w = mopen('pulse_width_table_lowsubVt_otaref','wt');
-//for k=1:255
-//    j=0;
-//    for i=2:data_size_temp(1,1)
-//        if data_lowsubVt_otaref(i,3) > hex_1na then j=j+1; end
-//        if pwt_lowsubVt_otaref(k,1) > data_lowsubVt_otaref(i,3) then pwt_lowsubVt_otaref(k,2)=max(0,(j+offset)/2); end
-//    end
-//    mputl('0x'+string(sprintf('%4.4x', pwt_lowsubVt_otaref(k,2))),fd_w);
-//end
-//mclose(fd_w);
-//
-//
-//clear data_lowsubVt_mite; data_lowsubVt_mite=read_tar_pgm_result('char_Scurve_lowsubVt_mite.hex',m_graph,time_scale);
-//for i=3:m_graph
-//    data_lowsubVt_mite(:,i+2)=diodeADC_v2i(diodeADC_h2v(data_lowsubVt_mite(:,i),chip_num,brdtype),chip_num,brdtype)/kapa_constant_or_not;
-//end
-//// data_lowsubVt_mite(:,3) Hex@Vgm=0.6V, data_lowsubVt_mite(:,4) Hex@Vgm=0V, data_lowsubVt_mite(:,5) Current@Vgm=0.6V, data_lowsubVt_mite(:,6) Current@Vgm=0V
-//
-//scf(37);clf(37);
-//plot2d("nl", data_lowsubVt_mite(:,2), data_lowsubVt_mite(:,5));p = get("hdl"); p.children.mark_style = 9; p.children.mark_foreground = 1;p.children.line_mode = 'off';
-//xtitle("","time [s]", "Id [A]");
-//a=gca();a.data_bounds(1,1)=0;a.data_bounds(1,2)=1D-12;a.data_bounds(2,1)=a.data_bounds(2,1);a.data_bounds(2,2)=1D-04;
-//fprintfMat("Scurve_at_Vg3.6V_lowsubVt_mite.data", data_lowsubVt_mite, "%5.15f");
-//
-//data_size_temp=size(data_lowsubVt_mite) 
-//
-//scf(38);clf(38);
-//plot2d("nn", data_lowsubVt_mite(1:data_size_temp(1,1)-1,3), data_lowsubVt_mite(2:data_size_temp(1,1),3));p = get("hdl"); p.children.mark_style = 9; p.children.mark_foreground = 1;p.children.line_mode = 'off';
-//xtitle("","hex_start", "hex_end");
-//
-//pwt_lowsubVt_mite = [(0:64:64*255)'];
-//pwt_lowsubVt_mite = pwt_lowsubVt_mite + hex_1na;
-//pwt_lowsubVt_mite(1,2)=0;
-//offset=0;
-//fd_w = mopen('pulse_width_table_lowsubVt_mite','wt');
-//for k=1:255
-//    j=0;
-//    for i=2:data_size_temp(1,1)
-//        if data_lowsubVt_mite(i,3) > hex_1na then j=j+1; end
-//        if pwt_lowsubVt_mite(k,1) > data_lowsubVt_mite(i,3) then pwt_lowsubVt_mite(k,2)=max(0,(j+offset)/2); end
-//    end
-//    mputl('0x'+string(sprintf('%4.4x', pwt_lowsubVt_mite(k,2))),fd_w);
-//end
-//mclose(fd_w);
-//
-//
-//clear data_lowsubVt_dirswc; data_lowsubVt_dirswc=read_tar_pgm_result('char_Scurve_lowsubVt_dirswc.hex',m_graph,time_scale);
-//for i=3:m_graph
-//    data_lowsubVt_dirswc(:,i+2)=diodeADC_v2i(diodeADC_h2v(data_lowsubVt_dirswc(:,i),chip_num,brdtype),chip_num,brdtype)/kapa_constant_or_not;
-//end
-//// data_lowsubVt_dirswc(:,3) Hex@Vgm=0.6V, data_lowsubVt_dirswc(:,4) Hex@Vgm=0V, data_lowsubVt_dirswc(:,5) Current@Vgm=0.6V, data_lowsubVt_dirswc(:,6) Current@Vgm=0V
-//
-//scf(39);clf(39);
-//plot2d("nl", data_lowsubVt_dirswc(:,2), data_lowsubVt_dirswc(:,5));p = get("hdl"); p.children.mark_style = 9; p.children.mark_foreground = 1;p.children.line_mode = 'off';
-//xtitle("","time [s]", "Id [A]");
-//a=gca();a.data_bounds(1,1)=0;a.data_bounds(1,2)=1D-12;a.data_bounds(2,1)=a.data_bounds(2,1);a.data_bounds(2,2)=1D-04;
-//fprintfMat("Scurve_at_Vg3.6V_lowsubVt_dirswc.data", data_lowsubVt_dirswc, "%5.15f");
-//
-//data_size_temp=size(data_lowsubVt_dirswc) 
-//
-//scf(40);clf(40);
-//plot2d("nn", data_lowsubVt_dirswc(1:data_size_temp(1,1)-1,3), data_lowsubVt_dirswc(2:data_size_temp(1,1),3));p = get("hdl"); p.children.mark_style = 9; p.children.mark_foreground = 1;p.children.line_mode = 'off';
-//xtitle("","hex_start", "hex_end");
-//
-//pwt_lowsubVt_dirswc = [(0:64:64*255)'];
-//pwt_lowsubVt_dirswc = pwt_lowsubVt_dirswc + hex_1na;
-//pwt_lowsubVt_dirswc(1,2)=0;
-//offset=0;
-//fd_w = mopen('pulse_width_table_lowsubVt_dirswc','wt');
-//for k=1:255
-//    j=0;
-//    for i=2:data_size_temp(1,1)
-//        if data_lowsubVt_dirswc(i,3) > hex_1na then j=j+1; end
-//        if pwt_lowsubVt_dirswc(k,1) > data_lowsubVt_dirswc(i,3) then pwt_lowsubVt_dirswc(k,2)=max(0,(j+offset)/2); end
-//    end
-//    mputl('0x'+string(sprintf('%4.4x', pwt_lowsubVt_dirswc(k,2))),fd_w);
-//end
-//mclose(fd_w);
-//
-//
-//scf(41);clf(41);
-//plot2d("nl", data_lowsubVt_swc(:,2), data_lowsubVt_swc(:,5));p = get("hdl"); p.children.mark_style = 9; p.children.mark_foreground = 1;p.children.line_mode = 'off';
-//plot2d("nl", data_lowsubVt_ota(:,2), data_lowsubVt_ota(:,5));p = get("hdl"); p.children.mark_style = 9; p.children.mark_foreground = 2;p.children.line_mode = 'off';
-//plot2d("nl", data_lowsubVt_otaref(:,2), data_lowsubVt_otaref(:,5));p = get("hdl"); p.children.mark_style = 9; p.children.mark_foreground = 3;p.children.line_mode = 'off';
-//plot2d("nl", data_lowsubVt_mite(:,2), data_lowsubVt_mite(:,5));p = get("hdl"); p.children.mark_style = 9; p.children.mark_foreground = 4;p.children.line_mode = 'off';
-//plot2d("nl", data_lowsubVt_dirswc(:,2), data_lowsubVt_dirswc(:,5));p = get("hdl"); p.children.mark_style = 9; p.children.mark_foreground = 5;p.children.line_mode = 'off';
-//xtitle("","time [s]", "Id [A]");
-//legend("lowsubVt_swc","lowsubVt_ota","lowsubVt_otaref","lowsubVt_mite","lowsubVt_dirswc","in_lower_right");
-//a=gca();a.data_bounds(1,1)=0;a.data_bounds(1,2)=1D-12;a.data_bounds(2,1)=a.data_bounds(2,1);a.data_bounds(2,2)=1D-04;
-////a=gca();a.data_bounds(1,1)=0;a.data_bounds(1,2)=1D-12;a.data_bounds(2,1)=0.001;a.data_bounds(2,2)=1D-04;
-//
-//scf(42);clf(42);
-//data_size_temp=size(data_lowsubVt_swc);plot2d("nn", data_lowsubVt_swc(1:data_size_temp(1,1)-1,3), data_lowsubVt_swc(2:data_size_temp(1,1),3));p = get("hdl"); p.children.mark_style = 9; p.children.mark_foreground = 1;p.children.line_mode = 'off';
-//data_size_temp=size(data_lowsubVt_ota);plot2d("nn", data_lowsubVt_ota(1:data_size_temp(1,1)-1,3), data_lowsubVt_ota(2:data_size_temp(1,1),3));p = get("hdl"); p.children.mark_style = 9; p.children.mark_foreground = 2;p.children.line_mode = 'off';
-//data_size_temp=size(data_lowsubVt_otaref);plot2d("nn", data_lowsubVt_otaref(1:data_size_temp(1,1)-1,3), data_lowsubVt_otaref(2:data_size_temp(1,1),3));p = get("hdl"); p.children.mark_style = 9; p.children.mark_foreground = 3;p.children.line_mode = 'off';
-//data_size_temp=size(data_lowsubVt_dirswc);plot2d("nn", data_lowsubVt_dirswc(1:data_size_temp(1,1)-1,3), data_lowsubVt_dirswc(2:data_size_temp(1,1),3));p = get("hdl"); p.children.mark_style = 9; p.children.mark_foreground = 5;p.children.line_mode = 'off';
-//xtitle("","hex_start", "hex_end");
-//legend("lowsubVt_swc","lowsubVt_ota","lowsubVt_otaref","lowsubVt_dirswc","in_lower_right");
-////a=gca();a.data_bounds(1,1)=0;a.data_bounds(1,2)=1D-12;a.data_bounds(2,1)=a.data_bounds(2,1);a.data_bounds(2,2)=1D-04;
