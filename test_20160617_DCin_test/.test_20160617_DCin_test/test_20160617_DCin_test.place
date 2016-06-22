@@ -1,0 +1,8 @@
+Netlist file: /home/ubuntu/RASP_Workspace/test_20160617_DCin_test//test_20160617_DCin_test.net   Architecture file: /home/ubuntu/rasp30/vpr2swcs/./arch/rasp3_arch.xml
+Array size: 14 x 14 logic blocks
+
+#block name	x	y	subblk	block number
+#----------	--	--	------	------------
+net1_1		10	1	0	#0
+out:net1_1	9	0	0	#1
+vcc		7	0	5	#2

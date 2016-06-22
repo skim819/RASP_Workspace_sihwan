@@ -1,0 +1,98 @@
+Array size: 14 x 14 logic blocks.
+
+Routing:
+
+Net 0 (fb_vddout_net6_1)
+
+SOURCE (10,2)  Class: 20  
+  OPIN (10,2)  Pin: 20  
+ CHANX (10,2)  Track: 12  
+ CHANY (10,2)  Track: 12  
+  IPIN (10,2)  Pin: 5  
+  SINK (10,2)  Class: 5  
+
+
+Net 1 (net6_1)
+
+SOURCE (11,2)  Class: 20  
+  OPIN (11,2)  Pin: 20  
+ CHANX (11,2)  Track: 14  
+ CHANY (10,2)  Track: 14  
+ CHANX (11,1)  Track: 14  
+  IPIN (11,2)  Pin: 10  
+  SINK (11,2)  Class: 10  
+ CHANY (10,2)  Track: 14  
+  IPIN (10,2)  Pin: 6  
+  SINK (10,2)  Class: 6  
+
+
+Net 2 (fb_vddout_net5_1)
+
+SOURCE (11,3)  Class: 20  
+  OPIN (11,3)  Pin: 20  
+ CHANX (11,3)  Track: 12  
+ CHANY (11,3)  Track: 12  
+  IPIN (11,3)  Pin: 5  
+  SINK (11,3)  Class: 5  
+
+
+Net 3 (net5_1)
+
+SOURCE (11,1)  Class: 20  
+  OPIN (11,1)  Pin: 20  
+ CHANX (11,1)  Track: 16  
+ CHANY (11,1)  Track: 16  
+ CHANX (11,0)  Track: 16  
+  IPIN (11,1)  Pin: 10  
+  SINK (11,1)  Class: 10  
+ CHANY (11,1)  Track: 16  
+ CHANY (11,2)  Track: 16  
+ CHANY (11,3)  Track: 16  
+  IPIN (11,3)  Pin: 6  
+  SINK (11,3)  Class: 6  
+
+
+Net 4 (net3_1)
+
+SOURCE (12,0)  Pad: 1  
+  OPIN (12,0)  Pad: 1  
+ CHANX (12,0)  Track: 15  
+ CHANY (11,1)  Track: 15  
+ CHANX (11,1)  Track: 15  
+  IPIN (11,2)  Pin: 11  
+  SINK (11,2)  Class: 11  
+
+
+Net 5 (net2_1)
+
+SOURCE (11,0)  Pad: 1  
+  OPIN (11,0)  Pad: 1  
+ CHANX (11,0)  Track: 15  
+  IPIN (11,1)  Pin: 11  
+  SINK (11,1)  Class: 11  
+
+
+Net 6 (net4_1)
+
+SOURCE (10,1)  Class: 20  
+  OPIN (10,1)  Pin: 20  
+ CHANX (10,1)  Track: 0  
+ CHANY (10,1)  Track: 0  
+ CHANX (10,0)  Track: 0  
+  IPIN (10,1)  Pin: 10  
+  SINK (10,1)  Class: 10  
+ CHANY (10,1)  Track: 0  
+ CHANX (11,0)  Track: 0  
+ CHANX (12,0)  Track: 0  
+  IPIN (12,0)  Pad: 9  
+  SINK (12,0)  Pad: 9  
+
+
+Net 7 (net1_1)
+
+SOURCE (9,0)  Pad: 1  
+  OPIN (9,0)  Pad: 1  
+ CHANX (9,0)  Track: 16  
+ CHANX (10,0)  Track: 16  
+  IPIN (10,1)  Pin: 11  
+  SINK (10,1)  Class: 11  

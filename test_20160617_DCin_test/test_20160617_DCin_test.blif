@@ -1,0 +1,8 @@
+.model test_20160617_DCin_test
+.inputs vcc
+.outputs net1_1
+  
+# dc_in
+.subckt fgota in[0]=vcc in[1]=net1_1 out[0]=net1_1 #ota_bias =2e-06&ota_p_bias =2e-06&ota_n_bias =6.20e-07&ota_small_cap =0
+  
+.end
