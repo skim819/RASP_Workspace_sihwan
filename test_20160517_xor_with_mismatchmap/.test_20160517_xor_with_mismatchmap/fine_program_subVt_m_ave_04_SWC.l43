@@ -296,21 +296,21 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/fine_program_subVt_m
    1               	/**********************************/
    2               	/* FP (Fine Program) parameters   */
    3               	/**********************************/
-   4               	.set ADC_1nA, 3520 /* 1nA ADC value */
+   4               	.set ADC_1nA, 4129 /* 1nA ADC value */
    5               	
 GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/fine_program_subVt_m_ave_04_SWC.s43 			page 6
 
 
    6               	/* sub threshold */
-   7               	.set FPS_GATE_S_SWC, 0x3200 /* Gate(SWC) = 3.0V @ IVDD 6.0V */
+   7               	.set FPS_GATE_S_SWC, 0x2600 /* Gate(SWC) = 3.0V @ IVDD 6.0V */
    8               	.set FPS_INJ_T_SWC, 1 /* Injection time (*10us) */
-   9               	.set FPS_NUM_SWC, 100 /*50 /* # of Fine Progrm */
+   9               	.set FPS_NUM_SWC, 50 /* # of Fine Progrm */
   10               	.set FPS_VD_A_SWC, 8 /* Vd constant A */
   11               	.set FPS_VD_B_SWC, 5 /* Vd constant B */
   12               	.set FPS_VD_OS_SWC, 40 /* Vd table offset */
   13               	.set FPS_VD_SA_SWC, 0 /* 0:Subtraction 1:Add */
   14               	.set FPS_VD_GND_SWC, 0 /* 0:Vd table 1:GND */
-  15               	.set FPS_GATE_S_OTA, 0x3200 /* Gate(OTA) = 3.0V @ IVDD 6.0V */
+  15               	.set FPS_GATE_S_OTA, 0x2600 /* Gate(OTA) = 3.0V @ IVDD 6.0V */
   16               	.set FPS_INJ_T_OTA, 1 /* Injection time (*10us) */
   17               	.set FPS_NUM_OTA, 50 /* # of Fine Progrm */
   18               	.set FPS_VD_A_OTA, 8 /* Vd constant A */
@@ -318,7 +318,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/fine_program_subVt_m
   20               	.set FPS_VD_OS_OTA, 47 /* Vd table offset */
   21               	.set FPS_VD_SA_OTA, 0 /* 0:Subtraction 1:Add */
   22               	.set FPS_VD_GND_OTA, 0 /* 0:Vd table 1:GND */
-  23               	.set FPS_GATE_S_OTAREF, 0x3200 /* Gate(OTAREF) = 3.0V @ IVDD 6.0V */
+  23               	.set FPS_GATE_S_OTAREF, 0x2600 /* Gate(OTAREF) = 3.0V @ IVDD 6.0V */
   24               	.set FPS_INJ_T_OTAREF, 2 /* Injection time (*10us) */
   25               	.set FPS_NUM_OTAREF, 50 /* # of Fine Progrm */
   26               	.set FPS_VD_A_OTAREF, 8 /* Vd constant A */
@@ -326,7 +326,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/fine_program_subVt_m
   28               	.set FPS_VD_OS_OTAREF, 53 /* Vd table offset */
   29               	.set FPS_VD_SA_OTAREF, 0 /* 0:Subtraction 1:Add */
   30               	.set FPS_VD_GND_OTAREF, 0 /* 0:Vd table 1:GND */
-  31               	.set FPS_GATE_S_MITE, 0x3200 /* Gate(MITE) = 3.0V @ IVDD 6.0V */
+  31               	.set FPS_GATE_S_MITE, 0x2600 /* Gate(MITE) = 3.0V @ IVDD 6.0V */
   32               	.set FPS_INJ_T_MITE, 1 /* Injection time (*10us) */
   33               	.set FPS_NUM_MITE, 50 /* # of Fine Progrm */
   34               	.set FPS_VD_A_MITE, 8 /* Vd constant A */
@@ -334,7 +334,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/fine_program_subVt_m
   36               	.set FPS_VD_OS_MITE, 49 /* Vd table offset */
   37               	.set FPS_VD_SA_MITE, 0 /* 0:Subtraction 1:Add */
   38               	.set FPS_VD_GND_MITE, 0 /* 0:Vd table 1:GND */
-  39               	.set FPS_GATE_S_DIRSWC, 0x3200 /* Gate(DIRSWC) = 3.0V @ IVDD 6.0V */
+  39               	.set FPS_GATE_S_DIRSWC, 0x2600 /* Gate(DIRSWC) = 3.0V @ IVDD 6.0V */
   40               	.set FPS_INJ_T_DIRSWC, 1 /* Injection time (*10us) */
   41               	.set FPS_NUM_DIRSWC, 50 /* # of Fine Progrm */
   42               	.set FPS_VD_A_DIRSWC, 8 /* Vd constant A */
@@ -344,7 +344,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/fine_program_subVt_m
   46               	.set FPS_VD_GND_DIRSWC, 0 /* 0:Vd table 1:GND */
   47               	
   48               	/* above threshold */
-  49               	.set FPA_GATE_S_SWC, 0x3200 /* Gate(SWC) = 3.0V @ IVDD 6.0V */
+  49               	.set FPA_GATE_S_SWC, 0x2600 /* Gate(SWC) = 3.0V @ IVDD 6.0V */
   50               	.set FPA_INJ_T_SWC, 1 /* Injection time (*10us) */
   51               	.set FPA_NUM_SWC, 50 /* # of Fine Progrm */
   52               	.set FPA_VD_A_SWC, 8 /* Vd constant A */
@@ -352,7 +352,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/fine_program_subVt_m
   54               	.set FPA_VD_OS_SWC, 28 /* Vd table offset */
   55               	.set FPA_VD_SA_SWC, 1 /* 0:Subtraction 1:Add */
   56               	.set FPA_VD_GND_SWC, 0 /* 0:Vd table 1:GND */
-  57               	.set FPA_GATE_S_OTA, 0x3200 /* Gate(OTA) = 3.0V @ IVDD 6.0V */
+  57               	.set FPA_GATE_S_OTA, 0x2600 /* Gate(OTA) = 3.0V @ IVDD 6.0V */
   58               	.set FPA_INJ_T_OTA, 1 /* Injection time (*10us) */
   59               	.set FPA_NUM_OTA, 50 /* # of Fine Progrm */
   60               	.set FPA_VD_A_OTA, 8 /* Vd constant A */
@@ -363,7 +363,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/fine_program_subVt_m
 
   63               	.set FPA_VD_SA_OTA, 1 /* 0:Subtraction 1:Add */
   64               	.set FPA_VD_GND_OTA, 0 /* 0:Vd table 1:GND */
-  65               	.set FPA_GATE_S_OTAREF, 0x3200 /* Gate(OTAREF) = 3.0V @ IVDD 6.0V */
+  65               	.set FPA_GATE_S_OTAREF, 0x2600 /* Gate(OTAREF) = 3.0V @ IVDD 6.0V */
   66               	.set FPA_INJ_T_OTAREF, 2 /* Injection time (*10us) */
   67               	.set FPA_NUM_OTAREF, 50 /* # of Fine Progrm */
   68               	.set FPA_VD_A_OTAREF, 8 /* Vd constant A */
@@ -371,7 +371,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/fine_program_subVt_m
   70               	.set FPA_VD_OS_OTAREF, 35 /* Vd table offset */
   71               	.set FPA_VD_SA_OTAREF, 1 /* 0:Subtraction 1:Add */
   72               	.set FPA_VD_GND_OTAREF, 0 /* 0:Vd table 1:GND */
-  73               	.set FPA_GATE_S_MITE, 0x3200 /* Gate(MITE) = 3.0V @ IVDD 6.0V */
+  73               	.set FPA_GATE_S_MITE, 0x2600 /* Gate(MITE) = 3.0V @ IVDD 6.0V */
   74               	.set FPA_INJ_T_MITE, 1 /* Injection time (*10us) */
   75               	.set FPA_NUM_MITE, 50 /* # of Fine Progrm */
   76               	.set FPA_VD_A_MITE, 8 /* Vd constant A */
@@ -379,7 +379,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/fine_program_subVt_m
   78               	.set FPA_VD_OS_MITE, 37 /* Vd table offset */
   79               	.set FPA_VD_SA_MITE, 1 /* 0:Subtraction 1:Add */
   80               	.set FPA_VD_GND_MITE, 0 /* 0:Vd table 1:GND */
-  81               	.set FPA_GATE_S_DIRSWC, 0x3200 /* Gate(DIRSWC) = 3.0V @ IVDD 6.0V */
+  81               	.set FPA_GATE_S_DIRSWC, 0x2600 /* Gate(DIRSWC) = 3.0V @ IVDD 6.0V */
   82               	.set FPA_INJ_T_DIRSWC, 1 /* Injection time (*10us) */
   83               	.set FPA_NUM_DIRSWC, 50 /* # of Fine Progrm */
   84               	.set FPA_VD_A_DIRSWC, 8 /* Vd constant A */
@@ -397,7 +397,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/fine_program_subVt_m
   96               	.set FPL_VD_OS_SWC, 50 /* Vd table offset */
   97               	.set FPL_VD_SA_SWC, 1 /* 0:Subtraction 1:Add */
   98               	.set FPL_VD_GND_SWC, 0 /* 0:Vd table 1:GND */
-  99               	.set FPL_GATE_S_OTA, 0x0000 /* Gate(OTA) = 2.5V */
+  99               	.set FPL_GATE_S_OTA, 0x3500 /* Gate(OTA) = 2.4V */
  100               	.set FPL_INJ_T_OTA, 1 /* Injection time (*10us) */
  101               	.set FPL_NUM_OTA, 50 /* # of Fine Progrm */
  102               	.set FPL_VD_A_OTA, 8 /* Vd constant A */
@@ -413,7 +413,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/fine_program_subVt_m
  112               	.set FPL_VD_OS_OTAREF, 54 /* Vd table offset */
  113               	.set FPL_VD_SA_OTAREF, 1 /* 0:Subtraction 1:Add */
  114               	.set FPL_VD_GND_OTAREF, 0 /* 0:Vd table 1:GND */
- 115               	.set FPL_GATE_S_MITE, 0x3300 /* Gate(MITE) = 2.0V */
+ 115               	.set FPL_GATE_S_MITE, 0x2d00 /* Gate(MITE) = 2.2V */
  116               	.set FPL_INJ_T_MITE, 1 /* Injection time (*10us) */
  117               	.set FPL_NUM_MITE, 50 /* # of Fine Progrm */
  118               	.set FPL_VD_A_MITE, 8 /* Vd constant A */
@@ -424,7 +424,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/fine_program_subVt_m
  120               	.set FPL_VD_OS_MITE, 47 /* Vd table offset */
  121               	.set FPL_VD_SA_MITE, 1 /* 0:Subtraction 1:Add */
  122               	.set FPL_VD_GND_MITE, 0 /* 0:Vd table 1:GND */
- 123               	.set FPL_GATE_S_DIRSWC, 0x0100 /* Gate(DIRSWC) = 1.4V */
+ 123               	.set FPL_GATE_S_DIRSWC, 0x0700 /* Gate(DIRSWC) = 1.5V */
  124               	.set FPL_INJ_T_DIRSWC, 1 /* Injection time (*10us) */
  125               	.set FPL_NUM_DIRSWC, 50 /* # of Fine Progrm */
  126               	.set FPL_VD_A_DIRSWC, 8 /* Vd constant A */
@@ -466,7 +466,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/fine_program_subVt_m
   29 0050 0D43      		mov	#0x0000, r13		;gate_s = 0.6V @ IVDD 2.5V
   30 0052 B012 0000 		call	#block_measure
   31               	
-  32 0056 3F40 6400 		mov	#FPS_NUM_SWC, r15
+  32 0056 3F40 3200 		mov	#FPS_NUM_SWC, r15
   33               	fine_loop_s:
   34 005a 0D43      		mov	#0x0000, r13		;gate_s = 0.6V @ IVDD 2.5V
   35 005c B012 0000 		call	#measure_verify
@@ -530,7 +530,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/fine_program_subVt_m
   85 00da 284B      	        mov     @r11,    r8		; Read Vd
   86 00dc 0893      		cmp	#0x0000, r8
   87 00de 2C24      		jeq	fine_inject_skip
-  88 00e0 B240 0032 		mov	#FPS_GATE_S_SWC, &GATE_S	; gate_s 
+  88 00e0 B240 0026 		mov	#FPS_GATE_S_SWC, &GATE_S	; gate_s 
   88      020B 
   89 00e6 B240 6000 	        mov	#0x0060, &GATE_US_P	; gate_us_p = ivdd
   89      100B 
@@ -692,7 +692,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/fine_program_subVt_m
  216 0248 0E93      		cmp	#0x0000, r14
  217 024a 2924      		jeq	No_calculation
  218 024c 0889      		sub	r9, r8			; r8 = r8(target)-r9(diff) = Istart
- 219 024e 3880 C00D 		sub	#ADC_1nA, r8		; r8 = r8(Istart)-ADC_1nA(1nA) = diff_for_Vd1
+ 219 024e 3880 2110 		sub	#ADC_1nA, r8		; r8 = r8(Istart)-ADC_1nA(1nA) = diff_for_Vd1
  220 0252 3642      	        mov     #FPS_VD_A_SWC, r6
  221 0254 0893      		cmp	#0, r8		        ; If r8(Vd1) < 0,
  222 0256 0134      		jge	Jump_r8_0
@@ -1067,16 +1067,16 @@ DEFINED SYMBOLS
  chip_para_debug.asm:4      *ABS*:00000000 CPL_MEAS_ON
  chip_para_debug.asm:5      *ABS*:00000000 FP_MEAS_ON
  chip_para_debug.asm:6      *ABS*:00000000 FPL_MEAS_ON
-    chip_para_FP.asm:4      *ABS*:00000dc0 ADC_1nA
-    chip_para_FP.asm:7      *ABS*:00003200 FPS_GATE_S_SWC
+    chip_para_FP.asm:4      *ABS*:00001021 ADC_1nA
+    chip_para_FP.asm:7      *ABS*:00002600 FPS_GATE_S_SWC
     chip_para_FP.asm:8      *ABS*:00000001 FPS_INJ_T_SWC
-    chip_para_FP.asm:9      *ABS*:00000064 FPS_NUM_SWC
+    chip_para_FP.asm:9      *ABS*:00000032 FPS_NUM_SWC
     chip_para_FP.asm:10     *ABS*:00000008 FPS_VD_A_SWC
     chip_para_FP.asm:11     *ABS*:00000005 FPS_VD_B_SWC
     chip_para_FP.asm:12     *ABS*:00000028 FPS_VD_OS_SWC
     chip_para_FP.asm:13     *ABS*:00000000 FPS_VD_SA_SWC
     chip_para_FP.asm:14     *ABS*:00000000 FPS_VD_GND_SWC
-    chip_para_FP.asm:15     *ABS*:00003200 FPS_GATE_S_OTA
+    chip_para_FP.asm:15     *ABS*:00002600 FPS_GATE_S_OTA
     chip_para_FP.asm:16     *ABS*:00000001 FPS_INJ_T_OTA
     chip_para_FP.asm:17     *ABS*:00000032 FPS_NUM_OTA
     chip_para_FP.asm:18     *ABS*:00000008 FPS_VD_A_OTA
@@ -1084,7 +1084,7 @@ DEFINED SYMBOLS
     chip_para_FP.asm:20     *ABS*:0000002f FPS_VD_OS_OTA
     chip_para_FP.asm:21     *ABS*:00000000 FPS_VD_SA_OTA
     chip_para_FP.asm:22     *ABS*:00000000 FPS_VD_GND_OTA
-    chip_para_FP.asm:23     *ABS*:00003200 FPS_GATE_S_OTAREF
+    chip_para_FP.asm:23     *ABS*:00002600 FPS_GATE_S_OTAREF
     chip_para_FP.asm:24     *ABS*:00000002 FPS_INJ_T_OTAREF
     chip_para_FP.asm:25     *ABS*:00000032 FPS_NUM_OTAREF
     chip_para_FP.asm:26     *ABS*:00000008 FPS_VD_A_OTAREF
@@ -1092,7 +1092,7 @@ DEFINED SYMBOLS
     chip_para_FP.asm:28     *ABS*:00000035 FPS_VD_OS_OTAREF
     chip_para_FP.asm:29     *ABS*:00000000 FPS_VD_SA_OTAREF
     chip_para_FP.asm:30     *ABS*:00000000 FPS_VD_GND_OTAREF
-    chip_para_FP.asm:31     *ABS*:00003200 FPS_GATE_S_MITE
+    chip_para_FP.asm:31     *ABS*:00002600 FPS_GATE_S_MITE
     chip_para_FP.asm:32     *ABS*:00000001 FPS_INJ_T_MITE
     chip_para_FP.asm:33     *ABS*:00000032 FPS_NUM_MITE
     chip_para_FP.asm:34     *ABS*:00000008 FPS_VD_A_MITE
@@ -1100,7 +1100,7 @@ DEFINED SYMBOLS
     chip_para_FP.asm:36     *ABS*:00000031 FPS_VD_OS_MITE
     chip_para_FP.asm:37     *ABS*:00000000 FPS_VD_SA_MITE
     chip_para_FP.asm:38     *ABS*:00000000 FPS_VD_GND_MITE
-    chip_para_FP.asm:39     *ABS*:00003200 FPS_GATE_S_DIRSWC
+    chip_para_FP.asm:39     *ABS*:00002600 FPS_GATE_S_DIRSWC
 GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/fine_program_subVt_m_ave_04_SWC.s43 			page 20
 
 
@@ -1111,7 +1111,7 @@ DEFINED SYMBOLS
     chip_para_FP.asm:44     *ABS*:00000028 FPS_VD_OS_DIRSWC
     chip_para_FP.asm:45     *ABS*:00000000 FPS_VD_SA_DIRSWC
     chip_para_FP.asm:46     *ABS*:00000000 FPS_VD_GND_DIRSWC
-    chip_para_FP.asm:49     *ABS*:00003200 FPA_GATE_S_SWC
+    chip_para_FP.asm:49     *ABS*:00002600 FPA_GATE_S_SWC
     chip_para_FP.asm:50     *ABS*:00000001 FPA_INJ_T_SWC
     chip_para_FP.asm:51     *ABS*:00000032 FPA_NUM_SWC
     chip_para_FP.asm:52     *ABS*:00000008 FPA_VD_A_SWC
@@ -1119,7 +1119,7 @@ DEFINED SYMBOLS
     chip_para_FP.asm:54     *ABS*:0000001c FPA_VD_OS_SWC
     chip_para_FP.asm:55     *ABS*:00000001 FPA_VD_SA_SWC
     chip_para_FP.asm:56     *ABS*:00000000 FPA_VD_GND_SWC
-    chip_para_FP.asm:57     *ABS*:00003200 FPA_GATE_S_OTA
+    chip_para_FP.asm:57     *ABS*:00002600 FPA_GATE_S_OTA
     chip_para_FP.asm:58     *ABS*:00000001 FPA_INJ_T_OTA
     chip_para_FP.asm:59     *ABS*:00000032 FPA_NUM_OTA
     chip_para_FP.asm:60     *ABS*:00000008 FPA_VD_A_OTA
@@ -1127,7 +1127,7 @@ DEFINED SYMBOLS
     chip_para_FP.asm:62     *ABS*:00000022 FPA_VD_OS_OTA
     chip_para_FP.asm:63     *ABS*:00000001 FPA_VD_SA_OTA
     chip_para_FP.asm:64     *ABS*:00000000 FPA_VD_GND_OTA
-    chip_para_FP.asm:65     *ABS*:00003200 FPA_GATE_S_OTAREF
+    chip_para_FP.asm:65     *ABS*:00002600 FPA_GATE_S_OTAREF
     chip_para_FP.asm:66     *ABS*:00000002 FPA_INJ_T_OTAREF
     chip_para_FP.asm:67     *ABS*:00000032 FPA_NUM_OTAREF
     chip_para_FP.asm:68     *ABS*:00000008 FPA_VD_A_OTAREF
@@ -1135,7 +1135,7 @@ DEFINED SYMBOLS
     chip_para_FP.asm:70     *ABS*:00000023 FPA_VD_OS_OTAREF
     chip_para_FP.asm:71     *ABS*:00000001 FPA_VD_SA_OTAREF
     chip_para_FP.asm:72     *ABS*:00000000 FPA_VD_GND_OTAREF
-    chip_para_FP.asm:73     *ABS*:00003200 FPA_GATE_S_MITE
+    chip_para_FP.asm:73     *ABS*:00002600 FPA_GATE_S_MITE
     chip_para_FP.asm:74     *ABS*:00000001 FPA_INJ_T_MITE
     chip_para_FP.asm:75     *ABS*:00000032 FPA_NUM_MITE
     chip_para_FP.asm:76     *ABS*:00000008 FPA_VD_A_MITE
@@ -1143,7 +1143,7 @@ DEFINED SYMBOLS
     chip_para_FP.asm:78     *ABS*:00000025 FPA_VD_OS_MITE
     chip_para_FP.asm:79     *ABS*:00000001 FPA_VD_SA_MITE
     chip_para_FP.asm:80     *ABS*:00000000 FPA_VD_GND_MITE
-    chip_para_FP.asm:81     *ABS*:00003200 FPA_GATE_S_DIRSWC
+    chip_para_FP.asm:81     *ABS*:00002600 FPA_GATE_S_DIRSWC
     chip_para_FP.asm:82     *ABS*:00000001 FPA_INJ_T_DIRSWC
     chip_para_FP.asm:83     *ABS*:00000032 FPA_NUM_DIRSWC
     chip_para_FP.asm:84     *ABS*:00000008 FPA_VD_A_DIRSWC
@@ -1159,7 +1159,7 @@ DEFINED SYMBOLS
     chip_para_FP.asm:96     *ABS*:00000032 FPL_VD_OS_SWC
     chip_para_FP.asm:97     *ABS*:00000001 FPL_VD_SA_SWC
     chip_para_FP.asm:98     *ABS*:00000000 FPL_VD_GND_SWC
-    chip_para_FP.asm:99     *ABS*:00000000 FPL_GATE_S_OTA
+    chip_para_FP.asm:99     *ABS*:00003500 FPL_GATE_S_OTA
     chip_para_FP.asm:100    *ABS*:00000001 FPL_INJ_T_OTA
 GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/fine_program_subVt_m_ave_04_SWC.s43 			page 21
 
@@ -1178,7 +1178,7 @@ DEFINED SYMBOLS
     chip_para_FP.asm:112    *ABS*:00000036 FPL_VD_OS_OTAREF
     chip_para_FP.asm:113    *ABS*:00000001 FPL_VD_SA_OTAREF
     chip_para_FP.asm:114    *ABS*:00000000 FPL_VD_GND_OTAREF
-    chip_para_FP.asm:115    *ABS*:00003300 FPL_GATE_S_MITE
+    chip_para_FP.asm:115    *ABS*:00002d00 FPL_GATE_S_MITE
     chip_para_FP.asm:116    *ABS*:00000001 FPL_INJ_T_MITE
     chip_para_FP.asm:117    *ABS*:00000032 FPL_NUM_MITE
     chip_para_FP.asm:118    *ABS*:00000008 FPL_VD_A_MITE
@@ -1186,7 +1186,7 @@ DEFINED SYMBOLS
     chip_para_FP.asm:120    *ABS*:0000002f FPL_VD_OS_MITE
     chip_para_FP.asm:121    *ABS*:00000001 FPL_VD_SA_MITE
     chip_para_FP.asm:122    *ABS*:00000000 FPL_VD_GND_MITE
-    chip_para_FP.asm:123    *ABS*:00000100 FPL_GATE_S_DIRSWC
+    chip_para_FP.asm:123    *ABS*:00000700 FPL_GATE_S_DIRSWC
     chip_para_FP.asm:124    *ABS*:00000001 FPL_INJ_T_DIRSWC
     chip_para_FP.asm:125    *ABS*:00000032 FPL_NUM_DIRSWC
     chip_para_FP.asm:126    *ABS*:00000008 FPL_VD_A_DIRSWC
@@ -1452,16 +1452,16 @@ SYMBOL TABLE:
 00000000 l       *ABS*	00000000 CPL_MEAS_ON
 00000000 l       *ABS*	00000000 FP_MEAS_ON
 00000000 l       *ABS*	00000000 FPL_MEAS_ON
-00000dc0 l       *ABS*	00000000 ADC_1nA
-00003200 l       *ABS*	00000000 FPS_GATE_S_SWC
+00001021 l       *ABS*	00000000 ADC_1nA
+00002600 l       *ABS*	00000000 FPS_GATE_S_SWC
 00000001 l       *ABS*	00000000 FPS_INJ_T_SWC
-00000064 l       *ABS*	00000000 FPS_NUM_SWC
+00000032 l       *ABS*	00000000 FPS_NUM_SWC
 00000008 l       *ABS*	00000000 FPS_VD_A_SWC
 00000005 l       *ABS*	00000000 FPS_VD_B_SWC
 00000028 l       *ABS*	00000000 FPS_VD_OS_SWC
 00000000 l       *ABS*	00000000 FPS_VD_SA_SWC
 00000000 l       *ABS*	00000000 FPS_VD_GND_SWC
-00003200 l       *ABS*	00000000 FPS_GATE_S_OTA
+00002600 l       *ABS*	00000000 FPS_GATE_S_OTA
 00000001 l       *ABS*	00000000 FPS_INJ_T_OTA
 00000032 l       *ABS*	00000000 FPS_NUM_OTA
 00000008 l       *ABS*	00000000 FPS_VD_A_OTA
@@ -1469,7 +1469,7 @@ SYMBOL TABLE:
 0000002f l       *ABS*	00000000 FPS_VD_OS_OTA
 00000000 l       *ABS*	00000000 FPS_VD_SA_OTA
 00000000 l       *ABS*	00000000 FPS_VD_GND_OTA
-00003200 l       *ABS*	00000000 FPS_GATE_S_OTAREF
+00002600 l       *ABS*	00000000 FPS_GATE_S_OTAREF
 00000002 l       *ABS*	00000000 FPS_INJ_T_OTAREF
 00000032 l       *ABS*	00000000 FPS_NUM_OTAREF
 00000008 l       *ABS*	00000000 FPS_VD_A_OTAREF
@@ -1477,7 +1477,7 @@ SYMBOL TABLE:
 00000035 l       *ABS*	00000000 FPS_VD_OS_OTAREF
 00000000 l       *ABS*	00000000 FPS_VD_SA_OTAREF
 00000000 l       *ABS*	00000000 FPS_VD_GND_OTAREF
-00003200 l       *ABS*	00000000 FPS_GATE_S_MITE
+00002600 l       *ABS*	00000000 FPS_GATE_S_MITE
 00000001 l       *ABS*	00000000 FPS_INJ_T_MITE
 00000032 l       *ABS*	00000000 FPS_NUM_MITE
 00000008 l       *ABS*	00000000 FPS_VD_A_MITE
@@ -1485,7 +1485,7 @@ SYMBOL TABLE:
 00000031 l       *ABS*	00000000 FPS_VD_OS_MITE
 00000000 l       *ABS*	00000000 FPS_VD_SA_MITE
 00000000 l       *ABS*	00000000 FPS_VD_GND_MITE
-00003200 l       *ABS*	00000000 FPS_GATE_S_DIRSWC
+00002600 l       *ABS*	00000000 FPS_GATE_S_DIRSWC
 00000001 l       *ABS*	00000000 FPS_INJ_T_DIRSWC
 00000032 l       *ABS*	00000000 FPS_NUM_DIRSWC
 00000008 l       *ABS*	00000000 FPS_VD_A_DIRSWC
@@ -1493,7 +1493,7 @@ SYMBOL TABLE:
 00000028 l       *ABS*	00000000 FPS_VD_OS_DIRSWC
 00000000 l       *ABS*	00000000 FPS_VD_SA_DIRSWC
 00000000 l       *ABS*	00000000 FPS_VD_GND_DIRSWC
-00003200 l       *ABS*	00000000 FPA_GATE_S_SWC
+00002600 l       *ABS*	00000000 FPA_GATE_S_SWC
 00000001 l       *ABS*	00000000 FPA_INJ_T_SWC
 00000032 l       *ABS*	00000000 FPA_NUM_SWC
 00000008 l       *ABS*	00000000 FPA_VD_A_SWC
@@ -1501,7 +1501,7 @@ SYMBOL TABLE:
 0000001c l       *ABS*	00000000 FPA_VD_OS_SWC
 00000001 l       *ABS*	00000000 FPA_VD_SA_SWC
 00000000 l       *ABS*	00000000 FPA_VD_GND_SWC
-00003200 l       *ABS*	00000000 FPA_GATE_S_OTA
+00002600 l       *ABS*	00000000 FPA_GATE_S_OTA
 00000001 l       *ABS*	00000000 FPA_INJ_T_OTA
 00000032 l       *ABS*	00000000 FPA_NUM_OTA
 00000008 l       *ABS*	00000000 FPA_VD_A_OTA
@@ -1509,7 +1509,7 @@ SYMBOL TABLE:
 00000022 l       *ABS*	00000000 FPA_VD_OS_OTA
 00000001 l       *ABS*	00000000 FPA_VD_SA_OTA
 00000000 l       *ABS*	00000000 FPA_VD_GND_OTA
-00003200 l       *ABS*	00000000 FPA_GATE_S_OTAREF
+00002600 l       *ABS*	00000000 FPA_GATE_S_OTAREF
 00000002 l       *ABS*	00000000 FPA_INJ_T_OTAREF
 00000032 l       *ABS*	00000000 FPA_NUM_OTAREF
 00000008 l       *ABS*	00000000 FPA_VD_A_OTAREF
@@ -1517,7 +1517,7 @@ SYMBOL TABLE:
 00000023 l       *ABS*	00000000 FPA_VD_OS_OTAREF
 00000001 l       *ABS*	00000000 FPA_VD_SA_OTAREF
 00000000 l       *ABS*	00000000 FPA_VD_GND_OTAREF
-00003200 l       *ABS*	00000000 FPA_GATE_S_MITE
+00002600 l       *ABS*	00000000 FPA_GATE_S_MITE
 00000001 l       *ABS*	00000000 FPA_INJ_T_MITE
 00000032 l       *ABS*	00000000 FPA_NUM_MITE
 00000008 l       *ABS*	00000000 FPA_VD_A_MITE
@@ -1525,7 +1525,7 @@ SYMBOL TABLE:
 00000025 l       *ABS*	00000000 FPA_VD_OS_MITE
 00000001 l       *ABS*	00000000 FPA_VD_SA_MITE
 00000000 l       *ABS*	00000000 FPA_VD_GND_MITE
-00003200 l       *ABS*	00000000 FPA_GATE_S_DIRSWC
+00002600 l       *ABS*	00000000 FPA_GATE_S_DIRSWC
 00000001 l       *ABS*	00000000 FPA_INJ_T_DIRSWC
 00000032 l       *ABS*	00000000 FPA_NUM_DIRSWC
 00000008 l       *ABS*	00000000 FPA_VD_A_DIRSWC
@@ -1541,7 +1541,7 @@ SYMBOL TABLE:
 00000032 l       *ABS*	00000000 FPL_VD_OS_SWC
 00000001 l       *ABS*	00000000 FPL_VD_SA_SWC
 00000000 l       *ABS*	00000000 FPL_VD_GND_SWC
-00000000 l       *ABS*	00000000 FPL_GATE_S_OTA
+00003500 l       *ABS*	00000000 FPL_GATE_S_OTA
 00000001 l       *ABS*	00000000 FPL_INJ_T_OTA
 00000032 l       *ABS*	00000000 FPL_NUM_OTA
 00000008 l       *ABS*	00000000 FPL_VD_A_OTA
@@ -1557,7 +1557,7 @@ SYMBOL TABLE:
 00000036 l       *ABS*	00000000 FPL_VD_OS_OTAREF
 00000001 l       *ABS*	00000000 FPL_VD_SA_OTAREF
 00000000 l       *ABS*	00000000 FPL_VD_GND_OTAREF
-00003300 l       *ABS*	00000000 FPL_GATE_S_MITE
+00002d00 l       *ABS*	00000000 FPL_GATE_S_MITE
 00000001 l       *ABS*	00000000 FPL_INJ_T_MITE
 00000032 l       *ABS*	00000000 FPL_NUM_MITE
 00000008 l       *ABS*	00000000 FPL_VD_A_MITE
@@ -1565,7 +1565,7 @@ SYMBOL TABLE:
 0000002f l       *ABS*	00000000 FPL_VD_OS_MITE
 00000001 l       *ABS*	00000000 FPL_VD_SA_MITE
 00000000 l       *ABS*	00000000 FPL_VD_GND_MITE
-00000100 l       *ABS*	00000000 FPL_GATE_S_DIRSWC
+00000700 l       *ABS*	00000000 FPL_GATE_S_DIRSWC
 00000001 l       *ABS*	00000000 FPL_INJ_T_DIRSWC
 00000032 l       *ABS*	00000000 FPL_NUM_DIRSWC
 00000008 l       *ABS*	00000000 FPL_VD_A_DIRSWC
@@ -1621,7 +1621,7 @@ Contents of section .text:
  0020 a2430e0b b24004be 6401b240 6600000b  .C...@..d..@f...
  0030 b2402400 6001b240 00800c0b 8243080b  .@$.`..@.....C..
  0040 82430a0b 874a0000 2753874a 00002753  .C...J..'S.J..'S
- 0050 0d43b012 00003f40 64000d43 b0120000  .C....?@d..C....
+ 0050 0d43b012 00003f40 32000d43 b0120000  .C....?@2..C....
  0060 b0120000 b0120000 08430893 0924b740  .........C...$.@
  0070 33330000 2753874a 00002753 b0120000  33..'S.J..'S....
  0080 1f830124 ea3f1f43 b7403333 00002753  ...$.?.C.@33..'S
@@ -1630,7 +1630,7 @@ Contents of section .text:
  00b0 2c4bb240 00800c0b b24004be 6401b240  ,K.@.....@..d..@
  00c0 24006001 b2430e0b 2b53a24b 080b2b53  $.`..C..+S.K..+S
  00d0 a24b0a0b 2b532b53 2b53284b 08932c24  .K..+S+S+S(K..,$
- 00e0 b2400032 020bb240 6000100b b2406000  .@.2...@`....@`.
+ 00e0 b2400026 020bb240 6000100b b2406000  .@.&...@`....@`.
  00f0 120bb240 6600000b b2401400 60012543  ...@f....@..`.%C
  0100 b0120000 06430693 0b24b240 2600000b  .....C...$.@&...
  0110 1543b012 00001a53 b2406600 000b093c  .C.....S.@f....<
@@ -1653,7 +1653,7 @@ Contents of section .text:
  0220 0124b23f b2406600 000bb240 24006001  .$.?.@f....@$.`.
  0230 30413b40 00702c4b 2b532b53 2b53284b  0A;@.p,K+S+S+S(K
  0240 2b53294b 2b532e4b 0e932924 08893880  +S)K+S.K..)$..8.
- 0250 c00d3642 08930134 08430810 38c00080  ..6B...4.C..8...
+ 0250 21103642 08930134 08430810 38c00080  !.6B...4.C..8...
  0260 1683fb23 36400500 091039c0 00801683  ...#6@....9.....
  0270 fb233950 28000643 06930224 0958013c  .#9P(..C...$.X.<
  0280 09880993 01340943 096919c3 39500068  .....4.C.i..9P.h
@@ -1710,7 +1710,7 @@ Disassembly of section .text:
   50:	0d 43       	clr	r13		
   52:	b0 12 00 00 	call	#0x0000	
 			54: R_MSP430_16_BYTE	.text+0x2a6
-  56:	3f 40 64 00 	mov	#100,	r15	;#0x0064
+  56:	3f 40 32 00 	mov	#50,	r15	;#0x0032
 
 0000005a <fine_loop_s>:
   5a:	0d 43       	clr	r13		
@@ -1779,7 +1779,7 @@ Disassembly of section .text:
   da:	28 4b       	mov	@r11,	r8	
   dc:	08 93       	tst	r8		
   de:	2c 24       	jz	$+90     	;abs 0x138
-  e0:	b2 40 00 32 	mov	#12800,	&0x0b02	;#0x3200
+  e0:	b2 40 00 26 	mov	#9728,	&0x0b02	;#0x2600
   e4:	02 0b 
   e6:	b2 40 60 00 	mov	#96,	&0x0b10	;#0x0060
   ea:	10 0b 
@@ -1949,7 +1949,7 @@ Disassembly of section .text:
  248:	0e 93       	tst	r14		
  24a:	29 24       	jz	$+84     	;abs 0x29e
  24c:	08 89       	sub	r9,	r8	
- 24e:	38 80 c0 0d 	sub	#3520,	r8	;#0x0dc0
+ 24e:	38 80 21 10 	sub	#4129,	r8	;#0x1021
  252:	36 42       	mov	#8,	r6	;r2 As==11
  254:	08 93       	tst	r8		
  256:	01 34       	jge	$+4      	;abs 0x25a

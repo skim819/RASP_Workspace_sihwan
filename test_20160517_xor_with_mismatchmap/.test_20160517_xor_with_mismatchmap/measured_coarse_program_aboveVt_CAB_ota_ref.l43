@@ -296,25 +296,25 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/measured_coarse_prog
    1               	/**********************************/
    2               	/* CP (Coarse Program) parameters */
    3               	/**********************************/
-   4               	.set ADC_1nA, 3520 /* 1nA ADC value */
+   4               	.set ADC_1nA, 4129 /* 1nA ADC value */
    5               	
 GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/measured_coarse_program_aboveVt_CAB_ota_ref.s43 			page 6
 
 
    6               	/* above & sub threshold */
-   7               	.set CP_GATE_S_SWC, 0x3200 /* Gate(SWC) = 3.0V @ IVDD 6.0V */
+   7               	.set CP_GATE_S_SWC, 0x2600 /* Gate(SWC) = 3.0V @ IVDD 6.0V */
    8               	.set CP_INJ_T_SWC, 1 /* Injection time (*10us) */
    9               	.set CP_NUM_SWC, 20 /* # of Measured Coarse Progrm */
-  10               	.set CP_GATE_S_OTA, 0x3200 /* Gate(OTA) = 3.0V @ IVDD 6.0V */
+  10               	.set CP_GATE_S_OTA, 0x2600 /* Gate(OTA) = 3.0V @ IVDD 6.0V */
   11               	.set CP_INJ_T_OTA, 1 /* Injection time (*10us) */
   12               	.set CP_NUM_OTA, 20 /* # of Measured Coarse Progrm */
-  13               	.set CP_GATE_S_OTAREF, 0x3200 /* Gate(OTAREF) = 3.0V @ IVDD 6.0V */
+  13               	.set CP_GATE_S_OTAREF, 0x2600 /* Gate(OTAREF) = 3.0V @ IVDD 6.0V */
   14               	.set CP_INJ_T_OTAREF, 2 /* Injection time (*10us) */
   15               	.set CP_NUM_OTAREF, 20 /* # of Measured Coarse Progrm */
-  16               	.set CP_GATE_S_MITE, 0x3200 /* Gate(MITE) = 3.0V @ IVDD 6.0V */
+  16               	.set CP_GATE_S_MITE, 0x2600 /* Gate(MITE) = 3.0V @ IVDD 6.0V */
   17               	.set CP_INJ_T_MITE, 1 /* Injection time (*10us) */
   18               	.set CP_NUM_MITE, 20 /* # of Measured Coarse Progrm */
-  19               	.set CP_GATE_S_DIRSWC, 0x3200 /* Gate(DIRSWC) = 3.0V @ IVDD 6.0V */
+  19               	.set CP_GATE_S_DIRSWC, 0x2600 /* Gate(DIRSWC) = 3.0V @ IVDD 6.0V */
   20               	.set CP_INJ_T_DIRSWC, 1 /* Injection time (*10us) */
   21               	.set CP_NUM_DIRSWC, 20 /* # of Measured Coarse Progrm */
   22               	
@@ -322,16 +322,16 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/measured_coarse_prog
   24               	.set CPL_GATE_S_SWC, 0x0040 /* Gate(SWC) = gnd */
   25               	.set CPL_INJ_T_SWC, 1 /* Injection time (*10us) */
   26               	.set CPL_NUM_SWC, 20 /* # of Measured Coarse Progrm */
-  27               	.set CPL_GATE_S_OTA, 0x0000 /* Gate(OTA) = 2.5V */
+  27               	.set CPL_GATE_S_OTA, 0x3500 /* Gate(OTA) = 2.4V */
   28               	.set CPL_INJ_T_OTA, 1 /* Injection time (*10us) */
   29               	.set CPL_NUM_OTA, 20 /* # of Measured Coarse Progrm */
   30               	.set CPL_GATE_S_OTAREF, 0x0040 /* Gate(OTAREF) = gnd */
   31               	.set CPL_INJ_T_OTAREF, 1 /* Injection time (*10us) */
   32               	.set CPL_NUM_OTAREF, 20 /* # of Measured Coarse Progrm */
-  33               	.set CPL_GATE_S_MITE, 0x3300 /* Gate(MITE) = 2.0V */
+  33               	.set CPL_GATE_S_MITE, 0x2d00 /* Gate(MITE) = 2.2V */
   34               	.set CPL_INJ_T_MITE, 1 /* Injection time (*10us) */
   35               	.set CPL_NUM_MITE, 20 /* # of Measured Coarse Progrm */
-  36               	.set CPL_GATE_S_DIRSWC, 0x0100 /* Gate(DIRSWC) = 1.4V */
+  36               	.set CPL_GATE_S_DIRSWC, 0x0700 /* Gate(DIRSWC) = 1.5V */
   37               	.set CPL_INJ_T_DIRSWC, 1 /* Injection time (*10us) */
   38               	.set CPL_NUM_DIRSWC, 20 /* # of Measured Coarse Progrm */
    4               	
@@ -428,7 +428,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/measured_coarse_prog
   78 00d2 284B      	        mov     @r11,    r8		; Read # of pulses
   79 00d4 0893      		cmp	#0x0000, r8
   80 00d6 2424      		jeq	coarse_inject_skip
-  81 00d8 B240 0032 		mov	#CP_GATE_S_OTAREF, &GATE_S	; gate_s 
+  81 00d8 B240 0026 		mov	#CP_GATE_S_OTAREF, &GATE_S	; gate_s 
   81      020B 
   82 00de B240 6000 	        mov	#0x0060, &GATE_US_P	; gate_us_p = ivdd
   82      100B 
@@ -566,11 +566,11 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/measured_coarse_prog
  189 0216 0E93      		cmp	#0x0000, r14
  190 0218 2524      		jeq	No_calculation
  191 021a 0889      		sub	r9, r8			; r8 = r8(target)-r9(diff) = Istart
- 192 021c 3890 C00D 		cmp	#ADC_1nA, r8		; If r8 - #ADC_1nA < 0,
+ 192 021c 3890 2110 		cmp	#ADC_1nA, r8		; If r8 - #ADC_1nA < 0,
  193 0220 0234      		jge	Istart_1
- 194 0222 3840 C00D 		mov	#ADC_1nA, r8		; r8 = ADC_1nA
+ 194 0222 3840 2110 		mov	#ADC_1nA, r8		; r8 = ADC_1nA
  195               	Istart_1:
- 196 0226 3880 C00D 		sub	#ADC_1nA, r8		; r8 = r8(Istart)- ADC_1nA = diff'
+ 196 0226 3880 2110 		sub	#ADC_1nA, r8		; r8 = r8(Istart)- ADC_1nA = diff'
  197 022a 0958      		add	r8, r9			; r9 = r8(diff') + r9(diff) = diff'' 
  198 022c 0810      		rrc	r8
  199 022e 0810      		rrc	r8
@@ -916,35 +916,35 @@ DEFINED SYMBOLS
  chip_para_debug.asm:4      *ABS*:00000000 CPL_MEAS_ON
  chip_para_debug.asm:5      *ABS*:00000000 FP_MEAS_ON
  chip_para_debug.asm:6      *ABS*:00000000 FPL_MEAS_ON
-    chip_para_CP.asm:4      *ABS*:00000dc0 ADC_1nA
-    chip_para_CP.asm:7      *ABS*:00003200 CP_GATE_S_SWC
+    chip_para_CP.asm:4      *ABS*:00001021 ADC_1nA
+    chip_para_CP.asm:7      *ABS*:00002600 CP_GATE_S_SWC
     chip_para_CP.asm:8      *ABS*:00000001 CP_INJ_T_SWC
     chip_para_CP.asm:9      *ABS*:00000014 CP_NUM_SWC
-    chip_para_CP.asm:10     *ABS*:00003200 CP_GATE_S_OTA
+    chip_para_CP.asm:10     *ABS*:00002600 CP_GATE_S_OTA
     chip_para_CP.asm:11     *ABS*:00000001 CP_INJ_T_OTA
     chip_para_CP.asm:12     *ABS*:00000014 CP_NUM_OTA
-    chip_para_CP.asm:13     *ABS*:00003200 CP_GATE_S_OTAREF
+    chip_para_CP.asm:13     *ABS*:00002600 CP_GATE_S_OTAREF
     chip_para_CP.asm:14     *ABS*:00000002 CP_INJ_T_OTAREF
     chip_para_CP.asm:15     *ABS*:00000014 CP_NUM_OTAREF
-    chip_para_CP.asm:16     *ABS*:00003200 CP_GATE_S_MITE
+    chip_para_CP.asm:16     *ABS*:00002600 CP_GATE_S_MITE
     chip_para_CP.asm:17     *ABS*:00000001 CP_INJ_T_MITE
     chip_para_CP.asm:18     *ABS*:00000014 CP_NUM_MITE
-    chip_para_CP.asm:19     *ABS*:00003200 CP_GATE_S_DIRSWC
+    chip_para_CP.asm:19     *ABS*:00002600 CP_GATE_S_DIRSWC
     chip_para_CP.asm:20     *ABS*:00000001 CP_INJ_T_DIRSWC
     chip_para_CP.asm:21     *ABS*:00000014 CP_NUM_DIRSWC
     chip_para_CP.asm:24     *ABS*:00000040 CPL_GATE_S_SWC
     chip_para_CP.asm:25     *ABS*:00000001 CPL_INJ_T_SWC
     chip_para_CP.asm:26     *ABS*:00000014 CPL_NUM_SWC
-    chip_para_CP.asm:27     *ABS*:00000000 CPL_GATE_S_OTA
+    chip_para_CP.asm:27     *ABS*:00003500 CPL_GATE_S_OTA
     chip_para_CP.asm:28     *ABS*:00000001 CPL_INJ_T_OTA
     chip_para_CP.asm:29     *ABS*:00000014 CPL_NUM_OTA
     chip_para_CP.asm:30     *ABS*:00000040 CPL_GATE_S_OTAREF
     chip_para_CP.asm:31     *ABS*:00000001 CPL_INJ_T_OTAREF
     chip_para_CP.asm:32     *ABS*:00000014 CPL_NUM_OTAREF
-    chip_para_CP.asm:33     *ABS*:00003300 CPL_GATE_S_MITE
+    chip_para_CP.asm:33     *ABS*:00002d00 CPL_GATE_S_MITE
     chip_para_CP.asm:34     *ABS*:00000001 CPL_INJ_T_MITE
     chip_para_CP.asm:35     *ABS*:00000014 CPL_NUM_MITE
-    chip_para_CP.asm:36     *ABS*:00000100 CPL_GATE_S_DIRSWC
+    chip_para_CP.asm:36     *ABS*:00000700 CPL_GATE_S_DIRSWC
     chip_para_CP.asm:37     *ABS*:00000001 CPL_INJ_T_DIRSWC
     chip_para_CP.asm:38     *ABS*:00000014 CPL_NUM_DIRSWC
 /home/ubuntu/rasp30/prog_assembly/libs/asm_code/measured_coarse_program_aboveVt_CAB_ota_ref.s43:7      .text:00000000 main
@@ -1196,35 +1196,35 @@ SYMBOL TABLE:
 00000000 l       *ABS*	00000000 CPL_MEAS_ON
 00000000 l       *ABS*	00000000 FP_MEAS_ON
 00000000 l       *ABS*	00000000 FPL_MEAS_ON
-00000dc0 l       *ABS*	00000000 ADC_1nA
-00003200 l       *ABS*	00000000 CP_GATE_S_SWC
+00001021 l       *ABS*	00000000 ADC_1nA
+00002600 l       *ABS*	00000000 CP_GATE_S_SWC
 00000001 l       *ABS*	00000000 CP_INJ_T_SWC
 00000014 l       *ABS*	00000000 CP_NUM_SWC
-00003200 l       *ABS*	00000000 CP_GATE_S_OTA
+00002600 l       *ABS*	00000000 CP_GATE_S_OTA
 00000001 l       *ABS*	00000000 CP_INJ_T_OTA
 00000014 l       *ABS*	00000000 CP_NUM_OTA
-00003200 l       *ABS*	00000000 CP_GATE_S_OTAREF
+00002600 l       *ABS*	00000000 CP_GATE_S_OTAREF
 00000002 l       *ABS*	00000000 CP_INJ_T_OTAREF
 00000014 l       *ABS*	00000000 CP_NUM_OTAREF
-00003200 l       *ABS*	00000000 CP_GATE_S_MITE
+00002600 l       *ABS*	00000000 CP_GATE_S_MITE
 00000001 l       *ABS*	00000000 CP_INJ_T_MITE
 00000014 l       *ABS*	00000000 CP_NUM_MITE
-00003200 l       *ABS*	00000000 CP_GATE_S_DIRSWC
+00002600 l       *ABS*	00000000 CP_GATE_S_DIRSWC
 00000001 l       *ABS*	00000000 CP_INJ_T_DIRSWC
 00000014 l       *ABS*	00000000 CP_NUM_DIRSWC
 00000040 l       *ABS*	00000000 CPL_GATE_S_SWC
 00000001 l       *ABS*	00000000 CPL_INJ_T_SWC
 00000014 l       *ABS*	00000000 CPL_NUM_SWC
-00000000 l       *ABS*	00000000 CPL_GATE_S_OTA
+00003500 l       *ABS*	00000000 CPL_GATE_S_OTA
 00000001 l       *ABS*	00000000 CPL_INJ_T_OTA
 00000014 l       *ABS*	00000000 CPL_NUM_OTA
 00000040 l       *ABS*	00000000 CPL_GATE_S_OTAREF
 00000001 l       *ABS*	00000000 CPL_INJ_T_OTAREF
 00000014 l       *ABS*	00000000 CPL_NUM_OTAREF
-00003300 l       *ABS*	00000000 CPL_GATE_S_MITE
+00002d00 l       *ABS*	00000000 CPL_GATE_S_MITE
 00000001 l       *ABS*	00000000 CPL_INJ_T_MITE
 00000014 l       *ABS*	00000000 CPL_NUM_MITE
-00000100 l       *ABS*	00000000 CPL_GATE_S_DIRSWC
+00000700 l       *ABS*	00000000 CPL_GATE_S_DIRSWC
 00000001 l       *ABS*	00000000 CPL_INJ_T_DIRSWC
 00000014 l       *ABS*	00000000 CPL_NUM_DIRSWC
 0000000e l       .text	00000000 init_wait
@@ -1274,7 +1274,7 @@ Contents of section .text:
  00a0 58003c3d 3b400070 2c4bb240 00800c0b  X.<=;@.p,K.@....
  00b0 b24004be 6401b240 24006001 b2430e0b  .@..d..@$.`..C..
  00c0 2b53a24b 080b2b53 a24b0a0b 2b532b53  +S.K..+S.K..+S+S
- 00d0 2b53284b 08932424 b2400032 020bb240  +S(K..$$.@.2...@
+ 00d0 2b53284b 08932424 b2400026 020bb240  +S(K..$$.@.&...@
  00e0 6000100b b2406000 120bb240 6600000b  `....@`....@f...
  00f0 b2401400 60012543 b0120000 b2402600  .@..`.%C.....@&.
  0100 000b2543 b0120000 2a531883 0124f93f  ..%C....*S...$.?
@@ -1294,8 +1294,8 @@ Contents of section .text:
  01e0 3850f401 08898b48 00002b53 1c830124  8P.....H..+S...$
  01f0 bf3fb240 6600000b b2402400 60013041  .?.@f....@$.`.0A
  0200 3b400070 2c4b2b53 2b532b53 284b2b53  ;@.p,K+S+S+S(K+S
- 0210 294b2b53 2e4b0e93 25240889 3890c00d  )K+S.K..%$..8...
- 0220 02343840 c00d3880 c00d0958 08100810  .48@..8....X....
+ 0210 294b2b53 2e4b0e93 25240889 38902110  )K+S.K..%$..8.!.
+ 0220 02343840 21103880 21100958 08100810  .48@!.8.!..X....
  0230 08100810 08100810 38c000ff 086818c3  ........8....h..
  0240 38500068 09100910 09100910 09100910  8P.h............
  0250 39c000ff 096919c3 39500068 2e492e88  9....i..9P.h.I..
@@ -1411,7 +1411,7 @@ Disassembly of section .text:
   d2:	28 4b       	mov	@r11,	r8	
   d4:	08 93       	tst	r8		
   d6:	24 24       	jz	$+74     	;abs 0x120
-  d8:	b2 40 00 32 	mov	#12800,	&0x0b02	;#0x3200
+  d8:	b2 40 00 26 	mov	#9728,	&0x0b02	;#0x2600
   dc:	02 0b 
   de:	b2 40 60 00 	mov	#96,	&0x0b10	;#0x0060
   e2:	10 0b 
@@ -1559,12 +1559,12 @@ Disassembly of section .text:
  216:	0e 93       	tst	r14		
  218:	25 24       	jz	$+76     	;abs 0x264
  21a:	08 89       	sub	r9,	r8	
- 21c:	38 90 c0 0d 	cmp	#3520,	r8	;#0x0dc0
+ 21c:	38 90 21 10 	cmp	#4129,	r8	;#0x1021
  220:	02 34       	jge	$+6      	;abs 0x226
- 222:	38 40 c0 0d 	mov	#3520,	r8	;#0x0dc0
+ 222:	38 40 21 10 	mov	#4129,	r8	;#0x1021
 
 00000226 <Istart_1>:
- 226:	38 80 c0 0d 	sub	#3520,	r8	;#0x0dc0
+ 226:	38 80 21 10 	sub	#4129,	r8	;#0x1021
  22a:	09 58       	add	r8,	r9	
  22c:	08 10       	rrc	r8		
  22e:	08 10       	rrc	r8		

@@ -4,14 +4,14 @@
 	</inputs>
 
 	<outputs>
-		out:gnd 
+		out:out_mite_adc 
 	</outputs>
 
 	<globals>
 		
 	</globals>
 
-	<block name="gnd" instance="cab2[0]" mode="cab2">
+	<block name="out_mite_adc" instance="cab2[0]" mode="cab2">
 		<inputs>
 			<port name="I">net1_1 open open open open open open open open open open open open open open open </port>
 			<port name="si">open open open open open open open open </port>
@@ -31,12 +31,12 @@
 		<block name="open" instance="cap2[1]"/>
 		<block name="open" instance="cap2[2]"/>
 		<block name="open" instance="ota2[0]"/>
-		<block name="gnd" instance="meas_volt_mite[0]">
+		<block name="out_mite_adc" instance="meas_volt_mite[0]">
 			<inputs>
 				<port name="in">cab2.I[0]->crossbar  </port>
 			</inputs>
 			<outputs>
-				<port name="out">gnd </port>
+				<port name="out">out_mite_adc </port>
 			</outputs>
 			<globals>
 			</globals>
@@ -57,9 +57,9 @@
 		<block name="open" instance="sftreg[0]"/>
 		<block name="open" instance="sftreg[1]"/>
 	</block>
-	<block name="out:gnd" instance="io[1]" mode="outpad">
+	<block name="out:out_mite_adc" instance="io[1]" mode="outpad">
 		<inputs>
-			<port name="outpad">gnd </port>
+			<port name="outpad">out_mite_adc </port>
 		</inputs>
 		<outputs>
 			<port name="inpad">open </port>
@@ -67,7 +67,7 @@
 		<globals>
 			<port name="clock">open </port>
 		</globals>
-		<block name="out:gnd" instance="outpad[0]">
+		<block name="out:out_mite_adc" instance="outpad[0]">
 			<inputs>
 				<port name="outpad">io.outpad[0]->outpad  </port>
 			</inputs>

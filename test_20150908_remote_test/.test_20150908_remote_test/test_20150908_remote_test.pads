@@ -1,2 +1,2 @@
-out:gnd 7 0 2
 net1_1 9 0 1 #int[1]
+out:out_mite_adc 7 0 0 #tgate[0]
