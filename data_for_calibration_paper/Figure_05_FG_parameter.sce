@@ -90,8 +90,8 @@ xtitle("","Vout[V]@Vg=0.6V", "Vout(@Vg=0V) - Vout(@Vg=0.6)");
 
 
 
-//2*(vdd-diodeADC_h2v(5459,chip_num,brdtype))-2*(vdd-diodeADC_h2v(4129,chip_num,brdtype))
-//2*(vdd-diodeADC_h2v(5533,chip_num,brdtype))-2*(vdd-diodeADC_h2v(4129,chip_num,brdtype))
-//2*(vdd-diodeADC_h2v(5675,chip_num,brdtype))-2*(vdd-diodeADC_h2v(4129,chip_num,brdtype))
-//2*(vdd-diodeADC_h2v(6252,chip_num,brdtype))-2*(vdd-diodeADC_h2v(4129,chip_num,brdtype))
-//2*(vdd-diodeADC_h2v(6459,chip_num,brdtype))-2*(vdd-diodeADC_h2v(4129,chip_num,brdtype))
+//2*(vdd-diodeADC_h2v(5621,chip_num,brdtype))-2*(vdd-diodeADC_h2v(4342,chip_num,brdtype))
+//2*(vdd-diodeADC_h2v(5872,chip_num,brdtype))-2*(vdd-diodeADC_h2v(4342,chip_num,brdtype))
+//2*(vdd-diodeADC_h2v(5886,chip_num,brdtype))-2*(vdd-diodeADC_h2v(4342,chip_num,brdtype))
+//2*(vdd-diodeADC_h2v(6528,chip_num,brdtype))-2*(vdd-diodeADC_h2v(4342,chip_num,brdtype))
+//2*(vdd-diodeADC_h2v(6790,chip_num,brdtype))-2*(vdd-diodeADC_h2v(4342,chip_num,brdtype))

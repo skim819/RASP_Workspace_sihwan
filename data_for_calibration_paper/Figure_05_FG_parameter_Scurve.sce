@@ -5,8 +5,9 @@ kapa_constant_or_not=1;
 vdd=2.5;
 
 //cd("/home/ubuntu/RASP_Workspace/data_for_calibration_paper/data_char_Scurve_chip16");
-//cd("/home/ubuntu/RASP_Workspace/data_for_calibration_paper/data_char_Scurve_chip21");
-cd("/home/ubuntu/RASP_Workspace/data_for_calibration_paper/data_char_Scurve_chip17");
+cd("/home/ubuntu/RASP_Workspace/data_for_calibration_paper/data_char_Scurve_chip21");
+//cd("/home/ubuntu/RASP_Workspace/data_for_calibration_paper/data_char_Scurve_chip17");
+//cd("/home/ubuntu/RASP_Workspace/data_for_calibration_paper/data_char_Scurve_chip13");
 
 path =  pwd();
 exec('~/rasp30/prog_assembly/libs/scilab_code/diodeADC_v2i.sce',-1);

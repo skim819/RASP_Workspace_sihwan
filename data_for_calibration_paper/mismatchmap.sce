@@ -1,3 +1,5 @@
+cd('/home/ubuntu/RASP_Workspace/data_for_calibration_paper');
+
 exec('~/rasp30/prog_assembly/libs/scilab_code/linefit.sce',-1);
 exec('~/rasp30/prog_assembly/libs/scilab_code/ekvfit_nfet.sce',-1);
 exec('~/rasp30/prog_assembly/libs/scilab_code/diodeADC_v2i.sce',-1);
@@ -52,8 +54,10 @@ xtitle("","Vmeas(V)","Vmite(V)");
 
 
 
-Vto_mismatch_data1=csvRead('Vto_mismatch_data_CAB_10_1_row0_27_vdd_in12_before');
-Vto_mismatch_data2=csvRead('Vto_mismatch_data_CAB_10_1_row0_27_vdd_in12_after');
+//Vto_mismatch_data1=csvRead('Vto_mismatch_data_CAB_10_1_row0_27_vdd_in12_before');
+Vto_mismatch_data1=csvRead('mismatch_map_chip16_4th_loop');
+//Vto_mismatch_data2=csvRead('Vto_mismatch_data_CAB_10_1_row0_27_vdd_in12_after');
+Vto_mismatch_data2=csvRead('Vto_mismatch_data_chip16_at_4th_loop');
 histogram_edges = -0.05:0.0005:0.05;
 scf(2);clf(2);
 histo(Vto_mismatch_data1(:,3),histogram_edges);p = get("hdl"); p.children.thickness = 3; p.children.line_mode="on";  p.children.line_style = 1;p.children.foreground=1;
@@ -61,7 +65,7 @@ a=gca();a.data_bounds=[-0.04 0; 0.04 40];
 xtitle("","Vth mismatch [V]","# of Vfg");
 scf(3);clf(3);
 histo(Vto_mismatch_data2(:,3),histogram_edges);p = get("hdl"); p.children.thickness = 3; p.children.line_mode="on";  p.children.line_style = 1;p.children.foreground=2;
-a=gca();a.data_bounds=[-0.04 0; 0.04 40];
+a=gca();a.data_bounds=[-0.04 0; 0.04 100];
 xtitle("","Vth mismatch [V]","# of Vfg");
 
 disp("Mean (before) = "+string(1000*mean(Vto_mismatch_data1(:,3)))+" mV");
@@ -70,7 +74,8 @@ disp("Mean (after) = "+string(1000*mean(Vto_mismatch_data2(:,3)))+" mV");
 disp("Sigma (after) = "+string(1000*stdev(Vto_mismatch_data2(:,3)))+" mV");
 
 //-------- Mismatch map with colar -----//
-Vto_mismatch_data1=csvRead('Vto_mismatch_data_CAB_10_1_row0_27_vdd_in12_before');
+//Vto_mismatch_data1=csvRead('Vto_mismatch_data_CAB_10_1_row0_27_vdd_in12_before');
+Vto_mismatch_data1=csvRead('mismatch_map_chip16_4th_loop');
 row_addr=1:1:28;
 size_row_addr=size(row_addr);
 row_addr_offset=311;
@@ -97,7 +102,8 @@ Vto_mismatch_values=max(128+Vto_mismatch_values*20*128,0);
 Matplot(Vto_mismatch_values);
 h = gcf();h.color_map = graycolormap(256);
 
-Vto_mismatch_data2=csvRead('Vto_mismatch_data_CAB_10_1_row0_27_vdd_in12_after');
+//Vto_mismatch_data2=csvRead('Vto_mismatch_data_CAB_10_1_row0_27_vdd_in12_after');
+Vto_mismatch_data2=csvRead('Vto_mismatch_data_chip16_at_4th_loop');
 row_addr=1:1:28;
 size_row_addr=size(row_addr);
 row_addr_offset=311;
