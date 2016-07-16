@@ -295,53 +295,53 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/recover_inject_CAB_o
    3               	.include "chip_para_RI.asm"
    1               	/* RI (Recover Injection Above & Sub threshold) parameters */
    2               	.set RI_GATE_S_SWC, 0x0040 /* Gate(SWC) = gnd */
-   3               	.set RI_VC1_SWC, 3116 /* Ivfg @Vgm=0V -> 1nA@Vgm=0.6V */
-   4               	.set RI_VC2_SWC, 3040 /* Ivfg*2/5 @Vgm=0V */
-   5               	.set RI_VC3_SWC, 2813 /* Ivfg*1/10 @Vgm=0V */
+   3               	.set RI_VC1_SWC, 4466 /* Ivfg @Vgm=0V -> 1nA@Vgm=0.6V */
+   4               	.set RI_VC2_SWC, 4371 /* Ivfg*2/5 @Vgm=0V */
+   5               	.set RI_VC3_SWC, 4088 /* Ivfg*1/10 @Vgm=0V */
 GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/recover_inject_CAB_ota_ref.s43 			page 6
 
 
-   6               	.set RI_VC4_SWC, 2360 /* Ivfg=1nA @Vgm=0V */
+   6               	.set RI_VC4_SWC, 3520 /* Ivfg=1nA @Vgm=0V */
    7               	.set RI_VD1_SWC, 0xea0e /* Vd @ final stage */
    8               	.set RI_VD2_SWC, 0xfe0e /* Vd @ pre-final stage */
    9               	.set RI_INJ_T_SWC, 1 /* Injection time unit (*10us) */
   10               	.set RI_NUM_SWC, 300 /* # of Recover Injection */
   11               	
-  12               	.set RI_GATE_S_OTA, 0x3300 /* Gate(OTA) = 2.5V */
-  13               	.set RI_VC1_OTA, 3567 /* Ivfg @Vgm=0V -> 1nA@Vgm=0.6V */
-  14               	.set RI_VC2_OTA, 3447 /* Ivfg*2/5 @Vgm=0V */
-  15               	.set RI_VC3_OTA, 3084 /* Ivfg*1/10 @Vgm=0V */
-  16               	.set RI_VC4_OTA, 2360 /* Ivfg=1nA @Vgm=0V */
+  12               	.set RI_GATE_S_OTA, 0x0000 /* Gate(OTA) = 2.5V */
+  13               	.set RI_VC1_OTA, 5103 /* Ivfg @Vgm=0V -> 1nA@Vgm=0.6V */
+  14               	.set RI_VC2_OTA, 4944 /* Ivfg*2/5 @Vgm=0V */
+  15               	.set RI_VC3_OTA, 4470 /* Ivfg*1/10 @Vgm=0V */
+  16               	.set RI_VC4_OTA, 3520 /* Ivfg=1nA @Vgm=0V */
   17               	.set RI_VD1_OTA, 0xea0e /* Vd @ final stage */
   18               	.set RI_VD2_OTA, 0xfe0e /* Vd @ pre-final stage */
   19               	.set RI_INJ_T_OTA, 1 /* Injection time unit (*10us) */
   20               	.set RI_NUM_OTA, 300 /* # of Recover Injection */
   21               	
   22               	.set RI_GATE_S_OTAREF, 0x0040 /* Gate(OTAREF) = gnd */
-  23               	.set RI_VC1_OTAREF, 3201 /* Ivfg @Vgm=0V -> 1nA@Vgm=0.6V */
-  24               	.set RI_VC2_OTAREF, 3117 /* Ivfg*2/5 @Vgm=0V */
-  25               	.set RI_VC3_OTAREF, 2864 /* Ivfg*1/10 @Vgm=0V */
-  26               	.set RI_VC4_OTAREF, 2360 /* Ivfg=1nA @Vgm=0V */
+  23               	.set RI_VC1_OTAREF, 4649 /* Ivfg @Vgm=0V -> 1nA@Vgm=0.6V */
+  24               	.set RI_VC2_OTAREF, 4536 /* Ivfg*2/5 @Vgm=0V */
+  25               	.set RI_VC3_OTAREF, 4197 /* Ivfg*1/10 @Vgm=0V */
+  26               	.set RI_VC4_OTAREF, 3520 /* Ivfg=1nA @Vgm=0V */
   27               	.set RI_VD1_OTAREF, 0xea0e /* Vd @ final stage */
   28               	.set RI_VD2_OTAREF, 0xfe0e /* Vd @ pre-final stage */
   29               	.set RI_INJ_T_OTAREF, 1 /* Injection time unit (*10us) */
   30               	.set RI_NUM_OTAREF, 300 /* # of Recover Injection */
   31               	
-  32               	.set RI_GATE_S_MITE, 0x2900 /* Gate(MITE) = 2.0V */
-  33               	.set RI_VC1_MITE, 3736 /* Ivfg @Vgm=0V -> 1nA@Vgm=0.6V */
-  34               	.set RI_VC2_MITE, 3599 /* Ivfg*2/5 @Vgm=0V */
-  35               	.set RI_VC3_MITE, 3186 /* Ivfg*1/10 @Vgm=0V */
-  36               	.set RI_VC4_MITE, 2360 /* Ivfg=1nA @Vgm=0V */
+  32               	.set RI_GATE_S_MITE, 0x3300 /* Gate(MITE) = 2.0V */
+  33               	.set RI_VC1_MITE, 5307 /* Ivfg @Vgm=0V -> 1nA@Vgm=0.6V */
+  34               	.set RI_VC2_MITE, 5128 /* Ivfg*2/5 @Vgm=0V */
+  35               	.set RI_VC3_MITE, 4592 /* Ivfg*1/10 @Vgm=0V */
+  36               	.set RI_VC4_MITE, 3520 /* Ivfg=1nA @Vgm=0V */
   37               	.set RI_VD1_MITE, 0xea0e /* Vd @ final stage */
   38               	.set RI_VD2_MITE, 0xfe0e /* Vd @ pre-final stage */
   39               	.set RI_INJ_T_MITE, 1 /* Injection time unit (*10us) */
   40               	.set RI_NUM_MITE, 300 /* # of Recover Injection */
   41               	
   42               	.set RI_GATE_S_DIRSWC, 0x0100 /* Gate(DIRSWC) = 1.4V */
-  43               	.set RI_VC1_DIRSWC, 3132 /* Ivfg @Vgm=0V -> 1nA@Vgm=0.6V */
-  44               	.set RI_VC2_DIRSWC, 3055 /* Ivfg*2/5 @Vgm=0V */
-  45               	.set RI_VC3_DIRSWC, 2823 /* Ivfg*1/10 @Vgm=0V */
-  46               	.set RI_VC4_DIRSWC, 2360 /* Ivfg=1nA @Vgm=0V */
+  43               	.set RI_VC1_DIRSWC, 4545 /* Ivfg @Vgm=0V -> 1nA@Vgm=0.6V */
+  44               	.set RI_VC2_DIRSWC, 4443 /* Ivfg*2/5 @Vgm=0V */
+  45               	.set RI_VC3_DIRSWC, 4135 /* Ivfg*1/10 @Vgm=0V */
+  46               	.set RI_VC4_DIRSWC, 3520 /* Ivfg=1nA @Vgm=0V */
   47               	.set RI_VD1_DIRSWC, 0xea0e /* Vd @ final stage */
   48               	.set RI_VD2_DIRSWC, 0xfe0e /* Vd @ pre-final stage */
   49               	.set RI_INJ_T_DIRSWC, 1 /* Injection time unit (*10us) */
@@ -349,15 +349,15 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/recover_inject_CAB_o
   51               	
   52               	/* RIL (Recover Injection low sub threshold) parameters */
   53               	.set RIL_GATE_S_SWC, 0x0040 /* Gate(SWC) = gnd */
-  54               	.set RIL_VC1_SWC, 2360 /* Ivfg=1n A@Vgm=0V */
-  55               	.set RIL_VC2_SWC, 2298 /* Ivfg=lowest current @Vgm=0V */
+  54               	.set RIL_VC1_SWC, 3520 /* Ivfg=1n A@Vgm=0V */
+  55               	.set RIL_VC2_SWC, 3534 /* Ivfg=lowest current @Vgm=0V */
   56               	.set RIL_VD1_SWC, 0xea0e /* Vd @ final stage */
   57               	.set RIL_INJ_T_SWC, 1 /* Injection time unit (*10us) */
   58               	.set RIL_NUM_SWC, 300 /* # of Recover Injection */
   59               	
-  60               	.set RIL_GATE_S_OTA, 0x3300 /* Gate(OTA) = 2.5V */
-  61               	.set RIL_VC1_OTA, 2360 /* Ivfg=1n A@Vgm=0V */
-  62               	.set RIL_VC2_OTA, 2296 /* Ivfg=lowest current @Vgm=0V */
+  60               	.set RIL_GATE_S_OTA, 0x0000 /* Gate(OTA) = 2.5V */
+  61               	.set RIL_VC1_OTA, 3520 /* Ivfg=1n A@Vgm=0V */
+  62               	.set RIL_VC2_OTA, 3524 /* Ivfg=lowest current @Vgm=0V */
 GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/recover_inject_CAB_ota_ref.s43 			page 7
 
 
@@ -366,22 +366,22 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/recover_inject_CAB_o
   65               	.set RIL_NUM_OTA, 300 /* # of Recover Injection */
   66               	
   67               	.set RIL_GATE_S_OTAREF, 0x0040 /* Gate(OTAREF) = gnd */
-  68               	.set RIL_VC1_OTAREF, 2360 /* Ivfg=1n A@Vgm=0V */
-  69               	.set RIL_VC2_OTAREF, 2297 /* Ivfg=lowest current @Vgm=0V */
+  68               	.set RIL_VC1_OTAREF, 3520 /* Ivfg=1n A@Vgm=0V */
+  69               	.set RIL_VC2_OTAREF, 3517 /* Ivfg=lowest current @Vgm=0V */
   70               	.set RIL_VD1_OTAREF, 0xea0e /* Vd @ final stage */
   71               	.set RIL_INJ_T_OTAREF, 1 /* Injection time unit (*10us) */
   72               	.set RIL_NUM_OTAREF, 300 /* # of Recover Injection */
   73               	
-  74               	.set RIL_GATE_S_MITE, 0x2900 /* Gate(MITE) = 2.0V */
-  75               	.set RIL_VC1_MITE, 2360 /* Ivfg=1n A@Vgm=0V */
-  76               	.set RIL_VC2_MITE, 2295 /* Ivfg=lowest current @Vgm=0V */
+  74               	.set RIL_GATE_S_MITE, 0x3300 /* Gate(MITE) = 2.0V */
+  75               	.set RIL_VC1_MITE, 3520 /* Ivfg=1n A@Vgm=0V */
+  76               	.set RIL_VC2_MITE, 3524 /* Ivfg=lowest current @Vgm=0V */
   77               	.set RIL_VD1_MITE, 0xea0e /* Vd @ final stage */
   78               	.set RIL_INJ_T_MITE, 1 /* Injection time unit (*10us) */
   79               	.set RIL_NUM_MITE, 300 /* # of Recover Injection */
   80               	
   81               	.set RIL_GATE_S_DIRSWC, 0x0100 /* Gate(DIRSWC) = 1.4V */
-  82               	.set RIL_VC1_DIRSWC, 2360 /* Ivfg=1n A@Vgm=0V */
-  83               	.set RIL_VC2_DIRSWC, 2303 /* Ivfg=lowest current @Vgm=0V */
+  82               	.set RIL_VC1_DIRSWC, 3520 /* Ivfg=1n A@Vgm=0V */
+  83               	.set RIL_VC2_DIRSWC, 3513 /* Ivfg=lowest current @Vgm=0V */
   84               	.set RIL_VD1_DIRSWC, 0xea0e /* Vd @ final stage */
   85               	.set RIL_INJ_T_DIRSWC, 1 /* Injection time unit (*10us) */
   86               	.set RIL_NUM_DIRSWC, 300 /* # of Recover Injection */
@@ -583,18 +583,18 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/recover_inject_CAB_o
  158 01e0 B240 0080 		mov     #0x8000, &PROG_BITS     ; PROG = 1, OV_N = don't care, MEAS_ADC = 0, CLEAR_N = 0
  158      0C0B 
  159               	;	cmp	r8, r9
- 160 01e6 3990 810C 		cmp	#RI_VC1_OTAREF, r9	; 30nA @ Vgm=0V -> 1nA @ Vgm = 0.6V
+ 160 01e6 3990 2912 		cmp	#RI_VC1_OTAREF, r9	; 30nA @ Vgm=0V -> 1nA @ Vgm = 0.6V
  161 01ea 0330      		jn	status_1
  162 01ec 8B43 0000 		mov	#0x0000, @r11		; Injection over
  163 01f0 143C      		jmp	measure_verify_skip	
  164               	status_1:
- 165 01f2 3990 2D0C 		cmp	#RI_VC2_OTAREF, r9	; 20nA @ Vgm=0V
+ 165 01f2 3990 B811 		cmp	#RI_VC2_OTAREF, r9	; 20nA @ Vgm=0V
  166 01f6 0430      		jn	status_2
  167 01f8 BB40 CCCC 		mov	#0xcccc, @r11		; Vd =0.6V, time resolution = 10us
  167      0000 
  168 01fe 0D3C      		jmp	measure_verify_skip	
  169               	status_2:
- 170 0200 3990 300B 		cmp	#RI_VC3_OTAREF, r9	; 5nA @ Vgm=0V
+ 170 0200 3990 6510 		cmp	#RI_VC3_OTAREF, r9	; 5nA @ Vgm=0V
  171 0204 0430      		jn	status_3
  172 0206 BB40 DDDD 		mov	#0xdddd, @r11		; Vd =0.4V, time resolution = 10us
  172      0000 
@@ -603,7 +603,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/recover_inject_CAB_o
 
  173 020c 063C      		jmp	measure_verify_skip	
  174               	status_3:
- 175 020e 3990 3809 		cmp	#RI_VC4_OTAREF, r9	; 1nA @ Vgm=0V
+ 175 020e 3990 C00D 		cmp	#RI_VC4_OTAREF, r9	; 1nA @ Vgm=0V
  176 0212 0330      		jn	measure_verify_skip
  177 0214 BB40 EEEE 		mov	#0xeeee, @r11		; time resolution = 10us
  177      0000 
@@ -924,37 +924,37 @@ DEFINED SYMBOLS
  chip_para_debug.asm:5      *ABS*:00000000 FP_MEAS_ON
  chip_para_debug.asm:6      *ABS*:00000000 FPL_MEAS_ON
     chip_para_RI.asm:2      *ABS*:00000040 RI_GATE_S_SWC
-    chip_para_RI.asm:3      *ABS*:00000c2c RI_VC1_SWC
-    chip_para_RI.asm:4      *ABS*:00000be0 RI_VC2_SWC
-    chip_para_RI.asm:5      *ABS*:00000afd RI_VC3_SWC
-    chip_para_RI.asm:6      *ABS*:00000938 RI_VC4_SWC
+    chip_para_RI.asm:3      *ABS*:00001172 RI_VC1_SWC
+    chip_para_RI.asm:4      *ABS*:00001113 RI_VC2_SWC
+    chip_para_RI.asm:5      *ABS*:00000ff8 RI_VC3_SWC
+    chip_para_RI.asm:6      *ABS*:00000dc0 RI_VC4_SWC
     chip_para_RI.asm:7      *ABS*:0000ea0e RI_VD1_SWC
     chip_para_RI.asm:8      *ABS*:0000fe0e RI_VD2_SWC
     chip_para_RI.asm:9      *ABS*:00000001 RI_INJ_T_SWC
     chip_para_RI.asm:10     *ABS*:0000012c RI_NUM_SWC
-    chip_para_RI.asm:12     *ABS*:00003300 RI_GATE_S_OTA
-    chip_para_RI.asm:13     *ABS*:00000def RI_VC1_OTA
-    chip_para_RI.asm:14     *ABS*:00000d77 RI_VC2_OTA
-    chip_para_RI.asm:15     *ABS*:00000c0c RI_VC3_OTA
-    chip_para_RI.asm:16     *ABS*:00000938 RI_VC4_OTA
+    chip_para_RI.asm:12     *ABS*:00000000 RI_GATE_S_OTA
+    chip_para_RI.asm:13     *ABS*:000013ef RI_VC1_OTA
+    chip_para_RI.asm:14     *ABS*:00001350 RI_VC2_OTA
+    chip_para_RI.asm:15     *ABS*:00001176 RI_VC3_OTA
+    chip_para_RI.asm:16     *ABS*:00000dc0 RI_VC4_OTA
     chip_para_RI.asm:17     *ABS*:0000ea0e RI_VD1_OTA
     chip_para_RI.asm:18     *ABS*:0000fe0e RI_VD2_OTA
     chip_para_RI.asm:19     *ABS*:00000001 RI_INJ_T_OTA
     chip_para_RI.asm:20     *ABS*:0000012c RI_NUM_OTA
     chip_para_RI.asm:22     *ABS*:00000040 RI_GATE_S_OTAREF
-    chip_para_RI.asm:23     *ABS*:00000c81 RI_VC1_OTAREF
-    chip_para_RI.asm:24     *ABS*:00000c2d RI_VC2_OTAREF
-    chip_para_RI.asm:25     *ABS*:00000b30 RI_VC3_OTAREF
-    chip_para_RI.asm:26     *ABS*:00000938 RI_VC4_OTAREF
+    chip_para_RI.asm:23     *ABS*:00001229 RI_VC1_OTAREF
+    chip_para_RI.asm:24     *ABS*:000011b8 RI_VC2_OTAREF
+    chip_para_RI.asm:25     *ABS*:00001065 RI_VC3_OTAREF
+    chip_para_RI.asm:26     *ABS*:00000dc0 RI_VC4_OTAREF
     chip_para_RI.asm:27     *ABS*:0000ea0e RI_VD1_OTAREF
     chip_para_RI.asm:28     *ABS*:0000fe0e RI_VD2_OTAREF
     chip_para_RI.asm:29     *ABS*:00000001 RI_INJ_T_OTAREF
     chip_para_RI.asm:30     *ABS*:0000012c RI_NUM_OTAREF
-    chip_para_RI.asm:32     *ABS*:00002900 RI_GATE_S_MITE
-    chip_para_RI.asm:33     *ABS*:00000e98 RI_VC1_MITE
-    chip_para_RI.asm:34     *ABS*:00000e0f RI_VC2_MITE
-    chip_para_RI.asm:35     *ABS*:00000c72 RI_VC3_MITE
-    chip_para_RI.asm:36     *ABS*:00000938 RI_VC4_MITE
+    chip_para_RI.asm:32     *ABS*:00003300 RI_GATE_S_MITE
+    chip_para_RI.asm:33     *ABS*:000014bb RI_VC1_MITE
+    chip_para_RI.asm:34     *ABS*:00001408 RI_VC2_MITE
+    chip_para_RI.asm:35     *ABS*:000011f0 RI_VC3_MITE
+    chip_para_RI.asm:36     *ABS*:00000dc0 RI_VC4_MITE
     chip_para_RI.asm:37     *ABS*:0000ea0e RI_VD1_MITE
     chip_para_RI.asm:38     *ABS*:0000fe0e RI_VD2_MITE
 GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/recover_inject_CAB_ota_ref.s43 			page 17
@@ -963,41 +963,41 @@ DEFINED SYMBOLS
     chip_para_RI.asm:39     *ABS*:00000001 RI_INJ_T_MITE
     chip_para_RI.asm:40     *ABS*:0000012c RI_NUM_MITE
     chip_para_RI.asm:42     *ABS*:00000100 RI_GATE_S_DIRSWC
-    chip_para_RI.asm:43     *ABS*:00000c3c RI_VC1_DIRSWC
-    chip_para_RI.asm:44     *ABS*:00000bef RI_VC2_DIRSWC
-    chip_para_RI.asm:45     *ABS*:00000b07 RI_VC3_DIRSWC
-    chip_para_RI.asm:46     *ABS*:00000938 RI_VC4_DIRSWC
+    chip_para_RI.asm:43     *ABS*:000011c1 RI_VC1_DIRSWC
+    chip_para_RI.asm:44     *ABS*:0000115b RI_VC2_DIRSWC
+    chip_para_RI.asm:45     *ABS*:00001027 RI_VC3_DIRSWC
+    chip_para_RI.asm:46     *ABS*:00000dc0 RI_VC4_DIRSWC
     chip_para_RI.asm:47     *ABS*:0000ea0e RI_VD1_DIRSWC
     chip_para_RI.asm:48     *ABS*:0000fe0e RI_VD2_DIRSWC
     chip_para_RI.asm:49     *ABS*:00000001 RI_INJ_T_DIRSWC
     chip_para_RI.asm:50     *ABS*:0000012c RI_NUM_DIRSWC
     chip_para_RI.asm:53     *ABS*:00000040 RIL_GATE_S_SWC
-    chip_para_RI.asm:54     *ABS*:00000938 RIL_VC1_SWC
-    chip_para_RI.asm:55     *ABS*:000008fa RIL_VC2_SWC
+    chip_para_RI.asm:54     *ABS*:00000dc0 RIL_VC1_SWC
+    chip_para_RI.asm:55     *ABS*:00000dce RIL_VC2_SWC
     chip_para_RI.asm:56     *ABS*:0000ea0e RIL_VD1_SWC
     chip_para_RI.asm:57     *ABS*:00000001 RIL_INJ_T_SWC
     chip_para_RI.asm:58     *ABS*:0000012c RIL_NUM_SWC
-    chip_para_RI.asm:60     *ABS*:00003300 RIL_GATE_S_OTA
-    chip_para_RI.asm:61     *ABS*:00000938 RIL_VC1_OTA
-    chip_para_RI.asm:62     *ABS*:000008f8 RIL_VC2_OTA
+    chip_para_RI.asm:60     *ABS*:00000000 RIL_GATE_S_OTA
+    chip_para_RI.asm:61     *ABS*:00000dc0 RIL_VC1_OTA
+    chip_para_RI.asm:62     *ABS*:00000dc4 RIL_VC2_OTA
     chip_para_RI.asm:63     *ABS*:0000ea0e RIL_VD1_OTA
     chip_para_RI.asm:64     *ABS*:00000001 RIL_INJ_T_OTA
     chip_para_RI.asm:65     *ABS*:0000012c RIL_NUM_OTA
     chip_para_RI.asm:67     *ABS*:00000040 RIL_GATE_S_OTAREF
-    chip_para_RI.asm:68     *ABS*:00000938 RIL_VC1_OTAREF
-    chip_para_RI.asm:69     *ABS*:000008f9 RIL_VC2_OTAREF
+    chip_para_RI.asm:68     *ABS*:00000dc0 RIL_VC1_OTAREF
+    chip_para_RI.asm:69     *ABS*:00000dbd RIL_VC2_OTAREF
     chip_para_RI.asm:70     *ABS*:0000ea0e RIL_VD1_OTAREF
     chip_para_RI.asm:71     *ABS*:00000001 RIL_INJ_T_OTAREF
     chip_para_RI.asm:72     *ABS*:0000012c RIL_NUM_OTAREF
-    chip_para_RI.asm:74     *ABS*:00002900 RIL_GATE_S_MITE
-    chip_para_RI.asm:75     *ABS*:00000938 RIL_VC1_MITE
-    chip_para_RI.asm:76     *ABS*:000008f7 RIL_VC2_MITE
+    chip_para_RI.asm:74     *ABS*:00003300 RIL_GATE_S_MITE
+    chip_para_RI.asm:75     *ABS*:00000dc0 RIL_VC1_MITE
+    chip_para_RI.asm:76     *ABS*:00000dc4 RIL_VC2_MITE
     chip_para_RI.asm:77     *ABS*:0000ea0e RIL_VD1_MITE
     chip_para_RI.asm:78     *ABS*:00000001 RIL_INJ_T_MITE
     chip_para_RI.asm:79     *ABS*:0000012c RIL_NUM_MITE
     chip_para_RI.asm:81     *ABS*:00000100 RIL_GATE_S_DIRSWC
-    chip_para_RI.asm:82     *ABS*:00000938 RIL_VC1_DIRSWC
-    chip_para_RI.asm:83     *ABS*:000008ff RIL_VC2_DIRSWC
+    chip_para_RI.asm:82     *ABS*:00000dc0 RIL_VC1_DIRSWC
+    chip_para_RI.asm:83     *ABS*:00000db9 RIL_VC2_DIRSWC
     chip_para_RI.asm:84     *ABS*:0000ea0e RIL_VD1_DIRSWC
     chip_para_RI.asm:85     *ABS*:00000001 RIL_INJ_T_DIRSWC
     chip_para_RI.asm:86     *ABS*:0000012c RIL_NUM_DIRSWC
@@ -1247,77 +1247,77 @@ SYMBOL TABLE:
 00000000 l       *ABS*	00000000 FP_MEAS_ON
 00000000 l       *ABS*	00000000 FPL_MEAS_ON
 00000040 l       *ABS*	00000000 RI_GATE_S_SWC
-00000c2c l       *ABS*	00000000 RI_VC1_SWC
-00000be0 l       *ABS*	00000000 RI_VC2_SWC
-00000afd l       *ABS*	00000000 RI_VC3_SWC
-00000938 l       *ABS*	00000000 RI_VC4_SWC
+00001172 l       *ABS*	00000000 RI_VC1_SWC
+00001113 l       *ABS*	00000000 RI_VC2_SWC
+00000ff8 l       *ABS*	00000000 RI_VC3_SWC
+00000dc0 l       *ABS*	00000000 RI_VC4_SWC
 0000ea0e l       *ABS*	00000000 RI_VD1_SWC
 0000fe0e l       *ABS*	00000000 RI_VD2_SWC
 00000001 l       *ABS*	00000000 RI_INJ_T_SWC
 0000012c l       *ABS*	00000000 RI_NUM_SWC
-00003300 l       *ABS*	00000000 RI_GATE_S_OTA
-00000def l       *ABS*	00000000 RI_VC1_OTA
-00000d77 l       *ABS*	00000000 RI_VC2_OTA
-00000c0c l       *ABS*	00000000 RI_VC3_OTA
-00000938 l       *ABS*	00000000 RI_VC4_OTA
+00000000 l       *ABS*	00000000 RI_GATE_S_OTA
+000013ef l       *ABS*	00000000 RI_VC1_OTA
+00001350 l       *ABS*	00000000 RI_VC2_OTA
+00001176 l       *ABS*	00000000 RI_VC3_OTA
+00000dc0 l       *ABS*	00000000 RI_VC4_OTA
 0000ea0e l       *ABS*	00000000 RI_VD1_OTA
 0000fe0e l       *ABS*	00000000 RI_VD2_OTA
 00000001 l       *ABS*	00000000 RI_INJ_T_OTA
 0000012c l       *ABS*	00000000 RI_NUM_OTA
 00000040 l       *ABS*	00000000 RI_GATE_S_OTAREF
-00000c81 l       *ABS*	00000000 RI_VC1_OTAREF
-00000c2d l       *ABS*	00000000 RI_VC2_OTAREF
-00000b30 l       *ABS*	00000000 RI_VC3_OTAREF
-00000938 l       *ABS*	00000000 RI_VC4_OTAREF
+00001229 l       *ABS*	00000000 RI_VC1_OTAREF
+000011b8 l       *ABS*	00000000 RI_VC2_OTAREF
+00001065 l       *ABS*	00000000 RI_VC3_OTAREF
+00000dc0 l       *ABS*	00000000 RI_VC4_OTAREF
 0000ea0e l       *ABS*	00000000 RI_VD1_OTAREF
 0000fe0e l       *ABS*	00000000 RI_VD2_OTAREF
 00000001 l       *ABS*	00000000 RI_INJ_T_OTAREF
 0000012c l       *ABS*	00000000 RI_NUM_OTAREF
-00002900 l       *ABS*	00000000 RI_GATE_S_MITE
-00000e98 l       *ABS*	00000000 RI_VC1_MITE
-00000e0f l       *ABS*	00000000 RI_VC2_MITE
-00000c72 l       *ABS*	00000000 RI_VC3_MITE
-00000938 l       *ABS*	00000000 RI_VC4_MITE
+00003300 l       *ABS*	00000000 RI_GATE_S_MITE
+000014bb l       *ABS*	00000000 RI_VC1_MITE
+00001408 l       *ABS*	00000000 RI_VC2_MITE
+000011f0 l       *ABS*	00000000 RI_VC3_MITE
+00000dc0 l       *ABS*	00000000 RI_VC4_MITE
 0000ea0e l       *ABS*	00000000 RI_VD1_MITE
 0000fe0e l       *ABS*	00000000 RI_VD2_MITE
 00000001 l       *ABS*	00000000 RI_INJ_T_MITE
 0000012c l       *ABS*	00000000 RI_NUM_MITE
 00000100 l       *ABS*	00000000 RI_GATE_S_DIRSWC
-00000c3c l       *ABS*	00000000 RI_VC1_DIRSWC
-00000bef l       *ABS*	00000000 RI_VC2_DIRSWC
-00000b07 l       *ABS*	00000000 RI_VC3_DIRSWC
-00000938 l       *ABS*	00000000 RI_VC4_DIRSWC
+000011c1 l       *ABS*	00000000 RI_VC1_DIRSWC
+0000115b l       *ABS*	00000000 RI_VC2_DIRSWC
+00001027 l       *ABS*	00000000 RI_VC3_DIRSWC
+00000dc0 l       *ABS*	00000000 RI_VC4_DIRSWC
 0000ea0e l       *ABS*	00000000 RI_VD1_DIRSWC
 0000fe0e l       *ABS*	00000000 RI_VD2_DIRSWC
 00000001 l       *ABS*	00000000 RI_INJ_T_DIRSWC
 0000012c l       *ABS*	00000000 RI_NUM_DIRSWC
 00000040 l       *ABS*	00000000 RIL_GATE_S_SWC
-00000938 l       *ABS*	00000000 RIL_VC1_SWC
-000008fa l       *ABS*	00000000 RIL_VC2_SWC
+00000dc0 l       *ABS*	00000000 RIL_VC1_SWC
+00000dce l       *ABS*	00000000 RIL_VC2_SWC
 0000ea0e l       *ABS*	00000000 RIL_VD1_SWC
 00000001 l       *ABS*	00000000 RIL_INJ_T_SWC
 0000012c l       *ABS*	00000000 RIL_NUM_SWC
-00003300 l       *ABS*	00000000 RIL_GATE_S_OTA
-00000938 l       *ABS*	00000000 RIL_VC1_OTA
-000008f8 l       *ABS*	00000000 RIL_VC2_OTA
+00000000 l       *ABS*	00000000 RIL_GATE_S_OTA
+00000dc0 l       *ABS*	00000000 RIL_VC1_OTA
+00000dc4 l       *ABS*	00000000 RIL_VC2_OTA
 0000ea0e l       *ABS*	00000000 RIL_VD1_OTA
 00000001 l       *ABS*	00000000 RIL_INJ_T_OTA
 0000012c l       *ABS*	00000000 RIL_NUM_OTA
 00000040 l       *ABS*	00000000 RIL_GATE_S_OTAREF
-00000938 l       *ABS*	00000000 RIL_VC1_OTAREF
-000008f9 l       *ABS*	00000000 RIL_VC2_OTAREF
+00000dc0 l       *ABS*	00000000 RIL_VC1_OTAREF
+00000dbd l       *ABS*	00000000 RIL_VC2_OTAREF
 0000ea0e l       *ABS*	00000000 RIL_VD1_OTAREF
 00000001 l       *ABS*	00000000 RIL_INJ_T_OTAREF
 0000012c l       *ABS*	00000000 RIL_NUM_OTAREF
-00002900 l       *ABS*	00000000 RIL_GATE_S_MITE
-00000938 l       *ABS*	00000000 RIL_VC1_MITE
-000008f7 l       *ABS*	00000000 RIL_VC2_MITE
+00003300 l       *ABS*	00000000 RIL_GATE_S_MITE
+00000dc0 l       *ABS*	00000000 RIL_VC1_MITE
+00000dc4 l       *ABS*	00000000 RIL_VC2_MITE
 0000ea0e l       *ABS*	00000000 RIL_VD1_MITE
 00000001 l       *ABS*	00000000 RIL_INJ_T_MITE
 0000012c l       *ABS*	00000000 RIL_NUM_MITE
 00000100 l       *ABS*	00000000 RIL_GATE_S_DIRSWC
-00000938 l       *ABS*	00000000 RIL_VC1_DIRSWC
-000008ff l       *ABS*	00000000 RIL_VC2_DIRSWC
+00000dc0 l       *ABS*	00000000 RIL_VC1_DIRSWC
+00000db9 l       *ABS*	00000000 RIL_VC2_DIRSWC
 0000ea0e l       *ABS*	00000000 RIL_VD1_DIRSWC
 00000001 l       *ABS*	00000000 RIL_INJ_T_DIRSWC
 0000012c l       *ABS*	00000000 RIL_NUM_DIRSWC
@@ -1381,10 +1381,10 @@ Contents of section .text:
  01b0 b2406600 000b2543 b0120000 b240a400  .@f...%C.....@..
  01c0 000b3540 0a00b012 0000b240 00b00c0b  ..5@.......@....
  01d0 35400500 b0120000 8243040b 1942040b  5@.......C...B..
- 01e0 b2400080 0c0b3990 810c0330 8b430000  .@....9....0.C..
- 01f0 143c3990 2d0c0430 bb40cccc 00000d3c  .<9.-..0.@.....<
- 0200 3990300b 0430bb40 dddd0000 063c3990  9.0..0.@.....<9.
- 0210 38090330 bb40eeee 00001c83 0124b43f  8..0.@.......$.?
+ 01e0 b2400080 0c0b3990 29120330 8b430000  .@....9.)..0.C..
+ 01f0 143c3990 b8110430 bb40cccc 00000d3c  .<9....0.@.....<
+ 0200 39906510 0430bb40 dddd0000 063c3990  9.e..0.@.....<9.
+ 0210 c00d0330 bb40eeee 00001c83 0124b43f  ...0.@.......$.?
  0220 b2406600 000bb240 24006001 30413b40  .@f....@$.`.0A;@
  0230 00702c4b b2400080 0c0bb240 04be6401  .p,K.@.....@..d.
  0240 b2402400 6001a243 0e0b2b53 a24b080b  .@$.`..C..+S.K..
@@ -1609,27 +1609,27 @@ Disassembly of section .text:
  1dc:	19 42 04 0b 	mov	&0x0b04,r9	
  1e0:	b2 40 00 80 	mov	#-32768,&0x0b0c	;#0x8000
  1e4:	0c 0b 
- 1e6:	39 90 81 0c 	cmp	#3201,	r9	;#0x0c81
+ 1e6:	39 90 29 12 	cmp	#4649,	r9	;#0x1229
  1ea:	03 30       	jn	$+8      	;abs 0x1f2
  1ec:	8b 43 00 00 	mov	#0,	0(r11)	;r3 As==00, 0x0000(r11)
  1f0:	14 3c       	jmp	$+42     	;abs 0x21a
 
 000001f2 <status_1>:
- 1f2:	39 90 2d 0c 	cmp	#3117,	r9	;#0x0c2d
+ 1f2:	39 90 b8 11 	cmp	#4536,	r9	;#0x11b8
  1f6:	04 30       	jn	$+10     	;abs 0x200
  1f8:	bb 40 cc cc 	mov	#-13108,0(r11)	;#0xcccc, 0x0000(r11)
  1fc:	00 00 
  1fe:	0d 3c       	jmp	$+28     	;abs 0x21a
 
 00000200 <status_2>:
- 200:	39 90 30 0b 	cmp	#2864,	r9	;#0x0b30
+ 200:	39 90 65 10 	cmp	#4197,	r9	;#0x1065
  204:	04 30       	jn	$+10     	;abs 0x20e
  206:	bb 40 dd dd 	mov	#-8739,	0(r11)	;#0xdddd, 0x0000(r11)
  20a:	00 00 
  20c:	06 3c       	jmp	$+14     	;abs 0x21a
 
 0000020e <status_3>:
- 20e:	39 90 38 09 	cmp	#2360,	r9	;#0x0938
+ 20e:	39 90 c0 0d 	cmp	#3520,	r9	;#0x0dc0
  212:	03 30       	jn	$+8      	;abs 0x21a
  214:	bb 40 ee ee 	mov	#-4370,	0(r11)	;#0xeeee, 0x0000(r11)
  218:	00 00 

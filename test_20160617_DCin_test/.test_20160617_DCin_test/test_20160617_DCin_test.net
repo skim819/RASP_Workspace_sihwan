@@ -4,14 +4,60 @@
 	</inputs>
 
 	<outputs>
-		out:net1_1 
+		out:out_mite_adc 
 	</outputs>
 
 	<globals>
 		
 	</globals>
 
-	<block name="net1_1" instance="cab[0]" mode="cab">
+	<block name="out_mite_adc" instance="cab2[0]" mode="cab2">
+		<inputs>
+			<port name="I">net1_1 open open open open open open open open open open open open open open open </port>
+			<port name="si">open open open open open open open open </port>
+		</inputs>
+		<outputs>
+			<port name="O">meas_volt_mite[0].out[0]->crossbar  open open open open open open open </port>
+		</outputs>
+		<globals>
+			<port name="gnd">open </port>
+			<port name="clk">open </port>
+		</globals>
+		<block name="open" instance="ota_buffer[0]"/>
+		<block name="open" instance="tgate[0]"/>
+		<block name="open" instance="tgate[1]"/>
+		<block name="open" instance="tgate[2]"/>
+		<block name="open" instance="cap2[0]"/>
+		<block name="open" instance="cap2[1]"/>
+		<block name="open" instance="cap2[2]"/>
+		<block name="open" instance="ota2[0]"/>
+		<block name="out_mite_adc" instance="meas_volt_mite[0]">
+			<inputs>
+				<port name="in">cab2.I[0]->crossbar  </port>
+			</inputs>
+			<outputs>
+				<port name="out">out_mite_adc </port>
+			</outputs>
+			<globals>
+			</globals>
+		</block>
+		<block name="open" instance="meas_volt_mite[1]"/>
+		<block name="open" instance="tgate2[0]"/>
+		<block name="open" instance="tgate2[1]"/>
+		<block name="open" instance="tgate2[2]"/>
+		<block name="open" instance="mite[0]"/>
+		<block name="open" instance="mite[1]"/>
+		<block name="open" instance="mite[2]"/>
+		<block name="open" instance="mite2[0]"/>
+		<block name="open" instance="mite2[1]"/>
+		<block name="open" instance="mult[0]"/>
+		<block name="open" instance="mult[1]"/>
+		<block name="open" instance="volswc[0]"/>
+		<block name="open" instance="volswc[1]"/>
+		<block name="open" instance="sftreg[0]"/>
+		<block name="open" instance="sftreg[1]"/>
+	</block>
+	<block name="net1_1" instance="cab[1]" mode="cab">
 		<inputs>
 			<port name="I">open open open open open open vcc open open open open open open open open open </port>
 		</inputs>
@@ -85,9 +131,9 @@
 		<block name="open" instance="integrator_nmirror[0]"/>
 		<block name="open" instance="vco[0]"/>
 	</block>
-	<block name="out:net1_1" instance="io[1]" mode="outpad">
+	<block name="out:out_mite_adc" instance="io[2]" mode="outpad">
 		<inputs>
-			<port name="outpad">net1_1 </port>
+			<port name="outpad">out_mite_adc </port>
 		</inputs>
 		<outputs>
 			<port name="inpad">open </port>
@@ -95,7 +141,7 @@
 		<globals>
 			<port name="clock">open </port>
 		</globals>
-		<block name="out:net1_1" instance="outpad[0]">
+		<block name="out:out_mite_adc" instance="outpad[0]">
 			<inputs>
 				<port name="outpad">io.outpad[0]->outpad  </port>
 			</inputs>
@@ -105,7 +151,7 @@
 			</globals>
 		</block>
 	</block>
-	<block name="vcc" instance="io[2]" mode="inpad">
+	<block name="vcc" instance="io[3]" mode="inpad">
 		<inputs>
 			<port name="outpad">open </port>
 		</inputs>

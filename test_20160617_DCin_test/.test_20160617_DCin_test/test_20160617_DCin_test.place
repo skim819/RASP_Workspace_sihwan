@@ -3,6 +3,7 @@ Array size: 14 x 14 logic blocks
 
 #block name	x	y	subblk	block number
 #----------	--	--	------	------------
-net1_1		10	1	0	#0
-out:net1_1	9	0	0	#1
-vcc		7	0	5	#2
+out_mite_adc	14	1	0	#0
+net1_1		11	1	0	#1
+out:out_mite_adc	7	0	0	#2
+vcc		7	0	5	#3
