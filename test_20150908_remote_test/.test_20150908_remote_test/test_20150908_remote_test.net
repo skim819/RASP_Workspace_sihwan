@@ -17,7 +17,7 @@
 			<port name="si">open open open open open open open open </port>
 		</inputs>
 		<outputs>
-			<port name="O">open meas_volt_mite[0].out[0]->crossbar  open open open open open open </port>
+			<port name="O">open open open open meas_volt_mite[0].out[0]->crossbar  open open open </port>
 		</outputs>
 		<globals>
 			<port name="gnd">open </port>
