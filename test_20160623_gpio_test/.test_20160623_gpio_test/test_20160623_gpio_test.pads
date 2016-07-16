@@ -1,0 +1,4 @@
+net1_1 9 0 1 #int[1]
+net2_1 13 0 1 #int[1]
+out:net2_1 9 0 0 #tgate[0]
+out:out_ramp_adc 15 1 5 #int[5]
