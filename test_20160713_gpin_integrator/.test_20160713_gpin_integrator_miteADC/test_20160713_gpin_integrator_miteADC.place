@@ -1,0 +1,15 @@
+Netlist file: /home/ubuntu/RASP_Workspace/test_20160713_gpin_integrator//test_20160713_gpin_integrator_miteADC.net   Architecture file: /home/ubuntu/rasp30/vpr2swcs/./arch/rasp3_vmm_arch.xml
+Array size: 14 x 14 logic blocks
+
+#block name	x	y	subblk	block number
+#----------	--	--	------	------------
+net7_1		7	1	0	#0
+net6_1		6	1	0	#1
+out_mite_adc	14	1	0	#2
+fb_gndout_net6_1	6	2	0	#3
+net3_1		10	1	0	#4
+out:out_mite_adc	7	0	0	#5
+net4_1		8	0	5	#6
+net1_1		9	0	2	#7
+net2_1		13	0	1	#8
+net5_1		9	0	1	#9
