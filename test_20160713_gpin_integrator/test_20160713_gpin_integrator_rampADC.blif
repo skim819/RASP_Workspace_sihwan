@@ -1,0 +1,20 @@
+.model test_20160713_gpin_integrator_rampADC
+.inputs net6_1 net3_1 net2_1 net5_1
+.outputs out_ramp_adc
+  
+# fg_io
+.subckt fg_io in[0]=net6_1 out[0]=net4_1 #fg_io_fg =1.00e-07
+  
+# Ramp_ADC*
+.subckt ramp_fe in[0]=net1_1 out=out_ramp_adc #ramp_fe_fg[0] =0&ramp_pfetinput[0] =10e-9&c4_ota_bias[0] =2e-6&c4_ota_p_bias[0] =2e-6&c4_ota_n_bias[0] =1.5e-6&speech_peakotabias[0] =2e-6&c4_ota_bias[1] =2e-6&c4_ota_p_bias[1] =500e-9&c4_ota_n_bias[1] =500e-9&ramp_pfetinput[1] =30e-9
+  
+# INTEGRATOR
+.subckt integrator_nmirror in[0]=net2_1 in[1]=net4_1 in[2]=net3_1 out[0]=net1_1 #integrator_nmirror_fg =0&cap_3x =0&cap_2x =0&integrator_nmirror_ota0 =1.00e-06&integrator_nmirror_ota1 =2.00e-06&integrator_nmirror_ota2 =5.00e-11
+  
+#NFET 7
+.subckt nfet in[0]=net5_1 in[1]=net4_1 out[0]=net7_1
+  
+#GND_OUT 10
+.subckt gnd_out in[0]=fb_gndout_net7_1 in[1]=net7_1 out[0]=fb_gndout_net7_1  #gnd_out_c =0
+ 
+.end

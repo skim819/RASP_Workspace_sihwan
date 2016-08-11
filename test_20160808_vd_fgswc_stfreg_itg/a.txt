@@ -1,0 +1,3380 @@
+/home/ubuntu/RASP_Workspace/test_20160808_vd_fgswc_stfreg_itg
+.subckt fgota
+['vcc', 'net4_1', 'net4_1', '2e-06&ota_p_bias', '2e-06&ota_n_bias', '1.94e-07&ota_small_cap', '0']
+fgota
+.subckt ramp_fe
+['net5_1', 'out_ramp_adc', '0&ramp_pfetinput[0]', '3e-9&c4_ota_bias[0]', '2e-6&c4_ota_p_bias[0]', '2e-6&c4_ota_n_bias[0]', '0.8e-6&speech_peakotabias[0]', '2e-6&c4_ota_bias[1]', '2e-6&c4_ota_p_bias[1]', '500e-9&c4_ota_n_bias[1]', '500e-9&ramp_pfetinput[1]', '0.4e-9']
+ramp_fe
+.subckt sftreg
+['net6_1', 'net6_2', 'net6_3', 'net6_4', 'net6_5', 'net6_6', 'net6_7', 'net6_8', 'net6_9', 'net6_10', 'net6_11', 'net6_12', 'net6_13', 'net6_14', 'net6_15', 'net6_16', 'net17_1', 'gnd_dig', 'net18_1', 'net5_1', '0']
+sftreg
+.subckt tgate
+['vcc', 'gnd', 'gnd_dig']
+tgate
+.subckt fgswc_nmirror_w_bias
+['net1_1', 'net11_1', '2.30e-04&fgswc_nmirror_w_bias2', '1.00e-06']
+fgswc_nmirror_w_bias
+.subckt volt_div
+['net2_1', 'net3_1', 'net1_1', '0&vd_ota_bias', '9e-6&cap_4x_vd_Vin', '0&vd_target', '7.00e-05']
+volt_div
+.subckt integrator_nmirror
+['net4_1', 'net16_1', 'net19_1', 'net6_1', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
+integrator_nmirror
+.subckt integrator_nmirror
+['net4_1', 'net16_2', 'net19_1', 'net6_2', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
+integrator_nmirror
+.subckt integrator_nmirror
+['net4_1', 'net16_3', 'net19_1', 'net6_3', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
+integrator_nmirror
+.subckt integrator_nmirror
+['net4_1', 'net16_4', 'net19_1', 'net6_4', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
+integrator_nmirror
+.subckt integrator_nmirror
+['net4_1', 'net16_5', 'net19_1', 'net6_5', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
+integrator_nmirror
+.subckt integrator_nmirror
+['net4_1', 'net16_6', 'net19_1', 'net6_6', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
+integrator_nmirror
+.subckt integrator_nmirror
+['net4_1', 'net16_7', 'net19_1', 'net6_7', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
+integrator_nmirror
+.subckt integrator_nmirror
+['net4_1', 'net16_8', 'net19_1', 'net6_8', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
+integrator_nmirror
+.subckt integrator_nmirror
+['net4_1', 'net16_9', 'net19_1', 'net6_9', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
+integrator_nmirror
+.subckt integrator_nmirror
+['net4_1', 'net16_10', 'net19_1', 'net6_10', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
+integrator_nmirror
+.subckt integrator_nmirror
+['net4_1', 'net16_11', 'net19_1', 'net6_11', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
+integrator_nmirror
+.subckt integrator_nmirror
+['net4_1', 'net16_12', 'net19_1', 'net6_12', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.
+VPR FPGA Placement and Routing.
+Version: Version 6.0 Full Release
+Compiled: Apr 17 2013.
+Original VPR by V. Betz.
+Timing-driven placement enhancements by A. Marquardt.
+Single-drivers enhancements by Andy Ye with additions by.
+Mark Fang, Jason Luu, Ted Campbell
+Heterogeneous stucture support by Jason Luu and Ted Campbell.
+T-VPack clustering integration by Jason Luu.
+Area-driven AAPack added by Jason Luu.
+This is free open source code under MIT license.
+
+Building complex block graph 
+Begin parsing packed FPGA netlist file
+Finished parsing packed FPGA netlist file
+Netlist generated from file /home/ubuntu/RASP_Workspace/test_20160808_vd_fgswc_stfreg_itg/vd_fgswc_stfreg_itg.net
+Timing analysis: OFF
+
+Circuit netlist file: /home/ubuntu/RASP_Workspace/test_20160808_vd_fgswc_stfreg_itg/vd_fgswc_stfreg_itg.net
+Circuit placement file: /home/ubuntu/RASP_Workspace/test_20160808_vd_fgswc_stfreg_itg/vd_fgswc_stfreg_itg.place
+Circuit routing file: /home/ubuntu/RASP_Workspace/test_20160808_vd_fgswc_stfreg_itg/vd_fgswc_stfreg_itg.route
+Operation:  RUN_FLOW
+
+Placer: DISABLED
+Router: ENABLED
+RouterOpts.route_type:  DETAILED
+RouterOpts.router_algorithm:  DIRECTED_SEARCH
+RouterOpts.base_cost_type:  DEMAND_ONLY
+RouterOpts.fixed_channel_width:  17
+RouterOpts.acc_fac:  1.000000
+RouterOpts.bb_factor:  3
+RouterOpts.bend_cost:  0.000000
+RouterOpts.first_iter_pres_fac:  10000.000000
+RouterOpts.initial_pres_fac:  10000.000000
+RouterOpts.pres_fac_mult:  1.300000
+RouterOpts.max_router_iterations:  50
+
+RoutingArch.directionality:  BI_DIRECTIONAL
+RoutingArch.switch_block_type:  SUBSET
+RoutingArch.Fs:  3
+
+
+Netlist num_nets:  47
+Netlist num_blocks:  33
+Netlist <EMPTY> blocks:  0
+Netlist clb blocks:  0
+Netlist cab blocks:  20
+Netlist cab2 blocks:  0
+Netlist cab_vmm blocks:  2
+Netlist inputs pins:  9
+Netlist output pins:  2
+
+The circuit will be mapped into a 14 x 14 array of clbs.
+
+Resource Usage:
+Netlist      0	blocks of type <EMPTY>
+Architecture 4	blocks of type <EMPTY>
+Netlist      11	blocks of type io
+Architecture 336	blocks of type io
+Netlist      0	blocks of type clb
+Architecture 98	blocks of type clb
+Netlist      20	blocks of type cab
+Architecture 56	blocks of type cab
+Netlist      0	blocks of type cab2
+Architecture 14	blocks of type cab2
+Netlist      2	blocks of type cab_vmm
+Architecture 28	blocks of type cab_vmm
+
+build rr_graph took 0.02 seconds
+Confirming Router Algorithm: DIRECTED_SEARCH.
+mst took 0 seconds
+routing iteration 1
+routing iteration took 0 seconds
+wirelength after first iteration 407, total available wirelength 7140, ratio 0.0570028
+Successfully routed after 1 routing iterations by Directed Search.
+
+Checking to ensure routing is legal ...
+Completed routing consistency check successfully.
+
+Serial number (magic cookie) for the routing is: -5778993
+Circuit successfully routed with a channel width factor of 17.
+
+
+Average number of bends per net: 2.60000  Maximum # of bends: 16
+
+
+The number of routed nets (nonglobal): 45
+Wirelength results (all in units of 1 clb segments):
+	Total wirelength: 407   Average net length: 9.04444
+	Maximum net length: 31
+
+Wirelength results in terms of physical segments:
+	Total wiring segments used: 407   Av. wire segments per net: 9.04444
+	Maximum segments used by a net: 31
+
+	Total local nets with reserved CLB opins: 0
+
+
+X - Directed channels:
+
+j	max occ	av_occ		capacity
+0	5	1.42857  	17
+1	3	0.928571 	17
+2	9	2.07143  	17
+3	5	1.50000  	17
+4	5	1.85714  	17
+5	7	2.14286  	17
+6	7	2.00000  	17
+7	5	1.14286  	17
+8	5	1.21429  	17
+9	5	1.21429  	17
+10	3	0.500000 	17
+11	0	0.00000  	17
+12	0	0.00000  	17
+13	0	0.00000  	17
+14	0	0.00000  	17
+
+Y - Directed channels:
+
+i	max occ	av_occ		capacity
+0	0	0.00000  	17
+1	0	0.00000  	17
+2	0	0.00000  	17
+3	0	0.00000  	17
+4	0	0.00000  	17
+5	1	0.0714286	17
+6	5	1.64286  	17
+7	4	2.00000  	17
+8	5	1.57143  	17
+9	9	2.57143  	17
+10	11	3.85714  	17
+11	8	0.928571 	17
+12	1	0.357143 	17
+13	0	0.00000  	17
+14	1	0.0714286	17
+
+Total Tracks in X-direction: 255  in Y-direction: 255
+
+Logic Area (in minimum width transistor areas, excludes I/Os and empty grid tiles):
+Total Logic Block Area (Warning, need to add pitch of routing to blocks with height > 3): 5.88e+06 
+Total Used Logic Block Area: 660000 
+
+Routing area (in minimum width transistor areas):
+Assuming no buffer sharing (pessimistic). Total: 2.77571e+07  Per logic tile: 141618.
+Assuming buffer sharing (slightly optimistic). Total: 1.02979e+07  Per logic tile: 52540.5
+
+
+Segment usage by type (index):
+Segment type       Fractional utilization
+------------       ----------------------
+       0                  0.057
+
+Segment usage by length:
+Segment length       Fractional utilization
+--------------       ----------------------
+        1                   0.057
+Routing took 0.02 seconds
+00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
+integrator_nmirror
+.subckt integrator_nmirror
+['net4_1', 'net16_13', 'net19_1', 'net6_13', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
+integrator_nmirror
+.subckt integrator_nmirror
+['net4_1', 'net16_14', 'net19_1', 'net6_14', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
+integrator_nmirror
+.subckt integrator_nmirror
+['net4_1', 'net16_15', 'net19_1', 'net6_15', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
+integrator_nmirror
+.subckt integrator_nmirror
+['net4_1', 'net16_16', 'net19_1', 'net6_16', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
+integrator_nmirror
+.subckt sftreg3
+['net20_1', 'gnd_dig', 'net21_1', 'net11_1', 'net_floated_1', 'net15_1', 'net14_1', 'net13_1', 'net16_1', 'net16_2', 'net16_3', 'net16_4', 'net16_5', 'net16_6', 'net16_7', 'net16_8', 'net16_9', 'net16_10', 'net16_11', 'net16_12', 'net16_13', 'net16_14', 'net16_15', 'net16_16', '0']
+sftreg3
+vmm types: 4x4, 8x8, 12x12, 16x16: 0 0 0 0
+/home/ubuntu/rasp30/vtr_release/vpr/vpr /home/ubuntu/rasp30/vpr2swcs/./arch/rasp3_vmm_arch.xml -route /home/ubuntu/RASP_Workspace/test_20160808_vd_fgswc_stfreg_itg/vd_fgswc_stfreg_itg  -route_chan_width 17 -nodisp -timing_analysis off
+net5_1
+['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
+net_floated_1
+['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
+net4_1
+['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
+net6_16
+['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
+net6_15
+['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
+net6_14
+['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
+net6_13
+['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
+net6_12
+['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
+net6_11
+['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
+net6_10
+['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
+net6_9
+['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
+net6_8
+['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
+net6_7
+['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
+net6_6
+['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
+net6_5
+['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
+net6_4
+['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
+net6_3
+['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
+net6_2
+['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
+net6_1
+['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
+net1_1
+['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
+gnd_dig
+['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
+net11_1
+['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
+out_ramp_adc
+['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
+ ------------- (net6_9) ------------- 
+|  OPIN  (6,7) --> CHANX  (6,7) T/P:  3 20 |  cab [ 6, 7] CHANX  (189,663) T3 O4 SWC 
+| CHANX  (6,7) --> CHANX  (7,7) T/P:  3 -1 | cab [ 7, 7] SBLOCK we (223 871) SWC 
+| CHANX  (7,7) --> CHANX  (8,7) T/P:  3 -1 | clb [ 8, 7] SBLOCK we (255 1031) SWC 
+| CHANX  (8,7) --> CHANX  (9,7) T/P:  3 -1 | clb [ 9, 7] SBLOCK we (289 1031) SWC 
+| CHANX  (9,7) --> CHANX (10,7) T/P:  3 -1 | cab_vmm [10, 7] SBLOCK we (325 871) SWC 
+| CHANX (10,7) --> CHANY (10,7) T/P:  3 -1 | cab_vmm [11, 7] SBLOCK ws (359 807) SWC 
+| CHANY (10,7) --> CHANY (10,6) T/P:  3 -1 | cab_vmm [11, 6] SBLOCK ns (359 838) SWC 
+| CHANY (10,6) --> CHANY (10,5) T/P:  3 -1 | cab_vmm [11, 5] SBLOCK ns (359 837) SWC 
+| CHANY (10,5) --> CHANY (10,4) T/P:  3 -1 | cab_vmm [11, 4] SBLOCK ns (359 836) SWC 
+| CHANY (10,4) --> CHANY (10,3) T/P:  3 -1 | cab_vmm [11, 3] SBLOCK ns (359 835) SWC 
+| CHANY (10,3) --> CHANY (10,2) T/P:  3 -1 | cab_vmm [11, 2] SBLOCK ns (359 834) SWC 
+| CHANY (10,2) -->  IPIN (11,2) T/P:  3  0 | cab_vmm [11, 2] CHANY  (359,946) T3 XI0 ~~~~ PIN SINK ~~~~ || net (net6_9) -> pin 0 in 11 2
+SWC 
+ ------------- (net6_10) ------------- 
+|  OPIN  (7,7) --> CHANX  (7,7) T/P:  0 20 |  cab [ 7, 7] CHANX  (226,663) T0 O4 SWC 
+| CHANX  (7,7) --> CHANX  (8,7) T/P:  0 -1 | clb [ 8, 7] SBLOCK we (258 1031) SWC 
+| CHANX  (8,7) --> CHANY  (8,7) T/P:  0 -1 | clb [ 9, 7] SBLOCK ws (292 967) SWC 
+| CHANY  (8,7) --> CHANY  (8,6) T/P:  0 -1 | clb [ 9, 6] SBLOCK ns (292 998) SWC 
+| CHANY  (8,6) --> CHANY  (8,5) T/P:  0 -1 | clb [ 9, 5] SBLOCK ns (292 997) SWC 
+| CHANY  (8,5) --> CHANY  (8,4) T/P:  0 -1 | clb [ 9, 4] SBLOCK ns (292 996) SWC 
+| CHANY  (8,4) --> CHANY  (8,3) T/P:  0 -1 | clb [ 9, 3] SBLOCK ns (292 995) SWC 
+| CHANY  (8,3) --> CHANX  (9,2) T/P:  0 -1 | clb [ 9, 2] SBLOCK ne (292 1010) SWC 
+| CHANX  (9,2) --> CHANX (10,2) T/P:  0 -1 | cab_vmm [10, 2] SBLOCK we (328 866) SWC 
+| CHANX (10,2) --> CHANY (10,2) T/P:  0 -1 | cab_vmm [11, 2] SBLOCK ws (362 802) SWC 
+| CHANY (10,2) -->  IPIN (11,2) T/P:  0  1 | cab_vmm [11, 2] CHANY  (362,962) T0 XI1 ~~~~ PIN SINK ~~~~ || net (net6_10) -> pin 1 in 11 2
+SWC 
+ ------------- (net6_11) ------------- 
+|  OPIN  (6,8) --> CHANX  (6,8) T/P: 15 20 |  cab [ 6, 8] CHANX  (175,664) T15 O4 SWC 
+| CHANX  (6,8) --> CHANX  (7,8) T/P: 15 -1 | cab [ 7, 8] SBLOCK we (209 872) SWC 
+| CHANX  (7,8) --> CHANX  (8,8) T/P: 15 -1 | clb [ 8, 8] SBLOCK we (241 1032) SWC 
+| CHANX  (8,8) --> CHANX  (9,8) T/P: 15 -1 | clb [ 9, 8] SBLOCK we (275 1032) SWC 
+| CHANX  (9,8) --> CHANY  (9,8) T/P: 15 -1 | cab_vmm [10, 8] SBLOCK ws (311 808) SWC 
+| CHANY  (9,8) --> CHANY  (9,7) T/P: 15 -1 | cab_vmm [10, 7] SBLOCK ns (311 839) SWC 
+| CHANY  (9,7) --> CHANY  (9,6) T/P: 15 -1 | cab_vmm [10, 6] SBLOCK ns (311 838) SWC 
+| CHANY  (9,6) --> CHANY  (9,5) T/P: 15 -1 | cab_vmm [10, 5] SBLOCK ns (311 837) SWC 
+| CHANY  (9,5) --> CHANY  (9,4) T/P: 15 -1 | cab_vmm [10, 4] SBLOCK ns (311 836) SWC 
+| CHANY  (9,4) --> CHANY  (9,3) T/P: 15 -1 | cab_vmm [10, 3] SBLOCK ns (311 835) SWC 
+| CHANY  (9,3) --> CHANX (10,2) T/P: 15 -1 | cab_vmm [10, 2] SBLOCK ne (311 850) SWC 
+| CHANX (10,2) --> CHANY (10,2) T/P: 15 -1 | cab_vmm [11, 2] SBLOCK ws (345 802) SWC 
+| CHANY (10,2) -->  IPIN (11,2) T/P: 15  2 | cab_vmm [11, 2] CHANY  (345,978) T15 XI2 ~~~~ PIN SINK ~~~~ || net (net6_11) -> pin 2 in 11 2
+SWC 
+ ------------- (net6_12) ------------- 
+|  OPIN  (7,8) --> CHANX  (7,8) T/P:  1 20 |  cab [ 7, 8] CHANX  (225,664) T1 O4 SWC 
+| CHANX  (7,8) --> CHANX  (8,8) T/P:  1 -1 | clb [ 8, 8] SBLOCK we (257 1032) SWC 
+| CHANX  (8,8) --> CHANY  (8,8) T/P:  1 -1 | clb [ 9, 8] SBLOCK ws (291 968) SWC 
+| CHANY  (8,8) --> CHANY  (8,7) T/P:  1 -1 | clb [ 9, 7] SBLOCK ns (291 999) SWC 
+| CHANY  (8,7) --> CHANY  (8,6) T/P:  1 -1 | clb [ 9, 6] SBLOCK ns (291 998) SWC 
+| CHANY  (8,6) --> CHANY  (8,5) T/P:  1 -1 | clb [ 9, 5] SBLOCK ns (291 997) SWC 
+| CHANY  (8,5) --> CHANY  (8,4) T/P:  1 -1 | clb [ 9, 4] SBLOCK ns (291 996) SWC 
+| CHANY  (8,4) --> CHANY  (8,3) T/P:  1 -1 | clb [ 9, 3] SBLOCK ns (291 995) SWC 
+| CHANY  (8,3) --> CHANX  (9,2) T/P:  1 -1 | clb [ 9, 2] SBLOCK ne (291 1010) SWC 
+| CHANX  (9,2) --> CHANX (10,2) T/P:  1 -1 | cab_vmm [10, 2] SBLOCK we (327 866) SWC 
+| CHANX (10,2) --> CHANY (10,2) T/P:  1 -1 | cab_vmm [11, 2] SBLOCK ws (361 802) SWC 
+| CHANY (10,2) -->  IPIN (11,2) T/P:  1  3 | cab_vmm [11, 2] CHANY  (361,994) T1 XI3 ~~~~ PIN SINK ~~~~ || net (net6_12) -> pin 3 in 11 2
+SWC 
+ ------------- (net6_13) ------------- 
+|  OPIN  (6,9) --> CHANX  (6,9) T/P:  1 20 |  cab [ 6, 9] CHANX  (191,665) T1 O4 SWC 
+| CHANX  (6,9) --> CHANX  (7,9) T/P:  1 -1 | cab [ 7, 9] SBLOCK we (225 873) SWC 
+| CHANX  (7,9) --> CHANX  (8,9) T/P:  1 -1 | clb [ 8, 9] SBLOCK we (257 1033) SWC 
+| CHANX  (8,9) --> CHANX  (9,9) T/P:  1 -1 | clb [ 9, 9] SBLOCK we (291 1033) SWC 
+| CHANX  (9,9) --> CHANY  (9,9) T/P:  1 -1 | cab_vmm [10, 9] SBLOCK ws (327 809) SWC 
+| CHANY  (9,9) --> CHANY  (9,8) T/P:  1 -1 | cab_vmm [10, 8] SBLOCK ns (327 840) SWC 
+| CHANY  (9,8) --> CHANY  (9,7) T/P:  1 -1 | cab_vmm [10, 7] SBLOCK ns (327 839) SWC 
+| CHANY  (9,7) --> CHANY  (9,6) T/P:  1 -1 | cab_vmm [10, 6] SBLOCK ns (327 838) SWC 
+| CHANY  (9,6) --> CHANY  (9,5) T/P:  1 -1 | cab_vmm [10, 5] SBLOCK ns (327 837) SWC 
+| CHANY  (9,5) --> CHANY  (9,4) T/P:  1 -1 | cab_vmm [10, 4] SBLOCK ns (327 836) SWC 
+| CHANY  (9,4) --> CHANX (10,3) T/P:  1 -1 | cab_vmm [10, 3] SBLOCK ne (327 851) SWC 
+| CHANX (10,3) --> CHANX (11,3) T/P:  1 -1 | cab_vmm [11, 3] SBLOCK we (361 867) SWC 
+| CHANX (11,3) --> CHANY (11,3) T/P:  1 -1 | clb [12, 3] SBLOCK ws (393 963) SWC 
+| CHANY (11,3) --> CHANY (11,2) T/P:  1 -1 | clb [12, 2] SBLOCK ns (393 994) SWC 
+| CHANY (11,2) -->  IPIN (11,2) T/P:  1  4 |  clb [12, 2] CHANY  (393,626) T1 AXI4 ~~~~ PIN SINK ~~~~ || net (net6_13) -> pin 4 in 11 2
+SWC 
+ ------------- (net6_14) ------------- 
+|  OPIN  (7,9) --> CHANX  (7,9) T/P:  0 20 |  cab [ 7, 9] CHANX  (226,665) T0 O4 SWC 
+| CHANX  (7,9) --> CHANX  (8,9) T/P:  0 -1 | clb [ 8, 9] SBLOCK we (258 1033) SWC 
+| CHANX  (8,9) --> CHANX  (9,9) T/P:  0 -1 | clb [ 9, 9] SBLOCK we (292 1033) SWC 
+| CHANX  (9,9) --> CHANX (10,9) T/P:  0 -1 | cab_vmm [10, 9] SBLOCK we (328 873) SWC 
+| CHANX (10,9) --> CHANY (10,9) T/P:  0 -1 | cab_vmm [11, 9] SBLOCK ws (362 809) SWC 
+| CHANY (10,9) --> CHANY (10,8) T/P:  0 -1 | cab_vmm [11, 8] SBLOCK ns (362 840) SWC 
+| CHANY (10,8) --> CHANY (10,7) T/P:  0 -1 | cab_vmm [11, 7] SBLOCK ns (362 839) SWC 
+| CHANY (10,7) --> CHANY (10,6) T/P:  0 -1 | cab_vmm [11, 6] SBLOCK ns (362 838) SWC 
+| CHANY (10,6) --> CHANY (10,5) T/P:  0 -1 | cab_vmm [11, 5] SBLOCK ns (362 837) SWC 
+| CHANY (10,5) --> CHANY (10,4) T/P:  0 -1 | cab_vmm [11, 4] SBLOCK ns (362 836) SWC 
+| CHANY (10,4) --> CHANY (10,3) T/P:  0 -1 | cab_vmm [11, 3] SBLOCK ns (362 835) SWC 
+| CHANY (10,3) --> CHANX (11,2) T/P:  0 -1 | cab_vmm [11, 2] SBLOCK ne (362 850) SWC 
+| CHANX (11,2) --> CHANY (11,2) T/P:  0 -1 | clb [12, 2] SBLOCK ws (394 962) SWC 
+| CHANY (11,2) -->  IPIN (11,2) T/P:  0  5 |  clb [12, 2] CHANY  (394,642) T0 AXI5 ~~~~ PIN SINK ~~~~ || net (net6_14) -> pin 5 in 11 2
+SWC 
+ ------------- (net6_1) ------------- 
+|  OPIN  (6,3) --> CHANX  (6,3) T/P: 15 20 |  cab [ 6, 3] CHANX  (175,659) T15 O4 SWC 
+| CHANX  (6,3) --> CHANX  (7,3) T/P: 15 -1 | cab [ 7, 3] SBLOCK we (209 867) SWC 
+| CHANX  (7,3) --> CHANX  (8,3) T/P: 15 -1 | clb [ 8, 3] SBLOCK we (241 1027) SWC 
+| CHANX  (8,3) --> CHANX  (9,3) T/P: 15 -1 | clb [ 9, 3] SBLOCK we (275 1027) SWC 
+| CHANX  (9,3) --> CHANX (10,3) T/P: 15 -1 | cab_vmm [10, 3] SBLOCK we (311 867) SWC 
+| CHANX (10,3) --> CHANY (10,3) T/P: 15 -1 | cab_vmm [11, 3] SBLOCK ws (345 803) SWC 
+| CHANY (10,3) --> CHANX (11,2) T/P: 15 -1 | cab_vmm [11, 2] SBLOCK ne (345 850) SWC 
+| CHANX (11,2) --> CHANY (11,2) T/P: 15 -1 | clb [12, 2] SBLOCK ws (377 962) SWC 
+| CHANY (11,2) -->  IPIN (11,2) T/P: 15  6 |  clb [12, 2] CHANY  (377,658) T15 AXI6 ~~~~ PIN SINK ~~~~ || net (net6_1) -> pin 6 in 11 2
+SWC 
+ ------------- (net6_2) ------------- 
+|  OPIN  (7,3) --> CHANX  (7,3) T/P:  8 20 |  cab [ 7, 3] CHANX  (217,659) T8 O4 SWC 
+| CHANX  (7,3) --> CHANX  (8,3) T/P:  8 -1 | clb [ 8, 3] SBLOCK we (249 1027) SWC 
+| CHANX  (8,3) --> CHANX  (9,3) T/P:  8 -1 | clb [ 9, 3] SBLOCK we (283 1027) SWC 
+| CHANX  (9,3) --> CHANY  (9,3) T/P:  8 -1 | cab_vmm [10, 3] SBLOCK ws (319 803) SWC 
+| CHANY  (9,3) --> CHANX (10,2) T/P:  8 -1 | cab_vmm [10, 2] SBLOCK ne (319 850) SWC 
+| CHANX (10,2) --> CHANX (11,2) T/P:  8 -1 | cab_vmm [11, 2] SBLOCK we (353 866) SWC 
+| CHANX (11,2) --> CHANY (11,2) T/P:  8 -1 | clb [12, 2] SBLOCK ws (385 962) SWC 
+| CHANY (11,2) -->  IPIN (11,2) T/P:  8  7 |  clb [12, 2] CHANY  (385,674) T8 AXI7 ~~~~ PIN SINK ~~~~ || net (net6_2) -> pin 7 in 11 2
+SWC 
+ ------------- (net6_3) ------------- 
+|  OPIN  (6,4) --> CHANX  (6,4) T/P: 13 20 |  cab [ 6, 4] CHANX  (177,660) T13 O4 SWC 
+| CHANX  (6,4) --> CHANX  (7,4) T/P: 13 -1 | cab [ 7, 4] SBLOCK we (211 868) SWC 
+| CHANX  (7,4) --> CHANX  (8,4) T/P: 13 -1 | clb [ 8, 4] SBLOCK we (243 1028) SWC 
+| CHANX  (8,4) --> CHANX  (9,4) T/P: 13 -1 | clb [ 9, 4] SBLOCK we (277 1028) SWC 
+| CHANX  (9,4) --> CHANX (10,4) T/P: 13 -1 | cab_vmm [10, 4] SBLOCK we (313 868) SWC 
+| CHANX (10,4) --> CHANY (10,4) T/P: 13 -1 | cab_vmm [11, 4] SBLOCK ws (347 804) SWC 
+| CHANY (10,4) --> CHANY (10,3) T/P: 13 -1 | cab_vmm [11, 3] SBLOCK ns (347 835) SWC 
+| CHANY (10,3) --> CHANX (11,2) T/P: 13 -1 | cab_vmm [11, 2] SBLOCK ne (347 850) SWC 
+| CHANX (11,2) -->  IPIN (11,2) T/P: 13  8 | cab_vmm [11, 2] CHANX  (347,578) T13 I8 ~~~~ PIN SINK ~~~~ || net (net6_3) -> pin 8 in 11 2
+SWC 
+ ------------- (net6_4) ------------- 
+|  OPIN  (7,4) --> CHANX  (7,4) T/P:  1 20 |  cab [ 7, 4] CHANX  (225,660) T1 O4 SWC 
+| CHANX  (7,4) --> CHANX  (8,4) T/P:  1 -1 | clb [ 8, 4] SBLOCK we (257 1028) SWC 
+| CHANX  (8,4) --> CHANX  (9,4) T/P:  1 -1 | clb [ 9, 4] SBLOCK we (291 1028) SWC 
+| CHANX  (9,4) --> CHANX (10,4) T/P:  1 -1 | cab_vmm [10, 4] SBLOCK we (327 868) SWC 
+| CHANX (10,4) --> CHANY (10,4) T/P:  1 -1 | cab_vmm [11, 4] SBLOCK ws (361 804) SWC 
+| CHANY (10,4) --> CHANY (10,3) T/P:  1 -1 | cab_vmm [11, 3] SBLOCK ns (361 835) SWC 
+| CHANY (10,3) --> CHANX (11,2) T/P:  1 -1 | cab_vmm [11, 2] SBLOCK ne (361 850) SWC 
+| CHANX (11,2) -->  IPIN (11,2) T/P:  1  9 | cab_vmm [11, 2] CHANX  (361,594) T1 I9 ~~~~ PIN SINK ~~~~ || net (net6_4) -> pin 9 in 11 2
+SWC 
+ ------------- (net6_5) ------------- 
+|  OPIN  (6,5) --> CHANX  (6,5) T/P: 15 20 |  cab [ 6, 5] CHANX  (175,661) T15 O4 SWC 
+| CHANX  (6,5) --> CHANX  (7,5) T/P: 15 -1 | cab [ 7, 5] SBLOCK we (209 869) SWC 
+| CHANX  (7,5) --> CHANX  (8,5) T/P: 15 -1 | clb [ 8, 5] SBLOCK we (241 1029) SWC 
+| CHANX  (8,5) --> CHANY  (8,5) T/P: 15 -1 | clb [ 9, 5] SBLOCK ws (275 965) SWC 
+| CHANY  (8,5) --> CHANY  (8,4) T/P: 15 -1 | clb [ 9, 4] SBLOCK ns (275 996) SWC 
+| CHANY  (8,4) --> CHANY  (8,3) T/P: 15 -1 | clb [ 9, 3] SBLOCK ns (275 995) SWC 
+| CHANY  (8,3) --> CHANX  (9,2) T/P: 15 -1 | clb [ 9, 2] SBLOCK ne (275 1010) SWC 
+| CHANX  (9,2) --> CHANY  (9,2) T/P: 15 -1 | cab_vmm [10, 2] SBLOCK ws (311 802) SWC 
+| CHANY  (9,2) --> CHANX (10,1) T/P: 15 -1 | cab_vmm [10, 1] SBLOCK ne (311 849) SWC 
+| CHANX (10,1) --> CHANX (11,1) T/P: 15 -1 | cab_vmm [11, 1] SBLOCK we (345 865) SWC 
+| CHANX (11,1) -->  IPIN (11,2) T/P: 15 10 | cab_vmm [11, 1] CHANX  (345,673) T15 XI10 ~~~~ PIN SINK ~~~~ || net (net6_5) -> pin 10 in 11 2
+SWC 
+ ------------- (net6_6) ------------- 
+|  OPIN  (7,5) --> CHANX  (7,5) T/P:  8 20 |  cab [ 7, 5] CHANX  (217,661) T8 O4 SWC 
+| CHANX  (7,5) --> CHANX  (8,5) T/P:  8 -1 | clb [ 8, 5] SBLOCK we (249 1029) SWC 
+| CHANX  (8,5) --> CHANX  (9,5) T/P:  8 -1 | clb [ 9, 5] SBLOCK we (283 1029) SWC 
+| CHANX  (9,5) --> CHANX (10,5) T/P:  8 -1 | cab_vmm [10, 5] SBLOCK we (319 869) SWC 
+| CHANX (10,5) --> CHANY (10,5) T/P:  8 -1 | cab_vmm [11, 5] SBLOCK ws (353 805) SWC 
+| CHANY (10,5) --> CHANY (10,4) T/P:  8 -1 | cab_vmm [11, 4] SBLOCK ns (353 836) SWC 
+| CHANY (10,4) --> CHANY (10,3) T/P:  8 -1 | cab_vmm [11, 3] SBLOCK ns (353 835) SWC 
+| CHANY (10,3) --> CHANY (10,2) T/P:  8 -1 | cab_vmm [11, 2] SBLOCK ns (353 834) SWC 
+| CHANY (10,2) --> CHANX (11,1) T/P:  8 -1 | cab_vmm [11, 1] SBLOCK ne (353 849) SWC 
+| CHANX (11,1) -->  IPIN (11,2) T/P:  8 11 | cab_vmm [11, 1] CHANX  (353,689) T8 XI11 ~~~~ PIN SINK ~~~~ || net (net6_6) -> pin 11 in 11 2
+SWC 
+ ------------- (net17_1) ------------- 
+|  OPIN (13,0) --> CHANX (13,0) T/P: 10  4 | io_sd [13, 0] CHANX  (426,288) T10 I7 SWC 
+| CHANX (13,0) --> CHANX (12,0) T/P: 10 -1 | io_sd [13, 0] SBLOCK ew (415 352) SWC 
+| CHANX (12,0) --> CHANY (11,1) T/P: 10 -1 | io_sd [12, 0] SBLOCK en (381 336) SWC 
+| CHANY (11,1) --> CHANY (11,2) T/P: 10 -1 | clb [12, 1] SBLOCK sn (383 993) SWC 
+| CHANY (11,2) --> CHANX (11,2) T/P: 10 -1 | clb [12, 2] SBLOCK sw (383 962) SWC 
+| CHANX (11,2) -->  IPIN (11,2) T/P: 10 13 | cab_vmm [11, 2] CHANX  (351,610) T10 I13 ~~~~ PIN SINK ~~~~ || net (net17_1) -> pin 13 in 11 2
+SWC 
+ ------------- (gnd_dig) ------------- 
+|  OPIN  (3,4) --> CHANX  (3,4) T/P:  9 20 |  cab [ 3, 4] CHANX  (80,660) T9 O4 SWC 
+| CHANX  (3,4) --> CHANX  (4,4) T/P:  9 -1 | clb [ 4, 4] SBLOCK we (112 1028) SWC 
+| CHANX  (4,4) --> CHANX  (5,4) T/P:  9 -1 | clb [ 5, 4] SBLOCK we (146 1028) SWC 
+| CHANX  (5,4) --> CHANX  (6,4) T/P:  9 -1 | cab [ 6, 4] SBLOCK we (182 868) SWC 
+| CHANX  (6,4) --> CHANX  (7,4) T/P:  9 -1 | cab [ 7, 4] SBLOCK we (216 868) SWC 
+| CHANX  (7,4) --> CHANX  (8,4) T/P:  9 -1 | clb [ 8, 4] SBLOCK we (248 1028) SWC 
+| CHANX  (8,4) --> CHANX  (9,4) T/P:  9 -1 | clb [ 9, 4] SBLOCK we (282 1028) SWC 
+| CHANX  (9,4) --> CHANY  (9,5) T/P:  9 -1 | cab_vmm [10, 4] SBLOCK wn (318 820) SWC 
+| CHANY  (9,5) --> CHANY  (9,6) T/P:  9 -1 | cab_vmm [10, 5] SBLOCK sn (318 837) SWC 
+| CHANY  (9,6) --> CHANX (10,6) T/P:  9 -1 | cab_vmm [10, 6] SBLOCK se (318 790) SWC 
+| CHANX (10,6) -->  IPIN (10,6) T/P:  9 14 | cab_vmm [10, 6] CHANX  (318,630) T9 I14 ~~~~ PIN SINK ~~~~ || net (gnd_dig) -> pin 14 in 10 6
+SWC 
+| CHANX  (9,4) --> CHANY  (9,4) T/P:  9 -1 | cab_vmm [10, 4] SBLOCK ws (318 804) SWC 
+| CHANY  (9,4) --> CHANY  (9,3) T/P:  9 -1 | cab_vmm [10, 3] SBLOCK ns (318 835) SWC 
+| CHANY  (9,3) --> CHANX (10,2) T/P:  9 -1 | cab_vmm [10, 2] SBLOCK ne (318 850) SWC 
+| CHANX (10,2) --> CHANX (11,2) T/P:  9 -1 | cab_vmm [11, 2] SBLOCK we (352 866) SWC 
+| CHANX (11,2) -->  IPIN (11,2) T/P:  9 14 | cab_vmm [11, 2] CHANX  (352,626) T9 I14 ~~~~ PIN SINK ~~~~ || net (gnd_dig) -> pin 14 in 11 2
+SWC 
+ ------------- (net18_1) ------------- 
+|  OPIN (13,0) --> CHANX (13,0) T/P: 11  7 | io_sd [13, 0] CHANX  (425,304) T11 I11 SWC 
+| CHANX (13,0) --> CHANX (12,0) T/P: 11 -1 | io_sd [13, 0] SBLOCK ew (414 352) SWC 
+| CHANX (12,0) --> CHANY (11,1) T/P: 11 -1 | io_sd [12, 0] SBLOCK en (380 336) SWC 
+| CHANY (11,1) --> CHANY (11,2) T/P: 11 -1 | clb [12, 1] SBLOCK sn (382 993) SWC 
+| CHANY (11,2) --> CHANX (11,2) T/P: 11 -1 | clb [12, 2] SBLOCK sw (382 962) SWC 
+| CHANX (11,2) -->  IPIN (11,2) T/P: 11 15 | cab_vmm [11, 2] CHANX  (350,642) T11 I15 ~~~~ PIN SINK ~~~~ || net (net18_1) -> pin 15 in 11 2
+SWC 
+ ------------- (net6_15) ------------- 
+|  OPIN (6,10) --> CHANX (6,10) T/P:  7 20 |  cab [ 6,10] CHANX  (184,666) T7 O4 SWC 
+| CHANX (6,10) --> CHANX (7,10) T/P:  7 -1 | cab [ 7,10] SBLOCK we (218 874) SWC 
+| CHANX (7,10) --> CHANY (7,10) T/P:  7 -1 | clb [ 8,10] SBLOCK ws (250 970) SWC 
+| CHANY (7,10) --> CHANY  (7,9) T/P:  7 -1 | clb [ 8, 9] SBLOCK ns (250 1001) SWC 
+| CHANY  (7,9) --> CHANY  (7,8) T/P:  7 -1 | clb [ 8, 8] SBLOCK ns (250 1000) SWC 
+| CHANY  (7,8) --> CHANY  (7,7) T/P:  7 -1 | clb [ 8, 7] SBLOCK ns (250 999) SWC 
+| CHANY  (7,7) --> CHANY  (7,6) T/P:  7 -1 | clb [ 8, 6] SBLOCK ns (250 998) SWC 
+| CHANY  (7,6) --> CHANX  (8,5) T/P:  7 -1 | clb [ 8, 5] SBLOCK ne (250 1013) SWC 
+| CHANX  (8,5) --> CHANX  (9,5) T/P:  7 -1 | clb [ 9, 5] SBLOCK we (284 1029) SWC 
+| CHANX  (9,5) --> CHANY  (9,5) T/P:  7 -1 | cab_vmm [10, 5] SBLOCK ws (320 805) SWC 
+| CHANY  (9,5) --> CHANY  (9,4) T/P:  7 -1 | cab_vmm [10, 4] SBLOCK ns (320 836) SWC 
+| CHANY  (9,4) --> CHANY  (9,3) T/P:  7 -1 | cab_vmm [10, 3] SBLOCK ns (320 835) SWC 
+| CHANY  (9,3) --> CHANY  (9,2) T/P:  7 -1 | cab_vmm [10, 2] SBLOCK ns (320 834) SWC 
+| CHANY  (9,2) --> CHANX (10,1) T/P:  7 -1 | cab_vmm [10, 1] SBLOCK ne (320 849) SWC 
+| CHANX (10,1) --> CHANY (10,2) T/P:  7 -1 | cab_vmm [11, 1] SBLOCK wn (354 817) SWC 
+| CHANY (10,2) -->  IPIN (11,2) T/P:  7 16 | cab_vmm [11, 2] CHANY  (354,1010) T7 XO0 ~~~~ PIN SINK ~~~~ || net (net6_15) -> pin 16 in 11 2
+SWC 
+ ------------- (net6_16) ------------- 
+|  OPIN (7,10) --> CHANX (7,10) T/P: 16 20 |  cab [ 7,10] CHANX  (208,666) T16 O4 SWC 
+| CHANX (7,10) --> CHANX (8,10) T/P: 16 -1 | clb [ 8,10] SBLOCK we (240 1034) SWC 
+| CHANX (8,10) --> CHANX (9,10) T/P: 16 -1 | clb [ 9,10] SBLOCK we (274 1034) SWC 
+| CHANX (9,10) --> CHANX (10,10) T/P: 16 -1 | cab_vmm [10,10] SBLOCK we (310 874) SWC 
+| CHANX (10,10) --> CHANY (10,10) T/P: 16 -1 | cab_vmm [11,10] SBLOCK ws (344 810) SWC 
+| CHANY (10,10) --> CHANY (10,9) T/P: 16 -1 | cab_vmm [11, 9] SBLOCK ns (344 841) SWC 
+| CHANY (10,9) --> CHANY (10,8) T/P: 16 -1 | cab_vmm [11, 8] SBLOCK ns (344 840) SWC 
+| CHANY (10,8) --> CHANY (10,7) T/P: 16 -1 | cab_vmm [11, 7] SBLOCK ns (344 839) SWC 
+| CHANY (10,7) --> CHANY (10,6) T/P: 16 -1 | cab_vmm [11, 6] SBLOCK ns (344 838) SWC 
+| CHANY (10,6) --> CHANY (10,5) T/P: 16 -1 | cab_vmm [11, 5] SBLOCK ns (344 837) SWC 
+| CHANY (10,5) --> CHANY (10,4) T/P: 16 -1 | cab_vmm [11, 4] SBLOCK ns (344 836) SWC 
+| CHANY (10,4) --> CHANY (10,3) T/P: 16 -1 | cab_vmm [11, 3] SBLOCK ns (344 835) SWC 
+| CHANY (10,3) --> CHANY (10,2) T/P: 16 -1 | cab_vmm [11, 2] SBLOCK ns (344 834) SWC 
+| CHANY (10,2) -->  IPIN (11,2) T/P: 16 17 | cab_vmm [11, 2] CHANY  (344,1026) T16 XO1 ~~~~ PIN SINK ~~~~ || net (net6_16) -> pin 17 in 11 2
+SWC 
+ ------------- (net6_7) ------------- 
+|  OPIN  (6,6) --> CHANX  (6,6) T/P:  7 20 |  cab [ 6, 6] CHANX  (184,662) T7 O4 SWC 
+| CHANX  (6,6) --> CHANX  (7,6) T/P:  7 -1 | cab [ 7, 6] SBLOCK we (218 870) SWC 
+| CHANX  (7,6) --> CHANX  (8,6) T/P:  7 -1 | clb [ 8, 6] SBLOCK we (250 1030) SWC 
+| CHANX  (8,6) --> CHANY  (8,6) T/P:  7 -1 | clb [ 9, 6] SBLOCK ws (284 966) SWC 
+| CHANY  (8,6) --> CHANY  (8,5) T/P:  7 -1 | clb [ 9, 5] SBLOCK ns (284 997) SWC 
+| CHANY  (8,5) --> CHANY  (8,4) T/P:  7 -1 | clb [ 9, 4] SBLOCK ns (284 996) SWC 
+| CHANY  (8,4) --> CHANX  (9,3) T/P:  7 -1 | clb [ 9, 3] SBLOCK ne (284 1011) SWC 
+| CHANX  (9,3) --> CHANX (10,3) T/P:  7 -1 | cab_vmm [10, 3] SBLOCK we (320 867) SWC 
+| CHANX (10,3) --> CHANX (11,3) T/P:  7 -1 | cab_vmm [11, 3] SBLOCK we (354 867) SWC 
+| CHANX (11,3) --> CHANY (11,3) T/P:  7 -1 | clb [12, 3] SBLOCK ws (386 963) SWC 
+| CHANY (11,3) --> CHANY (11,2) T/P:  7 -1 | clb [12, 2] SBLOCK ns (386 994) SWC 
+| CHANY (11,2) -->  IPIN (11,2) T/P:  7 18 |  clb [12, 2] CHANY  (386,690) T7 AXO2 ~~~~ PIN SINK ~~~~ || net (net6_7) -> pin 18 in 11 2
+SWC 
+ ------------- (net6_8) ------------- 
+|  OPIN  (7,6) --> CHANX  (7,6) T/P:  9 20 |  cab [ 7, 6] CHANX  (216,662) T9 O4 SWC 
+| CHANX  (7,6) --> CHANX  (8,6) T/P:  9 -1 | clb [ 8, 6] SBLOCK we (248 1030) SWC 
+| CHANX  (8,6) --> CHANY  (8,6) T/P:  9 -1 | clb [ 9, 6] SBLOCK ws (282 966) SWC 
+| CHANY  (8,6) --> CHANY  (8,5) T/P:  9 -1 | clb [ 9, 5] SBLOCK ns (282 997) SWC 
+| CHANY  (8,5) --> CHANY  (8,4) T/P:  9 -1 | clb [ 9, 4] SBLOCK ns (282 996) SWC 
+| CHANY  (8,4) --> CHANX  (9,3) T/P:  9 -1 | clb [ 9, 3] SBLOCK ne (282 1011) SWC 
+| CHANX  (9,3) --> CHANX (10,3) T/P:  9 -1 | cab_vmm [10, 3] SBLOCK we (318 867) SWC 
+| CHANX (10,3) --> CHANX (11,3) T/P:  9 -1 | cab_vmm [11, 3] SBLOCK we (352 867) SWC 
+| CHANX (11,3) --> CHANY (11,3) T/P:  9 -1 | clb [12, 3] SBLOCK ws (384 963) SWC 
+| CHANY (11,3) --> CHANY (11,2) T/P:  9 -1 | clb [12, 2] SBLOCK ns (384 994) SWC 
+| CHANY (11,2) -->  IPIN (11,2) T/P:  9 19 |  clb [12, 2] CHANY  (384,706) T9 AXO3 ~~~~ PIN SINK ~~~~ || net (net6_8) -> pin 19 in 11 2
+SWC 
+ ------------- (net5_1) ------------- 
+|  OPIN (11,2) --> CHANX (11,2) T/P:  7 24 | cab_vmm [11, 2] CHANX  (354,658) T7 O4 SWC 
+| CHANX (11,2) --> CHANX (10,2) T/P:  7 -1 | cab_vmm [11, 2] SBLOCK ew (354 866) SWC 
+| CHANX (10,2) --> CHANX  (9,2) T/P:  7 -1 | cab_vmm [10, 2] SBLOCK ew (320 866) SWC 
+| CHANX  (9,2) --> CHANX  (8,2) T/P:  7 -1 | clb [ 9, 2] SBLOCK ew (284 1026) SWC 
+| CHANX  (8,2) --> CHANY  (7,2) T/P:  7 -1 | clb [ 8, 2] SBLOCK es (250 946) SWC 
+| CHANY  (7,2) --> CHANY  (7,1) T/P:  7 -1 | clb [ 8, 1] SBLOCK ns (250 993) SWC 
+| CHANY  (7,1) --> CHANX  (7,0) T/P:  7 -1 | io_sd [ 8, 0] SBLOCK nw (238 400) SWC 
+| CHANX  (7,0) -->  IPIN  (7,1) T/P:  7 11 | io_sa [ 7, 0] CHANX  (228,384) T7 XI11 ~~~~ PIN SINK ~~~~ || net (net5_1) -> pin 11 in 7 1
+SWC 
+ ------------- (net11_1) ------------- 
+|  OPIN  (6,2) --> CHANX  (6,2) T/P: 15 20 |  cab [ 6, 2] CHANX  (175,658) T15 O4 SWC 
+| CHANX  (6,2) --> CHANX  (7,2) T/P: 15 -1 | cab [ 7, 2] SBLOCK we (209 866) SWC 
+| CHANX  (7,2) --> CHANY  (7,3) T/P: 15 -1 | clb [ 8, 2] SBLOCK wn (241 978) SWC 
+| CHANY  (7,3) --> CHANY  (7,4) T/P: 15 -1 | clb [ 8, 3] SBLOCK sn (241 995) SWC 
+| CHANY  (7,4) --> CHANX  (8,4) T/P: 15 -1 | clb [ 8, 4] SBLOCK se (241 948) SWC 
+| CHANX  (8,4) --> CHANX  (9,4) T/P: 15 -1 | clb [ 9, 4] SBLOCK we (275 1028) SWC 
+| CHANX  (9,4) --> CHANX (10,4) T/P: 15 -1 | cab_vmm [10, 4] SBLOCK we (311 868) SWC 
+| CHANX (10,4) --> CHANY (10,5) T/P: 15 -1 | cab_vmm [11, 4] SBLOCK wn (345 820) SWC 
+| CHANY (10,5) --> CHANX (10,5) T/P: 15 -1 | cab_vmm [11, 5] SBLOCK sw (345 805) SWC 
+| CHANX (10,5) -->  IPIN (10,6) T/P: 15 12 | cab_vmm [10, 5] CHANX  (311,709) T15 XI12 ~~~~ PIN SINK ~~~~ || net (net11_1) -> pin 12 in 10 6
+SWC 
+ ------------- (net20_1) ------------- 
+|  OPIN (13,0) --> CHANX (13,0) T/P: 15 13 | io_sd [13, 0] CHANX  (420,336) T15 O3 SWC 
+| CHANX (13,0) --> CHANY (12,1) T/P: 15 -1 | io_sd [13, 0] SBLOCK en (409 336) SWC 
+| CHANY (12,1) --> CHANY (12,2) T/P: 15 -1 | clb [13, 1] SBLOCK sn (411 993) SWC 
+| CHANY (12,2) --> CHANY (12,3) T/P: 15 -1 | clb [13, 2] SBLOCK sn (411 994) SWC 
+| CHANY (12,3) --> CHANY (12,4) T/P: 15 -1 | clb [13, 3] SBLOCK sn (411 995) SWC 
+| CHANY (12,4) --> CHANY (12,5) T/P: 15 -1 | clb [13, 4] SBLOCK sn (411 996) SWC 
+| CHANY (12,5) --> CHANX (12,5) T/P: 15 -1 | clb [13, 5] SBLOCK sw (411 965) SWC 
+| CHANX (12,5) --> CHANX (11,5) T/P: 15 -1 | clb [12, 5] SBLOCK ew (377 1029) SWC 
+| CHANX (11,5) --> CHANY (10,6) T/P: 15 -1 | cab_vmm [11, 5] SBLOCK en (345 853) SWC 
+| CHANY (10,6) --> CHANX (10,6) T/P: 15 -1 | cab_vmm [11, 6] SBLOCK sw (345 806) SWC 
+| CHANX (10,6) -->  IPIN (10,6) T/P: 15 13 | cab_vmm [10, 6] CHANX  (311,614) T15 I13 ~~~~ PIN SINK ~~~~ || net (net20_1) -> pin 13 in 10 6
+SWC 
+ ------------- (net21_1) ------------- 
+|  OPIN (13,0) --> CHANX (13,0) T/P: 14 16 | io_sd [13, 0] CHANX  (421,352) T14 O7 SWC 
+| CHANX (13,0) --> CHANX (12,0) T/P: 14 -1 | io_sd [13, 0] SBLOCK ew (410 352) SWC 
+| CHANX (12,0) --> CHANX (11,0) T/P: 14 -1 | io_sd [12, 0] SBLOCK ew (376 352) SWC 
+| CHANX (11,0) --> CHANY (10,1) T/P: 14 -1 | io_sa [11, 0] SBLOCK en (346 336) SWC 
+| CHANY (10,1) --> CHANY (10,2) T/P: 14 -1 | cab_vmm [11, 1] SBLOCK sn (346 833) SWC 
+| CHANY (10,2) --> CHANY (10,3) T/P: 14 -1 | cab_vmm [11, 2] SBLOCK sn (346 834) SWC 
+| CHANY (10,3) --> CHANY (10,4) T/P: 14 -1 | cab_vmm [11, 3] SBLOCK sn (346 835) SWC 
+| CHANY (10,4) --> CHANY (10,5) T/P: 14 -1 | cab_vmm [11, 4] SBLOCK sn (346 836) SWC 
+| CHANY (10,5) --> CHANY (10,6) T/P: 14 -1 | cab_vmm [11, 5] SBLOCK sn (346 837) SWC 
+| CHANY (10,6) --> CHANX (10,6) T/P: 14 -1 | cab_vmm [11, 6] SBLOCK sw (346 806) SWC 
+| CHANX (10,6) -->  IPIN (10,6) T/P: 14 15 | cab_vmm [10, 6] CHANX  (312,646) T14 I15 ~~~~ PIN SINK ~~~~ || net (net21_1) -> pin 15 in 10 6
+SWC 
+ ------------- (net16_15) ------------- 
+|  OPIN (10,6) --> CHANY  (9,6) T/P:  8 20 | cab_vmm [10, 6] CHANY  (319,1014) T8 XO0 SWC 
+| CHANY  (9,6) --> CHANY  (9,7) T/P:  8 -1 | cab_vmm [10, 6] SBLOCK sn (319 838) SWC 
+| CHANY  (9,7) --> CHANY  (9,8) T/P:  8 -1 | cab_vmm [10, 7] SBLOCK sn (319 839) SWC 
+| CHANY  (9,8) --> CHANY  (9,9) T/P:  8 -1 | cab_vmm [10, 8] SBLOCK sn (319 840) SWC 
+| CHANY  (9,9) --> CHANX  (9,9) T/P:  8 -1 | cab_vmm [10, 9] SBLOCK sw (319 809) SWC 
+| CHANX  (9,9) --> CHANX  (8,9) T/P:  8 -1 | clb [ 9, 9] SBLOCK ew (283 1033) SWC 
+| CHANX  (8,9) --> CHANX  (7,9) T/P:  8 -1 | clb [ 8, 9] SBLOCK ew (249 1033) SWC 
+| CHANX  (7,9) --> CHANX  (6,9) T/P:  8 -1 | cab [ 7, 9] SBLOCK ew (217 873) SWC 
+| CHANX  (6,9) -->  IPIN (6,10) T/P:  8 12 |  cab [ 6, 9] CHANX  (183,713) T8 XI12 ~~~~ PIN SINK ~~~~ || net (net16_15) -> pin 12 in 6 10
+SWC 
+ ------------- (net16_16) ------------- 
+|  OPIN (10,6) --> CHANY  (9,6) T/P:  7 21 | cab_vmm [10, 6] CHANY  (320,1030) T7 XO1 SWC 
+| CHANY  (9,6) --> CHANY  (9,7) T/P:  7 -1 | cab_vmm [10, 6] SBLOCK sn (320 838) SWC 
+| CHANY  (9,7) --> CHANY  (9,8) T/P:  7 -1 | cab_vmm [10, 7] SBLOCK sn (320 839) SWC 
+| CHANY  (9,8) --> CHANY  (9,9) T/P:  7 -1 | cab_vmm [10, 8] SBLOCK sn (320 840) SWC 
+| CHANY  (9,9) --> CHANX  (9,9) T/P:  7 -1 | cab_vmm [10, 9] SBLOCK sw (320 809) SWC 
+| CHANX  (9,9) --> CHANX  (8,9) T/P:  7 -1 | clb [ 9, 9] SBLOCK ew (284 1033) SWC 
+| CHANX  (8,9) --> CHANX  (7,9) T/P:  7 -1 | clb [ 8, 9] SBLOCK ew (250 1033) SWC 
+| CHANX  (7,9) -->  IPIN (7,10) T/P:  7 12 |  cab [ 7, 9] CHANX  (218,713) T7 XI12 ~~~~ PIN SINK ~~~~ || net (net16_16) -> pin 12 in 7 10
+SWC 
+ ------------- (net16_7) ------------- 
+|  OPIN (10,6) --> CHANY (10,6) T/P:  8 22 | cab_vmm [11, 6] CHANY  (353,1110) T8 O2 SWC 
+| CHANY (10,6) --> CHANX (10,6) T/P:  8 -1 | cab_vmm [11, 6] SBLOCK sw (353 806) SWC 
+| CHANX (10,6) --> CHANX  (9,6) T/P:  8 -1 | cab_vmm [10, 6] SBLOCK ew (319 870) SWC 
+| CHANX  (9,6) --> CHANX  (8,6) T/P:  8 -1 | clb [ 9, 6] SBLOCK ew (283 1030) SWC 
+| CHANX  (8,6) --> CHANX  (7,6) T/P:  8 -1 | clb [ 8, 6] SBLOCK ew (249 1030) SWC 
+| CHANX  (7,6) --> CHANY  (6,6) T/P:  8 -1 | cab [ 7, 6] SBLOCK es (217 790) SWC 
+| CHANY  (6,6) --> CHANX  (6,5) T/P:  8 -1 | cab [ 7, 5] SBLOCK nw (217 821) SWC 
+| CHANX  (6,5) -->  IPIN  (6,6) T/P:  8 12 |  cab [ 6, 5] CHANX  (183,709) T8 XI12 ~~~~ PIN SINK ~~~~ || net (net16_7) -> pin 12 in 6 6
+SWC 
+ ------------- (net16_8) ------------- 
+|  OPIN (10,6) --> CHANY (10,6) T/P:  6 23 | cab_vmm [11, 6] CHANY  (356,1126) T6 O3 SWC 
+| CHANY (10,6) --> CHANX (10,5) T/P:  6 -1 | cab_vmm [11, 5] SBLOCK nw (356 821) SWC 
+| CHANX (10,5) --> CHANX  (9,5) T/P:  6 -1 | cab_vmm [10, 5] SBLOCK ew (322 869) SWC 
+| CHANX  (9,5) --> CHANX  (8,5) T/P:  6 -1 | clb [ 9, 5] SBLOCK ew (286 1029) SWC 
+| CHANX  (8,5) --> CHANX  (7,5) T/P:  6 -1 | clb [ 8, 5] SBLOCK ew (252 1029) SWC 
+| CHANX  (7,5) -->  IPIN  (7,6) T/P:  6 12 |  cab [ 7, 5] CHANX  (220,709) T6 XI12 ~~~~ PIN SINK ~~~~ || net (net16_8) -> pin 12 in 7 6
+SWC 
+ ------------- (net16_9) ------------- 
+|  OPIN (10,6) --> CHANY  (9,6) T/P: 13 28 | cab_vmm [10, 6] CHANY  (313,950) T13 XI0 SWC 
+| CHANY  (9,6) --> CHANX  (9,6) T/P: 13 -1 | cab_vmm [10, 6] SBLOCK sw (313 806) SWC 
+| CHANX  (9,6) --> CHANX  (8,6) T/P: 13 -1 | clb [ 9, 6] SBLOCK ew (277 1030) SWC 
+| CHANX  (8,6) --> CHANX  (7,6) T/P: 13 -1 | clb [ 8, 6] SBLOCK ew (243 1030) SWC 
+| CHANX  (7,6) --> CHANX  (6,6) T/P: 13 -1 | cab [ 7, 6] SBLOCK ew (211 870) SWC 
+| CHANX  (6,6) -->  IPIN  (6,7) T/P: 13 12 |  cab [ 6, 6] CHANX  (177,710) T13 XI12 ~~~~ PIN SINK ~~~~ || net (net16_9) -> pin 12 in 6 7
+SWC 
+ ------------- (net16_10) ------------- 
+|  OPIN (10,6) --> CHANY  (9,6) T/P:  0 29 | cab_vmm [10, 6] CHANY  (328,966) T0 XI1 SWC 
+| CHANY  (9,6) --> CHANX  (9,6) T/P:  0 -1 | cab_vmm [10, 6] SBLOCK sw (328 806) SWC 
+| CHANX  (9,6) --> CHANX  (8,6) T/P:  0 -1 | clb [ 9, 6] SBLOCK ew (292 1030) SWC 
+| CHANX  (8,6) --> CHANX  (7,6) T/P:  0 -1 | clb [ 8, 6] SBLOCK ew (258 1030) SWC 
+| CHANX  (7,6) -->  IPIN  (7,7) T/P:  0 12 |  cab [ 7, 6] CHANX  (226,710) T0 XI12 ~~~~ PIN SINK ~~~~ || net (net16_10) -> pin 12 in 7 7
+SWC 
+ ------------- (net16_11) ------------- 
+|  OPIN (10,6) --> CHANY  (9,6) T/P:  6 30 | cab_vmm [10, 6] CHANY  (322,982) T6 XI2 SWC 
+| CHANY  (9,6) --> CHANY  (9,7) T/P:  6 -1 | cab_vmm [10, 6] SBLOCK sn (322 838) SWC 
+| CHANY  (9,7) --> CHANX  (9,7) T/P:  6 -1 | cab_vmm [10, 7] SBLOCK sw (322 807) SWC 
+| CHANX  (9,7) --> CHANX  (8,7) T/P:  6 -1 | clb [ 9, 7] SBLOCK ew (286 1031) SWC 
+| CHANX  (8,7) --> CHANX  (7,7) T/P:  6 -1 | clb [ 8, 7] SBLOCK ew (252 1031) SWC 
+| CHANX  (7,7) --> CHANX  (6,7) T/P:  6 -1 | cab [ 7, 7] SBLOCK ew (220 871) SWC 
+| CHANX  (6,7) -->  IPIN  (6,8) T/P:  6 12 |  cab [ 6, 7] CHANX  (186,711) T6 XI12 ~~~~ PIN SINK ~~~~ || net (net16_11) -> pin 12 in 6 8
+SWC 
+ ------------- (net16_12) ------------- 
+|  OPIN (10,6) --> CHANY  (9,6) T/P: 12 31 | cab_vmm [10, 6] CHANY  (315,998) T12 XI3 SWC 
+| CHANY  (9,6) --> CHANY  (9,7) T/P: 12 -1 | cab_vmm [10, 6] SBLOCK sn (315 838) SWC 
+| CHANY  (9,7) --> CHANX  (9,7) T/P: 12 -1 | cab_vmm [10, 7] SBLOCK sw (315 807) SWC 
+| CHANX  (9,7) --> CHANX  (8,7) T/P: 12 -1 | clb [ 9, 7] SBLOCK ew (279 1031) SWC 
+| CHANX  (8,7) --> CHANX  (7,7) T/P: 12 -1 | clb [ 8, 7] SBLOCK ew (245 1031) SWC 
+| CHANX  (7,7) -->  IPIN  (7,8) T/P: 12 12 |  cab [ 7, 7] CHANX  (213,711) T12 XI12 ~~~~ PIN SINK ~~~~ || net (net16_12) -> pin 12 in 7 8
+SWC 
+ ------------- (net16_13) ------------- 
+|  OPIN (10,6) --> CHANY (10,6) T/P: 12 32 | cab_vmm [11, 6] CHANY  (349,1046) T12 I4 SWC 
+| CHANY (10,6) --> CHANY (10,7) T/P: 12 -1 | cab_vmm [11, 6] SBLOCK sn (349 838) SWC 
+| CHANY (10,7) --> CHANY (10,8) T/P: 12 -1 | cab_vmm [11, 7] SBLOCK sn (349 839) SWC 
+| CHANY (10,8) --> CHANX (10,8) T/P: 12 -1 | cab_vmm [11, 8] SBLOCK sw (349 808) SWC 
+| CHANX (10,8) --> CHANX  (9,8) T/P: 12 -1 | cab_vmm [10, 8] SBLOCK ew (315 872) SWC 
+| CHANX  (9,8) --> CHANX  (8,8) T/P: 12 -1 | clb [ 9, 8] SBLOCK ew (279 1032) SWC 
+| CHANX  (8,8) --> CHANX  (7,8) T/P: 12 -1 | clb [ 8, 8] SBLOCK ew (245 1032) SWC 
+| CHANX  (7,8) --> CHANX  (6,8) T/P: 12 -1 | cab [ 7, 8] SBLOCK ew (213 872) SWC 
+| CHANX  (6,8) -->  IPIN  (6,9) T/P: 12 12 |  cab [ 6, 8] CHANX  (179,712) T12 XI12 ~~~~ PIN SINK ~~~~ || net (net16_13) -> pin 12 in 6 9
+SWC 
+ ------------- (net16_14) ------------- 
+|  OPIN (10,6) --> CHANY (10,6) T/P: 13 33 | cab_vmm [11, 6] CHANY  (347,1062) T13 I5 SWC 
+| CHANY (10,6) --> CHANY (10,7) T/P: 13 -1 | cab_vmm [11, 6] SBLOCK sn (347 838) SWC 
+| CHANY (10,7) --> CHANY (10,8) T/P: 13 -1 | cab_vmm [11, 7] SBLOCK sn (347 839) SWC 
+| CHANY (10,8) --> CHANX (10,8) T/P: 13 -1 | cab_vmm [11, 8] SBLOCK sw (347 808) SWC 
+| CHANX (10,8) --> CHANX  (9,8) T/P: 13 -1 | cab_vmm [10, 8] SBLOCK ew (313 872) SWC 
+| CHANX  (9,8) --> CHANX  (8,8) T/P: 13 -1 | clb [ 9, 8] SBLOCK ew (277 1032) SWC 
+| CHANX  (8,8) --> CHANX  (7,8) T/P: 13 -1 | clb [ 8, 8] SBLOCK ew (243 1032) SWC 
+| CHANX  (7,8) -->  IPIN  (7,9) T/P: 13 12 |  cab [ 7, 8] CHANX  (211,712) T13 XI12 ~~~~ PIN SINK ~~~~ || net (net16_14) -> pin 12 in 7 9
+SWC 
+ ------------- (net16_1) ------------- 
+|  OPIN (10,6) --> CHANY (10,6) T/P:  1 34 | cab_vmm [11, 6] CHANY  (361,1078) T1 I6 SWC 
+| CHANY (10,6) --> CHANX (10,5) T/P:  1 -1 | cab_vmm [11, 5] SBLOCK nw (361 821) SWC 
+| CHANX (10,5) --> CHANX  (9,5) T/P:  1 -1 | cab_vmm [10, 5] SBLOCK ew (327 869) SWC 
+| CHANX  (9,5) --> CHANX  (8,5) T/P:  1 -1 | clb [ 9, 5] SBLOCK ew (291 1029) SWC 
+| CHANX  (8,5) --> CHANX  (7,5) T/P:  1 -1 | clb [ 8, 5] SBLOCK ew (257 1029) SWC 
+| CHANX  (7,5) --> CHANY  (6,5) T/P:  1 -1 | cab [ 7, 5] SBLOCK es (225 789) SWC 
+| CHANY  (6,5) --> CHANY  (6,4) T/P:  1 -1 | cab [ 7, 4] SBLOCK ns (225 836) SWC 
+| CHANY  (6,4) --> CHANY  (6,3) T/P:  1 -1 | cab [ 7, 3] SBLOCK ns (225 835) SWC 
+| CHANY  (6,3) --> CHANX  (6,2) T/P:  1 -1 | cab [ 7, 2] SBLOCK nw (225 818) SWC 
+| CHANX  (6,2) -->  IPIN  (6,3) T/P:  1 12 |  cab [ 6, 2] CHANX  (191,706) T1 XI12 ~~~~ PIN SINK ~~~~ || net (net16_1) -> pin 12 in 6 3
+SWC 
+ ------------- (net16_2) ------------- 
+|  OPIN (10,6) --> CHANY (10,6) T/P:  7 35 | cab_vmm [11, 6] CHANY  (354,1094) T7 I7 SWC 
+| CHANY (10,6) --> CHANY (10,5) T/P:  7 -1 | cab_vmm [11, 5] SBLOCK ns (354 837) SWC 
+| CHANY (10,5) --> CHANX (10,4) T/P:  7 -1 | cab_vmm [11, 4] SBLOCK nw (354 820) SWC 
+| CHANX (10,4) --> CHANX  (9,4) T/P:  7 -1 | cab_vmm [10, 4] SBLOCK ew (320 868) SWC 
+| CHANX  (9,4) --> CHANX  (8,4) T/P:  7 -1 | clb [ 9, 4] SBLOCK ew (284 1028) SWC 
+| CHANX  (8,4) --> CHANY  (7,4) T/P:  7 -1 | clb [ 8, 4] SBLOCK es (250 948) SWC 
+| CHANY  (7,4) --> CHANY  (7,3) T/P:  7 -1 | clb [ 8, 3] SBLOCK ns (250 995) SWC 
+| CHANY  (7,3) --> CHANX  (7,2) T/P:  7 -1 | clb [ 8, 2] SBLOCK nw (250 978) SWC 
+| CHANX  (7,2) -->  IPIN  (7,3) T/P:  7 12 |  cab [ 7, 2] CHANX  (218,706) T7 XI12 ~~~~ PIN SINK ~~~~ || net (net16_2) -> pin 12 in 7 3
+SWC 
+ ------------- (net16_3) ------------- 
+|  OPIN (10,6) --> CHANX (10,6) T/P:  6 36 | cab_vmm [10, 6] CHANX  (322,582) T6 I8 SWC 
+| CHANX (10,6) --> CHANX  (9,6) T/P:  6 -1 | cab_vmm [10, 6] SBLOCK ew (322 870) SWC 
+| CHANX  (9,6) --> CHANX  (8,6) T/P:  6 -1 | clb [ 9, 6] SBLOCK ew (286 1030) SWC 
+| CHANX  (8,6) --> CHANX  (7,6) T/P:  6 -1 | clb [ 8, 6] SBLOCK ew (252 1030) SWC 
+| CHANX  (7,6) --> CHANY  (6,6) T/P:  6 -1 | cab [ 7, 6] SBLOCK es (220 790) SWC 
+| CHANY  (6,6) --> CHANY  (6,5) T/P:  6 -1 | cab [ 7, 5] SBLOCK ns (220 837) SWC 
+| CHANY  (6,5) --> CHANY  (6,4) T/P:  6 -1 | cab [ 7, 4] SBLOCK ns (220 836) SWC 
+| CHANY  (6,4) --> CHANX  (6,3) T/P:  6 -1 | cab [ 7, 3] SBLOCK nw (220 819) SWC 
+| CHANX  (6,3) -->  IPIN  (6,4) T/P:  6 12 |  cab [ 6, 3] CHANX  (186,707) T6 XI12 ~~~~ PIN SINK ~~~~ || net (net16_3) -> pin 12 in 6 4
+SWC 
+ ------------- (net16_4) ------------- 
+|  OPIN (10,6) --> CHANX (10,6) T/P:  1 37 | cab_vmm [10, 6] CHANX  (327,598) T1 I9 SWC 
+| CHANX (10,6) --> CHANX  (9,6) T/P:  1 -1 | cab_vmm [10, 6] SBLOCK ew (327 870) SWC 
+| CHANX  (9,6) --> CHANX  (8,6) T/P:  1 -1 | clb [ 9, 6] SBLOCK ew (291 1030) SWC 
+| CHANX  (8,6) --> CHANY  (7,6) T/P:  1 -1 | clb [ 8, 6] SBLOCK es (257 950) SWC 
+| CHANY  (7,6) --> CHANY  (7,5) T/P:  1 -1 | clb [ 8, 5] SBLOCK ns (257 997) SWC 
+| CHANY  (7,5) --> CHANY  (7,4) T/P:  1 -1 | clb [ 8, 4] SBLOCK ns (257 996) SWC 
+| CHANY  (7,4) --> CHANX  (7,3) T/P:  1 -1 | clb [ 8, 3] SBLOCK nw (257 979) SWC 
+| CHANX  (7,3) -->  IPIN  (7,4) T/P:  1 12 |  cab [ 7, 3] CHANX  (225,707) T1 XI12 ~~~~ PIN SINK ~~~~ || net (net16_4) -> pin 12 in 7 4
+SWC 
+ ------------- (net16_5) ------------- 
+|  OPIN (10,6) --> CHANX (10,5) T/P: 10 38 | cab_vmm [10, 5] CHANX  (317,677) T10 XI10 SWC 
+| CHANX (10,5) --> CHANX  (9,5) T/P: 10 -1 | cab_vmm [10, 5] SBLOCK ew (317 869) SWC 
+| CHANX  (9,5) --> CHANX  (8,5) T/P: 10 -1 | clb [ 9, 5] SBLOCK ew (281 1029) SWC 
+| CHANX  (8,5) --> CHANX  (7,5) T/P: 10 -1 | clb [ 8, 5] SBLOCK ew (247 1029) SWC 
+| CHANX  (7,5) --> CHANY  (6,5) T/P: 10 -1 | cab [ 7, 5] SBLOCK es (215 789) SWC 
+| CHANY  (6,5) --> CHANX  (6,4) T/P: 10 -1 | cab [ 7, 4] SBLOCK nw (215 820) SWC 
+| CHANX  (6,4) -->  IPIN  (6,5) T/P: 10 12 |  cab [ 6, 4] CHANX  (181,708) T10 XI12 ~~~~ PIN SINK ~~~~ || net (net16_5) -> pin 12 in 6 5
+SWC 
+ ------------- (net16_6) ------------- 
+|  OPIN (10,6) --> CHANX (10,5) T/P:  4 39 | cab_vmm [10, 5] CHANX  (324,693) T4 XI11 SWC 
+| CHANX (10,5) --> CHANX  (9,5) T/P:  4 -1 | cab_vmm [10, 5] SBLOCK ew (324 869) SWC 
+| CHANX  (9,5) --> CHANX  (8,5) T/P:  4 -1 | clb [ 9, 5] SBLOCK ew (288 1029) SWC 
+| CHANX  (8,5) --> CHANY  (7,5) T/P:  4 -1 | clb [ 8, 5] SBLOCK es (254 949) SWC 
+| CHANY  (7,5) --> CHANX  (7,4) T/P:  4 -1 | clb [ 8, 4] SBLOCK nw (254 980) SWC 
+| CHANX  (7,4) -->  IPIN  (7,5) T/P:  4 12 |  cab [ 7, 4] CHANX  (222,708) T4 XI12 ~~~~ PIN SINK ~~~~ || net (net16_6) -> pin 12 in 7 5
+SWC 
+ ------------- (vcc): ------------- 
+ ------------- (net4_1) ------------- 
+|  OPIN (7,10) --> CHANY (7,10) T/P: 12 19 |  clb [ 8,10] CHANY  (245,714) T12 AXO3 SWC 
+| CHANY (7,10) --> CHANX (7,10) T/P: 12 -1 | clb [ 8,10] SBLOCK sw (245 970) SWC 
+| CHANX (7,10) -->  IPIN (7,10) T/P: 12  9 |  cab [ 7,10] CHANX  (213,602) T12 I9 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 9 in 7 10
+SWC 
+| CHANY (7,10) -->  IPIN (7,10) T/P: 12  6 |  clb [ 8,10] CHANY  (245,666) T12 AXI6 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 6 in 7 10
+SWC 
+| CHANY (7,10) --> CHANY  (7,9) T/P: 12 -1 | clb [ 8, 9] SBLOCK ns (245 1001) SWC 
+| CHANY  (7,9) -->  IPIN  (7,9) T/P: 12  6 |  clb [ 8, 9] CHANY  (245,665) T12 AXI6 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 6 in 7 9
+SWC 
+| CHANY  (7,9) --> CHANY  (7,8) T/P: 12 -1 | clb [ 8, 8] SBLOCK ns (245 1000) SWC 
+| CHANY  (7,8) -->  IPIN  (7,8) T/P: 12  6 |  clb [ 8, 8] CHANY  (245,664) T12 AXI6 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 6 in 7 8
+SWC 
+| CHANY  (7,8) --> CHANY  (7,7) T/P: 12 -1 | clb [ 8, 7] SBLOCK ns (245 999) SWC 
+| CHANY  (7,7) -->  IPIN  (7,7) T/P: 12  6 |  clb [ 8, 7] CHANY  (245,663) T12 AXI6 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 6 in 7 7
+SWC 
+| CHANY  (7,7) --> CHANY  (7,6) T/P: 12 -1 | clb [ 8, 6] SBLOCK ns (245 998) SWC 
+| CHANY  (7,6) -->  IPIN  (7,6) T/P: 12  6 |  clb [ 8, 6] CHANY  (245,662) T12 AXI6 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 6 in 7 6
+SWC 
+| CHANY  (7,6) --> CHANY  (7,5) T/P: 12 -1 | clb [ 8, 5] SBLOCK ns (245 997) SWC 
+| CHANY  (7,5) -->  IPIN  (7,5) T/P: 12  6 |  clb [ 8, 5] CHANY  (245,661) T12 AXI6 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 6 in 7 5
+SWC 
+| CHANY  (7,5) --> CHANY  (7,4) T/P: 12 -1 | clb [ 8, 4] SBLOCK ns (245 996) SWC 
+| CHANY  (7,4) -->  IPIN  (7,4) T/P: 12  6 |  clb [ 8, 4] CHANY  (245,660) T12 AXI6 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 6 in 7 4
+SWC 
+| CHANY  (7,4) --> CHANY  (7,3) T/P: 12 -1 | clb [ 8, 3] SBLOCK ns (245 995) SWC 
+| CHANY  (7,3) -->  IPIN  (7,3) T/P: 12  6 |  clb [ 8, 3] CHANY  (245,659) T12 AXI6 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 6 in 7 3
+SWC 
+| CHANY  (7,4) --> CHANX  (7,3) T/P: 12 -1 | clb [ 8, 3] SBLOCK nw (245 979) SWC 
+| CHANX  (7,3) --> CHANY  (6,3) T/P: 12 -1 | cab [ 7, 3] SBLOCK es (213 787) SWC 
+| CHANY  (6,3) -->  IPIN  (6,3) T/P: 12  6 |  cab [ 7, 3] CHANY  (213,1075) T12 I6 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 6 in 6 3
+SWC 
+| CHANY  (6,3) --> CHANY  (6,4) T/P: 12 -1 | cab [ 7, 3] SBLOCK sn (213 835) SWC 
+| CHANY  (6,4) -->  IPIN  (6,4) T/P: 12  6 |  cab [ 7, 4] CHANY  (213,1076) T12 I6 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 6 in 6 4
+SWC 
+| CHANY  (6,4) --> CHANY  (6,5) T/P: 12 -1 | cab [ 7, 4] SBLOCK sn (213 836) SWC 
+| CHANY  (6,5) -->  IPIN  (6,5) T/P: 12  6 |  cab [ 7, 5] CHANY  (213,1077) T12 I6 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 6 in 6 5
+SWC 
+| CHANY  (6,5) --> CHANY  (6,6) T/P: 12 -1 | cab [ 7, 5] SBLOCK sn (213 837) SWC 
+| CHANY  (6,6) -->  IPIN  (6,6) T/P: 12  6 |  cab [ 7, 6] CHANY  (213,1078) T12 I6 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 6 in 6 6
+SWC 
+| CHANY  (6,6) --> CHANY  (6,7) T/P: 12 -1 | cab [ 7, 6] SBLOCK sn (213 838) SWC 
+| CHANY  (6,7) -->  IPIN  (6,7) T/P: 12  6 |  cab [ 7, 7] CHANY  (213,1079) T12 I6 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 6 in 6 7
+SWC 
+| CHANY  (6,7) --> CHANY  (6,8) T/P: 12 -1 | cab [ 7, 7] SBLOCK sn (213 839) SWC 
+| CHANY  (6,8) -->  IPIN  (6,8) T/P: 12  6 |  cab [ 7, 8] CHANY  (213,1080) T12 I6 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 6 in 6 8
+SWC 
+| CHANY  (6,8) --> CHANY  (6,9) T/P: 12 -1 | cab [ 7, 8] SBLOCK sn (213 840) SWC 
+| CHANY  (6,9) -->  IPIN  (6,9) T/P: 12  6 |  cab [ 7, 9] CHANY  (213,1081) T12 I6 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 6 in 6 9
+SWC 
+| CHANX (7,10) --> CHANY (6,10) T/P: 12 -1 | cab [ 7,10] SBLOCK es (213 794) SWC 
+| CHANY (6,10) -->  IPIN (6,10) T/P: 12  6 |  cab [ 7,10] CHANY  (213,1082) T12 I6 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 6 in 6 10
+SWC 
+ ------------- (net19_1) ------------- 
+|  OPIN (13,0) --> CHANX (13,0) T/P: 16 10 | io_sd [13, 0] CHANX  (419,320) T16 I15 SWC 
+| CHANX (13,0) --> CHANX (12,0) T/P: 16 -1 | io_sd [13, 0] SBLOCK ew (408 352) SWC 
+| CHANX (12,0) --> CHANX (11,0) T/P: 16 -1 | io_sd [12, 0] SBLOCK ew (374 352) SWC 
+| CHANX (11,0) --> CHANX (10,0) T/P: 16 -1 | io_sa [11, 0] SBLOCK ew (344 352) SWC 
+| CHANX (10,0) --> CHANX  (9,0) T/P: 16 -1 | io_sa [10, 0] SBLOCK ew (310 352) SWC 
+| CHANX  (9,0) --> CHANX  (8,0) T/P: 16 -1 | io_sd [ 9, 0] SBLOCK ew (272 352) SWC 
+| CHANX  (8,0) --> CHANY  (7,1) T/P: 16 -1 | io_sd [ 8, 0] SBLOCK en (238 336) SWC 
+| CHANY  (7,1) --> CHANY  (7,2) T/P: 16 -1 | clb [ 8, 1] SBLOCK sn (240 993) SWC 
+| CHANY  (7,2) --> CHANX  (7,2) T/P: 16 -1 | clb [ 8, 2] SBLOCK sw (240 962) SWC 
+| CHANX  (7,2) -->  IPIN  (7,3) T/P: 16 11 |  cab [ 7, 2] CHANX  (208,690) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net19_1) -> pin 11 in 7 3
+SWC 
+| CHANX  (7,2) --> CHANX  (6,2) T/P: 16 -1 | cab [ 7, 2] SBLOCK ew (208 866) SWC 
+| CHANX  (6,2) -->  IPIN  (6,3) T/P: 16 11 |  cab [ 6, 2] CHANX  (174,690) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net19_1) -> pin 11 in 6 3
+SWC 
+| CHANX  (7,2) --> CHANY  (6,3) T/P: 16 -1 | cab [ 7, 2] SBLOCK en (208 850) SWC 
+| CHANY  (6,3) --> CHANX  (6,3) T/P: 16 -1 | cab [ 7, 3] SBLOCK sw (208 803) SWC 
+| CHANX  (6,3) -->  IPIN  (6,4) T/P: 16 11 |  cab [ 6, 3] CHANX  (174,691) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net19_1) -> pin 11 in 6 4
+SWC 
+| CHANX  (6,3) --> CHANX  (7,3) T/P: 16 -1 | cab [ 7, 3] SBLOCK we (208 867) SWC 
+| CHANX  (7,3) -->  IPIN  (7,4) T/P: 16 11 |  cab [ 7, 3] CHANX  (208,691) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net19_1) -> pin 11 in 7 4
+SWC 
+| CHANX  (6,3) --> CHANY  (6,4) T/P: 16 -1 | cab [ 7, 3] SBLOCK wn (208 819) SWC 
+| CHANY  (6,4) --> CHANX  (6,4) T/P: 16 -1 | cab [ 7, 4] SBLOCK sw (208 804) SWC 
+| CHANX  (6,4) -->  IPIN  (6,5) T/P: 16 11 |  cab [ 6, 4] CHANX  (174,692) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net19_1) -> pin 11 in 6 5
+SWC 
+| CHANX  (6,4) --> CHANX  (7,4) T/P: 16 -1 | cab [ 7, 4] SBLOCK we (208 868) SWC 
+| CHANX  (7,4) -->  IPIN  (7,5) T/P: 16 11 |  cab [ 7, 4] CHANX  (208,692) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net19_1) -> pin 11 in 7 5
+SWC 
+| CHANY  (6,4) --> CHANY  (6,5) T/P: 16 -1 | cab [ 7, 4] SBLOCK sn (208 836) SWC 
+| CHANY  (6,5) --> CHANX  (6,5) T/P: 16 -1 | cab [ 7, 5] SBLOCK sw (208 805) SWC 
+| CHANX  (6,5) -->  IPIN  (6,6) T/P: 16 11 |  cab [ 6, 5] CHANX  (174,693) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net19_1) -> pin 11 in 6 6
+SWC 
+| CHANX  (6,5) --> CHANX  (7,5) T/P: 16 -1 | cab [ 7, 5] SBLOCK we (208 869) SWC 
+| CHANX  (7,5) -->  IPIN  (7,6) T/P: 16 11 |  cab [ 7, 5] CHANX  (208,693) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net19_1) -> pin 11 in 7 6
+SWC 
+| CHANY  (6,5) --> CHANY  (6,6) T/P: 16 -1 | cab [ 7, 5] SBLOCK sn (208 837) SWC 
+| CHANY  (6,6) --> CHANX  (6,6) T/P: 16 -1 | cab [ 7, 6] SBLOCK sw (208 806) SWC 
+| CHANX  (6,6) -->  IPIN  (6,7) T/P: 16 11 |  cab [ 6, 6] CHANX  (174,694) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net19_1) -> pin 11 in 6 7
+SWC 
+| CHANY  (6,6) --> CHANX  (7,6) T/P: 16 -1 | cab [ 7, 6] SBLOCK se (208 790) SWC 
+| CHANX  (7,6) -->  IPIN  (7,7) T/P: 16 11 |  cab [ 7, 6] CHANX  (208,694) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net19_1) -> pin 11 in 7 7
+SWC 
+| CHANY  (6,6) --> CHANY  (6,7) T/P: 16 -1 | cab [ 7, 6] SBLOCK sn (208 838) SWC 
+| CHANY  (6,7) --> CHANX  (6,7) T/P: 16 -1 | cab [ 7, 7] SBLOCK sw (208 807) SWC 
+| CHANX  (6,7) -->  IPIN  (6,8) T/P: 16 11 |  cab [ 6, 7] CHANX  (174,695) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net19_1) -> pin 11 in 6 8
+SWC 
+| CHANY  (6,7) --> CHANX  (7,7) T/P: 16 -1 | cab [ 7, 7] SBLOCK se (208 791) SWC 
+| CHANX  (7,7) -->  IPIN  (7,8) T/P: 16 11 |  cab [ 7, 7] CHANX  (208,695) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net19_1) -> pin 11 in 7 8
+SWC 
+| CHANY  (6,7) --> CHANY  (6,8) T/P: 16 -1 | cab [ 7, 7] SBLOCK sn (208 839) SWC 
+| CHANY  (6,8) --> CHANX  (6,8) T/P: 16 -1 | cab [ 7, 8] SBLOCK sw (208 808) SWC 
+| CHANX  (6,8) -->  IPIN  (6,9) T/P: 16 11 |  cab [ 6, 8] CHANX  (174,696) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net19_1) -> pin 11 in 6 9
+SWC 
+| CHANY  (6,8) --> CHANX  (7,8) T/P: 16 -1 | cab [ 7, 8] SBLOCK se (208 792) SWC 
+| CHANX  (7,8) -->  IPIN  (7,9) T/P: 16 11 |  cab [ 7, 8] CHANX  (208,696) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net19_1) -> pin 11 in 7 9
+SWC 
+| CHANX  (6,8) --> CHANY  (6,9) T/P: 16 -1 | cab [ 7, 8] SBLOCK wn (208 824) SWC 
+| CHANY  (6,9) --> CHANX  (6,9) T/P: 16 -1 | cab [ 7, 9] SBLOCK sw (208 809) SWC 
+| CHANX  (6,9) -->  IPIN (6,10) T/P: 16 11 |  cab [ 6, 9] CHANX  (174,697) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net19_1) -> pin 11 in 6 10
+SWC 
+| CHANY  (6,9) --> CHANX  (7,9) T/P: 16 -1 | cab [ 7, 9] SBLOCK se (208 793) SWC 
+| CHANX  (7,9) -->  IPIN (7,10) T/P: 16 11 |  cab [ 7, 9] CHANX  (208,697) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net19_1) -> pin 11 in 7 10
+SWC 
+ ------------- (net2_1) ------------- 
+|  OPIN  (9,0) --> CHANX  (9,0) T/P: 15  4 | io_sd [ 9, 0] CHANX  (284,288) T15 I7 SWC 
+| CHANX  (9,0) --> CHANX  (8,0) T/P: 15 -1 | io_sd [ 9, 0] SBLOCK ew (273 352) SWC 
+| CHANX  (8,0) --> CHANY  (7,1) T/P: 15 -1 | io_sd [ 8, 0] SBLOCK en (239 336) SWC 
+| CHANY  (7,1) --> CHANY  (7,2) T/P: 15 -1 | clb [ 8, 1] SBLOCK sn (241 993) SWC 
+| CHANY  (7,2) -->  IPIN  (7,2) T/P: 15  6 |  clb [ 8, 2] CHANY  (241,658) T15 AXI6 ~~~~ PIN SINK ~~~~ || net (net2_1) -> pin 6 in 7 2
+SWC 
+ ------------- (net3_1) ------------- 
+|  OPIN  (9,0) --> CHANX  (9,0) T/P: 14  7 | io_sd [ 9, 0] CHANX  (285,304) T14 I11 SWC 
+| CHANX  (9,0) --> CHANX  (8,0) T/P: 14 -1 | io_sd [ 9, 0] SBLOCK ew (274 352) SWC 
+| CHANX  (8,0) --> CHANY  (7,1) T/P: 14 -1 | io_sd [ 8, 0] SBLOCK en (240 336) SWC 
+| CHANY  (7,1) --> CHANX  (7,1) T/P: 14 -1 | clb [ 8, 1] SBLOCK sw (242 961) SWC 
+| CHANX  (7,1) -->  IPIN  (7,2) T/P: 14 12 |  cab [ 7, 1] CHANX  (210,705) T14 XI12 ~~~~ PIN SINK ~~~~ || net (net3_1) -> pin 12 in 7 2
+SWC 
+ ------------- (net1_1) ------------- 
+|  OPIN  (7,2) --> CHANX  (7,2) T/P:  4 20 |  cab [ 7, 2] CHANX  (222,658) T4 O4 SWC 
+| CHANX  (7,2) --> CHANX  (6,2) T/P:  4 -1 | cab [ 7, 2] SBLOCK ew (222 866) SWC 
+| CHANX  (6,2) --> CHANY  (5,2) T/P:  4 -1 | cab [ 6, 2] SBLOCK es (188 786) SWC 
+| CHANY  (5,2) -->  IPIN  (6,2) T/P:  4  1 |  cab [ 6, 2] CHANY  (188,962) T4 XI1 ~~~~ PIN SINK ~~~~ || net (net1_1) -> pin 1 in 6 2
+SWC 
+| CHANX  (7,2) --> CHANX  (8,2) T/P:  4 -1 | clb [ 8, 2] SBLOCK we (254 1026) SWC 
+| CHANX  (8,2) --> CHANY  (8,2) T/P:  4 -1 | clb [ 9, 2] SBLOCK ws (288 962) SWC 
+| CHANY  (8,2) --> CHANY  (8,1) T/P:  4 -1 | clb [ 9, 1] SBLOCK ns (288 993) SWC 
+| CHANY  (8,1) --> CHANX  (9,0) T/P:  4 -1 | io_sd [ 9, 0] SBLOCK ne (276 432) SWC 
+| CHANX  (9,0) -->  IPIN  (9,0) T/P:  4  0 | io_sd [ 9, 0] CHANX  (298,272) T4 I3 ~~~~ PIN SINK ~~~~ || net (net1_1) -> pin 0 in 9 0
+SWC 
+ ------------- (out_ramp_adc) ------------- 
+|  OPIN  (7,1) --> CHANX  (7,1) T/P: 16 20 |  cab [ 7, 1] CHANX  (208,657) T16 O4 SWC 
+| CHANX  (7,1) --> CHANX  (8,1) T/P: 16 -1 | clb [ 8, 1] SBLOCK we (240 1025) SWC 
+| CHANX  (8,1) --> CHANX  (9,1) T/P: 16 -1 | clb [ 9, 1] SBLOCK we (274 1025) SWC 
+| CHANX  (9,1) --> CHANX (10,1) T/P: 16 -1 | cab_vmm [10, 1] SBLOCK we (310 865) SWC 
+| CHANX (10,1) --> CHANX (11,1) T/P: 16 -1 | cab_vmm [11, 1] SBLOCK we (344 865) SWC 
+| CHANX (11,1) --> CHANX (12,1) T/P: 16 -1 | clb [12, 1] SBLOCK we (376 1025) SWC 
+| CHANX (12,1) --> CHANX (13,1) T/P: 16 -1 | clb [13, 1] SBLOCK we (410 1025) SWC 
+| CHANX (13,1) --> CHANX (14,1) T/P: 16 -1 | cab2 [14, 1] SBLOCK we (446 865) SWC 
+| CHANX (14,1) --> CHANY (14,1) T/P: 16 -1 | io_e [15, 1] SBLOCK ws (477 1009) SWC 
+| CHANY (14,1) -->  IPIN (15,1) T/P: 16 15 | **
+io_e [15, 1] CHANY  (477,641) T16 OE3 ~~~~ PIN SINK ~~~~ || net (out_ramp_adc) -> pin 15 in 15 1
+SWC 
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+vcc
+tgate[0].in[0]
+local interconnect 1 vcc -> 19 tgate[0].in[0] (13 1) -> (81 20)
+gnd
+tgate[0].in[1]
+local interconnect 0 gnd -> 20 tgate[0].in[1] (12 0) -> (80 4)
+tgate[0].out[0]
+cab.O[4]
+local interconnect 70 tgate[0].out[0] -> 132 cab.O[4] (25 48) -> (93 772)
+getting here!
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+cab.I[1]
+fgswc_nmirror_w_bias[0].in[0]
+local interconnect 3 cab.I[1] -> 78 fgswc_nmirror_w_bias[0].in[0] (21 3) -> (191 50)
+fgswc_nmirror_w_bias[0].out[0]
+cab.O[4]
+local interconnect 44 fgswc_nmirror_w_bias[0].out[0] -> 132 cab.O[4] (25 52) -> (195 834)
+getting here!
+fgswc_nmirror_w_bias[0] fgswc_nmirror_w_bias1[0] -> (21 31) -> (191 498)
+fgswc_nmirror_w_bias[0] fgswc_nmirror_w_bias2[0] -> (5 1) -> (175 18)
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+cab.I[6]
+integrator_nmirror[0].in[0]
+local interconnect 8 cab.I[6] -> 65 integrator_nmirror[0].in[0] (29 8) -> (199 131)
+cab.I[12]
+integrator_nmirror[0].in[1]
+local interconnect 14 cab.I[12] -> 66 integrator_nmirror[0].in[1] (28 14) -> (198 227)
+cab.I[11]
+integrator_nmirror[0].in[2]
+local interconnect 13 cab.I[11] -> 67 integrator_nmirror[0].in[2] (13 13) -> (183 211)
+integrator_nmirror[0].out[0]
+cab.O[4]
+local interconnect 51 integrator_nmirror[0].out[0] -> 132 cab.O[4] (25 39) -> (195 627)
+getting here!
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 19) -> (198 307)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 27) -> (198 435)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (12 17) -> (182 275)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (25 17) -> (195 275)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (27 17) -> (197 275)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (26 18) -> (196 291)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 31) -> (198 499)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (24 17) -> (194 275)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (23 17) -> (193 275)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (22 17) -> (192 275)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 20) -> (198 323)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 21) -> (198 339)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 22) -> (198 355)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (16 1) -> (186 19)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (17 25) -> (187 403)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 57) -> (198 915)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 58) -> (198 931)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 59) -> (198 947)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 60) -> (198 963)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 61) -> (198 979)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 62) -> (198 995)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 57) -> (199 915)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 58) -> (199 931)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 59) -> (199 947)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 60) -> (199 963)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 61) -> (199 979)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 62) -> (199 995)
+yo
+integrator_nmirror[0] integrator_nmirror_ota0[0] -> (32 62) -> (202 995)
+integrator_nmirror[0] integrator_nmirror_ota1[0] -> (32 63) -> (202 1011)
+integrator_nmirror[0] integrator_nmirror_ota2[0] -> (5 25) -> (175 403)
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+cab.I[6]
+integrator_nmirror[0].in[0]
+local interconnect 8 cab.I[6] -> 65 integrator_nmirror[0].in[0] (29 8) -> (199 132)
+cab.I[12]
+integrator_nmirror[0].in[1]
+local interconnect 14 cab.I[12] -> 66 integrator_nmirror[0].in[1] (28 14) -> (198 228)
+cab.I[11]
+integrator_nmirror[0].in[2]
+local interconnect 13 cab.I[11] -> 67 integrator_nmirror[0].in[2] (13 13) -> (183 212)
+integrator_nmirror[0].out[0]
+cab.O[4]
+local interconnect 51 integrator_nmirror[0].out[0] -> 132 cab.O[4] (25 39) -> (195 628)
+getting here!
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 19) -> (198 308)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 27) -> (198 436)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (12 17) -> (182 276)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (25 17) -> (195 276)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (27 17) -> (197 276)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (26 18) -> (196 292)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 31) -> (198 500)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (24 17) -> (194 276)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (23 17) -> (193 276)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (22 17) -> (192 276)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 20) -> (198 324)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 21) -> (198 340)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 22) -> (198 356)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (16 1) -> (186 20)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (17 25) -> (187 404)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 57) -> (198 916)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 58) -> (198 932)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 59) -> (198 948)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 60) -> (198 964)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 61) -> (198 980)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 62) -> (198 996)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 57) -> (199 916)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 58) -> (199 932)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 59) -> (199 948)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 60) -> (199 964)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 61) -> (199 980)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 62) -> (199 996)
+yo
+integrator_nmirror[0] integrator_nmirror_ota0[0] -> (32 62) -> (202 996)
+integrator_nmirror[0] integrator_nmirror_ota1[0] -> (32 63) -> (202 1012)
+integrator_nmirror[0] integrator_nmirror_ota2[0] -> (5 25) -> (175 404)
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+cab.I[6]
+integrator_nmirror[0].in[0]
+local interconnect 8 cab.I[6] -> 65 integrator_nmirror[0].in[0] (29 8) -> (199 133)
+cab.I[12]
+integrator_nmirror[0].in[1]
+local interconnect 14 cab.I[12] -> 66 integrator_nmirror[0].in[1] (28 14) -> (198 229)
+cab.I[11]
+integrator_nmirror[0].in[2]
+local interconnect 13 cab.I[11] -> 67 integrator_nmirror[0].in[2] (13 13) -> (183 213)
+integrator_nmirror[0].out[0]
+cab.O[4]
+local interconnect 51 integrator_nmirror[0].out[0] -> 132 cab.O[4] (25 39) -> (195 629)
+getting here!
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 19) -> (198 309)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 27) -> (198 437)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (12 17) -> (182 277)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (25 17) -> (195 277)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (27 17) -> (197 277)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (26 18) -> (196 293)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 31) -> (198 501)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (24 17) -> (194 277)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (23 17) -> (193 277)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (22 17) -> (192 277)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 20) -> (198 325)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 21) -> (198 341)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 22) -> (198 357)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (16 1) -> (186 21)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (17 25) -> (187 405)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 57) -> (198 917)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 58) -> (198 933)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 59) -> (198 949)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 60) -> (198 965)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 61) -> (198 981)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 62) -> (198 997)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 57) -> (199 917)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 58) -> (199 933)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 59) -> (199 949)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 60) -> (199 965)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 61) -> (199 981)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 62) -> (199 997)
+yo
+integrator_nmirror[0] integrator_nmirror_ota0[0] -> (32 62) -> (202 997)
+integrator_nmirror[0] integrator_nmirror_ota1[0] -> (32 63) -> (202 1013)
+integrator_nmirror[0] integrator_nmirror_ota2[0] -> (5 25) -> (175 405)
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+cab.I[6]
+integrator_nmirror[0].in[0]
+local interconnect 8 cab.I[6] -> 65 integrator_nmirror[0].in[0] (29 8) -> (199 134)
+cab.I[12]
+integrator_nmirror[0].in[1]
+local interconnect 14 cab.I[12] -> 66 integrator_nmirror[0].in[1] (28 14) -> (198 230)
+cab.I[11]
+integrator_nmirror[0].in[2]
+local interconnect 13 cab.I[11] -> 67 integrator_nmirror[0].in[2] (13 13) -> (183 214)
+integrator_nmirror[0].out[0]
+cab.O[4]
+local interconnect 51 integrator_nmirror[0].out[0] -> 132 cab.O[4] (25 39) -> (195 630)
+getting here!
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 19) -> (198 310)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 27) -> (198 438)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (12 17) -> (182 278)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (25 17) -> (195 278)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (27 17) -> (197 278)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (26 18) -> (196 294)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 31) -> (198 502)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (24 17) -> (194 278)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (23 17) -> (193 278)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (22 17) -> (192 278)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 20) -> (198 326)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 21) -> (198 342)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 22) -> (198 358)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (16 1) -> (186 22)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (17 25) -> (187 406)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 57) -> (198 918)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 58) -> (198 934)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 59) -> (198 950)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 60) -> (198 966)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 61) -> (198 982)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 62) -> (198 998)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 57) -> (199 918)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 58) -> (199 934)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 59) -> (199 950)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 60) -> (199 966)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 61) -> (199 982)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 62) -> (199 998)
+yo
+integrator_nmirror[0] integrator_nmirror_ota0[0] -> (32 62) -> (202 998)
+integrator_nmirror[0] integrator_nmirror_ota1[0] -> (32 63) -> (202 1014)
+integrator_nmirror[0] integrator_nmirror_ota2[0] -> (5 25) -> (175 406)
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+cab.I[6]
+integrator_nmirror[0].in[0]
+local interconnect 8 cab.I[6] -> 65 integrator_nmirror[0].in[0] (29 8) -> (199 135)
+cab.I[12]
+integrator_nmirror[0].in[1]
+local interconnect 14 cab.I[12] -> 66 integrator_nmirror[0].in[1] (28 14) -> (198 231)
+cab.I[11]
+integrator_nmirror[0].in[2]
+local interconnect 13 cab.I[11] -> 67 integrator_nmirror[0].in[2] (13 13) -> (183 215)
+integrator_nmirror[0].out[0]
+cab.O[4]
+local interconnect 51 integrator_nmirror[0].out[0] -> 132 cab.O[4] (25 39) -> (195 631)
+getting here!
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 19) -> (198 311)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 27) -> (198 439)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (12 17) -> (182 279)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (25 17) -> (195 279)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (27 17) -> (197 279)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (26 18) -> (196 295)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 31) -> (198 503)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (24 17) -> (194 279)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (23 17) -> (193 279)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (22 17) -> (192 279)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 20) -> (198 327)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 21) -> (198 343)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 22) -> (198 359)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (16 1) -> (186 23)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (17 25) -> (187 407)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 57) -> (198 919)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 58) -> (198 935)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 59) -> (198 951)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 60) -> (198 967)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 61) -> (198 983)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 62) -> (198 999)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 57) -> (199 919)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 58) -> (199 935)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 59) -> (199 951)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 60) -> (199 967)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 61) -> (199 983)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 62) -> (199 999)
+yo
+integrator_nmirror[0] integrator_nmirror_ota0[0] -> (32 62) -> (202 999)
+integrator_nmirror[0] integrator_nmirror_ota1[0] -> (32 63) -> (202 1015)
+integrator_nmirror[0] integrator_nmirror_ota2[0] -> (5 25) -> (175 407)
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+cab.I[6]
+integrator_nmirror[0].in[0]
+local interconnect 8 cab.I[6] -> 65 integrator_nmirror[0].in[0] (29 8) -> (199 136)
+cab.I[12]
+integrator_nmirror[0].in[1]
+local interconnect 14 cab.I[12] -> 66 integrator_nmirror[0].in[1] (28 14) -> (198 232)
+cab.I[11]
+integrator_nmirror[0].in[2]
+local interconnect 13 cab.I[11] -> 67 integrator_nmirror[0].in[2] (13 13) -> (183 216)
+integrator_nmirror[0].out[0]
+cab.O[4]
+local interconnect 51 integrator_nmirror[0].out[0] -> 132 cab.O[4] (25 39) -> (195 632)
+getting here!
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 19) -> (198 312)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 27) -> (198 440)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (12 17) -> (182 280)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (25 17) -> (195 280)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (27 17) -> (197 280)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (26 18) -> (196 296)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 31) -> (198 504)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (24 17) -> (194 280)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (23 17) -> (193 280)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (22 17) -> (192 280)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 20) -> (198 328)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 21) -> (198 344)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 22) -> (198 360)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (16 1) -> (186 24)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (17 25) -> (187 408)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 57) -> (198 920)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 58) -> (198 936)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 59) -> (198 952)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 60) -> (198 968)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 61) -> (198 984)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 62) -> (198 1000)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 57) -> (199 920)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 58) -> (199 936)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 59) -> (199 952)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 60) -> (199 968)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 61) -> (199 984)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 62) -> (199 1000)
+yo
+integrator_nmirror[0] integrator_nmirror_ota0[0] -> (32 62) -> (202 1000)
+integrator_nmirror[0] integrator_nmirror_ota1[0] -> (32 63) -> (202 1016)
+integrator_nmirror[0] integrator_nmirror_ota2[0] -> (5 25) -> (175 408)
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+cab.I[6]
+integrator_nmirror[0].in[0]
+local interconnect 8 cab.I[6] -> 65 integrator_nmirror[0].in[0] (29 8) -> (199 137)
+cab.I[12]
+integrator_nmirror[0].in[1]
+local interconnect 14 cab.I[12] -> 66 integrator_nmirror[0].in[1] (28 14) -> (198 233)
+cab.I[11]
+integrator_nmirror[0].in[2]
+local interconnect 13 cab.I[11] -> 67 integrator_nmirror[0].in[2] (13 13) -> (183 217)
+integrator_nmirror[0].out[0]
+cab.O[4]
+local interconnect 51 integrator_nmirror[0].out[0] -> 132 cab.O[4] (25 39) -> (195 633)
+getting here!
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 19) -> (198 313)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 27) -> (198 441)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (12 17) -> (182 281)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (25 17) -> (195 281)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (27 17) -> (197 281)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (26 18) -> (196 297)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 31) -> (198 505)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (24 17) -> (194 281)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (23 17) -> (193 281)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (22 17) -> (192 281)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 20) -> (198 329)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 21) -> (198 345)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 22) -> (198 361)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (16 1) -> (186 25)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (17 25) -> (187 409)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 57) -> (198 921)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 58) -> (198 937)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 59) -> (198 953)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 60) -> (198 969)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 61) -> (198 985)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 62) -> (198 1001)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 57) -> (199 921)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 58) -> (199 937)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 59) -> (199 953)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 60) -> (199 969)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 61) -> (199 985)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 62) -> (199 1001)
+yo
+integrator_nmirror[0] integrator_nmirror_ota0[0] -> (32 62) -> (202 1001)
+integrator_nmirror[0] integrator_nmirror_ota1[0] -> (32 63) -> (202 1017)
+integrator_nmirror[0] integrator_nmirror_ota2[0] -> (5 25) -> (175 409)
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+cab.I[6]
+integrator_nmirror[0].in[0]
+local interconnect 8 cab.I[6] -> 65 integrator_nmirror[0].in[0] (29 8) -> (199 138)
+cab.I[12]
+integrator_nmirror[0].in[1]
+local interconnect 14 cab.I[12] -> 66 integrator_nmirror[0].in[1] (28 14) -> (198 234)
+cab.I[11]
+integrator_nmirror[0].in[2]
+local interconnect 13 cab.I[11] -> 67 integrator_nmirror[0].in[2] (13 13) -> (183 218)
+integrator_nmirror[0].out[0]
+cab.O[4]
+local interconnect 51 integrator_nmirror[0].out[0] -> 132 cab.O[4] (25 39) -> (195 634)
+getting here!
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 19) -> (198 314)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 27) -> (198 442)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (12 17) -> (182 282)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (25 17) -> (195 282)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (27 17) -> (197 282)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (26 18) -> (196 298)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 31) -> (198 506)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (24 17) -> (194 282)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (23 17) -> (193 282)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (22 17) -> (192 282)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 20) -> (198 330)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 21) -> (198 346)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 22) -> (198 362)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (16 1) -> (186 26)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (17 25) -> (187 410)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 57) -> (198 922)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 58) -> (198 938)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 59) -> (198 954)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 60) -> (198 970)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 61) -> (198 986)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 62) -> (198 1002)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 57) -> (199 922)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 58) -> (199 938)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 59) -> (199 954)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 60) -> (199 970)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 61) -> (199 986)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 62) -> (199 1002)
+yo
+integrator_nmirror[0] integrator_nmirror_ota0[0] -> (32 62) -> (202 1002)
+integrator_nmirror[0] integrator_nmirror_ota1[0] -> (32 63) -> (202 1018)
+integrator_nmirror[0] integrator_nmirror_ota2[0] -> (5 25) -> (175 410)
+I/O Blocks dev FGs
+!!!!!!!!!!!!!!int[4] -->  DEV FGs  -> (16 12) -> (220 192)
+!!!!!!!!!!!!!!int[5] -->  DEV FGs  -> (16 13) -> (220 208)
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+cab.I[11]
+ramp_fe[0].in[0]
+local interconnect 13 cab.I[11] -> 86 ramp_fe[0].in[0] (31 13) -> (235 209)
+ramp_fe[0].out[0]
+cab.O[4]
+local interconnect 40 ramp_fe[0].out[0] -> 132 cab.O[4] (25 39) -> (229 625)
+getting here!
+ramp_fe[0] ramp_fe_fg[0] -> (32 27) -> (236 433)
+yo
+ramp_fe[0] ramp_fe_fg[0] -> (25 27) -> (229 433)
+yo
+ramp_fe[0] ramp_fe_fg[0] -> (12 19) -> (216 305)
+yo
+ramp_fe[0] ramp_fe_fg[0] -> (12 15) -> (216 241)
+yo
+ramp_fe[0] ramp_fe_fg[0] -> (30 15) -> (234 241)
+yo
+ramp_fe[0] ramp_fe_fg[0] -> (28 59) -> (232 945)
+yo
+ramp_fe[0] ramp_fe_fg[0] -> (31 59) -> (235 945)
+yo
+ramp_fe[0] ramp_fe_fg[0] -> (31 58) -> (235 929)
+yo
+ramp_fe[0] ramp_fe_fg[0] -> (33 1) -> (237 17)
+yo
+ramp_fe[0] ramp_fe_fg[0] -> (31 61) -> (235 977)
+yo
+ramp_fe[0] ramp_fe_fg[0] -> (31 60) -> (235 961)
+yo
+ramp_fe[0] ramp_fe_fg[0] -> (15 16) -> (219 257)
+yo
+ramp_fe[0] ramp_fe_fg[0] -> (19 16) -> (223 257)
+yo
+ramp_fe[0] ramp_fe_fg[0] -> (18 0) -> (222 1)
+yo
+ramp_fe[0] ramp_fe_fg[0] -> (17 26) -> (221 417)
+yo
+ramp_fe[0] ramp_fe_fg[0] -> (17 24) -> (221 385)
+yo
+ramp_fe[0] ramp_fe_fg[0] -> (21 24) -> (225 385)
+yo
+ramp_fe[0] ramp_fe_fg[0] -> (16 1) -> (220 17)
+yo
+ramp_fe[0] ramp_fe_fg[0] -> (20 0) -> (224 1)
+yo
+ramp_fe[0] ramp_fe_fg[0] -> (13 25) -> (217 401)
+yo
+ramp_fe[0] ramp_fe_fg[0] -> (13 23) -> (217 369)
+yo
+ramp_fe[0] ramp_fe_fg[0] -> (31 61) -> (235 977)
+yo
+ramp_fe[0] ramp_fe_fg[0] -> (31 60) -> (235 961)
+yo
+ramp_fe[0] ramp_fe_fg[0] -> (26 18) -> (230 289)
+yo
+ramp_fe[0] ramp_fe_fg[0] -> (27 25) -> (231 401)
+yo
+ramp_fe[0] ramp_pfetinput[0] -> (32 1) -> (236 17)
+ramp_fe[0] c4_ota_bias[0] -> (32 58) -> (236 929)
+ramp_fe[0] c4_ota_p_bias[0] -> (33 59) -> (237 945)
+ramp_fe[0] c4_ota_n_bias[0] -> (33 58) -> (237 929)
+ramp_fe[0] speech_peakotabias[0] -> (32 63) -> (236 1009)
+ramp_fe[0] c4_ota_bias[1] -> (32 60) -> (236 961)
+ramp_fe[0] c4_ota_p_bias[1] -> (33 61) -> (237 977)
+ramp_fe[0] c4_ota_n_bias[1] -> (33 60) -> (237 961)
+ramp_fe[0] ramp_pfetinput[1] -> (14 1) -> (218 17)
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+cab.I[6]
+volt_div[0].in[0]
+local interconnect 8 cab.I[6] -> 58 volt_div[0].in[0] (25 8) -> (229 130)
+cab.I[12]
+volt_div[0].in[1]
+local interconnect 14 cab.I[12] -> 59 volt_div[0].in[1] (21 14) -> (225 226)
+volt_div[0].out[0]
+cab.O[4]
+local interconnect 54 volt_div[0].out[0] -> 132 cab.O[4] (25 38) -> (229 610)
+getting here!
+volt_div[0] volt_div_fg[0] -> (25 20) -> (229 322)
+yo
+volt_div[0] volt_div_fg[0] -> (24 23) -> (228 370)
+yo
+volt_div[0] volt_div_fg[0] -> (29 23) -> (233 370)
+yo
+volt_div[0] volt_div_fg[0] -> (20 23) -> (224 370)
+yo
+volt_div[0] volt_div_fg[0] -> (28 17) -> (232 274)
+yo
+volt_div[0] volt_div_fg[0] -> (23 23) -> (227 370)
+yo
+volt_div[0] volt_div_fg[0] -> (19 21) -> (223 338)
+yo
+volt_div[0] volt_div_fg[0] -> (22 23) -> (226 370)
+yo
+volt_div[0] volt_div_fg[0] -> (19 22) -> (223 354)
+yo
+volt_div[0] volt_div_fg[0] -> (19 0) -> (223 2)
+yo
+volt_div[0] vd_ota_bias[0] -> (32 62) -> (236 994)
+volt_div[0] cap_4x_vd_Vin[0] -> (28 60) -> (232 962)
+yo
+volt_div[0] vd_target[0] -> (21 23) -> (225 370)
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+cab.I[6]
+integrator_nmirror[0].in[0]
+local interconnect 8 cab.I[6] -> 65 integrator_nmirror[0].in[0] (29 8) -> (233 131)
+cab.I[12]
+integrator_nmirror[0].in[1]
+local interconnect 14 cab.I[12] -> 66 integrator_nmirror[0].in[1] (28 14) -> (232 227)
+cab.I[11]
+integrator_nmirror[0].in[2]
+local interconnect 13 cab.I[11] -> 67 integrator_nmirror[0].in[2] (13 13) -> (217 211)
+integrator_nmirror[0].out[0]
+cab.O[4]
+local interconnect 51 integrator_nmirror[0].out[0] -> 132 cab.O[4] (25 39) -> (229 627)
+getting here!
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 19) -> (232 307)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 27) -> (232 435)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (12 17) -> (216 275)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (25 17) -> (229 275)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (27 17) -> (231 275)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (26 18) -> (230 291)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 31) -> (232 499)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (24 17) -> (228 275)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (23 17) -> (227 275)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (22 17) -> (226 275)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 20) -> (232 323)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 21) -> (232 339)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 22) -> (232 355)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (16 1) -> (220 19)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (17 25) -> (221 403)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 57) -> (232 915)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 58) -> (232 931)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 59) -> (232 947)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 60) -> (232 963)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 61) -> (232 979)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 62) -> (232 995)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 57) -> (233 915)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 58) -> (233 931)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 59) -> (233 947)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 60) -> (233 963)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 61) -> (233 979)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 62) -> (233 995)
+yo
+integrator_nmirror[0] integrator_nmirror_ota0[0] -> (32 62) -> (236 995)
+integrator_nmirror[0] integrator_nmirror_ota1[0] -> (32 63) -> (236 1011)
+integrator_nmirror[0] integrator_nmirror_ota2[0] -> (5 25) -> (209 403)
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+cab.I[6]
+integrator_nmirror[0].in[0]
+local interconnect 8 cab.I[6] -> 65 integrator_nmirror[0].in[0] (29 8) -> (233 132)
+cab.I[12]
+integrator_nmirror[0].in[1]
+local interconnect 14 cab.I[12] -> 66 integrator_nmirror[0].in[1] (28 14) -> (232 228)
+cab.I[11]
+integrator_nmirror[0].in[2]
+local interconnect 13 cab.I[11] -> 67 integrator_nmirror[0].in[2] (13 13) -> (217 212)
+integrator_nmirror[0].out[0]
+cab.O[4]
+local interconnect 51 integrator_nmirror[0].out[0] -> 132 cab.O[4] (25 39) -> (229 628)
+getting here!
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 19) -> (232 308)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 27) -> (232 436)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (12 17) -> (216 276)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (25 17) -> (229 276)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (27 17) -> (231 276)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (26 18) -> (230 292)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 31) -> (232 500)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (24 17) -> (228 276)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (23 17) -> (227 276)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (22 17) -> (226 276)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 20) -> (232 324)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 21) -> (232 340)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 22) -> (232 356)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (16 1) -> (220 20)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (17 25) -> (221 404)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 57) -> (232 916)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 58) -> (232 932)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 59) -> (232 948)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 60) -> (232 964)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 61) -> (232 980)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 62) -> (232 996)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 57) -> (233 916)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 58) -> (233 932)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 59) -> (233 948)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 60) -> (233 964)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 61) -> (233 980)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 62) -> (233 996)
+yo
+integrator_nmirror[0] integrator_nmirror_ota0[0] -> (32 62) -> (236 996)
+integrator_nmirror[0] integrator_nmirror_ota1[0] -> (32 63) -> (236 1012)
+integrator_nmirror[0] integrator_nmirror_ota2[0] -> (5 25) -> (209 404)
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+cab.I[6]
+integrator_nmirror[0].in[0]
+local interconnect 8 cab.I[6] -> 65 integrator_nmirror[0].in[0] (29 8) -> (233 133)
+cab.I[12]
+integrator_nmirror[0].in[1]
+local interconnect 14 cab.I[12] -> 66 integrator_nmirror[0].in[1] (28 14) -> (232 229)
+cab.I[11]
+integrator_nmirror[0].in[2]
+local interconnect 13 cab.I[11] -> 67 integrator_nmirror[0].in[2] (13 13) -> (217 213)
+integrator_nmirror[0].out[0]
+cab.O[4]
+local interconnect 51 integrator_nmirror[0].out[0] -> 132 cab.O[4] (25 39) -> (229 629)
+getting here!
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 19) -> (232 309)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 27) -> (232 437)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (12 17) -> (216 277)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (25 17) -> (229 277)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (27 17) -> (231 277)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (26 18) -> (230 293)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 31) -> (232 501)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (24 17) -> (228 277)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (23 17) -> (227 277)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (22 17) -> (226 277)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 20) -> (232 325)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 21) -> (232 341)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 22) -> (232 357)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (16 1) -> (220 21)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (17 25) -> (221 405)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 57) -> (232 917)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 58) -> (232 933)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 59) -> (232 949)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 60) -> (232 965)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 61) -> (232 981)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 62) -> (232 997)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 57) -> (233 917)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 58) -> (233 933)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 59) -> (233 949)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 60) -> (233 965)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 61) -> (233 981)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 62) -> (233 997)
+yo
+integrator_nmirror[0] integrator_nmirror_ota0[0] -> (32 62) -> (236 997)
+integrator_nmirror[0] integrator_nmirror_ota1[0] -> (32 63) -> (236 1013)
+integrator_nmirror[0] integrator_nmirror_ota2[0] -> (5 25) -> (209 405)
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+cab.I[6]
+integrator_nmirror[0].in[0]
+local interconnect 8 cab.I[6] -> 65 integrator_nmirror[0].in[0] (29 8) -> (233 134)
+cab.I[12]
+integrator_nmirror[0].in[1]
+local interconnect 14 cab.I[12] -> 66 integrator_nmirror[0].in[1] (28 14) -> (232 230)
+cab.I[11]
+integrator_nmirror[0].in[2]
+local interconnect 13 cab.I[11] -> 67 integrator_nmirror[0].in[2] (13 13) -> (217 214)
+integrator_nmirror[0].out[0]
+cab.O[4]
+local interconnect 51 integrator_nmirror[0].out[0] -> 132 cab.O[4] (25 39) -> (229 630)
+getting here!
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 19) -> (232 310)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 27) -> (232 438)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (12 17) -> (216 278)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (25 17) -> (229 278)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (27 17) -> (231 278)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (26 18) -> (230 294)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 31) -> (232 502)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (24 17) -> (228 278)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (23 17) -> (227 278)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (22 17) -> (226 278)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 20) -> (232 326)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 21) -> (232 342)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 22) -> (232 358)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (16 1) -> (220 22)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (17 25) -> (221 406)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 57) -> (232 918)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 58) -> (232 934)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 59) -> (232 950)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 60) -> (232 966)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 61) -> (232 982)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 62) -> (232 998)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 57) -> (233 918)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 58) -> (233 934)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 59) -> (233 950)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 60) -> (233 966)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 61) -> (233 982)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 62) -> (233 998)
+yo
+integrator_nmirror[0] integrator_nmirror_ota0[0] -> (32 62) -> (236 998)
+integrator_nmirror[0] integrator_nmirror_ota1[0] -> (32 63) -> (236 1014)
+integrator_nmirror[0] integrator_nmirror_ota2[0] -> (5 25) -> (209 406)
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+cab.I[6]
+integrator_nmirror[0].in[0]
+local interconnect 8 cab.I[6] -> 65 integrator_nmirror[0].in[0] (29 8) -> (233 135)
+cab.I[12]
+integrator_nmirror[0].in[1]
+local interconnect 14 cab.I[12] -> 66 integrator_nmirror[0].in[1] (28 14) -> (232 231)
+cab.I[11]
+integrator_nmirror[0].in[2]
+local interconnect 13 cab.I[11] -> 67 integrator_nmirror[0].in[2] (13 13) -> (217 215)
+integrator_nmirror[0].out[0]
+cab.O[4]
+local interconnect 51 integrator_nmirror[0].out[0] -> 132 cab.O[4] (25 39) -> (229 631)
+getting here!
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 19) -> (232 311)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 27) -> (232 439)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (12 17) -> (216 279)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (25 17) -> (229 279)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (27 17) -> (231 279)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (26 18) -> (230 295)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 31) -> (232 503)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (24 17) -> (228 279)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (23 17) -> (227 279)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (22 17) -> (226 279)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 20) -> (232 327)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 21) -> (232 343)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 22) -> (232 359)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (16 1) -> (220 23)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (17 25) -> (221 407)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 57) -> (232 919)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 58) -> (232 935)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 59) -> (232 951)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 60) -> (232 967)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 61) -> (232 983)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 62) -> (232 999)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 57) -> (233 919)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 58) -> (233 935)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 59) -> (233 951)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 60) -> (233 967)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 61) -> (233 983)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 62) -> (233 999)
+yo
+integrator_nmirror[0] integrator_nmirror_ota0[0] -> (32 62) -> (236 999)
+integrator_nmirror[0] integrator_nmirror_ota1[0] -> (32 63) -> (236 1015)
+integrator_nmirror[0] integrator_nmirror_ota2[0] -> (5 25) -> (209 407)
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+cab.I[6]
+integrator_nmirror[0].in[0]
+local interconnect 8 cab.I[6] -> 65 integrator_nmirror[0].in[0] (29 8) -> (233 136)
+cab.I[12]
+integrator_nmirror[0].in[1]
+local interconnect 14 cab.I[12] -> 66 integrator_nmirror[0].in[1] (28 14) -> (232 232)
+cab.I[11]
+integrator_nmirror[0].in[2]
+local interconnect 13 cab.I[11] -> 67 integrator_nmirror[0].in[2] (13 13) -> (217 216)
+integrator_nmirror[0].out[0]
+cab.O[4]
+local interconnect 51 integrator_nmirror[0].out[0] -> 132 cab.O[4] (25 39) -> (229 632)
+getting here!
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 19) -> (232 312)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 27) -> (232 440)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (12 17) -> (216 280)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (25 17) -> (229 280)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (27 17) -> (231 280)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (26 18) -> (230 296)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 31) -> (232 504)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (24 17) -> (228 280)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (23 17) -> (227 280)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (22 17) -> (226 280)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 20) -> (232 328)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 21) -> (232 344)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 22) -> (232 360)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (16 1) -> (220 24)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (17 25) -> (221 408)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 57) -> (232 920)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 58) -> (232 936)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 59) -> (232 952)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 60) -> (232 968)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 61) -> (232 984)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 62) -> (232 1000)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 57) -> (233 920)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 58) -> (233 936)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 59) -> (233 952)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 60) -> (233 968)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 61) -> (233 984)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 62) -> (233 1000)
+yo
+integrator_nmirror[0] integrator_nmirror_ota0[0] -> (32 62) -> (236 1000)
+integrator_nmirror[0] integrator_nmirror_ota1[0] -> (32 63) -> (236 1016)
+integrator_nmirror[0] integrator_nmirror_ota2[0] -> (5 25) -> (209 408)
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+cab.I[6]
+integrator_nmirror[0].in[0]
+local interconnect 8 cab.I[6] -> 65 integrator_nmirror[0].in[0] (29 8) -> (233 137)
+cab.I[12]
+integrator_nmirror[0].in[1]
+local interconnect 14 cab.I[12] -> 66 integrator_nmirror[0].in[1] (28 14) -> (232 233)
+cab.I[11]
+integrator_nmirror[0].in[2]
+local interconnect 13 cab.I[11] -> 67 integrator_nmirror[0].in[2] (13 13) -> (217 217)
+integrator_nmirror[0].out[0]
+cab.O[4]
+local interconnect 51 integrator_nmirror[0].out[0] -> 132 cab.O[4] (25 39) -> (229 633)
+getting here!
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 19) -> (232 313)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 27) -> (232 441)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (12 17) -> (216 281)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (25 17) -> (229 281)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (27 17) -> (231 281)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (26 18) -> (230 297)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 31) -> (232 505)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (24 17) -> (228 281)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (23 17) -> (227 281)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (22 17) -> (226 281)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 20) -> (232 329)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 21) -> (232 345)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 22) -> (232 361)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (16 1) -> (220 25)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (17 25) -> (221 409)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 57) -> (232 921)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 58) -> (232 937)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 59) -> (232 953)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 60) -> (232 969)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 61) -> (232 985)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 62) -> (232 1001)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 57) -> (233 921)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 58) -> (233 937)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 59) -> (233 953)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 60) -> (233 969)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 61) -> (233 985)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 62) -> (233 1001)
+yo
+integrator_nmirror[0] integrator_nmirror_ota0[0] -> (32 62) -> (236 1001)
+integrator_nmirror[0] integrator_nmirror_ota1[0] -> (32 63) -> (236 1017)
+integrator_nmirror[0] integrator_nmirror_ota2[0] -> (5 25) -> (209 409)
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+vcc
+fgota[0].in[0]
+local interconnect 1 vcc -> 0 fgota[0].in[0] (33 1) -> (237 26)
+cab.I[6]
+fgota[0].in[1]
+local interconnect 8 cab.I[6] -> 1 fgota[0].in[1] (32 8) -> (236 138)
+fgota[0].out[0]
+fgota[0].in[1]
+local interconnect 82 fgota[0].out[0] -> 1 fgota[0].in[1] (32 15) -> (236 250)
+cab.I[6]
+integrator_nmirror[0].in[0]
+local interconnect 8 cab.I[6] -> 65 integrator_nmirror[0].in[0] (29 8) -> (233 138)
+fgota[0].out[0]
+integrator_nmirror[0].in[0]
+local interconnect 82 fgota[0].out[0] -> 65 integrator_nmirror[0].in[0] (29 15) -> (233 250)
+cab.I[12]
+integrator_nmirror[0].in[1]
+local interconnect 14 cab.I[12] -> 66 integrator_nmirror[0].in[1] (28 14) -> (232 234)
+cab.I[11]
+integrator_nmirror[0].in[2]
+local interconnect 13 cab.I[11] -> 67 integrator_nmirror[0].in[2] (13 13) -> (217 218)
+integrator_nmirror[0].out[0]
+cab.O[4]
+local interconnect 51 integrator_nmirror[0].out[0] -> 132 cab.O[4] (25 39) -> (229 634)
+getting here!
+fgota[0] ota_bias[0] -> (32 58) -> (236 938)
+fgota[0] ota_p_bias[0] -> (33 59) -> (237 954)
+fgota[0] ota_n_bias[0] -> (33 58) -> (237 938)
+fgota[0] ota_small_cap[0] -> (31 59) -> (235 954)
+yo
+fgota[0] ota_small_cap[0] -> (31 58) -> (235 938)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 19) -> (232 314)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 27) -> (232 442)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (12 17) -> (216 282)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (25 17) -> (229 282)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (27 17) -> (231 282)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (26 18) -> (230 298)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 31) -> (232 506)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (24 17) -> (228 282)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (23 17) -> (227 282)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (22 17) -> (226 282)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 20) -> (232 330)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 21) -> (232 346)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 22) -> (232 362)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (16 1) -> (220 26)
+yo
+integrator_nmirror[0] integrator_nmirror_fg[0] -> (17 25) -> (221 410)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 57) -> (232 922)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 58) -> (232 938)
+yo
+integrator_nmirror[0] itg_cap_1x[0] -> (28 59) -> (232 954)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 60) -> (232 970)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 61) -> (232 986)
+yo
+integrator_nmirror[0] itg_cap_2x[0] -> (28 62) -> (232 1002)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 57) -> (233 922)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 58) -> (233 938)
+yo
+integrator_nmirror[0] itg_cap_3x[0] -> (29 59) -> (233 954)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 60) -> (233 970)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 61) -> (233 986)
+yo
+integrator_nmirror[0] itg_cap_4x[0] -> (29 62) -> (233 1002)
+yo
+integrator_nmirror[0] integrator_nmirror_ota0[0] -> (32 62) -> (236 1002)
+integrator_nmirror[0] integrator_nmirror_ota1[0] -> (32 63) -> (236 1018)
+integrator_nmirror[0] integrator_nmirror_ota2[0] -> (5 25) -> (209 410)
+class: complexBlock - name: out:net1_1 - type: #ana_buff_out[0] - num: 0 
+I3 ana_buff_out[0] -> (9 5) -> (281 80)
+I/O Blocks dev FGs
+!!!!!!!!!!!!!!ana_buff_out[0] -->  DEV FGs  -> (16 13) -> (288 208)
+!!!!!!!!!!!!!!ana_buff_out[0] -->  DEV FGs  -> (7 13) -> (279 208)
+!!!!!!!!!!!!!!int[1] -->  DEV FGs  -> (12 9) -> (284 144)
+!!!!!!!!!!!!!!int[2] -->  DEV FGs  -> (12 10) -> (284 160)
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+no LI need for I[13:15] so dont worry!
+no LI need for I[13:15] so dont worry!
+no LI need for I[13:15] so dont worry!
+cab_vmm.I[12]
+sftreg3[0].in[3]
+local interconnect 14 cab_vmm.I[12] -> 169 sftreg3[0].in[3] (21 14) -> (327 230)
+getting here!
+sftreg3[0] sftreg3_fg[0] -> (30 40) -> (336 646)
+sftreg3[0] sftreg3_fg[0] -> (30 41) -> (336 662)
+sftreg3[0] sftreg3_fg[0] -> (30 42) -> (336 678)
+sftreg3[0] sftreg3_fg[0] -> (30 43) -> (336 694)
+sftreg3[0] sftreg3_fg[0] -> (30 44) -> (336 710)
+sftreg3[0] sftreg3_fg[0] -> (30 45) -> (336 726)
+sftreg3[0] sftreg3_fg[0] -> (30 46) -> (336 742)
+sftreg3[0] sftreg3_fg[0] -> (30 47) -> (336 758)
+sftreg3[0] sftreg3_fg[0] -> (30 48) -> (336 774)
+sftreg3[0] sftreg3_fg[0] -> (30 49) -> (336 790)
+sftreg3[0] sftreg3_fg[0] -> (30 50) -> (336 806)
+sftreg3[0] sftreg3_fg[0] -> (30 51) -> (336 822)
+sftreg3[0] sftreg3_fg[0] -> (30 52) -> (336 838)
+sftreg3[0] sftreg3_fg[0] -> (30 53) -> (336 854)
+sftreg3[0] sftreg3_fg[0] -> (30 54) -> (336 870)
+sftreg3[0] sftreg3_fg[0] -> (30 55) -> (336 886)
+sftreg3[0] sftreg3_fg[0] -> (21 33) -> (327 534)
+sftreg3[0] sftreg3_fg[0] -> (21 34) -> (327 550)
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+no LI need for I[13:15] so dont worry!
+no LI need for I[13:15] so dont worry!
+no LI need for I[13:15] so dont worry!
+sftreg[0].out[0]
+cab_vmm.O[4]
+local interconnect 33 sftreg[0].out[0] -> 242 cab_vmm.O[4] (25 54) -> (365 866)
+getting here!
+sftreg[0] sftreg_fg[0] -> (30 40) -> (370 642)
+sftreg[0] sftreg_fg[0] -> (30 41) -> (370 658)
+sftreg[0] sftreg_fg[0] -> (30 42) -> (370 674)
+sftreg[0] sftreg_fg[0] -> (30 43) -> (370 690)
+sftreg[0] sftreg_fg[0] -> (30 44) -> (370 706)
+sftreg[0] sftreg_fg[0] -> (30 45) -> (370 722)
+sftreg[0] sftreg_fg[0] -> (30 46) -> (370 738)
+sftreg[0] sftreg_fg[0] -> (30 47) -> (370 754)
+sftreg[0] sftreg_fg[0] -> (30 48) -> (370 770)
+sftreg[0] sftreg_fg[0] -> (30 49) -> (370 786)
+sftreg[0] sftreg_fg[0] -> (30 50) -> (370 802)
+sftreg[0] sftreg_fg[0] -> (30 51) -> (370 818)
+sftreg[0] sftreg_fg[0] -> (30 52) -> (370 834)
+sftreg[0] sftreg_fg[0] -> (30 53) -> (370 850)
+sftreg[0] sftreg_fg[0] -> (30 54) -> (370 866)
+sftreg[0] sftreg_fg[0] -> (30 55) -> (370 882)
+sftreg[0] sftreg_fg[0] -> (25 55) -> (365 882)
+I/O Blocks dev FGs
+!!!!!!!!!!!!!!int[1] -->  DEV FGs  -> (12 9) -> (420 144)
+!!!!!!!!!!!!!!int[2] -->  DEV FGs  -> (12 10) -> (420 160)
+!!!!!!!!!!!!!!int[3] -->  DEV FGs  -> (12 11) -> (420 176)
+!!!!!!!!!!!!!!int[4] -->  DEV FGs  -> (12 12) -> (420 192)
+!!!!!!!!!!!!!!int[5] -->  DEV FGs  -> (12 13) -> (420 208)
+I/O Blocks dev FGs
+!!!!!!!!!!!!!!int[5] -->  DEV FGs  -> (8 29) -> (484 465)
+[189, 663, 1, 0, 0, 0]
+[223, 871, 1, 0, 0, 0]
+[255, 1031, 0, 0]
+[289, 1031, 0, 0]
+[325, 871, 1, 0, 0, 0]
+[359, 807, 1, 0, 0, 0]
+[359, 838, 1, 0, 0, 0]
+[359, 837, 1, 0, 0, 0]
+[359, 836, 1, 0, 0, 0]
+[359, 835, 1, 0, 0, 0]
+[359, 834, 1, 0, 0, 0]
+[359, 946, 0, 0]
+[226, 663, 1, 0, 0, 0]
+[258, 1031, 0, 0]
+[292, 967, 0, 0]
+[292, 998, 0, 0]
+[292, 997, 0, 0]
+[292, 996, 0, 0]
+[292, 995, 0, 0]
+[292, 1010, 0, 0]
+[328, 866, 1, 0, 0, 0]
+[362, 802, 1, 0, 0, 0]
+[362, 962, 0, 0]
+[175, 664, 1, 0, 0, 0]
+[209, 872, 1, 0, 0, 0]
+[241, 1032, 0, 0]
+[275, 1032, 0, 0]
+[311, 808, 1, 0, 0, 0]
+[311, 839, 1, 0, 0, 0]
+[311, 838, 1, 0, 0, 0]
+[311, 837, 1, 0, 0, 0]
+[311, 836, 1, 0, 0, 0]
+[311, 835, 1, 0, 0, 0]
+[311, 850, 1, 0, 0, 0]
+[345, 802, 1, 0, 0, 0]
+[345, 978, 0, 0]
+[225, 664, 1, 0, 0, 0]
+[257, 1032, 0, 0]
+[291, 968, 0, 0]
+[291, 999, 0, 0]
+[291, 998, 0, 0]
+[291, 997, 0, 0]
+[291, 996, 0, 0]
+[291, 995, 0, 0]
+[291, 1010, 0, 0]
+[327, 866, 1, 0, 0, 0]
+[361, 802, 1, 0, 0, 0]
+[361, 994, 0, 0]
+[191, 665, 1, 0, 0, 0]
+[225, 873, 1, 0, 0, 0]
+[257, 1033, 0, 0]
+[291, 1033, 0, 0]
+[327, 809, 1, 0, 0, 0]
+[327, 840, 1, 0, 0, 0]
+[327, 839, 1, 0, 0, 0]
+[327, 838, 1, 0, 0, 0]
+[327, 837, 1, 0, 0, 0]
+[327, 836, 1, 0, 0, 0]
+[327, 851, 1, 0, 0, 0]
+[361, 867, 1, 0, 0, 0]
+[393, 963, 0, 0]
+[393, 994, 0, 0]
+[393, 626, 0, 0]
+[226, 665, 1, 0, 0, 0]
+[258, 1033, 0, 0]
+[292, 1033, 0, 0]
+[328, 873, 1, 0, 0, 0]
+[362, 809, 1, 0, 0, 0]
+[362, 840, 1, 0, 0, 0]
+[362, 839, 1, 0, 0, 0]
+[362, 838, 1, 0, 0, 0]
+[362, 837, 1, 0, 0, 0]
+[362, 836, 1, 0, 0, 0]
+[362, 835, 1, 0, 0, 0]
+[362, 850, 1, 0, 0, 0]
+[394, 962, 0, 0]
+[394, 642, 1, 0, 0, 0]
+[175, 659, 1, 0, 0, 0]
+[209, 867, 1, 0, 0, 0]
+[241, 1027, 0, 0]
+[275, 1027, 0, 0]
+[311, 867, 1, 0, 0, 0]
+[345, 803, 1, 0, 0, 0]
+[345, 850, 1, 0, 0, 0]
+[377, 962, 0, 0]
+[377, 658, 1, 0, 0, 0]
+[217, 659, 1, 0, 0, 0]
+[249, 1027, 0, 0]
+[283, 1027, 0, 0]
+[319, 803, 1, 0, 0, 0]
+[319, 850, 1, 0, 0, 0]
+[353, 866, 1, 0, 0, 0]
+[385, 962, 0, 0]
+[385, 674, 1, 0, 0, 0]
+[177, 660, 1, 0, 0, 0]
+[211, 868, 1, 0, 0, 0]
+[243, 1028, 0, 0]
+[277, 1028, 0, 0]
+[313, 868, 1, 0, 0, 0]
+[347, 804, 1, 0, 0, 0]
+[347, 835, 1, 0, 0, 0]
+[347, 850, 1, 0, 0, 0]
+[347, 578, 0, 0]
+[225, 660, 1, 0, 0, 0]
+[257, 1028, 0, 0]
+[291, 1028, 0, 0]
+[327, 868, 1, 0, 0, 0]
+[361, 804, 1, 0, 0, 0]
+[361, 835, 1, 0, 0, 0]
+[361, 850, 1, 0, 0, 0]
+[361, 594, 0, 0]
+[175, 661, 1, 0, 0, 0]
+[209, 869, 1, 0, 0, 0]
+[241, 1029, 0, 0]
+[275, 965, 0, 0]
+[275, 996, 0, 0]
+[275, 995, 0, 0]
+[275, 1010, 0, 0]
+[311, 802, 1, 0, 0, 0]
+[311, 849, 1, 0, 0, 0]
+[345, 865, 1, 0, 0, 0]
+[345, 673, 1, 0, 0, 0]
+[217, 661, 1, 0, 0, 0]
+[249, 1029, 0, 0]
+[283, 1029, 0, 0]
+[319, 869, 1, 0, 0, 0]
+[353, 805, 1, 0, 0, 0]
+[353, 836, 1, 0, 0, 0]
+[353, 835, 1, 0, 0, 0]
+[353, 834, 1, 0, 0, 0]
+[353, 849, 1, 0, 0, 0]
+[353, 689, 1, 0, 0, 0]
+[426, 288, 0, 0]
+[415, 352, 0, 0]
+[381, 336, 0, 0]
+[383, 993, 0, 0]
+[383, 962, 0, 0]
+[351, 610, 0, 0]
+[80, 660, 1, 0, 0, 0]
+[112, 1028, 0, 0]
+[146, 1028, 0, 0]
+[182, 868, 1, 0, 0, 0]
+[216, 868, 1, 0, 0, 0]
+[248, 1028, 0, 0]
+[282, 1028, 0, 0]
+[318, 820, 1, 0, 0, 0]
+[318, 837, 1, 0, 0, 0]
+[318, 790, 1, 0, 0, 0]
+[318, 630, 0, 0]
+[318, 804, 1, 0, 0, 0]
+[318, 835, 1, 0, 0, 0]
+[318, 850, 1, 0, 0, 0]
+[352, 866, 1, 0, 0, 0]
+[352, 626, 0, 0]
+[425, 304, 0, 0]
+[414, 352, 0, 0]
+[380, 336, 0, 0]
+[382, 993, 0, 0]
+[382, 962, 0, 0]
+[350, 642, 1, 0, 0, 0]
+[184, 666, 1, 0, 0, 0]
+[218, 874, 1, 0, 0, 0]
+[250, 970, 0, 0]
+[250, 1001, 0, 0]
+[250, 1000, 0, 0]
+[250, 999, 0, 0]
+[250, 998, 0, 0]
+[250, 1013, 0, 0]
+[284, 1029, 0, 0]
+[320, 805, 1, 0, 0, 0]
+[320, 836, 1, 0, 0, 0]
+[320, 835, 1, 0, 0, 0]
+[320, 834, 1, 0, 0, 0]
+[320, 849, 1, 0, 0, 0]
+[354, 817, 1, 0, 0, 0]
+[354, 1010, 0, 0]
+[208, 666, 1, 0, 0, 0]
+[240, 1034, 0, 0]
+[274, 1034, 0, 0]
+[310, 874, 1, 0, 0, 0]
+[344, 810, 1, 0, 0, 0]
+[344, 841, 1, 0, 0, 0]
+[344, 840, 1, 0, 0, 0]
+[344, 839, 1, 0, 0, 0]
+[344, 838, 1, 0, 0, 0]
+[344, 837, 1, 0, 0, 0]
+[344, 836, 1, 0, 0, 0]
+[344, 835, 1, 0, 0, 0]
+[344, 834, 1, 0, 0, 0]
+[344, 1026, 0, 0]
+[184, 662, 1, 0, 0, 0]
+[218, 870, 1, 0, 0, 0]
+[250, 1030, 0, 0]
+[284, 966, 0, 0]
+[284, 997, 0, 0]
+[284, 996, 0, 0]
+[284, 1011, 0, 0]
+[320, 867, 1, 0, 0, 0]
+[354, 867, 1, 0, 0, 0]
+[386, 963, 0, 0]
+[386, 994, 0, 0]
+[386, 690, 1, 0, 0, 0]
+[216, 662, 1, 0, 0, 0]
+[248, 1030, 0, 0]
+[282, 966, 0, 0]
+[282, 997, 0, 0]
+[282, 996, 0, 0]
+[282, 1011, 0, 0]
+[318, 867, 1, 0, 0, 0]
+[352, 867, 1, 0, 0, 0]
+[384, 963, 0, 0]
+[384, 994, 0, 0]
+[384, 706, 1, 0, 0, 0]
+[354, 658, 1, 0, 0, 0]
+[354, 866, 1, 0, 0, 0]
+[320, 866, 1, 0, 0, 0]
+[284, 1026, 0, 0]
+[250, 946, 0, 0]
+[250, 993, 0, 0]
+[238, 400, 0, 0]
+[228, 384, 0, 0]
+[175, 658, 1, 0, 0, 0]
+[209, 866, 1, 0, 0, 0]
+[241, 978, 0, 0]
+[241, 995, 0, 0]
+[241, 948, 0, 0]
+[275, 1028, 0, 0]
+[311, 868, 1, 0, 0, 0]
+[345, 820, 1, 0, 0, 0]
+[345, 805, 1, 0, 0, 0]
+[311, 709, 1, 0, 0, 0]
+[420, 336, 0, 0]
+[409, 336, 0, 0]
+[411, 993, 0, 0]
+[411, 994, 0, 0]
+[411, 995, 0, 0]
+[411, 996, 0, 0]
+[411, 965, 0, 0]
+[377, 1029, 0, 0]
+[345, 853, 1, 0, 0, 0]
+[345, 806, 1, 0, 0, 0]
+[311, 614, 0, 0]
+[421, 352, 0, 0]
+[410, 352, 0, 0]
+[376, 352, 0, 0]
+[346, 336, 0, 0]
+[346, 833, 1, 0, 0, 0]
+[346, 834, 1, 0, 0, 0]
+[346, 835, 1, 0, 0, 0]
+[346, 836, 1, 0, 0, 0]
+[346, 837, 1, 0, 0, 0]
+[346, 806, 1, 0, 0, 0]
+[312, 646, 1, 0, 0, 0]
+[319, 1014, 0, 0]
+[319, 838, 1, 0, 0, 0]
+[319, 839, 1, 0, 0, 0]
+[319, 840, 1, 0, 0, 0]
+[319, 809, 1, 0, 0, 0]
+[283, 1033, 0, 0]
+[249, 1033, 0, 0]
+[217, 873, 1, 0, 0, 0]
+[183, 713, 1, 0, 0, 0]
+[320, 1030, 0, 0]
+[320, 838, 1, 0, 0, 0]
+[320, 839, 1, 0, 0, 0]
+[320, 840, 1, 0, 0, 0]
+[320, 809, 1, 0, 0, 0]
+[284, 1033, 0, 0]
+[250, 1033, 0, 0]
+[218, 713, 1, 0, 0, 0]
+[353, 1110, 0, 0]
+[353, 806, 1, 0, 0, 0]
+[319, 870, 1, 0, 0, 0]
+[283, 1030, 0, 0]
+[249, 1030, 0, 0]
+[217, 790, 1, 0, 0, 0]
+[217, 821, 1, 0, 0, 0]
+[183, 709, 1, 0, 0, 0]
+[356, 1126, 0, 0]
+[356, 821, 1, 0, 0, 0]
+[322, 869, 1, 0, 0, 0]
+[286, 1029, 0, 0]
+[252, 1029, 0, 0]
+[220, 709, 1, 0, 0, 0]
+[313, 950, 0, 0]
+[313, 806, 1, 0, 0, 0]
+[277, 1030, 0, 0]
+[243, 1030, 0, 0]
+[211, 870, 1, 0, 0, 0]
+[177, 710, 1, 0, 0, 0]
+[328, 966, 0, 0]
+[328, 806, 1, 0, 0, 0]
+[292, 1030, 0, 0]
+[258, 1030, 0, 0]
+[226, 710, 1, 0, 0, 0]
+[322, 982, 0, 0]
+[322, 838, 1, 0, 0, 0]
+[322, 807, 1, 0, 0, 0]
+[286, 1031, 0, 0]
+[252, 1031, 0, 0]
+[220, 871, 1, 0, 0, 0]
+[186, 711, 1, 0, 0, 0]
+[315, 998, 0, 0]
+[315, 838, 1, 0, 0, 0]
+[315, 807, 1, 0, 0, 0]
+[279, 1031, 0, 0]
+[245, 1031, 0, 0]
+[213, 711, 1, 0, 0, 0]
+[349, 1046, 0, 0]
+[349, 838, 1, 0, 0, 0]
+[349, 839, 1, 0, 0, 0]
+[349, 808, 1, 0, 0, 0]
+[315, 872, 1, 0, 0, 0]
+[279, 1032, 0, 0]
+[245, 1032, 0, 0]
+[213, 872, 1, 0, 0, 0]
+[179, 712, 1, 0, 0, 0]
+[347, 1062, 0, 0]
+[347, 838, 1, 0, 0, 0]
+[347, 839, 1, 0, 0, 0]
+[347, 808, 1, 0, 0, 0]
+[313, 872, 1, 0, 0, 0]
+[277, 1032, 0, 0]
+[243, 1032, 0, 0]
+[211, 712, 1, 0, 0, 0]
+[361, 1078, 0, 0]
+[361, 821, 1, 0, 0, 0]
+[327, 869, 1, 0, 0, 0]
+[291, 1029, 0, 0]
+[257, 1029, 0, 0]
+[225, 789, 1, 0, 0, 0]
+[225, 836, 1, 0, 0, 0]
+[225, 835, 1, 0, 0, 0]
+[225, 818, 1, 0, 0, 0]
+[191, 706, 1, 0, 0, 0]
+[354, 1094, 0, 0]
+[354, 837, 1, 0, 0, 0]
+[354, 820, 1, 0, 0, 0]
+[320, 868, 1, 0, 0, 0]
+[284, 1028, 0, 0]
+[250, 948, 0, 0]
+[250, 995, 0, 0]
+[250, 978, 0, 0]
+[218, 706, 1, 0, 0, 0]
+[322, 582, 0, 0]
+[322, 870, 1, 0, 0, 0]
+[286, 1030, 0, 0]
+[252, 1030, 0, 0]
+[220, 790, 1, 0, 0, 0]
+[220, 837, 1, 0, 0, 0]
+[220, 836, 1, 0, 0, 0]
+[220, 819, 1, 0, 0, 0]
+[186, 707, 1, 0, 0, 0]
+[327, 598, 0, 0]
+[327, 870, 1, 0, 0, 0]
+[291, 1030, 0, 0]
+[257, 950, 0, 0]
+[257, 997, 0, 0]
+[257, 996, 0, 0]
+[257, 979, 0, 0]
+[225, 707, 1, 0, 0, 0]
+[317, 677, 1, 0, 0, 0]
+[317, 869, 1, 0, 0, 0]
+[281, 1029, 0, 0]
+[247, 1029, 0, 0]
+[215, 789, 1, 0, 0, 0]
+[215, 820, 1, 0, 0, 0]
+[181, 708, 1, 0, 0, 0]
+[324, 693, 1, 0, 0, 0]
+[324, 869, 1, 0, 0, 0]
+[288, 1029, 0, 0]
+[254, 949, 0, 0]
+[254, 980, 0, 0]
+[222, 708, 1, 0, 0, 0]
+[245, 714, 1, 0, 0, 0]
+[245, 970, 0, 0]
+[213, 602, 0, 0]
+[245, 666, 1, 0, 0, 0]
+[245, 1001, 0, 0]
+[245, 665, 1, 0, 0, 0]
+[245, 1000, 0, 0]
+[245, 664, 1, 0, 0, 0]
+[245, 999, 0, 0]
+[245, 663, 1, 0, 0, 0]
+[245, 998, 0, 0]
+[245, 662, 1, 0, 0, 0]
+[245, 997, 0, 0]
+[245, 661, 1, 0, 0, 0]
+[245, 996, 0, 0]
+[245, 660, 1, 0, 0, 0]
+[245, 995, 0, 0]
+[245, 659, 1, 0, 0, 0]
+[245, 979, 0, 0]
+[213, 787, 1, 0, 0, 0]
+[213, 1075, 0, 0]
+[213, 835, 1, 0, 0, 0]
+[213, 1076, 0, 0]
+[213, 836, 1, 0, 0, 0]
+[213, 1077, 0, 0]
+[213, 837, 1, 0, 0, 0]
+[213, 1078, 0, 0]
+[213, 838, 1, 0, 0, 0]
+[213, 1079, 0, 0]
+[213, 839, 1, 0, 0, 0]
+[213, 1080, 0, 0]
+[213, 840, 1, 0, 0, 0]
+[213, 1081, 0, 0]
+[213, 794, 1, 0, 0, 0]
+[213, 1082, 0, 0]
+[419, 320, 0, 0]
+[408, 352, 0, 0]
+[374, 352, 0, 0]
+[344, 352, 0, 0]
+[310, 352, 0, 0]
+[272, 352, 0, 0]
+[238, 336, 0, 0]
+[240, 993, 0, 0]
+[240, 962, 0, 0]
+[208, 690, 1, 0, 0, 0]
+[208, 866, 1, 0, 0, 0]
+[174, 690, 1, 0, 0, 0]
+[208, 850, 1, 0, 0, 0]
+[208, 803, 1, 0, 0, 0]
+[174, 691, 1, 0, 0, 0]
+[208, 867, 1, 0, 0, 0]
+[208, 691, 1, 0, 0, 0]
+[208, 819, 1, 0, 0, 0]
+[208, 804, 1, 0, 0, 0]
+[174, 692, 1, 0, 0, 0]
+[208, 868, 1, 0, 0, 0]
+[208, 692, 1, 0, 0, 0]
+[208, 836, 1, 0, 0, 0]
+[208, 805, 1, 0, 0, 0]
+[174, 693, 1, 0, 0, 0]
+[208, 869, 1, 0, 0, 0]
+[208, 693, 1, 0, 0, 0]
+[208, 837, 1, 0, 0, 0]
+[208, 806, 1, 0, 0, 0]
+[174, 694, 1, 0, 0, 0]
+[208, 790, 1, 0, 0, 0]
+[208, 694, 1, 0, 0, 0]
+[208, 838, 1, 0, 0, 0]
+[208, 807, 1, 0, 0, 0]
+[174, 695, 1, 0, 0, 0]
+[208, 791, 1, 0, 0, 0]
+[208, 695, 1, 0, 0, 0]
+[208, 839, 1, 0, 0, 0]
+[208, 808, 1, 0, 0, 0]
+[174, 696, 1, 0, 0, 0]
+[208, 792, 1, 0, 0, 0]
+[208, 696, 1, 0, 0, 0]
+[208, 824, 1, 0, 0, 0]
+[208, 809, 1, 0, 0, 0]
+[174, 697, 1, 0, 0, 0]
+[208, 793, 1, 0, 0, 0]
+[208, 697, 1, 0, 0, 0]
+[284, 288, 0, 0]
+[273, 352, 0, 0]
+[239, 336, 0, 0]
+[241, 993, 0, 0]
+[241, 658, 1, 0, 0, 0]
+[285, 304, 0, 0]
+[274, 352, 0, 0]
+[240, 336, 0, 0]
+[242, 961, 0, 0]
+[210, 705, 1, 0, 0, 0]
+[222, 658, 1, 0, 0, 0]
+[222, 866, 1, 0, 0, 0]
+[188, 786, 1, 0, 0, 0]
+[188, 962, 0, 0]
+[254, 1026, 0, 0]
+[288, 962, 0, 0]
+[288, 993, 0, 0]
+[276, 432, 0, 0]
+[298, 272, 0, 0]
+[208, 657, 1, 0, 0, 0]
+[240, 1025, 0, 0]
+[274, 1025, 0, 0]
+[310, 865, 1, 0, 0, 0]
+[344, 865, 1, 0, 0, 0]
+[376, 1025, 0, 0]
+[410, 1025, 0, 0]
+[446, 865, 1, 0, 0, 0]
+[477, 1009, 0, 0]
+[477, 641, 1, 0, 0, 0]
+[81, 20, 0, 0]
+[80, 4, 0, 0]
+[93, 772, 1, 0, 0, 0]
+[191, 50, 0, 0]
+[195, 834, 1, 0, 0, 0]
+[191, 498, '2.30e-04', 1, 0, 0]
+[175, 18, '1.00e-06', 1, 0, 0]
+[199, 131, 0, 0]
+[198, 227, 0, 0]
+[183, 211, 0, 0]
+[195, 627, 0, 0]
+[198, 307, '0', 0, 0]
+[198, 435, 0, 0]
+[182, 275, 0, 0]
+[195, 275, 0, 0]
+[197, 275, 0, 0]
+[196, 291, 0, 0]
+[198, 499, 0, 0]
+[194, 275, 0, 0]
+[193, 275, 0, 0]
+[192, 275, 0, 0]
+[198, 323, 0, 0]
+[198, 339, 0, 0]
+[198, 355, 0, 0]
+[186, 19, 0, 0]
+[187, 403, 0, 0]
+[198, 915, '0', 0, 0]
+[198, 931, 0, 0]
+[198, 947, 0, 0]
+[198, 963, '0', 0, 0]
+[198, 979, 0, 0]
+[198, 995, 0, 0]
+[199, 915, '0', 0, 0]
+[199, 931, 0, 0]
+[199, 947, 0, 0]
+[199, 963, '0', 0, 0]
+[199, 979, 0, 0]
+[199, 995, 0, 0]
+[202, 995, '1.00e-06', 2, 0, 0]
+[202, 1011, '2.00e-06', 2, 0, 0]
+[175, 403, '5.00e-11', 1, 0, 0]
+[199, 132, 0, 0]
+[198, 228, 0, 0]
+[183, 212, 0, 0]
+[195, 628, 0, 0]
+[198, 308, '0', 0, 0]
+[198, 436, 0, 0]
+[182, 276, 0, 0]
+[195, 276, 0, 0]
+[197, 276, 0, 0]
+[196, 292, 0, 0]
+[198, 500, 0, 0]
+[194, 276, 0, 0]
+[193, 276, 0, 0]
+[192, 276, 0, 0]
+[198, 324, 0, 0]
+[198, 340, 0, 0]
+[198, 356, 0, 0]
+[186, 20, 0, 0]
+[187, 404, 0, 0]
+[198, 916, '0', 0, 0]
+[198, 932, 0, 0]
+[198, 948, 0, 0]
+[198, 964, '0', 0, 0]
+[198, 980, 0, 0]
+[198, 996, 0, 0]
+[199, 916, '0', 0, 0]
+[199, 932, 0, 0]
+[199, 948, 0, 0]
+[199, 964, '0', 0, 0]
+[199, 980, 0, 0]
+[199, 996, 0, 0]
+[202, 996, '1.00e-06', 2, 0, 0]
+[202, 1012, '2.00e-06', 2, 0, 0]
+[175, 404, '5.00e-11', 1, 0, 0]
+[199, 133, 0, 0]
+[198, 229, 0, 0]
+[183, 213, 0, 0]
+[195, 629, 0, 0]
+[198, 309, '0', 0, 0]
+[198, 437, 0, 0]
+[182, 277, 0, 0]
+[195, 277, 0, 0]
+[197, 277, 0, 0]
+[196, 293, 0, 0]
+[198, 501, 0, 0]
+[194, 277, 0, 0]
+[193, 277, 0, 0]
+[192, 277, 0, 0]
+[198, 325, 0, 0]
+[198, 341, 0, 0]
+[198, 357, 0, 0]
+[186, 21, 0, 0]
+[187, 405, 0, 0]
+[198, 917, '0', 0, 0]
+[198, 933, 0, 0]
+[198, 949, 0, 0]
+[198, 965, '0', 0, 0]
+[198, 981, 0, 0]
+[198, 997, 0, 0]
+[199, 917, '0', 0, 0]
+[199, 933, 0, 0]
+[199, 949, 0, 0]
+[199, 965, '0', 0, 0]
+[199, 981, 0, 0]
+[199, 997, 0, 0]
+[202, 997, '1.00e-06', 2, 0, 0]
+[202, 1013, '2.00e-06', 2, 0, 0]
+[175, 405, '5.00e-11', 1, 0, 0]
+[199, 134, 0, 0]
+[198, 230, 0, 0]
+[183, 214, 0, 0]
+[195, 630, 0, 0]
+[198, 310, '0', 0, 0]
+[198, 438, 0, 0]
+[182, 278, 0, 0]
+[195, 278, 0, 0]
+[197, 278, 0, 0]
+[196, 294, 0, 0]
+[198, 502, 0, 0]
+[194, 278, 0, 0]
+[193, 278, 0, 0]
+[192, 278, 0, 0]
+[198, 326, 0, 0]
+[198, 342, 0, 0]
+[198, 358, 0, 0]
+[186, 22, 0, 0]
+[187, 406, 0, 0]
+[198, 918, '0', 0, 0]
+[198, 934, 0, 0]
+[198, 950, 0, 0]
+[198, 966, '0', 0, 0]
+[198, 982, 0, 0]
+[198, 998, 0, 0]
+[199, 918, '0', 0, 0]
+[199, 934, 0, 0]
+[199, 950, 0, 0]
+[199, 966, '0', 0, 0]
+[199, 982, 0, 0]
+[199, 998, 0, 0]
+[202, 998, '1.00e-06', 2, 0, 0]
+[202, 1014, '2.00e-06', 2, 0, 0]
+[175, 406, '5.00e-11', 1, 0, 0]
+[199, 135, 0, 0]
+[198, 231, 0, 0]
+[183, 215, 0, 0]
+[195, 631, 0, 0]
+[198, 311, '0', 0, 0]
+[198, 439, 0, 0]
+[182, 279, 0, 0]
+[195, 279, 0, 0]
+[197, 279, 0, 0]
+[196, 295, 0, 0]
+[198, 503, 0, 0]
+[194, 279, 0, 0]
+[193, 279, 0, 0]
+[192, 279, 0, 0]
+[198, 327, 0, 0]
+[198, 343, 0, 0]
+[198, 359, 0, 0]
+[186, 23, 0, 0]
+[187, 407, 0, 0]
+[198, 919, '0', 0, 0]
+[198, 935, 0, 0]
+[198, 951, 0, 0]
+[198, 967, '0', 0, 0]
+[198, 983, 0, 0]
+[198, 999, 0, 0]
+[199, 919, '0', 0, 0]
+[199, 935, 0, 0]
+[199, 951, 0, 0]
+[199, 967, '0', 0, 0]
+[199, 983, 0, 0]
+[199, 999, 0, 0]
+[202, 999, '1.00e-06', 2, 0, 0]
+[202, 1015, '2.00e-06', 2, 0, 0]
+[175, 407, '5.00e-11', 1, 0, 0]
+[199, 136, 0, 0]
+[198, 232, 0, 0]
+[183, 216, 0, 0]
+[195, 632, 0, 0]
+[198, 312, '0', 0, 0]
+[198, 440, 0, 0]
+[182, 280, 0, 0]
+[195, 280, 0, 0]
+[197, 280, 0, 0]
+[196, 296, 0, 0]
+[198, 504, 0, 0]
+[194, 280, 0, 0]
+[193, 280, 0, 0]
+[192, 280, 0, 0]
+[198, 328, 0, 0]
+[198, 344, 0, 0]
+[198, 360, 0, 0]
+[186, 24, 0, 0]
+[187, 408, 0, 0]
+[198, 920, '0', 0, 0]
+[198, 936, 0, 0]
+[198, 952, 0, 0]
+[198, 968, '0', 0, 0]
+[198, 984, 0, 0]
+[198, 1000, 0, 0]
+[199, 920, '0', 0, 0]
+[199, 936, 0, 0]
+[199, 952, 0, 0]
+[199, 968, '0', 0, 0]
+[199, 984, 0, 0]
+[199, 1000, 0, 0]
+[202, 1000, '1.00e-06', 2, 0, 0]
+[202, 1016, '2.00e-06', 2, 0, 0]
+[175, 408, '5.00e-11', 1, 0, 0]
+[199, 137, 0, 0]
+[198, 233, 0, 0]
+[183, 217, 0, 0]
+[195, 633, 0, 0]
+[198, 313, '0', 0, 0]
+[198, 441, 0, 0]
+[182, 281, 0, 0]
+[195, 281, 0, 0]
+[197, 281, 0, 0]
+[196, 297, 0, 0]
+[198, 505, 0, 0]
+[194, 281, 0, 0]
+[193, 281, 0, 0]
+[192, 281, 0, 0]
+[198, 329, 0, 0]
+[198, 345, 0, 0]
+[198, 361, 0, 0]
+[186, 25, 0, 0]
+[187, 409, 0, 0]
+[198, 921, '0', 0, 0]
+[198, 937, 0, 0]
+[198, 953, 0, 0]
+[198, 969, '0', 0, 0]
+[198, 985, 0, 0]
+[198, 1001, 0, 0]
+[199, 921, '0', 0, 0]
+[199, 937, 0, 0]
+[199, 953, 0, 0]
+[199, 969, '0', 0, 0]
+[199, 985, 0, 0]
+[199, 1001, 0, 0]
+[202, 1001, '1.00e-06', 2, 0, 0]
+[202, 1017, '2.00e-06', 2, 0, 0]
+[175, 409, '5.00e-11', 1, 0, 0]
+[199, 138, 0, 0]
+[198, 234, 0, 0]
+[183, 218, 0, 0]
+[195, 634, 0, 0]
+[198, 314, '0', 0, 0]
+[198, 442, 0, 0]
+[182, 282, 0, 0]
+[195, 282, 0, 0]
+[197, 282, 0, 0]
+[196, 298, 0, 0]
+[198, 506, 0, 0]
+[194, 282, 0, 0]
+[193, 282, 0, 0]
+[192, 282, 0, 0]
+[198, 330, 0, 0]
+[198, 346, 0, 0]
+[198, 362, 0, 0]
+[186, 26, 0, 0]
+[187, 410, 0, 0]
+[198, 922, '0', 0, 0]
+[198, 938, 0, 0]
+[198, 954, 0, 0]
+[198, 970, '0', 0, 0]
+[198, 986, 0, 0]
+[198, 1002, 0, 0]
+[199, 922, '0', 0, 0]
+[199, 938, 0, 0]
+[199, 954, 0, 0]
+[199, 970, '0', 0, 0]
+[199, 986, 0, 0]
+[199, 1002, 0, 0]
+[202, 1002, '1.00e-06', 2, 0, 0]
+[202, 1018, '2.00e-06', 2, 0, 0]
+[175, 410, '5.00e-11', 1, 0, 0]
+[220, 192, 0, 0]
+[220, 208, 0, 0]
+[235, 209, 0, 0]
+[229, 625, 0, 0]
+[236, 433, '0', 0, 0]
+[229, 433, 0, 0]
+[216, 305, 0, 0]
+[216, 241, 0, 0]
+[234, 241, 0, 0]
+[232, 945, 0, 0]
+[235, 945, 0, 0]
+[235, 929, 0, 0]
+[237, 17, 0, 0]
+[235, 977, 0, 0]
+[235, 961, 0, 0]
+[219, 257, 0, 0]
+[223, 257, 0, 0]
+[222, 1, 0, 0]
+[221, 417, 0, 0]
+[221, 385, 0, 0]
+[225, 385, 0, 0]
+[220, 17, 0, 0]
+[224, 1, 0, 0]
+[217, 401, 0, 0]
+[217, 369, 0, 0]
+[235, 977, 0, 0]
+[235, 961, 0, 0]
+[230, 289, 0, 0]
+[231, 401, 0, 0]
+[236, 17, '3e-9', 1, 0, 0]
+[236, 929, '2e-6', 2, 0, 0]
+[237, 945, '2e-6', 3, 0, 0]
+[237, 929, '0.8e-6', 3, 0, 0]
+[236, 1009, '2e-6', 2, 0, 0]
+[236, 961, '2e-6', 2, 0, 0]
+[237, 977, '500e-9', 3, 0, 0]
+[237, 961, '500e-9', 3, 0, 0]
+[218, 17, '0.4e-9', 1, 0, 0]
+[229, 130, 0, 0]
+[225, 226, 0, 0]
+[229, 610, 0, 0]
+[229, 322, '0', 0, 0]
+[228, 370, 0, 0]
+[233, 370, 0, 0]
+[224, 370, 0, 0]
+[232, 274, 0, 0]
+[227, 370, 0, 0]
+[223, 338, 0, 0]
+[226, 370, 0, 0]
+[223, 354, 0, 0]
+[223, 2, 0, 0]
+[236, 994, '9e-6', 2, 0, 0]
+[232, 962, '0', 0, 0]
+[225, 370, '7.00e-05', 1, 0, 0]
+[233, 131, 0, 0]
+[232, 227, 0, 0]
+[217, 211, 0, 0]
+[229, 627, 0, 0]
+[232, 307, '0', 0, 0]
+[232, 435, 0, 0]
+[216, 275, 0, 0]
+[229, 275, 0, 0]
+[231, 275, 0, 0]
+[230, 291, 0, 0]
+[232, 499, 0, 0]
+[228, 275, 0, 0]
+[227, 275, 0, 0]
+[226, 275, 0, 0]
+[232, 323, 0, 0]
+[232, 339, 0, 0]
+[232, 355, 0, 0]
+[220, 19, 0, 0]
+[221, 403, 0, 0]
+[232, 915, '0', 0, 0]
+[232, 931, 0, 0]
+[232, 947, 0, 0]
+[232, 963, '0', 0, 0]
+[232, 979, 0, 0]
+[232, 995, 0, 0]
+[233, 915, '0', 0, 0]
+[233, 931, 0, 0]
+[233, 947, 0, 0]
+[233, 963, '0', 0, 0]
+[233, 979, 0, 0]
+[233, 995, 0, 0]
+[236, 995, '1.00e-06', 2, 0, 0]
+[236, 1011, '2.00e-06', 2, 0, 0]
+[209, 403, '5.00e-11', 1, 0, 0]
+[233, 132, 0, 0]
+[232, 228, 0, 0]
+[217, 212, 0, 0]
+[229, 628, 0, 0]
+[232, 308, '0', 0, 0]
+[232, 436, 0, 0]
+[216, 276, 0, 0]
+[229, 276, 0, 0]
+[231, 276, 0, 0]
+[230, 292, 0, 0]
+[232, 500, 0, 0]
+[228, 276, 0, 0]
+[227, 276, 0, 0]
+[226, 276, 0, 0]
+[232, 324, 0, 0]
+[232, 340, 0, 0]
+[232, 356, 0, 0]
+[220, 20, 0, 0]
+[221, 404, 0, 0]
+[232, 916, '0', 0, 0]
+[232, 932, 0, 0]
+[232, 948, 0, 0]
+[232, 964, '0', 0, 0]
+[232, 980, 0, 0]
+[232, 996, 0, 0]
+[233, 916, '0', 0, 0]
+[233, 932, 0, 0]
+[233, 948, 0, 0]
+[233, 964, '0', 0, 0]
+[233, 980, 0, 0]
+[233, 996, 0, 0]
+[236, 996, '1.00e-06', 2, 0, 0]
+[236, 1012, '2.00e-06', 2, 0, 0]
+[209, 404, '5.00e-11', 1, 0, 0]
+[233, 133, 0, 0]
+[232, 229, 0, 0]
+[217, 213, 0, 0]
+[229, 629, 0, 0]
+[232, 309, '0', 0, 0]
+[232, 437, 0, 0]
+[216, 277, 0, 0]
+[229, 277, 0, 0]
+[231, 277, 0, 0]
+[230, 293, 0, 0]
+[232, 501, 0, 0]
+[228, 277, 0, 0]
+[227, 277, 0, 0]
+[226, 277, 0, 0]
+[232, 325, 0, 0]
+[232, 341, 0, 0]
+[232, 357, 0, 0]
+[220, 21, 0, 0]
+[221, 405, 0, 0]
+[232, 917, '0', 0, 0]
+[232, 933, 0, 0]
+[232, 949, 0, 0]
+[232, 965, '0', 0, 0]
+[232, 981, 0, 0]
+[232, 997, 0, 0]
+[233, 917, '0', 0, 0]
+[233, 933, 0, 0]
+[233, 949, 0, 0]
+[233, 965, '0', 0, 0]
+[233, 981, 0, 0]
+[233, 997, 0, 0]
+[236, 997, '1.00e-06', 2, 0, 0]
+[236, 1013, '2.00e-06', 2, 0, 0]
+[209, 405, '5.00e-11', 1, 0, 0]
+[233, 134, 0, 0]
+[232, 230, 0, 0]
+[217, 214, 0, 0]
+[229, 630, 0, 0]
+[232, 310, '0', 0, 0]
+[232, 438, 0, 0]
+[216, 278, 0, 0]
+[229, 278, 0, 0]
+[231, 278, 0, 0]
+[230, 294, 0, 0]
+[232, 502, 0, 0]
+[228, 278, 0, 0]
+[227, 278, 0, 0]
+[226, 278, 0, 0]
+[232, 326, 0, 0]
+[232, 342, 0, 0]
+[232, 358, 0, 0]
+[220, 22, 0, 0]
+[221, 406, 0, 0]
+[232, 918, '0', 0, 0]
+[232, 934, 0, 0]
+[232, 950, 0, 0]
+[232, 966, '0', 0, 0]
+[232, 982, 0, 0]
+[232, 998, 0, 0]
+[233, 918, '0', 0, 0]
+[233, 934, 0, 0]
+[233, 950, 0, 0]
+[233, 966, '0', 0, 0]
+[233, 982, 0, 0]
+[233, 998, 0, 0]
+[236, 998, '1.00e-06', 2, 0, 0]
+[236, 1014, '2.00e-06', 2, 0, 0]
+[209, 406, '5.00e-11', 1, 0, 0]
+[233, 135, 0, 0]
+[232, 231, 0, 0]
+[217, 215, 0, 0]
+[229, 631, 0, 0]
+[232, 311, '0', 0, 0]
+[232, 439, 0, 0]
+[216, 279, 0, 0]
+[229, 279, 0, 0]
+[231, 279, 0, 0]
+[230, 295, 0, 0]
+[232, 503, 0, 0]
+[228, 279, 0, 0]
+[227, 279, 0, 0]
+[226, 279, 0, 0]
+[232, 327, 0, 0]
+[232, 343, 0, 0]
+[232, 359, 0, 0]
+[220, 23, 0, 0]
+[221, 407, 0, 0]
+[232, 919, '0', 0, 0]
+[232, 935, 0, 0]
+[232, 951, 0, 0]
+[232, 967, '0', 0, 0]
+[232, 983, 0, 0]
+[232, 999, 0, 0]
+[233, 919, '0', 0, 0]
+[233, 935, 0, 0]
+[233, 951, 0, 0]
+[233, 967, '0', 0, 0]
+[233, 983, 0, 0]
+[233, 999, 0, 0]
+[236, 999, '1.00e-06', 2, 0, 0]
+[236, 1015, '2.00e-06', 2, 0, 0]
+[209, 407, '5.00e-11', 1, 0, 0]
+[233, 136, 0, 0]
+[232, 232, 0, 0]
+[217, 216, 0, 0]
+[229, 632, 0, 0]
+[232, 312, '0', 0, 0]
+[232, 440, 0, 0]
+[216, 280, 0, 0]
+[229, 280, 0, 0]
+[231, 280, 0, 0]
+[230, 296, 0, 0]
+[232, 504, 0, 0]
+[228, 280, 0, 0]
+[227, 280, 0, 0]
+[226, 280, 0, 0]
+[232, 328, 0, 0]
+[232, 344, 0, 0]
+[232, 360, 0, 0]
+[220, 24, 0, 0]
+[221, 408, 0, 0]
+[232, 920, '0', 0, 0]
+[232, 936, 0, 0]
+[232, 952, 0, 0]
+[232, 968, '0', 0, 0]
+[232, 984, 0, 0]
+[232, 1000, 0, 0]
+[233, 920, '0', 0, 0]
+[233, 936, 0, 0]
+[233, 952, 0, 0]
+[233, 968, '0', 0, 0]
+[233, 984, 0, 0]
+[233, 1000, 0, 0]
+[236, 1000, '1.00e-06', 2, 0, 0]
+[236, 1016, '2.00e-06', 2, 0, 0]
+[209, 408, '5.00e-11', 1, 0, 0]
+[233, 137, 0, 0]
+[232, 233, 0, 0]
+[217, 217, 0, 0]
+[229, 633, 0, 0]
+[232, 313, '0', 0, 0]
+[232, 441, 0, 0]
+[216, 281, 0, 0]
+[229, 281, 0, 0]
+[231, 281, 0, 0]
+[230, 297, 0, 0]
+[232, 505, 0, 0]
+[228, 281, 0, 0]
+[227, 281, 0, 0]
+[226, 281, 0, 0]
+[232, 329, 0, 0]
+[232, 345, 0, 0]
+[232, 361, 0, 0]
+[220, 25, 0, 0]
+[221, 409, 0, 0]
+[232, 921, '0', 0, 0]
+[232, 937, 0, 0]
+[232, 953, 0, 0]
+[232, 969, '0', 0, 0]
+[232, 985, 0, 0]
+[232, 1001, 0, 0]
+[233, 921, '0', 0, 0]
+[233, 937, 0, 0]
+[233, 953, 0, 0]
+[233, 969, '0', 0, 0]
+[233, 985, 0, 0]
+[233, 1001, 0, 0]
+[236, 1001, '1.00e-06', 2, 0, 0]
+[236, 1017, '2.00e-06', 2, 0, 0]
+[209, 409, '5.00e-11', 1, 0, 0]
+[237, 26, 0, 0]
+[236, 138, 0, 0]
+[236, 250, 0, 0]
+[233, 138, 0, 0]
+[233, 250, 0, 0]
+[232, 234, 0, 0]
+[217, 218, 0, 0]
+[229, 634, 0, 0]
+[236, 938, '2e-06', 2, 0, 0]
+[237, 954, '2e-06', 3, 0, 0]
+[237, 938, '1.94e-07', 3, 0, 0]
+[235, 954, '0', 0, 0]
+[235, 938, 0, 0]
+[232, 314, '0', 0, 0]
+[232, 442, 0, 0]
+[216, 282, 0, 0]
+[229, 282, 0, 0]
+[231, 282, 0, 0]
+[230, 298, 0, 0]
+[232, 506, 0, 0]
+[228, 282, 0, 0]
+[227, 282, 0, 0]
+[226, 282, 0, 0]
+[232, 330, 0, 0]
+[232, 346, 0, 0]
+[232, 362, 0, 0]
+[220, 26, 0, 0]
+[221, 410, 0, 0]
+[232, 922, '0', 0, 0]
+[232, 938, 0, 0]
+[232, 954, 0, 0]
+[232, 970, '0', 0, 0]
+[232, 986, 0, 0]
+[232, 1002, 0, 0]
+[233, 922, '0', 0, 0]
+[233, 938, 0, 0]
+[233, 954, 0, 0]
+[233, 970, '0', 0, 0]
+[233, 986, 0, 0]
+[233, 1002, 0, 0]
+[236, 1002, '1.00e-06', 2, 0, 0]
+[236, 1018, '2.00e-06', 2, 0, 0]
+[209, 410, '5.00e-11', 1, 0, 0]
+[281, 80, 0, 0]
+[288, 208, 0, 0]
+[279, 208, '0.000002', 2, 0, 0]
+[284, 144, 0, 0]
+[284, 160, 0, 0]
+[327, 230, 0, 0]
+[336, 646, 1, 0, 0, 0]
+[336, 662, 1, 0, 0, 0]
+[336, 678, 1, 0, 0, 0]
+[336, 694, 1, 0, 0, 0]
+[336, 710, 1, 0, 0, 0]
+[336, 726, 1, 0, 0, 0]
+[336, 742, 1, 0, 0, 0]
+[336, 758, 1, 0, 0, 0]
+[336, 774, 1, 0, 0, 0]
+[336, 790, 1, 0, 0, 0]
+[336, 806, 1, 0, 0, 0]
+[336, 822, 1, 0, 0, 0]
+[336, 838, 1, 0, 0, 0]
+[336, 854, 1, 0, 0, 0]
+[336, 870, 1, 0, 0, 0]
+[336, 886, 1, 0, 0, 0]
+[327, 534, 0, 0]
+[327, 550, 0, 0]
+[365, 866, 1, 0, 0, 0]
+[370, 642, 1, 0, 0, 0]
+[370, 658, 1, 0, 0, 0]
+[370, 674, 1, 0, 0, 0]
+[370, 690, 1, 0, 0, 0]
+[370, 706, 1, 0, 0, 0]
+[370, 722, 1, 0, 0, 0]
+[370, 738, 1, 0, 0, 0]
+[370, 754, 1, 0, 0, 0]
+[370, 770, 1, 0, 0, 0]
+[370, 786, 1, 0, 0, 0]
+[370, 802, 1, 0, 0, 0]
+[370, 818, 1, 0, 0, 0]
+[370, 834, 1, 0, 0, 0]
+[370, 850, 1, 0, 0, 0]
+[370, 866, 1, 0, 0, 0]
+[370, 882, 1, 0, 0, 0]
+[365, 882, 1, 0, 0, 0]
+[420, 144, 0, 0]
+[420, 160, 0, 0]
+[420, 176, 0, 0]
+[420, 192, 0, 0]
+[420, 208, 0, 0]
+[484, 465, 0, 0]

@@ -1,4 +1,4 @@
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43 			page 1
+GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_noDAC.s43 			page 1
 
 
    1               	
@@ -58,7 +58,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43 			
   53               	.set    P1IFG,     0x0023
   54               	.set    P1IES,     0x0024
   55               	.set    P1IE,      0x0025
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43 			page 2
+GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_noDAC.s43 			page 2
 
 
   56               	.set    P1SEL,     0x0026
@@ -118,7 +118,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43 			
  110               	/*                                 TIMER A                                   */
  111               	/*---------------------------------------------------------------------------*/
  112               	.set    TACTL,     0x0160
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43 			page 3
+GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_noDAC.s43 			page 3
 
 
  113               	.set    TAR,       0x0170
@@ -178,7 +178,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43 			
  167               	.set    DMEM_226,  (DMEM_BASE+0x26)
  168               	.set    DMEM_227,  (DMEM_BASE+0x27)
  169               	.set    DMEM_228,  (DMEM_BASE+0x28)
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43 			page 4
+GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_noDAC.s43 			page 4
 
 
  170               	.set    DMEM_229,  (DMEM_BASE+0x29)
@@ -238,7 +238,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43 			
  224               	.set    DMEM_25C,  (DMEM_BASE+0x5C)
  225               	.set    DMEM_25D,  (DMEM_BASE+0x5D)
  226               	.set    DMEM_25E,  (DMEM_BASE+0x5E)
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43 			page 5
+GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_noDAC.s43 			page 5
 
 
  227               	.set    DMEM_25F,  (DMEM_BASE+0x5F)
@@ -293,12 +293,12 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43 			
    7               	.set mem1, 0x5000
    8               	.set mem2, 0x6004
    9               	.set DAC_01_00, 0x01D0
-  10               	.set DAC_03_02, 0x01D2
-  11               	.set DAC_05_04, 0x01D4
-  12               	.set DAC_07_06, 0x01D6
-  13               	.set DAC_09_08, 0x01D8
+  10               	.set	DAC_02_03, 0x01D2
+  11               	.set	DAC_04_05, 0x01D4
+  12               	.set	DAC_06_07, 0x01D6
+  13               	.set	DAC_08_09, 0x01D8
   14               	main:
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43 			page 6
+GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_noDAC.s43 			page 6
 
 
   15 0000 3140 5040 	    mov     #DMEM_250, r1           ; Initialize stack pointer
@@ -325,149 +325,96 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43 			
   29 0044 8243 0C0B 		mov     #0x0000, &PROG_BITS     ; PROG = 0, OV_N = don't care, MEAS_ADC = 0, CLEAR_N = 0
   30               	
   31 0048 0243      	mov #0x0000, r2
-  32 004a 3740 0060 	mov #0x6000, r7
-  33 004e 0643      	clr r6
-  34 0050 3B40 0043 	mov	#0x4300, r11
-  35 0054 2C4B      	mov	@r11, r12		; length of vector 
-  36 0056 2B53      	incd	r11
-  37 0058 2D4B      	mov	@r11, r13		; DAC information
-  38 005a 2B53      	incd	r11
-  39 005c 2E4B      	mov	@r11, r14		; Time interval (ms)
-  40               	;------------------------------------------------------
-  41               	wait_startup:
-  42 005e 3543      	mov #0xFFFF, r5
-  43 0060 B012 0000 	call #wait_10us
-  44 0064 3640 0643 	mov #0x4306, r6
-  45               	wait_GPIO:
-  46 0068 B012 0000 	call #DAC_setup
-  47 006c 2653      	incd r6
-  48 006e 0943      	clr r9
-  49 0070 B012 0000 	call #RAMP_ADC_meas
-  50 0074 B012 0000 	call #RAMP_ADC_meas
-  51               	Overflow_ret:
-  52 0078 0943      	clr r9
-  53 007a 2753      	INCD r7
-  54 007c B693 0000 	cmp #0xffff, @r6
-  55 0080 F323      	jne wait_GPIO
-  56 0082 8247 0050 	mov r7, &mem1
-  57               	   /* ----------------------    FUNCTIONS    --------------- */
-  58               	end_of_test:	
-  59 0086 B743 0000 	  mov #0xffff, @r7
-  60 008a 8243 5800 		mov	#0x0000, &BCSCTL2
-  61 008e 0343      		nop
-  62 0090 3043      		br #0xffff
-  63               		
-  64               	RETI_ROUTINE:
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43 			page 7
+  32 004a 0943      	clr r9
+  33 004c 3740 0060 	mov #0x6000, r7
+  34 0050 0643      	clr r6
+  35 0052 3640 0643 	mov #0x4306, r6
+  36 0056 A246 D201 	mov @r6, &DAC_02_03
+  37               	;------------------------------------------------------
+  38               	wait_startup:
+  39 005a 3540 FF0F 	mov #0x0fff, r5
+  40 005e B012 0000 	call #wait_ms
+  41 0062 B240 0080 	mov #0x8000, &GP_PER_4 
+  41      6601 
+  42 0068 3640 0643 	mov #0x4306, r6
+  43               	wait_GPIO:
+  44 006c B012 0000 	call #RAMP_ADC_meas
+  45 0070 B012 0000 	call #RAMP_ADC_meas
+  46 0074 1543      	mov #0x0001, r5
+  47 0076 B012 0000 	call #wait_ms1
+  48 007a 2753      	INCD r7
+  49 007c 3790 0075 	cmp #0x7500, r7
+  50 0080 F523      	jne wait_GPIO
+  51 0082 8247 0050 	mov r7, &mem1
+  52               	   /* ----------------------    FUNCTIONS    --------------- */
+  53               	end_of_test:	
+  54 0086 B743 0000 	  mov #0xffff, @r7
+  55 008a 8243 5800 		mov	#0x0000, &BCSCTL2
+  56 008e 0343      		nop
+  57 0090 3043      		br #0xffff
+  58               		
+  59               	RETI_ROUTINE:
+  60 0092 3540 3412 	        mov #0x1234, r5
+  61 0096 F73F      		jmp end_of_test:
+  62               	
+  63               	wait_ms:
+GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_noDAC.s43 			page 7
 
 
-  65 0092 3540 3412 	        mov #0x1234, r5
-  66 0096 F73F      		jmp end_of_test:
-  67               		
-  68               		
-  69               	RAMP_ADC_meas:
-  70 0098 B240 0080 	mov #0x8000, &GP_PER_4
-  70      6601 
-  71 009e 0843      	clr r8
-  72               	wait_GPIO1: 
-  73 00a0 1853      	inc r8
-  74 00a2 3890 FF0F 	cmp #0x0fff, r8
-  75 00a6 0D34      	jge Overflow_ADC
-  76 00a8 C293 7E01 	cmp.b #0x00, &GP_array_to_proc
-  77 00ac F923      	jne wait_GPIO1
-  78               	wait_irq05:
-  79 00ae 1953      	INC r9
-  80 00b0 D293 7E01 	cmp.b #0x01, &GP_array_to_proc
-  81 00b4 FC23      	jne wait_irq05
-  82 00b6 8749 0000 	mov r9, @r7 ;trying to write to the memory
-  83 00ba 0943      	clr r9
-  84 00bc 8243 6601 	mov #0x0000, &GP_PER_4
-  85 00c0 3041      	ret 
-  86               	
-  87               	Overflow_ADC:
-  88 00c2 B740 1700 	mov #0x0017,  @r7 
-  88      0000 
-  89 00c8 D73F      	jmp Overflow_ret
-  90               	
-  91               	DAC_setup:
-  92 00ca 9243 6601 	mov #0x0001, &GP_PER_4
-  93               	loop_start:
-  94 00ce 094D      	mov     r13, r9
-  95 00d0 39C0 FCFF 	bic	#0xfffc, r9
-  96 00d4 0993      	cmp	#0, r9  	        ; If DAC0 = 0 & DAC1 =0, skip setting DAC0 & DAC1
-  97 00d6 0324      	jeq	skip_DAC1DAC0_set
-  98 00d8 2B53      	incd r11
-  99 00da A24B D001 	mov @r11, &DAC_01_00        ; get the DAC_01_00's value
- 100               	skip_DAC1DAC0_set:
- 101 00de 094D      	mov     r13, r9
- 102 00e0 39C0 F3FF 	bic	#0xfff3, r9
- 103 00e4 0993      	cmp	#0, r9  	        ; If DAC2 = 0 & DAC3 = 0, skip setting DAC2 & DAC3
- 104 00e6 0324      	jeq	skip_DAC3DAC2_set
- 105 00e8 2B53      	incd	r11
- 106 00ea A24B D201 	mov     @r11, &DAC_03_02        ; get the DAC_03_02's value
- 107               	skip_DAC3DAC2_set:
- 108 00ee 094D      	 mov     r13, r9
- 109 00f0 39C0 CFFF 	bic	#0xffcf, r9
- 110 00f4 0993      	cmp	#0, r9  	        ; If DAC4 = 0 & DAC5 = 0, skip setting DAC4 & DAC5
- 111 00f6 0324      	jeq	skip_DAC5DAC4_set
- 112 00f8 2B53      	incd r11
- 113 00fa A24B D401 	mov     @r11, &DAC_05_04        ; get the DAC_05_04's value
- 114               	skip_DAC5DAC4_set:
- 115 00fe 094D      	mov     r13, r9
- 116 0100 39C0 3FFF 	bic	#0xff3f, r9
- 117 0104 0993      	cmp	#0, r9  	        ; If DAC6 = 0 & DAC7 = 0, skip setting DAC6 & DAC7
- 118 0106 0324      	jeq	skip_DAC7DAC6_set
- 119 0108 2B53      	incd	r11
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43 			page 8
-
-
- 120 010a A24B D601 	mov     @r11, &DAC_07_06        ; get the DAC_07_06's value
- 121               	skip_DAC7DAC6_set:
- 122 010e 094D      	mov     r13, r9
- 123 0110 39C0 FFFC 	bic	#0xfcff, r9
- 124 0114 0993      	cmp	#0, r9  	        ; If DAC8 = 0 & DAC9 = 0, skip setting DAC8 & DAC9
- 125 0116 0324      	jeq	skip_DAC9DAC8_set
- 126 0118 2B53      	incd	r11
- 127 011a A24B D801 	mov     @r11, &DAC_09_08        ; get the DAC_09_08's value
- 128               	skip_DAC9DAC8_set:
- 129 011e 054E      	mov     r14, r5             	; Number of ms
- 130 0120 0593      	cmp	#0, r5
- 131 0122 0224      	jeq	wait_skip
- 132 0124 B012 0000 	call    #wait_10us                ; Call the waiting function
- 133               	wait_skip:
- 134 0128 8243 6601 	mov #0x0000, &GP_PER_4
- 135 012c 3041      	ret
- 136               	
- 137               	
- 138               	wait_10us:
- 139 012e 3440 2200 	        mov     #34, r4                 ; Number of clock cycles in 100 us (3324 was divided by 100
- 140               	wait_10us_loop:
- 141 0132 1483      	        dec.w   r4                      ; Subtract from number of clk cycles.Execution takes 2 cloc
- 142 0134 FE23      	        jnz     wait_10us_loop          ; Test for loop termination. Execution takes 2 clock cycles
- 143 0136 3440 2200 	        mov     #34, r4                  ; Reset number of clock cycles
- 144 013a 1583      	        dec.w   r5                      ; Decrement number of ms total
- 145 013c FA23      	        jnz     wait_10us_loop          ; Keep looping if necessary
- 146 013e 3041      	        ret   
- 147               	/* ----------------------         INTERRUPT VECTORS  --------------- */
- 148               	
- 149               	.section .vectors, "a"
- 150 0000 0000      	.word end_of_test     ; Interrupt  0 (lowest priority)    <unused>
- 151 0002 0000      	.word end_of_test     ; Interrupt  1                      <unused>
- 152 0004 0000      	.word end_of_test     ; Interrupt  2                      <unused>
- 153 0006 0000      	.word end_of_test     ; Interrupt  3                      <unused>
- 154 0008 0000      	.word end_of_test     ; Interrupt  4                      <unused>
- 155 000a 0000      	.word end_of_test     ; Interrupt  5                      <unused>
- 156 000c 0000      	.word end_of_test     ; Interrupt  6                      <unused>
- 157 000e 0000      	.word end_of_test     ; Interrupt  7                      <unused>
- 158 0010 0000      	.word end_of_test     ; Interrupt  8                      <unused>
- 159 0012 0000      	.word end_of_test     ; Interrupt  9                      <unused>
- 160 0014 0000      	.word end_of_test     ; Interrupt 10                      Watchdog timer
- 161 0016 0000      	.word end_of_test     ; Interrupt 11                      <unused>
- 162 0018 0000      	.word end_of_test     ; Interrupt 12                      <unused>
- 163 001a 0000      	.word end_of_test    ; Interrupt 13                      <unused>
- 164 001c 0000      	.word end_of_test      ; Interrupt 14                      NMI
- 165 001e 0000      	.word main              ; Interrupt 15 (highest priority)   RESET
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43 			page 9
+  64 0098 3440 FC0C 	        mov     #3324, r4               ; Number of clock cycles in a ms (chariterized by pulse mea
+  65               	wait_ms_loop:
+  66 009c 1483      	        dec.w   r4                      ; Subtract from number of clk cycles.Execution takes 2 cloc
+  67 009e FE23      	        jnz     wait_ms_loop            ; Test for loop termination. Execution takes 2 clock cycles
+  68 00a0 3440 FC0C 	        mov     #3324, r4                  ; Reset number of clock cycles
+  69 00a4 1583      	        dec.w   r5                      ; Decrement number of ms total
+  70 00a6 FA23      	        jnz     wait_ms_loop            ; Keep looping if necessary
+  71 00a8 3041      	        ret   	
+  72               	
+  73               	wait_ms1:
+  74 00aa 3440 7E06 	        mov     #1662, r4               ; Number of clock cycles in a ms (chariterized by pulse mea
+  75               	wait_ms_loop1:
+  76 00ae 1483      	        dec.w   r4                      ; Subtract from number of clk cycles.Execution takes 2 cloc
+  77 00b0 FE23      	        jnz     wait_ms_loop1            ; Test for loop termination. Execution takes 2 clock cycle
+  78 00b2 3440 7E06 	        mov     #1662, r4                  ; Reset number of clock cycles
+  79 00b6 1583      	        dec.w   r5                      ; Decrement number of ms total
+  80 00b8 FA23      	        jnz     wait_ms_loop1            ; Keep looping if necessary
+  81 00ba 3041      	        ret 
+  82               		
+  83               	RAMP_ADC_meas:
+  84 00bc B240 0080 	mov #0x8000, &GP_PER_4
+  84      6601 
+  85               	wait_GPIO1: 
+  86 00c2 C293 7E01 	cmp.b #0x00, &GP_array_to_proc
+  87 00c6 FD23      	jne wait_GPIO1
+  88               	wait_irq05:
+  89 00c8 1953      	INC r9
+  90 00ca D293 7E01 	cmp.b #0x01, &GP_array_to_proc
+  91 00ce FC23      	jne wait_irq05
+  92 00d0 8749 0000 	mov r9, @r7 ;trying to write to the memory
+  93 00d4 0943      	clr r9
+  94 00d6 8243 6601 	mov #0x0000, &GP_PER_4
+  95 00da 3041      	ret 
+  96               	 	    
+  97               	      /* ----------------------         INTERRUPT VECTORS  --------------- */
+  98               	
+  99               	.section .vectors, "a"
+ 100 0000 0000      	.word end_of_test     ; Interrupt  0 (lowest priority)    <unused>
+ 101 0002 0000      	.word end_of_test     ; Interrupt  1                      <unused>
+ 102 0004 0000      	.word end_of_test     ; Interrupt  2                      <unused>
+ 103 0006 0000      	.word end_of_test     ; Interrupt  3                      <unused>
+ 104 0008 0000      	.word end_of_test     ; Interrupt  4                      <unused>
+ 105 000a 0000      	.word end_of_test     ; Interrupt  5                      <unused>
+ 106 000c 0000      	.word end_of_test     ; Interrupt  6                      <unused>
+ 107 000e 0000      	.word end_of_test     ; Interrupt  7                      <unused>
+ 108 0010 0000      	.word end_of_test     ; Interrupt  8                      <unused>
+ 109 0012 0000      	.word end_of_test     ; Interrupt  9                      <unused>
+ 110 0014 0000      	.word end_of_test     ; Interrupt 10                      Watchdog timer
+ 111 0016 0000      	.word end_of_test     ; Interrupt 11                      <unused>
+ 112 0018 0000      	.word end_of_test     ; Interrupt 12                      <unused>
+ 113 001a 0000      	.word end_of_test    ; Interrupt 13                      <unused>
+ 114 001c 0000      	.word end_of_test      ; Interrupt 14                      NMI
+ 115 001e 0000      	.word main              ; Interrupt 15 (highest priority)   RESET
+GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_noDAC.s43 			page 8
 
 
 DEFINED SYMBOLS
@@ -527,7 +474,7 @@ DEFINED SYMBOLS
        pmem_defs.asm:117    *ABS*:00000174 TACCR1
        pmem_defs.asm:118    *ABS*:00000166 TACCTL2
        pmem_defs.asm:119    *ABS*:00000176 TACCR2
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43 			page 10
+GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_noDAC.s43 			page 9
 
 
        pmem_defs.asm:120    *ABS*:0000012e TAIV
@@ -587,7 +534,7 @@ DEFINED SYMBOLS
        pmem_defs.asm:182    *ABS*:00004034 DMEM_234
        pmem_defs.asm:183    *ABS*:00004035 DMEM_235
        pmem_defs.asm:184    *ABS*:00004036 DMEM_236
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43 			page 11
+GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_noDAC.s43 			page 10
 
 
        pmem_defs.asm:185    *ABS*:00004037 DMEM_237
@@ -647,7 +594,7 @@ DEFINED SYMBOLS
        pmem_defs.asm:242    *ABS*:0000406d DMEM_26D
        pmem_defs.asm:243    *ABS*:0000406e DMEM_26E
        pmem_defs.asm:244    *ABS*:0000406f DMEM_26F
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43 			page 12
+GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_noDAC.s43 			page 11
 
 
        pmem_defs.asm:246    *ABS*:00004100 DMEM_300
@@ -667,35 +614,27 @@ DEFINED SYMBOLS
        pmem_defs.asm:268    *ABS*:00000162 GP_PER_2
        pmem_defs.asm:269    *ABS*:00000164 GP_PER_3
        pmem_defs.asm:270    *ABS*:00000166 GP_PER_4
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43:14     .text:00000000 main
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43:5      *ABS*:0000017e GP_array_to_proc
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43:6      *ABS*:00005200 mem
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43:7      *ABS*:00005000 mem1
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43:8      *ABS*:00006004 mem2
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43:9      *ABS*:000001d0 DAC_01_00
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43:10     *ABS*:000001d2 DAC_03_02
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43:11     *ABS*:000001d4 DAC_05_04
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43:12     *ABS*:000001d6 DAC_07_06
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43:13     *ABS*:000001d8 DAC_09_08
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43:41     .text:0000005e wait_startup
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43:138    .text:0000012e wait_10us
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43:45     .text:00000068 wait_GPIO
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43:91     .text:000000ca DAC_setup
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43:69     .text:00000098 RAMP_ADC_meas
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43:51     .text:00000078 Overflow_ret
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43:58     .text:00000086 end_of_test
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43:64     .text:00000092 RETI_ROUTINE
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43:72     .text:000000a0 wait_GPIO1
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43:87     .text:000000c2 Overflow_ADC
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43:78     .text:000000ae wait_irq05
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43:93     .text:000000ce loop_start
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43:100    .text:000000de skip_DAC1DAC0_set
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43:107    .text:000000ee skip_DAC3DAC2_set
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43:114    .text:000000fe skip_DAC5DAC4_set
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43:121    .text:0000010e skip_DAC7DAC6_set
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43:128    .text:0000011e skip_DAC9DAC8_set
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43:133    .text:00000128 wait_skip
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_DAC.s43:140    .text:00000132 wait_10us_loop
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_noDAC.s43:14     .text:00000000 main
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_noDAC.s43:5      *ABS*:0000017e GP_array_to_proc
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_noDAC.s43:6      *ABS*:00005200 mem
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_noDAC.s43:7      *ABS*:00005000 mem1
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_noDAC.s43:8      *ABS*:00006004 mem2
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_noDAC.s43:9      *ABS*:000001d0 DAC_01_00
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_noDAC.s43:10     *ABS*:000001d2 DAC_02_03
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_noDAC.s43:11     *ABS*:000001d4 DAC_04_05
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_noDAC.s43:12     *ABS*:000001d6 DAC_06_07
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_noDAC.s43:13     *ABS*:000001d8 DAC_08_09
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_noDAC.s43:38     .text:0000005a wait_startup
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_noDAC.s43:63     .text:00000098 wait_ms
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_noDAC.s43:43     .text:0000006c wait_GPIO
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_noDAC.s43:83     .text:000000bc RAMP_ADC_meas
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_noDAC.s43:73     .text:000000aa wait_ms1
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_noDAC.s43:53     .text:00000086 end_of_test
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_noDAC.s43:59     .text:00000092 RETI_ROUTINE
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_noDAC.s43:65     .text:0000009c wait_ms_loop
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_noDAC.s43:75     .text:000000ae wait_ms_loop1
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_noDAC.s43:85     .text:000000c2 wait_GPIO1
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/Ramp_ADC_noDAC.s43:88     .text:000000c8 wait_irq05
 
 NO UNDEFINED SYMBOLS
 
@@ -707,13 +646,13 @@ start address 0x00000000
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         00000140  00000000  00000000  00000034  2**0
+  0 .text         000000dc  00000000  00000000  00000034  2**0
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
-  1 .data         00000000  00000000  00000000  00000174  2**0
+  1 .data         00000000  00000000  00000000  00000110  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .bss          00000000  00000000  00000000  00000174  2**0
+  2 .bss          00000000  00000000  00000000  00000110  2**0
                   ALLOC
-  3 .vectors      00000020  00000000  00000000  00000174  2**0
+  3 .vectors      00000020  00000000  00000000  00000110  2**0
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, DATA
 SYMBOL TABLE:
 00000000 l    d  .text	00000000 .text
@@ -911,29 +850,21 @@ SYMBOL TABLE:
 00005000 l       *ABS*	00000000 mem1
 00006004 l       *ABS*	00000000 mem2
 000001d0 l       *ABS*	00000000 DAC_01_00
-000001d2 l       *ABS*	00000000 DAC_03_02
-000001d4 l       *ABS*	00000000 DAC_05_04
-000001d6 l       *ABS*	00000000 DAC_07_06
-000001d8 l       *ABS*	00000000 DAC_09_08
-0000005e l       .text	00000000 wait_startup
-0000012e l       .text	00000000 wait_10us
-00000068 l       .text	00000000 wait_GPIO
-000000ca l       .text	00000000 DAC_setup
-00000098 l       .text	00000000 RAMP_ADC_meas
-00000078 l       .text	00000000 Overflow_ret
+000001d2 l       *ABS*	00000000 DAC_02_03
+000001d4 l       *ABS*	00000000 DAC_04_05
+000001d6 l       *ABS*	00000000 DAC_06_07
+000001d8 l       *ABS*	00000000 DAC_08_09
+0000005a l       .text	00000000 wait_startup
+00000098 l       .text	00000000 wait_ms
+0000006c l       .text	00000000 wait_GPIO
+000000bc l       .text	00000000 RAMP_ADC_meas
+000000aa l       .text	00000000 wait_ms1
 00000086 l       .text	00000000 end_of_test
 00000092 l       .text	00000000 RETI_ROUTINE
-000000a0 l       .text	00000000 wait_GPIO1
-000000c2 l       .text	00000000 Overflow_ADC
-000000ae l       .text	00000000 wait_irq05
-000000ce l       .text	00000000 loop_start
-000000de l       .text	00000000 skip_DAC1DAC0_set
-000000ee l       .text	00000000 skip_DAC3DAC2_set
-000000fe l       .text	00000000 skip_DAC5DAC4_set
-0000010e l       .text	00000000 skip_DAC7DAC6_set
-0000011e l       .text	00000000 skip_DAC9DAC8_set
-00000128 l       .text	00000000 wait_skip
-00000132 l       .text	00000000 wait_10us_loop
+0000009c l       .text	00000000 wait_ms_loop
+000000ae l       .text	00000000 wait_ms_loop1
+000000c2 l       .text	00000000 wait_GPIO1
+000000c8 l       .text	00000000 wait_irq05
 00000000 l    d  .vectors	00000000 .vectors
 00000000 g       .text	00000000 main
 
@@ -943,22 +874,16 @@ Contents of section .text:
  0010 b2406400 6001a243 0e0b8243 080b8243  .@d.`..C...C...C
  0020 0a0b8243 020b8243 100bb240 4000120b  ...C...C...@@...
  0030 b240043f 64011543 b240041f 6401b240  .@.?d..C.@..d..@
- 0040 a400000b 82430c0b 02433740 00600643  .....C...C7@.`.C
- 0050 3b400043 2c4b2b53 2d4b2b53 2e4b3543  ;@.C,K+S-K+S.K5C
- 0060 b0120000 36400643 b0120000 26530943  ....6@.C....&S.C
- 0070 b0120000 b0120000 09432753 b6930000  .........C'S....
- 0080 f3238247 0050b743 00008243 58000343  .#.G.P.C...CX..C
- 0090 30433540 3412f73f b2400080 66010843  0C5@4..?.@..f..C
- 00a0 18533890 ff0f0d34 c2937e01 f9231953  .S8....4..~..#.S
- 00b0 d2937e01 fc238749 00000943 82436601  ..~..#.I...C.Cf.
- 00c0 3041b740 17000000 d73f9243 6601094d  0A.@.....?.Cf..M
- 00d0 39c0fcff 09930324 2b53a24b d001094d  9......$+S.K...M
- 00e0 39c0f3ff 09930324 2b53a24b d201094d  9......$+S.K...M
- 00f0 39c0cfff 09930324 2b53a24b d401094d  9......$+S.K...M
- 0100 39c03fff 09930324 2b53a24b d601094d  9.?....$+S.K...M
- 0110 39c0fffc 09930324 2b53a24b d801054e  9......$+S.K...N
- 0120 05930224 b0120000 82436601 30413440  ...$.....Cf.0A4@
- 0130 22001483 fe233440 22001583 fa233041  "....#4@"....#0A
+ 0040 a400000b 82430c0b 02430943 37400060  .....C...C.C7@.`
+ 0050 06433640 0643a246 d2013540 ff0fb012  .C6@.C.F..5@....
+ 0060 0000b240 00806601 36400643 b0120000  ...@..f.6@.C....
+ 0070 b0120000 1543b012 00002753 37900075  .....C....'S7..u
+ 0080 f5238247 0050b743 00008243 58000343  .#.G.P.C...CX..C
+ 0090 30433540 3412f73f 3440fc0c 1483fe23  0C5@4..?4@.....#
+ 00a0 3440fc0c 1583fa23 30413440 7e061483  4@.....#0A4@~...
+ 00b0 fe233440 7e061583 fa233041 b2400080  .#4@~....#0A.@..
+ 00c0 6601c293 7e01fd23 1953d293 7e01fc23  f...~..#.S..~..#
+ 00d0 87490000 09438243 66013041           .I...C.Cf.0A    
 Contents of section .vectors:
  0000 00000000 00000000 00000000 00000000  ................
  0010 00000000 00000000 00000000 00000000  ................
@@ -989,36 +914,31 @@ Disassembly of section .text:
   42:	00 0b 
   44:	82 43 0c 0b 	mov	#0,	&0x0b0c	;r3 As==00
   48:	02 43       	clr	r2		
-  4a:	37 40 00 60 	mov	#24576,	r7	;#0x6000
-  4e:	06 43       	clr	r6		
-  50:	3b 40 00 43 	mov	#17152,	r11	;#0x4300
-  54:	2c 4b       	mov	@r11,	r12	
-  56:	2b 53       	incd	r11		
-  58:	2d 4b       	mov	@r11,	r13	
-  5a:	2b 53       	incd	r11		
-  5c:	2e 4b       	mov	@r11,	r14	
+  4a:	09 43       	clr	r9		
+  4c:	37 40 00 60 	mov	#24576,	r7	;#0x6000
+  50:	06 43       	clr	r6		
+  52:	36 40 06 43 	mov	#17158,	r6	;#0x4306
+  56:	a2 46 d2 01 	mov	@r6,	&0x01d2	
 
-0000005e <wait_startup>:
-  5e:	35 43       	mov	#-1,	r5	;r3 As==11
-  60:	b0 12 00 00 	call	#0x0000	
-			62: R_MSP430_16_BYTE	.text+0x12e
-  64:	36 40 06 43 	mov	#17158,	r6	;#0x4306
+0000005a <wait_startup>:
+  5a:	35 40 ff 0f 	mov	#4095,	r5	;#0x0fff
+  5e:	b0 12 00 00 	call	#0x0000	
+			60: R_MSP430_16_BYTE	.text+0x98
+  62:	b2 40 00 80 	mov	#-32768,&0x0166	;#0x8000
+  66:	66 01 
+  68:	36 40 06 43 	mov	#17158,	r6	;#0x4306
 
-00000068 <wait_GPIO>:
-  68:	b0 12 00 00 	call	#0x0000	
-			6a: R_MSP430_16_BYTE	.text+0xca
-  6c:	26 53       	incd	r6		
-  6e:	09 43       	clr	r9		
+0000006c <wait_GPIO>:
+  6c:	b0 12 00 00 	call	#0x0000	
+			6e: R_MSP430_16_BYTE	.text+0xbc
   70:	b0 12 00 00 	call	#0x0000	
-			72: R_MSP430_16_BYTE	.text+0x98
-  74:	b0 12 00 00 	call	#0x0000	
-			76: R_MSP430_16_BYTE	.text+0x98
-
-00000078 <Overflow_ret>:
-  78:	09 43       	clr	r9		
+			72: R_MSP430_16_BYTE	.text+0xbc
+  74:	15 43       	mov	#1,	r5	;r3 As==01
+  76:	b0 12 00 00 	call	#0x0000	
+			78: R_MSP430_16_BYTE	.text+0xaa
   7a:	27 53       	incd	r7		
-  7c:	b6 93 00 00 	cmp	#-1,	0(r6)	;r3 As==11, 0x0000(r6)
-  80:	f3 23       	jnz	$-24     	;abs 0x68
+  7c:	37 90 00 75 	cmp	#29952,	r7	;#0x7500
+  80:	f5 23       	jnz	$-20     	;abs 0x6c
   82:	82 47 00 50 	mov	r7,	&0x5000	
 
 00000086 <end_of_test>:
@@ -1031,93 +951,41 @@ Disassembly of section .text:
   92:	35 40 34 12 	mov	#4660,	r5	;#0x1234
   96:	f7 3f       	jmp	$-16     	;abs 0x86
 
-00000098 <RAMP_ADC_meas>:
-  98:	b2 40 00 80 	mov	#-32768,&0x0166	;#0x8000
-  9c:	66 01 
-  9e:	08 43       	clr	r8		
+00000098 <wait_ms>:
+  98:	34 40 fc 0c 	mov	#3324,	r4	;#0x0cfc
 
-000000a0 <wait_GPIO1>:
-  a0:	18 53       	inc	r8		
-  a2:	38 90 ff 0f 	cmp	#4095,	r8	;#0x0fff
-  a6:	0d 34       	jge	$+28     	;abs 0xc2
-  a8:	c2 93 7e 01 	tst.b	&0x017e	
-  ac:	f9 23       	jnz	$-12     	;abs 0xa0
+0000009c <wait_ms_loop>:
+  9c:	14 83       	dec	r4		
+  9e:	fe 23       	jnz	$-2      	;abs 0x9c
+  a0:	34 40 fc 0c 	mov	#3324,	r4	;#0x0cfc
+  a4:	15 83       	dec	r5		
+  a6:	fa 23       	jnz	$-10     	;abs 0x9c
+  a8:	30 41       	ret			
 
-000000ae <wait_irq05>:
-  ae:	19 53       	inc	r9		
-  b0:	d2 93 7e 01 	cmp.b	#1,	&0x017e	;r3 As==01
-  b4:	fc 23       	jnz	$-6      	;abs 0xae
-  b6:	87 49 00 00 	mov	r9,	0(r7)	;0x0000(r7)
-  ba:	09 43       	clr	r9		
-  bc:	82 43 66 01 	mov	#0,	&0x0166	;r3 As==00
-  c0:	30 41       	ret			
+000000aa <wait_ms1>:
+  aa:	34 40 7e 06 	mov	#1662,	r4	;#0x067e
 
-000000c2 <Overflow_ADC>:
-  c2:	b7 40 17 00 	mov	#23,	0(r7)	;#0x0017, 0x0000(r7)
-  c6:	00 00 
-  c8:	d7 3f       	jmp	$-80     	;abs 0x78
+000000ae <wait_ms_loop1>:
+  ae:	14 83       	dec	r4		
+  b0:	fe 23       	jnz	$-2      	;abs 0xae
+  b2:	34 40 7e 06 	mov	#1662,	r4	;#0x067e
+  b6:	15 83       	dec	r5		
+  b8:	fa 23       	jnz	$-10     	;abs 0xae
+  ba:	30 41       	ret			
 
-000000ca <DAC_setup>:
-  ca:	92 43 66 01 	mov	#1,	&0x0166	;r3 As==01
+000000bc <RAMP_ADC_meas>:
+  bc:	b2 40 00 80 	mov	#-32768,&0x0166	;#0x8000
+  c0:	66 01 
 
-000000ce <loop_start>:
-  ce:	09 4d       	mov	r13,	r9	
-  d0:	39 c0 fc ff 	bic	#-4,	r9	;#0xfffc
-  d4:	09 93       	tst	r9		
-  d6:	03 24       	jz	$+8      	;abs 0xde
-  d8:	2b 53       	incd	r11		
-  da:	a2 4b d0 01 	mov	@r11,	&0x01d0	
+000000c2 <wait_GPIO1>:
+  c2:	c2 93 7e 01 	tst.b	&0x017e	
+  c6:	fd 23       	jnz	$-4      	;abs 0xc2
 
-000000de <skip_DAC1DAC0_set>:
-  de:	09 4d       	mov	r13,	r9	
-  e0:	39 c0 f3 ff 	bic	#-13,	r9	;#0xfff3
-  e4:	09 93       	tst	r9		
-  e6:	03 24       	jz	$+8      	;abs 0xee
-  e8:	2b 53       	incd	r11		
-  ea:	a2 4b d2 01 	mov	@r11,	&0x01d2	
-
-000000ee <skip_DAC3DAC2_set>:
-  ee:	09 4d       	mov	r13,	r9	
-  f0:	39 c0 cf ff 	bic	#-49,	r9	;#0xffcf
-  f4:	09 93       	tst	r9		
-  f6:	03 24       	jz	$+8      	;abs 0xfe
-  f8:	2b 53       	incd	r11		
-  fa:	a2 4b d4 01 	mov	@r11,	&0x01d4	
-
-000000fe <skip_DAC5DAC4_set>:
-  fe:	09 4d       	mov	r13,	r9	
- 100:	39 c0 3f ff 	bic	#-193,	r9	;#0xff3f
- 104:	09 93       	tst	r9		
- 106:	03 24       	jz	$+8      	;abs 0x10e
- 108:	2b 53       	incd	r11		
- 10a:	a2 4b d6 01 	mov	@r11,	&0x01d6	
-
-0000010e <skip_DAC7DAC6_set>:
- 10e:	09 4d       	mov	r13,	r9	
- 110:	39 c0 ff fc 	bic	#-769,	r9	;#0xfcff
- 114:	09 93       	tst	r9		
- 116:	03 24       	jz	$+8      	;abs 0x11e
- 118:	2b 53       	incd	r11		
- 11a:	a2 4b d8 01 	mov	@r11,	&0x01d8	
-
-0000011e <skip_DAC9DAC8_set>:
- 11e:	05 4e       	mov	r14,	r5	
- 120:	05 93       	tst	r5		
- 122:	02 24       	jz	$+6      	;abs 0x128
- 124:	b0 12 00 00 	call	#0x0000	
-			126: R_MSP430_16_BYTE	.text+0x12e
-
-00000128 <wait_skip>:
- 128:	82 43 66 01 	mov	#0,	&0x0166	;r3 As==00
- 12c:	30 41       	ret			
-
-0000012e <wait_10us>:
- 12e:	34 40 22 00 	mov	#34,	r4	;#0x0022
-
-00000132 <wait_10us_loop>:
- 132:	14 83       	dec	r4		
- 134:	fe 23       	jnz	$-2      	;abs 0x132
- 136:	34 40 22 00 	mov	#34,	r4	;#0x0022
- 13a:	15 83       	dec	r5		
- 13c:	fa 23       	jnz	$-10     	;abs 0x132
- 13e:	30 41       	ret			
+000000c8 <wait_irq05>:
+  c8:	19 53       	inc	r9		
+  ca:	d2 93 7e 01 	cmp.b	#1,	&0x017e	;r3 As==01
+  ce:	fc 23       	jnz	$-6      	;abs 0xc8
+  d0:	87 49 00 00 	mov	r9,	0(r7)	;0x0000(r7)
+  d4:	09 43       	clr	r9		
+  d6:	82 43 66 01 	mov	#0,	&0x0166	;r3 As==00
+  da:	30 41       	ret			

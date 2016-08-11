@@ -1,0 +1,8 @@
+.model voltage_divider
+.inputs net1_1 net3_1
+.outputs net2_1
+  
+# Voltage Divider
+.subckt volt_div in[0]=net1_1 in[1]=net3_1 out[0]=net2_1 #volt_div_fg =0&vd_ota_bias =2e-6&cap_1x_vd_Vin =0&cap_4x_vd_gnd0 =0&cap_4x_vd_gnd1 =0&vd_target =2.00e-06
+  
+.end

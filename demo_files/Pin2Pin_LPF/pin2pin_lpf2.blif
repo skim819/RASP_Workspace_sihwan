@@ -1,0 +1,4 @@
+.model pin2pin_lpf2
+.inputs net1_1 net2_1
+.outputs net1_1 net3_1
+  

@@ -3,7 +3,7 @@
 .outputs out_mite_adc
   
 # fg_io
-.subckt fg_io in[0]=net5_1 out[0]=net3_1 #fg_io_fg =1.00e-07
+.subckt fg_io in[0]=net5_1 out[0]=net3_1 #fg_io_fg =1.00e-08
   
 # INTEGRATOR
 .subckt integrator_nmirror in[0]=net1_1 in[1]=net3_1 in[2]=net2_1 out[0]=net7_1 #integrator_nmirror_fg =0&cap_3x =0&cap_2x =0&integrator_nmirror_ota0 =1.00e-06&integrator_nmirror_ota1 =2.00e-06&integrator_nmirror_ota2 =5.00e-11

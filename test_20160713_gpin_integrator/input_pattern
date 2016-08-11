@@ -1,5 +1,5 @@
-Initialize=[linspace(1,1,5) linspace(0,0,15) ];
-DC25=linspace(2.5,2.5,20);
-DC25=linspace(2.2,2.2,20);
-
+Initialize=[linspace(1,1,5) linspace(0,0,145) ];
+//DC25=[linspace(2.25,2.25,5) linspace(2.25,2.35,35)];
+DC25=[linspace(2.2,2.25,150)];
+tgate_sel=[linspace(0,0,150)];
 

@@ -1,0 +1,48 @@
+ck01 = [0 1];
+ck08 = [ck01 ck01 ck01 ck01 ck01 ck01 ck01 ck01]; 
+ck16 = [ck01 ck01 ck01 ck01 ck01 ck01 ck01 ck01 ck01 ck01 ck01 ck01 ck01 ck01 ck01 ck01]; 
+d001 = [0 0];
+d101 = [1 1];
+d_16 = [d101 d001 d001 d001 d001 d001 d001 d001 d001 d001 d001 d001 d001 d001 d001 d001]; 
+
+O_02 = [0 0]; // O:0
+O_08 = [0 0 0 0 0 0 0 0];
+O_16 = [O_08 O_08];
+O_26 = [0 0 0 0 0 0 0 0 0 0 O_16];
+O_28 = [0 0 0 0 0 0 0 0 0 0 0 0 O_16];
+O_30 = [0 0 0 0 0 0 0 0 0 0 0 0 0 0 O_16];
+O_32 = [O_16 O_16];
+l_02 = [1 1]; // l:1
+l_08 = [1 1 1 1 1 1 1 1];
+l_16 = [1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1];
+l_32 = [l_16 l_16];
+
+//// Leackage check
+//Vin           = [linspace(2.5,2.5,96)];
+//itg_ini       = [l_32 O_32 O_32 ];
+//sr_out_clk    = [ck16 ck16 ck16 ];
+////sr_out_clk    = [ck01 O_30 O_32 O_32 ];
+////sr_out_clk    = [ck01 ck01 O_28 O_32 O_32 ];
+////sr_out_clk    = [ck01 ck01 ck01 O_26 O_32 O_32 ];
+////sr_out_clk    = [ck08 O_16 O_32 O_32 ];
+//sr_out_D      = [d_16 d_16 d_16 ];
+////sr_out_D      = [d_16 O_32 O_32 ];
+//sr_itg_in_clk = [O_32 O_32 O_32 ];
+//sr_itg_in_D   = [O_32 O_32 O_32 ];
+
+// Operation
+Vin           = [1.4 1.4];
+sr_out_clk    = linspace(0,0,32);
+sr_out_D      = [0 0 ];
+itg_ini       = [0 0 ];
+sr_itg_in_clk = [0 0 ];
+sr_itg_in_D   = [0 0 ];
+
+disp(size(Vin),size(itg_ini),size(sr_out_clk),size(sr_out_D),size(sr_itg_in_clk),size(sr_itg_in_D));
+
+exec("/home/ubuntu/rasp30/prog_assembly/libs/scilab_code/image_convolution_sr.sce",-1);
+
+
+
+
+

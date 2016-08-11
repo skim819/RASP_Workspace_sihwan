@@ -1,4 +1,4 @@
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withMITE.s43 			page 1
+GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_just_runmode.s43 			page 1
 
 
    1               	.include "pmem_defs.asm"
@@ -58,7 +58,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_
   54               	.set    P1IES,     0x0024
   55               	.set    P1IE,      0x0025
   56               	.set    P1SEL,     0x0026
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withMITE.s43 			page 2
+GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_just_runmode.s43 			page 2
 
 
   57               	
@@ -118,7 +118,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_
  111               	/*---------------------------------------------------------------------------*/
  112               	.set    TACTL,     0x0160
  113               	.set    TAR,       0x0170
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withMITE.s43 			page 3
+GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_just_runmode.s43 			page 3
 
 
  114               	.set    TACCTL0,   0x0162
@@ -178,7 +178,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_
  168               	.set    DMEM_227,  (DMEM_BASE+0x27)
  169               	.set    DMEM_228,  (DMEM_BASE+0x28)
  170               	.set    DMEM_229,  (DMEM_BASE+0x29)
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withMITE.s43 			page 4
+GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_just_runmode.s43 			page 4
 
 
  171               	.set    DMEM_22A,  (DMEM_BASE+0x2A)
@@ -238,7 +238,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_
  225               	.set    DMEM_25D,  (DMEM_BASE+0x5D)
  226               	.set    DMEM_25E,  (DMEM_BASE+0x5E)
  227               	.set    DMEM_25F,  (DMEM_BASE+0x5F)
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withMITE.s43 			page 5
+GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_just_runmode.s43 			page 5
 
 
  228               	
@@ -298,7 +298,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_
   12 0000 3140 5040 	        mov     #DMEM_250, r1           ; Initialize stack pointer
   13 0004 3740 0060 		mov	#0x6000, r7
   14 0008 B240 1000 	        mov	#0x0010, &BCSCTL2	; Divide clock 20MHz
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withMITE.s43 			page 6
+GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_just_runmode.s43 			page 6
 
 
   14      5800 
@@ -311,164 +311,74 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_
   19 0020 8243 080B 	 	mov     #0, &ROW_SEL
   20 0024 8243 0A0B 	        mov     #0, &COL_SEL
   21 0028 8243 020B 		mov	#0x0000, &GATE_S	; gate_s = 0.6V (@ IVDD 2.5V)
-  22               		;mov	#0x0040, &GATE_S	; gate_s = gnd
-  23 002c 8243 100B 		mov	#0x0000, &GATE_US_P	; gate_us_p = 0.6V (@ IVDD 2.5V)
-  24               		;mov	#0x0040, &GATE_US_P	; gate_us_p = gnd
-  25 0030 8243 120B 		mov	#0x0000, &GATE_US_N	; gate_us_n = 0.6V (@ IVDD 2.5V)
-  26               		;mov	#0x0040, &GATE_US_N	; gate_us_n = gnd
-  27               		;mov     #0xBF04, &GP_PER_3      ; Vtun_ext = 5V, enable 6V, esd=6v, dvdd2.5=On,
-  28               	
-  29 0034 B240 043F 	        mov     #0x3F04, &GP_PER_3      ; Vtun_ext = 5V, enable 6V, esd=6v, dvdd2.5=On, loc_dreset=
-  29      6401 
-  30 003a 1543      	        mov     #1, r5             	; Number of ms
-  31 003c B012 0000 		call    #wait_ms                ; Call the waiting function
-  32               	
-  33 0040 B240 041F 		mov     #0x1F04, &GP_PER_3      ; Vtun_ext = 5V, enable 6V, esd=6v, dvdd2.5=On, loc_dreset=0,
-  33      6401 
-  34               						; adc_pwd<1> = 0 (ADC_0, 0: normal, 1: power down)
-  35 0046 B240 A400 		mov	#0x00A4, &DRAIN_CTRL	; 101 cascode off, no use DAC, i2v mux control=fg_inn
-  35      000B 
-  36 004c 8243 0C0B 		mov     #0x0000, &PROG_BITS     ; PROG = 0, OV_N = don't care, MEAS_ADC = 0, CLEAR_N = 0
-  37               	
-  38 0050 3540 3200 		mov     #50, r5             	; Number of ms
-  39 0054 B012 0000 		call    #wait_ms                ; Call the waiting function
+  22 002c 8243 100B 		mov	#0x0000, &GATE_US_P	; gate_us_p = 0.6V (@ IVDD 2.5V)
+  23 0030 B240 4000 		mov	#0x0040, &GATE_US_N	; gate_us_n = gnd (@ IVDD 2.5V)
+  23      120B 
+  24               		;mov     #0xBF04, &GP_PER_3      ; Vtun_ext = 5V, enable 6V, esd=6v, dvdd2.5=On,
+  25               	
+  26 0036 B240 043F 	        mov     #0x3F04, &GP_PER_3      ; Vtun_ext = 5V, enable 6V, esd=6v, dvdd2.5=On, loc_dreset=
+  26      6401 
+  27 003c 1543      	        mov     #1, r5             	; Number of ms
+  28 003e B012 0000 		call    #wait_ms                ; Call the waiting function
+  29               	
+  30 0042 B240 041F 		mov     #0x1F04, &GP_PER_3      ; Vtun_ext = 5V, enable 6V, esd=6v, dvdd2.5=On, loc_dreset=0,
+  30      6401 
+  31               						; adc_pwd<1> = 0 (ADC_0, 0: normal, 1: power down)
+  32 0048 B240 A400 		mov	#0x00A4, &DRAIN_CTRL	; 101 cascode off, no use DAC, i2v mux control=fg_inn
+  32      000B 
+  33 004e 8243 0C0B 		mov     #0x0000, &PROG_BITS     ; PROG = 0, OV_N = don't care, MEAS_ADC = 0, CLEAR_N = 0
+  34               	
+  35               	        /* ----------------------         END OF TEST        --------------- */
+  36               	end_of_test:
+  37 0052 8243 5800 		mov	#0x0000, &BCSCTL2
+  38 0056 0343      		nop
+  39 0058 3043      		br #0xffff
   40               	
-  41 0058 3B40 0043 	        mov	#0x4300, r11
-  42 005c 2C4B      		mov	@r11, r12		; length of vector 
-  43 005e 2B53      		incd	r11
-  44 0060 2D4B      		mov	@r11, r13		; DAC information
-  45 0062 2B53      		incd	r11
-  46 0064 2E4B      		mov	@r11, r14		; Time interval (ms)
-  47               	loop_start:
-  48               	
-  49 0066 094D      	        mov     r13, r9
-  50 0068 39C0 FCFF 		bic	#0xfffc, r9
-  51 006c 0993      	        cmp	#0, r9  	        ; If DAC0 = 0 & DAC1 =0, skip setting DAC0 & DAC1
-  52 006e 0324      		jeq	skip_DAC1DAC0_set
-  53 0070 2B53      	        incd	r11
-  54 0072 A24B D001 	        mov     @r11, &DAC_01_00        ; get the DAC_01_00's value
-  55               	skip_DAC1DAC0_set:
-  56               	
-  57 0076 094D      	        mov     r13, r9
-  58 0078 39C0 F3FF 		bic	#0xfff3, r9
-  59 007c 0993      	        cmp	#0, r9  	        ; If DAC2 = 0 & DAC3 = 0, skip setting DAC2 & DAC3
-  60 007e 0324      		jeq	skip_DAC3DAC2_set
-  61 0080 2B53      	        incd	r11
-  62 0082 A24B D201 	        mov     @r11, &DAC_03_02        ; get the DAC_03_02's value
-  63               	skip_DAC3DAC2_set:
-  64               	      
-  65 0086 094D      	        mov     r13, r9
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withMITE.s43 			page 7
+  41               	wait_ms:
+  42 005a 3440 FC0C 	        mov     #3324, r4               ; Number of clock cycles in a ms (chariterized by pulse mea
+  43 005e 0644      	        mov     r4, r6                  ; Get number of inner loop iterations
+  44               	wait_loop:
+  45 0060 1683      	        dec.w   r6                      ; Subtract from number of clk cycles.Execution takes 2 cloc
+  46 0062 FE23      	        jnz     wait_loop               ; Test for loop termination. Execution takes 2 clock cycles
+  47 0064 0644      	        mov     r4, r6                  ; Reset number of clock cycles
+  48 0066 1583      	        dec.w   r5                      ; Decrement number of ms total
+  49 0068 FB23      	        jnz     wait_loop               ; Keep looping if necessary
+  50 006a 3041      	        ret     
+  51               	
+  52               	wait_10us:
+  53 006c 3440 2200 	        mov     #34, r4                 ; Number of clock cycles in 100 us (3324 was divided by 100
+  54 0070 0644      	        mov     r4, r6                  ; Get number of inner loop iterations
+  55               	wait_10us_loop:
+  56 0072 1683      	        dec.w   r6                      ; Subtract from number of clk cycles.Execution takes 2 cloc
+  57 0074 FE23      	        jnz     wait_10us_loop          ; Test for loop termination. Execution takes 2 clock cycles
+  58 0076 0644      	        mov     r4, r6                  ; Reset number of clock cycles
+  59 0078 1583      	        dec.w   r5                      ; Decrement number of ms total
+  60 007a FB23      	        jnz     wait_10us_loop          ; Keep looping if necessary
+  61 007c 3041      	        ret   
+  62               	 
+  63               	        /* ----------------------         INTERRUPT VECTORS  --------------- */
+  64               	
+GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_just_runmode.s43 			page 7
 
 
-  66 0088 39C0 CFFF 		bic	#0xffcf, r9
-  67 008c 0993      	        cmp	#0, r9  	        ; If DAC4 = 0 & DAC5 = 0, skip setting DAC4 & DAC5
-  68 008e 0324      		jeq	skip_DAC5DAC4_set
-  69 0090 2B53      	        incd	r11
-  70 0092 A24B D401 	        mov     @r11, &DAC_05_04        ; get the DAC_05_04's value
-  71               	skip_DAC5DAC4_set:
-  72               	   
-  73 0096 094D      	        mov     r13, r9
-  74 0098 39C0 3FFF 	    	bic	#0xff3f, r9
-  75 009c 0993      	        cmp	#0, r9  	        ; If DAC6 = 0 & DAC7 = 0, skip setting DAC6 & DAC7
-  76 009e 0324      		jeq	skip_DAC7DAC6_set
-  77 00a0 2B53      	        incd	r11
-  78 00a2 A24B D601 	        mov     @r11, &DAC_07_06        ; get the DAC_07_06's value
-  79               	skip_DAC7DAC6_set:
-  80               	      
-  81 00a6 094D      	        mov     r13, r9
-  82 00a8 39C0 FFFC 	    	bic	#0xfcff, r9
-  83 00ac 0993      	        cmp	#0, r9  	        ; If DAC8 = 0 & DAC9 = 0, skip setting DAC8 & DAC9
-  84 00ae 0324      		jeq	skip_DAC9DAC8_set
-  85 00b0 2B53      	        incd	r11
-  86 00b2 A24B D801 	        mov     @r11, &DAC_09_08        ; get the DAC_09_08's value
-  87               	skip_DAC9DAC8_set:
-  88               	  
-  89 00b6 054E      	        mov     r14, r5             	; Number of ms
-  90 00b8 0593      		cmp	#0, r5
-  91 00ba 0224      		jeq	wait_skip
-  92               	        ;call    #wait_ms                ; Call the waiting function
-  93 00bc B012 0000 	        call    #wait_10us                ; Call the waiting function
-  94               	wait_skip:
-  95               	
-  96 00c0 3840 0042 		mov	#0x4200, r8
-  97 00c4 2F48      		mov	@r8, r15		; No. of FGs 
-  98               	measure_start:
-  99 00c6 2853      		incd	r8
- 100 00c8 A248 080B 		mov     @r8,    &ROW_SEL
- 101 00cc 2853      		incd	r8
- 102 00ce A248 0A0B 	        mov     @r8,    &COL_SEL
- 103               	
- 104 00d2 8243 0C0B 		mov     #0x0000, &PROG_BITS     ; PROG = 0, OV_N = don't care, MEAS_ADC = 0, CLEAR_N = 0
- 105 00d6 B240 0030 	        mov     #0x3000, &PROG_BITS     ; PROG = 0, OV_N = don't care, MEAS_ADC = 1, CLEAR_N = 1
- 105      0C0B 
- 106 00dc 3540 0500 	        mov     #5, r5             	; Number of ms
- 107 00e0 B012 0000 		call    #wait_ms                ; Call the waiting function
- 108 00e4 8243 040B 	        mov     #0, &ADC                ; Write counter value into ADC via dummy write
- 109 00e8 9742 040B 		mov     &ADC, @r7	        ; Get value in counter
- 109      0000 
- 110 00ee 2753      	        incd	r7
- 111 00f0 1F83      	        dec.w   r15
- 112 00f2 0124      	        jz      measure_end
- 113 00f4 E83F      		jmp	measure_start
- 114               	measure_end:
- 115 00f6 1C83      	        dec.w   r12
- 116 00f8 0124      	        jz      loop_end
- 117 00fa B53F      		jmp	loop_start
- 118               	loop_end:
- 119 00fc B743 0000 	        mov	#0xFFFF, @r7		; Data End
- 120               	
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withMITE.s43 			page 8
-
-
- 121               	        /* ----------------------         END OF TEST        --------------- */
- 122               	end_of_test:
- 123 0100 8243 5800 		mov	#0x0000, &BCSCTL2
- 124 0104 0343      		nop
- 125 0106 3043      		br #0xffff
- 126               	
- 127               	wait_ms:
- 128 0108 3440 FC0C 	        mov     #3324, r4               ; Number of clock cycles in a ms (chariterized by pulse mea
- 129 010c 0644      	        mov     r4, r6                  ; Get number of inner loop iterations
- 130               	wait_loop:
- 131 010e 1683      	        dec.w   r6                      ; Subtract from number of clk cycles.Execution takes 2 cloc
- 132 0110 FE23      	        jnz     wait_loop               ; Test for loop termination. Execution takes 2 clock cycles
- 133 0112 0644      	        mov     r4, r6                  ; Reset number of clock cycles
- 134 0114 1583      	        dec.w   r5                      ; Decrement number of ms total
- 135 0116 FB23      	        jnz     wait_loop               ; Keep looping if necessary
- 136 0118 3041      	        ret     
- 137               	
- 138               	wait_10us:
- 139 011a 3440 2200 	        mov     #34, r4                 ; Number of clock cycles in 100 us (3324 was divided by 100
- 140 011e 0644      	        mov     r4, r6                  ; Get number of inner loop iterations
- 141               	wait_10us_loop:
- 142 0120 1683      	        dec.w   r6                      ; Subtract from number of clk cycles.Execution takes 2 cloc
- 143 0122 FE23      	        jnz     wait_10us_loop          ; Test for loop termination. Execution takes 2 clock cycles
- 144 0124 0644      	        mov     r4, r6                  ; Reset number of clock cycles
- 145 0126 1583      	        dec.w   r5                      ; Decrement number of ms total
- 146 0128 FB23      	        jnz     wait_10us_loop          ; Keep looping if necessary
- 147 012a 3041      	        ret   
- 148               	 
- 149               	        /* ----------------------         INTERRUPT VECTORS  --------------- */
- 150               	
- 151               	.section .vectors, "a"
- 152 0000 0000      	.word end_of_test  ; Interrupt  0 (lowest priority)    <unused>
- 153 0002 0000      	.word end_of_test  ; Interrupt  1                      <unused>
- 154 0004 0000      	.word end_of_test  ; Interrupt  2                      <unused>
- 155 0006 0000      	.word end_of_test  ; Interrupt  3                      <unused>
- 156 0008 0000      	.word end_of_test  ; Interrupt  4                      <unused>
- 157 000a 0000      	.word end_of_test  ; Interrupt  5                      <unused>
- 158 000c 0000      	.word end_of_test  ; Interrupt  6                      <unused>
- 159 000e 0000      	.word end_of_test  ; Interrupt  7                      <unused>
- 160 0010 0000      	.word end_of_test  ; Interrupt  8                      <unused>
- 161 0012 0000      	.word end_of_test  ; Interrupt  9                      <unused>
- 162 0014 0000      	.word end_of_test  ; Interrupt 10                      Watchdog timer
- 163 0016 0000      	.word end_of_test  ; Interrupt 11                      <unused>
- 164 0018 0000      	.word end_of_test  ; Interrupt 12                      <unused>
- 165 001a 0000      	.word end_of_test  ; Interrupt 13                      <unused>
- 166 001c 0000      	.word end_of_test  ; Interrupt 14                      NMI
- 167 001e 0000      	.word main         ; Interrupt 15 (highest priority)   RESET
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withMITE.s43 			page 9
+  65               	.section .vectors, "a"
+  66 0000 0000      	.word end_of_test  ; Interrupt  0 (lowest priority)    <unused>
+  67 0002 0000      	.word end_of_test  ; Interrupt  1                      <unused>
+  68 0004 0000      	.word end_of_test  ; Interrupt  2                      <unused>
+  69 0006 0000      	.word end_of_test  ; Interrupt  3                      <unused>
+  70 0008 0000      	.word end_of_test  ; Interrupt  4                      <unused>
+  71 000a 0000      	.word end_of_test  ; Interrupt  5                      <unused>
+  72 000c 0000      	.word end_of_test  ; Interrupt  6                      <unused>
+  73 000e 0000      	.word end_of_test  ; Interrupt  7                      <unused>
+  74 0010 0000      	.word end_of_test  ; Interrupt  8                      <unused>
+  75 0012 0000      	.word end_of_test  ; Interrupt  9                      <unused>
+  76 0014 0000      	.word end_of_test  ; Interrupt 10                      Watchdog timer
+  77 0016 0000      	.word end_of_test  ; Interrupt 11                      <unused>
+  78 0018 0000      	.word end_of_test  ; Interrupt 12                      <unused>
+  79 001a 0000      	.word end_of_test  ; Interrupt 13                      <unused>
+  80 001c 0000      	.word end_of_test  ; Interrupt 14                      NMI
+  81 001e 0000      	.word main         ; Interrupt 15 (highest priority)   RESET
+GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_just_runmode.s43 			page 8
 
 
 DEFINED SYMBOLS
@@ -528,7 +438,7 @@ DEFINED SYMBOLS
        pmem_defs.asm:117    *ABS*:00000174 TACCR1
        pmem_defs.asm:118    *ABS*:00000166 TACCTL2
        pmem_defs.asm:119    *ABS*:00000176 TACCR2
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withMITE.s43 			page 10
+GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_just_runmode.s43 			page 9
 
 
        pmem_defs.asm:120    *ABS*:0000012e TAIV
@@ -588,7 +498,7 @@ DEFINED SYMBOLS
        pmem_defs.asm:182    *ABS*:00004034 DMEM_234
        pmem_defs.asm:183    *ABS*:00004035 DMEM_235
        pmem_defs.asm:184    *ABS*:00004036 DMEM_236
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withMITE.s43 			page 11
+GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_just_runmode.s43 			page 10
 
 
        pmem_defs.asm:185    *ABS*:00004037 DMEM_237
@@ -648,7 +558,7 @@ DEFINED SYMBOLS
        pmem_defs.asm:242    *ABS*:0000406d DMEM_26D
        pmem_defs.asm:243    *ABS*:0000406e DMEM_26E
        pmem_defs.asm:244    *ABS*:0000406f DMEM_26F
-GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withMITE.s43 			page 12
+GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_just_runmode.s43 			page 11
 
 
        pmem_defs.asm:246    *ABS*:00004100 DMEM_300
@@ -668,27 +578,17 @@ DEFINED SYMBOLS
        pmem_defs.asm:268    *ABS*:00000162 GP_PER_2
        pmem_defs.asm:269    *ABS*:00000164 GP_PER_3
        pmem_defs.asm:270    *ABS*:00000166 GP_PER_4
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withMITE.s43:3      *ABS*:000001d0 DAC_01_00
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withMITE.s43:4      *ABS*:000001d2 DAC_03_02
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withMITE.s43:5      *ABS*:000001d4 DAC_05_04
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withMITE.s43:6      *ABS*:000001d6 DAC_07_06
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withMITE.s43:7      *ABS*:000001d8 DAC_09_08
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withMITE.s43:11     .text:00000000 main
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withMITE.s43:127    .text:00000108 wait_ms
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withMITE.s43:47     .text:00000066 loop_start
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withMITE.s43:55     .text:00000076 skip_DAC1DAC0_set
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withMITE.s43:63     .text:00000086 skip_DAC3DAC2_set
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withMITE.s43:71     .text:00000096 skip_DAC5DAC4_set
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withMITE.s43:79     .text:000000a6 skip_DAC7DAC6_set
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withMITE.s43:87     .text:000000b6 skip_DAC9DAC8_set
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withMITE.s43:94     .text:000000c0 wait_skip
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withMITE.s43:138    .text:0000011a wait_10us
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withMITE.s43:98     .text:000000c6 measure_start
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withMITE.s43:114    .text:000000f6 measure_end
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withMITE.s43:118    .text:000000fc loop_end
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withMITE.s43:122    .text:00000100 end_of_test
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withMITE.s43:130    .text:0000010e wait_loop
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_withMITE.s43:141    .text:00000120 wait_10us_loop
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_just_runmode.s43:3      *ABS*:000001d0 DAC_01_00
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_just_runmode.s43:4      *ABS*:000001d2 DAC_03_02
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_just_runmode.s43:5      *ABS*:000001d4 DAC_05_04
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_just_runmode.s43:6      *ABS*:000001d6 DAC_07_06
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_just_runmode.s43:7      *ABS*:000001d8 DAC_09_08
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_just_runmode.s43:11     .text:00000000 main
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_just_runmode.s43:41     .text:0000005a wait_ms
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_just_runmode.s43:36     .text:00000052 end_of_test
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_just_runmode.s43:44     .text:00000060 wait_loop
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_just_runmode.s43:52     .text:0000006c wait_10us
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/voltage_measurement_ver01_just_runmode.s43:55     .text:00000072 wait_10us_loop
 
 NO UNDEFINED SYMBOLS
 
@@ -700,13 +600,13 @@ start address 0x00000000
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         0000012c  00000000  00000000  00000034  2**0
+  0 .text         0000007e  00000000  00000000  00000034  2**0
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
-  1 .data         00000000  00000000  00000000  00000160  2**0
+  1 .data         00000000  00000000  00000000  000000b2  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .bss          00000000  00000000  00000000  00000160  2**0
+  2 .bss          00000000  00000000  00000000  000000b2  2**0
                   ALLOC
-  3 .vectors      00000020  00000000  00000000  00000160  2**0
+  3 .vectors      00000020  00000000  00000000  000000b2  2**0
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, DATA
 SYMBOL TABLE:
 00000000 l    d  .text	00000000 .text
@@ -904,21 +804,11 @@ SYMBOL TABLE:
 000001d4 l       *ABS*	00000000 DAC_05_04
 000001d6 l       *ABS*	00000000 DAC_07_06
 000001d8 l       *ABS*	00000000 DAC_09_08
-00000108 l       .text	00000000 wait_ms
-00000066 l       .text	00000000 loop_start
-00000076 l       .text	00000000 skip_DAC1DAC0_set
-00000086 l       .text	00000000 skip_DAC3DAC2_set
-00000096 l       .text	00000000 skip_DAC5DAC4_set
-000000a6 l       .text	00000000 skip_DAC7DAC6_set
-000000b6 l       .text	00000000 skip_DAC9DAC8_set
-000000c0 l       .text	00000000 wait_skip
-0000011a l       .text	00000000 wait_10us
-000000c6 l       .text	00000000 measure_start
-000000f6 l       .text	00000000 measure_end
-000000fc l       .text	00000000 loop_end
-00000100 l       .text	00000000 end_of_test
-0000010e l       .text	00000000 wait_loop
-00000120 l       .text	00000000 wait_10us_loop
+0000005a l       .text	00000000 wait_ms
+00000052 l       .text	00000000 end_of_test
+00000060 l       .text	00000000 wait_loop
+0000006c l       .text	00000000 wait_10us
+00000072 l       .text	00000000 wait_10us_loop
 00000000 l    d  .vectors	00000000 .vectors
 00000000 g       .text	00000000 main
 
@@ -927,22 +817,11 @@ Contents of section .text:
  0000 31405040 37400060 b2401000 5800b240  1@P@7@.`.@..X..@
  0010 805a2001 32c2b240 64006001 a2430e0b  .Z .2..@d.`..C..
  0020 8243080b 82430a0b 8243020b 8243100b  .C...C...C...C..
- 0030 8243120b b240043f 64011543 b0120000  .C...@.?d..C....
- 0040 b240041f 6401b240 a400000b 82430c0b  .@..d..@.....C..
- 0050 35403200 b0120000 3b400043 2c4b2b53  5@2.....;@.C,K+S
- 0060 2d4b2b53 2e4b094d 39c0fcff 09930324  -K+S.K.M9......$
- 0070 2b53a24b d001094d 39c0f3ff 09930324  +S.K...M9......$
- 0080 2b53a24b d201094d 39c0cfff 09930324  +S.K...M9......$
- 0090 2b53a24b d401094d 39c03fff 09930324  +S.K...M9.?....$
- 00a0 2b53a24b d601094d 39c0fffc 09930324  +S.K...M9......$
- 00b0 2b53a24b d801054e 05930224 b0120000  +S.K...N...$....
- 00c0 38400042 2f482853 a248080b 2853a248  8@.B/H(S.H..(S.H
- 00d0 0a0b8243 0c0bb240 00300c0b 35400500  ...C...@.0..5@..
- 00e0 b0120000 8243040b 9742040b 00002753  .....C...B....'S
- 00f0 1f830124 e83f1c83 0124b53f b7430000  ...$.?...$.?.C..
- 0100 82435800 03433043 3440fc0c 06441683  .CX..C0C4@...D..
- 0110 fe230644 1583fb23 30413440 22000644  .#.D...#0A4@"..D
- 0120 1683fe23 06441583 fb233041           ...#.D...#0A    
+ 0030 b2404000 120bb240 043f6401 1543b012  .@@....@.?d..C..
+ 0040 0000b240 041f6401 b240a400 000b8243  ...@..d..@.....C
+ 0050 0c0b8243 58000343 30433440 fc0c0644  ...CX..C0C4@...D
+ 0060 1683fe23 06441583 fb233041 34402200  ...#.D...#0A4@".
+ 0070 06441683 fe230644 1583fb23 3041      .D...#.D...#0A  
 Contents of section .vectors:
  0000 00000000 00000000 00000000 00000000  ................
  0010 00000000 00000000 00000000 00000000  ................
@@ -964,130 +843,44 @@ Disassembly of section .text:
   24:	82 43 0a 0b 	mov	#0,	&0x0b0a	;r3 As==00
   28:	82 43 02 0b 	mov	#0,	&0x0b02	;r3 As==00
   2c:	82 43 10 0b 	mov	#0,	&0x0b10	;r3 As==00
-  30:	82 43 12 0b 	mov	#0,	&0x0b12	;r3 As==00
-  34:	b2 40 04 3f 	mov	#16132,	&0x0164	;#0x3f04
-  38:	64 01 
-  3a:	15 43       	mov	#1,	r5	;r3 As==01
-  3c:	b0 12 00 00 	call	#0x0000	
-			3e: R_MSP430_16_BYTE	.text+0x108
-  40:	b2 40 04 1f 	mov	#7940,	&0x0164	;#0x1f04
-  44:	64 01 
-  46:	b2 40 a4 00 	mov	#164,	&0x0b00	;#0x00a4
-  4a:	00 0b 
-  4c:	82 43 0c 0b 	mov	#0,	&0x0b0c	;r3 As==00
-  50:	35 40 32 00 	mov	#50,	r5	;#0x0032
-  54:	b0 12 00 00 	call	#0x0000	
-			56: R_MSP430_16_BYTE	.text+0x108
-  58:	3b 40 00 43 	mov	#17152,	r11	;#0x4300
-  5c:	2c 4b       	mov	@r11,	r12	
-  5e:	2b 53       	incd	r11		
-  60:	2d 4b       	mov	@r11,	r13	
-  62:	2b 53       	incd	r11		
-  64:	2e 4b       	mov	@r11,	r14	
+  30:	b2 40 40 00 	mov	#64,	&0x0b12	;#0x0040
+  34:	12 0b 
+  36:	b2 40 04 3f 	mov	#16132,	&0x0164	;#0x3f04
+  3a:	64 01 
+  3c:	15 43       	mov	#1,	r5	;r3 As==01
+  3e:	b0 12 00 00 	call	#0x0000	
+			40: R_MSP430_16_BYTE	.text+0x5a
+  42:	b2 40 04 1f 	mov	#7940,	&0x0164	;#0x1f04
+  46:	64 01 
+  48:	b2 40 a4 00 	mov	#164,	&0x0b00	;#0x00a4
+  4c:	00 0b 
+  4e:	82 43 0c 0b 	mov	#0,	&0x0b0c	;r3 As==00
 
-00000066 <loop_start>:
-  66:	09 4d       	mov	r13,	r9	
-  68:	39 c0 fc ff 	bic	#-4,	r9	;#0xfffc
-  6c:	09 93       	tst	r9		
-  6e:	03 24       	jz	$+8      	;abs 0x76
-  70:	2b 53       	incd	r11		
-  72:	a2 4b d0 01 	mov	@r11,	&0x01d0	
+00000052 <end_of_test>:
+  52:	82 43 58 00 	mov	#0,	&0x0058	;r3 As==00
+  56:	03 43       	nop			
+  58:	30 43       	br	#-1		;r3 As==11
 
-00000076 <skip_DAC1DAC0_set>:
-  76:	09 4d       	mov	r13,	r9	
-  78:	39 c0 f3 ff 	bic	#-13,	r9	;#0xfff3
-  7c:	09 93       	tst	r9		
-  7e:	03 24       	jz	$+8      	;abs 0x86
-  80:	2b 53       	incd	r11		
-  82:	a2 4b d2 01 	mov	@r11,	&0x01d2	
+0000005a <wait_ms>:
+  5a:	34 40 fc 0c 	mov	#3324,	r4	;#0x0cfc
+  5e:	06 44       	mov	r4,	r6	
 
-00000086 <skip_DAC3DAC2_set>:
-  86:	09 4d       	mov	r13,	r9	
-  88:	39 c0 cf ff 	bic	#-49,	r9	;#0xffcf
-  8c:	09 93       	tst	r9		
-  8e:	03 24       	jz	$+8      	;abs 0x96
-  90:	2b 53       	incd	r11		
-  92:	a2 4b d4 01 	mov	@r11,	&0x01d4	
+00000060 <wait_loop>:
+  60:	16 83       	dec	r6		
+  62:	fe 23       	jnz	$-2      	;abs 0x60
+  64:	06 44       	mov	r4,	r6	
+  66:	15 83       	dec	r5		
+  68:	fb 23       	jnz	$-8      	;abs 0x60
+  6a:	30 41       	ret			
 
-00000096 <skip_DAC5DAC4_set>:
-  96:	09 4d       	mov	r13,	r9	
-  98:	39 c0 3f ff 	bic	#-193,	r9	;#0xff3f
-  9c:	09 93       	tst	r9		
-  9e:	03 24       	jz	$+8      	;abs 0xa6
-  a0:	2b 53       	incd	r11		
-  a2:	a2 4b d6 01 	mov	@r11,	&0x01d6	
+0000006c <wait_10us>:
+  6c:	34 40 22 00 	mov	#34,	r4	;#0x0022
+  70:	06 44       	mov	r4,	r6	
 
-000000a6 <skip_DAC7DAC6_set>:
-  a6:	09 4d       	mov	r13,	r9	
-  a8:	39 c0 ff fc 	bic	#-769,	r9	;#0xfcff
-  ac:	09 93       	tst	r9		
-  ae:	03 24       	jz	$+8      	;abs 0xb6
-  b0:	2b 53       	incd	r11		
-  b2:	a2 4b d8 01 	mov	@r11,	&0x01d8	
-
-000000b6 <skip_DAC9DAC8_set>:
-  b6:	05 4e       	mov	r14,	r5	
-  b8:	05 93       	tst	r5		
-  ba:	02 24       	jz	$+6      	;abs 0xc0
-  bc:	b0 12 00 00 	call	#0x0000	
-			be: R_MSP430_16_BYTE	.text+0x11a
-
-000000c0 <wait_skip>:
-  c0:	38 40 00 42 	mov	#16896,	r8	;#0x4200
-  c4:	2f 48       	mov	@r8,	r15	
-
-000000c6 <measure_start>:
-  c6:	28 53       	incd	r8		
-  c8:	a2 48 08 0b 	mov	@r8,	&0x0b08	
-  cc:	28 53       	incd	r8		
-  ce:	a2 48 0a 0b 	mov	@r8,	&0x0b0a	
-  d2:	82 43 0c 0b 	mov	#0,	&0x0b0c	;r3 As==00
-  d6:	b2 40 00 30 	mov	#12288,	&0x0b0c	;#0x3000
-  da:	0c 0b 
-  dc:	35 40 05 00 	mov	#5,	r5	;#0x0005
-  e0:	b0 12 00 00 	call	#0x0000	
-			e2: R_MSP430_16_BYTE	.text+0x108
-  e4:	82 43 04 0b 	mov	#0,	&0x0b04	;r3 As==00
-  e8:	97 42 04 0b 	mov	&0x0b04,0(r7)	;0x0000(r7)
-  ec:	00 00 
-  ee:	27 53       	incd	r7		
-  f0:	1f 83       	dec	r15		
-  f2:	01 24       	jz	$+4      	;abs 0xf6
-  f4:	e8 3f       	jmp	$-46     	;abs 0xc6
-
-000000f6 <measure_end>:
-  f6:	1c 83       	dec	r12		
-  f8:	01 24       	jz	$+4      	;abs 0xfc
-  fa:	b5 3f       	jmp	$-148    	;abs 0x66
-
-000000fc <loop_end>:
-  fc:	b7 43 00 00 	mov	#-1,	0(r7)	;r3 As==11, 0x0000(r7)
-
-00000100 <end_of_test>:
- 100:	82 43 58 00 	mov	#0,	&0x0058	;r3 As==00
- 104:	03 43       	nop			
- 106:	30 43       	br	#-1		;r3 As==11
-
-00000108 <wait_ms>:
- 108:	34 40 fc 0c 	mov	#3324,	r4	;#0x0cfc
- 10c:	06 44       	mov	r4,	r6	
-
-0000010e <wait_loop>:
- 10e:	16 83       	dec	r6		
- 110:	fe 23       	jnz	$-2      	;abs 0x10e
- 112:	06 44       	mov	r4,	r6	
- 114:	15 83       	dec	r5		
- 116:	fb 23       	jnz	$-8      	;abs 0x10e
- 118:	30 41       	ret			
-
-0000011a <wait_10us>:
- 11a:	34 40 22 00 	mov	#34,	r4	;#0x0022
- 11e:	06 44       	mov	r4,	r6	
-
-00000120 <wait_10us_loop>:
- 120:	16 83       	dec	r6		
- 122:	fe 23       	jnz	$-2      	;abs 0x120
- 124:	06 44       	mov	r4,	r6	
- 126:	15 83       	dec	r5		
- 128:	fb 23       	jnz	$-8      	;abs 0x120
- 12a:	30 41       	ret			
+00000072 <wait_10us_loop>:
+  72:	16 83       	dec	r6		
+  74:	fe 23       	jnz	$-2      	;abs 0x72
+  76:	06 44       	mov	r4,	r6	
+  78:	15 83       	dec	r5		
+  7a:	fb 23       	jnz	$-8      	;abs 0x72
+  7c:	30 41       	ret			

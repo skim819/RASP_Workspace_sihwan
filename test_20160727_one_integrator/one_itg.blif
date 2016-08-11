@@ -1,0 +1,23 @@
+.model one_itg
+.inputs net2_1 net1_1 net4_1 vcc
+.outputs out_ramp_adc
+  
+# fg_io
+.subckt fg_io in[0]=net2_1 out[0]=net6_1 #fg_io_fg =1.00e-08
+  
+# dc_in
+.subckt fgota in[0]=vcc in[1]=net7_1 out[0]=net7_1 #ota_bias =2e-06&ota_p_bias =2e-06&ota_n_bias =3.77e-07&ota_small_cap =0
+  
+# INTEGRATOR
+.subckt integrator_nmirror in[0]=net7_1 in[1]=net3_1 in[2]=net1_1 out[0]=net5_1 #integrator_nmirror_fg =0&itg_cap_1x =0&itg_cap_2x =0&itg_cap_3x =0&itg_cap_4x =0&integrator_nmirror_ota0 =1.00e-06&integrator_nmirror_ota1 =2.00e-06&integrator_nmirror_ota2 =1.00e-07
+  
+#TGATE 5
+.subckt tgate in[0]=net4_1 in[1]=net6_1 out=net3_1
+  
+# Ramp_ADC*
+.subckt ramp_fe in[0]=net5_1 out=out_ramp_adc #ramp_fe_fg[0] =0&ramp_pfetinput[0] =3e-9&c4_ota_bias[0] =2e-6&c4_ota_p_bias[0] =2e-6&c4_ota_n_bias[0] =0.8e-6&speech_peakotabias[0] =2e-6&c4_ota_bias[1] =2e-6&c4_ota_p_bias[1] =500e-9&c4_ota_n_bias[1] =500e-9&ramp_pfetinput[1] =0.4e-9
+  
+#NMIRROR_W_BIAS
+.subckt nmirror_w_bias in[0]=fbout_1_1 in[1]=net6_1 out[0]=fbout_1_1 #nmirror_w_bias_fg =0&nmirror_w_bias_bias =1.00e-08
+  
+.end

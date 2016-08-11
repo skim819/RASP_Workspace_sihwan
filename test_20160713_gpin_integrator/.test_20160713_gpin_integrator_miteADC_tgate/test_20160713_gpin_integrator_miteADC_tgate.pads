@@ -1,0 +1,6 @@
+net4_1 9 0 1 #int[1]
+net1_1 9 0 2 #int[2]
+net3_1 8 0 5 #int[5]
+net2_1 13 0 1 #int[1]
+net9_1 13 0 2 #int[2]
+out:out_mite_adc 7 0 0 #tgate[0]
