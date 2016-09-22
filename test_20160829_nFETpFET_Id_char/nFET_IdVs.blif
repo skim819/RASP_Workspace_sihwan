@@ -1,0 +1,8 @@
+.model nFET_IdVs
+.inputs net2_1 vcc
+.outputs net1_1
+
+# NFET GOLDEN
+.subckt nfet in[0]=net2_1 in[1]=vcc out=net1_1
+
+.end

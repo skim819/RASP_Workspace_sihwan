@@ -1,0 +1,78 @@
+Array size: 7 x 14 logic blocks.
+
+Routing:
+
+Net 0 (net4_1)
+
+SOURCE (3,1)  Class: 20  
+  OPIN (3,1)  Pin: 20  
+ CHANX (3,1)  Track: 16  
+ CHANX (4,1)  Track: 16  
+ CHANX (5,1)  Track: 16  
+  IPIN (5,2)  Pin: 11  
+  SINK (5,2)  Class: 11  
+ CHANX (5,1)  Track: 16  
+ CHANX (6,1)  Track: 16  
+ CHANY (6,1)  Track: 16  
+  IPIN (7,1)  Pin: 0  
+  SINK (7,1)  Class: 0  
+
+
+Net 1 (net3_1)
+
+SOURCE (8,1)  Pad: 16  
+  OPIN (8,1)  Pad: 16  
+ CHANY (7,1)  Track: 13  
+ CHANX (7,1)  Track: 13  
+ CHANX (6,1)  Track: 13  
+ CHANX (5,1)  Track: 13  
+  IPIN (5,2)  Pin: 12  
+  SINK (5,2)  Class: 12  
+
+
+Net 2 (net2_1)
+
+SOURCE (5,2)  Class: 20  
+  OPIN (5,2)  Pin: 20  
+ CHANX (5,2)  Track: 16  
+ CHANX (6,2)  Track: 16  
+ CHANX (7,2)  Track: 16  
+ CHANY (7,2)  Track: 16  
+  IPIN (8,2)  Pad: 15  
+  SINK (8,2)  Pad: 15  
+
+
+Net 3 (gnd): global net connecting:
+
+Block gnd (#5) at (7, 0), Pin class 13.
+Block net4_1 (#1) at (3, 1), Pin class 11.
+
+
+Net 4 (net5_1)
+
+SOURCE (0,8)  Pad: 10  
+  OPIN (0,8)  Pad: 10  
+ CHANY (0,8)  Track: 16  
+ CHANY (0,7)  Track: 16  
+ CHANY (0,6)  Track: 16  
+ CHANY (0,5)  Track: 16  
+ CHANY (0,4)  Track: 16  
+ CHANY (0,3)  Track: 16  
+ CHANY (0,2)  Track: 16  
+ CHANX (1,1)  Track: 16  
+ CHANX (2,1)  Track: 16  
+ CHANY (2,1)  Track: 16  
+ CHANX (3,0)  Track: 16  
+  IPIN (3,1)  Pin: 12  
+  SINK (3,1)  Class: 12  
+
+
+Net 5 (out_mite_adc)
+
+SOURCE (7,1)  Class: 24  
+  OPIN (7,1)  Pin: 24  
+ CHANY (6,1)  Track: 15  
+ CHANX (7,1)  Track: 15  
+ CHANY (7,1)  Track: 15  
+  IPIN (8,1)  Pad: 0  
+  SINK (8,1)  Pad: 0  

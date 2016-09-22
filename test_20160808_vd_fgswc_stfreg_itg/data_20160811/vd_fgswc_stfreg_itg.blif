@@ -1,0 +1,56 @@
+.model vd_fgswc_stfreg_itg
+.inputs net19_1 net18_1 net10_1 net11_1 net12_1 net13_1 net14_1 net17_1 vcc gnd
+.outputs net1_1 net15_1 net16_1 net19_1 out_ramp_adc
+
+# Ramp_ADC*
+.subckt ramp_fe in[0]=net2_1 out=out_ramp_adc #ramp_fe_fg[0] =0&ramp_pfetinput[0] =3e-9&c4_ota_bias[0] =2e-6&c4_ota_p_bias[0] =2e-6&c4_ota_n_bias[0] =0.8e-6&speech_peakotabias[0] =2e-6&c4_ota_bias[1] =2e-6&c4_ota_p_bias[1] =500e-9&c4_ota_n_bias[1] =500e-9&ramp_pfetinput[1] =0.4e-9
+
+# Shift register 16inputs 1output
+.subckt sftreg in[0]=net3_1 in[1]=net3_2 in[2]=net3_3 in[3]=net3_4 in[4]=net3_5 in[5]=net3_6 in[6]=net3_7 in[7]=net3_8 in[8]=net3_9 in[9]=net3_10 in[10]=net3_11 in[11]=net3_12 in[12]=net3_13 in[13]=net3_14 in[14]=net3_15 in[15]=net3_16 in[16]=net10_1 in[17]=gnd_dig in[18]=net11_1 out[0]=net2_1 #sftreg_fg =0
+
+#GND_DIG 9
+.subckt tgate in[0]=vcc in[1]=gnd out=gnd_dig
+
+#FGSWC_NMIRROR_W_BIAS
+.subckt fgswc_nmirror_w_bias in[0]=net1_1 out[0]=net15_1 #fgswc_nmirror_w_bias1 =2.30e-04&fgswc_nmirror_w_bias2 =9.00e-08
+
+# Voltage Divider
+.subckt volt_div in[0]=net19_1 in[1]=net18_1 out[0]=net1_1 #volt_div_fg =0&vd_ota_bias =9e-6&cap_4x_vd_Vin =0&cap_4x_vd_gnd0 =0&cap_4x_vd_gnd1 =0&vd_target =5.00e-06
+
+# INTEGRATOR
+.subckt integrator_nmirror in[0]=net17_1 in[1]=net16_1 in[2]=net12_1 out[0]=net3_1 #integrator_nmirror_fg =0&itg_cap_1x =0&itg_cap_2x =0&itg_cap_3x =0&itg_cap_4x =0&integrator_nmirror_ota0 =1.00e-06&integrator_nmirror_ota1 =2.00e-06&integrator_nmirror_ota2 =5.00e-11
+
+.subckt integrator_nmirror in[0]=net17_1 in[1]=net16_2 in[2]=net12_1 out[0]=net3_2 #integrator_nmirror_fg =0&itg_cap_1x =0&itg_cap_2x =0&itg_cap_3x =0&itg_cap_4x =0&integrator_nmirror_ota0 =1.00e-06&integrator_nmirror_ota1 =2.00e-06&integrator_nmirror_ota2 =5.00e-11
+
+.subckt integrator_nmirror in[0]=net17_1 in[1]=net16_3 in[2]=net12_1 out[0]=net3_3 #integrator_nmirror_fg =0&itg_cap_1x =0&itg_cap_2x =0&itg_cap_3x =0&itg_cap_4x =0&integrator_nmirror_ota0 =1.00e-06&integrator_nmirror_ota1 =2.00e-06&integrator_nmirror_ota2 =5.00e-11
+
+.subckt integrator_nmirror in[0]=net17_1 in[1]=net16_4 in[2]=net12_1 out[0]=net3_4 #integrator_nmirror_fg =0&itg_cap_1x =0&itg_cap_2x =0&itg_cap_3x =0&itg_cap_4x =0&integrator_nmirror_ota0 =1.00e-06&integrator_nmirror_ota1 =2.00e-06&integrator_nmirror_ota2 =5.00e-11
+
+.subckt integrator_nmirror in[0]=net17_1 in[1]=net16_5 in[2]=net12_1 out[0]=net3_5 #integrator_nmirror_fg =0&itg_cap_1x =0&itg_cap_2x =0&itg_cap_3x =0&itg_cap_4x =0&integrator_nmirror_ota0 =1.00e-06&integrator_nmirror_ota1 =2.00e-06&integrator_nmirror_ota2 =5.00e-11
+
+.subckt integrator_nmirror in[0]=net17_1 in[1]=net16_6 in[2]=net12_1 out[0]=net3_6 #integrator_nmirror_fg =0&itg_cap_1x =0&itg_cap_2x =0&itg_cap_3x =0&itg_cap_4x =0&integrator_nmirror_ota0 =1.00e-06&integrator_nmirror_ota1 =2.00e-06&integrator_nmirror_ota2 =5.00e-11
+
+.subckt integrator_nmirror in[0]=net17_1 in[1]=net16_7 in[2]=net12_1 out[0]=net3_7 #integrator_nmirror_fg =0&itg_cap_1x =0&itg_cap_2x =0&itg_cap_3x =0&itg_cap_4x =0&integrator_nmirror_ota0 =1.00e-06&integrator_nmirror_ota1 =2.00e-06&integrator_nmirror_ota2 =5.00e-11
+
+.subckt integrator_nmirror in[0]=net17_1 in[1]=net16_8 in[2]=net12_1 out[0]=net3_8 #integrator_nmirror_fg =0&itg_cap_1x =0&itg_cap_2x =0&itg_cap_3x =0&itg_cap_4x =0&integrator_nmirror_ota0 =1.00e-06&integrator_nmirror_ota1 =2.00e-06&integrator_nmirror_ota2 =5.00e-11
+
+.subckt integrator_nmirror in[0]=net17_1 in[1]=net16_9 in[2]=net12_1 out[0]=net3_9 #integrator_nmirror_fg =0&itg_cap_1x =0&itg_cap_2x =0&itg_cap_3x =0&itg_cap_4x =0&integrator_nmirror_ota0 =1.00e-06&integrator_nmirror_ota1 =2.00e-06&integrator_nmirror_ota2 =5.00e-11
+
+.subckt integrator_nmirror in[0]=net17_1 in[1]=net16_10 in[2]=net12_1 out[0]=net3_10 #integrator_nmirror_fg =0&itg_cap_1x =0&itg_cap_2x =0&itg_cap_3x =0&itg_cap_4x =0&integrator_nmirror_ota0 =1.00e-06&integrator_nmirror_ota1 =2.00e-06&integrator_nmirror_ota2 =5.00e-11
+
+.subckt integrator_nmirror in[0]=net17_1 in[1]=net16_11 in[2]=net12_1 out[0]=net3_11 #integrator_nmirror_fg =0&itg_cap_1x =0&itg_cap_2x =0&itg_cap_3x =0&itg_cap_4x =0&integrator_nmirror_ota0 =1.00e-06&integrator_nmirror_ota1 =2.00e-06&integrator_nmirror_ota2 =5.00e-11
+
+.subckt integrator_nmirror in[0]=net17_1 in[1]=net16_12 in[2]=net12_1 out[0]=net3_12 #integrator_nmirror_fg =0&itg_cap_1x =0&itg_cap_2x =0&itg_cap_3x =0&itg_cap_4x =0&integrator_nmirror_ota0 =1.00e-06&integrator_nmirror_ota1 =2.00e-06&integrator_nmirror_ota2 =5.00e-11
+
+.subckt integrator_nmirror in[0]=net17_1 in[1]=net16_13 in[2]=net12_1 out[0]=net3_13 #integrator_nmirror_fg =0&itg_cap_1x =0&itg_cap_2x =0&itg_cap_3x =0&itg_cap_4x =0&integrator_nmirror_ota0 =1.00e-06&integrator_nmirror_ota1 =2.00e-06&integrator_nmirror_ota2 =5.00e-11
+
+.subckt integrator_nmirror in[0]=net17_1 in[1]=net16_14 in[2]=net12_1 out[0]=net3_14 #integrator_nmirror_fg =0&itg_cap_1x =0&itg_cap_2x =0&itg_cap_3x =0&itg_cap_4x =0&integrator_nmirror_ota0 =1.00e-06&integrator_nmirror_ota1 =2.00e-06&integrator_nmirror_ota2 =5.00e-11
+
+.subckt integrator_nmirror in[0]=net17_1 in[1]=net16_15 in[2]=net12_1 out[0]=net3_15 #integrator_nmirror_fg =0&itg_cap_1x =0&itg_cap_2x =0&itg_cap_3x =0&itg_cap_4x =0&integrator_nmirror_ota0 =1.00e-06&integrator_nmirror_ota1 =2.00e-06&integrator_nmirror_ota2 =5.00e-11
+
+.subckt integrator_nmirror in[0]=net17_1 in[1]=net16_16 in[2]=net12_1 out[0]=net3_16 #integrator_nmirror_fg =0&itg_cap_1x =0&itg_cap_2x =0&itg_cap_3x =0&itg_cap_4x =0&integrator_nmirror_ota0 =1.00e-06&integrator_nmirror_ota1 =2.00e-06&integrator_nmirror_ota2 =5.00e-11
+
+# Shift register 1input 16outputs
+.subckt sftreg3 in[0]=net13_1 in[1]=gnd_dig in[2]=net14_1 in[3]=net15_1 out[0]=net_floated_1 out[1]=net20_1 out[2]=net9_1 out[3]=net21_1 out[4]=net16_1 out[5]=net16_2 out[6]=net16_3 out[7]=net16_4 out[8]=net16_5 out[9]=net16_6 out[10]=net16_7 out[11]=net16_8 out[12]=net16_9 out[13]=net16_10 out[14]=net16_11 out[15]=net16_12 out[16]=net16_13 out[17]=net16_14 out[18]=net16_15 out[19]=net16_16 #sftreg3_fg =0
+
+.end

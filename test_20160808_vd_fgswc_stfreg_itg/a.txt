@@ -1,57 +1,54 @@
 /home/ubuntu/RASP_Workspace/test_20160808_vd_fgswc_stfreg_itg
-.subckt fgota
-['vcc', 'net4_1', 'net4_1', '2e-06&ota_p_bias', '2e-06&ota_n_bias', '1.94e-07&ota_small_cap', '0']
-fgota
 .subckt ramp_fe
-['net5_1', 'out_ramp_adc', '0&ramp_pfetinput[0]', '3e-9&c4_ota_bias[0]', '2e-6&c4_ota_p_bias[0]', '2e-6&c4_ota_n_bias[0]', '0.8e-6&speech_peakotabias[0]', '2e-6&c4_ota_bias[1]', '2e-6&c4_ota_p_bias[1]', '500e-9&c4_ota_n_bias[1]', '500e-9&ramp_pfetinput[1]', '0.4e-9']
+['net18_1', 'out_ramp_adc', '0&ramp_pfetinput[0]', '3e-9&c4_ota_bias[0]', '2e-6&c4_ota_p_bias[0]', '2e-6&c4_ota_n_bias[0]', '0.8e-6&speech_peakotabias[0]', '2e-6&c4_ota_bias[1]', '2e-6&c4_ota_p_bias[1]', '500e-9&c4_ota_n_bias[1]', '500e-9&ramp_pfetinput[1]', '0.4e-9']
 ramp_fe
-.subckt sftreg
-['net6_1', 'net6_2', 'net6_3', 'net6_4', 'net6_5', 'net6_6', 'net6_7', 'net6_8', 'net6_9', 'net6_10', 'net6_11', 'net6_12', 'net6_13', 'net6_14', 'net6_15', 'net6_16', 'net17_1', 'gnd_dig', 'net18_1', 'net5_1', '0']
-sftreg
 .subckt tgate
 ['vcc', 'gnd', 'gnd_dig']
 tgate
 .subckt fgswc_nmirror_w_bias
-['net1_1', 'net11_1', '2.30e-04&fgswc_nmirror_w_bias2', '1.00e-06']
+['net1_1', 'net13_1', '2.30e-04&fgswc_nmirror_w_bias2', '9.00e-08']
 fgswc_nmirror_w_bias
 .subckt volt_div
-['net2_1', 'net3_1', 'net1_1', '0&vd_ota_bias', '9e-6&cap_4x_vd_Vin', '0&vd_target', '7.00e-05']
+['net9_1', 'net8_1', 'net1_1', '0&vd_ota_bias', '9e-6&cap_4x_vd_Vin', '0&cap_4x_vd_gnd0', '0&cap_4x_vd_gnd1', '0&vd_target', '5.00e-06']
 volt_div
 .subckt integrator_nmirror
-['net4_1', 'net16_1', 'net19_1', 'net6_1', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
+['net7_1', 'net12_1', 'net4_1', 'net14_1', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
 integrator_nmirror
 .subckt integrator_nmirror
-['net4_1', 'net16_2', 'net19_1', 'net6_2', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
+['net7_1', 'net12_2', 'net4_1', 'net14_2', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
 integrator_nmirror
 .subckt integrator_nmirror
-['net4_1', 'net16_3', 'net19_1', 'net6_3', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
+['net7_1', 'net12_3', 'net4_1', 'net14_3', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
 integrator_nmirror
 .subckt integrator_nmirror
-['net4_1', 'net16_4', 'net19_1', 'net6_4', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
+['net7_1', 'net12_4', 'net4_1', 'net14_4', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
 integrator_nmirror
 .subckt integrator_nmirror
-['net4_1', 'net16_5', 'net19_1', 'net6_5', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
+['net7_1', 'net12_5', 'net4_1', 'net14_5', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
 integrator_nmirror
 .subckt integrator_nmirror
-['net4_1', 'net16_6', 'net19_1', 'net6_6', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
+['net7_1', 'net12_6', 'net4_1', 'net14_6', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
 integrator_nmirror
 .subckt integrator_nmirror
-['net4_1', 'net16_7', 'net19_1', 'net6_7', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
+['net7_1', 'net12_7', 'net4_1', 'net14_7', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
 integrator_nmirror
 .subckt integrator_nmirror
-['net4_1', 'net16_8', 'net19_1', 'net6_8', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
+['net7_1', 'net12_8', 'net4_1', 'net14_8', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
 integrator_nmirror
 .subckt integrator_nmirror
-['net4_1', 'net16_9', 'net19_1', 'net6_9', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
+['net7_1', 'net12_9', 'net4_1', 'net14_9', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
 integrator_nmirror
 .subckt integrator_nmirror
-['net4_1', 'net16_10', 'net19_1', 'net6_10', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
+['net7_1', 'net12_10', 'net4_1', 'net14_10', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
 integrator_nmirror
 .subckt integrator_nmirror
-['net4_1', 'net16_11', 'net19_1', 'net6_11', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
+['net7_1', 'net12_11', 'net4_1', 'net14_11', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
 integrator_nmirror
 .subckt integrator_nmirror
-['net4_1', 'net16_12', 'net19_1', 'net6_12', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.
+['net7_1', 'net12_12', 'net4_1', 'net14_12', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
+integrator_nmirror
+.subckt integrator_nmirror
+['net7_1', 'net12_13', 'net4_1', 'net14_13', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integ
 VPR FPGA Placement and Routing.
 Version: Version 6.0 Full Release
 Compiled: Apr 17 2013.
@@ -95,21 +92,21 @@ RoutingArch.Fs:  3
 
 
 Netlist num_nets:  47
-Netlist num_blocks:  33
+Netlist num_blocks:  37
 Netlist <EMPTY> blocks:  0
 Netlist clb blocks:  0
 Netlist cab blocks:  20
 Netlist cab2 blocks:  0
 Netlist cab_vmm blocks:  2
-Netlist inputs pins:  9
-Netlist output pins:  2
+Netlist inputs pins:  10
+Netlist output pins:  5
 
 The circuit will be mapped into a 14 x 14 array of clbs.
 
 Resource Usage:
 Netlist      0	blocks of type <EMPTY>
 Architecture 4	blocks of type <EMPTY>
-Netlist      11	blocks of type io
+Netlist      15	blocks of type io
 Architecture 336	blocks of type io
 Netlist      0	blocks of type clb
 Architecture 98	blocks of type clb
@@ -120,31 +117,31 @@ Architecture 14	blocks of type cab2
 Netlist      2	blocks of type cab_vmm
 Architecture 28	blocks of type cab_vmm
 
-build rr_graph took 0.02 seconds
+build rr_graph took 0.01 seconds
 Confirming Router Algorithm: DIRECTED_SEARCH.
 mst took 0 seconds
 routing iteration 1
-routing iteration took 0 seconds
-wirelength after first iteration 407, total available wirelength 7140, ratio 0.0570028
+routing iteration took 0.01 seconds
+wirelength after first iteration 374, total available wirelength 7140, ratio 0.052381
 Successfully routed after 1 routing iterations by Directed Search.
 
 Checking to ensure routing is legal ...
 Completed routing consistency check successfully.
 
-Serial number (magic cookie) for the routing is: -5778993
+Serial number (magic cookie) for the routing is: -5681605
 Circuit successfully routed with a channel width factor of 17.
 
 
-Average number of bends per net: 2.60000  Maximum # of bends: 16
+Average number of bends per net: 2.53333  Maximum # of bends: 16
 
 
 The number of routed nets (nonglobal): 45
 Wirelength results (all in units of 1 clb segments):
-	Total wirelength: 407   Average net length: 9.04444
+	Total wirelength: 374   Average net length: 8.31111
 	Maximum net length: 31
 
 Wirelength results in terms of physical segments:
-	Total wiring segments used: 407   Av. wire segments per net: 9.04444
+	Total wiring segments used: 374   Av. wire segments per net: 8.31111
 	Maximum segments used by a net: 31
 
 	Total local nets with reserved CLB opins: 0
@@ -153,17 +150,17 @@ Wirelength results in terms of physical segments:
 X - Directed channels:
 
 j	max occ	av_occ		capacity
-0	5	1.42857  	17
-1	3	0.928571 	17
-2	9	2.07143  	17
-3	5	1.50000  	17
-4	5	1.85714  	17
-5	7	2.14286  	17
-6	7	2.00000  	17
+0	6	2.07143  	17
+1	2	0.642857 	17
+2	5	1.00000  	17
+3	5	1.28571  	17
+4	5	1.92857  	17
+5	13	2.57143  	17
+6	7	2.14286  	17
 7	5	1.14286  	17
 8	5	1.21429  	17
-9	5	1.21429  	17
-10	3	0.500000 	17
+9	5	1.00000  	17
+10	2	0.428571 	17
 11	0	0.00000  	17
 12	0	0.00000  	17
 13	0	0.00000  	17
@@ -178,13 +175,13 @@ i	max occ	av_occ		capacity
 3	0	0.00000  	17
 4	0	0.00000  	17
 5	1	0.0714286	17
-6	5	1.64286  	17
-7	4	2.00000  	17
-8	5	1.57143  	17
-9	9	2.57143  	17
-10	11	3.85714  	17
-11	8	0.928571 	17
-12	1	0.357143 	17
+6	4	1.50000  	17
+7	4	1.42857  	17
+8	5	1.35714  	17
+9	12	2.92857  	17
+10	12	2.71429  	17
+11	3	0.928571 	17
+12	1	0.285714 	17
 13	0	0.00000  	17
 14	1	0.0714286	17
 
@@ -202,379 +199,343 @@ Assuming buffer sharing (slightly optimistic). Total: 1.02979e+07  Per logic til
 Segment usage by type (index):
 Segment type       Fractional utilization
 ------------       ----------------------
-       0                  0.057
+       0                  0.0524
 
 Segment usage by length:
 Segment length       Fractional utilization
 --------------       ----------------------
-        1                   0.057
+        1                   0.0524
 Routing took 0.02 seconds
-00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
+rator_nmirror_ota2', '5.00e-11']
 integrator_nmirror
 .subckt integrator_nmirror
-['net4_1', 'net16_13', 'net19_1', 'net6_13', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
+['net7_1', 'net12_14', 'net4_1', 'net14_14', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
 integrator_nmirror
 .subckt integrator_nmirror
-['net4_1', 'net16_14', 'net19_1', 'net6_14', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
+['net7_1', 'net12_15', 'net4_1', 'net14_15', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
 integrator_nmirror
 .subckt integrator_nmirror
-['net4_1', 'net16_15', 'net19_1', 'net6_15', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
-integrator_nmirror
-.subckt integrator_nmirror
-['net4_1', 'net16_16', 'net19_1', 'net6_16', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
+['net7_1', 'net12_16', 'net4_1', 'net14_16', '0&itg_cap_1x', '0&itg_cap_2x', '0&itg_cap_3x', '0&itg_cap_4x', '0&integrator_nmirror_ota0', '1.00e-06&integrator_nmirror_ota1', '2.00e-06&integrator_nmirror_ota2', '5.00e-11']
 integrator_nmirror
 .subckt sftreg3
-['net20_1', 'gnd_dig', 'net21_1', 'net11_1', 'net_floated_1', 'net15_1', 'net14_1', 'net13_1', 'net16_1', 'net16_2', 'net16_3', 'net16_4', 'net16_5', 'net16_6', 'net16_7', 'net16_8', 'net16_9', 'net16_10', 'net16_11', 'net16_12', 'net16_13', 'net16_14', 'net16_15', 'net16_16', '0']
+['net5_1', 'gnd_dig', 'net6_1', 'net13_1', 'net_floated_1', 'net10_1', 'net3_1', 'net11_1', 'net12_1', 'net12_2', 'net12_3', 'net12_4', 'net12_5', 'net12_6', 'net12_7', 'net12_8', 'net12_9', 'net12_10', 'net12_11', 'net12_12', 'net12_13', 'net12_14', 'net12_15', 'net12_16', '0']
 sftreg3
+.subckt sftreg
+['net14_1', 'net14_2', 'net14_3', 'net14_4', 'net14_5', 'net14_6', 'net14_7', 'net14_8', 'net14_9', 'net14_10', 'net14_11', 'net14_12', 'net14_13', 'net14_14', 'net14_15', 'net14_16', 'net15_1', 'gnd_dig', 'net17_1', 'net18_1', '0']
+sftreg
 vmm types: 4x4, 8x8, 12x12, 16x16: 0 0 0 0
 /home/ubuntu/rasp30/vtr_release/vpr/vpr /home/ubuntu/rasp30/vpr2swcs/./arch/rasp3_vmm_arch.xml -route /home/ubuntu/RASP_Workspace/test_20160808_vd_fgswc_stfreg_itg/vd_fgswc_stfreg_itg  -route_chan_width 17 -nodisp -timing_analysis off
-net5_1
+net18_1
 ['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
 net_floated_1
 ['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
-net4_1
+net14_16
 ['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
-net6_16
+net14_15
 ['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
-net6_15
+net14_14
 ['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
-net6_14
+net14_13
 ['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
-net6_13
+net14_12
 ['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
-net6_12
+net14_11
 ['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
-net6_11
+net14_10
 ['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
-net6_10
+net14_9
 ['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
-net6_9
+net14_8
 ['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
-net6_8
+net14_7
 ['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
-net6_7
+net14_6
 ['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
-net6_6
+net14_5
 ['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
-net6_5
+net14_4
 ['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
-net6_4
+net14_3
 ['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
-net6_3
+net14_2
 ['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
-net6_2
-['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
-net6_1
+net14_1
 ['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
 net1_1
 ['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
 gnd_dig
 ['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
-net11_1
+net13_1
 ['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
 out_ramp_adc
 ['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
- ------------- (net6_9) ------------- 
-|  OPIN  (6,7) --> CHANX  (6,7) T/P:  3 20 |  cab [ 6, 7] CHANX  (189,663) T3 O4 SWC 
-| CHANX  (6,7) --> CHANX  (7,7) T/P:  3 -1 | cab [ 7, 7] SBLOCK we (223 871) SWC 
-| CHANX  (7,7) --> CHANX  (8,7) T/P:  3 -1 | clb [ 8, 7] SBLOCK we (255 1031) SWC 
-| CHANX  (8,7) --> CHANX  (9,7) T/P:  3 -1 | clb [ 9, 7] SBLOCK we (289 1031) SWC 
-| CHANX  (9,7) --> CHANX (10,7) T/P:  3 -1 | cab_vmm [10, 7] SBLOCK we (325 871) SWC 
-| CHANX (10,7) --> CHANY (10,7) T/P:  3 -1 | cab_vmm [11, 7] SBLOCK ws (359 807) SWC 
-| CHANY (10,7) --> CHANY (10,6) T/P:  3 -1 | cab_vmm [11, 6] SBLOCK ns (359 838) SWC 
-| CHANY (10,6) --> CHANY (10,5) T/P:  3 -1 | cab_vmm [11, 5] SBLOCK ns (359 837) SWC 
-| CHANY (10,5) --> CHANY (10,4) T/P:  3 -1 | cab_vmm [11, 4] SBLOCK ns (359 836) SWC 
-| CHANY (10,4) --> CHANY (10,3) T/P:  3 -1 | cab_vmm [11, 3] SBLOCK ns (359 835) SWC 
-| CHANY (10,3) --> CHANY (10,2) T/P:  3 -1 | cab_vmm [11, 2] SBLOCK ns (359 834) SWC 
-| CHANY (10,2) -->  IPIN (11,2) T/P:  3  0 | cab_vmm [11, 2] CHANY  (359,946) T3 XI0 ~~~~ PIN SINK ~~~~ || net (net6_9) -> pin 0 in 11 2
+ ------------- (net14_9) ------------- 
+|  OPIN  (6,7) --> CHANX  (6,7) T/P: 11 20 |  cab [ 6, 7] CHANX  (180,663) T11 O4 SWC 
+| CHANX  (6,7) --> CHANX  (7,7) T/P: 11 -1 | cab [ 7, 7] SBLOCK we (214 871) SWC 
+| CHANX  (7,7) --> CHANX  (8,7) T/P: 11 -1 | clb [ 8, 7] SBLOCK we (246 1031) SWC 
+| CHANX  (8,7) --> CHANY  (8,7) T/P: 11 -1 | clb [ 9, 7] SBLOCK ws (280 967) SWC 
+| CHANY  (8,7) --> CHANY  (8,6) T/P: 11 -1 | clb [ 9, 6] SBLOCK ns (280 998) SWC 
+| CHANY  (8,6) --> CHANX  (9,5) T/P: 11 -1 | clb [ 9, 5] SBLOCK ne (280 1013) SWC 
+| CHANX  (9,5) --> CHANY  (9,5) T/P: 11 -1 | cab_vmm [10, 5] SBLOCK ws (316 805) SWC 
+| CHANY  (9,5) -->  IPIN (10,5) T/P: 11  0 | cab_vmm [10, 5] CHANY  (316,949) T11 XI0 ~~~~ PIN SINK ~~~~ || net (net14_9) -> pin 0 in 10 5
 SWC 
- ------------- (net6_10) ------------- 
-|  OPIN  (7,7) --> CHANX  (7,7) T/P:  0 20 |  cab [ 7, 7] CHANX  (226,663) T0 O4 SWC 
-| CHANX  (7,7) --> CHANX  (8,7) T/P:  0 -1 | clb [ 8, 7] SBLOCK we (258 1031) SWC 
-| CHANX  (8,7) --> CHANY  (8,7) T/P:  0 -1 | clb [ 9, 7] SBLOCK ws (292 967) SWC 
-| CHANY  (8,7) --> CHANY  (8,6) T/P:  0 -1 | clb [ 9, 6] SBLOCK ns (292 998) SWC 
-| CHANY  (8,6) --> CHANY  (8,5) T/P:  0 -1 | clb [ 9, 5] SBLOCK ns (292 997) SWC 
-| CHANY  (8,5) --> CHANY  (8,4) T/P:  0 -1 | clb [ 9, 4] SBLOCK ns (292 996) SWC 
-| CHANY  (8,4) --> CHANY  (8,3) T/P:  0 -1 | clb [ 9, 3] SBLOCK ns (292 995) SWC 
-| CHANY  (8,3) --> CHANX  (9,2) T/P:  0 -1 | clb [ 9, 2] SBLOCK ne (292 1010) SWC 
-| CHANX  (9,2) --> CHANX (10,2) T/P:  0 -1 | cab_vmm [10, 2] SBLOCK we (328 866) SWC 
-| CHANX (10,2) --> CHANY (10,2) T/P:  0 -1 | cab_vmm [11, 2] SBLOCK ws (362 802) SWC 
-| CHANY (10,2) -->  IPIN (11,2) T/P:  0  1 | cab_vmm [11, 2] CHANY  (362,962) T0 XI1 ~~~~ PIN SINK ~~~~ || net (net6_10) -> pin 1 in 11 2
-SWC 
- ------------- (net6_11) ------------- 
-|  OPIN  (6,8) --> CHANX  (6,8) T/P: 15 20 |  cab [ 6, 8] CHANX  (175,664) T15 O4 SWC 
-| CHANX  (6,8) --> CHANX  (7,8) T/P: 15 -1 | cab [ 7, 8] SBLOCK we (209 872) SWC 
-| CHANX  (7,8) --> CHANX  (8,8) T/P: 15 -1 | clb [ 8, 8] SBLOCK we (241 1032) SWC 
-| CHANX  (8,8) --> CHANX  (9,8) T/P: 15 -1 | clb [ 9, 8] SBLOCK we (275 1032) SWC 
-| CHANX  (9,8) --> CHANY  (9,8) T/P: 15 -1 | cab_vmm [10, 8] SBLOCK ws (311 808) SWC 
-| CHANY  (9,8) --> CHANY  (9,7) T/P: 15 -1 | cab_vmm [10, 7] SBLOCK ns (311 839) SWC 
-| CHANY  (9,7) --> CHANY  (9,6) T/P: 15 -1 | cab_vmm [10, 6] SBLOCK ns (311 838) SWC 
-| CHANY  (9,6) --> CHANY  (9,5) T/P: 15 -1 | cab_vmm [10, 5] SBLOCK ns (311 837) SWC 
-| CHANY  (9,5) --> CHANY  (9,4) T/P: 15 -1 | cab_vmm [10, 4] SBLOCK ns (311 836) SWC 
-| CHANY  (9,4) --> CHANY  (9,3) T/P: 15 -1 | cab_vmm [10, 3] SBLOCK ns (311 835) SWC 
-| CHANY  (9,3) --> CHANX (10,2) T/P: 15 -1 | cab_vmm [10, 2] SBLOCK ne (311 850) SWC 
-| CHANX (10,2) --> CHANY (10,2) T/P: 15 -1 | cab_vmm [11, 2] SBLOCK ws (345 802) SWC 
-| CHANY (10,2) -->  IPIN (11,2) T/P: 15  2 | cab_vmm [11, 2] CHANY  (345,978) T15 XI2 ~~~~ PIN SINK ~~~~ || net (net6_11) -> pin 2 in 11 2
-SWC 
- ------------- (net6_12) ------------- 
-|  OPIN  (7,8) --> CHANX  (7,8) T/P:  1 20 |  cab [ 7, 8] CHANX  (225,664) T1 O4 SWC 
-| CHANX  (7,8) --> CHANX  (8,8) T/P:  1 -1 | clb [ 8, 8] SBLOCK we (257 1032) SWC 
-| CHANX  (8,8) --> CHANY  (8,8) T/P:  1 -1 | clb [ 9, 8] SBLOCK ws (291 968) SWC 
-| CHANY  (8,8) --> CHANY  (8,7) T/P:  1 -1 | clb [ 9, 7] SBLOCK ns (291 999) SWC 
+ ------------- (net14_10) ------------- 
+|  OPIN  (7,7) --> CHANX  (7,7) T/P:  1 20 |  cab [ 7, 7] CHANX  (225,663) T1 O4 SWC 
+| CHANX  (7,7) --> CHANX  (8,7) T/P:  1 -1 | clb [ 8, 7] SBLOCK we (257 1031) SWC 
+| CHANX  (8,7) --> CHANY  (8,7) T/P:  1 -1 | clb [ 9, 7] SBLOCK ws (291 967) SWC 
 | CHANY  (8,7) --> CHANY  (8,6) T/P:  1 -1 | clb [ 9, 6] SBLOCK ns (291 998) SWC 
-| CHANY  (8,6) --> CHANY  (8,5) T/P:  1 -1 | clb [ 9, 5] SBLOCK ns (291 997) SWC 
-| CHANY  (8,5) --> CHANY  (8,4) T/P:  1 -1 | clb [ 9, 4] SBLOCK ns (291 996) SWC 
-| CHANY  (8,4) --> CHANY  (8,3) T/P:  1 -1 | clb [ 9, 3] SBLOCK ns (291 995) SWC 
-| CHANY  (8,3) --> CHANX  (9,2) T/P:  1 -1 | clb [ 9, 2] SBLOCK ne (291 1010) SWC 
-| CHANX  (9,2) --> CHANX (10,2) T/P:  1 -1 | cab_vmm [10, 2] SBLOCK we (327 866) SWC 
-| CHANX (10,2) --> CHANY (10,2) T/P:  1 -1 | cab_vmm [11, 2] SBLOCK ws (361 802) SWC 
-| CHANY (10,2) -->  IPIN (11,2) T/P:  1  3 | cab_vmm [11, 2] CHANY  (361,994) T1 XI3 ~~~~ PIN SINK ~~~~ || net (net6_12) -> pin 3 in 11 2
+| CHANY  (8,6) --> CHANX  (9,5) T/P:  1 -1 | clb [ 9, 5] SBLOCK ne (291 1013) SWC 
+| CHANX  (9,5) --> CHANY  (9,5) T/P:  1 -1 | cab_vmm [10, 5] SBLOCK ws (327 805) SWC 
+| CHANY  (9,5) -->  IPIN (10,5) T/P:  1  1 | cab_vmm [10, 5] CHANY  (327,965) T1 XI1 ~~~~ PIN SINK ~~~~ || net (net14_10) -> pin 1 in 10 5
 SWC 
- ------------- (net6_13) ------------- 
-|  OPIN  (6,9) --> CHANX  (6,9) T/P:  1 20 |  cab [ 6, 9] CHANX  (191,665) T1 O4 SWC 
-| CHANX  (6,9) --> CHANX  (7,9) T/P:  1 -1 | cab [ 7, 9] SBLOCK we (225 873) SWC 
-| CHANX  (7,9) --> CHANX  (8,9) T/P:  1 -1 | clb [ 8, 9] SBLOCK we (257 1033) SWC 
-| CHANX  (8,9) --> CHANX  (9,9) T/P:  1 -1 | clb [ 9, 9] SBLOCK we (291 1033) SWC 
-| CHANX  (9,9) --> CHANY  (9,9) T/P:  1 -1 | cab_vmm [10, 9] SBLOCK ws (327 809) SWC 
-| CHANY  (9,9) --> CHANY  (9,8) T/P:  1 -1 | cab_vmm [10, 8] SBLOCK ns (327 840) SWC 
-| CHANY  (9,8) --> CHANY  (9,7) T/P:  1 -1 | cab_vmm [10, 7] SBLOCK ns (327 839) SWC 
-| CHANY  (9,7) --> CHANY  (9,6) T/P:  1 -1 | cab_vmm [10, 6] SBLOCK ns (327 838) SWC 
-| CHANY  (9,6) --> CHANY  (9,5) T/P:  1 -1 | cab_vmm [10, 5] SBLOCK ns (327 837) SWC 
-| CHANY  (9,5) --> CHANY  (9,4) T/P:  1 -1 | cab_vmm [10, 4] SBLOCK ns (327 836) SWC 
-| CHANY  (9,4) --> CHANX (10,3) T/P:  1 -1 | cab_vmm [10, 3] SBLOCK ne (327 851) SWC 
-| CHANX (10,3) --> CHANX (11,3) T/P:  1 -1 | cab_vmm [11, 3] SBLOCK we (361 867) SWC 
-| CHANX (11,3) --> CHANY (11,3) T/P:  1 -1 | clb [12, 3] SBLOCK ws (393 963) SWC 
-| CHANY (11,3) --> CHANY (11,2) T/P:  1 -1 | clb [12, 2] SBLOCK ns (393 994) SWC 
-| CHANY (11,2) -->  IPIN (11,2) T/P:  1  4 |  clb [12, 2] CHANY  (393,626) T1 AXI4 ~~~~ PIN SINK ~~~~ || net (net6_13) -> pin 4 in 11 2
+ ------------- (net14_11) ------------- 
+|  OPIN  (6,8) --> CHANX  (6,8) T/P:  0 20 |  cab [ 6, 8] CHANX  (192,664) T0 O4 SWC 
+| CHANX  (6,8) --> CHANX  (7,8) T/P:  0 -1 | cab [ 7, 8] SBLOCK we (226 872) SWC 
+| CHANX  (7,8) --> CHANX  (8,8) T/P:  0 -1 | clb [ 8, 8] SBLOCK we (258 1032) SWC 
+| CHANX  (8,8) --> CHANX  (9,8) T/P:  0 -1 | clb [ 9, 8] SBLOCK we (292 1032) SWC 
+| CHANX  (9,8) --> CHANY  (9,8) T/P:  0 -1 | cab_vmm [10, 8] SBLOCK ws (328 808) SWC 
+| CHANY  (9,8) --> CHANY  (9,7) T/P:  0 -1 | cab_vmm [10, 7] SBLOCK ns (328 839) SWC 
+| CHANY  (9,7) --> CHANY  (9,6) T/P:  0 -1 | cab_vmm [10, 6] SBLOCK ns (328 838) SWC 
+| CHANY  (9,6) --> CHANY  (9,5) T/P:  0 -1 | cab_vmm [10, 5] SBLOCK ns (328 837) SWC 
+| CHANY  (9,5) -->  IPIN (10,5) T/P:  0  2 | cab_vmm [10, 5] CHANY  (328,981) T0 XI2 ~~~~ PIN SINK ~~~~ || net (net14_11) -> pin 2 in 10 5
 SWC 
- ------------- (net6_14) ------------- 
-|  OPIN  (7,9) --> CHANX  (7,9) T/P:  0 20 |  cab [ 7, 9] CHANX  (226,665) T0 O4 SWC 
-| CHANX  (7,9) --> CHANX  (8,9) T/P:  0 -1 | clb [ 8, 9] SBLOCK we (258 1033) SWC 
-| CHANX  (8,9) --> CHANX  (9,9) T/P:  0 -1 | clb [ 9, 9] SBLOCK we (292 1033) SWC 
-| CHANX  (9,9) --> CHANX (10,9) T/P:  0 -1 | cab_vmm [10, 9] SBLOCK we (328 873) SWC 
-| CHANX (10,9) --> CHANY (10,9) T/P:  0 -1 | cab_vmm [11, 9] SBLOCK ws (362 809) SWC 
-| CHANY (10,9) --> CHANY (10,8) T/P:  0 -1 | cab_vmm [11, 8] SBLOCK ns (362 840) SWC 
-| CHANY (10,8) --> CHANY (10,7) T/P:  0 -1 | cab_vmm [11, 7] SBLOCK ns (362 839) SWC 
-| CHANY (10,7) --> CHANY (10,6) T/P:  0 -1 | cab_vmm [11, 6] SBLOCK ns (362 838) SWC 
-| CHANY (10,6) --> CHANY (10,5) T/P:  0 -1 | cab_vmm [11, 5] SBLOCK ns (362 837) SWC 
-| CHANY (10,5) --> CHANY (10,4) T/P:  0 -1 | cab_vmm [11, 4] SBLOCK ns (362 836) SWC 
-| CHANY (10,4) --> CHANY (10,3) T/P:  0 -1 | cab_vmm [11, 3] SBLOCK ns (362 835) SWC 
-| CHANY (10,3) --> CHANX (11,2) T/P:  0 -1 | cab_vmm [11, 2] SBLOCK ne (362 850) SWC 
-| CHANX (11,2) --> CHANY (11,2) T/P:  0 -1 | clb [12, 2] SBLOCK ws (394 962) SWC 
-| CHANY (11,2) -->  IPIN (11,2) T/P:  0  5 |  clb [12, 2] CHANY  (394,642) T0 AXI5 ~~~~ PIN SINK ~~~~ || net (net6_14) -> pin 5 in 11 2
+ ------------- (net14_12) ------------- 
+|  OPIN  (7,8) --> CHANX  (7,8) T/P:  7 20 |  cab [ 7, 8] CHANX  (218,664) T7 O4 SWC 
+| CHANX  (7,8) --> CHANX  (8,8) T/P:  7 -1 | clb [ 8, 8] SBLOCK we (250 1032) SWC 
+| CHANX  (8,8) --> CHANY  (8,8) T/P:  7 -1 | clb [ 9, 8] SBLOCK ws (284 968) SWC 
+| CHANY  (8,8) --> CHANY  (8,7) T/P:  7 -1 | clb [ 9, 7] SBLOCK ns (284 999) SWC 
+| CHANY  (8,7) --> CHANY  (8,6) T/P:  7 -1 | clb [ 9, 6] SBLOCK ns (284 998) SWC 
+| CHANY  (8,6) --> CHANX  (9,5) T/P:  7 -1 | clb [ 9, 5] SBLOCK ne (284 1013) SWC 
+| CHANX  (9,5) --> CHANY  (9,5) T/P:  7 -1 | cab_vmm [10, 5] SBLOCK ws (320 805) SWC 
+| CHANY  (9,5) -->  IPIN (10,5) T/P:  7  3 | cab_vmm [10, 5] CHANY  (320,997) T7 XI3 ~~~~ PIN SINK ~~~~ || net (net14_12) -> pin 3 in 10 5
 SWC 
- ------------- (net6_1) ------------- 
-|  OPIN  (6,3) --> CHANX  (6,3) T/P: 15 20 |  cab [ 6, 3] CHANX  (175,659) T15 O4 SWC 
-| CHANX  (6,3) --> CHANX  (7,3) T/P: 15 -1 | cab [ 7, 3] SBLOCK we (209 867) SWC 
-| CHANX  (7,3) --> CHANX  (8,3) T/P: 15 -1 | clb [ 8, 3] SBLOCK we (241 1027) SWC 
-| CHANX  (8,3) --> CHANX  (9,3) T/P: 15 -1 | clb [ 9, 3] SBLOCK we (275 1027) SWC 
-| CHANX  (9,3) --> CHANX (10,3) T/P: 15 -1 | cab_vmm [10, 3] SBLOCK we (311 867) SWC 
-| CHANX (10,3) --> CHANY (10,3) T/P: 15 -1 | cab_vmm [11, 3] SBLOCK ws (345 803) SWC 
-| CHANY (10,3) --> CHANX (11,2) T/P: 15 -1 | cab_vmm [11, 2] SBLOCK ne (345 850) SWC 
-| CHANX (11,2) --> CHANY (11,2) T/P: 15 -1 | clb [12, 2] SBLOCK ws (377 962) SWC 
-| CHANY (11,2) -->  IPIN (11,2) T/P: 15  6 |  clb [12, 2] CHANY  (377,658) T15 AXI6 ~~~~ PIN SINK ~~~~ || net (net6_1) -> pin 6 in 11 2
+ ------------- (net14_13) ------------- 
+|  OPIN  (6,9) --> CHANX  (6,9) T/P: 15 20 |  cab [ 6, 9] CHANX  (175,665) T15 O4 SWC 
+| CHANX  (6,9) --> CHANX  (7,9) T/P: 15 -1 | cab [ 7, 9] SBLOCK we (209 873) SWC 
+| CHANX  (7,9) --> CHANX  (8,9) T/P: 15 -1 | clb [ 8, 9] SBLOCK we (241 1033) SWC 
+| CHANX  (8,9) --> CHANY  (8,9) T/P: 15 -1 | clb [ 9, 9] SBLOCK ws (275 969) SWC 
+| CHANY  (8,9) --> CHANY  (8,8) T/P: 15 -1 | clb [ 9, 8] SBLOCK ns (275 1000) SWC 
+| CHANY  (8,8) --> CHANX  (9,7) T/P: 15 -1 | clb [ 9, 7] SBLOCK ne (275 1015) SWC 
+| CHANX  (9,7) --> CHANX (10,7) T/P: 15 -1 | cab_vmm [10, 7] SBLOCK we (311 871) SWC 
+| CHANX (10,7) --> CHANY (10,7) T/P: 15 -1 | cab_vmm [11, 7] SBLOCK ws (345 807) SWC 
+| CHANY (10,7) --> CHANY (10,6) T/P: 15 -1 | cab_vmm [11, 6] SBLOCK ns (345 838) SWC 
+| CHANY (10,6) --> CHANY (10,5) T/P: 15 -1 | cab_vmm [11, 5] SBLOCK ns (345 837) SWC 
+| CHANY (10,5) -->  IPIN (10,5) T/P: 15  4 | cab_vmm [11, 5] CHANY  (345,1045) T15 I4 ~~~~ PIN SINK ~~~~ || net (net14_13) -> pin 4 in 10 5
 SWC 
- ------------- (net6_2) ------------- 
-|  OPIN  (7,3) --> CHANX  (7,3) T/P:  8 20 |  cab [ 7, 3] CHANX  (217,659) T8 O4 SWC 
+ ------------- (net14_14) ------------- 
+|  OPIN  (7,9) --> CHANX  (7,9) T/P:  9 20 |  cab [ 7, 9] CHANX  (216,665) T9 O4 SWC 
+| CHANX  (7,9) --> CHANX  (8,9) T/P:  9 -1 | clb [ 8, 9] SBLOCK we (248 1033) SWC 
+| CHANX  (8,9) --> CHANY  (8,9) T/P:  9 -1 | clb [ 9, 9] SBLOCK ws (282 969) SWC 
+| CHANY  (8,9) --> CHANY  (8,8) T/P:  9 -1 | clb [ 9, 8] SBLOCK ns (282 1000) SWC 
+| CHANY  (8,8) --> CHANY  (8,7) T/P:  9 -1 | clb [ 9, 7] SBLOCK ns (282 999) SWC 
+| CHANY  (8,7) --> CHANY  (8,6) T/P:  9 -1 | clb [ 9, 6] SBLOCK ns (282 998) SWC 
+| CHANY  (8,6) --> CHANX  (9,5) T/P:  9 -1 | clb [ 9, 5] SBLOCK ne (282 1013) SWC 
+| CHANX  (9,5) --> CHANX (10,5) T/P:  9 -1 | cab_vmm [10, 5] SBLOCK we (318 869) SWC 
+| CHANX (10,5) --> CHANY (10,5) T/P:  9 -1 | cab_vmm [11, 5] SBLOCK ws (352 805) SWC 
+| CHANY (10,5) -->  IPIN (10,5) T/P:  9  5 | cab_vmm [11, 5] CHANY  (352,1061) T9 I5 ~~~~ PIN SINK ~~~~ || net (net14_14) -> pin 5 in 10 5
+SWC 
+ ------------- (net14_1) ------------- 
+|  OPIN  (6,3) --> CHANX  (6,3) T/P:  8 20 |  cab [ 6, 3] CHANX  (183,659) T8 O4 SWC 
+| CHANX  (6,3) --> CHANX  (7,3) T/P:  8 -1 | cab [ 7, 3] SBLOCK we (217 867) SWC 
 | CHANX  (7,3) --> CHANX  (8,3) T/P:  8 -1 | clb [ 8, 3] SBLOCK we (249 1027) SWC 
 | CHANX  (8,3) --> CHANX  (9,3) T/P:  8 -1 | clb [ 9, 3] SBLOCK we (283 1027) SWC 
-| CHANX  (9,3) --> CHANY  (9,3) T/P:  8 -1 | cab_vmm [10, 3] SBLOCK ws (319 803) SWC 
-| CHANY  (9,3) --> CHANX (10,2) T/P:  8 -1 | cab_vmm [10, 2] SBLOCK ne (319 850) SWC 
-| CHANX (10,2) --> CHANX (11,2) T/P:  8 -1 | cab_vmm [11, 2] SBLOCK we (353 866) SWC 
-| CHANX (11,2) --> CHANY (11,2) T/P:  8 -1 | clb [12, 2] SBLOCK ws (385 962) SWC 
-| CHANY (11,2) -->  IPIN (11,2) T/P:  8  7 |  clb [12, 2] CHANY  (385,674) T8 AXI7 ~~~~ PIN SINK ~~~~ || net (net6_2) -> pin 7 in 11 2
+| CHANX  (9,3) --> CHANY  (9,4) T/P:  8 -1 | cab_vmm [10, 3] SBLOCK wn (319 819) SWC 
+| CHANY  (9,4) --> CHANX (10,4) T/P:  8 -1 | cab_vmm [10, 4] SBLOCK se (319 788) SWC 
+| CHANX (10,4) --> CHANY (10,5) T/P:  8 -1 | cab_vmm [11, 4] SBLOCK wn (353 820) SWC 
+| CHANY (10,5) -->  IPIN (10,5) T/P:  8  6 | cab_vmm [11, 5] CHANY  (353,1077) T8 I6 ~~~~ PIN SINK ~~~~ || net (net14_1) -> pin 6 in 10 5
 SWC 
- ------------- (net6_3) ------------- 
-|  OPIN  (6,4) --> CHANX  (6,4) T/P: 13 20 |  cab [ 6, 4] CHANX  (177,660) T13 O4 SWC 
-| CHANX  (6,4) --> CHANX  (7,4) T/P: 13 -1 | cab [ 7, 4] SBLOCK we (211 868) SWC 
-| CHANX  (7,4) --> CHANX  (8,4) T/P: 13 -1 | clb [ 8, 4] SBLOCK we (243 1028) SWC 
-| CHANX  (8,4) --> CHANX  (9,4) T/P: 13 -1 | clb [ 9, 4] SBLOCK we (277 1028) SWC 
-| CHANX  (9,4) --> CHANX (10,4) T/P: 13 -1 | cab_vmm [10, 4] SBLOCK we (313 868) SWC 
-| CHANX (10,4) --> CHANY (10,4) T/P: 13 -1 | cab_vmm [11, 4] SBLOCK ws (347 804) SWC 
-| CHANY (10,4) --> CHANY (10,3) T/P: 13 -1 | cab_vmm [11, 3] SBLOCK ns (347 835) SWC 
-| CHANY (10,3) --> CHANX (11,2) T/P: 13 -1 | cab_vmm [11, 2] SBLOCK ne (347 850) SWC 
-| CHANX (11,2) -->  IPIN (11,2) T/P: 13  8 | cab_vmm [11, 2] CHANX  (347,578) T13 I8 ~~~~ PIN SINK ~~~~ || net (net6_3) -> pin 8 in 11 2
+| CHANY (10,5) --> CHANX (11,4) T/P:  8 -1 | cab_vmm [11, 4] SBLOCK ne (353 852) SWC 
+| CHANX (11,4) --> CHANY (11,4) T/P:  8 -1 | clb [12, 4] SBLOCK ws (385 964) SWC 
+| CHANY (11,4) --> CHANY (11,3) T/P:  8 -1 | clb [12, 3] SBLOCK ns (385 995) SWC 
+| CHANY (11,3) --> CHANY (11,2) T/P:  8 -1 | clb [12, 2] SBLOCK ns (385 994) SWC 
+| CHANY (11,2) --> CHANY (11,1) T/P:  8 -1 | clb [12, 1] SBLOCK ns (385 993) SWC 
+| CHANY (11,1) --> CHANX (12,0) T/P:  8 -1 | io_sd [12, 0] SBLOCK ne (383 336) SWC 
+| CHANX (12,0) -->  IPIN (12,0) T/P:  8  0 | io_sd [12, 0] CHANX  (394,272) T8 I3 ~~~~ PIN SINK ~~~~ || net (net14_1) -> pin 0 in 12 0
 SWC 
- ------------- (net6_4) ------------- 
-|  OPIN  (7,4) --> CHANX  (7,4) T/P:  1 20 |  cab [ 7, 4] CHANX  (225,660) T1 O4 SWC 
-| CHANX  (7,4) --> CHANX  (8,4) T/P:  1 -1 | clb [ 8, 4] SBLOCK we (257 1028) SWC 
-| CHANX  (8,4) --> CHANX  (9,4) T/P:  1 -1 | clb [ 9, 4] SBLOCK we (291 1028) SWC 
-| CHANX  (9,4) --> CHANX (10,4) T/P:  1 -1 | cab_vmm [10, 4] SBLOCK we (327 868) SWC 
-| CHANX (10,4) --> CHANY (10,4) T/P:  1 -1 | cab_vmm [11, 4] SBLOCK ws (361 804) SWC 
-| CHANY (10,4) --> CHANY (10,3) T/P:  1 -1 | cab_vmm [11, 3] SBLOCK ns (361 835) SWC 
-| CHANY (10,3) --> CHANX (11,2) T/P:  1 -1 | cab_vmm [11, 2] SBLOCK ne (361 850) SWC 
-| CHANX (11,2) -->  IPIN (11,2) T/P:  1  9 | cab_vmm [11, 2] CHANX  (361,594) T1 I9 ~~~~ PIN SINK ~~~~ || net (net6_4) -> pin 9 in 11 2
+ ------------- (net14_2) ------------- 
+|  OPIN  (7,3) --> CHANX  (7,3) T/P: 10 20 |  cab [ 7, 3] CHANX  (215,659) T10 O4 SWC 
+| CHANX  (7,3) --> CHANX  (8,3) T/P: 10 -1 | clb [ 8, 3] SBLOCK we (247 1027) SWC 
+| CHANX  (8,3) --> CHANX  (9,3) T/P: 10 -1 | clb [ 9, 3] SBLOCK we (281 1027) SWC 
+| CHANX  (9,3) --> CHANY  (9,4) T/P: 10 -1 | cab_vmm [10, 3] SBLOCK wn (317 819) SWC 
+| CHANY  (9,4) --> CHANX (10,4) T/P: 10 -1 | cab_vmm [10, 4] SBLOCK se (317 788) SWC 
+| CHANX (10,4) --> CHANY (10,5) T/P: 10 -1 | cab_vmm [11, 4] SBLOCK wn (351 820) SWC 
+| CHANY (10,5) -->  IPIN (10,5) T/P: 10  7 | cab_vmm [11, 5] CHANY  (351,1093) T10 I7 ~~~~ PIN SINK ~~~~ || net (net14_2) -> pin 7 in 10 5
 SWC 
- ------------- (net6_5) ------------- 
-|  OPIN  (6,5) --> CHANX  (6,5) T/P: 15 20 |  cab [ 6, 5] CHANX  (175,661) T15 O4 SWC 
-| CHANX  (6,5) --> CHANX  (7,5) T/P: 15 -1 | cab [ 7, 5] SBLOCK we (209 869) SWC 
-| CHANX  (7,5) --> CHANX  (8,5) T/P: 15 -1 | clb [ 8, 5] SBLOCK we (241 1029) SWC 
-| CHANX  (8,5) --> CHANY  (8,5) T/P: 15 -1 | clb [ 9, 5] SBLOCK ws (275 965) SWC 
-| CHANY  (8,5) --> CHANY  (8,4) T/P: 15 -1 | clb [ 9, 4] SBLOCK ns (275 996) SWC 
-| CHANY  (8,4) --> CHANY  (8,3) T/P: 15 -1 | clb [ 9, 3] SBLOCK ns (275 995) SWC 
-| CHANY  (8,3) --> CHANX  (9,2) T/P: 15 -1 | clb [ 9, 2] SBLOCK ne (275 1010) SWC 
-| CHANX  (9,2) --> CHANY  (9,2) T/P: 15 -1 | cab_vmm [10, 2] SBLOCK ws (311 802) SWC 
-| CHANY  (9,2) --> CHANX (10,1) T/P: 15 -1 | cab_vmm [10, 1] SBLOCK ne (311 849) SWC 
-| CHANX (10,1) --> CHANX (11,1) T/P: 15 -1 | cab_vmm [11, 1] SBLOCK we (345 865) SWC 
-| CHANX (11,1) -->  IPIN (11,2) T/P: 15 10 | cab_vmm [11, 1] CHANX  (345,673) T15 XI10 ~~~~ PIN SINK ~~~~ || net (net6_5) -> pin 10 in 11 2
+ ------------- (net14_3) ------------- 
+|  OPIN  (6,4) --> CHANX  (6,4) T/P:  4 20 |  cab [ 6, 4] CHANX  (188,660) T4 O4 SWC 
+| CHANX  (6,4) --> CHANX  (7,4) T/P:  4 -1 | cab [ 7, 4] SBLOCK we (222 868) SWC 
+| CHANX  (7,4) --> CHANX  (8,4) T/P:  4 -1 | clb [ 8, 4] SBLOCK we (254 1028) SWC 
+| CHANX  (8,4) --> CHANX  (9,4) T/P:  4 -1 | clb [ 9, 4] SBLOCK we (288 1028) SWC 
+| CHANX  (9,4) --> CHANY  (9,5) T/P:  4 -1 | cab_vmm [10, 4] SBLOCK wn (324 820) SWC 
+| CHANY  (9,5) --> CHANX (10,5) T/P:  4 -1 | cab_vmm [10, 5] SBLOCK se (324 789) SWC 
+| CHANX (10,5) -->  IPIN (10,5) T/P:  4  8 | cab_vmm [10, 5] CHANX  (324,581) T4 I8 ~~~~ PIN SINK ~~~~ || net (net14_3) -> pin 8 in 10 5
 SWC 
- ------------- (net6_6) ------------- 
-|  OPIN  (7,5) --> CHANX  (7,5) T/P:  8 20 |  cab [ 7, 5] CHANX  (217,661) T8 O4 SWC 
-| CHANX  (7,5) --> CHANX  (8,5) T/P:  8 -1 | clb [ 8, 5] SBLOCK we (249 1029) SWC 
-| CHANX  (8,5) --> CHANX  (9,5) T/P:  8 -1 | clb [ 9, 5] SBLOCK we (283 1029) SWC 
-| CHANX  (9,5) --> CHANX (10,5) T/P:  8 -1 | cab_vmm [10, 5] SBLOCK we (319 869) SWC 
-| CHANX (10,5) --> CHANY (10,5) T/P:  8 -1 | cab_vmm [11, 5] SBLOCK ws (353 805) SWC 
-| CHANY (10,5) --> CHANY (10,4) T/P:  8 -1 | cab_vmm [11, 4] SBLOCK ns (353 836) SWC 
-| CHANY (10,4) --> CHANY (10,3) T/P:  8 -1 | cab_vmm [11, 3] SBLOCK ns (353 835) SWC 
-| CHANY (10,3) --> CHANY (10,2) T/P:  8 -1 | cab_vmm [11, 2] SBLOCK ns (353 834) SWC 
-| CHANY (10,2) --> CHANX (11,1) T/P:  8 -1 | cab_vmm [11, 1] SBLOCK ne (353 849) SWC 
-| CHANX (11,1) -->  IPIN (11,2) T/P:  8 11 | cab_vmm [11, 1] CHANX  (353,689) T8 XI11 ~~~~ PIN SINK ~~~~ || net (net6_6) -> pin 11 in 11 2
+ ------------- (net14_4) ------------- 
+|  OPIN  (7,4) --> CHANX  (7,4) T/P:  3 20 |  cab [ 7, 4] CHANX  (223,660) T3 O4 SWC 
+| CHANX  (7,4) --> CHANX  (8,4) T/P:  3 -1 | clb [ 8, 4] SBLOCK we (255 1028) SWC 
+| CHANX  (8,4) --> CHANX  (9,4) T/P:  3 -1 | clb [ 9, 4] SBLOCK we (289 1028) SWC 
+| CHANX  (9,4) --> CHANY  (9,5) T/P:  3 -1 | cab_vmm [10, 4] SBLOCK wn (325 820) SWC 
+| CHANY  (9,5) --> CHANX (10,5) T/P:  3 -1 | cab_vmm [10, 5] SBLOCK se (325 789) SWC 
+| CHANX (10,5) -->  IPIN (10,5) T/P:  3  9 | cab_vmm [10, 5] CHANX  (325,597) T3 I9 ~~~~ PIN SINK ~~~~ || net (net14_4) -> pin 9 in 10 5
 SWC 
- ------------- (net17_1) ------------- 
-|  OPIN (13,0) --> CHANX (13,0) T/P: 10  4 | io_sd [13, 0] CHANX  (426,288) T10 I7 SWC 
-| CHANX (13,0) --> CHANX (12,0) T/P: 10 -1 | io_sd [13, 0] SBLOCK ew (415 352) SWC 
-| CHANX (12,0) --> CHANY (11,1) T/P: 10 -1 | io_sd [12, 0] SBLOCK en (381 336) SWC 
-| CHANY (11,1) --> CHANY (11,2) T/P: 10 -1 | clb [12, 1] SBLOCK sn (383 993) SWC 
-| CHANY (11,2) --> CHANX (11,2) T/P: 10 -1 | clb [12, 2] SBLOCK sw (383 962) SWC 
-| CHANX (11,2) -->  IPIN (11,2) T/P: 10 13 | cab_vmm [11, 2] CHANX  (351,610) T10 I13 ~~~~ PIN SINK ~~~~ || net (net17_1) -> pin 13 in 11 2
+ ------------- (net14_5) ------------- 
+|  OPIN  (6,5) --> CHANX  (6,5) T/P:  6 20 |  cab [ 6, 5] CHANX  (186,661) T6 O4 SWC 
+| CHANX  (6,5) --> CHANX  (7,5) T/P:  6 -1 | cab [ 7, 5] SBLOCK we (220 869) SWC 
+| CHANX  (7,5) --> CHANX  (8,5) T/P:  6 -1 | clb [ 8, 5] SBLOCK we (252 1029) SWC 
+| CHANX  (8,5) --> CHANX  (9,5) T/P:  6 -1 | clb [ 9, 5] SBLOCK we (286 1029) SWC 
+| CHANX  (9,5) --> CHANY  (9,5) T/P:  6 -1 | cab_vmm [10, 5] SBLOCK ws (322 805) SWC 
+| CHANY  (9,5) --> CHANX (10,4) T/P:  6 -1 | cab_vmm [10, 4] SBLOCK ne (322 852) SWC 
+| CHANX (10,4) -->  IPIN (10,5) T/P:  6 10 | cab_vmm [10, 4] CHANX  (322,676) T6 XI10 ~~~~ PIN SINK ~~~~ || net (net14_5) -> pin 10 in 10 5
+SWC 
+ ------------- (net14_6) ------------- 
+|  OPIN  (7,5) --> CHANX  (7,5) T/P: 14 20 |  cab [ 7, 5] CHANX  (210,661) T14 O4 SWC 
+| CHANX  (7,5) --> CHANX  (8,5) T/P: 14 -1 | clb [ 8, 5] SBLOCK we (242 1029) SWC 
+| CHANX  (8,5) --> CHANX  (9,5) T/P: 14 -1 | clb [ 9, 5] SBLOCK we (276 1029) SWC 
+| CHANX  (9,5) --> CHANY  (9,5) T/P: 14 -1 | cab_vmm [10, 5] SBLOCK ws (312 805) SWC 
+| CHANY  (9,5) --> CHANX (10,4) T/P: 14 -1 | cab_vmm [10, 4] SBLOCK ne (312 852) SWC 
+| CHANX (10,4) -->  IPIN (10,5) T/P: 14 11 | cab_vmm [10, 4] CHANX  (312,692) T14 XI11 ~~~~ PIN SINK ~~~~ || net (net14_6) -> pin 11 in 10 5
+SWC 
+ ------------- (net15_1) ------------- 
+|  OPIN (13,0) --> CHANX (13,0) T/P: 13  4 | io_sd [13, 0] CHANX  (422,288) T13 I7 SWC 
+| CHANX (13,0) --> CHANX (12,0) T/P: 13 -1 | io_sd [13, 0] SBLOCK ew (411 352) SWC 
+| CHANX (12,0) --> CHANY (11,1) T/P: 13 -1 | io_sd [12, 0] SBLOCK en (377 336) SWC 
+| CHANY (11,1) --> CHANY (11,2) T/P: 13 -1 | clb [12, 1] SBLOCK sn (379 993) SWC 
+| CHANY (11,2) --> CHANY (11,3) T/P: 13 -1 | clb [12, 2] SBLOCK sn (379 994) SWC 
+| CHANY (11,3) --> CHANY (11,4) T/P: 13 -1 | clb [12, 3] SBLOCK sn (379 995) SWC 
+| CHANY (11,4) --> CHANX (11,4) T/P: 13 -1 | clb [12, 4] SBLOCK sw (379 964) SWC 
+| CHANX (11,4) --> CHANY (10,5) T/P: 13 -1 | cab_vmm [11, 4] SBLOCK en (347 852) SWC 
+| CHANY (10,5) --> CHANX (10,5) T/P: 13 -1 | cab_vmm [11, 5] SBLOCK sw (347 805) SWC 
+| CHANX (10,5) -->  IPIN (10,5) T/P: 13 13 | cab_vmm [10, 5] CHANX  (313,613) T13 I13 ~~~~ PIN SINK ~~~~ || net (net15_1) -> pin 13 in 10 5
 SWC 
  ------------- (gnd_dig) ------------- 
-|  OPIN  (3,4) --> CHANX  (3,4) T/P:  9 20 |  cab [ 3, 4] CHANX  (80,660) T9 O4 SWC 
-| CHANX  (3,4) --> CHANX  (4,4) T/P:  9 -1 | clb [ 4, 4] SBLOCK we (112 1028) SWC 
-| CHANX  (4,4) --> CHANX  (5,4) T/P:  9 -1 | clb [ 5, 4] SBLOCK we (146 1028) SWC 
-| CHANX  (5,4) --> CHANX  (6,4) T/P:  9 -1 | cab [ 6, 4] SBLOCK we (182 868) SWC 
-| CHANX  (6,4) --> CHANX  (7,4) T/P:  9 -1 | cab [ 7, 4] SBLOCK we (216 868) SWC 
-| CHANX  (7,4) --> CHANX  (8,4) T/P:  9 -1 | clb [ 8, 4] SBLOCK we (248 1028) SWC 
-| CHANX  (8,4) --> CHANX  (9,4) T/P:  9 -1 | clb [ 9, 4] SBLOCK we (282 1028) SWC 
-| CHANX  (9,4) --> CHANY  (9,5) T/P:  9 -1 | cab_vmm [10, 4] SBLOCK wn (318 820) SWC 
-| CHANY  (9,5) --> CHANY  (9,6) T/P:  9 -1 | cab_vmm [10, 5] SBLOCK sn (318 837) SWC 
-| CHANY  (9,6) --> CHANX (10,6) T/P:  9 -1 | cab_vmm [10, 6] SBLOCK se (318 790) SWC 
-| CHANX (10,6) -->  IPIN (10,6) T/P:  9 14 | cab_vmm [10, 6] CHANX  (318,630) T9 I14 ~~~~ PIN SINK ~~~~ || net (gnd_dig) -> pin 14 in 10 6
+|  OPIN  (3,4) --> CHANX  (3,4) T/P: 15 20 |  cab [ 3, 4] CHANX  (73,660) T15 O4 SWC 
+| CHANX  (3,4) --> CHANX  (4,4) T/P: 15 -1 | clb [ 4, 4] SBLOCK we (105 1028) SWC 
+| CHANX  (4,4) --> CHANX  (5,4) T/P: 15 -1 | clb [ 5, 4] SBLOCK we (139 1028) SWC 
+| CHANX  (5,4) --> CHANX  (6,4) T/P: 15 -1 | cab [ 6, 4] SBLOCK we (175 868) SWC 
+| CHANX  (6,4) --> CHANX  (7,4) T/P: 15 -1 | cab [ 7, 4] SBLOCK we (209 868) SWC 
+| CHANX  (7,4) --> CHANX  (8,4) T/P: 15 -1 | clb [ 8, 4] SBLOCK we (241 1028) SWC 
+| CHANX  (8,4) --> CHANX  (9,4) T/P: 15 -1 | clb [ 9, 4] SBLOCK we (275 1028) SWC 
+| CHANX  (9,4) --> CHANY  (9,5) T/P: 15 -1 | cab_vmm [10, 4] SBLOCK wn (311 820) SWC 
+| CHANY  (9,5) --> CHANX (10,5) T/P: 15 -1 | cab_vmm [10, 5] SBLOCK se (311 789) SWC 
+| CHANX (10,5) -->  IPIN (10,5) T/P: 15 14 | cab_vmm [10, 5] CHANX  (311,629) T15 I14 ~~~~ PIN SINK ~~~~ || net (gnd_dig) -> pin 14 in 10 5
 SWC 
-| CHANX  (9,4) --> CHANY  (9,4) T/P:  9 -1 | cab_vmm [10, 4] SBLOCK ws (318 804) SWC 
-| CHANY  (9,4) --> CHANY  (9,3) T/P:  9 -1 | cab_vmm [10, 3] SBLOCK ns (318 835) SWC 
-| CHANY  (9,3) --> CHANX (10,2) T/P:  9 -1 | cab_vmm [10, 2] SBLOCK ne (318 850) SWC 
-| CHANX (10,2) --> CHANX (11,2) T/P:  9 -1 | cab_vmm [11, 2] SBLOCK we (352 866) SWC 
-| CHANX (11,2) -->  IPIN (11,2) T/P:  9 14 | cab_vmm [11, 2] CHANX  (352,626) T9 I14 ~~~~ PIN SINK ~~~~ || net (gnd_dig) -> pin 14 in 11 2
+| CHANY  (9,5) --> CHANY  (9,6) T/P: 15 -1 | cab_vmm [10, 5] SBLOCK sn (311 837) SWC 
+| CHANY  (9,6) --> CHANX (10,6) T/P: 15 -1 | cab_vmm [10, 6] SBLOCK se (311 790) SWC 
+| CHANX (10,6) -->  IPIN (10,6) T/P: 15 14 | cab_vmm [10, 6] CHANX  (311,630) T15 I14 ~~~~ PIN SINK ~~~~ || net (gnd_dig) -> pin 14 in 10 6
 SWC 
- ------------- (net18_1) ------------- 
-|  OPIN (13,0) --> CHANX (13,0) T/P: 11  7 | io_sd [13, 0] CHANX  (425,304) T11 I11 SWC 
-| CHANX (13,0) --> CHANX (12,0) T/P: 11 -1 | io_sd [13, 0] SBLOCK ew (414 352) SWC 
-| CHANX (12,0) --> CHANY (11,1) T/P: 11 -1 | io_sd [12, 0] SBLOCK en (380 336) SWC 
-| CHANY (11,1) --> CHANY (11,2) T/P: 11 -1 | clb [12, 1] SBLOCK sn (382 993) SWC 
-| CHANY (11,2) --> CHANX (11,2) T/P: 11 -1 | clb [12, 2] SBLOCK sw (382 962) SWC 
-| CHANX (11,2) -->  IPIN (11,2) T/P: 11 15 | cab_vmm [11, 2] CHANX  (350,642) T11 I15 ~~~~ PIN SINK ~~~~ || net (net18_1) -> pin 15 in 11 2
+ ------------- (net17_1) ------------- 
+|  OPIN (13,0) --> CHANX (13,0) T/P:  7  7 | io_sd [13, 0] CHANX  (429,304) T7 I11 SWC 
+| CHANX (13,0) --> CHANX (12,0) T/P:  7 -1 | io_sd [13, 0] SBLOCK ew (408 448) SWC 
+| CHANX (12,0) --> CHANX (11,0) T/P:  7 -1 | io_sd [12, 0] SBLOCK ew (374 448) SWC 
+| CHANX (11,0) --> CHANY (10,1) T/P:  7 -1 | io_sa [11, 0] SBLOCK en (344 432) SWC 
+| CHANY (10,1) --> CHANY (10,2) T/P:  7 -1 | cab_vmm [11, 1] SBLOCK sn (354 833) SWC 
+| CHANY (10,2) --> CHANY (10,3) T/P:  7 -1 | cab_vmm [11, 2] SBLOCK sn (354 834) SWC 
+| CHANY (10,3) --> CHANY (10,4) T/P:  7 -1 | cab_vmm [11, 3] SBLOCK sn (354 835) SWC 
+| CHANY (10,4) --> CHANY (10,5) T/P:  7 -1 | cab_vmm [11, 4] SBLOCK sn (354 836) SWC 
+| CHANY (10,5) --> CHANX (10,5) T/P:  7 -1 | cab_vmm [11, 5] SBLOCK sw (354 805) SWC 
+| CHANX (10,5) -->  IPIN (10,5) T/P:  7 15 | cab_vmm [10, 5] CHANX  (320,645) T7 I15 ~~~~ PIN SINK ~~~~ || net (net17_1) -> pin 15 in 10 5
 SWC 
- ------------- (net6_15) ------------- 
-|  OPIN (6,10) --> CHANX (6,10) T/P:  7 20 |  cab [ 6,10] CHANX  (184,666) T7 O4 SWC 
-| CHANX (6,10) --> CHANX (7,10) T/P:  7 -1 | cab [ 7,10] SBLOCK we (218 874) SWC 
-| CHANX (7,10) --> CHANY (7,10) T/P:  7 -1 | clb [ 8,10] SBLOCK ws (250 970) SWC 
-| CHANY (7,10) --> CHANY  (7,9) T/P:  7 -1 | clb [ 8, 9] SBLOCK ns (250 1001) SWC 
-| CHANY  (7,9) --> CHANY  (7,8) T/P:  7 -1 | clb [ 8, 8] SBLOCK ns (250 1000) SWC 
-| CHANY  (7,8) --> CHANY  (7,7) T/P:  7 -1 | clb [ 8, 7] SBLOCK ns (250 999) SWC 
-| CHANY  (7,7) --> CHANY  (7,6) T/P:  7 -1 | clb [ 8, 6] SBLOCK ns (250 998) SWC 
-| CHANY  (7,6) --> CHANX  (8,5) T/P:  7 -1 | clb [ 8, 5] SBLOCK ne (250 1013) SWC 
-| CHANX  (8,5) --> CHANX  (9,5) T/P:  7 -1 | clb [ 9, 5] SBLOCK we (284 1029) SWC 
-| CHANX  (9,5) --> CHANY  (9,5) T/P:  7 -1 | cab_vmm [10, 5] SBLOCK ws (320 805) SWC 
-| CHANY  (9,5) --> CHANY  (9,4) T/P:  7 -1 | cab_vmm [10, 4] SBLOCK ns (320 836) SWC 
-| CHANY  (9,4) --> CHANY  (9,3) T/P:  7 -1 | cab_vmm [10, 3] SBLOCK ns (320 835) SWC 
-| CHANY  (9,3) --> CHANY  (9,2) T/P:  7 -1 | cab_vmm [10, 2] SBLOCK ns (320 834) SWC 
-| CHANY  (9,2) --> CHANX (10,1) T/P:  7 -1 | cab_vmm [10, 1] SBLOCK ne (320 849) SWC 
-| CHANX (10,1) --> CHANY (10,2) T/P:  7 -1 | cab_vmm [11, 1] SBLOCK wn (354 817) SWC 
-| CHANY (10,2) -->  IPIN (11,2) T/P:  7 16 | cab_vmm [11, 2] CHANY  (354,1010) T7 XO0 ~~~~ PIN SINK ~~~~ || net (net6_15) -> pin 16 in 11 2
+ ------------- (net14_15) ------------- 
+|  OPIN (6,10) --> CHANX (6,10) T/P:  8 20 |  cab [ 6,10] CHANX  (183,666) T8 O4 SWC 
+| CHANX (6,10) --> CHANX (7,10) T/P:  8 -1 | cab [ 7,10] SBLOCK we (217 874) SWC 
+| CHANX (7,10) --> CHANX (8,10) T/P:  8 -1 | clb [ 8,10] SBLOCK we (249 1034) SWC 
+| CHANX (8,10) --> CHANY (8,10) T/P:  8 -1 | clb [ 9,10] SBLOCK ws (283 970) SWC 
+| CHANY (8,10) --> CHANY  (8,9) T/P:  8 -1 | clb [ 9, 9] SBLOCK ns (283 1001) SWC 
+| CHANY  (8,9) --> CHANY  (8,8) T/P:  8 -1 | clb [ 9, 8] SBLOCK ns (283 1000) SWC 
+| CHANY  (8,8) --> CHANY  (8,7) T/P:  8 -1 | clb [ 9, 7] SBLOCK ns (283 999) SWC 
+| CHANY  (8,7) --> CHANY  (8,6) T/P:  8 -1 | clb [ 9, 6] SBLOCK ns (283 998) SWC 
+| CHANY  (8,6) --> CHANY  (8,5) T/P:  8 -1 | clb [ 9, 5] SBLOCK ns (283 997) SWC 
+| CHANY  (8,5) --> CHANX  (9,4) T/P:  8 -1 | clb [ 9, 4] SBLOCK ne (283 1012) SWC 
+| CHANX  (9,4) --> CHANY  (9,5) T/P:  8 -1 | cab_vmm [10, 4] SBLOCK wn (319 820) SWC 
+| CHANY  (9,5) -->  IPIN (10,5) T/P:  8 16 | cab_vmm [10, 5] CHANY  (319,1013) T8 XO0 ~~~~ PIN SINK ~~~~ || net (net14_15) -> pin 16 in 10 5
 SWC 
- ------------- (net6_16) ------------- 
+ ------------- (net14_16) ------------- 
 |  OPIN (7,10) --> CHANX (7,10) T/P: 16 20 |  cab [ 7,10] CHANX  (208,666) T16 O4 SWC 
 | CHANX (7,10) --> CHANX (8,10) T/P: 16 -1 | clb [ 8,10] SBLOCK we (240 1034) SWC 
 | CHANX (8,10) --> CHANX (9,10) T/P: 16 -1 | clb [ 9,10] SBLOCK we (274 1034) SWC 
-| CHANX (9,10) --> CHANX (10,10) T/P: 16 -1 | cab_vmm [10,10] SBLOCK we (310 874) SWC 
-| CHANX (10,10) --> CHANY (10,10) T/P: 16 -1 | cab_vmm [11,10] SBLOCK ws (344 810) SWC 
-| CHANY (10,10) --> CHANY (10,9) T/P: 16 -1 | cab_vmm [11, 9] SBLOCK ns (344 841) SWC 
-| CHANY (10,9) --> CHANY (10,8) T/P: 16 -1 | cab_vmm [11, 8] SBLOCK ns (344 840) SWC 
-| CHANY (10,8) --> CHANY (10,7) T/P: 16 -1 | cab_vmm [11, 7] SBLOCK ns (344 839) SWC 
-| CHANY (10,7) --> CHANY (10,6) T/P: 16 -1 | cab_vmm [11, 6] SBLOCK ns (344 838) SWC 
-| CHANY (10,6) --> CHANY (10,5) T/P: 16 -1 | cab_vmm [11, 5] SBLOCK ns (344 837) SWC 
-| CHANY (10,5) --> CHANY (10,4) T/P: 16 -1 | cab_vmm [11, 4] SBLOCK ns (344 836) SWC 
-| CHANY (10,4) --> CHANY (10,3) T/P: 16 -1 | cab_vmm [11, 3] SBLOCK ns (344 835) SWC 
-| CHANY (10,3) --> CHANY (10,2) T/P: 16 -1 | cab_vmm [11, 2] SBLOCK ns (344 834) SWC 
-| CHANY (10,2) -->  IPIN (11,2) T/P: 16 17 | cab_vmm [11, 2] CHANY  (344,1026) T16 XO1 ~~~~ PIN SINK ~~~~ || net (net6_16) -> pin 17 in 11 2
+| CHANX (9,10) --> CHANY (9,10) T/P: 16 -1 | cab_vmm [10,10] SBLOCK ws (310 810) SWC 
+| CHANY (9,10) --> CHANY  (9,9) T/P: 16 -1 | cab_vmm [10, 9] SBLOCK ns (310 841) SWC 
+| CHANY  (9,9) --> CHANY  (9,8) T/P: 16 -1 | cab_vmm [10, 8] SBLOCK ns (310 840) SWC 
+| CHANY  (9,8) --> CHANY  (9,7) T/P: 16 -1 | cab_vmm [10, 7] SBLOCK ns (310 839) SWC 
+| CHANY  (9,7) --> CHANY  (9,6) T/P: 16 -1 | cab_vmm [10, 6] SBLOCK ns (310 838) SWC 
+| CHANY  (9,6) --> CHANY  (9,5) T/P: 16 -1 | cab_vmm [10, 5] SBLOCK ns (310 837) SWC 
+| CHANY  (9,5) -->  IPIN (10,5) T/P: 16 17 | cab_vmm [10, 5] CHANY  (310,1029) T16 XO1 ~~~~ PIN SINK ~~~~ || net (net14_16) -> pin 17 in 10 5
 SWC 
- ------------- (net6_7) ------------- 
-|  OPIN  (6,6) --> CHANX  (6,6) T/P:  7 20 |  cab [ 6, 6] CHANX  (184,662) T7 O4 SWC 
-| CHANX  (6,6) --> CHANX  (7,6) T/P:  7 -1 | cab [ 7, 6] SBLOCK we (218 870) SWC 
-| CHANX  (7,6) --> CHANX  (8,6) T/P:  7 -1 | clb [ 8, 6] SBLOCK we (250 1030) SWC 
-| CHANX  (8,6) --> CHANY  (8,6) T/P:  7 -1 | clb [ 9, 6] SBLOCK ws (284 966) SWC 
-| CHANY  (8,6) --> CHANY  (8,5) T/P:  7 -1 | clb [ 9, 5] SBLOCK ns (284 997) SWC 
-| CHANY  (8,5) --> CHANY  (8,4) T/P:  7 -1 | clb [ 9, 4] SBLOCK ns (284 996) SWC 
-| CHANY  (8,4) --> CHANX  (9,3) T/P:  7 -1 | clb [ 9, 3] SBLOCK ne (284 1011) SWC 
-| CHANX  (9,3) --> CHANX (10,3) T/P:  7 -1 | cab_vmm [10, 3] SBLOCK we (320 867) SWC 
-| CHANX (10,3) --> CHANX (11,3) T/P:  7 -1 | cab_vmm [11, 3] SBLOCK we (354 867) SWC 
-| CHANX (11,3) --> CHANY (11,3) T/P:  7 -1 | clb [12, 3] SBLOCK ws (386 963) SWC 
-| CHANY (11,3) --> CHANY (11,2) T/P:  7 -1 | clb [12, 2] SBLOCK ns (386 994) SWC 
-| CHANY (11,2) -->  IPIN (11,2) T/P:  7 18 |  clb [12, 2] CHANY  (386,690) T7 AXO2 ~~~~ PIN SINK ~~~~ || net (net6_7) -> pin 18 in 11 2
+ ------------- (net14_7) ------------- 
+|  OPIN  (6,6) --> CHANX  (6,6) T/P: 14 20 |  cab [ 6, 6] CHANX  (176,662) T14 O4 SWC 
+| CHANX  (6,6) --> CHANX  (7,6) T/P: 14 -1 | cab [ 7, 6] SBLOCK we (210 870) SWC 
+| CHANX  (7,6) --> CHANX  (8,6) T/P: 14 -1 | clb [ 8, 6] SBLOCK we (242 1030) SWC 
+| CHANX  (8,6) --> CHANX  (9,6) T/P: 14 -1 | clb [ 9, 6] SBLOCK we (276 1030) SWC 
+| CHANX  (9,6) --> CHANY  (9,6) T/P: 14 -1 | cab_vmm [10, 6] SBLOCK ws (312 806) SWC 
+| CHANY  (9,6) --> CHANX (10,5) T/P: 14 -1 | cab_vmm [10, 5] SBLOCK ne (312 853) SWC 
+| CHANX (10,5) --> CHANY (10,5) T/P: 14 -1 | cab_vmm [11, 5] SBLOCK ws (346 805) SWC 
+| CHANY (10,5) -->  IPIN (10,5) T/P: 14 18 | cab_vmm [11, 5] CHANY  (346,1109) T14 O2 ~~~~ PIN SINK ~~~~ || net (net14_7) -> pin 18 in 10 5
 SWC 
- ------------- (net6_8) ------------- 
-|  OPIN  (7,6) --> CHANX  (7,6) T/P:  9 20 |  cab [ 7, 6] CHANX  (216,662) T9 O4 SWC 
-| CHANX  (7,6) --> CHANX  (8,6) T/P:  9 -1 | clb [ 8, 6] SBLOCK we (248 1030) SWC 
-| CHANX  (8,6) --> CHANY  (8,6) T/P:  9 -1 | clb [ 9, 6] SBLOCK ws (282 966) SWC 
-| CHANY  (8,6) --> CHANY  (8,5) T/P:  9 -1 | clb [ 9, 5] SBLOCK ns (282 997) SWC 
-| CHANY  (8,5) --> CHANY  (8,4) T/P:  9 -1 | clb [ 9, 4] SBLOCK ns (282 996) SWC 
-| CHANY  (8,4) --> CHANX  (9,3) T/P:  9 -1 | clb [ 9, 3] SBLOCK ne (282 1011) SWC 
-| CHANX  (9,3) --> CHANX (10,3) T/P:  9 -1 | cab_vmm [10, 3] SBLOCK we (318 867) SWC 
-| CHANX (10,3) --> CHANX (11,3) T/P:  9 -1 | cab_vmm [11, 3] SBLOCK we (352 867) SWC 
-| CHANX (11,3) --> CHANY (11,3) T/P:  9 -1 | clb [12, 3] SBLOCK ws (384 963) SWC 
-| CHANY (11,3) --> CHANY (11,2) T/P:  9 -1 | clb [12, 2] SBLOCK ns (384 994) SWC 
-| CHANY (11,2) -->  IPIN (11,2) T/P:  9 19 |  clb [12, 2] CHANY  (384,706) T9 AXO3 ~~~~ PIN SINK ~~~~ || net (net6_8) -> pin 19 in 11 2
+ ------------- (net14_8) ------------- 
+|  OPIN  (7,6) --> CHANX  (7,6) T/P: 11 20 |  cab [ 7, 6] CHANX  (214,662) T11 O4 SWC 
+| CHANX  (7,6) --> CHANX  (8,6) T/P: 11 -1 | clb [ 8, 6] SBLOCK we (246 1030) SWC 
+| CHANX  (8,6) --> CHANX  (9,6) T/P: 11 -1 | clb [ 9, 6] SBLOCK we (280 1030) SWC 
+| CHANX  (9,6) --> CHANY  (9,6) T/P: 11 -1 | cab_vmm [10, 6] SBLOCK ws (316 806) SWC 
+| CHANY  (9,6) --> CHANX (10,5) T/P: 11 -1 | cab_vmm [10, 5] SBLOCK ne (316 853) SWC 
+| CHANX (10,5) --> CHANY (10,5) T/P: 11 -1 | cab_vmm [11, 5] SBLOCK ws (350 805) SWC 
+| CHANY (10,5) -->  IPIN (10,5) T/P: 11 19 | cab_vmm [11, 5] CHANY  (350,1125) T11 O3 ~~~~ PIN SINK ~~~~ || net (net14_8) -> pin 19 in 10 5
+SWC 
+ ------------- (net18_1) ------------- 
+|  OPIN (10,5) --> CHANX (10,5) T/P:  1 24 | cab_vmm [10, 5] CHANX  (327,661) T1 O4 SWC 
+| CHANX (10,5) --> CHANX (11,5) T/P:  1 -1 | cab_vmm [11, 5] SBLOCK we (361 869) SWC 
+| CHANX (11,5) --> CHANY (11,5) T/P:  1 -1 | clb [12, 5] SBLOCK ws (393 965) SWC 
+| CHANY (11,5) --> CHANY (11,4) T/P:  1 -1 | clb [12, 4] SBLOCK ns (393 996) SWC 
+| CHANY (11,4) --> CHANY (11,3) T/P:  1 -1 | clb [12, 3] SBLOCK ns (393 995) SWC 
+| CHANY (11,3) --> CHANY (11,2) T/P:  1 -1 | clb [12, 2] SBLOCK ns (393 994) SWC 
+| CHANY (11,2) --> CHANY (11,1) T/P:  1 -1 | clb [12, 1] SBLOCK ns (393 993) SWC 
+| CHANY (11,1) --> CHANX (12,0) T/P:  1 -1 | io_sd [12, 0] SBLOCK ne (381 432) SWC 
+| CHANX (12,0) -->  IPIN (12,0) T/P:  1  9 | io_sd [12, 0] CHANX  (404,320) T1 I15 ~~~~ PIN SINK ~~~~ || net (net18_1) -> pin 9 in 12 0
+SWC 
+| CHANX (12,0) --> CHANX (11,0) T/P:  1 -1 | io_sd [12, 0] SBLOCK ew (381 448) SWC 
+| CHANX (11,0) --> CHANX (10,0) T/P:  1 -1 | io_sa [11, 0] SBLOCK ew (351 448) SWC 
+| CHANX (10,0) --> CHANX  (9,0) T/P:  1 -1 | io_sa [10, 0] SBLOCK ew (317 448) SWC 
+| CHANX  (9,0) --> CHANX  (8,0) T/P:  1 -1 | io_sd [ 9, 0] SBLOCK ew (279 448) SWC 
+| CHANX  (8,0) --> CHANX  (7,0) T/P:  1 -1 | io_sd [ 8, 0] SBLOCK ew (245 448) SWC 
+| CHANX  (7,0) -->  IPIN  (7,1) T/P:  1 11 | io_sa [ 7, 0] CHANX  (235,384) T1 XI11 ~~~~ PIN SINK ~~~~ || net (net18_1) -> pin 11 in 7 1
+SWC 
+ ------------- (net13_1) ------------- 
+|  OPIN  (6,2) --> CHANX  (6,2) T/P: 12 20 |  cab [ 6, 2] CHANX  (179,658) T12 O4 SWC 
+| CHANX  (6,2) --> CHANX  (7,2) T/P: 12 -1 | cab [ 7, 2] SBLOCK we (213 866) SWC 
+| CHANX  (7,2) --> CHANX  (8,2) T/P: 12 -1 | clb [ 8, 2] SBLOCK we (245 1026) SWC 
+| CHANX  (8,2) --> CHANX  (9,2) T/P: 12 -1 | clb [ 9, 2] SBLOCK we (279 1026) SWC 
+| CHANX  (9,2) --> CHANY  (9,3) T/P: 12 -1 | cab_vmm [10, 2] SBLOCK wn (315 818) SWC 
+| CHANY  (9,3) --> CHANY  (9,4) T/P: 12 -1 | cab_vmm [10, 3] SBLOCK sn (315 835) SWC 
+| CHANY  (9,4) --> CHANY  (9,5) T/P: 12 -1 | cab_vmm [10, 4] SBLOCK sn (315 836) SWC 
+| CHANY  (9,5) --> CHANX (10,5) T/P: 12 -1 | cab_vmm [10, 5] SBLOCK se (315 789) SWC 
+| CHANX (10,5) -->  IPIN (10,6) T/P: 12 12 | cab_vmm [10, 5] CHANX  (315,709) T12 XI12 ~~~~ PIN SINK ~~~~ || net (net13_1) -> pin 12 in 10 6
 SWC 
  ------------- (net5_1) ------------- 
-|  OPIN (11,2) --> CHANX (11,2) T/P:  7 24 | cab_vmm [11, 2] CHANX  (354,658) T7 O4 SWC 
-| CHANX (11,2) --> CHANX (10,2) T/P:  7 -1 | cab_vmm [11, 2] SBLOCK ew (354 866) SWC 
-| CHANX (10,2) --> CHANX  (9,2) T/P:  7 -1 | cab_vmm [10, 2] SBLOCK ew (320 866) SWC 
-| CHANX  (9,2) --> CHANX  (8,2) T/P:  7 -1 | clb [ 9, 2] SBLOCK ew (284 1026) SWC 
-| CHANX  (8,2) --> CHANY  (7,2) T/P:  7 -1 | clb [ 8, 2] SBLOCK es (250 946) SWC 
-| CHANY  (7,2) --> CHANY  (7,1) T/P:  7 -1 | clb [ 8, 1] SBLOCK ns (250 993) SWC 
-| CHANY  (7,1) --> CHANX  (7,0) T/P:  7 -1 | io_sd [ 8, 0] SBLOCK nw (238 400) SWC 
-| CHANX  (7,0) -->  IPIN  (7,1) T/P:  7 11 | io_sa [ 7, 0] CHANX  (228,384) T7 XI11 ~~~~ PIN SINK ~~~~ || net (net5_1) -> pin 11 in 7 1
+|  OPIN (13,0) --> CHANX (13,0) T/P:  0 13 | io_sd [13, 0] CHANX  (439,336) T0 O3 SWC 
+| CHANX (13,0) --> CHANX (12,0) T/P:  0 -1 | io_sd [13, 0] SBLOCK ew (416 448) SWC 
+| CHANX (12,0) --> CHANX (11,0) T/P:  0 -1 | io_sd [12, 0] SBLOCK ew (382 448) SWC 
+| CHANX (11,0) --> CHANY (10,1) T/P:  0 -1 | io_sa [11, 0] SBLOCK en (352 432) SWC 
+| CHANY (10,1) --> CHANY (10,2) T/P:  0 -1 | cab_vmm [11, 1] SBLOCK sn (362 833) SWC 
+| CHANY (10,2) --> CHANY (10,3) T/P:  0 -1 | cab_vmm [11, 2] SBLOCK sn (362 834) SWC 
+| CHANY (10,3) --> CHANY (10,4) T/P:  0 -1 | cab_vmm [11, 3] SBLOCK sn (362 835) SWC 
+| CHANY (10,4) --> CHANY (10,5) T/P:  0 -1 | cab_vmm [11, 4] SBLOCK sn (362 836) SWC 
+| CHANY (10,5) --> CHANY (10,6) T/P:  0 -1 | cab_vmm [11, 5] SBLOCK sn (362 837) SWC 
+| CHANY (10,6) --> CHANX (10,6) T/P:  0 -1 | cab_vmm [11, 6] SBLOCK sw (362 806) SWC 
+| CHANX (10,6) -->  IPIN (10,6) T/P:  0 13 | cab_vmm [10, 6] CHANX  (328,614) T0 I13 ~~~~ PIN SINK ~~~~ || net (net5_1) -> pin 13 in 10 6
 SWC 
- ------------- (net11_1) ------------- 
-|  OPIN  (6,2) --> CHANX  (6,2) T/P: 15 20 |  cab [ 6, 2] CHANX  (175,658) T15 O4 SWC 
-| CHANX  (6,2) --> CHANX  (7,2) T/P: 15 -1 | cab [ 7, 2] SBLOCK we (209 866) SWC 
-| CHANX  (7,2) --> CHANY  (7,3) T/P: 15 -1 | clb [ 8, 2] SBLOCK wn (241 978) SWC 
-| CHANY  (7,3) --> CHANY  (7,4) T/P: 15 -1 | clb [ 8, 3] SBLOCK sn (241 995) SWC 
-| CHANY  (7,4) --> CHANX  (8,4) T/P: 15 -1 | clb [ 8, 4] SBLOCK se (241 948) SWC 
-| CHANX  (8,4) --> CHANX  (9,4) T/P: 15 -1 | clb [ 9, 4] SBLOCK we (275 1028) SWC 
-| CHANX  (9,4) --> CHANX (10,4) T/P: 15 -1 | cab_vmm [10, 4] SBLOCK we (311 868) SWC 
-| CHANX (10,4) --> CHANY (10,5) T/P: 15 -1 | cab_vmm [11, 4] SBLOCK wn (345 820) SWC 
-| CHANY (10,5) --> CHANX (10,5) T/P: 15 -1 | cab_vmm [11, 5] SBLOCK sw (345 805) SWC 
-| CHANX (10,5) -->  IPIN (10,6) T/P: 15 12 | cab_vmm [10, 5] CHANX  (311,709) T15 XI12 ~~~~ PIN SINK ~~~~ || net (net11_1) -> pin 12 in 10 6
+ ------------- (net6_1) ------------- 
+|  OPIN (13,0) --> CHANX (13,0) T/P:  1 16 | io_sd [13, 0] CHANX  (438,352) T1 O7 SWC 
+| CHANX (13,0) --> CHANY (12,1) T/P:  1 -1 | io_sd [13, 0] SBLOCK en (415 432) SWC 
+| CHANY (12,1) --> CHANY (12,2) T/P:  1 -1 | clb [13, 1] SBLOCK sn (427 993) SWC 
+| CHANY (12,2) --> CHANY (12,3) T/P:  1 -1 | clb [13, 2] SBLOCK sn (427 994) SWC 
+| CHANY (12,3) --> CHANY (12,4) T/P:  1 -1 | clb [13, 3] SBLOCK sn (427 995) SWC 
+| CHANY (12,4) --> CHANX (12,4) T/P:  1 -1 | clb [13, 4] SBLOCK sw (427 964) SWC 
+| CHANX (12,4) --> CHANX (11,4) T/P:  1 -1 | clb [12, 4] SBLOCK ew (393 1028) SWC 
+| CHANX (11,4) --> CHANY (10,5) T/P:  1 -1 | cab_vmm [11, 4] SBLOCK en (361 852) SWC 
+| CHANY (10,5) --> CHANY (10,6) T/P:  1 -1 | cab_vmm [11, 5] SBLOCK sn (361 837) SWC 
+| CHANY (10,6) --> CHANX (10,6) T/P:  1 -1 | cab_vmm [11, 6] SBLOCK sw (361 806) SWC 
+| CHANX (10,6) -->  IPIN (10,6) T/P:  1 15 | cab_vmm [10, 6] CHANX  (327,646) T1 I15 ~~~~ PIN SINK ~~~~ || net (net6_1) -> pin 15 in 10 6
 SWC 
- ------------- (net20_1) ------------- 
-|  OPIN (13,0) --> CHANX (13,0) T/P: 15 13 | io_sd [13, 0] CHANX  (420,336) T15 O3 SWC 
-| CHANX (13,0) --> CHANY (12,1) T/P: 15 -1 | io_sd [13, 0] SBLOCK en (409 336) SWC 
-| CHANY (12,1) --> CHANY (12,2) T/P: 15 -1 | clb [13, 1] SBLOCK sn (411 993) SWC 
-| CHANY (12,2) --> CHANY (12,3) T/P: 15 -1 | clb [13, 2] SBLOCK sn (411 994) SWC 
-| CHANY (12,3) --> CHANY (12,4) T/P: 15 -1 | clb [13, 3] SBLOCK sn (411 995) SWC 
-| CHANY (12,4) --> CHANY (12,5) T/P: 15 -1 | clb [13, 4] SBLOCK sn (411 996) SWC 
-| CHANY (12,5) --> CHANX (12,5) T/P: 15 -1 | clb [13, 5] SBLOCK sw (411 965) SWC 
-| CHANX (12,5) --> CHANX (11,5) T/P: 15 -1 | clb [12, 5] SBLOCK ew (377 1029) SWC 
-| CHANX (11,5) --> CHANY (10,6) T/P: 15 -1 | cab_vmm [11, 5] SBLOCK en (345 853) SWC 
-| CHANY (10,6) --> CHANX (10,6) T/P: 15 -1 | cab_vmm [11, 6] SBLOCK sw (345 806) SWC 
-| CHANX (10,6) -->  IPIN (10,6) T/P: 15 13 | cab_vmm [10, 6] CHANX  (311,614) T15 I13 ~~~~ PIN SINK ~~~~ || net (net20_1) -> pin 13 in 10 6
-SWC 
- ------------- (net21_1) ------------- 
-|  OPIN (13,0) --> CHANX (13,0) T/P: 14 16 | io_sd [13, 0] CHANX  (421,352) T14 O7 SWC 
-| CHANX (13,0) --> CHANX (12,0) T/P: 14 -1 | io_sd [13, 0] SBLOCK ew (410 352) SWC 
-| CHANX (12,0) --> CHANX (11,0) T/P: 14 -1 | io_sd [12, 0] SBLOCK ew (376 352) SWC 
-| CHANX (11,0) --> CHANY (10,1) T/P: 14 -1 | io_sa [11, 0] SBLOCK en (346 336) SWC 
-| CHANY (10,1) --> CHANY (10,2) T/P: 14 -1 | cab_vmm [11, 1] SBLOCK sn (346 833) SWC 
-| CHANY (10,2) --> CHANY (10,3) T/P: 14 -1 | cab_vmm [11, 2] SBLOCK sn (346 834) SWC 
-| CHANY (10,3) --> CHANY (10,4) T/P: 14 -1 | cab_vmm [11, 3] SBLOCK sn (346 835) SWC 
-| CHANY (10,4) --> CHANY (10,5) T/P: 14 -1 | cab_vmm [11, 4] SBLOCK sn (346 836) SWC 
-| CHANY (10,5) --> CHANY (10,6) T/P: 14 -1 | cab_vmm [11, 5] SBLOCK sn (346 837) SWC 
-| CHANY (10,6) --> CHANX (10,6) T/P: 14 -1 | cab_vmm [11, 6] SBLOCK sw (346 806) SWC 
-| CHANX (10,6) -->  IPIN (10,6) T/P: 14 15 | cab_vmm [10, 6] CHANX  (312,646) T14 I15 ~~~~ PIN SINK ~~~~ || net (net21_1) -> pin 15 in 10 6
-SWC 
- ------------- (net16_15) ------------- 
+ ------------- (net12_15) ------------- 
 |  OPIN (10,6) --> CHANY  (9,6) T/P:  8 20 | cab_vmm [10, 6] CHANY  (319,1014) T8 XO0 SWC 
 | CHANY  (9,6) --> CHANY  (9,7) T/P:  8 -1 | cab_vmm [10, 6] SBLOCK sn (319 838) SWC 
 | CHANY  (9,7) --> CHANY  (9,8) T/P:  8 -1 | cab_vmm [10, 7] SBLOCK sn (319 839) SWC 
@@ -583,9 +544,9 @@ SWC
 | CHANX  (9,9) --> CHANX  (8,9) T/P:  8 -1 | clb [ 9, 9] SBLOCK ew (283 1033) SWC 
 | CHANX  (8,9) --> CHANX  (7,9) T/P:  8 -1 | clb [ 8, 9] SBLOCK ew (249 1033) SWC 
 | CHANX  (7,9) --> CHANX  (6,9) T/P:  8 -1 | cab [ 7, 9] SBLOCK ew (217 873) SWC 
-| CHANX  (6,9) -->  IPIN (6,10) T/P:  8 12 |  cab [ 6, 9] CHANX  (183,713) T8 XI12 ~~~~ PIN SINK ~~~~ || net (net16_15) -> pin 12 in 6 10
+| CHANX  (6,9) -->  IPIN (6,10) T/P:  8 12 |  cab [ 6, 9] CHANX  (183,713) T8 XI12 ~~~~ PIN SINK ~~~~ || net (net12_15) -> pin 12 in 6 10
 SWC 
- ------------- (net16_16) ------------- 
+ ------------- (net12_16) ------------- 
 |  OPIN (10,6) --> CHANY  (9,6) T/P:  7 21 | cab_vmm [10, 6] CHANY  (320,1030) T7 XO1 SWC 
 | CHANY  (9,6) --> CHANY  (9,7) T/P:  7 -1 | cab_vmm [10, 6] SBLOCK sn (320 838) SWC 
 | CHANY  (9,7) --> CHANY  (9,8) T/P:  7 -1 | cab_vmm [10, 7] SBLOCK sn (320 839) SWC 
@@ -593,103 +554,103 @@ SWC
 | CHANY  (9,9) --> CHANX  (9,9) T/P:  7 -1 | cab_vmm [10, 9] SBLOCK sw (320 809) SWC 
 | CHANX  (9,9) --> CHANX  (8,9) T/P:  7 -1 | clb [ 9, 9] SBLOCK ew (284 1033) SWC 
 | CHANX  (8,9) --> CHANX  (7,9) T/P:  7 -1 | clb [ 8, 9] SBLOCK ew (250 1033) SWC 
-| CHANX  (7,9) -->  IPIN (7,10) T/P:  7 12 |  cab [ 7, 9] CHANX  (218,713) T7 XI12 ~~~~ PIN SINK ~~~~ || net (net16_16) -> pin 12 in 7 10
+| CHANX  (7,9) -->  IPIN (7,10) T/P:  7 12 |  cab [ 7, 9] CHANX  (218,713) T7 XI12 ~~~~ PIN SINK ~~~~ || net (net12_16) -> pin 12 in 7 10
 SWC 
- ------------- (net16_7) ------------- 
-|  OPIN (10,6) --> CHANY (10,6) T/P:  8 22 | cab_vmm [11, 6] CHANY  (353,1110) T8 O2 SWC 
-| CHANY (10,6) --> CHANX (10,6) T/P:  8 -1 | cab_vmm [11, 6] SBLOCK sw (353 806) SWC 
-| CHANX (10,6) --> CHANX  (9,6) T/P:  8 -1 | cab_vmm [10, 6] SBLOCK ew (319 870) SWC 
-| CHANX  (9,6) --> CHANX  (8,6) T/P:  8 -1 | clb [ 9, 6] SBLOCK ew (283 1030) SWC 
-| CHANX  (8,6) --> CHANX  (7,6) T/P:  8 -1 | clb [ 8, 6] SBLOCK ew (249 1030) SWC 
-| CHANX  (7,6) --> CHANY  (6,6) T/P:  8 -1 | cab [ 7, 6] SBLOCK es (217 790) SWC 
-| CHANY  (6,6) --> CHANX  (6,5) T/P:  8 -1 | cab [ 7, 5] SBLOCK nw (217 821) SWC 
-| CHANX  (6,5) -->  IPIN  (6,6) T/P:  8 12 |  cab [ 6, 5] CHANX  (183,709) T8 XI12 ~~~~ PIN SINK ~~~~ || net (net16_7) -> pin 12 in 6 6
+ ------------- (net12_7) ------------- 
+|  OPIN (10,6) --> CHANY (10,6) T/P:  7 22 | cab_vmm [11, 6] CHANY  (354,1110) T7 O2 SWC 
+| CHANY (10,6) --> CHANX (10,6) T/P:  7 -1 | cab_vmm [11, 6] SBLOCK sw (354 806) SWC 
+| CHANX (10,6) --> CHANX  (9,6) T/P:  7 -1 | cab_vmm [10, 6] SBLOCK ew (320 870) SWC 
+| CHANX  (9,6) --> CHANX  (8,6) T/P:  7 -1 | clb [ 9, 6] SBLOCK ew (284 1030) SWC 
+| CHANX  (8,6) --> CHANX  (7,6) T/P:  7 -1 | clb [ 8, 6] SBLOCK ew (250 1030) SWC 
+| CHANX  (7,6) --> CHANY  (6,6) T/P:  7 -1 | cab [ 7, 6] SBLOCK es (218 790) SWC 
+| CHANY  (6,6) --> CHANX  (6,5) T/P:  7 -1 | cab [ 7, 5] SBLOCK nw (218 821) SWC 
+| CHANX  (6,5) -->  IPIN  (6,6) T/P:  7 12 |  cab [ 6, 5] CHANX  (184,709) T7 XI12 ~~~~ PIN SINK ~~~~ || net (net12_7) -> pin 12 in 6 6
 SWC 
- ------------- (net16_8) ------------- 
-|  OPIN (10,6) --> CHANY (10,6) T/P:  6 23 | cab_vmm [11, 6] CHANY  (356,1126) T6 O3 SWC 
-| CHANY (10,6) --> CHANX (10,5) T/P:  6 -1 | cab_vmm [11, 5] SBLOCK nw (356 821) SWC 
-| CHANX (10,5) --> CHANX  (9,5) T/P:  6 -1 | cab_vmm [10, 5] SBLOCK ew (322 869) SWC 
-| CHANX  (9,5) --> CHANX  (8,5) T/P:  6 -1 | clb [ 9, 5] SBLOCK ew (286 1029) SWC 
-| CHANX  (8,5) --> CHANX  (7,5) T/P:  6 -1 | clb [ 8, 5] SBLOCK ew (252 1029) SWC 
-| CHANX  (7,5) -->  IPIN  (7,6) T/P:  6 12 |  cab [ 7, 5] CHANX  (220,709) T6 XI12 ~~~~ PIN SINK ~~~~ || net (net16_8) -> pin 12 in 7 6
+ ------------- (net12_8) ------------- 
+|  OPIN (10,6) --> CHANY (10,6) T/P:  8 23 | cab_vmm [11, 6] CHANY  (353,1126) T8 O3 SWC 
+| CHANY (10,6) --> CHANX (10,5) T/P:  8 -1 | cab_vmm [11, 5] SBLOCK nw (353 821) SWC 
+| CHANX (10,5) --> CHANX  (9,5) T/P:  8 -1 | cab_vmm [10, 5] SBLOCK ew (319 869) SWC 
+| CHANX  (9,5) --> CHANX  (8,5) T/P:  8 -1 | clb [ 9, 5] SBLOCK ew (283 1029) SWC 
+| CHANX  (8,5) --> CHANX  (7,5) T/P:  8 -1 | clb [ 8, 5] SBLOCK ew (249 1029) SWC 
+| CHANX  (7,5) -->  IPIN  (7,6) T/P:  8 12 |  cab [ 7, 5] CHANX  (217,709) T8 XI12 ~~~~ PIN SINK ~~~~ || net (net12_8) -> pin 12 in 7 6
 SWC 
- ------------- (net16_9) ------------- 
+ ------------- (net12_9) ------------- 
 |  OPIN (10,6) --> CHANY  (9,6) T/P: 13 28 | cab_vmm [10, 6] CHANY  (313,950) T13 XI0 SWC 
 | CHANY  (9,6) --> CHANX  (9,6) T/P: 13 -1 | cab_vmm [10, 6] SBLOCK sw (313 806) SWC 
 | CHANX  (9,6) --> CHANX  (8,6) T/P: 13 -1 | clb [ 9, 6] SBLOCK ew (277 1030) SWC 
 | CHANX  (8,6) --> CHANX  (7,6) T/P: 13 -1 | clb [ 8, 6] SBLOCK ew (243 1030) SWC 
 | CHANX  (7,6) --> CHANX  (6,6) T/P: 13 -1 | cab [ 7, 6] SBLOCK ew (211 870) SWC 
-| CHANX  (6,6) -->  IPIN  (6,7) T/P: 13 12 |  cab [ 6, 6] CHANX  (177,710) T13 XI12 ~~~~ PIN SINK ~~~~ || net (net16_9) -> pin 12 in 6 7
+| CHANX  (6,6) -->  IPIN  (6,7) T/P: 13 12 |  cab [ 6, 6] CHANX  (177,710) T13 XI12 ~~~~ PIN SINK ~~~~ || net (net12_9) -> pin 12 in 6 7
 SWC 
- ------------- (net16_10) ------------- 
-|  OPIN (10,6) --> CHANY  (9,6) T/P:  0 29 | cab_vmm [10, 6] CHANY  (328,966) T0 XI1 SWC 
-| CHANY  (9,6) --> CHANX  (9,6) T/P:  0 -1 | cab_vmm [10, 6] SBLOCK sw (328 806) SWC 
-| CHANX  (9,6) --> CHANX  (8,6) T/P:  0 -1 | clb [ 9, 6] SBLOCK ew (292 1030) SWC 
-| CHANX  (8,6) --> CHANX  (7,6) T/P:  0 -1 | clb [ 8, 6] SBLOCK ew (258 1030) SWC 
-| CHANX  (7,6) -->  IPIN  (7,7) T/P:  0 12 |  cab [ 7, 6] CHANX  (226,710) T0 XI12 ~~~~ PIN SINK ~~~~ || net (net16_10) -> pin 12 in 7 7
+ ------------- (net12_10) ------------- 
+|  OPIN (10,6) --> CHANY  (9,6) T/P:  1 29 | cab_vmm [10, 6] CHANY  (327,966) T1 XI1 SWC 
+| CHANY  (9,6) --> CHANX  (9,6) T/P:  1 -1 | cab_vmm [10, 6] SBLOCK sw (327 806) SWC 
+| CHANX  (9,6) --> CHANX  (8,6) T/P:  1 -1 | clb [ 9, 6] SBLOCK ew (291 1030) SWC 
+| CHANX  (8,6) --> CHANX  (7,6) T/P:  1 -1 | clb [ 8, 6] SBLOCK ew (257 1030) SWC 
+| CHANX  (7,6) -->  IPIN  (7,7) T/P:  1 12 |  cab [ 7, 6] CHANX  (225,710) T1 XI12 ~~~~ PIN SINK ~~~~ || net (net12_10) -> pin 12 in 7 7
 SWC 
- ------------- (net16_11) ------------- 
-|  OPIN (10,6) --> CHANY  (9,6) T/P:  6 30 | cab_vmm [10, 6] CHANY  (322,982) T6 XI2 SWC 
+ ------------- (net12_11) ------------- 
+|  OPIN (10,6) --> CHANY  (9,6) T/P:  9 30 | cab_vmm [10, 6] CHANY  (318,982) T9 XI2 SWC 
+| CHANY  (9,6) --> CHANY  (9,7) T/P:  9 -1 | cab_vmm [10, 6] SBLOCK sn (318 838) SWC 
+| CHANY  (9,7) --> CHANX  (9,7) T/P:  9 -1 | cab_vmm [10, 7] SBLOCK sw (318 807) SWC 
+| CHANX  (9,7) --> CHANX  (8,7) T/P:  9 -1 | clb [ 9, 7] SBLOCK ew (282 1031) SWC 
+| CHANX  (8,7) --> CHANX  (7,7) T/P:  9 -1 | clb [ 8, 7] SBLOCK ew (248 1031) SWC 
+| CHANX  (7,7) --> CHANX  (6,7) T/P:  9 -1 | cab [ 7, 7] SBLOCK ew (216 871) SWC 
+| CHANX  (6,7) -->  IPIN  (6,8) T/P:  9 12 |  cab [ 6, 7] CHANX  (182,711) T9 XI12 ~~~~ PIN SINK ~~~~ || net (net12_11) -> pin 12 in 6 8
+SWC 
+ ------------- (net12_12) ------------- 
+|  OPIN (10,6) --> CHANY  (9,6) T/P:  6 31 | cab_vmm [10, 6] CHANY  (322,998) T6 XI3 SWC 
 | CHANY  (9,6) --> CHANY  (9,7) T/P:  6 -1 | cab_vmm [10, 6] SBLOCK sn (322 838) SWC 
 | CHANY  (9,7) --> CHANX  (9,7) T/P:  6 -1 | cab_vmm [10, 7] SBLOCK sw (322 807) SWC 
 | CHANX  (9,7) --> CHANX  (8,7) T/P:  6 -1 | clb [ 9, 7] SBLOCK ew (286 1031) SWC 
 | CHANX  (8,7) --> CHANX  (7,7) T/P:  6 -1 | clb [ 8, 7] SBLOCK ew (252 1031) SWC 
-| CHANX  (7,7) --> CHANX  (6,7) T/P:  6 -1 | cab [ 7, 7] SBLOCK ew (220 871) SWC 
-| CHANX  (6,7) -->  IPIN  (6,8) T/P:  6 12 |  cab [ 6, 7] CHANX  (186,711) T6 XI12 ~~~~ PIN SINK ~~~~ || net (net16_11) -> pin 12 in 6 8
+| CHANX  (7,7) -->  IPIN  (7,8) T/P:  6 12 |  cab [ 7, 7] CHANX  (220,711) T6 XI12 ~~~~ PIN SINK ~~~~ || net (net12_12) -> pin 12 in 7 8
 SWC 
- ------------- (net16_12) ------------- 
-|  OPIN (10,6) --> CHANY  (9,6) T/P: 12 31 | cab_vmm [10, 6] CHANY  (315,998) T12 XI3 SWC 
-| CHANY  (9,6) --> CHANY  (9,7) T/P: 12 -1 | cab_vmm [10, 6] SBLOCK sn (315 838) SWC 
-| CHANY  (9,7) --> CHANX  (9,7) T/P: 12 -1 | cab_vmm [10, 7] SBLOCK sw (315 807) SWC 
-| CHANX  (9,7) --> CHANX  (8,7) T/P: 12 -1 | clb [ 9, 7] SBLOCK ew (279 1031) SWC 
-| CHANX  (8,7) --> CHANX  (7,7) T/P: 12 -1 | clb [ 8, 7] SBLOCK ew (245 1031) SWC 
-| CHANX  (7,7) -->  IPIN  (7,8) T/P: 12 12 |  cab [ 7, 7] CHANX  (213,711) T12 XI12 ~~~~ PIN SINK ~~~~ || net (net16_12) -> pin 12 in 7 8
-SWC 
- ------------- (net16_13) ------------- 
-|  OPIN (10,6) --> CHANY (10,6) T/P: 12 32 | cab_vmm [11, 6] CHANY  (349,1046) T12 I4 SWC 
-| CHANY (10,6) --> CHANY (10,7) T/P: 12 -1 | cab_vmm [11, 6] SBLOCK sn (349 838) SWC 
-| CHANY (10,7) --> CHANY (10,8) T/P: 12 -1 | cab_vmm [11, 7] SBLOCK sn (349 839) SWC 
-| CHANY (10,8) --> CHANX (10,8) T/P: 12 -1 | cab_vmm [11, 8] SBLOCK sw (349 808) SWC 
-| CHANX (10,8) --> CHANX  (9,8) T/P: 12 -1 | cab_vmm [10, 8] SBLOCK ew (315 872) SWC 
-| CHANX  (9,8) --> CHANX  (8,8) T/P: 12 -1 | clb [ 9, 8] SBLOCK ew (279 1032) SWC 
-| CHANX  (8,8) --> CHANX  (7,8) T/P: 12 -1 | clb [ 8, 8] SBLOCK ew (245 1032) SWC 
-| CHANX  (7,8) --> CHANX  (6,8) T/P: 12 -1 | cab [ 7, 8] SBLOCK ew (213 872) SWC 
-| CHANX  (6,8) -->  IPIN  (6,9) T/P: 12 12 |  cab [ 6, 8] CHANX  (179,712) T12 XI12 ~~~~ PIN SINK ~~~~ || net (net16_13) -> pin 12 in 6 9
-SWC 
- ------------- (net16_14) ------------- 
-|  OPIN (10,6) --> CHANY (10,6) T/P: 13 33 | cab_vmm [11, 6] CHANY  (347,1062) T13 I5 SWC 
+ ------------- (net12_13) ------------- 
+|  OPIN (10,6) --> CHANY (10,6) T/P: 13 32 | cab_vmm [11, 6] CHANY  (347,1046) T13 I4 SWC 
 | CHANY (10,6) --> CHANY (10,7) T/P: 13 -1 | cab_vmm [11, 6] SBLOCK sn (347 838) SWC 
 | CHANY (10,7) --> CHANY (10,8) T/P: 13 -1 | cab_vmm [11, 7] SBLOCK sn (347 839) SWC 
 | CHANY (10,8) --> CHANX (10,8) T/P: 13 -1 | cab_vmm [11, 8] SBLOCK sw (347 808) SWC 
 | CHANX (10,8) --> CHANX  (9,8) T/P: 13 -1 | cab_vmm [10, 8] SBLOCK ew (313 872) SWC 
 | CHANX  (9,8) --> CHANX  (8,8) T/P: 13 -1 | clb [ 9, 8] SBLOCK ew (277 1032) SWC 
 | CHANX  (8,8) --> CHANX  (7,8) T/P: 13 -1 | clb [ 8, 8] SBLOCK ew (243 1032) SWC 
-| CHANX  (7,8) -->  IPIN  (7,9) T/P: 13 12 |  cab [ 7, 8] CHANX  (211,712) T13 XI12 ~~~~ PIN SINK ~~~~ || net (net16_14) -> pin 12 in 7 9
+| CHANX  (7,8) --> CHANX  (6,8) T/P: 13 -1 | cab [ 7, 8] SBLOCK ew (211 872) SWC 
+| CHANX  (6,8) -->  IPIN  (6,9) T/P: 13 12 |  cab [ 6, 8] CHANX  (177,712) T13 XI12 ~~~~ PIN SINK ~~~~ || net (net12_13) -> pin 12 in 6 9
 SWC 
- ------------- (net16_1) ------------- 
-|  OPIN (10,6) --> CHANY (10,6) T/P:  1 34 | cab_vmm [11, 6] CHANY  (361,1078) T1 I6 SWC 
-| CHANY (10,6) --> CHANX (10,5) T/P:  1 -1 | cab_vmm [11, 5] SBLOCK nw (361 821) SWC 
-| CHANX (10,5) --> CHANX  (9,5) T/P:  1 -1 | cab_vmm [10, 5] SBLOCK ew (327 869) SWC 
-| CHANX  (9,5) --> CHANX  (8,5) T/P:  1 -1 | clb [ 9, 5] SBLOCK ew (291 1029) SWC 
-| CHANX  (8,5) --> CHANX  (7,5) T/P:  1 -1 | clb [ 8, 5] SBLOCK ew (257 1029) SWC 
-| CHANX  (7,5) --> CHANY  (6,5) T/P:  1 -1 | cab [ 7, 5] SBLOCK es (225 789) SWC 
-| CHANY  (6,5) --> CHANY  (6,4) T/P:  1 -1 | cab [ 7, 4] SBLOCK ns (225 836) SWC 
-| CHANY  (6,4) --> CHANY  (6,3) T/P:  1 -1 | cab [ 7, 3] SBLOCK ns (225 835) SWC 
-| CHANY  (6,3) --> CHANX  (6,2) T/P:  1 -1 | cab [ 7, 2] SBLOCK nw (225 818) SWC 
-| CHANX  (6,2) -->  IPIN  (6,3) T/P:  1 12 |  cab [ 6, 2] CHANX  (191,706) T1 XI12 ~~~~ PIN SINK ~~~~ || net (net16_1) -> pin 12 in 6 3
+ ------------- (net12_14) ------------- 
+|  OPIN (10,6) --> CHANY (10,6) T/P:  9 33 | cab_vmm [11, 6] CHANY  (352,1062) T9 I5 SWC 
+| CHANY (10,6) --> CHANY (10,7) T/P:  9 -1 | cab_vmm [11, 6] SBLOCK sn (352 838) SWC 
+| CHANY (10,7) --> CHANY (10,8) T/P:  9 -1 | cab_vmm [11, 7] SBLOCK sn (352 839) SWC 
+| CHANY (10,8) --> CHANX (10,8) T/P:  9 -1 | cab_vmm [11, 8] SBLOCK sw (352 808) SWC 
+| CHANX (10,8) --> CHANX  (9,8) T/P:  9 -1 | cab_vmm [10, 8] SBLOCK ew (318 872) SWC 
+| CHANX  (9,8) --> CHANX  (8,8) T/P:  9 -1 | clb [ 9, 8] SBLOCK ew (282 1032) SWC 
+| CHANX  (8,8) --> CHANX  (7,8) T/P:  9 -1 | clb [ 8, 8] SBLOCK ew (248 1032) SWC 
+| CHANX  (7,8) -->  IPIN  (7,9) T/P:  9 12 |  cab [ 7, 8] CHANX  (216,712) T9 XI12 ~~~~ PIN SINK ~~~~ || net (net12_14) -> pin 12 in 7 9
 SWC 
- ------------- (net16_2) ------------- 
-|  OPIN (10,6) --> CHANY (10,6) T/P:  7 35 | cab_vmm [11, 6] CHANY  (354,1094) T7 I7 SWC 
-| CHANY (10,6) --> CHANY (10,5) T/P:  7 -1 | cab_vmm [11, 5] SBLOCK ns (354 837) SWC 
-| CHANY (10,5) --> CHANX (10,4) T/P:  7 -1 | cab_vmm [11, 4] SBLOCK nw (354 820) SWC 
-| CHANX (10,4) --> CHANX  (9,4) T/P:  7 -1 | cab_vmm [10, 4] SBLOCK ew (320 868) SWC 
-| CHANX  (9,4) --> CHANX  (8,4) T/P:  7 -1 | clb [ 9, 4] SBLOCK ew (284 1028) SWC 
-| CHANX  (8,4) --> CHANY  (7,4) T/P:  7 -1 | clb [ 8, 4] SBLOCK es (250 948) SWC 
-| CHANY  (7,4) --> CHANY  (7,3) T/P:  7 -1 | clb [ 8, 3] SBLOCK ns (250 995) SWC 
-| CHANY  (7,3) --> CHANX  (7,2) T/P:  7 -1 | clb [ 8, 2] SBLOCK nw (250 978) SWC 
-| CHANX  (7,2) -->  IPIN  (7,3) T/P:  7 12 |  cab [ 7, 2] CHANX  (218,706) T7 XI12 ~~~~ PIN SINK ~~~~ || net (net16_2) -> pin 12 in 7 3
+ ------------- (net12_1) ------------- 
+|  OPIN (10,6) --> CHANY (10,6) T/P:  6 34 | cab_vmm [11, 6] CHANY  (356,1078) T6 I6 SWC 
+| CHANY (10,6) --> CHANY (10,5) T/P:  6 -1 | cab_vmm [11, 5] SBLOCK ns (356 837) SWC 
+| CHANY (10,5) --> CHANY (10,4) T/P:  6 -1 | cab_vmm [11, 4] SBLOCK ns (356 836) SWC 
+| CHANY (10,4) --> CHANX (10,3) T/P:  6 -1 | cab_vmm [11, 3] SBLOCK nw (356 819) SWC 
+| CHANX (10,3) --> CHANX  (9,3) T/P:  6 -1 | cab_vmm [10, 3] SBLOCK ew (322 867) SWC 
+| CHANX  (9,3) --> CHANX  (8,3) T/P:  6 -1 | clb [ 9, 3] SBLOCK ew (286 1027) SWC 
+| CHANX  (8,3) --> CHANX  (7,3) T/P:  6 -1 | clb [ 8, 3] SBLOCK ew (252 1027) SWC 
+| CHANX  (7,3) --> CHANY  (6,3) T/P:  6 -1 | cab [ 7, 3] SBLOCK es (220 787) SWC 
+| CHANY  (6,3) --> CHANX  (6,2) T/P:  6 -1 | cab [ 7, 2] SBLOCK nw (220 818) SWC 
+| CHANX  (6,2) -->  IPIN  (6,3) T/P:  6 12 |  cab [ 6, 2] CHANX  (186,706) T6 XI12 ~~~~ PIN SINK ~~~~ || net (net12_1) -> pin 12 in 6 3
 SWC 
- ------------- (net16_3) ------------- 
+ ------------- (net12_2) ------------- 
+|  OPIN (10,6) --> CHANY (10,6) T/P:  2 35 | cab_vmm [11, 6] CHANY  (360,1094) T2 I7 SWC 
+| CHANY (10,6) --> CHANY (10,5) T/P:  2 -1 | cab_vmm [11, 5] SBLOCK ns (360 837) SWC 
+| CHANY (10,5) --> CHANY (10,4) T/P:  2 -1 | cab_vmm [11, 4] SBLOCK ns (360 836) SWC 
+| CHANY (10,4) --> CHANX (10,3) T/P:  2 -1 | cab_vmm [11, 3] SBLOCK nw (360 819) SWC 
+| CHANX (10,3) --> CHANX  (9,3) T/P:  2 -1 | cab_vmm [10, 3] SBLOCK ew (326 867) SWC 
+| CHANX  (9,3) --> CHANX  (8,3) T/P:  2 -1 | clb [ 9, 3] SBLOCK ew (290 1027) SWC 
+| CHANX  (8,3) --> CHANY  (7,3) T/P:  2 -1 | clb [ 8, 3] SBLOCK es (256 947) SWC 
+| CHANY  (7,3) --> CHANX  (7,2) T/P:  2 -1 | clb [ 8, 2] SBLOCK nw (256 978) SWC 
+| CHANX  (7,2) -->  IPIN  (7,3) T/P:  2 12 |  cab [ 7, 2] CHANX  (224,706) T2 XI12 ~~~~ PIN SINK ~~~~ || net (net12_2) -> pin 12 in 7 3
+SWC 
+ ------------- (net12_3) ------------- 
 |  OPIN (10,6) --> CHANX (10,6) T/P:  6 36 | cab_vmm [10, 6] CHANX  (322,582) T6 I8 SWC 
 | CHANX (10,6) --> CHANX  (9,6) T/P:  6 -1 | cab_vmm [10, 6] SBLOCK ew (322 870) SWC 
 | CHANX  (9,6) --> CHANX  (8,6) T/P:  6 -1 | clb [ 9, 6] SBLOCK ew (286 1030) SWC 
@@ -698,90 +659,89 @@ SWC
 | CHANY  (6,6) --> CHANY  (6,5) T/P:  6 -1 | cab [ 7, 5] SBLOCK ns (220 837) SWC 
 | CHANY  (6,5) --> CHANY  (6,4) T/P:  6 -1 | cab [ 7, 4] SBLOCK ns (220 836) SWC 
 | CHANY  (6,4) --> CHANX  (6,3) T/P:  6 -1 | cab [ 7, 3] SBLOCK nw (220 819) SWC 
-| CHANX  (6,3) -->  IPIN  (6,4) T/P:  6 12 |  cab [ 6, 3] CHANX  (186,707) T6 XI12 ~~~~ PIN SINK ~~~~ || net (net16_3) -> pin 12 in 6 4
+| CHANX  (6,3) -->  IPIN  (6,4) T/P:  6 12 |  cab [ 6, 3] CHANX  (186,707) T6 XI12 ~~~~ PIN SINK ~~~~ || net (net12_3) -> pin 12 in 6 4
 SWC 
- ------------- (net16_4) ------------- 
-|  OPIN (10,6) --> CHANX (10,6) T/P:  1 37 | cab_vmm [10, 6] CHANX  (327,598) T1 I9 SWC 
-| CHANX (10,6) --> CHANX  (9,6) T/P:  1 -1 | cab_vmm [10, 6] SBLOCK ew (327 870) SWC 
-| CHANX  (9,6) --> CHANX  (8,6) T/P:  1 -1 | clb [ 9, 6] SBLOCK ew (291 1030) SWC 
-| CHANX  (8,6) --> CHANY  (7,6) T/P:  1 -1 | clb [ 8, 6] SBLOCK es (257 950) SWC 
-| CHANY  (7,6) --> CHANY  (7,5) T/P:  1 -1 | clb [ 8, 5] SBLOCK ns (257 997) SWC 
-| CHANY  (7,5) --> CHANY  (7,4) T/P:  1 -1 | clb [ 8, 4] SBLOCK ns (257 996) SWC 
-| CHANY  (7,4) --> CHANX  (7,3) T/P:  1 -1 | clb [ 8, 3] SBLOCK nw (257 979) SWC 
-| CHANX  (7,3) -->  IPIN  (7,4) T/P:  1 12 |  cab [ 7, 3] CHANX  (225,707) T1 XI12 ~~~~ PIN SINK ~~~~ || net (net16_4) -> pin 12 in 7 4
+ ------------- (net12_4) ------------- 
+|  OPIN (10,6) --> CHANX (10,6) T/P: 12 37 | cab_vmm [10, 6] CHANX  (315,598) T12 I9 SWC 
+| CHANX (10,6) --> CHANX  (9,6) T/P: 12 -1 | cab_vmm [10, 6] SBLOCK ew (315 870) SWC 
+| CHANX  (9,6) --> CHANX  (8,6) T/P: 12 -1 | clb [ 9, 6] SBLOCK ew (279 1030) SWC 
+| CHANX  (8,6) --> CHANY  (7,6) T/P: 12 -1 | clb [ 8, 6] SBLOCK es (245 950) SWC 
+| CHANY  (7,6) --> CHANY  (7,5) T/P: 12 -1 | clb [ 8, 5] SBLOCK ns (245 997) SWC 
+| CHANY  (7,5) --> CHANY  (7,4) T/P: 12 -1 | clb [ 8, 4] SBLOCK ns (245 996) SWC 
+| CHANY  (7,4) --> CHANX  (7,3) T/P: 12 -1 | clb [ 8, 3] SBLOCK nw (245 979) SWC 
+| CHANX  (7,3) -->  IPIN  (7,4) T/P: 12 12 |  cab [ 7, 3] CHANX  (213,707) T12 XI12 ~~~~ PIN SINK ~~~~ || net (net12_4) -> pin 12 in 7 4
 SWC 
- ------------- (net16_5) ------------- 
-|  OPIN (10,6) --> CHANX (10,5) T/P: 10 38 | cab_vmm [10, 5] CHANX  (317,677) T10 XI10 SWC 
+ ------------- (net12_5) ------------- 
+|  OPIN (10,6) --> CHANX (10,5) T/P:  2 38 | cab_vmm [10, 5] CHANX  (326,677) T2 XI10 SWC 
+| CHANX (10,5) --> CHANX  (9,5) T/P:  2 -1 | cab_vmm [10, 5] SBLOCK ew (326 869) SWC 
+| CHANX  (9,5) --> CHANX  (8,5) T/P:  2 -1 | clb [ 9, 5] SBLOCK ew (290 1029) SWC 
+| CHANX  (8,5) --> CHANX  (7,5) T/P:  2 -1 | clb [ 8, 5] SBLOCK ew (256 1029) SWC 
+| CHANX  (7,5) --> CHANY  (6,5) T/P:  2 -1 | cab [ 7, 5] SBLOCK es (224 789) SWC 
+| CHANY  (6,5) --> CHANX  (6,4) T/P:  2 -1 | cab [ 7, 4] SBLOCK nw (224 820) SWC 
+| CHANX  (6,4) -->  IPIN  (6,5) T/P:  2 12 |  cab [ 6, 4] CHANX  (190,708) T2 XI12 ~~~~ PIN SINK ~~~~ || net (net12_5) -> pin 12 in 6 5
+SWC 
+ ------------- (net12_6) ------------- 
+|  OPIN (10,6) --> CHANX (10,5) T/P: 10 39 | cab_vmm [10, 5] CHANX  (317,693) T10 XI11 SWC 
 | CHANX (10,5) --> CHANX  (9,5) T/P: 10 -1 | cab_vmm [10, 5] SBLOCK ew (317 869) SWC 
 | CHANX  (9,5) --> CHANX  (8,5) T/P: 10 -1 | clb [ 9, 5] SBLOCK ew (281 1029) SWC 
-| CHANX  (8,5) --> CHANX  (7,5) T/P: 10 -1 | clb [ 8, 5] SBLOCK ew (247 1029) SWC 
-| CHANX  (7,5) --> CHANY  (6,5) T/P: 10 -1 | cab [ 7, 5] SBLOCK es (215 789) SWC 
-| CHANY  (6,5) --> CHANX  (6,4) T/P: 10 -1 | cab [ 7, 4] SBLOCK nw (215 820) SWC 
-| CHANX  (6,4) -->  IPIN  (6,5) T/P: 10 12 |  cab [ 6, 4] CHANX  (181,708) T10 XI12 ~~~~ PIN SINK ~~~~ || net (net16_5) -> pin 12 in 6 5
+| CHANX  (8,5) --> CHANY  (7,5) T/P: 10 -1 | clb [ 8, 5] SBLOCK es (247 949) SWC 
+| CHANY  (7,5) --> CHANX  (7,4) T/P: 10 -1 | clb [ 8, 4] SBLOCK nw (247 980) SWC 
+| CHANX  (7,4) -->  IPIN  (7,5) T/P: 10 12 |  cab [ 7, 4] CHANX  (215,708) T10 XI12 ~~~~ PIN SINK ~~~~ || net (net12_6) -> pin 12 in 7 5
 SWC 
- ------------- (net16_6) ------------- 
-|  OPIN (10,6) --> CHANX (10,5) T/P:  4 39 | cab_vmm [10, 5] CHANX  (324,693) T4 XI11 SWC 
-| CHANX (10,5) --> CHANX  (9,5) T/P:  4 -1 | cab_vmm [10, 5] SBLOCK ew (324 869) SWC 
-| CHANX  (9,5) --> CHANX  (8,5) T/P:  4 -1 | clb [ 9, 5] SBLOCK ew (288 1029) SWC 
-| CHANX  (8,5) --> CHANY  (7,5) T/P:  4 -1 | clb [ 8, 5] SBLOCK es (254 949) SWC 
-| CHANY  (7,5) --> CHANX  (7,4) T/P:  4 -1 | clb [ 8, 4] SBLOCK nw (254 980) SWC 
-| CHANX  (7,4) -->  IPIN  (7,5) T/P:  4 12 |  cab [ 7, 4] CHANX  (222,708) T4 XI12 ~~~~ PIN SINK ~~~~ || net (net16_6) -> pin 12 in 7 5
+ ------------- (net7_1) ------------- 
+|  OPIN  (8,0) --> CHANX  (8,0) T/P: 15 16 | io_sd [ 8, 0] CHANX  (250,352) T15 O7 SWC 
+| CHANX  (8,0) --> CHANY  (7,1) T/P: 15 -1 | io_sd [ 8, 0] SBLOCK en (239 336) SWC 
+| CHANY  (7,1) --> CHANY  (7,2) T/P: 15 -1 | clb [ 8, 1] SBLOCK sn (241 993) SWC 
+| CHANY  (7,2) --> CHANY  (7,3) T/P: 15 -1 | clb [ 8, 2] SBLOCK sn (241 994) SWC 
+| CHANY  (7,3) -->  IPIN  (7,3) T/P: 15  6 |  clb [ 8, 3] CHANY  (241,659) T15 AXI6 ~~~~ PIN SINK ~~~~ || net (net7_1) -> pin 6 in 7 3
 SWC 
- ------------- (vcc): ------------- 
+| CHANY  (7,2) --> CHANX  (7,2) T/P: 15 -1 | clb [ 8, 2] SBLOCK sw (241 962) SWC 
+| CHANX  (7,2) --> CHANY  (6,3) T/P: 15 -1 | cab [ 7, 2] SBLOCK en (209 850) SWC 
+| CHANY  (6,3) -->  IPIN  (6,3) T/P: 15  6 |  cab [ 7, 3] CHANY  (209,1075) T15 I6 ~~~~ PIN SINK ~~~~ || net (net7_1) -> pin 6 in 6 3
+SWC 
+| CHANY  (6,3) --> CHANY  (6,4) T/P: 15 -1 | cab [ 7, 3] SBLOCK sn (209 835) SWC 
+| CHANY  (6,4) -->  IPIN  (6,4) T/P: 15  6 |  cab [ 7, 4] CHANY  (209,1076) T15 I6 ~~~~ PIN SINK ~~~~ || net (net7_1) -> pin 6 in 6 4
+SWC 
+| CHANY  (7,3) --> CHANY  (7,4) T/P: 15 -1 | clb [ 8, 3] SBLOCK sn (241 995) SWC 
+| CHANY  (7,4) -->  IPIN  (7,4) T/P: 15  6 |  clb [ 8, 4] CHANY  (241,660) T15 AXI6 ~~~~ PIN SINK ~~~~ || net (net7_1) -> pin 6 in 7 4
+SWC 
+| CHANY  (6,4) --> CHANY  (6,5) T/P: 15 -1 | cab [ 7, 4] SBLOCK sn (209 836) SWC 
+| CHANY  (6,5) -->  IPIN  (6,5) T/P: 15  6 |  cab [ 7, 5] CHANY  (209,1077) T15 I6 ~~~~ PIN SINK ~~~~ || net (net7_1) -> pin 6 in 6 5
+SWC 
+| CHANY  (7,4) --> CHANY  (7,5) T/P: 15 -1 | clb [ 8, 4] SBLOCK sn (241 996) SWC 
+| CHANY  (7,5) -->  IPIN  (7,5) T/P: 15  6 |  clb [ 8, 5] CHANY  (241,661) T15 AXI6 ~~~~ PIN SINK ~~~~ || net (net7_1) -> pin 6 in 7 5
+SWC 
+| CHANY  (6,5) --> CHANY  (6,6) T/P: 15 -1 | cab [ 7, 5] SBLOCK sn (209 837) SWC 
+| CHANY  (6,6) -->  IPIN  (6,6) T/P: 15  6 |  cab [ 7, 6] CHANY  (209,1078) T15 I6 ~~~~ PIN SINK ~~~~ || net (net7_1) -> pin 6 in 6 6
+SWC 
+| CHANY  (7,5) --> CHANY  (7,6) T/P: 15 -1 | clb [ 8, 5] SBLOCK sn (241 997) SWC 
+| CHANY  (7,6) -->  IPIN  (7,6) T/P: 15  6 |  clb [ 8, 6] CHANY  (241,662) T15 AXI6 ~~~~ PIN SINK ~~~~ || net (net7_1) -> pin 6 in 7 6
+SWC 
+| CHANY  (6,6) --> CHANY  (6,7) T/P: 15 -1 | cab [ 7, 6] SBLOCK sn (209 838) SWC 
+| CHANY  (6,7) -->  IPIN  (6,7) T/P: 15  6 |  cab [ 7, 7] CHANY  (209,1079) T15 I6 ~~~~ PIN SINK ~~~~ || net (net7_1) -> pin 6 in 6 7
+SWC 
+| CHANY  (7,6) --> CHANY  (7,7) T/P: 15 -1 | clb [ 8, 6] SBLOCK sn (241 998) SWC 
+| CHANY  (7,7) -->  IPIN  (7,7) T/P: 15  6 |  clb [ 8, 7] CHANY  (241,663) T15 AXI6 ~~~~ PIN SINK ~~~~ || net (net7_1) -> pin 6 in 7 7
+SWC 
+| CHANY  (6,7) --> CHANY  (6,8) T/P: 15 -1 | cab [ 7, 7] SBLOCK sn (209 839) SWC 
+| CHANY  (6,8) -->  IPIN  (6,8) T/P: 15  6 |  cab [ 7, 8] CHANY  (209,1080) T15 I6 ~~~~ PIN SINK ~~~~ || net (net7_1) -> pin 6 in 6 8
+SWC 
+| CHANY  (7,7) --> CHANY  (7,8) T/P: 15 -1 | clb [ 8, 7] SBLOCK sn (241 999) SWC 
+| CHANY  (7,8) -->  IPIN  (7,8) T/P: 15  6 |  clb [ 8, 8] CHANY  (241,664) T15 AXI6 ~~~~ PIN SINK ~~~~ || net (net7_1) -> pin 6 in 7 8
+SWC 
+| CHANY  (6,8) --> CHANY  (6,9) T/P: 15 -1 | cab [ 7, 8] SBLOCK sn (209 840) SWC 
+| CHANY  (6,9) -->  IPIN  (6,9) T/P: 15  6 |  cab [ 7, 9] CHANY  (209,1081) T15 I6 ~~~~ PIN SINK ~~~~ || net (net7_1) -> pin 6 in 6 9
+SWC 
+| CHANY  (7,8) --> CHANY  (7,9) T/P: 15 -1 | clb [ 8, 8] SBLOCK sn (241 1000) SWC 
+| CHANY  (7,9) -->  IPIN  (7,9) T/P: 15  6 |  clb [ 8, 9] CHANY  (241,665) T15 AXI6 ~~~~ PIN SINK ~~~~ || net (net7_1) -> pin 6 in 7 9
+SWC 
+| CHANY  (6,9) --> CHANY (6,10) T/P: 15 -1 | cab [ 7, 9] SBLOCK sn (209 841) SWC 
+| CHANY (6,10) -->  IPIN (6,10) T/P: 15  6 |  cab [ 7,10] CHANY  (209,1082) T15 I6 ~~~~ PIN SINK ~~~~ || net (net7_1) -> pin 6 in 6 10
+SWC 
+| CHANY  (7,9) --> CHANY (7,10) T/P: 15 -1 | clb [ 8, 9] SBLOCK sn (241 1001) SWC 
+| CHANY (7,10) -->  IPIN (7,10) T/P: 15  6 |  clb [ 8,10] CHANY  (241,666) T15 AXI6 ~~~~ PIN SINK ~~~~ || net (net7_1) -> pin 6 in 7 10
+SWC 
  ------------- (net4_1) ------------- 
-|  OPIN (7,10) --> CHANY (7,10) T/P: 12 19 |  clb [ 8,10] CHANY  (245,714) T12 AXO3 SWC 
-| CHANY (7,10) --> CHANX (7,10) T/P: 12 -1 | clb [ 8,10] SBLOCK sw (245 970) SWC 
-| CHANX (7,10) -->  IPIN (7,10) T/P: 12  9 |  cab [ 7,10] CHANX  (213,602) T12 I9 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 9 in 7 10
-SWC 
-| CHANY (7,10) -->  IPIN (7,10) T/P: 12  6 |  clb [ 8,10] CHANY  (245,666) T12 AXI6 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 6 in 7 10
-SWC 
-| CHANY (7,10) --> CHANY  (7,9) T/P: 12 -1 | clb [ 8, 9] SBLOCK ns (245 1001) SWC 
-| CHANY  (7,9) -->  IPIN  (7,9) T/P: 12  6 |  clb [ 8, 9] CHANY  (245,665) T12 AXI6 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 6 in 7 9
-SWC 
-| CHANY  (7,9) --> CHANY  (7,8) T/P: 12 -1 | clb [ 8, 8] SBLOCK ns (245 1000) SWC 
-| CHANY  (7,8) -->  IPIN  (7,8) T/P: 12  6 |  clb [ 8, 8] CHANY  (245,664) T12 AXI6 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 6 in 7 8
-SWC 
-| CHANY  (7,8) --> CHANY  (7,7) T/P: 12 -1 | clb [ 8, 7] SBLOCK ns (245 999) SWC 
-| CHANY  (7,7) -->  IPIN  (7,7) T/P: 12  6 |  clb [ 8, 7] CHANY  (245,663) T12 AXI6 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 6 in 7 7
-SWC 
-| CHANY  (7,7) --> CHANY  (7,6) T/P: 12 -1 | clb [ 8, 6] SBLOCK ns (245 998) SWC 
-| CHANY  (7,6) -->  IPIN  (7,6) T/P: 12  6 |  clb [ 8, 6] CHANY  (245,662) T12 AXI6 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 6 in 7 6
-SWC 
-| CHANY  (7,6) --> CHANY  (7,5) T/P: 12 -1 | clb [ 8, 5] SBLOCK ns (245 997) SWC 
-| CHANY  (7,5) -->  IPIN  (7,5) T/P: 12  6 |  clb [ 8, 5] CHANY  (245,661) T12 AXI6 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 6 in 7 5
-SWC 
-| CHANY  (7,5) --> CHANY  (7,4) T/P: 12 -1 | clb [ 8, 4] SBLOCK ns (245 996) SWC 
-| CHANY  (7,4) -->  IPIN  (7,4) T/P: 12  6 |  clb [ 8, 4] CHANY  (245,660) T12 AXI6 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 6 in 7 4
-SWC 
-| CHANY  (7,4) --> CHANY  (7,3) T/P: 12 -1 | clb [ 8, 3] SBLOCK ns (245 995) SWC 
-| CHANY  (7,3) -->  IPIN  (7,3) T/P: 12  6 |  clb [ 8, 3] CHANY  (245,659) T12 AXI6 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 6 in 7 3
-SWC 
-| CHANY  (7,4) --> CHANX  (7,3) T/P: 12 -1 | clb [ 8, 3] SBLOCK nw (245 979) SWC 
-| CHANX  (7,3) --> CHANY  (6,3) T/P: 12 -1 | cab [ 7, 3] SBLOCK es (213 787) SWC 
-| CHANY  (6,3) -->  IPIN  (6,3) T/P: 12  6 |  cab [ 7, 3] CHANY  (213,1075) T12 I6 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 6 in 6 3
-SWC 
-| CHANY  (6,3) --> CHANY  (6,4) T/P: 12 -1 | cab [ 7, 3] SBLOCK sn (213 835) SWC 
-| CHANY  (6,4) -->  IPIN  (6,4) T/P: 12  6 |  cab [ 7, 4] CHANY  (213,1076) T12 I6 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 6 in 6 4
-SWC 
-| CHANY  (6,4) --> CHANY  (6,5) T/P: 12 -1 | cab [ 7, 4] SBLOCK sn (213 836) SWC 
-| CHANY  (6,5) -->  IPIN  (6,5) T/P: 12  6 |  cab [ 7, 5] CHANY  (213,1077) T12 I6 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 6 in 6 5
-SWC 
-| CHANY  (6,5) --> CHANY  (6,6) T/P: 12 -1 | cab [ 7, 5] SBLOCK sn (213 837) SWC 
-| CHANY  (6,6) -->  IPIN  (6,6) T/P: 12  6 |  cab [ 7, 6] CHANY  (213,1078) T12 I6 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 6 in 6 6
-SWC 
-| CHANY  (6,6) --> CHANY  (6,7) T/P: 12 -1 | cab [ 7, 6] SBLOCK sn (213 838) SWC 
-| CHANY  (6,7) -->  IPIN  (6,7) T/P: 12  6 |  cab [ 7, 7] CHANY  (213,1079) T12 I6 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 6 in 6 7
-SWC 
-| CHANY  (6,7) --> CHANY  (6,8) T/P: 12 -1 | cab [ 7, 7] SBLOCK sn (213 839) SWC 
-| CHANY  (6,8) -->  IPIN  (6,8) T/P: 12  6 |  cab [ 7, 8] CHANY  (213,1080) T12 I6 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 6 in 6 8
-SWC 
-| CHANY  (6,8) --> CHANY  (6,9) T/P: 12 -1 | cab [ 7, 8] SBLOCK sn (213 840) SWC 
-| CHANY  (6,9) -->  IPIN  (6,9) T/P: 12  6 |  cab [ 7, 9] CHANY  (213,1081) T12 I6 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 6 in 6 9
-SWC 
-| CHANX (7,10) --> CHANY (6,10) T/P: 12 -1 | cab [ 7,10] SBLOCK es (213 794) SWC 
-| CHANY (6,10) -->  IPIN (6,10) T/P: 12  6 |  cab [ 7,10] CHANY  (213,1082) T12 I6 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 6 in 6 10
-SWC 
- ------------- (net19_1) ------------- 
 |  OPIN (13,0) --> CHANX (13,0) T/P: 16 10 | io_sd [13, 0] CHANX  (419,320) T16 I15 SWC 
 | CHANX (13,0) --> CHANX (12,0) T/P: 16 -1 | io_sd [13, 0] SBLOCK ew (408 352) SWC 
 | CHANX (12,0) --> CHANX (11,0) T/P: 16 -1 | io_sd [12, 0] SBLOCK ew (374 352) SWC 
@@ -791,86 +751,92 @@ SWC
 | CHANX  (8,0) --> CHANY  (7,1) T/P: 16 -1 | io_sd [ 8, 0] SBLOCK en (238 336) SWC 
 | CHANY  (7,1) --> CHANY  (7,2) T/P: 16 -1 | clb [ 8, 1] SBLOCK sn (240 993) SWC 
 | CHANY  (7,2) --> CHANX  (7,2) T/P: 16 -1 | clb [ 8, 2] SBLOCK sw (240 962) SWC 
-| CHANX  (7,2) -->  IPIN  (7,3) T/P: 16 11 |  cab [ 7, 2] CHANX  (208,690) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net19_1) -> pin 11 in 7 3
+| CHANX  (7,2) -->  IPIN  (7,3) T/P: 16 11 |  cab [ 7, 2] CHANX  (208,690) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 11 in 7 3
 SWC 
 | CHANX  (7,2) --> CHANX  (6,2) T/P: 16 -1 | cab [ 7, 2] SBLOCK ew (208 866) SWC 
-| CHANX  (6,2) -->  IPIN  (6,3) T/P: 16 11 |  cab [ 6, 2] CHANX  (174,690) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net19_1) -> pin 11 in 6 3
+| CHANX  (6,2) -->  IPIN  (6,3) T/P: 16 11 |  cab [ 6, 2] CHANX  (174,690) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 11 in 6 3
 SWC 
 | CHANX  (7,2) --> CHANY  (6,3) T/P: 16 -1 | cab [ 7, 2] SBLOCK en (208 850) SWC 
 | CHANY  (6,3) --> CHANX  (6,3) T/P: 16 -1 | cab [ 7, 3] SBLOCK sw (208 803) SWC 
-| CHANX  (6,3) -->  IPIN  (6,4) T/P: 16 11 |  cab [ 6, 3] CHANX  (174,691) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net19_1) -> pin 11 in 6 4
+| CHANX  (6,3) -->  IPIN  (6,4) T/P: 16 11 |  cab [ 6, 3] CHANX  (174,691) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 11 in 6 4
 SWC 
 | CHANX  (6,3) --> CHANX  (7,3) T/P: 16 -1 | cab [ 7, 3] SBLOCK we (208 867) SWC 
-| CHANX  (7,3) -->  IPIN  (7,4) T/P: 16 11 |  cab [ 7, 3] CHANX  (208,691) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net19_1) -> pin 11 in 7 4
+| CHANX  (7,3) -->  IPIN  (7,4) T/P: 16 11 |  cab [ 7, 3] CHANX  (208,691) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 11 in 7 4
 SWC 
 | CHANX  (6,3) --> CHANY  (6,4) T/P: 16 -1 | cab [ 7, 3] SBLOCK wn (208 819) SWC 
 | CHANY  (6,4) --> CHANX  (6,4) T/P: 16 -1 | cab [ 7, 4] SBLOCK sw (208 804) SWC 
-| CHANX  (6,4) -->  IPIN  (6,5) T/P: 16 11 |  cab [ 6, 4] CHANX  (174,692) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net19_1) -> pin 11 in 6 5
+| CHANX  (6,4) -->  IPIN  (6,5) T/P: 16 11 |  cab [ 6, 4] CHANX  (174,692) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 11 in 6 5
 SWC 
 | CHANX  (6,4) --> CHANX  (7,4) T/P: 16 -1 | cab [ 7, 4] SBLOCK we (208 868) SWC 
-| CHANX  (7,4) -->  IPIN  (7,5) T/P: 16 11 |  cab [ 7, 4] CHANX  (208,692) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net19_1) -> pin 11 in 7 5
+| CHANX  (7,4) -->  IPIN  (7,5) T/P: 16 11 |  cab [ 7, 4] CHANX  (208,692) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 11 in 7 5
 SWC 
 | CHANY  (6,4) --> CHANY  (6,5) T/P: 16 -1 | cab [ 7, 4] SBLOCK sn (208 836) SWC 
 | CHANY  (6,5) --> CHANX  (6,5) T/P: 16 -1 | cab [ 7, 5] SBLOCK sw (208 805) SWC 
-| CHANX  (6,5) -->  IPIN  (6,6) T/P: 16 11 |  cab [ 6, 5] CHANX  (174,693) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net19_1) -> pin 11 in 6 6
+| CHANX  (6,5) -->  IPIN  (6,6) T/P: 16 11 |  cab [ 6, 5] CHANX  (174,693) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 11 in 6 6
 SWC 
 | CHANX  (6,5) --> CHANX  (7,5) T/P: 16 -1 | cab [ 7, 5] SBLOCK we (208 869) SWC 
-| CHANX  (7,5) -->  IPIN  (7,6) T/P: 16 11 |  cab [ 7, 5] CHANX  (208,693) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net19_1) -> pin 11 in 7 6
+| CHANX  (7,5) -->  IPIN  (7,6) T/P: 16 11 |  cab [ 7, 5] CHANX  (208,693) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 11 in 7 6
 SWC 
 | CHANY  (6,5) --> CHANY  (6,6) T/P: 16 -1 | cab [ 7, 5] SBLOCK sn (208 837) SWC 
 | CHANY  (6,6) --> CHANX  (6,6) T/P: 16 -1 | cab [ 7, 6] SBLOCK sw (208 806) SWC 
-| CHANX  (6,6) -->  IPIN  (6,7) T/P: 16 11 |  cab [ 6, 6] CHANX  (174,694) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net19_1) -> pin 11 in 6 7
+| CHANX  (6,6) -->  IPIN  (6,7) T/P: 16 11 |  cab [ 6, 6] CHANX  (174,694) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 11 in 6 7
 SWC 
 | CHANY  (6,6) --> CHANX  (7,6) T/P: 16 -1 | cab [ 7, 6] SBLOCK se (208 790) SWC 
-| CHANX  (7,6) -->  IPIN  (7,7) T/P: 16 11 |  cab [ 7, 6] CHANX  (208,694) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net19_1) -> pin 11 in 7 7
+| CHANX  (7,6) -->  IPIN  (7,7) T/P: 16 11 |  cab [ 7, 6] CHANX  (208,694) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 11 in 7 7
 SWC 
 | CHANY  (6,6) --> CHANY  (6,7) T/P: 16 -1 | cab [ 7, 6] SBLOCK sn (208 838) SWC 
 | CHANY  (6,7) --> CHANX  (6,7) T/P: 16 -1 | cab [ 7, 7] SBLOCK sw (208 807) SWC 
-| CHANX  (6,7) -->  IPIN  (6,8) T/P: 16 11 |  cab [ 6, 7] CHANX  (174,695) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net19_1) -> pin 11 in 6 8
+| CHANX  (6,7) -->  IPIN  (6,8) T/P: 16 11 |  cab [ 6, 7] CHANX  (174,695) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 11 in 6 8
 SWC 
 | CHANY  (6,7) --> CHANX  (7,7) T/P: 16 -1 | cab [ 7, 7] SBLOCK se (208 791) SWC 
-| CHANX  (7,7) -->  IPIN  (7,8) T/P: 16 11 |  cab [ 7, 7] CHANX  (208,695) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net19_1) -> pin 11 in 7 8
+| CHANX  (7,7) -->  IPIN  (7,8) T/P: 16 11 |  cab [ 7, 7] CHANX  (208,695) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 11 in 7 8
 SWC 
 | CHANY  (6,7) --> CHANY  (6,8) T/P: 16 -1 | cab [ 7, 7] SBLOCK sn (208 839) SWC 
 | CHANY  (6,8) --> CHANX  (6,8) T/P: 16 -1 | cab [ 7, 8] SBLOCK sw (208 808) SWC 
-| CHANX  (6,8) -->  IPIN  (6,9) T/P: 16 11 |  cab [ 6, 8] CHANX  (174,696) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net19_1) -> pin 11 in 6 9
+| CHANX  (6,8) -->  IPIN  (6,9) T/P: 16 11 |  cab [ 6, 8] CHANX  (174,696) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 11 in 6 9
 SWC 
 | CHANY  (6,8) --> CHANX  (7,8) T/P: 16 -1 | cab [ 7, 8] SBLOCK se (208 792) SWC 
-| CHANX  (7,8) -->  IPIN  (7,9) T/P: 16 11 |  cab [ 7, 8] CHANX  (208,696) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net19_1) -> pin 11 in 7 9
+| CHANX  (7,8) -->  IPIN  (7,9) T/P: 16 11 |  cab [ 7, 8] CHANX  (208,696) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 11 in 7 9
 SWC 
 | CHANX  (6,8) --> CHANY  (6,9) T/P: 16 -1 | cab [ 7, 8] SBLOCK wn (208 824) SWC 
 | CHANY  (6,9) --> CHANX  (6,9) T/P: 16 -1 | cab [ 7, 9] SBLOCK sw (208 809) SWC 
-| CHANX  (6,9) -->  IPIN (6,10) T/P: 16 11 |  cab [ 6, 9] CHANX  (174,697) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net19_1) -> pin 11 in 6 10
+| CHANX  (6,9) -->  IPIN (6,10) T/P: 16 11 |  cab [ 6, 9] CHANX  (174,697) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 11 in 6 10
 SWC 
 | CHANY  (6,9) --> CHANX  (7,9) T/P: 16 -1 | cab [ 7, 9] SBLOCK se (208 793) SWC 
-| CHANX  (7,9) -->  IPIN (7,10) T/P: 16 11 |  cab [ 7, 9] CHANX  (208,697) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net19_1) -> pin 11 in 7 10
+| CHANX  (7,9) -->  IPIN (7,10) T/P: 16 11 |  cab [ 7, 9] CHANX  (208,697) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net4_1) -> pin 11 in 7 10
 SWC 
- ------------- (net2_1) ------------- 
+ ------------- (net9_1) ------------- 
 |  OPIN  (9,0) --> CHANX  (9,0) T/P: 15  4 | io_sd [ 9, 0] CHANX  (284,288) T15 I7 SWC 
-| CHANX  (9,0) --> CHANX  (8,0) T/P: 15 -1 | io_sd [ 9, 0] SBLOCK ew (273 352) SWC 
-| CHANX  (8,0) --> CHANY  (7,1) T/P: 15 -1 | io_sd [ 8, 0] SBLOCK en (239 336) SWC 
-| CHANY  (7,1) --> CHANY  (7,2) T/P: 15 -1 | clb [ 8, 1] SBLOCK sn (241 993) SWC 
-| CHANY  (7,2) -->  IPIN  (7,2) T/P: 15  6 |  clb [ 8, 2] CHANY  (241,658) T15 AXI6 ~~~~ PIN SINK ~~~~ || net (net2_1) -> pin 6 in 7 2
+| CHANX  (9,0) -->  IPIN  (9,0) T/P: 15  0 | io_sd [ 9, 0] CHANX  (284,272) T15 I3 ~~~~ PIN SINK ~~~~ || net (net9_1) -> pin 0 in 9 0
 SWC 
- ------------- (net3_1) ------------- 
+|  OPIN  (9,0) --> CHANX  (9,0) T/P:  8  4 | io_sd [ 9, 0] CHANX  (292,288) T8 I7 SWC 
+| CHANX  (9,0) --> CHANX  (8,0) T/P:  8 -1 | io_sd [ 9, 0] SBLOCK ew (281 352) SWC 
+| CHANX  (8,0) --> CHANY  (7,1) T/P:  8 -1 | io_sd [ 8, 0] SBLOCK en (247 336) SWC 
+| CHANY  (7,1) --> CHANY  (7,2) T/P:  8 -1 | clb [ 8, 1] SBLOCK sn (249 993) SWC 
+| CHANY  (7,2) -->  IPIN  (7,2) T/P:  8  6 |  clb [ 8, 2] CHANY  (249,658) T8 AXI6 ~~~~ PIN SINK ~~~~ || net (net9_1) -> pin 6 in 7 2
+SWC 
+ ------------- (net8_1) ------------- 
 |  OPIN  (9,0) --> CHANX  (9,0) T/P: 14  7 | io_sd [ 9, 0] CHANX  (285,304) T14 I11 SWC 
 | CHANX  (9,0) --> CHANX  (8,0) T/P: 14 -1 | io_sd [ 9, 0] SBLOCK ew (274 352) SWC 
 | CHANX  (8,0) --> CHANY  (7,1) T/P: 14 -1 | io_sd [ 8, 0] SBLOCK en (240 336) SWC 
 | CHANY  (7,1) --> CHANX  (7,1) T/P: 14 -1 | clb [ 8, 1] SBLOCK sw (242 961) SWC 
-| CHANX  (7,1) -->  IPIN  (7,2) T/P: 14 12 |  cab [ 7, 1] CHANX  (210,705) T14 XI12 ~~~~ PIN SINK ~~~~ || net (net3_1) -> pin 12 in 7 2
+| CHANX  (7,1) -->  IPIN  (7,2) T/P: 14 12 |  cab [ 7, 1] CHANX  (210,705) T14 XI12 ~~~~ PIN SINK ~~~~ || net (net8_1) -> pin 12 in 7 2
 SWC 
  ------------- (net1_1) ------------- 
-|  OPIN  (7,2) --> CHANX  (7,2) T/P:  4 20 |  cab [ 7, 2] CHANX  (222,658) T4 O4 SWC 
-| CHANX  (7,2) --> CHANX  (6,2) T/P:  4 -1 | cab [ 7, 2] SBLOCK ew (222 866) SWC 
-| CHANX  (6,2) --> CHANY  (5,2) T/P:  4 -1 | cab [ 6, 2] SBLOCK es (188 786) SWC 
-| CHANY  (5,2) -->  IPIN  (6,2) T/P:  4  1 |  cab [ 6, 2] CHANY  (188,962) T4 XI1 ~~~~ PIN SINK ~~~~ || net (net1_1) -> pin 1 in 6 2
+|  OPIN  (7,2) --> CHANX  (7,2) T/P: 13 20 |  cab [ 7, 2] CHANX  (211,658) T13 O4 SWC 
+| CHANX  (7,2) --> CHANX  (6,2) T/P: 13 -1 | cab [ 7, 2] SBLOCK ew (211 866) SWC 
+| CHANX  (6,2) --> CHANY  (5,2) T/P: 13 -1 | cab [ 6, 2] SBLOCK es (177 786) SWC 
+| CHANY  (5,2) -->  IPIN  (6,2) T/P: 13  1 |  cab [ 6, 2] CHANY  (177,962) T13 XI1 ~~~~ PIN SINK ~~~~ || net (net1_1) -> pin 1 in 6 2
 SWC 
-| CHANX  (7,2) --> CHANX  (8,2) T/P:  4 -1 | clb [ 8, 2] SBLOCK we (254 1026) SWC 
-| CHANX  (8,2) --> CHANY  (8,2) T/P:  4 -1 | clb [ 9, 2] SBLOCK ws (288 962) SWC 
-| CHANY  (8,2) --> CHANY  (8,1) T/P:  4 -1 | clb [ 9, 1] SBLOCK ns (288 993) SWC 
-| CHANY  (8,1) --> CHANX  (9,0) T/P:  4 -1 | io_sd [ 9, 0] SBLOCK ne (276 432) SWC 
-| CHANX  (9,0) -->  IPIN  (9,0) T/P:  4  0 | io_sd [ 9, 0] CHANX  (298,272) T4 I3 ~~~~ PIN SINK ~~~~ || net (net1_1) -> pin 0 in 9 0
+| CHANX  (7,2) --> CHANX  (8,2) T/P: 13 -1 | clb [ 8, 2] SBLOCK we (243 1026) SWC 
+| CHANX  (8,2) --> CHANX  (9,2) T/P: 13 -1 | clb [ 9, 2] SBLOCK we (277 1026) SWC 
+| CHANX  (9,2) --> CHANX (10,2) T/P: 13 -1 | cab_vmm [10, 2] SBLOCK we (313 866) SWC 
+| CHANX (10,2) --> CHANY (10,2) T/P: 13 -1 | cab_vmm [11, 2] SBLOCK ws (347 802) SWC 
+| CHANY (10,2) --> CHANY (10,1) T/P: 13 -1 | cab_vmm [11, 1] SBLOCK ns (347 833) SWC 
+| CHANY (10,1) --> CHANX (11,0) T/P: 13 -1 | io_sa [11, 0] SBLOCK ne (347 336) SWC 
+| CHANX (11,0) -->  IPIN (11,0) T/P: 13  0 | io_sa [11, 0] CHANX  (357,272) T13 I8 ~~~~ PIN SINK ~~~~ || net (net1_1) -> pin 0 in 11 0
 SWC 
+ ------------- (vcc): ------------- 
  ------------- (out_ramp_adc) ------------- 
 |  OPIN  (7,1) --> CHANX  (7,1) T/P: 16 20 |  cab [ 7, 1] CHANX  (208,657) T16 O4 SWC 
 | CHANX  (7,1) --> CHANX  (8,1) T/P: 16 -1 | clb [ 8, 1] SBLOCK we (240 1025) SWC 
@@ -1577,6 +1543,10 @@ yo
 volt_div[0] vd_ota_bias[0] -> (32 62) -> (236 994)
 volt_div[0] cap_4x_vd_Vin[0] -> (28 60) -> (232 962)
 yo
+volt_div[0] cap_4x_vd_gnd0[0] -> (29 57) -> (233 914)
+yo
+volt_div[0] cap_4x_vd_gnd1[0] -> (29 60) -> (233 962)
+yo
 volt_div[0] vd_target[0] -> (21 23) -> (225 370)
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 cab.I[6]
@@ -2076,21 +2046,9 @@ integrator_nmirror[0] integrator_nmirror_ota0[0] -> (32 62) -> (236 1001)
 integrator_nmirror[0] integrator_nmirror_ota1[0] -> (32 63) -> (236 1017)
 integrator_nmirror[0] integrator_nmirror_ota2[0] -> (5 25) -> (209 409)
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-vcc
-fgota[0].in[0]
-local interconnect 1 vcc -> 0 fgota[0].in[0] (33 1) -> (237 26)
-cab.I[6]
-fgota[0].in[1]
-local interconnect 8 cab.I[6] -> 1 fgota[0].in[1] (32 8) -> (236 138)
-fgota[0].out[0]
-fgota[0].in[1]
-local interconnect 82 fgota[0].out[0] -> 1 fgota[0].in[1] (32 15) -> (236 250)
 cab.I[6]
 integrator_nmirror[0].in[0]
 local interconnect 8 cab.I[6] -> 65 integrator_nmirror[0].in[0] (29 8) -> (233 138)
-fgota[0].out[0]
-integrator_nmirror[0].in[0]
-local interconnect 82 fgota[0].out[0] -> 65 integrator_nmirror[0].in[0] (29 15) -> (233 250)
 cab.I[12]
 integrator_nmirror[0].in[1]
 local interconnect 14 cab.I[12] -> 66 integrator_nmirror[0].in[1] (28 14) -> (232 234)
@@ -2101,13 +2059,6 @@ integrator_nmirror[0].out[0]
 cab.O[4]
 local interconnect 51 integrator_nmirror[0].out[0] -> 132 cab.O[4] (25 39) -> (229 634)
 getting here!
-fgota[0] ota_bias[0] -> (32 58) -> (236 938)
-fgota[0] ota_p_bias[0] -> (33 59) -> (237 954)
-fgota[0] ota_n_bias[0] -> (33 58) -> (237 938)
-fgota[0] ota_small_cap[0] -> (31 59) -> (235 954)
-yo
-fgota[0] ota_small_cap[0] -> (31 58) -> (235 938)
-yo
 integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 19) -> (232 314)
 yo
 integrator_nmirror[0] integrator_nmirror_fg[0] -> (28 27) -> (232 442)
@@ -2165,7 +2116,9 @@ yo
 integrator_nmirror[0] integrator_nmirror_ota0[0] -> (32 62) -> (236 1002)
 integrator_nmirror[0] integrator_nmirror_ota1[0] -> (32 63) -> (236 1018)
 integrator_nmirror[0] integrator_nmirror_ota2[0] -> (5 25) -> (209 410)
-class: complexBlock - name: out:net1_1 - type: #ana_buff_out[0] - num: 0 
+I/O Blocks dev FGs
+!!!!!!!!!!!!!!int[5] -->  DEV FGs  -> (12 13) -> (250 208)
+class: complexBlock - name: out:net9_1 - type: #ana_buff_out[0] - num: 0 
 I3 ana_buff_out[0] -> (9 5) -> (281 80)
 I/O Blocks dev FGs
 !!!!!!!!!!!!!!ana_buff_out[0] -->  DEV FGs  -> (16 13) -> (288 208)
@@ -2176,6 +2129,31 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 no LI need for I[13:15] so dont worry!
 no LI need for I[13:15] so dont worry!
 no LI need for I[13:15] so dont worry!
+sftreg[0].out[0]
+cab_vmm.O[4]
+local interconnect 34 sftreg[0].out[0] -> 259 cab_vmm.O[4] (25 54) -> (331 869)
+getting here!
+sftreg[0] sftreg_fg[0] -> (30 40) -> (336 645)
+sftreg[0] sftreg_fg[0] -> (30 41) -> (336 661)
+sftreg[0] sftreg_fg[0] -> (30 42) -> (336 677)
+sftreg[0] sftreg_fg[0] -> (30 43) -> (336 693)
+sftreg[0] sftreg_fg[0] -> (30 44) -> (336 709)
+sftreg[0] sftreg_fg[0] -> (30 45) -> (336 725)
+sftreg[0] sftreg_fg[0] -> (30 46) -> (336 741)
+sftreg[0] sftreg_fg[0] -> (30 47) -> (336 757)
+sftreg[0] sftreg_fg[0] -> (30 48) -> (336 773)
+sftreg[0] sftreg_fg[0] -> (30 49) -> (336 789)
+sftreg[0] sftreg_fg[0] -> (30 50) -> (336 805)
+sftreg[0] sftreg_fg[0] -> (30 51) -> (336 821)
+sftreg[0] sftreg_fg[0] -> (30 52) -> (336 837)
+sftreg[0] sftreg_fg[0] -> (30 53) -> (336 853)
+sftreg[0] sftreg_fg[0] -> (30 54) -> (336 869)
+sftreg[0] sftreg_fg[0] -> (30 55) -> (336 885)
+sftreg[0] sftreg_fg[0] -> (25 55) -> (331 885)
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+no LI needed dont worry!
+no LI needed dont worry!
+no LI needed dont worry!
 cab_vmm.I[12]
 sftreg3[0].in[3]
 local interconnect 14 cab_vmm.I[12] -> 169 sftreg3[0].in[3] (21 14) -> (327 230)
@@ -2198,31 +2176,20 @@ sftreg3[0] sftreg3_fg[0] -> (30 54) -> (336 870)
 sftreg3[0] sftreg3_fg[0] -> (30 55) -> (336 886)
 sftreg3[0] sftreg3_fg[0] -> (21 33) -> (327 534)
 sftreg3[0] sftreg3_fg[0] -> (21 34) -> (327 550)
-$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-no LI need for I[13:15] so dont worry!
-no LI need for I[13:15] so dont worry!
-no LI need for I[13:15] so dont worry!
-sftreg[0].out[0]
-cab_vmm.O[4]
-local interconnect 33 sftreg[0].out[0] -> 242 cab_vmm.O[4] (25 54) -> (365 866)
-getting here!
-sftreg[0] sftreg_fg[0] -> (30 40) -> (370 642)
-sftreg[0] sftreg_fg[0] -> (30 41) -> (370 658)
-sftreg[0] sftreg_fg[0] -> (30 42) -> (370 674)
-sftreg[0] sftreg_fg[0] -> (30 43) -> (370 690)
-sftreg[0] sftreg_fg[0] -> (30 44) -> (370 706)
-sftreg[0] sftreg_fg[0] -> (30 45) -> (370 722)
-sftreg[0] sftreg_fg[0] -> (30 46) -> (370 738)
-sftreg[0] sftreg_fg[0] -> (30 47) -> (370 754)
-sftreg[0] sftreg_fg[0] -> (30 48) -> (370 770)
-sftreg[0] sftreg_fg[0] -> (30 49) -> (370 786)
-sftreg[0] sftreg_fg[0] -> (30 50) -> (370 802)
-sftreg[0] sftreg_fg[0] -> (30 51) -> (370 818)
-sftreg[0] sftreg_fg[0] -> (30 52) -> (370 834)
-sftreg[0] sftreg_fg[0] -> (30 53) -> (370 850)
-sftreg[0] sftreg_fg[0] -> (30 54) -> (370 866)
-sftreg[0] sftreg_fg[0] -> (30 55) -> (370 882)
-sftreg[0] sftreg_fg[0] -> (25 55) -> (365 882)
+class: complexBlock - name: out:net1_1 - type: #ana_buff_out[0] - num: 0 
+I8 ana_buff_out[0] -> (13 5) -> (353 80)
+I/O Blocks dev FGs
+!!!!!!!!!!!!!!ana_buff_out[0] -->  DEV FGs  -> (20 13) -> (360 208)
+!!!!!!!!!!!!!!ana_buff_out[0] -->  DEV FGs  -> (11 13) -> (351 208)
+class: complexBlock - name: out:net14_1 - type: #ana_buff_out[0] - num: 0 
+I3 ana_buff_out[0] -> (9 5) -> (383 80)
+class: complexBlock - name: out:net18_1 - type: #ana_buff_out[1] - num: 3 
+I15 ana_buff_out[1] -> (9 11) -> (383 176)
+I/O Blocks dev FGs
+!!!!!!!!!!!!!!ana_buff_out[0] -->  DEV FGs  -> (16 13) -> (390 208)
+!!!!!!!!!!!!!!ana_buff_out[0] -->  DEV FGs  -> (7 13) -> (381 208)
+!!!!!!!!!!!!!!ana_buff_out[1] -->  DEV FGs  -> (24 13) -> (398 208)
+!!!!!!!!!!!!!!ana_buff_out[1] -->  DEV FGs  -> (28 13) -> (402 208)
 I/O Blocks dev FGs
 !!!!!!!!!!!!!!int[1] -->  DEV FGs  -> (12 9) -> (420 144)
 !!!!!!!!!!!!!!int[2] -->  DEV FGs  -> (12 10) -> (420 160)
@@ -2231,259 +2198,223 @@ I/O Blocks dev FGs
 !!!!!!!!!!!!!!int[5] -->  DEV FGs  -> (12 13) -> (420 208)
 I/O Blocks dev FGs
 !!!!!!!!!!!!!!int[5] -->  DEV FGs  -> (8 29) -> (484 465)
-[189, 663, 1, 0, 0, 0]
-[223, 871, 1, 0, 0, 0]
-[255, 1031, 0, 0]
-[289, 1031, 0, 0]
-[325, 871, 1, 0, 0, 0]
-[359, 807, 1, 0, 0, 0]
-[359, 838, 1, 0, 0, 0]
-[359, 837, 1, 0, 0, 0]
-[359, 836, 1, 0, 0, 0]
-[359, 835, 1, 0, 0, 0]
-[359, 834, 1, 0, 0, 0]
-[359, 946, 0, 0]
-[226, 663, 1, 0, 0, 0]
-[258, 1031, 0, 0]
-[292, 967, 0, 0]
-[292, 998, 0, 0]
-[292, 997, 0, 0]
-[292, 996, 0, 0]
-[292, 995, 0, 0]
-[292, 1010, 0, 0]
-[328, 866, 1, 0, 0, 0]
-[362, 802, 1, 0, 0, 0]
-[362, 962, 0, 0]
-[175, 664, 1, 0, 0, 0]
-[209, 872, 1, 0, 0, 0]
-[241, 1032, 0, 0]
-[275, 1032, 0, 0]
-[311, 808, 1, 0, 0, 0]
-[311, 839, 1, 0, 0, 0]
-[311, 838, 1, 0, 0, 0]
-[311, 837, 1, 0, 0, 0]
-[311, 836, 1, 0, 0, 0]
-[311, 835, 1, 0, 0, 0]
-[311, 850, 1, 0, 0, 0]
-[345, 802, 1, 0, 0, 0]
-[345, 978, 0, 0]
-[225, 664, 1, 0, 0, 0]
-[257, 1032, 0, 0]
-[291, 968, 0, 0]
-[291, 999, 0, 0]
+[180, 663, 1, 0, 0, 0]
+[214, 871, 1, 0, 0, 0]
+[246, 1031, 0, 0]
+[280, 967, 0, 0]
+[280, 998, 0, 0]
+[280, 1013, 0, 0]
+[316, 805, 1, 0, 0, 0]
+[316, 949, 0, 0]
+[225, 663, 1, 0, 0, 0]
+[257, 1031, 0, 0]
+[291, 967, 0, 0]
 [291, 998, 0, 0]
-[291, 997, 0, 0]
-[291, 996, 0, 0]
-[291, 995, 0, 0]
-[291, 1010, 0, 0]
-[327, 866, 1, 0, 0, 0]
-[361, 802, 1, 0, 0, 0]
-[361, 994, 0, 0]
-[191, 665, 1, 0, 0, 0]
-[225, 873, 1, 0, 0, 0]
-[257, 1033, 0, 0]
-[291, 1033, 0, 0]
-[327, 809, 1, 0, 0, 0]
-[327, 840, 1, 0, 0, 0]
-[327, 839, 1, 0, 0, 0]
-[327, 838, 1, 0, 0, 0]
-[327, 837, 1, 0, 0, 0]
-[327, 836, 1, 0, 0, 0]
-[327, 851, 1, 0, 0, 0]
-[361, 867, 1, 0, 0, 0]
-[393, 963, 0, 0]
-[393, 994, 0, 0]
-[393, 626, 0, 0]
-[226, 665, 1, 0, 0, 0]
-[258, 1033, 0, 0]
-[292, 1033, 0, 0]
-[328, 873, 1, 0, 0, 0]
-[362, 809, 1, 0, 0, 0]
-[362, 840, 1, 0, 0, 0]
-[362, 839, 1, 0, 0, 0]
-[362, 838, 1, 0, 0, 0]
-[362, 837, 1, 0, 0, 0]
-[362, 836, 1, 0, 0, 0]
-[362, 835, 1, 0, 0, 0]
-[362, 850, 1, 0, 0, 0]
-[394, 962, 0, 0]
-[394, 642, 1, 0, 0, 0]
-[175, 659, 1, 0, 0, 0]
-[209, 867, 1, 0, 0, 0]
-[241, 1027, 0, 0]
-[275, 1027, 0, 0]
-[311, 867, 1, 0, 0, 0]
-[345, 803, 1, 0, 0, 0]
-[345, 850, 1, 0, 0, 0]
-[377, 962, 0, 0]
-[377, 658, 1, 0, 0, 0]
-[217, 659, 1, 0, 0, 0]
+[291, 1013, 0, 0]
+[327, 805, 1, 0, 0, 0]
+[327, 965, 0, 0]
+[192, 664, 1, 0, 0, 0]
+[226, 872, 1, 0, 0, 0]
+[258, 1032, 0, 0]
+[292, 1032, 0, 0]
+[328, 808, 1, 0, 0, 0]
+[328, 839, 1, 0, 0, 0]
+[328, 838, 1, 0, 0, 0]
+[328, 837, 1, 0, 0, 0]
+[328, 981, 0, 0]
+[218, 664, 1, 0, 0, 0]
+[250, 1032, 0, 0]
+[284, 968, 0, 0]
+[284, 999, 0, 0]
+[284, 998, 0, 0]
+[284, 1013, 0, 0]
+[320, 805, 1, 0, 0, 0]
+[320, 997, 0, 0]
+[175, 665, 1, 0, 0, 0]
+[209, 873, 1, 0, 0, 0]
+[241, 1033, 0, 0]
+[275, 969, 0, 0]
+[275, 1000, 0, 0]
+[275, 1015, 0, 0]
+[311, 871, 1, 0, 0, 0]
+[345, 807, 1, 0, 0, 0]
+[345, 838, 1, 0, 0, 0]
+[345, 837, 1, 0, 0, 0]
+[345, 1045, 0, 0]
+[216, 665, 1, 0, 0, 0]
+[248, 1033, 0, 0]
+[282, 969, 0, 0]
+[282, 1000, 0, 0]
+[282, 999, 0, 0]
+[282, 998, 0, 0]
+[282, 1013, 0, 0]
+[318, 869, 1, 0, 0, 0]
+[352, 805, 1, 0, 0, 0]
+[352, 1061, 0, 0]
+[183, 659, 1, 0, 0, 0]
+[217, 867, 1, 0, 0, 0]
 [249, 1027, 0, 0]
 [283, 1027, 0, 0]
-[319, 803, 1, 0, 0, 0]
-[319, 850, 1, 0, 0, 0]
-[353, 866, 1, 0, 0, 0]
-[385, 962, 0, 0]
-[385, 674, 1, 0, 0, 0]
-[177, 660, 1, 0, 0, 0]
-[211, 868, 1, 0, 0, 0]
-[243, 1028, 0, 0]
-[277, 1028, 0, 0]
-[313, 868, 1, 0, 0, 0]
-[347, 804, 1, 0, 0, 0]
-[347, 835, 1, 0, 0, 0]
-[347, 850, 1, 0, 0, 0]
-[347, 578, 0, 0]
-[225, 660, 1, 0, 0, 0]
-[257, 1028, 0, 0]
-[291, 1028, 0, 0]
-[327, 868, 1, 0, 0, 0]
-[361, 804, 1, 0, 0, 0]
-[361, 835, 1, 0, 0, 0]
-[361, 850, 1, 0, 0, 0]
-[361, 594, 0, 0]
-[175, 661, 1, 0, 0, 0]
-[209, 869, 1, 0, 0, 0]
-[241, 1029, 0, 0]
-[275, 965, 0, 0]
-[275, 996, 0, 0]
-[275, 995, 0, 0]
-[275, 1010, 0, 0]
-[311, 802, 1, 0, 0, 0]
-[311, 849, 1, 0, 0, 0]
-[345, 865, 1, 0, 0, 0]
-[345, 673, 1, 0, 0, 0]
-[217, 661, 1, 0, 0, 0]
-[249, 1029, 0, 0]
-[283, 1029, 0, 0]
-[319, 869, 1, 0, 0, 0]
-[353, 805, 1, 0, 0, 0]
-[353, 836, 1, 0, 0, 0]
-[353, 835, 1, 0, 0, 0]
-[353, 834, 1, 0, 0, 0]
-[353, 849, 1, 0, 0, 0]
-[353, 689, 1, 0, 0, 0]
-[426, 288, 0, 0]
-[415, 352, 0, 0]
-[381, 336, 0, 0]
-[383, 993, 0, 0]
-[383, 962, 0, 0]
-[351, 610, 0, 0]
-[80, 660, 1, 0, 0, 0]
-[112, 1028, 0, 0]
-[146, 1028, 0, 0]
-[182, 868, 1, 0, 0, 0]
-[216, 868, 1, 0, 0, 0]
-[248, 1028, 0, 0]
-[282, 1028, 0, 0]
-[318, 820, 1, 0, 0, 0]
-[318, 837, 1, 0, 0, 0]
-[318, 790, 1, 0, 0, 0]
-[318, 630, 0, 0]
-[318, 804, 1, 0, 0, 0]
-[318, 835, 1, 0, 0, 0]
-[318, 850, 1, 0, 0, 0]
-[352, 866, 1, 0, 0, 0]
-[352, 626, 0, 0]
-[425, 304, 0, 0]
-[414, 352, 0, 0]
-[380, 336, 0, 0]
-[382, 993, 0, 0]
-[382, 962, 0, 0]
-[350, 642, 1, 0, 0, 0]
-[184, 666, 1, 0, 0, 0]
-[218, 874, 1, 0, 0, 0]
-[250, 970, 0, 0]
-[250, 1001, 0, 0]
-[250, 1000, 0, 0]
-[250, 999, 0, 0]
-[250, 998, 0, 0]
-[250, 1013, 0, 0]
-[284, 1029, 0, 0]
-[320, 805, 1, 0, 0, 0]
-[320, 836, 1, 0, 0, 0]
-[320, 835, 1, 0, 0, 0]
-[320, 834, 1, 0, 0, 0]
-[320, 849, 1, 0, 0, 0]
-[354, 817, 1, 0, 0, 0]
-[354, 1010, 0, 0]
+[319, 819, 1, 0, 0, 0]
+[319, 788, 1, 0, 0, 0]
+[353, 820, 1, 0, 0, 0]
+[353, 1077, 0, 0]
+[353, 852, 1, 0, 0, 0]
+[385, 964, 0, 0]
+[385, 995, 0, 0]
+[385, 994, 0, 0]
+[385, 993, 0, 0]
+[383, 336, 0, 0]
+[394, 272, 0, 0]
+[215, 659, 1, 0, 0, 0]
+[247, 1027, 0, 0]
+[281, 1027, 0, 0]
+[317, 819, 1, 0, 0, 0]
+[317, 788, 1, 0, 0, 0]
+[351, 820, 1, 0, 0, 0]
+[351, 1093, 0, 0]
+[188, 660, 1, 0, 0, 0]
+[222, 868, 1, 0, 0, 0]
+[254, 1028, 0, 0]
+[288, 1028, 0, 0]
+[324, 820, 1, 0, 0, 0]
+[324, 789, 1, 0, 0, 0]
+[324, 581, 0, 0]
+[223, 660, 1, 0, 0, 0]
+[255, 1028, 0, 0]
+[289, 1028, 0, 0]
+[325, 820, 1, 0, 0, 0]
+[325, 789, 1, 0, 0, 0]
+[325, 597, 0, 0]
+[186, 661, 1, 0, 0, 0]
+[220, 869, 1, 0, 0, 0]
+[252, 1029, 0, 0]
+[286, 1029, 0, 0]
+[322, 805, 1, 0, 0, 0]
+[322, 852, 1, 0, 0, 0]
+[322, 676, 1, 0, 0, 0]
+[210, 661, 1, 0, 0, 0]
+[242, 1029, 0, 0]
+[276, 1029, 0, 0]
+[312, 805, 1, 0, 0, 0]
+[312, 852, 1, 0, 0, 0]
+[312, 692, 1, 0, 0, 0]
+[422, 288, 0, 0]
+[411, 352, 0, 0]
+[377, 336, 0, 0]
+[379, 993, 0, 0]
+[379, 994, 0, 0]
+[379, 995, 0, 0]
+[379, 964, 0, 0]
+[347, 852, 1, 0, 0, 0]
+[347, 805, 1, 0, 0, 0]
+[313, 613, 0, 0]
+[73, 660, 1, 0, 0, 0]
+[105, 1028, 0, 0]
+[139, 1028, 0, 0]
+[175, 868, 1, 0, 0, 0]
+[209, 868, 1, 0, 0, 0]
+[241, 1028, 0, 0]
+[275, 1028, 0, 0]
+[311, 820, 1, 0, 0, 0]
+[311, 789, 1, 0, 0, 0]
+[311, 629, 0, 0]
+[311, 837, 1, 0, 0, 0]
+[311, 790, 1, 0, 0, 0]
+[311, 630, 0, 0]
+[429, 304, 0, 0]
+[408, 448, 0, 0]
+[374, 448, 0, 0]
+[344, 432, 0, 0]
+[354, 833, 1, 0, 0, 0]
+[354, 834, 1, 0, 0, 0]
+[354, 835, 1, 0, 0, 0]
+[354, 836, 1, 0, 0, 0]
+[354, 805, 1, 0, 0, 0]
+[320, 645, 1, 0, 0, 0]
+[183, 666, 1, 0, 0, 0]
+[217, 874, 1, 0, 0, 0]
+[249, 1034, 0, 0]
+[283, 970, 0, 0]
+[283, 1001, 0, 0]
+[283, 1000, 0, 0]
+[283, 999, 0, 0]
+[283, 998, 0, 0]
+[283, 997, 0, 0]
+[283, 1012, 0, 0]
+[319, 820, 1, 0, 0, 0]
+[319, 1013, 0, 0]
 [208, 666, 1, 0, 0, 0]
 [240, 1034, 0, 0]
 [274, 1034, 0, 0]
-[310, 874, 1, 0, 0, 0]
-[344, 810, 1, 0, 0, 0]
-[344, 841, 1, 0, 0, 0]
-[344, 840, 1, 0, 0, 0]
-[344, 839, 1, 0, 0, 0]
-[344, 838, 1, 0, 0, 0]
-[344, 837, 1, 0, 0, 0]
-[344, 836, 1, 0, 0, 0]
-[344, 835, 1, 0, 0, 0]
-[344, 834, 1, 0, 0, 0]
-[344, 1026, 0, 0]
-[184, 662, 1, 0, 0, 0]
-[218, 870, 1, 0, 0, 0]
-[250, 1030, 0, 0]
-[284, 966, 0, 0]
-[284, 997, 0, 0]
-[284, 996, 0, 0]
-[284, 1011, 0, 0]
-[320, 867, 1, 0, 0, 0]
-[354, 867, 1, 0, 0, 0]
-[386, 963, 0, 0]
-[386, 994, 0, 0]
-[386, 690, 1, 0, 0, 0]
-[216, 662, 1, 0, 0, 0]
-[248, 1030, 0, 0]
-[282, 966, 0, 0]
-[282, 997, 0, 0]
-[282, 996, 0, 0]
-[282, 1011, 0, 0]
-[318, 867, 1, 0, 0, 0]
-[352, 867, 1, 0, 0, 0]
-[384, 963, 0, 0]
-[384, 994, 0, 0]
-[384, 706, 1, 0, 0, 0]
-[354, 658, 1, 0, 0, 0]
-[354, 866, 1, 0, 0, 0]
-[320, 866, 1, 0, 0, 0]
-[284, 1026, 0, 0]
-[250, 946, 0, 0]
-[250, 993, 0, 0]
-[238, 400, 0, 0]
-[228, 384, 0, 0]
-[175, 658, 1, 0, 0, 0]
-[209, 866, 1, 0, 0, 0]
-[241, 978, 0, 0]
-[241, 995, 0, 0]
-[241, 948, 0, 0]
-[275, 1028, 0, 0]
-[311, 868, 1, 0, 0, 0]
-[345, 820, 1, 0, 0, 0]
-[345, 805, 1, 0, 0, 0]
-[311, 709, 1, 0, 0, 0]
-[420, 336, 0, 0]
-[409, 336, 0, 0]
-[411, 993, 0, 0]
-[411, 994, 0, 0]
-[411, 995, 0, 0]
-[411, 996, 0, 0]
-[411, 965, 0, 0]
-[377, 1029, 0, 0]
-[345, 853, 1, 0, 0, 0]
-[345, 806, 1, 0, 0, 0]
-[311, 614, 0, 0]
-[421, 352, 0, 0]
-[410, 352, 0, 0]
-[376, 352, 0, 0]
-[346, 336, 0, 0]
-[346, 833, 1, 0, 0, 0]
-[346, 834, 1, 0, 0, 0]
-[346, 835, 1, 0, 0, 0]
-[346, 836, 1, 0, 0, 0]
-[346, 837, 1, 0, 0, 0]
-[346, 806, 1, 0, 0, 0]
-[312, 646, 1, 0, 0, 0]
+[310, 810, 1, 0, 0, 0]
+[310, 841, 1, 0, 0, 0]
+[310, 840, 1, 0, 0, 0]
+[310, 839, 1, 0, 0, 0]
+[310, 838, 1, 0, 0, 0]
+[310, 837, 1, 0, 0, 0]
+[310, 1029, 0, 0]
+[176, 662, 1, 0, 0, 0]
+[210, 870, 1, 0, 0, 0]
+[242, 1030, 0, 0]
+[276, 1030, 0, 0]
+[312, 806, 1, 0, 0, 0]
+[312, 853, 1, 0, 0, 0]
+[346, 805, 1, 0, 0, 0]
+[346, 1109, 0, 0]
+[214, 662, 1, 0, 0, 0]
+[246, 1030, 0, 0]
+[280, 1030, 0, 0]
+[316, 806, 1, 0, 0, 0]
+[316, 853, 1, 0, 0, 0]
+[350, 805, 1, 0, 0, 0]
+[350, 1125, 0, 0]
+[327, 661, 1, 0, 0, 0]
+[361, 869, 1, 0, 0, 0]
+[393, 965, 0, 0]
+[393, 996, 0, 0]
+[393, 995, 0, 0]
+[393, 994, 0, 0]
+[393, 993, 0, 0]
+[381, 432, 0, 0]
+[404, 320, 0, 0]
+[381, 448, 0, 0]
+[351, 448, 0, 0]
+[317, 448, 0, 0]
+[279, 448, 0, 0]
+[245, 448, 0, 0]
+[235, 384, 0, 0]
+[179, 658, 1, 0, 0, 0]
+[213, 866, 1, 0, 0, 0]
+[245, 1026, 0, 0]
+[279, 1026, 0, 0]
+[315, 818, 1, 0, 0, 0]
+[315, 835, 1, 0, 0, 0]
+[315, 836, 1, 0, 0, 0]
+[315, 789, 1, 0, 0, 0]
+[315, 709, 1, 0, 0, 0]
+[439, 336, 0, 0]
+[416, 448, 0, 0]
+[382, 448, 0, 0]
+[352, 432, 0, 0]
+[362, 833, 1, 0, 0, 0]
+[362, 834, 1, 0, 0, 0]
+[362, 835, 1, 0, 0, 0]
+[362, 836, 1, 0, 0, 0]
+[362, 837, 1, 0, 0, 0]
+[362, 806, 1, 0, 0, 0]
+[328, 614, 0, 0]
+[438, 352, 0, 0]
+[415, 432, 0, 0]
+[427, 993, 0, 0]
+[427, 994, 0, 0]
+[427, 995, 0, 0]
+[427, 964, 0, 0]
+[393, 1028, 0, 0]
+[361, 852, 1, 0, 0, 0]
+[361, 837, 1, 0, 0, 0]
+[361, 806, 1, 0, 0, 0]
+[327, 646, 1, 0, 0, 0]
 [319, 1014, 0, 0]
 [319, 838, 1, 0, 0, 0]
 [319, 839, 1, 0, 0, 0]
@@ -2501,80 +2432,80 @@ I/O Blocks dev FGs
 [284, 1033, 0, 0]
 [250, 1033, 0, 0]
 [218, 713, 1, 0, 0, 0]
-[353, 1110, 0, 0]
-[353, 806, 1, 0, 0, 0]
-[319, 870, 1, 0, 0, 0]
-[283, 1030, 0, 0]
-[249, 1030, 0, 0]
-[217, 790, 1, 0, 0, 0]
-[217, 821, 1, 0, 0, 0]
-[183, 709, 1, 0, 0, 0]
-[356, 1126, 0, 0]
-[356, 821, 1, 0, 0, 0]
-[322, 869, 1, 0, 0, 0]
-[286, 1029, 0, 0]
-[252, 1029, 0, 0]
-[220, 709, 1, 0, 0, 0]
+[354, 1110, 0, 0]
+[354, 806, 1, 0, 0, 0]
+[320, 870, 1, 0, 0, 0]
+[284, 1030, 0, 0]
+[250, 1030, 0, 0]
+[218, 790, 1, 0, 0, 0]
+[218, 821, 1, 0, 0, 0]
+[184, 709, 1, 0, 0, 0]
+[353, 1126, 0, 0]
+[353, 821, 1, 0, 0, 0]
+[319, 869, 1, 0, 0, 0]
+[283, 1029, 0, 0]
+[249, 1029, 0, 0]
+[217, 709, 1, 0, 0, 0]
 [313, 950, 0, 0]
 [313, 806, 1, 0, 0, 0]
 [277, 1030, 0, 0]
 [243, 1030, 0, 0]
 [211, 870, 1, 0, 0, 0]
 [177, 710, 1, 0, 0, 0]
-[328, 966, 0, 0]
-[328, 806, 1, 0, 0, 0]
-[292, 1030, 0, 0]
-[258, 1030, 0, 0]
-[226, 710, 1, 0, 0, 0]
-[322, 982, 0, 0]
+[327, 966, 0, 0]
+[327, 806, 1, 0, 0, 0]
+[291, 1030, 0, 0]
+[257, 1030, 0, 0]
+[225, 710, 1, 0, 0, 0]
+[318, 982, 0, 0]
+[318, 838, 1, 0, 0, 0]
+[318, 807, 1, 0, 0, 0]
+[282, 1031, 0, 0]
+[248, 1031, 0, 0]
+[216, 871, 1, 0, 0, 0]
+[182, 711, 1, 0, 0, 0]
+[322, 998, 0, 0]
 [322, 838, 1, 0, 0, 0]
 [322, 807, 1, 0, 0, 0]
 [286, 1031, 0, 0]
 [252, 1031, 0, 0]
-[220, 871, 1, 0, 0, 0]
-[186, 711, 1, 0, 0, 0]
-[315, 998, 0, 0]
-[315, 838, 1, 0, 0, 0]
-[315, 807, 1, 0, 0, 0]
-[279, 1031, 0, 0]
-[245, 1031, 0, 0]
-[213, 711, 1, 0, 0, 0]
-[349, 1046, 0, 0]
-[349, 838, 1, 0, 0, 0]
-[349, 839, 1, 0, 0, 0]
-[349, 808, 1, 0, 0, 0]
-[315, 872, 1, 0, 0, 0]
-[279, 1032, 0, 0]
-[245, 1032, 0, 0]
-[213, 872, 1, 0, 0, 0]
-[179, 712, 1, 0, 0, 0]
-[347, 1062, 0, 0]
+[220, 711, 1, 0, 0, 0]
+[347, 1046, 0, 0]
 [347, 838, 1, 0, 0, 0]
 [347, 839, 1, 0, 0, 0]
 [347, 808, 1, 0, 0, 0]
 [313, 872, 1, 0, 0, 0]
 [277, 1032, 0, 0]
 [243, 1032, 0, 0]
-[211, 712, 1, 0, 0, 0]
-[361, 1078, 0, 0]
-[361, 821, 1, 0, 0, 0]
-[327, 869, 1, 0, 0, 0]
-[291, 1029, 0, 0]
-[257, 1029, 0, 0]
-[225, 789, 1, 0, 0, 0]
-[225, 836, 1, 0, 0, 0]
-[225, 835, 1, 0, 0, 0]
-[225, 818, 1, 0, 0, 0]
-[191, 706, 1, 0, 0, 0]
-[354, 1094, 0, 0]
-[354, 837, 1, 0, 0, 0]
-[354, 820, 1, 0, 0, 0]
-[320, 868, 1, 0, 0, 0]
-[284, 1028, 0, 0]
-[250, 948, 0, 0]
-[250, 995, 0, 0]
-[250, 978, 0, 0]
-[218, 706, 1, 0, 0, 0]
+[211, 872, 1, 0, 0, 0]
+[177, 712, 1, 0, 0, 0]
+[352, 1062, 0, 0]
+[352, 838, 1, 0, 0, 0]
+[352, 839, 1, 0, 0, 0]
+[352, 808, 1, 0, 0, 0]
+[318, 872, 1, 0, 0, 0]
+[282, 1032, 0, 0]
+[248, 1032, 0, 0]
+[216, 712, 1, 0, 0, 0]
+[356, 1078, 0, 0]
+[356, 837, 1, 0, 0, 0]
+[356, 836, 1, 0, 0, 0]
+[356, 819, 1, 0, 0, 0]
+[322, 867, 1, 0, 0, 0]
+[286, 1027, 0, 0]
+[252, 1027, 0, 0]
+[220, 787, 1, 0, 0, 0]
+[220, 818, 1, 0, 0, 0]
+[186, 706, 1, 0, 0, 0]
+[360, 1094, 0, 0]
+[360, 837, 1, 0, 0, 0]
+[360, 836, 1, 0, 0, 0]
+[360, 819, 1, 0, 0, 0]
+[326, 867, 1, 0, 0, 0]
+[290, 1027, 0, 0]
+[256, 947, 0, 0]
+[256, 978, 0, 0]
+[224, 706, 1, 0, 0, 0]
 [322, 582, 0, 0]
 [322, 870, 1, 0, 0, 0]
 [286, 1030, 0, 0]
@@ -2584,62 +2515,63 @@ I/O Blocks dev FGs
 [220, 836, 1, 0, 0, 0]
 [220, 819, 1, 0, 0, 0]
 [186, 707, 1, 0, 0, 0]
-[327, 598, 0, 0]
-[327, 870, 1, 0, 0, 0]
-[291, 1030, 0, 0]
-[257, 950, 0, 0]
-[257, 997, 0, 0]
-[257, 996, 0, 0]
-[257, 979, 0, 0]
-[225, 707, 1, 0, 0, 0]
-[317, 677, 1, 0, 0, 0]
+[315, 598, 0, 0]
+[315, 870, 1, 0, 0, 0]
+[279, 1030, 0, 0]
+[245, 950, 0, 0]
+[245, 997, 0, 0]
+[245, 996, 0, 0]
+[245, 979, 0, 0]
+[213, 707, 1, 0, 0, 0]
+[326, 677, 1, 0, 0, 0]
+[326, 869, 1, 0, 0, 0]
+[290, 1029, 0, 0]
+[256, 1029, 0, 0]
+[224, 789, 1, 0, 0, 0]
+[224, 820, 1, 0, 0, 0]
+[190, 708, 1, 0, 0, 0]
+[317, 693, 1, 0, 0, 0]
 [317, 869, 1, 0, 0, 0]
 [281, 1029, 0, 0]
-[247, 1029, 0, 0]
-[215, 789, 1, 0, 0, 0]
-[215, 820, 1, 0, 0, 0]
-[181, 708, 1, 0, 0, 0]
-[324, 693, 1, 0, 0, 0]
-[324, 869, 1, 0, 0, 0]
-[288, 1029, 0, 0]
-[254, 949, 0, 0]
-[254, 980, 0, 0]
-[222, 708, 1, 0, 0, 0]
-[245, 714, 1, 0, 0, 0]
-[245, 970, 0, 0]
-[213, 602, 0, 0]
-[245, 666, 1, 0, 0, 0]
-[245, 1001, 0, 0]
-[245, 665, 1, 0, 0, 0]
-[245, 1000, 0, 0]
-[245, 664, 1, 0, 0, 0]
-[245, 999, 0, 0]
-[245, 663, 1, 0, 0, 0]
-[245, 998, 0, 0]
-[245, 662, 1, 0, 0, 0]
-[245, 997, 0, 0]
-[245, 661, 1, 0, 0, 0]
-[245, 996, 0, 0]
-[245, 660, 1, 0, 0, 0]
-[245, 995, 0, 0]
-[245, 659, 1, 0, 0, 0]
-[245, 979, 0, 0]
-[213, 787, 1, 0, 0, 0]
-[213, 1075, 0, 0]
-[213, 835, 1, 0, 0, 0]
-[213, 1076, 0, 0]
-[213, 836, 1, 0, 0, 0]
-[213, 1077, 0, 0]
-[213, 837, 1, 0, 0, 0]
-[213, 1078, 0, 0]
-[213, 838, 1, 0, 0, 0]
-[213, 1079, 0, 0]
-[213, 839, 1, 0, 0, 0]
-[213, 1080, 0, 0]
-[213, 840, 1, 0, 0, 0]
-[213, 1081, 0, 0]
-[213, 794, 1, 0, 0, 0]
-[213, 1082, 0, 0]
+[247, 949, 0, 0]
+[247, 980, 0, 0]
+[215, 708, 1, 0, 0, 0]
+[250, 352, 0, 0]
+[239, 336, 0, 0]
+[241, 993, 0, 0]
+[241, 994, 0, 0]
+[241, 659, 1, 0, 0, 0]
+[241, 962, 0, 0]
+[209, 850, 1, 0, 0, 0]
+[209, 1075, 0, 0]
+[209, 835, 1, 0, 0, 0]
+[209, 1076, 0, 0]
+[241, 995, 0, 0]
+[241, 660, 1, 0, 0, 0]
+[209, 836, 1, 0, 0, 0]
+[209, 1077, 0, 0]
+[241, 996, 0, 0]
+[241, 661, 1, 0, 0, 0]
+[209, 837, 1, 0, 0, 0]
+[209, 1078, 0, 0]
+[241, 997, 0, 0]
+[241, 662, 1, 0, 0, 0]
+[209, 838, 1, 0, 0, 0]
+[209, 1079, 0, 0]
+[241, 998, 0, 0]
+[241, 663, 1, 0, 0, 0]
+[209, 839, 1, 0, 0, 0]
+[209, 1080, 0, 0]
+[241, 999, 0, 0]
+[241, 664, 1, 0, 0, 0]
+[209, 840, 1, 0, 0, 0]
+[209, 1081, 0, 0]
+[241, 1000, 0, 0]
+[241, 665, 1, 0, 0, 0]
+[209, 841, 1, 0, 0, 0]
+[209, 1082, 0, 0]
+[241, 1001, 0, 0]
+[241, 666, 1, 0, 0, 0]
 [419, 320, 0, 0]
 [408, 352, 0, 0]
 [374, 352, 0, 0]
@@ -2688,24 +2620,28 @@ I/O Blocks dev FGs
 [208, 793, 1, 0, 0, 0]
 [208, 697, 1, 0, 0, 0]
 [284, 288, 0, 0]
-[273, 352, 0, 0]
-[239, 336, 0, 0]
-[241, 993, 0, 0]
-[241, 658, 1, 0, 0, 0]
+[284, 272, 0, 0]
+[292, 288, 0, 0]
+[281, 352, 0, 0]
+[247, 336, 0, 0]
+[249, 993, 0, 0]
+[249, 658, 1, 0, 0, 0]
 [285, 304, 0, 0]
 [274, 352, 0, 0]
 [240, 336, 0, 0]
 [242, 961, 0, 0]
 [210, 705, 1, 0, 0, 0]
-[222, 658, 1, 0, 0, 0]
-[222, 866, 1, 0, 0, 0]
-[188, 786, 1, 0, 0, 0]
-[188, 962, 0, 0]
-[254, 1026, 0, 0]
-[288, 962, 0, 0]
-[288, 993, 0, 0]
-[276, 432, 0, 0]
-[298, 272, 0, 0]
+[211, 658, 1, 0, 0, 0]
+[211, 866, 1, 0, 0, 0]
+[177, 786, 1, 0, 0, 0]
+[177, 962, 0, 0]
+[243, 1026, 0, 0]
+[277, 1026, 0, 0]
+[313, 866, 1, 0, 0, 0]
+[347, 802, 1, 0, 0, 0]
+[347, 833, 1, 0, 0, 0]
+[347, 336, 0, 0]
+[357, 272, 0, 0]
 [208, 657, 1, 0, 0, 0]
 [240, 1025, 0, 0]
 [274, 1025, 0, 0]
@@ -2722,7 +2658,7 @@ I/O Blocks dev FGs
 [191, 50, 0, 0]
 [195, 834, 1, 0, 0, 0]
 [191, 498, '2.30e-04', 1, 0, 0]
-[175, 18, '1.00e-06', 1, 0, 0]
+[175, 18, '9.00e-08', 1, 0, 0]
 [199, 131, 0, 0]
 [198, 227, 0, 0]
 [183, 211, 0, 0]
@@ -3048,7 +2984,9 @@ I/O Blocks dev FGs
 [223, 2, 0, 0]
 [236, 994, '9e-6', 2, 0, 0]
 [232, 962, '0', 0, 0]
-[225, 370, '7.00e-05', 1, 0, 0]
+[233, 914, '0', 0, 0]
+[233, 962, '0', 0, 0]
+[225, 370, '5.00e-06', 1, 0, 0]
 [233, 131, 0, 0]
 [232, 227, 0, 0]
 [217, 211, 0, 0]
@@ -3287,19 +3225,10 @@ I/O Blocks dev FGs
 [236, 1001, '1.00e-06', 2, 0, 0]
 [236, 1017, '2.00e-06', 2, 0, 0]
 [209, 409, '5.00e-11', 1, 0, 0]
-[237, 26, 0, 0]
-[236, 138, 0, 0]
-[236, 250, 0, 0]
 [233, 138, 0, 0]
-[233, 250, 0, 0]
 [232, 234, 0, 0]
 [217, 218, 0, 0]
 [229, 634, 0, 0]
-[236, 938, '2e-06', 2, 0, 0]
-[237, 954, '2e-06', 3, 0, 0]
-[237, 938, '1.94e-07', 3, 0, 0]
-[235, 954, '0', 0, 0]
-[235, 938, 0, 0]
 [232, 314, '0', 0, 0]
 [232, 442, 0, 0]
 [216, 282, 0, 0]
@@ -3330,11 +3259,30 @@ I/O Blocks dev FGs
 [236, 1002, '1.00e-06', 2, 0, 0]
 [236, 1018, '2.00e-06', 2, 0, 0]
 [209, 410, '5.00e-11', 1, 0, 0]
+[250, 208, 0, 0]
 [281, 80, 0, 0]
 [288, 208, 0, 0]
 [279, 208, '0.000002', 2, 0, 0]
 [284, 144, 0, 0]
 [284, 160, 0, 0]
+[331, 869, 1, 0, 0, 0]
+[336, 645, 1, 0, 0, 0]
+[336, 661, 1, 0, 0, 0]
+[336, 677, 1, 0, 0, 0]
+[336, 693, 1, 0, 0, 0]
+[336, 709, 1, 0, 0, 0]
+[336, 725, 1, 0, 0, 0]
+[336, 741, 1, 0, 0, 0]
+[336, 757, 1, 0, 0, 0]
+[336, 773, 1, 0, 0, 0]
+[336, 789, 1, 0, 0, 0]
+[336, 805, 1, 0, 0, 0]
+[336, 821, 1, 0, 0, 0]
+[336, 837, 1, 0, 0, 0]
+[336, 853, 1, 0, 0, 0]
+[336, 869, 1, 0, 0, 0]
+[336, 885, 1, 0, 0, 0]
+[331, 885, 1, 0, 0, 0]
 [327, 230, 0, 0]
 [336, 646, 1, 0, 0, 0]
 [336, 662, 1, 0, 0, 0]
@@ -3354,24 +3302,15 @@ I/O Blocks dev FGs
 [336, 886, 1, 0, 0, 0]
 [327, 534, 0, 0]
 [327, 550, 0, 0]
-[365, 866, 1, 0, 0, 0]
-[370, 642, 1, 0, 0, 0]
-[370, 658, 1, 0, 0, 0]
-[370, 674, 1, 0, 0, 0]
-[370, 690, 1, 0, 0, 0]
-[370, 706, 1, 0, 0, 0]
-[370, 722, 1, 0, 0, 0]
-[370, 738, 1, 0, 0, 0]
-[370, 754, 1, 0, 0, 0]
-[370, 770, 1, 0, 0, 0]
-[370, 786, 1, 0, 0, 0]
-[370, 802, 1, 0, 0, 0]
-[370, 818, 1, 0, 0, 0]
-[370, 834, 1, 0, 0, 0]
-[370, 850, 1, 0, 0, 0]
-[370, 866, 1, 0, 0, 0]
-[370, 882, 1, 0, 0, 0]
-[365, 882, 1, 0, 0, 0]
+[353, 80, 0, 0]
+[360, 208, 0, 0]
+[351, 208, '0.000002', 2, 0, 0]
+[383, 80, 0, 0]
+[383, 176, 0, 0]
+[390, 208, 0, 0]
+[381, 208, '0.000002', 2, 0, 0]
+[398, 208, 0, 0]
+[402, 208, '0.000002', 2, 0, 0]
 [420, 144, 0, 0]
 [420, 160, 0, 0]
 [420, 176, 0, 0]

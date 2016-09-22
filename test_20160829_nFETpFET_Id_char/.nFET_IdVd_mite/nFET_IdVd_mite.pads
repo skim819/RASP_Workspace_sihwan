@@ -1,0 +1,5 @@
+gnd 7 0 4 #int[4]
+net5_1 0 8 3 #int[3]
+out:net2_1 8 2 5 #tgate[1]
+out:out_mite_adc 8 1 0 #int[0]
+net3_1 8 1 5 #tgate[1]

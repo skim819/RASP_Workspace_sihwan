@@ -1,0 +1,6 @@
+myVariable=[2 2 2 (2:-0.1:0.2)];
+sr_clk=[0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0];
+sr_data=[1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ];
+tgate_sel=[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+
+disp(size(myVariable), size(sr_clk), size(sr_data),size(tgate_sel))

@@ -1,0 +1,783 @@
+
+VPR FPGA Placement and Routing.
+Version: Version 6.0 Full Release
+Compiled: Apr 17 2013.
+Original VPR by V. Betz.
+Timing-driven placement enhancements by A. Marquardt.
+Single-drivers enhancements by Andy Ye with additions by.
+Mark Fang, Jason Luu, Ted Campbell
+Heterogeneous stucture support by Jason Luu and Ted Campbell.
+T-VPack clustering integration by Jason Luu.
+Area-driven AAPack added by Jason Luu.
+This is free open source code under MIT license.
+
+Building complex block graph 
+Begin packing of /home/ubuntu/RASP_Workspace/test_20160815_vmm8x8/vmm8x8.blif 
+Swept away 3 nets with no fanout
+Removed 0 LUT buffers 
+Sweeped away 0 nodes
+
+After removing unused inputs:
+Total Blocks: 4.  Total Nets: 19.  Total inputs 1 ouptuts 1
+Not enough resources expand FPGA size to x = 2 y = 2
+Not enough resources expand FPGA size to x = 3 y = 3
+Not enough resources expand FPGA size to x = 4 y = 4
+Not enough resources expand FPGA size to x = 5 y = 5
+Not enough resources expand FPGA size to x = 6 y = 6
+Not enough resources expand FPGA size to x = 7 y = 7
+Not enough resources expand FPGA size to x = 8 y = 8
+Not enough resources expand FPGA size to x = 9 y = 9
+Not enough resources expand FPGA size to x = 10 y = 10
+Complex Block 0: cb.internal type cab_vmm
+.
+Complex Block 1: cb.net_floated_1 type cab_vmm
+
+
+0 LUTs of size 0
+0 LUTs in input netlist
+0 FFs in input netlist
+0 FFs in input netlist not absorbable
+	<EMPTY>: # blocks 0, avg # input + clock pins used 0, avg # output pins used 0
+	io: # blocks 2, avg # input + clock pins used 0.5, avg # output pins used 0.5
+	clb: # blocks 0, avg # input + clock pins used 0, avg # output pins used 0
+	cab: # blocks 0, avg # input + clock pins used 0, avg # output pins used 0
+	cab2: # blocks 0, avg # input + clock pins used 0, avg # output pins used 0
+	cab_vmm: # blocks 2, avg # input + clock pins used 10.5, avg # output pins used 9
+Absorbed logical nets 0 out of 19 nets, 19 nets not absorbed
+
+Netlist conversion complete.
+
+Packing took 0 seconds
+Begin parsing packed FPGA netlist file
+Finished parsing packed FPGA netlist file
+Netlist generated from file /home/ubuntu/RASP_Workspace/test_20160815_vmm8x8/vmm8x8.net
+Timing analysis: OFF
+
+Circuit netlist file: /home/ubuntu/RASP_Workspace/test_20160815_vmm8x8/vmm8x8.net
+Circuit placement file: /home/ubuntu/RASP_Workspace/test_20160815_vmm8x8/vmm8x8.place
+Circuit routing file: /home/ubuntu/RASP_Workspace/test_20160815_vmm8x8/vmm8x8.route
+Operation:  RUN_FLOW
+
+Placer: ENABLED
+Router: ENABLED
+PlacerOpts.place_freq:  PLACE_ONCE
+PlacerOpts.place_algorithm:  BOUNDING_BOX_PLACE
+PlacerOpts.place_cost_type:  LINEAR_CONG
+PlacerOpts.pad_loc_type:  USER '/home/ubuntu/RASP_Workspace/test_20160815_vmm8x8/vmm8x8.pads'
+PlacerOpts.place_cost_exp:  1.000000
+PlacerOpts.place_chan_width:  100
+PlaceOpts.seed:  1
+AnnealSched.type:  AUTO_SCHED
+AnnealSched.inner_num:  10.000000
+
+RouterOpts.route_type:  DETAILED
+RouterOpts.router_algorithm:  DIRECTED_SEARCH
+RouterOpts.base_cost_type:  DEMAND_ONLY
+RouterOpts.fixed_channel_width:  17
+RouterOpts.acc_fac:  1.000000
+RouterOpts.bb_factor:  3
+RouterOpts.bend_cost:  0.000000
+RouterOpts.first_iter_pres_fac:  10000.000000
+RouterOpts.initial_pres_fac:  10000.000000
+RouterOpts.pres_fac_mult:  1.300000
+RouterOpts.max_router_iterations:  50
+
+RoutingArch.directionality:  BI_DIRECTIONAL
+RoutingArch.switch_block_type:  SUBSET
+RoutingArch.Fs:  3
+
+
+Netlist num_nets:  19
+Netlist num_blocks:  4
+Netlist <EMPTY> blocks:  0
+Netlist clb blocks:  0
+Netlist cab blocks:  0
+Netlist cab2 blocks:  0
+Netlist cab_vmm blocks:  2
+Netlist inputs pins:  1
+Netlist output pins:  1
+
+The circuit will be mapped into a 14 x 14 array of clbs.
+
+Resource Usage:
+Netlist      0	blocks of type <EMPTY>
+Architecture 4	blocks of type <EMPTY>
+Netlist      2	blocks of type io
+Architecture 336	blocks of type io
+Netlist      0	blocks of type clb
+Architecture 98	blocks of type clb
+Netlist      0	blocks of type cab
+Architecture 56	blocks of type cab
+Netlist      0	blocks of type cab2
+Architecture 14	blocks of type cab2
+Netlist      2	blocks of type cab_vmm
+Architecture 28	blocks of type cab_vmm
+
+
+Reading locations of IO pads from /home/ubuntu/RASP_Workspace/test_20160815_vmm8x8/vmm8x8.pads.
+Successfully read /home/ubuntu/RASP_Workspace/test_20160815_vmm8x8/vmm8x8.pads.
+
+Initial Placement Cost: 1.19536 bb_cost: 1.19536 td_cost: 0 delay_cost: 0
+
+          T        Cost Av. BB Cost  Av. TD Cost   Av Tot Del  P to P Del        d_max   Ac Rate  Std Dev  R limit      Exp  Tot. Moves    Alpha
+   --------  ---------- -----------  -----------    ---------  ----------        -----   -------  -------  -------  -------  ----------    -----
+      13.37     1.24931     1.24931            0            0           0           0    0.9841    0.448       14        0          63      0.5
+     6.6852       1.309       1.309            0            0           0           0    0.9206    0.504       14        0         126      0.9
+     6.0166     1.40233     1.40233            0            0           0           0    0.9524    0.524       14        0         189      0.9
+      5.415      1.3087      1.3087            0            0           0           0    0.9524    0.486       14        0         252      0.9
+     4.8735     1.19036     1.19036            0            0           0           0    0.9365    0.405       14        0         315      0.9
+     4.3861     1.31515     1.31515            0            0           0           0    0.8889    0.483       14        0         378      0.9
+     3.9475     1.41573     1.41573            0            0           0           0     0.873     0.52       14        0         441      0.9
+     3.5528     1.27439     1.27439            0            0           0           0    0.9524    0.446       14        0         504      0.9
+     3.1975     1.35807     1.35807            0            0           0           0    0.9365    0.484       14        0         567      0.9
+     2.8777     1.30424     1.30424            0            0           0           0    0.9048    0.484       14        0         630      0.9
+       2.59     1.26351     1.26351            0            0           0           0    0.8571    0.376       14        0         693      0.9
+      2.331     1.25336     1.25336            0            0           0           0    0.8413    0.418       14        0         756      0.9
+     2.0979     1.26152     1.26152            0            0           0           0    0.9206    0.419       14        0         819      0.9
+     1.8881     1.31724     1.31724            0            0           0           0    0.8571     0.45       14        0         882      0.9
+     1.6993     1.26338     1.26338            0            0           0           0    0.9048     0.43       14        0         945      0.9
+     1.5294     1.23081     1.23081            0            0           0           0    0.8254    0.449       14        0        1008      0.9
+     1.3764     1.29472     1.29472            0            0           0           0     0.873    0.488       14        0        1071      0.9
+     1.2388     1.16931     1.16931            0            0           0           0    0.7778    0.355       14        0        1134     0.95
+     1.1768     1.10753     1.10753            0            0           0           0    0.8095     0.44       14        0        1197      0.9
+     1.0592     1.03784     1.03784            0            0           0           0    0.7302     0.35       14        0        1260     0.95
+     1.0062     1.36644     1.36644            0            0           0           0     0.873     0.55       14        0        1323      0.9
+    0.90558     1.20537     1.20537            0            0           0           0    0.7619    0.415       14        0        1386     0.95
+     0.8603     1.20383     1.20383            0            0           0           0    0.7619    0.472       14        0        1449     0.95
+    0.81728     1.11563     1.11563            0            0           0           0    0.7619    0.357       14        0        1512     0.95
+    0.77642     1.26509     1.26509            0            0           0           0    0.6032    0.405       14        0        1575     0.95
+     0.7376     1.23893     1.23893            0            0           0           0    0.6984    0.379       14        0        1638     0.95
+    0.70072     1.24172     1.24172            0            0           0           0     0.746    0.402       14        0        1701     0.95
+    0.66568     1.03718     1.03718            0            0           0           0     0.619    0.394       14        0        1764     0.95
+     0.6324     1.16467     1.16467            0            0           0           0    0.6984    0.429       14        0        1827     0.95
+    0.60078     1.12685     1.12685            0            0           0           0    0.6508    0.255       14        0        1890     0.95
+    0.57074    0.963901    0.963901            0            0           0           0    0.5556    0.294       14        0        1953     0.95
+     0.5422     1.02043     1.02043            0            0           0           0    0.5397    0.295       14        0        2016     0.95
+    0.51509     1.16557     1.16557            0            0           0           0    0.6508    0.375       14        0        2079     0.95
+    0.48934     1.00679     1.00679            0            0           0           0    0.5556    0.339       14        0        2142     0.95
+    0.46487      0.9915      0.9915            0            0           0           0    0.4921    0.271       14        0        2205     0.95
+    0.44163     1.09916     1.09916            0            0           0           0    0.6508    0.365       14        0        2268     0.95
+    0.41955     1.07691     1.07691            0            0           0           0    0.6984    0.326       14        0        2331     0.95
+    0.39857     1.11221     1.11221            0            0           0           0     0.619    0.368       14        0        2394     0.95
+    0.37864     1.00881     1.00881            0            0           0           0    0.4762    0.376       14        0        2457     0.95
+    0.35971      1.0207      1.0207            0            0           0           0    0.4762    0.353       14        0        2520     0.95
+    0.34172     1.02792     1.02792            0            0           0           0    0.4921    0.316       14        0        2583     0.95
+    0.32464    0.957754    0.957754            0            0           0           0    0.4921    0.253       14        0        2646     0.95
+     0.3084     1.04013     1.04013            0            0           0           0    0.6667     0.28       14        0        2709     0.95
+    0.29298    0.862291    0.862291            0            0           0           0     0.381    0.224       14        0        2772     0.95
+    0.27833    0.728093    0.728093            0            0           0           0    0.2381    0.173    13.17        0        2835     0.95
+    0.26442    0.848174    0.848174            0            0           0           0    0.4921    0.187    10.51        0        2898     0.95
+     0.2512    0.986462    0.986462            0            0           0           0    0.4444    0.242    11.06        0        2961     0.95
+    0.23864    0.940325    0.940325            0            0           0           0    0.4286    0.234    11.11        0        3024     0.95
+    0.22671    0.908478    0.908478            0            0           0           0    0.4603    0.218    10.98        0        3087     0.95
+    0.21537    0.842594    0.842594            0            0           0           0    0.4127    0.183    11.21        0        3150     0.95
+     0.2046    0.881529    0.881529            0            0           0           0    0.3175    0.245     10.9        0        3213     0.95
+    0.19437    0.942475    0.942475            0            0           0           0     0.254    0.198    9.565        0        3276     0.95
+    0.18465    0.961406    0.961406            0            0           0           0    0.4286    0.287    7.785        0        3339     0.95
+    0.17542    0.868772    0.868772            0            0           0           0    0.3333    0.182    7.696        0        3402     0.95
+    0.16665    0.873486    0.873486            0            0           0           0    0.2857    0.173    6.875        0        3465     0.95
+    0.15832    0.839291    0.839291            0            0           0           0    0.4603    0.148    5.815        0        3528     0.95
+     0.1504     0.91065     0.91065            0            0           0           0    0.5079     0.13    5.933        0        3591     0.95
+    0.14288    0.804602    0.804602            0            0           0           0    0.3492    0.188    6.336        0        3654     0.95
+    0.13574     0.87551     0.87551            0            0           0           0    0.3333    0.139    5.761        0        3717     0.95
+    0.12895    0.776665    0.776665            0            0           0           0    0.3968    0.128    5.146        0        3780     0.95
+     0.1225    0.680704    0.680704            0            0           0           0    0.4127   0.0937    4.924        0        3843     0.95
+    0.11638    0.710702    0.710702            0            0           0           0    0.4286    0.106    4.789        0        3906     0.95
+    0.11056    0.754884    0.754884            0            0           0           0    0.3016    0.105    4.735        0        3969     0.95
+    0.10503     0.71244     0.71244            0            0           0           0    0.3333   0.0964    4.079        0        4032     0.95
+   0.099779    0.640667    0.640667            0            0           0           0    0.5079    0.088    3.644        0        4095     0.95
+    0.09479    0.620544    0.620544            0            0           0           0    0.4444   0.0569    3.892        0        4158     0.95
+   0.090051    0.629226    0.629226            0            0           0           0    0.5238   0.0642    3.909        0        4221     0.95
+   0.085548     0.62634     0.62634            0            0           0           0     0.254    0.049    4.237        0        4284     0.95
+   0.081271    0.790074    0.790074            0            0           0           0    0.2857    0.137    3.449        0        4347     0.95
+   0.077207    0.626403    0.626403            0            0           0           0     0.381   0.0472    2.917        0        4410     0.95
+   0.073347    0.597116    0.597116            0            0           0           0     0.619   0.0385    2.744        0        4473     0.95
+   0.069679    0.615746    0.615746            0            0           0           0    0.3333   0.0619    3.236        0        4536     0.95
+   0.066195    0.621314    0.621314            0            0           0           0    0.5556   0.0743    2.891        0        4599     0.95
+   0.062886    0.653967    0.653967            0            0           0           0     0.381   0.0742    3.225        0        4662     0.95
+   0.059741    0.644931    0.644931            0            0           0           0    0.3016   0.0575    3.034        0        4725     0.95
+   0.056754    0.676016    0.676016            0            0           0           0     0.381    0.062    2.614        0        4788     0.95
+   0.053917    0.601534    0.601534            0            0           0           0    0.5079   0.0446     2.46        0        4851     0.95
+   0.051221    0.598457    0.598457            0            0           0           0    0.6508   0.0283    2.627        0        4914     0.95
+    0.04866    0.735738    0.735738            0            0           0           0    0.3333   0.0924    3.181        0        4977     0.95
+   0.046227     0.66083     0.66083            0            0           0           0    0.3492   0.0715    2.841        0        5040     0.95
+   0.043915    0.595626    0.595626            0            0           0           0    0.3968   0.0153    2.583        0        5103     0.95
+    0.04172    0.594924    0.594924            0            0           0           0    0.4286   0.0209    2.472        0        5166     0.95
+   0.039634    0.584494    0.584494            0            0           0           0    0.4127   0.0121    2.444        0        5229     0.95
+   0.037652    0.599995    0.599995            0            0           0           0    0.4444   0.0157    2.377        0        5292     0.95
+   0.035769    0.581843    0.581843            0            0           0           0    0.4762   0.0131    2.387        0        5355     0.95
+   0.033981    0.590606    0.590606            0            0           0           0    0.4603   0.0211    2.474        0        5418     0.95
+   0.032282    0.597564    0.597564            0            0           0           0    0.4921   0.0274    2.524        0        5481     0.95
+   0.030668    0.588108    0.588108            0            0           0           0    0.3492   0.0147    2.656        0        5544     0.95
+   0.029134    0.610171    0.610171            0            0           0           0    0.4127   0.0196    2.414        0        5607     0.95
+   0.027678    0.665116    0.665116            0            0           0           0    0.2857   0.0195    2.349        0        5670     0.95
+   0.026294     0.58235     0.58235            0            0           0           0    0.5397   0.0172    1.986        0        5733     0.95
+   0.024979    0.579298    0.579298            0            0           0           0    0.3492   0.0122    2.184        0        5796     0.95
+    0.02373    0.575645    0.575645            0            0           0           0    0.6508   0.0109    1.986        0        5859     0.95
+   0.022544    0.584715    0.584715            0            0           0           0    0.4762   0.0112    2.404        0        5922     0.95
+   0.021416    0.584954    0.584954            0            0           0           0    0.5714   0.0145    2.491        0        5985     0.95
+   0.020346    0.577536    0.577536            0            0           0           0    0.3968   0.0139    2.819        0        6048     0.95
+   0.019328    0.576459    0.576459            0            0           0           0    0.3175   0.0163    2.697        0        6111     0.95
+   0.018362    0.578696    0.578696            0            0           0           0    0.4127   0.0135    2.367        0        6174     0.95
+   0.017444    0.583074    0.583074            0            0           0           0    0.3333   0.0157    2.302        0        6237     0.95
+   0.016572    0.577867    0.577867            0            0           0           0    0.2063    0.014    2.057        0        6300     0.95
+   0.015743    0.574816    0.574816            0            0           0           0    0.3016    0.011    1.576        0        6363     0.95
+   0.014956    0.575382    0.575382            0            0           0           0    0.3492    0.011    1.358        0        6426     0.95
+   0.014208    0.575382    0.575382            0            0           0           0    0.3492    0.011    1.235        0        6489     0.95
+   0.013498    0.575382    0.575382            0            0           0           0    0.1587   0.0114    1.123        0        6552     0.95
+   0.012823    0.575382    0.575382            0            0           0           0    0.2857   0.0111        1        0        6615     0.95
+   0.012182    0.575382    0.575382            0            0           0           0    0.2857   0.0111        1        0        6678     0.95
+   0.011573    0.575382    0.575382            0            0           0           0     0.254   0.0111        1        0        6741     0.95
+   0.010994    0.575382    0.575382            0            0           0           0    0.2222   0.0112        1        0        6804     0.95
+   0.010444    0.575382    0.575382            0            0           0           0    0.2857   0.0111        1        0        6867     0.95
+  0.0099221    0.575382    0.575382            0            0           0           0     0.254   0.0111        1        0        6930     0.95
+   0.009426    0.575382    0.575382            0            0           0           0   0.09524   0.0118        1        0        6993      0.8
+  0.0075408    0.575382    0.575382            0            0           0           0     0.127   0.0115        1        0        7056      0.8
+  0.0060326    0.575382    0.575382            0            0           0           0   0.03175   0.0152        1        0        7119      0.8
+  0.0048261    0.575382    0.575382            0            0           0           0   0.03175   0.0152        1        0        7182      0.8
+  0.0038609    0.564614    0.564614            0            0           0           0         0        0        1        0        7245      0.8
+  0.0030887    0.564614    0.564614            0            0           0           0         0        0        1        0        7308      0.8
+   0.002471    0.564614    0.564614            0            0           0           0         0        0        1        0        7371      0.8
+  0.0019768    0.564614    0.564614            0            0           0           0         0        0        1        0        7434      0.8
+  0.0015814    0.564614    0.564614            0            0           0           0         0        0        1        0        7497      0.8
+  0.0012651    0.564614    0.564614            0            0           0           0         0        0        1        0        7560      0.8
+  0.0010121    0.564614    0.564614            0            0           0           0         0        0        1        0        7623      0.8
+ 0.00080968    0.564614    0.564614            0            0           0           0         0        0        1        0        7686      0.8
+ 0.00064775    0.564614    0.564614            0            0           0           0         0        0        1        0        7749      0.8
+  0.0005182    0.564614    0.564614            0            0           0           0         0        0        1        0        7812      0.8
+ 0.00041456    0.564614    0.564614            0            0           0           0         0        0        1        0        7875      0.8
+ 0.00033165    0.564614    0.564614            0            0           0           0         0        0        1        0        7938      0.8
+ 0.00026532    0.564614    0.564614            0            0           0           0         0        0        1        0        8001      0.8
+ 0.00021225    0.564614    0.564614            0            0           0           0         0        0        1        0        8064      0.8
+  0.0001698    0.564614    0.564614            0            0           0           0         0        0        1        0        8127      0.8
+          0    0.564614    0.564614            0            0           0           0         0        0        1        0        8190  
+
+BB estimate of min-dist (placement) wirelength is ;56
+bb_cost recomputed from scratch is 0.564608.
+
+Completed placement consistency check successfully.
+
+Placement. Cost: 0.564614  bb_cost: 0.564614  td_cost: 0  delay_cost: 0.
+Placement took 0.01 seconds
+build rr_graph took 0.01 seconds
+Confirming Router Algorithm: DIRECTED_SEARCH.
+mst took 0 seconds
+routing iteration 1
+routing iteration took 0 seconds
+wirelength after first iteration 50, total available wirelength 7140, ratio 0.0070028
+Successfully routed after 1 routing iterations by Directed Search.
+
+Checking to ensure routing is legal ...
+Completed routing consistency check successfully.
+
+Serial number (magic cookie) for the routing is: -385705
+Circuit successfully routed with a channel width factor of 17.
+
+
+Average number of bends per net: 1.21053  Maximum # of bends: 3
+
+
+The number of routed nets (nonglobal): 19
+Wirelength results (all in units of 1 clb segments):
+	Total wirelength: 50   Average net length: 2.63158
+	Maximum net length: 4
+
+Wirelength results in terms of physical segments:
+	Total wiring segments used: 50   Av. wire segments per net: 2.63158
+	Maximum segments used by a net: 4
+
+	Total local nets with reserved CLB opins: 0
+
+
+X - Directed channels:
+
+j	max occ	av_occ		capacity
+0	7	1.07143  	17
+1	7	0.857143 	17
+2	0	0.00000  	17
+3	0	0.00000  	17
+4	0	0.00000  	17
+5	0	0.00000  	17
+6	0	0.00000  	17
+7	0	0.00000  	17
+8	0	0.00000  	17
+9	0	0.00000  	17
+10	0	0.00000  	17
+11	0	0.00000  	17
+12	0	0.00000  	17
+13	0	0.00000  	17
+14	0	0.00000  	17
+
+Y - Directed channels:
+
+i	max occ	av_occ		capacity
+0	0	0.00000  	17
+1	0	0.00000  	17
+2	0	0.00000  	17
+3	0	0.00000  	17
+4	0	0.00000  	17
+5	0	0.00000  	17
+6	0	0.00000  	17
+7	0	0.00000  	17
+8	0	0.00000  	17
+9	8	0.571429 	17
+10	9	0.642857 	17
+11	6	0.428571 	17
+12	0	0.00000  	17
+13	0	0.00000  	17
+14	0	0.00000  	17
+
+Total Tracks in X-direction: 255  in Y-direction: 255
+
+Logic Area (in minimum width transistor areas, excludes I/Os and empty grid tiles):
+Total Logic Block Area (Warning, need to add pitch of routing to blocks with height > 3): 5.88e+06 
+Total Used Logic Block Area: 60000 
+
+Routing area (in minimum width transistor areas):
+Assuming no buffer sharing (pessimistic). Total: 2.77571e+07  Per logic tile: 141618.
+Assuming buffer sharing (slightly optimistic). Total: 1.02979e+07  Per logic tile: 52540.5
+
+
+Segment usage by type (index):
+Segment type       Fractional utilization
+------------       ----------------------
+       0                  0.007
+
+Segment usage by length:
+Segment length       Fractional utilization
+--------------       ----------------------
+        1                   0.007
+Routing took 0.01 seconds
+/home/ubuntu/RASP_Workspace/test_20160815_vmm8x8
+.subckt sftreg3
+['net8_1', 'net8_1', 'net8_1', 'net8_1', 'net_floated_1', 'net1_1', 'net3_1', 'net4_1', 'net2_1', 'net2_2', 'net2_3', 'net2_4', 'net2_5', 'net2_6', 'net2_7', 'net2_8', 'net2_9', 'net2_10', 'net2_11', 'net2_12', 'net2_13', 'net2_14', 'net2_15', 'net2_16', '0']
+sftreg3
+.subckt vmm8inx8in
+['internal', 'net2_1', 'net2_2', 'net2_3', 'net2_4', 'net2_5', 'net2_6', 'net2_7', 'net2_8', 'net2_9', 'net2_10', 'net2_11', 'net2_12', 'net2_13', 'net2_14', 'net2_15', 'net2_16', 'internal', '0&vmm8inx8in_target', '11.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,18.00e-08,21.00e-08,22.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,31.00e-08,32.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,41.00e-08,42.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,51.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,58.00e-08,61.00e-08,62.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,71.00e-08,72.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,81.00e-08,82.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,88.00e-08']
+vmm8inx8in
+vmm types: 4x4, 8x8, 12x12, 16x16: 0 0 0 0
+/home/ubuntu/rasp30/vtr_release/vpr/vpr /home/ubuntu/rasp30/vpr2swcs/./arch/rasp3_vmm_arch.xml /home/ubuntu/RASP_Workspace/test_20160815_vmm8x8/vmm8x8 -net_file /home/ubuntu/RASP_Workspace/test_20160815_vmm8x8/vmm8x8.net -place_file /home/ubuntu/RASP_Workspace/test_20160815_vmm8x8/vmm8x8.place -route_file /home/ubuntu/RASP_Workspace/test_20160815_vmm8x8/vmm8x8.route  -route_chan_width 17 -fix_pins /home/ubuntu/RASP_Workspace/test_20160815_vmm8x8/vmm8x8.pads -nodisp -timing_analysis off
+internal
+['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
+net_floated_1
+['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
+ ------------- (net2_1) ------------- 
+|  OPIN (10,1) --> CHANY (10,1) T/P: 10 34 | cab_vmm [11, 1] CHANY  (351,1073) T10 I6 SWC 
+| CHANY (10,1) -->  IPIN (11,1) T/P: 10  0 | cab_vmm [11, 1] CHANY  (351,945) T10 XI0 ~~~~ PIN SINK ~~~~ || net (net2_1) -> pin 0 in 11 1
+SWC 
+ ------------- (net2_2) ------------- 
+|  OPIN (10,1) --> CHANY (10,1) T/P: 11 35 | cab_vmm [11, 1] CHANY  (350,1089) T11 I7 SWC 
+| CHANY (10,1) -->  IPIN (11,1) T/P: 11  1 | cab_vmm [11, 1] CHANY  (350,961) T11 XI1 ~~~~ PIN SINK ~~~~ || net (net2_2) -> pin 1 in 11 1
+SWC 
+ ------------- (net2_3) ------------- 
+|  OPIN (10,1) --> CHANX (10,1) T/P: 16 36 | cab_vmm [10, 1] CHANX  (310,577) T16 I8 SWC 
+| CHANX (10,1) --> CHANY (10,1) T/P: 16 -1 | cab_vmm [11, 1] SBLOCK ws (344 801) SWC 
+| CHANY (10,1) -->  IPIN (11,1) T/P: 16  2 | cab_vmm [11, 1] CHANY  (344,977) T16 XI2 ~~~~ PIN SINK ~~~~ || net (net2_3) -> pin 2 in 11 1
+SWC 
+ ------------- (net2_4) ------------- 
+|  OPIN (10,1) --> CHANX (10,1) T/P: 12 37 | cab_vmm [10, 1] CHANX  (315,593) T12 I9 SWC 
+| CHANX (10,1) --> CHANY (10,1) T/P: 12 -1 | cab_vmm [11, 1] SBLOCK ws (349 801) SWC 
+| CHANY (10,1) -->  IPIN (11,1) T/P: 12  3 | cab_vmm [11, 1] CHANY  (349,993) T12 XI3 ~~~~ PIN SINK ~~~~ || net (net2_4) -> pin 3 in 11 1
+SWC 
+ ------------- (net2_5) ------------- 
+|  OPIN (10,1) --> CHANX (10,0) T/P:  8 38 | io_sa [10, 0] CHANX  (329,368) T8 XI10 SWC 
+| CHANX (10,0) --> CHANX (11,0) T/P:  8 -1 | io_sa [11, 0] SBLOCK we (353 352) SWC 
+| CHANX (11,0) --> CHANY (11,1) T/P:  8 -1 | io_sd [12, 0] SBLOCK wn (383 304) SWC 
+| CHANY (11,1) -->  IPIN (11,1) T/P:  8  4 |  clb [12, 1] CHANY  (385,625) T8 AXI4 ~~~~ PIN SINK ~~~~ || net (net2_5) -> pin 4 in 11 1
+SWC 
+ ------------- (net2_6) ------------- 
+|  OPIN (10,1) --> CHANX (10,0) T/P: 11 39 | io_sa [10, 0] CHANX  (326,384) T11 XI11 SWC 
+| CHANX (10,0) --> CHANX (11,0) T/P: 11 -1 | io_sa [11, 0] SBLOCK we (350 352) SWC 
+| CHANX (11,0) --> CHANY (11,1) T/P: 11 -1 | io_sd [12, 0] SBLOCK wn (380 304) SWC 
+| CHANY (11,1) -->  IPIN (11,1) T/P: 11  5 |  clb [12, 1] CHANY  (382,641) T11 AXI5 ~~~~ PIN SINK ~~~~ || net (net2_6) -> pin 5 in 11 1
+SWC 
+ ------------- (net2_7) ------------- 
+|  OPIN (10,1) --> CHANY (10,1) T/P: 15 22 | cab_vmm [11, 1] CHANY  (345,1105) T15 O2 SWC 
+| CHANY (10,1) --> CHANX (11,1) T/P: 15 -1 | cab_vmm [11, 1] SBLOCK se (345 785) SWC 
+| CHANX (11,1) --> CHANY (11,1) T/P: 15 -1 | clb [12, 1] SBLOCK ws (377 961) SWC 
+| CHANY (11,1) -->  IPIN (11,1) T/P: 15  6 |  clb [12, 1] CHANY  (377,657) T15 AXI6 ~~~~ PIN SINK ~~~~ || net (net2_7) -> pin 6 in 11 1
+SWC 
+ ------------- (net2_8) ------------- 
+|  OPIN (10,1) --> CHANY (10,1) T/P:  0 23 | cab_vmm [11, 1] CHANY  (362,1121) T0 O3 SWC 
+| CHANY (10,1) --> CHANX (11,0) T/P:  0 -1 | io_sa [11, 0] SBLOCK ne (352 432) SWC 
+| CHANX (11,0) --> CHANY (11,1) T/P:  0 -1 | io_sd [12, 0] SBLOCK wn (382 400) SWC 
+| CHANY (11,1) -->  IPIN (11,1) T/P:  0  7 |  clb [12, 1] CHANY  (394,673) T0 AXI7 ~~~~ PIN SINK ~~~~ || net (net2_8) -> pin 7 in 11 1
+SWC 
+ ------------- (net2_9) ------------- 
+|  OPIN (10,1) --> CHANY  (9,1) T/P: 14 28 | cab_vmm [10, 1] CHANY  (312,945) T14 XI0 SWC 
+| CHANY  (9,1) --> CHANX (10,1) T/P: 14 -1 | cab_vmm [10, 1] SBLOCK se (312 785) SWC 
+| CHANX (10,1) --> CHANX (11,1) T/P: 14 -1 | cab_vmm [11, 1] SBLOCK we (346 865) SWC 
+| CHANX (11,1) -->  IPIN (11,1) T/P: 14  8 | cab_vmm [11, 1] CHANX  (346,577) T14 I8 ~~~~ PIN SINK ~~~~ || net (net2_9) -> pin 8 in 11 1
+SWC 
+ ------------- (net2_10) ------------- 
+|  OPIN (10,1) --> CHANY  (9,1) T/P:  1 29 | cab_vmm [10, 1] CHANY  (327,961) T1 XI1 SWC 
+| CHANY  (9,1) --> CHANX (10,1) T/P:  1 -1 | cab_vmm [10, 1] SBLOCK se (327 785) SWC 
+| CHANX (10,1) --> CHANX (11,1) T/P:  1 -1 | cab_vmm [11, 1] SBLOCK we (361 865) SWC 
+| CHANX (11,1) -->  IPIN (11,1) T/P:  1  9 | cab_vmm [11, 1] CHANX  (361,593) T1 I9 ~~~~ PIN SINK ~~~~ || net (net2_10) -> pin 9 in 11 1
+SWC 
+ ------------- (net2_11) ------------- 
+|  OPIN (10,1) --> CHANY  (9,1) T/P: 16 30 | cab_vmm [10, 1] CHANY  (310,977) T16 XI2 SWC 
+| CHANY  (9,1) --> CHANX (10,0) T/P: 16 -1 | io_sa [10, 0] SBLOCK ne (310 336) SWC 
+| CHANX (10,0) --> CHANX (11,0) T/P: 16 -1 | io_sa [11, 0] SBLOCK we (344 352) SWC 
+| CHANX (11,0) -->  IPIN (11,1) T/P: 16 10 | io_sa [11, 0] CHANX  (354,368) T16 XI10 ~~~~ PIN SINK ~~~~ || net (net2_11) -> pin 10 in 11 1
+SWC 
+ ------------- (net2_12) ------------- 
+|  OPIN (10,1) --> CHANY  (9,1) T/P: 15 31 | cab_vmm [10, 1] CHANY  (311,993) T15 XI3 SWC 
+| CHANY  (9,1) --> CHANX (10,0) T/P: 15 -1 | io_sa [10, 0] SBLOCK ne (311 336) SWC 
+| CHANX (10,0) --> CHANX (11,0) T/P: 15 -1 | io_sa [11, 0] SBLOCK we (345 352) SWC 
+| CHANX (11,0) -->  IPIN (11,1) T/P: 15 11 | io_sa [11, 0] CHANX  (355,384) T15 XI11 ~~~~ PIN SINK ~~~~ || net (net2_12) -> pin 11 in 11 1
+SWC 
+ ------------- (internal) ------------- 
+|  OPIN (11,1) --> CHANX (11,1) T/P:  5 24 | cab_vmm [11, 1] CHANX  (357,657) T5 O4 SWC 
+| CHANX (11,1) --> CHANY (10,1) T/P:  5 -1 | cab_vmm [11, 1] SBLOCK es (357 785) SWC 
+| CHANY (10,1) --> CHANX (11,0) T/P:  5 -1 | io_sa [11, 0] SBLOCK ne (345 432) SWC 
+| CHANX (11,0) -->  IPIN (11,1) T/P:  5 12 | io_sa [11, 0] CHANX  (367,400) T5 XI12 ~~~~ PIN SINK ~~~~ || net (internal) -> pin 12 in 11 1
+SWC 
+ ------------- (net2_13) ------------- 
+|  OPIN (10,1) --> CHANY (10,1) T/P: 14 32 | cab_vmm [11, 1] CHANY  (346,1041) T14 I4 SWC 
+| CHANY (10,1) -->  IPIN (11,1) T/P: 14 16 | cab_vmm [11, 1] CHANY  (346,1009) T14 XO0 ~~~~ PIN SINK ~~~~ || net (net2_13) -> pin 16 in 11 1
+SWC 
+ ------------- (net2_14) ------------- 
+|  OPIN (10,1) --> CHANY (10,1) T/P: 13 33 | cab_vmm [11, 1] CHANY  (347,1057) T13 I5 SWC 
+| CHANY (10,1) -->  IPIN (11,1) T/P: 13 17 | cab_vmm [11, 1] CHANY  (347,1025) T13 XO1 ~~~~ PIN SINK ~~~~ || net (net2_14) -> pin 17 in 11 1
+SWC 
+ ------------- (net2_15) ------------- 
+|  OPIN (10,1) --> CHANY  (9,1) T/P:  9 20 | cab_vmm [10, 1] CHANY  (318,1009) T9 XO0 SWC 
+| CHANY  (9,1) --> CHANX (10,1) T/P:  9 -1 | cab_vmm [10, 1] SBLOCK se (318 785) SWC 
+| CHANX (10,1) --> CHANX (11,1) T/P:  9 -1 | cab_vmm [11, 1] SBLOCK we (352 865) SWC 
+| CHANX (11,1) --> CHANY (11,1) T/P:  9 -1 | clb [12, 1] SBLOCK ws (384 961) SWC 
+| CHANY (11,1) -->  IPIN (11,1) T/P:  9 18 |  clb [12, 1] CHANY  (384,689) T9 AXO2 ~~~~ PIN SINK ~~~~ || net (net2_15) -> pin 18 in 11 1
+SWC 
+ ------------- (net2_16) ------------- 
+|  OPIN (10,1) --> CHANY  (9,1) T/P:  7 21 | cab_vmm [10, 1] CHANY  (320,1025) T7 XO1 SWC 
+| CHANY  (9,1) --> CHANX (10,0) T/P:  7 -1 | io_sa [10, 0] SBLOCK ne (310 432) SWC 
+| CHANX (10,0) --> CHANX (11,0) T/P:  7 -1 | io_sa [11, 0] SBLOCK we (344 448) SWC 
+| CHANX (11,0) --> CHANY (11,1) T/P:  7 -1 | io_sd [12, 0] SBLOCK wn (374 400) SWC 
+| CHANY (11,1) -->  IPIN (11,1) T/P:  7 19 |  clb [12, 1] CHANY  (386,705) T7 AXO3 ~~~~ PIN SINK ~~~~ || net (net2_16) -> pin 19 in 11 1
+SWC 
+ ------------- (net8_1) ------------- 
+|  OPIN  (9,0) --> CHANX  (9,0) T/P: 10  4 | io_sd [ 9, 0] CHANX  (290,288) T10 I7 SWC 
+| CHANX  (9,0) --> CHANY  (9,1) T/P: 10 -1 | io_sa [10, 0] SBLOCK wn (317 304) SWC 
+| CHANY  (9,1) --> CHANX (10,1) T/P: 10 -1 | cab_vmm [10, 1] SBLOCK se (317 785) SWC 
+| CHANX (10,1) -->  IPIN (10,1) T/P: 10 15 | cab_vmm [10, 1] CHANX  (317,641) T10 I15 ~~~~ PIN SINK ~~~~ || net (net8_1) -> pin 15 in 10 1
+SWC 
+| CHANX (10,1) -->  IPIN (10,1) T/P: 10 14 | cab_vmm [10, 1] CHANX  (317,625) T10 I14 ~~~~ PIN SINK ~~~~ || net (net8_1) -> pin 14 in 10 1
+SWC 
+| CHANX (10,1) -->  IPIN (10,1) T/P: 10 13 | cab_vmm [10, 1] CHANX  (317,609) T10 I13 ~~~~ PIN SINK ~~~~ || net (net8_1) -> pin 13 in 10 1
+SWC 
+| CHANY  (9,1) --> CHANX (10,0) T/P: 10 -1 | io_sa [10, 0] SBLOCK ne (317 336) SWC 
+| CHANX (10,0) -->  IPIN (10,1) T/P: 10 12 | io_sa [10, 0] CHANX  (327,400) T10 XI12 ~~~~ PIN SINK ~~~~ || net (net8_1) -> pin 12 in 10 1
+SWC 
+ ------------- (net_floated_1) ------------- 
+|  OPIN (10,1) --> CHANX (10,1) T/P: 13 24 | cab_vmm [10, 1] CHANX  (313,657) T13 O4 SWC 
+| CHANX (10,1) --> CHANY  (9,1) T/P: 13 -1 | cab_vmm [10, 1] SBLOCK es (313 785) SWC 
+| CHANY  (9,1) --> CHANX  (9,0) T/P: 13 -1 | io_sa [10, 0] SBLOCK nw (313 304) SWC 
+| CHANX  (9,0) -->  IPIN  (9,0) T/P: 13  0 | io_sd [ 9, 0] CHANX  (286,272) T13 I3 ~~~~ PIN SINK ~~~~ || net (net_floated_1) -> pin 0 in 9 0
+SWC 
+class: complexBlock - name: out:net_floated_1 - type: #ana_buff_out[0] - num: 0 
+I3 ana_buff_out[0] -> (9 5) -> (281 80)
+I/O Blocks dev FGs
+!!!!!!!!!!!!!!ana_buff_out[0] -->  DEV FGs  -> (16 13) -> (288 208)
+!!!!!!!!!!!!!!ana_buff_out[0] -->  DEV FGs  -> (7 13) -> (279 208)
+!!!!!!!!!!!!!!int[1] -->  DEV FGs  -> (12 9) -> (284 144)
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+no LI needed dont worry!
+no LI needed dont worry!
+no LI needed dont worry!
+no LI needed dont worry!
+no LI needed dont worry!
+no LI needed dont worry!
+cab_vmm.I[12]
+sftreg3[0].in[3]
+local interconnect 14 cab_vmm.I[12] -> 169 sftreg3[0].in[3] (21 14) -> (327 225)
+no LI need for I[13:15] so dont worry!
+sftreg3[0].out[0]
+cab_vmm.O[4]
+local interconnect 31 sftreg3[0].out[0] -> 259 cab_vmm.O[4] (25 54) -> (331 865)
+getting here!
+sftreg3[0] sftreg3_fg[0] -> (30 40) -> (336 641)
+sftreg3[0] sftreg3_fg[0] -> (30 41) -> (336 657)
+sftreg3[0] sftreg3_fg[0] -> (30 42) -> (336 673)
+sftreg3[0] sftreg3_fg[0] -> (30 43) -> (336 689)
+sftreg3[0] sftreg3_fg[0] -> (30 44) -> (336 705)
+sftreg3[0] sftreg3_fg[0] -> (30 45) -> (336 721)
+sftreg3[0] sftreg3_fg[0] -> (30 46) -> (336 737)
+sftreg3[0] sftreg3_fg[0] -> (30 47) -> (336 753)
+sftreg3[0] sftreg3_fg[0] -> (30 48) -> (336 769)
+sftreg3[0] sftreg3_fg[0] -> (30 49) -> (336 785)
+sftreg3[0] sftreg3_fg[0] -> (30 50) -> (336 801)
+sftreg3[0] sftreg3_fg[0] -> (30 51) -> (336 817)
+sftreg3[0] sftreg3_fg[0] -> (30 52) -> (336 833)
+sftreg3[0] sftreg3_fg[0] -> (30 53) -> (336 849)
+sftreg3[0] sftreg3_fg[0] -> (30 54) -> (336 865)
+sftreg3[0] sftreg3_fg[0] -> (30 55) -> (336 881)
+sftreg3[0] sftreg3_fg[0] -> (21 33) -> (327 529)
+sftreg3[0] sftreg3_fg[0] -> (21 34) -> (327 545)
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+no LI needed dont worry!
+no LI needed dont worry!
+no LI needed dont worry!
+no LI needed dont worry!
+no LI needed dont worry!
+no LI needed dont worry!
+no LI needed dont worry!
+no LI needed dont worry!
+no LI needed dont worry!
+no LI needed dont worry!
+no LI needed dont worry!
+no LI needed dont worry!
+no LI needed dont worry!
+no LI needed dont worry!
+no LI needed dont worry!
+no LI needed dont worry!
+no LI needed dont worry!
+no LI needed dont worry!
+getting here!
+vmm8inx8in[0] vmm8inx8in_fg[0] -> (33 10) -> (373 161)
+vmm8inx8in[0] vmm8inx8in_fg[0] -> (32 11) -> (372 177)
+vmm8inx8in[0] vmm8inx8in_fg[0] -> (31 12) -> (371 193)
+vmm8inx8in[0] vmm8inx8in_fg[0] -> (30 13) -> (370 209)
+vmm8inx8in[0] vmm8inx8in_fg[0] -> (20 23) -> (360 369)
+vmm8inx8in[0] vmm8inx8in_fg[0] -> (18 24) -> (358 385)
+vmm8inx8in[0] vmm8inx8in_fg[0] -> (16 25) -> (356 401)
+vmm8inx8in[0] vmm8inx8in_fg[0] -> (14 26) -> (354 417)
+vmm8inx8in[0] vmm8inx8in_fg[0] -> (29 44) -> (369 705)
+vmm8inx8in[0] vmm8inx8in_fg[0] -> (28 45) -> (368 721)
+vmm8inx8in[0] vmm8inx8in_fg[0] -> (27 46) -> (367 737)
+vmm8inx8in[0] vmm8inx8in_fg[0] -> (26 47) -> (366 753)
+vmm8inx8in[0] vmm8inx8in_target[0] -> (33 2) -> (373 33)
+vmm8inx8in[0] vmm8inx8in_target[1] -> (33 3) -> (373 49)
+vmm8inx8in[0] vmm8inx8in_target[2] -> (33 4) -> (373 65)
+vmm8inx8in[0] vmm8inx8in_target[3] -> (33 5) -> (373 81)
+vmm8inx8in[0] vmm8inx8in_target[4] -> (33 6) -> (373 97)
+vmm8inx8in[0] vmm8inx8in_target[5] -> (33 7) -> (373 113)
+vmm8inx8in[0] vmm8inx8in_target[6] -> (33 8) -> (373 129)
+vmm8inx8in[0] vmm8inx8in_target[7] -> (33 9) -> (373 145)
+vmm8inx8in[0] vmm8inx8in_target[8] -> (32 2) -> (372 33)
+vmm8inx8in[0] vmm8inx8in_target[9] -> (32 3) -> (372 49)
+vmm8inx8in[0] vmm8inx8in_target[10] -> (32 4) -> (372 65)
+vmm8inx8in[0] vmm8inx8in_target[11] -> (32 5) -> (372 81)
+vmm8inx8in[0] vmm8inx8in_target[12] -> (32 6) -> (372 97)
+vmm8inx8in[0] vmm8inx8in_target[13] -> (32 7) -> (372 113)
+vmm8inx8in[0] vmm8inx8in_target[14] -> (32 8) -> (372 129)
+vmm8inx8in[0] vmm8inx8in_target[15] -> (32 9) -> (372 145)
+vmm8inx8in[0] vmm8inx8in_target[16] -> (31 2) -> (371 33)
+vmm8inx8in[0] vmm8inx8in_target[17] -> (31 3) -> (371 49)
+vmm8inx8in[0] vmm8inx8in_target[18] -> (31 4) -> (371 65)
+vmm8inx8in[0] vmm8inx8in_target[19] -> (31 5) -> (371 81)
+vmm8inx8in[0] vmm8inx8in_target[20] -> (31 6) -> (371 97)
+vmm8inx8in[0] vmm8inx8in_target[21] -> (31 7) -> (371 113)
+vmm8inx8in[0] vmm8inx8in_target[22] -> (31 8) -> (371 129)
+vmm8inx8in[0] vmm8inx8in_target[23] -> (31 9) -> (371 145)
+vmm8inx8in[0] vmm8inx8in_target[24] -> (30 2) -> (370 33)
+vmm8inx8in[0] vmm8inx8in_target[25] -> (30 3) -> (370 49)
+vmm8inx8in[0] vmm8inx8in_target[26] -> (30 4) -> (370 65)
+vmm8inx8in[0] vmm8inx8in_target[27] -> (30 5) -> (370 81)
+vmm8inx8in[0] vmm8inx8in_target[28] -> (30 6) -> (370 97)
+vmm8inx8in[0] vmm8inx8in_target[29] -> (30 7) -> (370 113)
+vmm8inx8in[0] vmm8inx8in_target[30] -> (30 8) -> (370 129)
+vmm8inx8in[0] vmm8inx8in_target[31] -> (30 9) -> (370 145)
+vmm8inx8in[0] vmm8inx8in_target[32] -> (20 2) -> (360 33)
+vmm8inx8in[0] vmm8inx8in_target[33] -> (20 3) -> (360 49)
+vmm8inx8in[0] vmm8inx8in_target[34] -> (20 4) -> (360 65)
+vmm8inx8in[0] vmm8inx8in_target[35] -> (20 5) -> (360 81)
+vmm8inx8in[0] vmm8inx8in_target[36] -> (20 6) -> (360 97)
+vmm8inx8in[0] vmm8inx8in_target[37] -> (20 7) -> (360 113)
+vmm8inx8in[0] vmm8inx8in_target[38] -> (20 8) -> (360 129)
+vmm8inx8in[0] vmm8inx8in_target[39] -> (20 9) -> (360 145)
+vmm8inx8in[0] vmm8inx8in_target[40] -> (18 2) -> (358 33)
+vmm8inx8in[0] vmm8inx8in_target[41] -> (18 3) -> (358 49)
+vmm8inx8in[0] vmm8inx8in_target[42] -> (18 4) -> (358 65)
+vmm8inx8in[0] vmm8inx8in_target[43] -> (18 5) -> (358 81)
+vmm8inx8in[0] vmm8inx8in_target[44] -> (18 6) -> (358 97)
+vmm8inx8in[0] vmm8inx8in_target[45] -> (18 7) -> (358 113)
+vmm8inx8in[0] vmm8inx8in_target[46] -> (18 8) -> (358 129)
+vmm8inx8in[0] vmm8inx8in_target[47] -> (18 9) -> (358 145)
+vmm8inx8in[0] vmm8inx8in_target[48] -> (16 2) -> (356 33)
+vmm8inx8in[0] vmm8inx8in_target[49] -> (16 3) -> (356 49)
+vmm8inx8in[0] vmm8inx8in_target[50] -> (16 4) -> (356 65)
+vmm8inx8in[0] vmm8inx8in_target[51] -> (16 5) -> (356 81)
+vmm8inx8in[0] vmm8inx8in_target[52] -> (16 6) -> (356 97)
+vmm8inx8in[0] vmm8inx8in_target[53] -> (16 7) -> (356 113)
+vmm8inx8in[0] vmm8inx8in_target[54] -> (16 8) -> (356 129)
+vmm8inx8in[0] vmm8inx8in_target[55] -> (16 9) -> (356 145)
+vmm8inx8in[0] vmm8inx8in_target[56] -> (14 2) -> (354 33)
+vmm8inx8in[0] vmm8inx8in_target[57] -> (14 3) -> (354 49)
+vmm8inx8in[0] vmm8inx8in_target[58] -> (14 4) -> (354 65)
+vmm8inx8in[0] vmm8inx8in_target[59] -> (14 5) -> (354 81)
+vmm8inx8in[0] vmm8inx8in_target[60] -> (14 6) -> (354 97)
+vmm8inx8in[0] vmm8inx8in_target[61] -> (14 7) -> (354 113)
+vmm8inx8in[0] vmm8inx8in_target[62] -> (14 8) -> (354 129)
+vmm8inx8in[0] vmm8inx8in_target[63] -> (14 9) -> (354 145)
+[351, 1073, 0, 0]
+[351, 945, 0, 0]
+[350, 1089, 0, 0]
+[350, 961, 0, 0]
+[310, 577, 0, 0]
+[344, 801, 1, 0, 0, 0]
+[344, 977, 0, 0]
+[315, 593, 0, 0]
+[349, 801, 1, 0, 0, 0]
+[349, 993, 0, 0]
+[329, 368, 0, 0]
+[353, 352, 0, 0]
+[383, 304, 0, 0]
+[385, 625, 0, 0]
+[326, 384, 0, 0]
+[350, 352, 0, 0]
+[380, 304, 0, 0]
+[382, 641, 1, 0, 0, 0]
+[345, 1105, 0, 0]
+[345, 785, 1, 0, 0, 0]
+[377, 961, 0, 0]
+[377, 657, 1, 0, 0, 0]
+[362, 1121, 0, 0]
+[352, 432, 0, 0]
+[382, 400, 0, 0]
+[394, 673, 1, 0, 0, 0]
+[312, 945, 0, 0]
+[312, 785, 1, 0, 0, 0]
+[346, 865, 1, 0, 0, 0]
+[346, 577, 0, 0]
+[327, 961, 0, 0]
+[327, 785, 1, 0, 0, 0]
+[361, 865, 1, 0, 0, 0]
+[361, 593, 0, 0]
+[310, 977, 0, 0]
+[310, 336, 0, 0]
+[344, 352, 0, 0]
+[354, 368, 0, 0]
+[311, 993, 0, 0]
+[311, 336, 0, 0]
+[345, 352, 0, 0]
+[355, 384, 0, 0]
+[357, 657, 1, 0, 0, 0]
+[357, 785, 1, 0, 0, 0]
+[345, 432, 0, 0]
+[367, 400, 0, 0]
+[346, 1041, 0, 0]
+[346, 1009, 0, 0]
+[347, 1057, 0, 0]
+[347, 1025, 0, 0]
+[318, 1009, 0, 0]
+[318, 785, 1, 0, 0, 0]
+[352, 865, 1, 0, 0, 0]
+[384, 961, 0, 0]
+[384, 689, 1, 0, 0, 0]
+[320, 1025, 0, 0]
+[310, 432, 0, 0]
+[344, 448, 0, 0]
+[374, 400, 0, 0]
+[386, 705, 1, 0, 0, 0]
+[290, 288, 0, 0]
+[317, 304, 0, 0]
+[317, 785, 1, 0, 0, 0]
+[317, 641, 1, 0, 0, 0]
+[317, 625, 0, 0]
+[317, 609, 0, 0]
+[317, 336, 0, 0]
+[327, 400, 0, 0]
+[313, 657, 1, 0, 0, 0]
+[313, 785, 1, 0, 0, 0]
+[313, 304, 0, 0]
+[286, 272, 0, 0]
+[281, 80, 0, 0]
+[288, 208, 0, 0]
+[279, 208, '0.000002', 2, 0, 0]
+[284, 144, 0, 0]
+[327, 225, 0, 0]
+[331, 865, 1, 0, 0, 0]
+[336, 641, 1, 0, 0, 0]
+[336, 657, 1, 0, 0, 0]
+[336, 673, 1, 0, 0, 0]
+[336, 689, 1, 0, 0, 0]
+[336, 705, 1, 0, 0, 0]
+[336, 721, 1, 0, 0, 0]
+[336, 737, 1, 0, 0, 0]
+[336, 753, 1, 0, 0, 0]
+[336, 769, 1, 0, 0, 0]
+[336, 785, 1, 0, 0, 0]
+[336, 801, 1, 0, 0, 0]
+[336, 817, 1, 0, 0, 0]
+[336, 833, 1, 0, 0, 0]
+[336, 849, 1, 0, 0, 0]
+[336, 865, 1, 0, 0, 0]
+[336, 881, 1, 0, 0, 0]
+[327, 529, 0, 0]
+[327, 545, 0, 0]
+[373, 161, '0', 0, 0]
+[372, 177, 0, 0]
+[371, 193, 0, 0]
+[370, 209, 0, 0]
+[360, 369, 0, 0]
+[358, 385, 0, 0]
+[356, 401, 0, 0]
+[354, 417, 0, 0]
+[369, 705, 1, 0, 0, 0]
+[368, 721, 1, 0, 0, 0]
+[367, 737, 1, 0, 0, 0]
+[366, 753, 1, 0, 0, 0]
+[373, 33, '11.00e-08', 1, 0, 0]
+[373, 49, '5.00e-08', 1, 0, 0]
+[373, 65, '5.00e-08', 1, 0, 0]
+[373, 81, '5.00e-08', 1, 0, 0]
+[373, 97, '5.00e-08', 1, 0, 0]
+[373, 113, '5.00e-08', 1, 0, 0]
+[373, 129, '5.00e-08', 1, 0, 0]
+[373, 145, '18.00e-08', 1, 0, 0]
+[372, 33, '21.00e-08', 1, 0, 0]
+[372, 49, '22.00e-08', 1, 0, 0]
+[372, 65, '5.00e-08', 1, 0, 0]
+[372, 81, '5.00e-08', 1, 0, 0]
+[372, 97, '5.00e-08', 1, 0, 0]
+[372, 113, '5.00e-08', 1, 0, 0]
+[372, 129, '5.00e-08', 1, 0, 0]
+[372, 145, '5.00e-08', 1, 0, 0]
+[371, 33, '31.00e-08', 1, 0, 0]
+[371, 49, '32.00e-08', 1, 0, 0]
+[371, 65, '5.00e-08', 1, 0, 0]
+[371, 81, '5.00e-08', 1, 0, 0]
+[371, 97, '5.00e-08', 1, 0, 0]
+[371, 113, '5.00e-08', 1, 0, 0]
+[371, 129, '5.00e-08', 1, 0, 0]
+[371, 145, '5.00e-08', 1, 0, 0]
+[370, 33, '41.00e-08', 1, 0, 0]
+[370, 49, '42.00e-08', 1, 0, 0]
+[370, 65, '5.00e-08', 1, 0, 0]
+[370, 81, '5.00e-08', 1, 0, 0]
+[370, 97, '5.00e-08', 1, 0, 0]
+[370, 113, '5.00e-08', 1, 0, 0]
+[370, 129, '5.00e-08', 1, 0, 0]
+[370, 145, '5.00e-08', 1, 0, 0]
+[360, 33, '51.00e-08', 1, 0, 0]
+[360, 49, '5.00e-08', 1, 0, 0]
+[360, 65, '5.00e-08', 1, 0, 0]
+[360, 81, '5.00e-08', 1, 0, 0]
+[360, 97, '5.00e-08', 1, 0, 0]
+[360, 113, '5.00e-08', 1, 0, 0]
+[360, 129, '5.00e-08', 1, 0, 0]
+[360, 145, '58.00e-08', 1, 0, 0]
+[358, 33, '61.00e-08', 1, 0, 0]
+[358, 49, '62.00e-08', 1, 0, 0]
+[358, 65, '5.00e-08', 1, 0, 0]
+[358, 81, '5.00e-08', 1, 0, 0]
+[358, 97, '5.00e-08', 1, 0, 0]
+[358, 113, '5.00e-08', 1, 0, 0]
+[358, 129, '5.00e-08', 1, 0, 0]
+[358, 145, '5.00e-08', 1, 0, 0]
+[356, 33, '71.00e-08', 1, 0, 0]
+[356, 49, '72.00e-08', 1, 0, 0]
+[356, 65, '5.00e-08', 1, 0, 0]
+[356, 81, '5.00e-08', 1, 0, 0]
+[356, 97, '5.00e-08', 1, 0, 0]
+[356, 113, '5.00e-08', 1, 0, 0]
+[356, 129, '5.00e-08', 1, 0, 0]
+[356, 145, '5.00e-08', 1, 0, 0]
+[354, 33, '81.00e-08', 1, 0, 0]
+[354, 49, '82.00e-08', 1, 0, 0]
+[354, 65, '5.00e-08', 1, 0, 0]
+[354, 81, '5.00e-08', 1, 0, 0]
+[354, 97, '5.00e-08', 1, 0, 0]
+[354, 113, '5.00e-08', 1, 0, 0]
+[354, 129, '5.00e-08', 1, 0, 0]
+[354, 145, '88.00e-08', 1, 0, 0]

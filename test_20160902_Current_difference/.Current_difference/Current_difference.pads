@@ -1,0 +1,2 @@
+vcc 7 0 5 #int[5]
+out:net2_1 9 0 0 #tgate[0]

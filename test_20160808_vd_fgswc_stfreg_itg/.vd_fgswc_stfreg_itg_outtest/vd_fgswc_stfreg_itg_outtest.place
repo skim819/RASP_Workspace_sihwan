@@ -1,0 +1,44 @@
+Netlist file: /home/ubuntu/RASP_Workspace/test_20160808_vd_fgswc_stfreg_itg/vd_fgswc_stfreg_itg_outtest.net   Architecture file: /home/ubuntu/rasp30/vpr2swcs/./arch/rasp3_vmm_arch.xml
+Array size: 14 x 14 logic blocks
+
+#block name	x	y	subblk	block number
+#----------	--	--	------	------------
+net21_1 11 2 0
+net_floated_1 10 6 0
+net20_16 7 10 0
+net20_15 6 10 0
+net20_14 7 9 0
+net20_13 6 9 0
+net20_12 7 8 0
+net20_11 6 8 0
+net20_10 7 7 0
+net20_9 6 7 0
+net20_8 7 6 0
+net20_7 6 6 0
+net20_6 7 5 0
+net20_5 6 5 0
+net20_4 7 4 0
+net20_3 6 4 0
+net20_2 7 3 0
+net20_1 6 3 0
+net1_1 7 2 0
+net23_1 3 1 0
+gnd_dig 3 5 0
+net19_1 6 2 0
+out_ramp_adc 7 1 0
+out:out_ramp_adc 15 1 5
+out:net20_1 12 0 0
+out:net15_1 9 0 0
+out:net21_1 12 0 3
+out:net1_1 11 0 0
+gnd 7 0 4
+vcc 7 0 5
+net22_1 9 0 3
+net13_1 8 0 5
+net12_1 13 0 5
+net11_1 13 0 4
+net10_1 13 0 3
+net9_1 13 0 2
+net8_1 13 0 1
+net14_1 9 0 2
+net15_1 9 0 1

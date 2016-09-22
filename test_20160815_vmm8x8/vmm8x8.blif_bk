@@ -1,0 +1,10 @@
+.model vmm8x8
+.inputs net8_1 
+.outputs net_floated_1 
+
+# Shift register 1input 16outputs
+.subckt sftreg3 in[0]=net8_1 in[1]=net8_1 in[2]=net8_1 in[3]=net8_1 out[0]=net_floated_1 out[1]=net1_1 out[2]=net3_1 out[3]=net4_1 out[4]=net2_1 out[5]=net2_2 out[6]=net2_3 out[7]=net2_4 out[8]=net2_5 out[9]=net2_6 out[10]=net2_7 out[11]=net2_8 out[12]=net2_9 out[13]=net2_10 out[14]=net2_11 out[15]=net2_12 out[16]=net2_13 out[17]=net2_14 out[18]=net2_15 out[19]=net2_16 #sftreg3_fg =0
+
+.subckt vmm8inx8in in[0]=internal in[1]=net2_1 in[2]=net2_2 in[3]=net2_3  in[4]=net2_4 in[5]=net2_5 in[6]=net2_6 in[7]=net2_7 in[8]=net2_8 in[9]=net2_9 in[10]=net2_10 in[11]=net2_11 in[12]=net2_12 in[13]=net2_13 in[14]=net2_14 in[15]=net2_15 in[16]=net2_16 out[0]=internal #vmm8inx8in_fg =0&vmm8inx8in_target =11.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,18.00e-08,21.00e-08,22.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,31.00e-08,32.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,41.00e-08,42.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,51.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,58.00e-08,61.00e-08,62.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,71.00e-08,72.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,81.00e-08,82.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,5.00e-08,88.00e-08
+
+.end

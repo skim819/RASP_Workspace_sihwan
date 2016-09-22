@@ -1,0 +1,23 @@
+Netlist file: /home/ubuntu/RASP_Workspace/test_20160814_shiftregister_leakage/shiftregister_leakage_3.net   Architecture file: /home/ubuntu/rasp30/vpr2swcs/./arch/rasp3_vmm_arch.xml
+Array size: 14 x 14 logic blocks
+
+#block name	x	y	subblk	block number
+#----------	--	--	------	------------
+net7_1 10 1 0
+net10_1 6 3 0
+net9_1 6 1 0
+fbout_1_1 6 2 0
+net13_1 7 2 0
+gnd_dig 7 3 0
+out_ramp_adc 7 1 0
+out:out_ramp_adc 15 1 5
+out:net14_1 9 0 0
+out:net13_1 11 0 0
+gnd 7 0 4
+vcc 7 0 5
+net11_1 13 0 5
+net8_1 13 0 4
+net14_1 13 0 3
+net3_1 13 0 2
+net1_1 13 0 1
+net12_1 9 0 1

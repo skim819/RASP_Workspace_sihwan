@@ -1,0 +1,2 @@
+net8_1 9 0 1 #int[1]
+out:net_floated_1 9 0 0 #ana_buff_out[0]

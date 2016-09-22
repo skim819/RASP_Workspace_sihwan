@@ -44,7 +44,7 @@ pal = xcosPalAddBlock(pal,"newblock",[],style);
 
 
 //Add palettes to Palette Browser
-xcosPalAdd(pal,["ECE6435"]); //You can change this top level palette name
+cosPalAdd(pal,["ECE6435"]); //You can change this top level palette name
 
 //Turn the warning messages back on to be displayed in console
 funcprot(previousprot)

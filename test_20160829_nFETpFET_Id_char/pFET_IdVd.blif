@@ -1,0 +1,8 @@
+.model pFET_IdVd
+.inputs net2_1 vcc
+.outputs net1_1
+
+# PFET GOLDEN
+.subckt pfet in[0]=net2_1 in[1]=vcc out=net1_1
+
+.end

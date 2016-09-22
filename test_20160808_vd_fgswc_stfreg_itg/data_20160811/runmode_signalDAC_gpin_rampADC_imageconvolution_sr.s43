@@ -1,0 +1,161 @@
+.include "pmem_defs.asm"
+	
+.set    GP_array_to_proc, 0x017E
+.set    mem, 0x5200
+;.set    mem1, 0x5000
+.set    mem2, 0x6004
+.set	DAC_01_00, 0x01D0
+.set	DAC_03_02, 0x01D2
+.set	DAC_05_04, 0x01D4
+.set	DAC_07_06, 0x01D6
+.set	DAC_09_08, 0x01D8
+
+.global main
+
+main:
+        mov     #DMEM_250, r1           ; Initialize stack pointer
+        mov	#0x0010, &BCSCTL2	; Divide clock 20MHz
+	mov	#0x5A80, &WDTCTL	; Disbles the watchdog timer by setting WDTHOLD=1 
+	mov     #0x0064, &GP_PER_1      ; sel_avd_25 = On, IVDD to 2.5V, Set vtun_ext = On
+	mov	#0x0002, &TUN_MUX
+ 	mov     #0, &ROW_SEL
+        mov     #0, &COL_SEL
+	mov	#0x0000, &GATE_S	; gate_s = 0.6V (@ IVDD 2.5V)
+	mov	#0x0000, &GATE_US_P	; gate_us_p = 0.6V (@ IVDD 2.5V)
+	mov	#0x0000, &GATE_US_N	; gate_us_n = 0.6V (@ IVDD 2.5V)
+	mov     #0x3F04, &GP_PER_3      ; Vtun_ext = 5V, enable 6V, esd=6v, dvdd2.5=On, loc_dreset=1,
+        ;mov     #10, r5             	; Number of ms
+        mov     #100, r5             	; Number of ms
+	call    #wait_10us                ; Call the waiting function
+        mov     #0x1F04, &GP_PER_3      ; Vtun_ext = 5V, enable 6V, esd=6v, dvdd2.5=On, loc_dreset=0,
+	mov	#0x00A4, &DRAIN_CTRL	; 101 cascode off, no use DAC, i2v mux control=fg_inn
+	mov     #0x0000, &PROG_BITS     ; PROG = 0, OV_N = don't care, MEAS_ADC = 0, CLEAR_N = 0
+
+        mov     #0x0000, r2
+        mov     #0x6000, r7
+        clr     r6
+
+        mov	#0x4300, r11
+        mov	@r11, r12		; length of vector 
+        incd	r11
+        incd	r11
+        incd	r11
+wait_startup:
+        cmp     #0x0001, &GP_array_to_proc
+        jne     wait_startup
+        inc     r6
+        cmp     #0xffff, r6
+        jne     wait_startup
+        mov     @r11, &DAC_01_00        ; Itg_Vref
+        incd	r11
+        mov	@r11, r13
+        mov     r13, &DAC_03_02        ; Setup the first value for DAC_03_02
+        incd	r11
+        mov     #0x0004, &GP_PER_2        ; GPIO - Initialize integrator
+        ;mov     #100, r5             	; Number of 10us
+        mov     #10, r5             	; Number of 10us
+	call    #wait_10us                ; Call the waiting function
+        call    #sr_meas
+
+        mov	#0x4100, r10            ; 0x4100 : start of sr_itg_in 
+        mov     #0x0010, &GP_PER_2        ; GPIO Data set for sr_itg_in
+Cal_loop:
+        incd	r11
+        mov     @r11, &DAC_03_02        ; get the DAC_03_02's value
+        incd	r11
+        mov     @r10, &GP_PER_2        ; get the GPIO In value (rise)
+        incd	r10
+        mov     @r10, &GP_PER_2        ; get the GPIO In value (fall)
+        incd	r10
+        ;mov     r13, &DAC_03_02        ; Setup the first value for DAC_03_02
+        mov     #2, r5             	; Number of 10us
+	call    #wait_10us                ; Call the waiting function
+        cmp	#0xffff, @r10
+        jne	Cal_loop
+        mov     #0x0008, &GP_PER_2        ; get the GPIO In value (rise) to disconnect last line
+        mov     #0x0000, &GP_PER_2        ; get the GPIO In value (fall)
+        mov     r13, &DAC_03_02        ; Setup the first value for DAC_03_02
+        call    #sr_meas
+ 
+;        mov     #1000, r5             	; Number of 10us
+;	call    #wait_10us                ; Call the waiting function
+;        call    #sr_meas
+        
+;        mov     #1000, r5             	; Number of 10us
+;	call    #wait_10us                ; Call the waiting function
+;        call    #sr_meas
+
+end_of_test:	
+        mov     #0xffff, @r7
+	mov     #0x0000, &BCSCTL2
+	nop
+	br      #0xffff
+	
+RAMP_ADC_meas:
+        mov     #0x8000, &GP_PER_4
+        clr     r8
+        clr     r9
+wait_GPIO1: 
+        inc     r8
+        cmp     #0x0fff, r8
+        jge     Overflow_ADC
+        cmp.b   #0x00, &GP_array_to_proc
+        jne     wait_GPIO1
+wait_irq05:
+        INC     r9
+        cmp     #0x0fff, r9
+        jge     Overflow_ADC
+        cmp.b   #0x01, &GP_array_to_proc
+        jne     wait_irq05
+        mov     r9, @r7     ;trying to write to the memory
+        clr     r9
+        mov     #0x0000, &GP_PER_4
+        jmp     Overflow_skip
+Overflow_ADC:
+        mov     #0x0001,  @r7 
+Overflow_skip:
+        ret
+
+sr_meas:
+        mov	#0x4000, r10            ; 0x4000 : start of sr_out 
+        mov     #0x0002, &GP_PER_2        ; GPIO Data set for sr_out
+sr_meas_loop:        
+        mov     @r10, &GP_PER_2        ; get the GPIO In value
+        incd	r10
+        mov     @r10, &GP_PER_2        ; get the GPIO In value
+        incd	r10
+        call    #RAMP_ADC_meas          ; Measure after integrator reset
+        call    #RAMP_ADC_meas
+        incd	r7
+        cmp	#0xffff, @r10
+        jne	sr_meas_loop
+        ret
+
+wait_10us:
+        mov     #34, r4                 ; Number of clock cycles in 100 us (3324 was divided by 100)
+wait_10us_loop:
+        dec.w   r4                      ; Subtract from number of clk cycles.Execution takes 2 clock cycles
+        jnz     wait_10us_loop          ; Test for loop termination. Execution takes 2 clock cycles
+        mov     #34, r4                  ; Reset number of clock cycles
+        dec.w   r5                      ; Decrement number of ms total
+        jnz     wait_10us_loop          ; Keep looping if necessary
+        ret   
+/* ----------------------         INTERRUPT VECTORS  --------------- */
+
+.section .vectors, "a"
+.word end_of_test     ; Interrupt  0 (lowest priority)    <unused>
+.word end_of_test     ; Interrupt  1                      <unused>
+.word end_of_test     ; Interrupt  2                      <unused>
+.word end_of_test     ; Interrupt  3                      <unused>
+.word end_of_test     ; Interrupt  4                      <unused>
+.word end_of_test     ; Interrupt  5                      <unused>
+.word end_of_test     ; Interrupt  6                      <unused>
+.word end_of_test     ; Interrupt  7                      <unused>
+.word end_of_test     ; Interrupt  8                      <unused>
+.word end_of_test     ; Interrupt  9                      <unused>
+.word end_of_test     ; Interrupt 10                      Watchdog timer
+.word end_of_test     ; Interrupt 11                      <unused>
+.word end_of_test     ; Interrupt 12                      <unused>
+.word end_of_test    ; Interrupt 13                      <unused>
+.word end_of_test      ; Interrupt 14                      NMI
+.word main              ; Interrupt 15 (highest priority)   RESET

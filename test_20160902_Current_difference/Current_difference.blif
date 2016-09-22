@@ -1,0 +1,8 @@
+.model Current_difference
+.inputs vcc
+.outputs net2_1
+
+#FG_SWITCH
+.subckt fgswitch in[0]=vcc out[0]=net2_1 #fgswitch_bias =8.00e-06
+
+.end
