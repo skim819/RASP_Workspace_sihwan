@@ -1,0 +1,28 @@
+        		<interconnect>		
+			  <!-- volswc interconnect. not as straightforward as other devices -->
+				<direct name="volswc1" input="cab.I[5:0]" output="volswc[0].in[5:0]"/>
+				<!--<direct name="volswc2" input="cab.O[1:0]" output="volswc[0].in[7:6]"/>	-->
+				<complete name="crossbar" input="fgota[1:0].out ota_buf.out ota.out cap[3:0].out nfet[1:0].out pfet[1:0].out tgate[3:0].out nmirror[1:0].out volswc[1:0].out" output="volswc[0].in[7:6]"/>
+				<direct name="volswc3" input="cab.I[11:6]" output="volswc[1].in[5:0]"/>
+				<!--<direct name="volswc4" input="cab.O[3:2]" output="volswc[1].in[7:6]"/>	-->	
+                                <complete name="crossbar" input="fgota[1:0].out ota_buf.out ota.out cap[3:0].out nfet[1:0].out pfet[1:0].out tgate[3:0].out nmirror[1:0].out volswc[1:0].out" output="volswc[1].in[7:6]"/>
+				<direct name="volswc5" input="cab.I[15:13]" output="volswc[0].ci"/>
+				<direct name="volswc6" input="volswc[0].co" output="volswc[1].ci"/>
+				<direct name="volswc7" input="volswc[1].co" output="cab.O[7:5]"/>	
+				
+				<!-- input crossbar with device feedback-->
+				<complete name="crossbar" input="cab.I[12:8] cap[3:0].out nfet[1:0].out pfet[1:0].out tgate[3:0].out nmirror[1:0].out volswc[1:0].out" output="ladder_filter[0].in[1:0] cap[3:0].in speech[0].in[2:0] nfet[1:0].in[1:0] pfet[1:0].in[1:0] tgate[3:0].in[1:0] nmirror[1:0].in"></complete>
+				<!-- output crossbar -->
+                                <complete name="crossbar" input="fgota[1:0].out cap[3:0].out nfet[1:0].out pfet[1:0].out nmirror[1:0].out volswc[1:0].out volt_div.out volt_div_fgota.out gnd_out.out vdd_out.out integrator.out integrator_nmirror.out fgswitch.out tgate[3:0].out in2in_x1.out nmirror_w_bias.out fgswc_nmirror_w_bias.out nfet_i2v.out pfet_i2v.out i2v_pfet_gatefgota.out[0] mismatch_meas.out[0]" output="cab.O[4]"/>
+                                <complete name="crossbar" input="cab.I[12:0]" output="gnd_out.in[1:0] vdd_out.in[1:0] in2in_x1.in[2:0] nmirror_w_bias.in[1:0] fgswc_nmirror_w_bias.in[0] in2in_x6.in[12:0] volt_div.in[1:0] volt_div_fgota.in[1:0] integrator.in[2:0] integrator_nmirror.in[2:0] fgswitch.in[0] nfet_i2v.in[0] pfet_i2v.in[0] i2v_pfet_gatefgota.in[0] mismatch_meas.in[2:0]"/>
+                                <complete name="crossbar" input="cab.I[8]" output="ota_buf.in lpf.in"/>
+				<complete name="crossbar" input="speech[0].out[1:0] fgota[0].out pfet[0].out" output="cab.O[4:3] "/>
+				<complete name="crossbar" input="cab.I[12]" output="sigma_delta_fe.in[4]"/>
+				<complete name="crossbar" input="ladder_filter[0].out[2:0]" output="cab.O[4:2] "/>
+				<complete name="crossbar" input="cab.I[6] cab.I[12]" output="c4_blk.in[1:0] fgota[1:0].in[1:0] peak_detector.in[1]"/>
+				<complete name="crossbar" input="cab.I[6:5]" output="peak_detector.in[0] fgota[1:0].in[1:0] ota.in"/>		
+				<complete name="crossbar" input="c4_blk.out[0] peak_detector.out " output="cab.O[4]"/>
+				<complete name="crossbar" input="cab.I[11:9] cab.I[8]" output="ramp_fe.in ota_buf.in sigma_delta_fe.in[3:0]"/>	
+				<complete name="crossbar" input="ota.out ota_buf.out ramp_fe.out sigma_delta_fe.out" output="cab.O[4] "/>
+				<complete name="crossbar" input="cab.I[12:0]" output="testtemp.in[2]"/>
+				<complete name="crossbar" input="testtemp[0].out[2:0]" output="cab.O[2:4]"/>

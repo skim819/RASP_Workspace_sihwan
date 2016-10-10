@@ -1,0 +1,8 @@
+.model macroblk_generation
+.inputs net2_1 net3_1
+.outputs net1_1 net3_1
+  
+#NFET 3
+.subckt nfet in[0]=net2_1 in[1]=net3_1 out[0]=net1_1
+  
+.end

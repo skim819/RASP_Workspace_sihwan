@@ -1,0 +1,5 @@
+			<pb_type name="testtemp" blif_model=".testtemp" num_pb="1">
+				<input name="in" num_pins="3"/>
+				<output name="out" num_pins="3"/>
+				<delay_constant max="1.667e-9" in_port="testtemp.in" out_port="testtemp.out"/>
+			</pb_type>
