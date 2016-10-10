@@ -5,12 +5,6 @@
 # Ramp_ADC*
 .subckt ramp_fe in[0]=net39_1 out=out_ramp_adc #ramp_fe_fg[0] =0&ramp_pfetinput[0] =3e-9&c4_ota_bias[0] =2e-6&c4_ota_p_bias[0] =2e-6&c4_ota_n_bias[0] =0.8e-6&speech_peakotabias[0] =2e-6&c4_ota_bias[1] =2e-6&c4_ota_p_bias[1] =500e-9&c4_ota_n_bias[1] =500e-9&ramp_pfetinput[1] =0.4e-9
 
-#GND_DIG 6
-.subckt tgate in[0]=vcc in[1]=gnd out=gnd_dig
-
-# ota_buf
-.subckt ota_buf in[0]=net35_1 out[0]=net34_1 #ota_biasfb =0.000002000000
-
 # Voltage Divider
 .subckt volt_div in[0]=net3_1 in[1]=net2_1 out[0]=net17_1 #volt_div_fg =0&vd_ota_bias =9e-6&cap_4x_vd_Vin =0&cap_4x_vd_gnd0 =0&cap_4x_vd_gnd1 =0&vd_target =5.00e-06
 
@@ -47,6 +41,9 @@
 
 .subckt integrator_nmirror in[0]=net25_1 in[1]=net29_16 in[2]=net1_1 out[0]=net10_16 #integrator_nmirror_fg =0&itg_cap_1x =0&itg_cap_2x =0&itg_cap_3x =0&itg_cap_4x =0&integrator_nmirror_ota0 =1.00e-06&integrator_nmirror_ota1 =2.00e-06&integrator_nmirror_ota2 =5.00e-11
 
+#GND_DIG 6
+.subckt tgate in[0]=vcc in[1]=gnd out=gnd_dig
+
 # Shift register 16inputs 1output
 .subckt sftreg in[0]=net10_1 in[1]=net10_2 in[2]=net10_3 in[3]=net10_4 in[4]=net10_5 in[5]=net10_6 in[6]=net10_7 in[7]=net10_8 in[8]=net10_9 in[9]=net10_10 in[10]=net10_11 in[11]=net10_12 in[12]=net10_13 in[13]=net10_14 in[14]=net10_15 in[15]=net10_16 in[16]=net4_1 in[17]=gnd_dig in[18]=net6_1 out[0]=net39_1 #sftreg_fg =0
 
@@ -69,5 +66,8 @@
 
 # Shift register 1input 16outputs nodeset
 .subckt sftreg4 in[0]=net30_1 in[1]=gnd_dig in[2]=net32_1 in[3]=net33_1 out[0]=net35_1 out[1]=net26_1 out[2]=net27_1 out[3]=net28_1 out[4]=net29_1 out[5]=net29_2 out[6]=net29_3 out[7]=net29_4 out[8]=net29_5 out[9]=net29_6 out[10]=net29_7 out[11]=net29_8 out[12]=net29_9 out[13]=net29_10 out[14]=net29_11 out[15]=net29_12 out[16]=net29_13 out[17]=net29_14 out[18]=net29_15 out[19]=net29_16 #sftreg4_fg =0&sftreg4_otabias =2e-6
+
+# ota_buf
+.subckt ota_buf in[0]=net35_1 out[0]=net34_1 #ota_biasfb =0.000002000000
 
 .end
