@@ -1,0 +1,5 @@
+			<pb_type name="macrocab_ex2" blif_model=".macrocab_ex2" num_pb="1">
+				<input name="in" num_pins="3"/>
+				<output name="out" num_pins="2"/>
+				<delay_constant max="1.667e-9" in_port="macrocab_ex2.in" out_port="macrocab_ex2.out"/>
+			</pb_type>

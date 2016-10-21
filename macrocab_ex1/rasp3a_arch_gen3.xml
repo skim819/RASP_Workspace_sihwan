@@ -1,0 +1,51 @@
+        		<interconnect>		
+			  <!-- volswc interconnect. not as straightforward as other devices -->
+				<direct name="volswc1" input="cab.I[5:0]" output="volswc[0].in[5:0]"/>
+				<!--<direct name="volswc2" input="cab.O[1:0]" output="volswc[0].in[7:6]"/>	-->
+				<complete name="crossbar" input="fgota[1:0].out ota_buf.out ota.out cap[3:0].out nfet[1:0].out pfet[1:0].out tgate[3:0].out nmirror[1:0].out mux4_1.out volswc[1:0].out" output="volswc[0].in[7:6]"/>
+				<direct name="volswc3" input="cab.I[11:6]" output="volswc[1].in[5:0]"/>
+				<!--<direct name="volswc4" input="cab.O[3:2]" output="volswc[1].in[7:6]"/>	-->	
+                                <complete name="crossbar" input="fgota[1:0].out ota_buf.out ota.out cap[3:0].out nfet[1:0].out pfet[1:0].out tgate[3:0].out nmirror[1:0].out mux4_1.out volswc[1:0].out" output="volswc[1].in[7:6]"/>
+				<direct name="volswc5" input="cab.I[15:13]" output="volswc[0].ci"/>
+				<direct name="volswc6" input="volswc[0].co" output="volswc[1].ci"/>
+				<direct name="volswc7" input="volswc[1].co" output="cab.O[7:5]"/>	
+				
+				<!-- input crossbar with device feedback-->
+				<complete name="crossbar" input="cab.I[12:8] fgota[1:0].out HOP_bif[0].out cap[3:1].out nfet[1:0].out pfet[1:0].out h_rect[0].out tgate[3:0].out mux4_1.out nmirror[1:0].out volswc[1:0].out switch_cap.out" output="fgota[1:0].in[1:0] ichar_nfet[0].in[1:0] bias_gen[0].in[0] common_source1.in common_drain.in[1:0] common_source_nfg.in[1:0] TIA_blk.in[0] h_rect[0].in[1:0] cap[3:1].in nfet[1:0].in[1:0] speech.in[2:0] HOP_bif[0].in ladder_filter[0].in[1:0] hh_neuron_b_debug[0].in[3:0] pfet[1:0].in[1:0] tgate[3:0].in[1:0] nmirror[1:0].in switch_cap.in[4:0]"></complete>
+				<!-- output crossbar -->
+				<complete name="crossbar" input="fgota[1:0].out cap[3:0].out nfet[1:0].out pfet[1:0].out nmirror[1:0].out volswc[1:0].out volt_div[1:0].out ota_buf.out lpf.out nfet_i2v.out pfet_i2v.out volt_div[1:0].out gnd_out.out vdd_out.out h_rect[0].out in2in_x1.out in2in_x6.out integrator.out integrator_nmirror.out tgate[3:0].out switch_cap.out mux4_1[0].out[0]" output="cab.O[4]"/>
+				<complete name="crossbar" input="cab.I[8]" output="ota_buf.in lpf.in"/>				
+                                <!-- <complete name="crossbar" input="ota_buf.out lpf.out volt_div[1:0].out gnd_out.out vdd_out.out in2in_x1.out in2in_x6.out integrator.out tgate[3:0].out" output="cab.O[4] "/> -->
+                                <complete name="crossbar" input="cab.I[12:0]" output="gnd_out.in[1:0] vdd_out.in[1:0] in2in_x1.in[2:0] in2in_x6.in[12:0] volt_div[1:0].in integrator.in[2:0] integrator_nmirror.in[2:0] nfet_i2v.in[0] pfet_i2v.in[0]"/>
+				<complete name="crossbar" input="cab.I[11]" output="tgate[0].in[0] sigma_delta_fe.in[2]"/>	
+				<complete name="crossbar" input="speech[0].out[1:0] pfet[0].out ichar_nfet[0].out common_source1.out common_source_nfg.out common_drain.out" output="cab.O[4:3] "/>	
+				<complete name="crossbar" input="hh_neuron_b_debug[0].out[2:0]" output="cab.O[4:2] "/>
+				<complete name="crossbar" input="ladder_filter[0].out[2:0]" output="cab.O[4:0] "/>
+				<complete name="crossbar" input="bias_gen[0].out[1:0]" output="cab.O[1:0] "/>
+				<complete name="direct" input="hhneuron[0].out[2:0]" output="cab.O[3:1] "/>
+				<complete name="crossbar" input="cab.I[11:8]" output="hhneuron.in[3:0] c4_blk.in[1:0] Nagating_blk.in[1:0] fgota[0].in[1:0] peak_detector.in[1] sigma_delta_fe.in[1:0] cap_sense[0].in[1] lpf_2.in[0]"/>	
+				<direct name="crossbar" input="cab.I[1:0]" output="dendiff.in[1:0]"/>
+				<direct name="crossbar" input="cab.I[7:0]" output="mux4_1.in[7:0]"/>
+				<direct name="crossbar" input="cab.I[3]" output="dendiff.in[2]"/>
+				<direct name="crossbar" input="cab.I[5]" output="dendiff.in[3]"/>
+				<direct name="crossbar" input="cab.I[7]" output="dendiff.in[4]"/>
+				<direct name="crossbar" input="cab.I[9]" output="dendiff.in[5]"/>
+				<direct name="crossbar" input="dendiff.out[0]" output="cab.so[2] "/>
+				<direct name="crossbar" input="dendiff.out[1]" output="cab.so[4] "/>
+				<direct name="crossbar" input="dendiff.out[2]" output="cab.so[6] "/>
+				<direct name="crossbar" input="dendiff.out[3]" output="cab.so[8] "/>
+				<direct name="crossbar" input="dendiff.out[4]" output="cab.so[10] "/>
+				<direct name="crossbar" input="dendiff.out[5]" output="cab.so[12] "/>
+				<complete name="crossbar" input="cab.I[11:9] cab.I[8]" output="ota.in ramp_fe.in ota_buf.in"/>	
+				<complete name="crossbar" input="cab.I[6] cab.I[12]" output="c4_blk.in[1:0] Nagating_blk.in[1:0] fgota[1:0].in[1:0] peak_detector.in[1]"/>
+				<complete name="crossbar" input="cab.I[8]" output="c4_blk[0].in[1] Nagating_blk.in[1] cap[0].in[0] cap_sense[0].in[0]"/>
+				<complete name="crossbar" input="cab.I[6] cab.I[12]" output="c4_blk.in[1:0] Nagating_blk.in[1:0] fgota[0].in[1:0] peak_detector.in[1] sigma_delta_fe.in[1:0] cap_sense[0].in[1] lpf_2.in[0]"/>
+				<complete name="crossbar" input="cab.I[7:6]" output="peak_detector.in[0] fgota[1:0].in[0] "/>		
+				<complete name="crossbar" input="c4_blk.out[0] lpf_2.out[0] peak_detector.out cap_sense[0].out[0] cap[0].out[0] HOP_bif[0].out" output="cab.O[4]"/>
+				<complete name="crossbar" input="TIA_blk.out[0]" output="cab.O[4]"/>
+				<complete name="crossbar" input="ota.out ota_buf.out ramp_fe.out" output="cab.O[4:3] "/>
+				<complete name="crossbar" input="Nagating_blk.out[0]" output="cab.O[3] "/>
+				<!--direct name="crossbar" input="ladder_blk.out[2:1]" output="cab.O[3:2] "/-->
+				<complete name="crossbar" input="ota.out fgota.out vco.out sigma_delta_fe.out" output="cab.O[4:3]"/>
+				<complete name="crossbar" input="cab.I[12:0]" output="inv_mcab.in[0]"/>
+				<complete name="crossbar" input="inv_mcab[0].out[0]" output="cab.O[4]"/>

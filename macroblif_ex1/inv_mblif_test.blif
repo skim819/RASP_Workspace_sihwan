@@ -1,0 +1,16 @@
+.model inv_mblif_test
+.inputs net1_1 vcc
+.outputs out_mite_adc
+  
+# MITE_ADC
+.subckt meas_volt_mite in[0]=net2_1 out[0]=out_mite_adc #meas_fg =0.00001
+  
+#inv_mblif
+.subckt nfet in[0]=net1_1 in[1]=net2_1 out[0]=net1_1_inv_mblif_3
+  
+.subckt pfet in[0]=net1_1 in[1]=vcc out=net2_1
+  
+.subckt gnd_out in[0]=fb_gndout_net1_1_inv_mblif_3 in[1]=net1_1_inv_mblif_3 out[0]=fb_gndout_net1_1_inv_mblif_3 #gnd_out_c =0
+  
+
+.end

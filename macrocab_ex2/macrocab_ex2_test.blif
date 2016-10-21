@@ -1,0 +1,8 @@
+.model macrocab_ex2_test
+.inputs net1_1 net2_1 net3_1
+.outputs net4_1 net5_1
+  
+#macrocab_ex2
+.subckt macrocab_ex2 in[0]=net1_1 in[1]=net2_1 in[2]=net3_1 out[0]=net4_1 out[1]=net5_1 #macrocab_ex2_ls =0&macrocab_ex2_fgswc_ibias1 =5.000000e-08&macrocab_ex2_fgswc_ibias2 =5.000000e-08&macrocab_ex2_fgota1_ibias =2.000000e-06&macrocab_ex2_fgota1_pbias =2.000000e-06&macrocab_ex2_fgota1_nbias =2.000000e-06&macrocab_ex2_fgota0_ibias =2.000000e-06&macrocab_ex2_fgota0_pbias =2.000000e-06&macrocab_ex2_fgota0_nbias =2.000000e-06&macrocab_ex2_ota0_ibias =2.000000e-06&macrocab_ex2_ota1_ibias =2.000000e-06&macrocab_ex2_cap0_1x_cs =0&macrocab_ex2_cap1_1x_cs =0
+
+.end

@@ -1,0 +1,14 @@
+Netlist file: /home/ubuntu/RASP_Workspace/macroblif_ex2//ex2_mblif.net   Architecture file: /home/ubuntu/rasp30/vpr2swcs/./arch/rasp3_arch.xml
+Array size: 14 x 14 logic blocks
+
+#block name	x	y	subblk	block number
+#----------	--	--	------	------------
+net10_1		10	1	0	#0
+net2_1		11	2	0	#1
+fb_vddout_net12_1	10	2	0	#2
+net11_1		11	1	0	#3
+out:net11_1	12	0	0	#4
+gnd		7	0	4	#5
+vcc		7	0	5	#6
+net4_1		11	0	0	#7
+net6_1		9	0	0	#8

@@ -1,0 +1,5 @@
+			<pb_type name="inv_mcab" blif_model=".inv_mcab" num_pb="1">
+				<input name="in" num_pins="1"/>
+				<output name="out" num_pins="1"/>
+				<delay_constant max="1.667e-9" in_port="inv_mcab.in" out_port="inv_mcab.out"/>
+			</pb_type>

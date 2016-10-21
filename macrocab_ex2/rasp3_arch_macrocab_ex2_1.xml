@@ -1,0 +1,8 @@
+		<model name="macrocab_ex2">
+			<input_ports>
+				<port name="in"/>
+			</input_ports>
+			<output_ports>
+				<port name="out"/>
+			</output_ports>
+		</model>

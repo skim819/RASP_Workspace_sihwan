@@ -1,0 +1,11 @@
+Netlist file: /home/ubuntu/RASP_Workspace/macroblif_ex//inv_mblif_test.net   Architecture file: /home/ubuntu/rasp30/vpr2swcs/./arch/rasp3_arch.xml
+Array size: 14 x 14 logic blocks
+
+#block name	x	y	subblk	block number
+#----------	--	--	------	------------
+net2_1		11	1	0	#0
+fb_gndout_net1_1_inv_mblif_3	10	1	0	#1
+out_mite_adc	14	1	0	#2
+out:out_mite_adc	7	0	0	#3
+vcc		7	0	5	#4
+net1_1		9	0	1	#5

@@ -1,0 +1,14 @@
+.model inv_mblif
+.inputs net3_1 vcc
+.outputs net4_1
+
+#NFET 3
+.subckt nfet in[0]=net3_1 in[1]=net4_1 out[0]=net1_1
+
+#PFET 4
+.subckt pfet in[0]=net3_1 in[1]=vcc out=net4_1
+
+#GND_OUT 5
+.subckt gnd_out in[0]=fb_gndout_net1_1 in[1]=net1_1 out[0]=fb_gndout_net1_1  #gnd_out_c =0
+
+.end

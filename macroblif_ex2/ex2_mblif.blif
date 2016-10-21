@@ -1,0 +1,29 @@
+.model ex2_mblif
+.inputs net6_1 net4_1 vcc gnd
+.outputs net11_1
+
+#TGATE 7
+.subckt tgate in[0]=vcc in[1]=net4_1 out=net2_1
+
+#CAP 8
+.subckt cap in[0]=net1_1 out[0]=net12_1 #cap_3x =0&cap_1x =0
+
+#NMIRROR 9
+.subckt nmirror in[0]=net2_1 out=net1_1
+
+#NFET 10
+.subckt nfet in[0]=net6_1 in[1]=gnd out[0]=net9_1
+
+#PFET 11
+.subckt pfet in[0]=net6_1 in[1]=vcc out=net8_1
+
+#OTA 13
+.subckt ota in[0]=net10_1 in[1]=net11_1 out[0]=net11_1 #ota_bias =4.000000e-09
+
+#FGOTA 14
+.subckt fgota in[0]=net8_1 in[1]=net9_1 out[0]=net10_1 #ota_bias =1e-9&ota_p_bias =2e-9&ota_n_bias =3e-9
+
+#VDD_OUT 16
+.subckt vdd_out in[0]=fb_vddout_net12_1 in[1]=net12_1 out[0]=fb_vddout_net12_1 #vdd_out_c =0
+
+.end

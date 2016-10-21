@@ -1,0 +1,23 @@
+.model ex2_mblif_test
+.inputs net2_1 net3_1 vcc gnd
+.outputs net1_1
+  
+#ex2_mblif
+.subckt ota in[0]=net10_1_ex2_mblif_1 in[1]=net1_1 out[0]=net1_1 #ota_bias =4.000000e-09
+  
+.subckt fgota in[0]=net8_1_ex2_mblif_1 in[1]=net9_1_ex2_mblif_1 out[0]=net10_1_ex2_mblif_1 #ota_bias =1.000000e-09&ota_p_bias =2.000000e-09&ota_n_bias =3.000000e-09
+  
+.subckt nfet in[0]=net2_1 in[1]=gnd out[0]=net9_1_ex2_mblif_1
+  
+.subckt pfet in[0]=net2_1 in[1]=vcc out=net8_1_ex2_mblif_1
+  
+.subckt tgate in[0]=vcc in[1]=net3_1 out=net2_1_ex2_mblif_1
+  
+.subckt nmirror in[0]=net2_1_ex2_mblif_1 out=net1_1_ex2_mblif_1
+  
+.subckt cap in[0]=net1_1_ex2_mblif_1 out[0]=net12_1_ex2_mblif_1 #cap_3x =0&cap_1x =0
+  
+.subckt vdd_out in[0]=fb_vddout_net12_1_ex2_mblif_1 in[1]=net12_1_ex2_mblif_1 out[0]=fb_vddout_net12_1_ex2_mblif_1 #vdd_out_c =0
+  
+
+.end
