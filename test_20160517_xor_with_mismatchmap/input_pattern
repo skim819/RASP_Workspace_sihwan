@@ -54,7 +54,10 @@ clk_x1_data_x7_x15=[clk_x1_data_x7_x4 clk_x1_data_x7_x4 clk_x1_data_x7_x4 clk_x1
 zero_x8_x4=[zero_x8 zero_x8 zero_x8 zero_x8];
 zero_x8_x15=[zero_x8_x4 zero_x8_x4 zero_x8_x4 zero_x8 zero_x8 zero_x8];
 
-one__25V=[2.5 2.5 2.5 2.5 2.5 2.5 2.5 2.5];
+//one__25V=[2.5 2.5 2.5 2.5 2.5 2.5 2.5 2.5];
+one__25V=[2.4 2.4 2.4 2.4 2.4 2.4 2.4 2.4];
+//one__25V=[2.3 2.3 2.3 2.3 2.3 2.3 2.3 2.3];
+//one__25V=[2.2 2.2 2.2 2.2 2.2 2.2 2.2 2.2];
 zero_21V=[2.1 2.1 2.1 2.1 2.1 2.1 2.1 2.1];
 
 //// To chech the whole function.
@@ -68,6 +71,7 @@ zero_21V=[2.1 2.1 2.1 2.1 2.1 2.1 2.1 2.1];
 
 // Check only XOR output
 clk_sr       = [clk__x3 zero_x16];
+//clk_sr       = [clk__x1 zero_x2 zero_x16];
 data_sr      = [data_x1 zero_x10 zero_x8];
 input_vmmwta=[
 zero_x3 one__25V one__25V one__25V one__25V; 
