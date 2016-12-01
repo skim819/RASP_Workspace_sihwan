@@ -1,0 +1,6 @@
+vcc 7 0 5 #int[5]
+net2_1 13 0 1 #int[1]
+net11_1 9 0 1 #int[1]
+out:out_mite_adc 7 0 0 #tgate[0]
+net4_1 13 0 2 #int[2]
+net9_1 9 0 2 #int[2]

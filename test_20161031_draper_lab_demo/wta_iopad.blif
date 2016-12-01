@@ -1,0 +1,20 @@
+.model wta_iopad
+.inputs net6_1 net7_1 vcc
+.outputs net1_1 net2_1
+
+#wta_w_bias
+.subckt wta_w_bias in[0]=net5_1 in[1]=net4_1 out[0]=net1_1 #wta_w_bias_ls =0&wta_w_bias_wta_bias =1.000000e-08&wta_w_bias_buf_bias =2.000000e-06
+
+#wta_w_bias
+.subckt wta_w_bias in[0]=net8_1 in[1]=net4_1 out[0]=net2_1 #wta_w_bias_ls =0&wta_w_bias_wta_bias =1.000000e-08&wta_w_bias_buf_bias =2.000000e-06
+
+#NMIRROR 8
+.subckt nmirror_vmm in[0]=vcc out=net4_1 #nmirror_bias[0] =1.000e-08
+
+# fg_io
+.subckt fg_io in[0]=net6_1 out[0]=net5_1 #fg_io_fg =5.00e-06
+
+# fg_io
+.subckt fg_io in[0]=net7_1 out[0]=net8_1 #fg_io_fg =5.00e-06
+
+.end

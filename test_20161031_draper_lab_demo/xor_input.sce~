@@ -1,0 +1,15 @@
+xor_ex_clk_sr  = [0.2 2.5 0.2 2.5 0.2 2.5 linspace(0.2,0.2,32)];
+xor_ex_data_sr = [2.5 2.5 linspace(0.2,0.2,36)];
+//xor_ex_Vin=[
+//linspace(0.2,0.2,6) linspace(2.1,2.1,8) linspace(2.1,2.1,8) linspace(2.1,2.1,8) linspace(2.1,2.1,8);
+//linspace(0.2,0.2,6) linspace(0.2,0.2,8) linspace(0.2,0.2,8) linspace(2.1,2.1,8) linspace(2.1,2.1,8);
+//linspace(0.2,0.2,6) linspace(2.1,2.1,8) linspace(0.2,0.2,8) linspace(0.2,0.2,8) linspace(2.1,2.1,8);
+//linspace(0.2,0.2,6) linspace(0.2,0.2,8) linspace(0.2,0.2,8) linspace(0.2,0.2,8) linspace(0.2,0.2,8);];
+
+xor_ex_Vin=[
+linspace(0.2,0.2,6) linspace(2.1,2.1,8) linspace(2.1,2.1,8) linspace(2.1,2.1,8) linspace(2.1,2.1,8);
+linspace(0.2,0.2,6) linspace(0.2,0.2,8) linspace(0.2,0.2,8) linspace(2.1,2.1,8) linspace(2.1,2.1,8);
+linspace(0.2,0.2,6) linspace(2.1,2.1,8) linspace(0.2,0.2,8) linspace(0.2,0.2,8) linspace(2.1,2.1,8);
+linspace(0.2,0.2,6) linspace(0.2,0.2,8) linspace(0.2,0.2,8) linspace(0.2,0.2,8) linspace(0.2,0.2,8);];
+
+//[4e-06,1e-10,1e-10,1e-10; 1e-10,4e-06,4e-06,1e-10; 3e-06,2e-06,2e-06,1e-10; 1e-10,1e-10,1e-10,1e-10]

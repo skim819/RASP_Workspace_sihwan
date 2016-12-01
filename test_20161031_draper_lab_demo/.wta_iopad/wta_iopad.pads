@@ -1,0 +1,5 @@
+vcc 7 0 5 #int[5]
+net6_1 8 1 5 #tgate[1]
+net7_1 8 2 5 #tgate[1]
+out:net1_1 8 3 5 #tgate[1]
+out:net2_1 8 4 5 #tgate[1]

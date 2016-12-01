@@ -1,0 +1,27 @@
+.model test_20160517_xor_with_mismatchmap
+.inputs net9_1 net9_2 net9_3 net9_4 net1_1 net7_1 vcc gnd
+.outputs out_mite_adc
+
+# MITE_ADC
+.subckt meas_volt_mite in[0]=net2_1 out[0]=out_mite_adc #meas_fg =0.00001
+
+# Shift register 4inputs 1output
+.subckt sftreg in[0]=net8_1 in[1]=net8_2 in[2]=net8_3 in[3]=net8_4 in[4]=net8_1 in[5]=net8_2 in[6]=net8_3 in[7]=net8_4 in[8]=net8_1 in[9]=net8_2 in[10]=net8_3 in[11]=net8_4 in[12]=net8_1 in[13]=net8_2 in[14]=net8_3 in[15]=net8_4 in[16]=net1_1 in[17]=gnd_dig in[18]=net7_1 out[0]=net2_1 out[1]=net3_1 out[2]=net4_1 out[3]=net5_1 #sftreg_fg =0
+
+#GND_DIG 6
+.subckt tgate in[0]=vcc in[1]=gnd out=gnd_dig
+
+#VMM_WTA_NBIAS
+.subckt vmm4x4 in[0]=net9_1 in[1]=net9_2 in[2]=net9_3 in[3]=net9_4 out[0]=vmm_out1 out[1]=vmm_out2 out[2]=vmm_out3 out[3]=vmm_out4 #vmm4x4_target =1.20e-06,1.00e-10,1.00e-10,1.00e-10,1.00e-10,1.27e-06,1.34e-06,1.00e-10,6.50e-07,1.41e-06,1.20e-06,1.00e-10,1.00e-10,1.00e-10,1.00e-10,1.00e-10
+
+.subckt wta in[0]=vmm_out1 in[1]=nfet_d out[0]=net8_1 #wta_fg =0&wta_bufbias =2.0e-06&wta_pfetbias =4.00e-08
+
+.subckt wta in[0]=vmm_out2 in[1]=nfet_d out[0]=net8_2 #wta_fg =0&wta_bufbias =2.0e-06&wta_pfetbias =4.00e-08
+
+.subckt wta in[0]=vmm_out3 in[1]=nfet_d out[0]=net8_3 #wta_fg =0&wta_bufbias =2.0e-06&wta_pfetbias =4.00e-08
+
+.subckt wta in[0]=vmm_out4 in[1]=nfet_d out[0]=net8_4 #wta_fg =0&wta_bufbias =2.0e-06&wta_pfetbias =5.00e-11
+
+.subckt nmirror_vmm in[0]=nfet_d out=nfet_d #nmirror_bias[0] =3.50e-08
+
+.end

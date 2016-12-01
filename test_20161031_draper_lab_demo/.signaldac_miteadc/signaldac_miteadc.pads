@@ -1,0 +1,2 @@
+net1_1 0 8 3 #int[3]
+out:out_mite_adc 8 1 0 #int[0]

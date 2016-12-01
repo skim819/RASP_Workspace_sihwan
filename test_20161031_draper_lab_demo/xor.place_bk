@@ -1,0 +1,25 @@
+Netlist file: /home/ubuntu/RASP_Workspace/test_20161031_draper_lab_demo/xor.net   Architecture file: /home/ubuntu/rasp30/vpr2swcs/./arch/rasp3a_vmm_arch.xml
+Array size: 7 x 14 logic blocks
+
+#block name	x	y	subblk	block number
+#----------	--	--	------	------------
+net2_1 5  2 0
+vmm_out1 5 2 0
+net9_4 1 3 0
+net9_3 1 2 0
+net9_2 1 1 0
+net9_1 3 2 0
+net8_3 3 1 0
+net8_2 3 4 0
+net8_1 3 3 0
+out_mite_adc 7 1 0
+out:out_mite_adc 8 1 0
+nfet_d 5 1 0
+gnd 7 0 4
+vcc 7 0 5
+net7_1 0 9 2
+net1_1 0 9 1
+net10_4 0 9 0
+net10_3 0 8 5
+net10_2 0 8 4
+net10_1 0 8 3

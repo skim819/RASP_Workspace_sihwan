@@ -1,0 +1,109 @@
+Array size: 7 x 14 logic blocks.
+
+Routing:
+
+Net 0 (net8_1)
+
+SOURCE (5,2)  Class: 39  
+  OPIN (5,2)  Pin: 39  
+ CHANX (5,1)  Track: 4  
+ CHANX (4,1)  Track: 4  
+ CHANX (3,1)  Track: 4  
+ CHANY (2,1)  Track: 4  
+  IPIN (3,1)  Pin: 3  
+  SINK (3,1)  Class: 3  
+
+
+Net 1 (net4_1)
+
+SOURCE (5,2)  Class: 23  
+  OPIN (5,2)  Pin: 23  
+ CHANY (5,2)  Track: 16  
+ CHANX (5,1)  Track: 16  
+ CHANX (4,1)  Track: 16  
+ CHANY (3,1)  Track: 16  
+  IPIN (3,1)  Pin: 7  
+  SINK (3,1)  Class: 7  
+ CHANX (4,1)  Track: 16  
+ CHANX (3,1)  Track: 16  
+ CHANX (2,1)  Track: 16  
+ CHANY (1,1)  Track: 16  
+  IPIN (1,1)  Pin: 7  
+  SINK (1,1)  Class: 7  
+
+
+Net 2 (net2_1)
+
+SOURCE (3,1)  Class: 20  
+  OPIN (3,1)  Pin: 20  
+ CHANX (3,1)  Track: 15  
+ CHANX (4,1)  Track: 15  
+ CHANX (5,1)  Track: 15  
+ CHANX (6,1)  Track: 15  
+ CHANX (7,1)  Track: 15  
+ CHANY (7,2)  Track: 15  
+ CHANY (7,3)  Track: 15  
+ CHANY (7,4)  Track: 15  
+  IPIN (8,4)  Pad: 15  
+  SINK (8,4)  Pad: 15  
+
+
+Net 3 (net5_1)
+
+SOURCE (5,1)  Class: 39  
+  OPIN (5,1)  Pin: 39  
+ CHANX (5,0)  Track: 15  
+ CHANX (4,0)  Track: 15  
+ CHANX (3,0)  Track: 15  
+ CHANX (2,0)  Track: 15  
+ CHANX (1,0)  Track: 15  
+ CHANY (0,1)  Track: 15  
+  IPIN (1,1)  Pin: 3  
+  SINK (1,1)  Class: 3  
+
+
+Net 4 (net1_1)
+
+SOURCE (1,1)  Class: 20  
+  OPIN (1,1)  Pin: 20  
+ CHANX (1,1)  Track: 16  
+ CHANY (1,2)  Track: 16  
+ CHANX (2,2)  Track: 16  
+ CHANX (3,2)  Track: 16  
+ CHANX (4,2)  Track: 16  
+ CHANX (5,2)  Track: 16  
+ CHANX (6,2)  Track: 16  
+ CHANX (7,2)  Track: 16  
+ CHANY (7,3)  Track: 16  
+  IPIN (8,3)  Pad: 15  
+  SINK (8,3)  Pad: 15  
+
+
+Net 5 (vcc): global net connecting:
+
+Block vcc (#6) at (7, 0), Pin class 16.
+Block net8_1 (#2) at (5, 2), Pin class 11.
+
+
+Net 6 (net7_1)
+
+SOURCE (8,2)  Pad: 16  
+  OPIN (8,2)  Pad: 16  
+ CHANY (7,2)  Track: 7  
+ CHANX (7,1)  Track: 7  
+ CHANX (6,1)  Track: 7  
+ CHANX (5,1)  Track: 7  
+  IPIN (5,2)  Pin: 12  
+  SINK (5,2)  Class: 12  
+
+
+Net 7 (net6_1)
+
+SOURCE (8,1)  Pad: 16  
+  OPIN (8,1)  Pad: 16  
+ CHANY (7,1)  Track: 16  
+ CHANX (7,0)  Track: 16  
+ CHANX (6,0)  Track: 16  
+ CHANX (5,0)  Track: 16  
+  IPIN (5,1)  Pin: 12  
+  SINK (5,1)  Class: 12  

@@ -1,0 +1,20 @@
+Netlist file: /home/ubuntu/RASP_Workspace/test_20161031_draper_lab_demo/wta.net   Architecture file: /home/ubuntu/rasp30/vpr2swcs/./arch/rasp3_vmm_arch.xml
+Array size: 14 x 14 logic blocks
+
+#block name	x	y	subblk	block number
+#----------	--	--	------	------------
+net6_1 7 3 0
+net5_1 6 3 0
+fbout_1_1 7 2 0
+net3_1 7 1 0
+net1_1 6 2 0
+net12_1 6 1 0
+net10_1 7 4 0
+net8_1 10 1 0
+out_mite_adc 14 1 0
+out:out_mite_adc 7 0 0
+vcc 7 0 5
+net4_1 13 0 2
+net2_1 13 0 1
+net9_1 9 0 2
+net11_1 9 0 1
