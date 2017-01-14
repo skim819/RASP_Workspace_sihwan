@@ -1,0 +1,8 @@
+.model otatest
+.inputs net1_1 net2_1
+.outputs net3_1
+  
+#OTA 1
+.subckt ota in[0]=net1_1 in[1]=net2_1 out[0]=net3_1 #ota_bias =1.000000e-06
+  
+.end

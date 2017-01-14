@@ -1,0 +1,11 @@
+.model vd_2ota_test
+.inputs net1_1
+.outputs out_mite_adc
+  
+#vd_2ota
+.subckt vd_2ota in[0]=net1_1 out[0]=net2_1 #vd_2ota_ls =0&vd_2ota_fgota0_ibias =2.000000e-06&vd_2ota_fgota0_pbias =2.000000e-06&vd_2ota_fgota0_nbias =3.000000e-07&vd_2ota_ota0_ibias =5.000000e-08
+
+# MITE_ADC
+.subckt meas_volt_mite in[0]=net2_1 out[0]=out_mite_adc #meas_fg =0.00001
+  
+.end

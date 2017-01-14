@@ -1,0 +1,25 @@
+.model global_routing_example
+.inputs net1_1 vcc gnd
+.outputs out_mite_adc
+  
+# tgates for logic
+.subckt tgate in[0]=vcc in[1]=gnd out=tg4logic_1
+  
+.subckt tgate in[0]=vcc in[1]=gnd out=tg4logic_2
+  
+.subckt tgate in[0]=vcc in[1]=gnd out=tg4logic_3
+  
+# LOOKUP Table-> Inverter
+.names net3_1 tg4logic_1 tg4logic_2 tg4logic_3 net4_1
+0--- 1
+  
+# LPF
+.subckt ota in[0]=net1_1 in[1]=net2_1 out[0]=net2_1 #ota_bias =0.000000000101
+  
+# ota_buf
+.subckt ota_buf in[0]=net2_1 out[0]=net3_1 #ota_biasfb =0.000002000000
+  
+# MITE_ADC
+.subckt meas_volt_mite in[0]=net4_1 out[0]=out_mite_adc #meas_fg =0.00001
+  
+.end

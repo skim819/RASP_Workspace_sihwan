@@ -1,0 +1,54 @@
+			<interconnect>		
+				<direct name="volswc1" input="cab.I[5:0]" output="volswc[0].in[5:0]"/>
+				<complete name="crossbar" input="fgota[1:0].out ota_buf.out ota.out cap[3:0].out nfet[1:0].out pfet[1:0].out tgate[3:0].out nmirror[1:0].out mux4_1.out volswc[1:0].out" output="volswc[0].in[7:6]"/>
+				<direct name="volswc3" input="cab.I[11:6]" output="volswc[1].in[5:0]"/>
+				<complete name="crossbar" input="fgota[1:0].out ota_buf.out ota.out cap[3:0].out nfet[1:0].out pfet[1:0].out tgate[3:0].out nmirror[1:0].out mux4_1.out volswc[1:0].out" output="volswc[1].in[7:6]"/>
+				<direct name="volswc5" input="cab.I[15:13]" output="volswc[0].ci"/>
+				<direct name="volswc6" input="volswc[0].co" output="volswc[1].ci"/>
+				<direct name="volswc7" input="volswc[1].co" output="cab.O[7:5]"/>	
+				<direct name="crossbar" input="cab.I[15:13]" output="mmap_local_swc[0].in[2:0]"/>
+				<complete name="crossbar" input="cab.I[12:8] fgota[1:0].out cap[3:1].out nfet[1:0].out pfet[1:0].out h_rect[0].out tgate[3:0].out mux4_1.out nmirror[1:0].out volswc[1:0].out" output="fgota[1:0].in[1:0] ichar_nfet[0].in[1:0] TIA_blk.in[0] h_rect[0].in[1:0] cap[3:1].in nfet[1:0].in[1:0] speech.in[2:0] ladder_filter[0].in[1:0] pfet[1:0].in[1:0] tgate[3:0].in[1:0] nmirror[1:0].in"></complete>
+				<complete name="crossbar" input="fgota[1:0].out cap[3:0].out nfet[1:0].out pfet[1:0].out nmirror[1:0].out volswc[1:0].out volt_div[0].out volt_div_fgota.out ota_buf.out lpf.out nfet_i2v.out pfet_i2v.out i2v_pfet_gatefgota.out[0] mismatch_meas.out[0] gnd_out.out vdd_out.out h_rect[0].out in2in_x1.out nmirror_w_bias.out fgswc_nmirror_w_bias.out in2in_x6.out integrator.out integrator_nmirror.out tgate[3:0].out mux4_1[0].out[0]" output="cab.O[4]"/>
+				<complete name="crossbar" input="cab.I[8]" output="ota_buf.in lpf.in"/>				
+				<complete name="crossbar" input="cab.I[12:0]" output="gnd_out.in[1:0] vdd_out.in[1:0] in2in_x1.in[2:0] nmirror_w_bias.in[1:0] fgswc_nmirror_w_bias.in[0] in2in_x6.in[12:0] volt_div.in[1:0] volt_div_fgota.in[1:0] integrator.in[2:0] integrator_nmirror.in[2:0] nfet_i2v.in[0] pfet_i2v.in[0] i2v_pfet_gatefgota.in[0] mismatch_meas.in[2:0]"/>
+				<complete name="crossbar" input="cab.I[11]" output="tgate[0].in[0] sigma_delta_fe.in[2]"/>	
+				<complete name="crossbar" input="speech[0].out[1:0] pfet[0].out ichar_nfet[0].out" output="cab.O[4:3] "/>	
+				<complete name="crossbar" input="TIA_blk.out[0]" output="cab.O[4]"/>
+				<complete name="crossbar" input="ladder_filter[0].out[2:0]" output="cab.O[4:0] "/>
+				<complete name="direct" input="hhneuron[0].out[2:0]" output="cab.O[3:1] "/>
+				<complete name="crossbar" input="cab.I[11:8]" output="hhneuron.in[3:0] c4_blk.in[1:0] Nagating_blk.in[1:0] fgota[0].in[1:0] sigma_delta_fe.in[1:0]"/>
+				<complete name="crossbar" input="cab.I[11:7]" output="Algo_ADC.in[4:0]"/>	
+				<complete name="crossbar" input="cab.I[11:9] cab.I[8]" output="ota.in ramp_fe.in ota_buf.in"/>	
+				<complete name="crossbar" input="cab.I[6] cab.I[12]" output="c4_blk.in[1:0] Nagating_blk.in[1:0] fgota[1:0].in[1:0]"/>
+				<complete name="crossbar" input="cab.I[8]" output="c4_blk[0].in[1] Nagating_blk.in[1] cap[0].in[0]"/>
+				<complete name="crossbar" input="cab.I[6] cab.I[12]" output="c4_blk.in[1:0] Nagating_blk.in[1:0] fgota[0].in[1:0] sigma_delta_fe.in[1:0]"/>
+				<complete name="crossbar" input="cab.I[7:6]" output="fgota[1:0].in[0] "/>		
+				<complete name="crossbar" input="c4_blk.out[0] cap[0].out[0] Algo_ADC.out[0]" output="cab.O[4]"/>
+				<complete name="crossbar" input="ota.out ota_buf.out ramp_fe.out" output="cab.O[4:1] "/>
+				<complete name="crossbar" input="Nagating_blk.out[0]" output="cab.O[4] "/>
+				<complete name="crossbar" input="ota.out fgota.out sigma_delta_fe.out" output="cab.O[4]"/>
+				<direct name="crossbar" input="mmap_local_swc[0].out[3:0]" output="cab.O[7:4]" />	
+				<complete name="crossbar" input="cab.I[12:0]" output="inv_mcab.in[0]"/>
+				<complete name="crossbar" input="inv_mcab[0].out[0]" output="cab.O[4]"/>
+				<complete name="crossbar" input="cab.I[12:0]" output="Hyst_diff.in[0]"/>
+				<complete name="crossbar" input="Hyst_diff[0].out[0]" output="cab.O[4]"/>
+				<complete name="crossbar" input="cab.I[12:0]" output="Max_detect.in[0]"/>
+				<complete name="crossbar" input="Max_detect[0].out[0]" output="cab.O[4]"/>
+				<complete name="crossbar" input="cab.I[12:0]" output="Min_detect.in[0]"/>
+				<complete name="crossbar" input="Min_detect[0].out[0]" output="cab.O[4]"/>
+				<complete name="crossbar" input="cab.I[12:0]" output="wta_w_bias.in[1:0]"/>
+				<complete name="crossbar" input="wta_w_bias[0].out[0]" output="cab.O[4]"/>
+				<complete name="crossbar" input="cab.I[12:0]" output="hhn.in[3:0]"/>
+				<complete name="crossbar" input="hhn[0].out[0]" output="cab.O[4]"/>
+				<complete name="crossbar" input="cab.I[12:0]" output="fgswitch.in[0]"/>
+				<complete name="crossbar" input="fgswitch[0].out[0]" output="cab.O[4]"/>
+				<complete name="crossbar" input="cab.I[12:0]" output="common_drain.in[0]"/>
+				<complete name="crossbar" input="common_drain[0].out[0]" output="cab.O[4]"/>
+				<complete name="crossbar" input="cab.I[12:0]" output="common_drain_nfet.in[0]"/>
+				<complete name="crossbar" input="common_drain_nfet[0].out[0]" output="cab.O[4]"/>
+				<complete name="crossbar" input="cab.I[12:0]" output="hhn_debug.in[3:0]"/>
+				<complete name="crossbar" input="hhn_debug[0].out[2:0]" output="cab.O[4:2]"/>
+				<complete name="crossbar" input="cab.I[12:0]" output="exam2.in[0]"/>
+				<complete name="crossbar" input="exam2[0].out[0]" output="cab.O[4]"/>
+				<complete name="crossbar" input="cab.I[12:0]" output="exam2.in[1:0]"/>
+				<complete name="crossbar" input="exam2[0].out[0]" output="cab.O[4]"/>

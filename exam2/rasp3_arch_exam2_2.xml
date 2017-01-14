@@ -1,0 +1,5 @@
+			<pb_type name="exam2" blif_model=".exam2" num_pb="1">
+				<input name="in" num_pins="2"/>
+				<output name="out" num_pins="1"/>
+				<delay_constant max="1.667e-9" in_port="exam2.in" out_port="exam2.out"/>
+			</pb_type>

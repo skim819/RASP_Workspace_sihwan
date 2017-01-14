@@ -1,0 +1,14 @@
+.model exam1
+.inputs net1_1 net2_1 vcc
+.outputs net4_1
+
+#NFET 2
+.subckt nfet in[0]=net1_1 in[1]=vcc out[0]=net4_1
+
+#NFET 4
+.subckt nfet in[0]=net2_1 in[1]=net4_1 out[0]=net5_1
+
+#GND_OUT 7
+.subckt gnd_out in[0]=fb_gndout_net5_1 in[1]=net5_1 out[0]=fb_gndout_net5_1  #gnd_out_c =0
+
+.end

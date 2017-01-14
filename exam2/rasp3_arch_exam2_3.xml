@@ -1,0 +1,2 @@
+				<complete name="crossbar" input="cab.I[12:0]" output="exam2.in[1:0]"/>
+				<complete name="crossbar" input="exam2[0].out[0]" output="cab.O[4]"/>

@@ -1,0 +1,14 @@
+Netlist file: /home/ubuntu/RASP_Workspace/test_20161201_lowleveltool_paper/global_routing_example.net   Architecture file: /home/ubuntu/rasp30/vpr2swcs/./arch/rasp3_arch.xml
+Array size: 14 x 14 logic blocks
+
+#block name	x	y	subblk	block number
+#----------	--	--	------	------------
+net4_1		9	1	0	#0
+tg4logic_3	11	1	0	#1
+tg4logic_2	7	1	0	#2
+tg4logic_1	10	1	0	#3
+out_mite_adc	14	1	0	#4
+out:out_mite_adc	7	0	0	#5
+gnd		7	0	4	#6
+vcc		7	0	5	#7
+net1_1		9	0	1	#8

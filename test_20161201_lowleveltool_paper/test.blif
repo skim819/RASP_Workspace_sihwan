@@ -1,0 +1,14 @@
+.model test
+.inputs net1_1 net2_1 net3_1
+.outputs out_mite_adc
+  
+# MITE_ADC
+.subckt meas_volt_mite in[0]=net5_1 out[0]=out_mite_adc #meas_fg =0.00001
+  
+#NFET 3
+.subckt nfet in[0]=net1_1 in[1]=net2_1 out[0]=net4_1
+  
+#NFET 4
+.subckt nfet in[0]=net4_1 in[1]=net3_1 out[0]=net5_1
+  
+.end
