@@ -12,16 +12,16 @@
 .subckt tgate in[0]=vcc in[1]=gnd out=gnd_dig
 
 #VMM_WTA_NBIAS
-.subckt vmm4x4 in[0]=net9_1 in[1]=net9_2 in[2]=net9_3 in[3]=net9_4 out[0]=vmm_out1 out[1]=vmm_out2 out[2]=vmm_out3 out[3]=vmm_out4 #vmm4x4_target =4.00e-07,1.00e-10,1.00e-10,1.00e-10,1.00e-10,4.00e-07,4.00e-07,1.00e-10,1.80e-07,9.00e-08,9.00e-08,1.00e-10,1.00e-10,1.00e-10,1.00e-10,1.00e-10
+.subckt vmm4x4 in[0]=net9_1 in[1]=net9_2 in[2]=net9_3 in[3]=net9_4 out[0]=vmm_out1 out[1]=vmm_out2 out[2]=vmm_out3 out[3]=vmm_out4 #vmm4x4_target =4.00e-07,1.00e-10,1.00e-10,1.00e-10,1.00e-10,4.00e-07,4.00e-07,1.00e-10,3.00e-07,2.00e-07,2.00e-07,1.00e-10,1.00e-10,1.00e-10,1.00e-10,1.00e-10
 
-.subckt wta_w_bias in[0]=vmm_out1 in[1]=nfet_d out[0]=net8_1 #wta_w_bias_ls =0&wta_w_bias_buf_bias =2.0e-06&wta_w_bias_wta_bias =4.00e-08
+.subckt wta_w_bias in[0]=vmm_out1 in[1]=nfet_d out[0]=net8_1 #wta_w_bias_ls =0&wta_w_bias_buf_bias =2.0e-06&wta_w_bias_wta_bias =1.00e-08
 
-.subckt wta_w_bias in[0]=vmm_out2 in[1]=nfet_d out[0]=net8_2 #wta_w_bias_ls =0&wta_w_bias_buf_bias =2.0e-06&wta_w_bias_wta_bias =4.00e-08
+.subckt wta_w_bias in[0]=vmm_out2 in[1]=nfet_d out[0]=net8_2 #wta_w_bias_ls =0&wta_w_bias_buf_bias =2.0e-06&wta_w_bias_wta_bias =1.00e-08
 
-.subckt wta_w_bias in[0]=vmm_out3 in[1]=nfet_d out[0]=net8_3 #wta_w_bias_ls =0&wta_w_bias_buf_bias =2.0e-06&wta_w_bias_wta_bias =4.00e-08
+.subckt wta_w_bias in[0]=vmm_out3 in[1]=nfet_d out[0]=net8_3 #wta_w_bias_ls =0&wta_w_bias_buf_bias =2.0e-06&wta_w_bias_wta_bias =1.00e-08
 
 .subckt wta_w_bias in[0]=vmm_out4 in[1]=nfet_d out[0]=net8_4 #wta_w_bias_ls =0&wta_w_bias_buf_bias =2.0e-06&wta_w_bias_wta_bias =5.00e-11
 
-.subckt nmirror_vmm in[0]=nfet_d out=nfet_d #nmirror_bias[0] =4.00e-08
+.subckt nmirror_vmm in[0]=nfet_d out=nfet_d #nmirror_bias =1.00e-08
 
 .end

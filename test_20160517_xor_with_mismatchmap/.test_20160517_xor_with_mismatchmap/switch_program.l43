@@ -304,7 +304,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04
    5               	
    6               	main:
    7 0000 3140 5040 	        mov     #DMEM_250, r1           ; Initialize stack pointer
-   8 0004 3740 0050 		mov	#0x5000, r7
+   8 0004 3740 0041 		mov	#0x4100, r7
    9 0008 0A43      		mov	#0, r10			; Initialize time
   10 000a 3540 8813 	        mov     #5000, r5             	; Number of ms
   11               	init_wait:
@@ -337,7 +337,7 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04
   32 0060 543D      		jmp     end_of_test
   33               	
   34               	switch_inject:
-  35 0062 3B40 0070 		mov	#0x7000, r11
+  35 0062 3B40 0055 		mov	#0x5500, r11
   36 0066 2C4B      		mov	@r11, r12		; No. of FGs 
   37 0068 B240 0080 	        mov     #0x8000, &PROG_BITS     ; PROG = 1, OV_N = don't care, MEAS_ADC = 0, CLEAR_N = 0
   37      0C0B 
@@ -400,249 +400,219 @@ GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04
   76 010a 3540 50C3 	        mov     #50000, r5	         	; Number of 10us to inject
   77 010e B012 0000 		call    #wait_10us              ; Call the waiting function
   78 0112 3A50 F401 		add     #500, r10	        ; Calculate time
-  79               	;        mov     #50000, r5	         	; Number of 10us to inject
-  80               	;	call    #wait_10us              ; Call the waiting function
-  81               	;	add     #500, r10	        ; Calculate time
-  82               	;        mov     #50000, r5	         	; Number of 10us to inject
-  83               	;	call    #wait_10us              ; Call the waiting function
-  84               	;	add     #500, r10	        ; Calculate time
-  85               	;        mov     #50000, r5	         	; Number of 10us to inject
-  86               	;	call    #wait_10us              ; Call the waiting function
-  87               	;	add     #500, r10	        ; Calculate time
-  88               	;        mov     #50000, r5	         	; Number of 10us to inject
-  89               	;	call    #wait_10us              ; Call the waiting function
-  90               	;	add     #500, r10	        ; Calculate time
-  91               	;        mov     #50000, r5	         	; Number of 10us to inject
-  92               	;	call    #wait_10us              ; Call the waiting function
-  93               	;	add     #500, r10	        ; Calculate time
-  94 0116 8243 020B 	        mov	#0x0000, &GATE_S	;gate_s = 2.5V
-  95 011a 3540 3075 	        mov     #30000, r5	         	; Number of 10us to inject
-  96 011e B012 0000 		call    #wait_10us              ; Call the waiting function
+  79 0116 8243 020B 	        mov	#0x0000, &GATE_S	;gate_s = 2.5V
+  80 011a 3540 3075 	        mov     #30000, r5	         	; Number of 10us to inject
+  81 011e B012 0000 		call    #wait_10us              ; Call the waiting function
+  82 0122 3A50 2C01 		add     #300, r10	        ; Calculate time [ms]
+  83 0126 3540 3075 	        mov     #30000, r5	         	; Number of 10us to inject
+  84 012a B012 0000 		call    #wait_10us              ; Call the waiting function
+  85 012e 3A50 2C01 		add     #300, r10	        ; Calculate time [ms]
+  86 0132 B240 0050 		mov	#0x5000, &GATE_S	;gate_s = 3.481V
+  86      020B 
+  87 0138 3540 3075 	        mov     #30000, r5	         	; Number of 10us to inject
+  88 013c B012 0000 		call    #wait_10us              ; Call the waiting function
+  89 0140 3A50 2C01 		add     #300, r10	        ; Calculate time [ms]
+  90 0144 3540 3075 	        mov     #30000, r5	         	; Number of 10us to inject
+  91 0148 B012 0000 		call    #wait_10us              ; Call the waiting function
+  92 014c 3A50 2C01 		add     #300, r10	        ; Calculate time [ms]
+  93 0150 B240 00B0 		mov	#0xB000, &GATE_S	;gate_s = 4.572V
+  93      020B 
+  94 0156 3540 3075 	        mov     #30000, r5	         	; Number of 10us to inject
 GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 8
 
 
-  97 0122 3A50 2C01 		add     #300, r10	        ; Calculate time [ms]
-  98 0126 3540 3075 	        mov     #30000, r5	         	; Number of 10us to inject
-  99 012a B012 0000 		call    #wait_10us              ; Call the waiting function
- 100 012e 3A50 2C01 		add     #300, r10	        ; Calculate time [ms]
- 101               	;        mov     #30000, r5	         	; Number of 10us to inject
- 102               	;	call    #wait_10us              ; Call the waiting function
- 103               	;	add     #300, r10	        ; Calculate time [ms]
- 104               	;        mov     #30000, r5	         	; Number of 10us to inject
- 105               	;	call    #wait_10us              ; Call the waiting function
- 106               	;	add     #300, r10	        ; Calculate time [ms]
- 107 0132 B240 0050 		mov	#0x5000, &GATE_S	;gate_s = 3.481V
- 107      020B 
- 108 0138 3540 3075 	        mov     #30000, r5	         	; Number of 10us to inject
- 109 013c B012 0000 		call    #wait_10us              ; Call the waiting function
- 110 0140 3A50 2C01 		add     #300, r10	        ; Calculate time [ms]
- 111 0144 3540 3075 	        mov     #30000, r5	         	; Number of 10us to inject
- 112 0148 B012 0000 		call    #wait_10us              ; Call the waiting function
- 113 014c 3A50 2C01 		add     #300, r10	        ; Calculate time [ms]
- 114               	;        mov     #30000, r5	         	; Number of 10us to inject
- 115               	;	call    #wait_10us              ; Call the waiting function
- 116               	;	add     #300, r10	        ; Calculate time [ms]
- 117 0150 B240 00B0 		mov	#0xB000, &GATE_S	;gate_s = 4.572V
- 117      020B 
- 118 0156 3540 3075 	        mov     #30000, r5	         	; Number of 10us to inject
- 119 015a B012 0000 		call    #wait_10us              ; Call the waiting function
- 120 015e 3A50 2C01 		add     #300, r10	        ; Calculate time [ms]
- 121 0162 3540 3075 	        mov     #30000, r5	         	; Number of 10us to inject
- 122 0166 B012 0000 		call    #wait_10us              ; Call the waiting function
- 123 016a 3A50 2C01 		add     #300, r10	        ; Calculate time [ms]
- 124               	;	mov     #30000, r5	         	; Number of 10us to inject
- 125               	;	call    #wait_10us              ; Call the waiting function
- 126               	;	add     #300, r10	        ; Calculate time [ms]
- 127 016e B240 6000 	        mov	#0x0060, &GATE_S	;gate_s = ivdd
- 127      020B 
- 128 0174 3540 3075 	        mov     #30000, r5	         	; Number of 10us to inject
- 129 0178 B012 0000 		call    #wait_10us              ; Call the waiting function
- 130 017c 3A50 2C01 		add     #300, r10	        ; Calculate time [ms]
- 131 0180 3540 3075 	        mov     #30000, r5	         	; Number of 10us to inject
- 132 0184 B012 0000 		call    #wait_10us              ; Call the waiting function
- 133 0188 3A50 2C01 		add     #300, r10	        ; Calculate time [ms]
- 134               	;        mov     #30000, r5	         	; Number of 10us to inject
- 135               	;	call    #wait_10us              ; Call the waiting function
- 136               	;	add     #300, r10	        ; Calculate time [ms]
- 137 018c 2D3C      		jmp	after_inject_pulse
- 138               	
- 139               	inject_in_prog_mode:
- 140 018e B240 4000 		mov	#0x0040, &GATE_S	
- 140      020B 
- 141 0194 B240 6000 		mov	#0x0060, &GATE_US_P	; gate_us_p = ivdd
- 141      100B 
- 142 019a B240 6000 		mov	#0x0060, &GATE_US_N	; gate_us_n = ivdd
- 142      120B 
- 143 01a0 B240 2600 		mov 	#0x0026, &DRAIN_CTRL
- 143      000B 
- 144 01a6 3540 8813 	        mov     #INJ_TIME_SP_1, r5	         	; Number of 10us to inject
- 145 01aa B012 0000 		call    #wait_10us              ; Call the waiting function
- 146 01ae 8243 020B 		mov	#0x0000, &GATE_S	;gate_s = 2.5V
+  95 015a B012 0000 		call    #wait_10us              ; Call the waiting function
+  96 015e 3A50 2C01 		add     #300, r10	        ; Calculate time [ms]
+  97 0162 3540 3075 	        mov     #30000, r5	         	; Number of 10us to inject
+  98 0166 B012 0000 		call    #wait_10us              ; Call the waiting function
+  99 016a 3A50 2C01 		add     #300, r10	        ; Calculate time [ms]
+ 100 016e B240 6000 	        mov	#0x0060, &GATE_S	;gate_s = ivdd
+ 100      020B 
+ 101 0174 3540 3075 	        mov     #30000, r5	         	; Number of 10us to inject
+ 102 0178 B012 0000 		call    #wait_10us              ; Call the waiting function
+ 103 017c 3A50 2C01 		add     #300, r10	        ; Calculate time [ms]
+ 104 0180 3540 3075 	        mov     #30000, r5	         	; Number of 10us to inject
+ 105 0184 B012 0000 		call    #wait_10us              ; Call the waiting function
+ 106 0188 3A50 2C01 		add     #300, r10	        ; Calculate time [ms]
+ 107 018c 2D3C      		jmp	after_inject_pulse
+ 108               	
+ 109               	inject_in_prog_mode:
+ 110 018e B240 4000 		mov	#0x0040, &GATE_S	
+ 110      020B 
+ 111 0194 B240 6000 		mov	#0x0060, &GATE_US_P	; gate_us_p = ivdd
+ 111      100B 
+ 112 019a B240 6000 		mov	#0x0060, &GATE_US_N	; gate_us_n = ivdd
+ 112      120B 
+ 113 01a0 B240 2600 		mov 	#0x0026, &DRAIN_CTRL
+ 113      000B 
+ 114 01a6 3540 8813 	        mov     #INJ_TIME_SP_1, r5	         	; Number of 10us to inject
+ 115 01aa B012 0000 		call    #wait_10us              ; Call the waiting function
+ 116 01ae 8243 020B 		mov	#0x0000, &GATE_S	;gate_s = 2.5V
+ 117 01b2 3540 F401 	        mov     #INJ_TIME_SP_2, r5	         	; Number of 10us to inject
+ 118 01b6 B012 0000 		call    #wait_10us              ; Call the waiting function
+ 119 01ba B240 0050 		mov	#0x5000, &GATE_S	;gate_s = 3.481V
+ 119      020B 
+ 120 01c0 3540 C800 	        mov     #INJ_TIME_SP_3, r5	         	; Number of 10us to inject
+ 121 01c4 B012 0000 		call    #wait_10us              ; Call the waiting function
+ 122 01c8 B240 00B0 		mov	#0xB000, &GATE_S	;gate_s = 4.572V
+ 122      020B 
+ 123 01ce 3540 C800 	        mov     #INJ_TIME_SP_4, r5	         	; Number of 10us to inject
+ 124 01d2 B012 0000 		call    #wait_10us              ; Call the waiting function
+ 125 01d6 B240 6000 		mov	#0x0060, &GATE_S	;gate_s = ivdd
+ 125      020B 
+ 126 01dc 3540 C800 	        mov     #INJ_TIME_SP_5, r5	         	; Number of 10us to inject
+ 127 01e0 B012 0000 		call    #wait_10us              ; Call the waiting function
+ 128 01e4 3A50 3D00 		add     #INJ_TIME_SP_SUM, r10	        ; Calculate time [ms]
+ 129               	after_inject_pulse:
+ 130 01e8 B240 6600 		mov     #0x0066, &DRAIN_CTRL    ; drain = ivdd, no use DAC, i2v mux control = No connection  
+ 130      000B 
+ 131 01ee 1543      		mov     #1, r5             	; Number of ms
+ 132 01f0 B012 0000 		call    #wait_ms                ; Call the waiting function
+ 133 01f4 1C83      	       	dec.w   r12
+ 134 01f6 0124      	        jz      switch_inject_e
+ 135 01f8 4B3F      	 	jmp	switch_inject_s
+ 136               	switch_inject_e:
+ 137 01fa A242 6001 		mov     #0x0004, &GP_PER_1      ; IVDD to 0V, Set vtun_ext = On
+ 138 01fe 2543      		mov     #2, r5             	; Number of ms
+ 139 0200 B012 0000 		call    #wait_ms                ; Call the waiting function
+ 140 0204 B240 2400 		mov     #0x0024, &GP_PER_1      ; IVDD to 2.5V, Set vtun_ext = On
+ 140      6001 
+ 141 020a 1543      		mov     #1, r5             	; Number of ms
 GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 9
 
 
- 147 01b2 3540 F401 	        mov     #INJ_TIME_SP_2, r5	         	; Number of 10us to inject
- 148 01b6 B012 0000 		call    #wait_10us              ; Call the waiting function
- 149 01ba B240 0050 		mov	#0x5000, &GATE_S	;gate_s = 3.481V
- 149      020B 
- 150 01c0 3540 C800 	        mov     #INJ_TIME_SP_3, r5	         	; Number of 10us to inject
- 151 01c4 B012 0000 		call    #wait_10us              ; Call the waiting function
- 152 01c8 B240 00B0 		mov	#0xB000, &GATE_S	;gate_s = 4.572V
- 152      020B 
- 153 01ce 3540 C800 	        mov     #INJ_TIME_SP_4, r5	         	; Number of 10us to inject
- 154 01d2 B012 0000 		call    #wait_10us              ; Call the waiting function
- 155 01d6 B240 6000 		mov	#0x0060, &GATE_S	;gate_s = ivdd
- 155      020B 
- 156 01dc 3540 C800 	        mov     #INJ_TIME_SP_5, r5	         	; Number of 10us to inject
- 157 01e0 B012 0000 		call    #wait_10us              ; Call the waiting function
- 158 01e4 3A50 3D00 		add     #INJ_TIME_SP_SUM, r10	        ; Calculate time [ms]
- 159               	after_inject_pulse:
- 160 01e8 B240 6600 		mov     #0x0066, &DRAIN_CTRL    ; drain = ivdd, no use DAC, i2v mux control = No connection  
- 160      000B 
- 161 01ee 1543      		mov     #1, r5             	; Number of ms
- 162 01f0 B012 0000 		call    #wait_ms                ; Call the waiting function
- 163 01f4 1C83      	       	dec.w   r12
- 164 01f6 0124      	        jz      switch_inject_e
- 165 01f8 4B3F      	 	jmp	switch_inject_s
- 166               	switch_inject_e:
- 167 01fa A242 6001 		mov     #0x0004, &GP_PER_1      ; IVDD to 0V, Set vtun_ext = On
- 168 01fe 2543      		mov     #2, r5             	; Number of ms
- 169 0200 B012 0000 		call    #wait_ms                ; Call the waiting function
- 170 0204 B240 2400 		mov     #0x0024, &GP_PER_1      ; IVDD to 2.5V, Set vtun_ext = On
- 170      6001 
- 171 020a 1543      		mov     #1, r5             	; Number of ms
- 172 020c B012 0000 		call    #wait_ms                ; Call the waiting function
- 173 0210 B240 0080 		mov     #0x8000, &PROG_BITS     ; PROG = 1, OV_N = don't care, MEAS_ADC = 0, CLEAR_N = 0
- 173      0C0B 
- 174 0216 A243 0E0B 		mov     #0x0002, &TUN_MUX       ; Set tunnel mux, <3>:switch <4>:cab <5>:ble
- 175 021a B240 4000 		mov	#0x0040, &GATE_US_P	; gate_us_p = gnd
+ 142 020c B012 0000 		call    #wait_ms                ; Call the waiting function
+ 143 0210 B240 0080 		mov     #0x8000, &PROG_BITS     ; PROG = 1, OV_N = don't care, MEAS_ADC = 0, CLEAR_N = 0
+ 143      0C0B 
+ 144 0216 A243 0E0B 		mov     #0x0002, &TUN_MUX       ; Set tunnel mux, <3>:switch <4>:cab <5>:ble
+ 145 021a B240 4000 		mov	#0x0040, &GATE_US_P	; gate_us_p = gnd
+ 145      100B 
+ 146 0220 B240 4000 		mov	#0x0040, &GATE_US_N	; gate_us_n = gnd
+ 146      120B 
+ 147 0226 1543      		mov     #1, r5             	; Number of ms
+ 148 0228 B012 0000 		call    #wait_ms                ; Call the waiting function
+ 149 022c B740 3333 		mov     #0x3333, @r7	        ; Record Injection 0x3333 
+ 149      0000 
+ 150 0232 2753      		incd	r7
+ 151 0234 874A 0000 		mov     r10, @r7	        ; Record time 
+ 152 0238 2753      		incd	r7
+ 153 023a 3041      		ret
+ 154               	
+ 155               	block_measure:
+ 156 023c 3B40 0055 		mov	#0x5500, r11
+ 157 0240 2C4B      		mov	@r11, r12		; No. of FGs 
+ 158 0242 B240 0080 		mov     #0x8000, &PROG_BITS     ; PROG = 1, OV_N = don't care, MEAS_ADC = 0, CLEAR_N = 0
+ 158      0C0B 
+ 159 0248 B240 04BE 		mov     #0xBE04, &GP_PER_3    	; ########### VTUN_EXT TO 5V
+ 159      6401 
+ 160 024e B240 2400 		mov     #0x0024, &GP_PER_1      ; IVDD to 2.5V, Set vtun_ext = On
+ 160      6001 
+ 161 0254 A243 0E0B 	   	mov     #0x0002, &TUN_MUX       ; Reset tunnel mux (gnd), <3>:switch <4>:cab <5>:ble
+ 162               	block_measure_s:
+ 163 0258 2B53      		incd	r11
+ 164 025a A24B 080B 		mov     @r11,    &ROW_SEL
+ 165 025e 2B53      		incd	r11
+ 166 0260 A24B 0A0B 	        mov     @r11,    &COL_SEL
+ 167 0264 2B53      		incd	r11
+ 168 0266 284B      		mov	@r11, r8		; type of block (C or not) (0: normal, 1: measure in run mode) 
+ 169 0268 B240 0080 		mov     #0x8000, &PROG_BITS     ; PROG = 1, OV_N = don't care, MEAS_ADC = 0, CLEAR_N = 0
+ 169      0C0B 
+ 170 026e 0893      		cmp	#0x0000, r8
+ 171 0270 0224      		jeq	measure_in_prog_mode_1
+ 172 0272 8243 0C0B 	        mov     #0x0000, &PROG_BITS     ; PROG = 0 <- Due to the RASP3.0 Error in vol_swc block
+ 173               	measure_in_prog_mode_1:
+ 174 0276 B240 4000 		mov 	#0x0040, &GATE_S	; gnd
+ 174      020B 
+ 175 027c B240 4000 		mov	#0x0040, &GATE_US_P	; gate_us_p = gnd
  175      100B 
- 176 0220 B240 4000 		mov	#0x0040, &GATE_US_N	; gate_us_n = gnd
+ 176 0282 B240 4000 		mov	#0x0040, &GATE_US_N	; gate_us_n = gnd
  176      120B 
- 177 0226 1543      		mov     #1, r5             	; Number of ms
- 178 0228 B012 0000 		call    #wait_ms                ; Call the waiting function
- 179 022c B740 3333 		mov     #0x3333, @r7	        ; Record Injection 0x3333 
- 179      0000 
- 180 0232 2753      		incd	r7
- 181 0234 874A 0000 		mov     r10, @r7	        ; Record time 
- 182 0238 2753      		incd	r7
- 183 023a 3041      		ret
- 184               	
- 185               	block_measure:
- 186 023c 3B40 0070 		mov	#0x7000, r11
- 187 0240 2C4B      		mov	@r11, r12		; No. of FGs 
- 188 0242 B240 0080 		mov     #0x8000, &PROG_BITS     ; PROG = 1, OV_N = don't care, MEAS_ADC = 0, CLEAR_N = 0
- 188      0C0B 
- 189 0248 B240 04BE 		mov     #0xBE04, &GP_PER_3    	; ########### VTUN_EXT TO 5V
- 189      6401 
- 190 024e B240 2400 		mov     #0x0024, &GP_PER_1      ; IVDD to 2.5V, Set vtun_ext = On
- 190      6001 
- 191 0254 A243 0E0B 	   	mov     #0x0002, &TUN_MUX       ; Reset tunnel mux (gnd), <3>:switch <4>:cab <5>:ble
+ 177 0288 B240 6600 		mov     #0x0066, &DRAIN_CTRL    ; drain = ivdd, no use DAC, i2v mux control = No connection  
+ 177      000B 
+ 178 028e 2543      	        mov     #2, r5             	; Number of ms
+ 179 0290 B012 0000 		call    #wait_ms                ; Call the waiting function
+ 180 0294 B240 A400 		mov	#0x00A4, &DRAIN_CTRL	; 101 cascode off, no use DAC, i2v mux control=fg_inn;
+ 180      000B 
+ 181 029a 3540 0A00 	        mov     #10, r5             	; Number of ms
+ 182 029e B012 0000 	        call    #wait_ms                ; Call the waiting function
+ 183 02a2 B240 00B0 		mov     #0xB000, &PROG_BITS     ; Set measure_adc high, Toggle the adc counter's clear_n
+ 183      0C0B 
+ 184 02a8 0893      		cmp	#0x0000, r8
 GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 10
 
 
- 192               	block_measure_s:
- 193 0258 2B53      		incd	r11
- 194 025a A24B 080B 		mov     @r11,    &ROW_SEL
- 195 025e 2B53      		incd	r11
- 196 0260 A24B 0A0B 	        mov     @r11,    &COL_SEL
- 197 0264 2B53      		incd	r11
- 198 0266 284B      		mov	@r11, r8		; type of block (C or not) (0: normal, 1: measure in run mode) 
- 199 0268 B240 0080 		mov     #0x8000, &PROG_BITS     ; PROG = 1, OV_N = don't care, MEAS_ADC = 0, CLEAR_N = 0
- 199      0C0B 
- 200 026e 0893      		cmp	#0x0000, r8
- 201 0270 0224      		jeq	measure_in_prog_mode_1
- 202 0272 8243 0C0B 	        mov     #0x0000, &PROG_BITS     ; PROG = 0 <- Due to the RASP3.0 Error in vol_swc block
- 203               	measure_in_prog_mode_1:
- 204 0276 B240 4000 		mov 	#0x0040, &GATE_S	; gnd
- 204      020B 
- 205 027c B240 4000 		mov	#0x0040, &GATE_US_P	; gate_us_p = gnd
- 205      100B 
- 206 0282 B240 4000 		mov	#0x0040, &GATE_US_N	; gate_us_n = gnd
- 206      120B 
- 207 0288 B240 6600 		mov     #0x0066, &DRAIN_CTRL    ; drain = ivdd, no use DAC, i2v mux control = No connection  
- 207      000B 
- 208 028e 2543      	        mov     #2, r5             	; Number of ms
- 209 0290 B012 0000 		call    #wait_ms                ; Call the waiting function
- 210 0294 B240 A400 		mov	#0x00A4, &DRAIN_CTRL	; 101 cascode off, no use DAC, i2v mux control=fg_inn;
- 210      000B 
- 211 029a 3540 0A00 	        mov     #10, r5             	; Number of ms
- 212 029e B012 0000 	        call    #wait_ms                ; Call the waiting function
- 213 02a2 B240 00B0 		mov     #0xB000, &PROG_BITS     ; Set measure_adc high, Toggle the adc counter's clear_n
- 213      0C0B 
- 214 02a8 0893      		cmp	#0x0000, r8
- 215 02aa 0324      		jeq	measure_in_prog_mode_2
- 216 02ac B240 0030 		mov     #0x3000, &PROG_BITS     ; Set measure_adc high, Toggle the adc counter's clear_n
- 216      0C0B 
- 217               	measure_in_prog_mode_2:
- 218 02b2 3540 0500 	        mov     #5, r5             	; Number of ms
- 219 02b6 B012 0000 		call    #wait_ms                ; Call the waiting function
- 220 02ba 8243 040B 	        mov     #0, &ADC                ; Write counter value into ADC via dummy write
- 221 02be 9742 040B 		mov     &ADC, @r7	        ; Get value in counter
- 221      0000 
- 222 02c4 2753      		incd	r7
- 223 02c6 B240 0080 		mov     #0x8000, &PROG_BITS     ; PROG = 1, OV_N = don't care, MEAS_ADC = 0, CLEAR_N = 0
- 223      0C0B 
- 224 02cc 1C83      	       	dec.w   r12
- 225 02ce 0124      	        jz      block_measure_e
- 226 02d0 C33F      		jmp	block_measure_s
- 227               	block_measure_e:
- 228 02d2 B240 0080 		mov     #0x8000, &PROG_BITS     ; PROG = 1, OV_N = don't care, MEAS_ADC = 0, CLEAR_N = 0
- 228      0C0B 
- 229 02d8 B240 6600 		mov     #0x0066, &DRAIN_CTRL    ; drain = ivdd, no use DAC, i2v mux control = No connection  
- 229      000B 
- 230 02de B240 2400 	        mov     #0x0024, &GP_PER_1      ; IVDD to 2.5V, Set vtun_ext = On
- 230      6001 
- 231 02e4 3041      		ret
- 232               	
- 233               	wait_ms:
- 234 02e6 3440 FC0C 	        mov     #3324, r4               ; Number of clock cycles in a ms (chariterized by pulse mea
- 235 02ea 0644      	        mov     r4, r6                  ; Get number of inner loop iterations
+ 185 02aa 0324      		jeq	measure_in_prog_mode_2
+ 186 02ac B240 0030 		mov     #0x3000, &PROG_BITS     ; Set measure_adc high, Toggle the adc counter's clear_n
+ 186      0C0B 
+ 187               	measure_in_prog_mode_2:
+ 188 02b2 3540 0500 	        mov     #5, r5             	; Number of ms
+ 189 02b6 B012 0000 		call    #wait_ms                ; Call the waiting function
+ 190 02ba 8243 040B 	        mov     #0, &ADC                ; Write counter value into ADC via dummy write
+ 191 02be 9742 040B 		mov     &ADC, @r7	        ; Get value in counter
+ 191      0000 
+ 192 02c4 2753      		incd	r7
+ 193 02c6 B240 0080 		mov     #0x8000, &PROG_BITS     ; PROG = 1, OV_N = don't care, MEAS_ADC = 0, CLEAR_N = 0
+ 193      0C0B 
+ 194 02cc 1C83      	       	dec.w   r12
+ 195 02ce 0124      	        jz      block_measure_e
+ 196 02d0 C33F      		jmp	block_measure_s
+ 197               	block_measure_e:
+ 198 02d2 B240 0080 		mov     #0x8000, &PROG_BITS     ; PROG = 1, OV_N = don't care, MEAS_ADC = 0, CLEAR_N = 0
+ 198      0C0B 
+ 199 02d8 B240 6600 		mov     #0x0066, &DRAIN_CTRL    ; drain = ivdd, no use DAC, i2v mux control = No connection  
+ 199      000B 
+ 200 02de B240 2400 	        mov     #0x0024, &GP_PER_1      ; IVDD to 2.5V, Set vtun_ext = On
+ 200      6001 
+ 201 02e4 3041      		ret
+ 202               	
+ 203               	wait_ms:
+ 204 02e6 3440 FC0C 	        mov     #3324, r4               ; Number of clock cycles in a ms (chariterized by pulse mea
+ 205 02ea 0644      	        mov     r4, r6                  ; Get number of inner loop iterations
+ 206               	wait_ms_loop:
+ 207 02ec 1683      	        dec.w   r6                      ; Subtract from number of clk cycles.Execution takes 2 cloc
+ 208 02ee FE23      	        jnz     wait_ms_loop            ; Test for loop termination. Execution takes 2 clock cycles
+ 209 02f0 0644      	        mov     r4, r6                  ; Reset number of clock cycles
+ 210 02f2 1583      	        dec.w   r5                      ; Decrement number of ms total
+ 211 02f4 FB23      	        jnz     wait_ms_loop            ; Keep looping if necessary
+ 212 02f6 3041      	        ret    
+ 213               	 
+ 214               	wait_10us:
+ 215 02f8 3440 2200 	        mov     #34, r4                 ; Number of clock cycles in 100 us (3324 was divided by 100
+ 216 02fc 0644      	        mov     r4, r6                  ; Get number of inner loop iterations
+ 217               	wait_10us_loop:
+ 218 02fe 1683      	        dec.w   r6                      ; Subtract from number of clk cycles.Execution takes 2 cloc
+ 219 0300 FE23      	        jnz     wait_10us_loop          ; Test for loop termination. Execution takes 2 clock cycles
+ 220 0302 0644      	        mov     r4, r6                  ; Reset number of clock cycles
+ 221 0304 1583      	        dec.w   r5                      ; Decrement number of ms total
+ 222 0306 FB23      	        jnz     wait_10us_loop          ; Keep looping if necessary
+ 223 0308 3041      	        ret   
+ 224               	
+ 225               	end_of_test:
+ 226 030a 8243 5800 		mov	#0x0000, &BCSCTL2
+ 227 030e 0343      		nop
+ 228 0310 3043      		br #0xffff
+ 229               	
+ 230               	/* ----------------------         INTERRUPT VECTORS  --------------- */
+ 231               	.section .vectors, "a"
+ 232 0000 0000      	.word end_of_test  ; Interrupt  0 (lowest priority)    <unused>
+ 233 0002 0000      	.word end_of_test  ; Interrupt  1                      <unused>
+ 234 0004 0000      	.word end_of_test  ; Interrupt  2                      <unused>
+ 235 0006 0000      	.word end_of_test  ; Interrupt  3                      <unused>
 GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 11
 
 
- 236               	wait_ms_loop:
- 237 02ec 1683      	        dec.w   r6                      ; Subtract from number of clk cycles.Execution takes 2 cloc
- 238 02ee FE23      	        jnz     wait_ms_loop            ; Test for loop termination. Execution takes 2 clock cycles
- 239 02f0 0644      	        mov     r4, r6                  ; Reset number of clock cycles
- 240 02f2 1583      	        dec.w   r5                      ; Decrement number of ms total
- 241 02f4 FB23      	        jnz     wait_ms_loop            ; Keep looping if necessary
- 242 02f6 3041      	        ret    
- 243               	 
- 244               	wait_10us:
- 245 02f8 3440 2200 	        mov     #34, r4                 ; Number of clock cycles in 100 us (3324 was divided by 100
- 246 02fc 0644      	        mov     r4, r6                  ; Get number of inner loop iterations
- 247               	wait_10us_loop:
- 248 02fe 1683      	        dec.w   r6                      ; Subtract from number of clk cycles.Execution takes 2 cloc
- 249 0300 FE23      	        jnz     wait_10us_loop          ; Test for loop termination. Execution takes 2 clock cycles
- 250 0302 0644      	        mov     r4, r6                  ; Reset number of clock cycles
- 251 0304 1583      	        dec.w   r5                      ; Decrement number of ms total
- 252 0306 FB23      	        jnz     wait_10us_loop          ; Keep looping if necessary
- 253 0308 3041      	        ret   
- 254               	
- 255               	end_of_test:
- 256 030a 8243 5800 		mov	#0x0000, &BCSCTL2
- 257 030e 0343      		nop
- 258 0310 3043      		br #0xffff
- 259               	
- 260               	/* ----------------------         INTERRUPT VECTORS  --------------- */
- 261               	.section .vectors, "a"
- 262 0000 0000      	.word end_of_test  ; Interrupt  0 (lowest priority)    <unused>
- 263 0002 0000      	.word end_of_test  ; Interrupt  1                      <unused>
- 264 0004 0000      	.word end_of_test  ; Interrupt  2                      <unused>
- 265 0006 0000      	.word end_of_test  ; Interrupt  3                      <unused>
- 266 0008 0000      	.word end_of_test  ; Interrupt  4                      <unused>
- 267 000a 0000      	.word end_of_test  ; Interrupt  5                      <unused>
- 268 000c 0000      	.word end_of_test  ; Interrupt  6                      <unused>
- 269 000e 0000      	.word end_of_test  ; Interrupt  7                      <unused>
- 270 0010 0000      	.word end_of_test  ; Interrupt  8                      <unused>
- 271 0012 0000      	.word end_of_test  ; Interrupt  9                      <unused>
- 272 0014 0000      	.word end_of_test  ; Interrupt 10                      Watchdog timer
- 273 0016 0000      	.word end_of_test  ; Interrupt 11                      <unused>
- 274 0018 0000      	.word end_of_test  ; Interrupt 12                      <unused>
- 275 001a 0000      	.word end_of_test  ; Interrupt 13                      <unused>
- 276 001c 0000      	.word end_of_test  ; Interrupt 14                      NMI
- 277 001e 0000      	.word main         ; Interrupt 15 (highest priority)   RESET
+ 236 0008 0000      	.word end_of_test  ; Interrupt  4                      <unused>
+ 237 000a 0000      	.word end_of_test  ; Interrupt  5                      <unused>
+ 238 000c 0000      	.word end_of_test  ; Interrupt  6                      <unused>
+ 239 000e 0000      	.word end_of_test  ; Interrupt  7                      <unused>
+ 240 0010 0000      	.word end_of_test  ; Interrupt  8                      <unused>
+ 241 0012 0000      	.word end_of_test  ; Interrupt  9                      <unused>
+ 242 0014 0000      	.word end_of_test  ; Interrupt 10                      Watchdog timer
+ 243 0016 0000      	.word end_of_test  ; Interrupt 11                      <unused>
+ 244 0018 0000      	.word end_of_test  ; Interrupt 12                      <unused>
+ 245 001a 0000      	.word end_of_test  ; Interrupt 13                      <unused>
+ 246 001c 0000      	.word end_of_test  ; Interrupt 14                      NMI
+ 247 001e 0000      	.word main         ; Interrupt 15 (highest priority)   RESET
 GAS LISTING /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43 			page 12
 
 
@@ -852,21 +822,21 @@ DEFINED SYMBOLS
     chip_para_SP.asm:10     *ABS*:00000001 INJ_TIME_SP_RUN
 /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:6      .text:00000000 main
 /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:11     .text:0000000e init_wait
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:185    .text:0000023c block_measure
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:155    .text:0000023c block_measure
 /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:34     .text:00000062 switch_inject
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:255    .text:0000030a end_of_test
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:233    .text:000002e6 wait_ms
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:225    .text:0000030a end_of_test
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:203    .text:000002e6 wait_ms
 /home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:45     .text:00000090 switch_inject_s
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:139    .text:0000018e inject_in_prog_mode
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:244    .text:000002f8 wait_10us
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:159    .text:000001e8 after_inject_pulse
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:166    .text:000001fa switch_inject_e
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:192    .text:00000258 block_measure_s
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:203    .text:00000276 measure_in_prog_mode_1
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:217    .text:000002b2 measure_in_prog_mode_2
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:227    .text:000002d2 block_measure_e
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:236    .text:000002ec wait_ms_loop
-/home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:247    .text:000002fe wait_10us_loop
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:109    .text:0000018e inject_in_prog_mode
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:214    .text:000002f8 wait_10us
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:129    .text:000001e8 after_inject_pulse
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:136    .text:000001fa switch_inject_e
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:162    .text:00000258 block_measure_s
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:173    .text:00000276 measure_in_prog_mode_1
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:187    .text:000002b2 measure_in_prog_mode_2
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:197    .text:000002d2 block_measure_e
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:206    .text:000002ec wait_ms_loop
+/home/ubuntu/rasp30/prog_assembly/libs/asm_code/switch_program_ver04.s43:217    .text:000002fe wait_10us_loop
 
 NO UNDEFINED SYMBOLS
 
@@ -1105,13 +1075,13 @@ SYMBOL TABLE:
 
 
 Contents of section .text:
- 0000 31405040 37400050 0a433540 88131583  1@P@7@.P.C5@....
+ 0000 31405040 37400041 0a433540 88131583  1@P@7@.A.C5@....
  0010 fe23b240 10005800 b240805a 200132c2  .#.@..X..@.Z .2.
  0020 a2430e0b b24004be 6401b240 6600000b  .C...@..d..@f...
  0030 b2402400 6001b240 00800c0b 8243080b  .@$.`..@.....C..
  0040 82430a0b 874a0000 2753874a 00002753  .C...J..'S.J..'S
  0050 b0120000 b0120000 b0120000 b7430000  .............C..
- 0060 543d3b40 00702c4b b2400080 0c0bb240  T=;@.p,K.@.....@
+ 0060 543d3b40 00552c4b b2400080 0c0bb240  T=;@.U,K.@.....@
  0070 04be6401 b2402400 6001b243 0e0bb240  ..d..@$.`..C...@
  0080 6600000b b2401400 60012543 b0120000  f....@..`.%C....
  0090 2b53a24b 080b2b53 a24b0a0b 2b53284b  +S.K..+S.K..+S(K
@@ -1140,7 +1110,7 @@ Contents of section .text:
  0200 b0120000 b2402400 60011543 b0120000  .....@$.`..C....
  0210 b2400080 0c0ba243 0e0bb240 4000100b  .@.....C...@@...
  0220 b2404000 120b1543 b0120000 b7403333  .@@....C.....@33
- 0230 00002753 874a0000 27533041 3b400070  ..'S.J..'S0A;@.p
+ 0230 00002753 874a0000 27533041 3b400055  ..'S.J..'S0A;@.U
  0240 2c4bb240 00800c0b b24004be 6401b240  ,K.@.....@..d..@
  0250 24006001 a2430e0b 2b53a24b 080b2b53  $.`..C..+S.K..+S
  0260 a24b0a0b 2b53284b b2400080 0c0b0893  .K..+S(K.@......
@@ -1163,7 +1133,7 @@ Disassembly of section .text:
 
 00000000 <main>:
    0:	31 40 50 40 	mov	#16464,	r1	;#0x4050
-   4:	37 40 00 50 	mov	#20480,	r7	;#0x5000
+   4:	37 40 00 41 	mov	#16640,	r7	;#0x4100
    8:	0a 43       	clr	r10		
    a:	35 40 88 13 	mov	#5000,	r5	;#0x1388
 
@@ -1200,7 +1170,7 @@ Disassembly of section .text:
   60:	54 3d       	jmp	$+682    	;abs 0x30a
 
 00000062 <switch_inject>:
-  62:	3b 40 00 70 	mov	#28672,	r11	;#0x7000
+  62:	3b 40 00 55 	mov	#21760,	r11	;#0x5500
   66:	2c 4b       	mov	@r11,	r12	
   68:	b2 40 00 80 	mov	#-32768,&0x0b0c	;#0x8000
   6c:	0c 0b 
@@ -1376,7 +1346,7 @@ Disassembly of section .text:
  23a:	30 41       	ret			
 
 0000023c <block_measure>:
- 23c:	3b 40 00 70 	mov	#28672,	r11	;#0x7000
+ 23c:	3b 40 00 55 	mov	#21760,	r11	;#0x5500
  240:	2c 4b       	mov	@r11,	r12	
  242:	b2 40 00 80 	mov	#-32768,&0x0b0c	;#0x8000
  246:	0c 0b 
