@@ -1,0 +1,20 @@
+.model S_FE1
+.inputs net1_1 net2_1
+.outputs net8_1 net5_1 net9_1
+
+# LPF
+.subckt ota in[0]=net11_1 in[1]=net8_1 out[0]=net8_1 #ota_bias =0.000000002333
+
+# C4
+.subckt c4_blk in[0]=net2_1 in[1]=net1_1 out[0]=net3_1 #c4_ota_bias[0] =9.000e-08&c4_ota_bias[1] =9.000e-10&c4_fg[0] =0&c4_ota_small_cap[0] =0&c4_ota_small_cap[1] =0&c4_ota_p_bias[0] =1.000e-07&c4_ota_n_bias[0] =1.000e-07&c4_ota_p_bias[1] =1.000e-07&c4_ota_n_bias[1] =1.000e-07&c4_cap_3x[0] =0&c4_cap_2x[0] =0&c4_cap_1x[0] =0
+
+# LPF
+.subckt ota in[0]=net3_1 in[1]=net5_1 out[0]=net5_1 #ota_bias =0.000000002333
+
+# LPF
+.subckt ota in[0]=net11_1 in[1]=net9_1 out[0]=net9_1 #ota_bias =0.000000002333
+
+#Min_detect
+.subckt Min_detect in[0]=net3_1 out[0]=net11_1 #Min_detect_ls =0&Min_detect_fgswc_ibias =5.000000e-08&Min_detect_ota0_ibias =2.000000e-06
+
+.end

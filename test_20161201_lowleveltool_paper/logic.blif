@@ -1,0 +1,13 @@
+.model logic
+.inputs net1_1 net2_1 net3_1 vcc gnd
+.outputs net4_1
+  
+# tgates for logic
+.subckt tgate in[0]=vcc in[1]=gnd out=tg4logic_1
+  
+# LOOKUP Table-> logic
+.names net1_1 net2_1 net3_1 tg4logic_1 net4_1
+001- 1
+110- 1
+  
+.end

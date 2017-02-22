@@ -1,0 +1,11 @@
+.model benchmark_1
+.inputs net0_1
+.outputs out_mite_adc
+  
+# LPF
+.subckt ota in[0]=net0_1 in[1]=net1_1 out[0]=net1_1 #ota_bias =0.000000000101
+  
+# MITE_ADC
+.subckt meas_volt_mite in[0]=net1_1 out[0]=out_mite_adc #meas_fg =0.00001
+  
+.end

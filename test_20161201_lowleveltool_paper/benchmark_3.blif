@@ -1,0 +1,49 @@
+.model benchmark_3
+.inputs net2_1 net1_1 net11_1 net10_1 net18_1 vcc
+.outputs net13_1 net5_1 net5_2 net5_3 out_mite_adc
+
+# speech
+.subckt speech in[0]=net1_1 in[1]=net2_1 in[2]=vcc out[0]=net9_1 out[1]=net8_1 #c4_ota_bias[0] =4.000e-08&c4_ota_bias[1] =4.000e-10&speech_fg[0] =0&c4_ota_p_bias[0] =105e-9&c4_ota_n_bias[0] =105e-9&c4_ota_p_bias[1] =105e-9&c4_ota_n_bias[1] =105e-9&speech_peakotabias[0] =100e-9&speech_pfetbias[0] =2e-11&speech_peakotabias[1] =9e-10
+
+.subckt speech in[0]=net1_1 in[1]=net2_1 in[2]=vcc out[0]=net9_2 out[1]=net8_2 #c4_ota_bias[0] =9.455e-07&c4_ota_bias[1] =9.091e-10&speech_fg[0] =0&c4_ota_p_bias[0] =105e-9&c4_ota_n_bias[0] =105e-9&c4_ota_p_bias[1] =105e-9&c4_ota_n_bias[1] =105e-9&speech_peakotabias[0] =100e-9&speech_pfetbias[0] =2e-11&speech_peakotabias[1] =9e-10
+
+.subckt speech in[0]=net1_1 in[1]=net2_1 in[2]=vcc out[0]=net9_3 out[1]=net8_3 #c4_ota_bias[0] =1.851e-06&c4_ota_bias[1] =1.418e-09&speech_fg[0] =0&c4_ota_p_bias[0] =105e-9&c4_ota_n_bias[0] =105e-9&c4_ota_p_bias[1] =105e-9&c4_ota_n_bias[1] =105e-9&speech_peakotabias[0] =100e-9&speech_pfetbias[0] =2e-11&speech_peakotabias[1] =9e-10
+
+.subckt speech in[0]=net1_1 in[1]=net2_1 in[2]=vcc out[0]=net9_4 out[1]=net8_4 #c4_ota_bias[0] =2.756e-06&c4_ota_bias[1] =1.927e-09&speech_fg[0] =0&c4_ota_p_bias[0] =105e-9&c4_ota_n_bias[0] =105e-9&c4_ota_p_bias[1] =105e-9&c4_ota_n_bias[1] =105e-9&speech_peakotabias[0] =100e-9&speech_pfetbias[0] =2e-11&speech_peakotabias[1] =9e-10
+
+.subckt speech in[0]=net1_1 in[1]=net2_1 in[2]=vcc out[0]=net9_5 out[1]=net8_5 #c4_ota_bias[0] =3.662e-06&c4_ota_bias[1] =2.436e-09&speech_fg[0] =0&c4_ota_p_bias[0] =105e-9&c4_ota_n_bias[0] =105e-9&c4_ota_p_bias[1] =105e-9&c4_ota_n_bias[1] =105e-9&speech_peakotabias[0] =100e-9&speech_pfetbias[0] =2e-11&speech_peakotabias[1] =9e-10
+
+.subckt speech in[0]=net1_1 in[1]=net2_1 in[2]=vcc out[0]=net9_6 out[1]=net8_6 #c4_ota_bias[0] =4.567e-06&c4_ota_bias[1] =2.945e-09&speech_fg[0] =0&c4_ota_p_bias[0] =105e-9&c4_ota_n_bias[0] =105e-9&c4_ota_p_bias[1] =105e-9&c4_ota_n_bias[1] =105e-9&speech_peakotabias[0] =100e-9&speech_pfetbias[0] =2e-11&speech_peakotabias[1] =9e-10
+
+.subckt speech in[0]=net1_1 in[1]=net2_1 in[2]=vcc out[0]=net9_7 out[1]=net8_7 #c4_ota_bias[0] =5.473e-06&c4_ota_bias[1] =3.455e-09&speech_fg[0] =0&c4_ota_p_bias[0] =105e-9&c4_ota_n_bias[0] =105e-9&c4_ota_p_bias[1] =105e-9&c4_ota_n_bias[1] =105e-9&speech_peakotabias[0] =100e-9&speech_pfetbias[0] =2e-11&speech_peakotabias[1] =9e-10
+
+.subckt speech in[0]=net1_1 in[1]=net2_1 in[2]=vcc out[0]=net9_8 out[1]=net8_8 #c4_ota_bias[0] =6.378e-06&c4_ota_bias[1] =3.964e-09&speech_fg[0] =0&c4_ota_p_bias[0] =105e-9&c4_ota_n_bias[0] =105e-9&c4_ota_p_bias[1] =105e-9&c4_ota_n_bias[1] =105e-9&speech_peakotabias[0] =100e-9&speech_pfetbias[0] =2e-11&speech_peakotabias[1] =9e-10
+
+.subckt speech in[0]=net1_1 in[1]=net2_1 in[2]=vcc out[0]=net9_9 out[1]=net8_9 #c4_ota_bias[0] =7.284e-06&c4_ota_bias[1] =4.473e-09&speech_fg[0] =0&c4_ota_p_bias[0] =105e-9&c4_ota_n_bias[0] =105e-9&c4_ota_p_bias[1] =105e-9&c4_ota_n_bias[1] =105e-9&speech_peakotabias[0] =100e-9&speech_pfetbias[0] =2e-11&speech_peakotabias[1] =9e-10
+
+.subckt speech in[0]=net1_1 in[1]=net2_1 in[2]=vcc out[0]=net9_10 out[1]=net8_10 #c4_ota_bias[0] =8.189e-06&c4_ota_bias[1] =4.982e-09&speech_fg[0] =0&c4_ota_p_bias[0] =105e-9&c4_ota_n_bias[0] =105e-9&c4_ota_p_bias[1] =105e-9&c4_ota_n_bias[1] =105e-9&speech_peakotabias[0] =100e-9&speech_pfetbias[0] =2e-11&speech_peakotabias[1] =9e-10
+
+.subckt speech in[0]=net1_1 in[1]=net2_1 in[2]=vcc out[0]=net9_11 out[1]=net8_11 #c4_ota_bias[0] =9.095e-06&c4_ota_bias[1] =5.491e-09&speech_fg[0] =0&c4_ota_p_bias[0] =105e-9&c4_ota_n_bias[0] =105e-9&c4_ota_p_bias[1] =105e-9&c4_ota_n_bias[1] =105e-9&speech_peakotabias[0] =100e-9&speech_pfetbias[0] =2e-11&speech_peakotabias[1] =9e-10
+
+.subckt speech in[0]=net1_1 in[1]=net2_1 in[2]=vcc out[0]=net9_12 out[1]=net8_12 #c4_ota_bias[0] =1.000e-05&c4_ota_bias[1] =6.000e-09&speech_fg[0] =0&c4_ota_p_bias[0] =105e-9&c4_ota_n_bias[0] =105e-9&c4_ota_p_bias[1] =105e-9&c4_ota_n_bias[1] =105e-9&speech_peakotabias[0] =100e-9&speech_pfetbias[0] =2e-11&speech_peakotabias[1] =9e-10
+
+# MITE_ADC
+.subckt meas_volt_mite in[0]=net13_1 out[0]=out_mite_adc #meas_fg =0.00001
+
+# VMM+WTA
+.subckt vmm12x1 in[0]=net8_1 in[1]=net8_2 in[2]=net8_3 in[3]=net8_4 in[4]=net8_5 in[5]=net8_6 in[6]=net8_7 in[7]=net8_8 in[8]=net8_9 in[9]=net8_10 in[10]=net8_11 in[11]=net8_12 in[12]=vw_nfetd out[0]=net5_1 #vmm12x1_fg =0&vmm12x1_pfetbias =1.50e-08&nmirror_bias =2.5e-9&vmm12x1_offsetbias =3e-9&vmm12x1_otabias =2.00e-06&vmm12x1_target =1.00e-11,1.00e-11,1.00e-11,1.00e-11,1.00e-11,1.00e-11,1.00e-11,1.00e-11,1.00e-11,1.00e-11,1.00e-11,1.00e-11
+
+.subckt vmm12x1 in[0]=net8_1 in[1]=net8_2 in[2]=net8_3 in[3]=net8_4 in[4]=net8_5 in[5]=net8_6 in[6]=net8_7 in[7]=net8_8 in[8]=net8_9 in[9]=net8_10 in[10]=net8_11 in[11]=net8_12 in[12]=vw_nfetd out[0]=net5_2 #vmm12x1_fg =0&vmm12x1_pfetbias =1.50e-08&nmirror_bias =2.5e-9&vmm12x1_offsetbias =3e-9&vmm12x1_otabias =2.00e-06&vmm12x1_target =1.00e-11,1.00e-11,1.00e-11,1.00e-11,1.00e-11,1.00e-11,1.00e-11,1.00e-11,1.00e-11,1.00e-11,1.00e-11,1.00e-11
+
+.subckt vmm12x1 in[0]=net8_1 in[1]=net8_2 in[2]=net8_3 in[3]=net8_4 in[4]=net8_5 in[5]=net8_6 in[6]=net8_7 in[7]=net8_8 in[8]=net8_9 in[9]=net8_10 in[10]=net8_11 in[11]=net8_12 in[12]=vw_nfetd out[0]=net5_3 #vmm12x1_fg =0&vmm12x1_pfetbias =1.50e-08&nmirror_bias =2.5e-9&vmm12x1_offsetbias =3e-9&vmm12x1_otabias =2.00e-06&vmm12x1_target =1.00e-11,1.00e-11,1.00e-11,1.00e-11,1.00e-11,1.00e-11,1.00e-11,1.00e-11,1.00e-11,1.00e-11,1.00e-11,1.00e-11
+
+.subckt nmirror_vmm in[0]=vcc out=vw_nfetd #nmirror_bias =12e-9
+
+# Shift register 16inputs 1output
+.subckt sftreg in[0]=net9_1 in[1]=net9_2 in[2]=net9_3 in[3]=net9_4 in[4]=net9_5 in[5]=net9_6 in[6]=net9_7 in[7]=net9_8 in[8]=net9_9 in[9]=net9_10 in[10]=net9_11 in[11]=net9_12 in[12]=net10_1 in[13]=net10_1 in[14]=net10_1 in[15]=net10_1 in[16]=net11_1 in[17]=net10_1 in[18]=net18_1 out[0]=net12_1 #sftreg_fg =0
+
+#ota_vmm
+.subckt ota_vmm in[0]=net12_1 in[1]=net13_1 out[0]=net13_1 #ota_bias =1.000000e-05
+
+
+.end
