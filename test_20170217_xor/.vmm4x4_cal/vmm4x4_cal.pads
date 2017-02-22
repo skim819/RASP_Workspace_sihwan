@@ -1,0 +1,8 @@
+net1_1 9 0 0 #tgate[0]
+net1_2 11 0 0 #tgate[0]
+net1_3 12 0 0 #tgate[0]
+net1_4 12 0 3 #tgate[1]
+out:net2_1 13 0 0 #tgate[0]
+out:net2_2 13 0 3 #tgate[1]
+out:net2_3 14 0 0 #tgate[0]
+out:net2_4 14 0 3 #tgate[1]

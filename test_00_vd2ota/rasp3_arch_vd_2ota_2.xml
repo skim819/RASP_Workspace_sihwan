@@ -1,0 +1,5 @@
+			<pb_type name="vd_2ota" blif_model=".vd_2ota" num_pb="1">
+				<input name="in" num_pins="1"/>
+				<output name="out" num_pins="1"/>
+				<delay_constant max="1.667e-9" in_port="vd_2ota.in" out_port="vd_2ota.out"/>
+			</pb_type>

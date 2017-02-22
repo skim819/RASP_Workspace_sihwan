@@ -1,0 +1,21 @@
+Netlist file: /home/ubuntu/RASP_Workspace/test_20170217_xor/xor.net   Architecture file: /home/ubuntu/rasp30/vpr2swcs/./arch/rasp3_arch.xml
+Array size: 14 x 14 logic blocks
+
+#block name	x	y	subblk	block number
+#----------	--	--	------	------------
+net1_1 10 1 0
+net11_1 11 1 0
+net12_3 10 3 0
+net12_2 11 2 0
+net12_1 10 2 0
+gnd_dig 11 3 0
+out_mite_adc 14 1 0
+out:out_mite_adc 7 0 0
+gnd 7 0 4
+vcc 7 0 5
+net5_1 13 0 2
+net3_1 13 0 1
+net10_4 9 0 3
+net10_3 8 0 5
+net10_2 9 0 2
+net10_1 9 0 1

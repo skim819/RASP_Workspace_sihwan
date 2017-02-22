@@ -1,0 +1,14 @@
+Netlist file: /home/ubuntu/RASP_Workspace/test_20170217_xor/vmm4x4_cal.net   Architecture file: /home/ubuntu/rasp30/vpr2swcs/./arch/rasp3_arch.xml
+Array size: 14 x 14 logic blocks
+
+#block name	x	y	subblk	block number
+#----------	--	--	------	------------
+net2_1 11 1 0
+out:net2_4 14 0 3
+out:net2_3 14 0 0
+out:net2_2 13 0 3
+out:net2_1 13 0 0
+net1_4 12 0 3
+net1_3 12 0 0
+net1_2 11 0 0
+net1_1 9 0 0

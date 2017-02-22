@@ -1,0 +1,11 @@
+.model dc_in_test
+.inputs net2_1 vcc
+.outputs net2_1 out_mite_adc
+  
+# MITE_ADC
+.subckt meas_volt_mite in[0]=net1_1 out[0]=out_mite_adc #meas_fg =0.00001
+  
+# dc_in
+.subckt fgota in[0]=vcc in[1]=net1_1 out[0]=net1_1 #fgota_bias =2e-06&fgota_p_bias =2e-06&fgota_n_bias =1.42e-06&fgota_small_cap =0
+  
+.end

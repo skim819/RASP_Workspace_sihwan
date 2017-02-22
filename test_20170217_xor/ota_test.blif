@@ -1,0 +1,11 @@
+.model ota_test
+.inputs net1_1
+.outputs out_mite_adc
+  
+#OTA 1
+.subckt ota in[0]=net1_1 in[1]=net2_1 out[0]=net2_1 #ota_bias =1.000000e-06
+  
+# MITE_ADC
+.subckt meas_volt_mite in[0]=net2_1 out[0]=out_mite_adc #meas_fg =0.00001
+  
+.end
