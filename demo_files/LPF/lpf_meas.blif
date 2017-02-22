@@ -1,4 +1,0 @@
-.model lpf_meas
-.inputs net1_1
-.outputs out_mite_adc
-  
