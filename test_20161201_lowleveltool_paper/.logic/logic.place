@@ -1,0 +1,13 @@
+Netlist file: /home/ubuntu/RASP_Workspace/test_20161201_lowleveltool_paper//logic.net   Architecture file: /home/ubuntu/rasp30/vpr2swcs/./arch/rasp3_arch.xml
+Array size: 14 x 14 logic blocks
+
+#block name	x	y	subblk	block number
+#----------	--	--	------	------------
+net4_1		12	1	0	#0
+tg4logic_1	11	1	0	#1
+out:net4_1	12	0	3	#2
+gnd		7	0	4	#3
+vcc		7	0	5	#4
+net3_1		12	0	0	#5
+net2_1		11	0	0	#6
+net1_1		9	0	0	#7
