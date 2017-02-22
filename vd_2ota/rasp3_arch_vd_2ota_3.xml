@@ -1,2 +1,0 @@
-				<complete name="crossbar" input="cab.I[12:0]" output="vd_2ota.in[0]"/>
-				<complete name="crossbar" input="vd_2ota[0].out[0]" output="cab.O[4]"/>

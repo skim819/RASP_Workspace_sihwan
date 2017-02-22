@@ -1,8 +1,0 @@
-		<model name="vd_2ota">
-			<input_ports>
-				<port name="in"/>
-			</input_ports>
-			<output_ports>
-				<port name="out"/>
-			</output_ports>
-		</model>
