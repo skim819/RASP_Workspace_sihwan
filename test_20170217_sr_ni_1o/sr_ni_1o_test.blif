@@ -1,0 +1,27 @@
+.model sr_ni_1o_test
+.inputs net3_1 net3_2 net4_1 net6_1 vcc gnd
+.outputs out_mite_adc
+
+#sr_ni_1o
+.subckt sftreg in[0]=net7_1 in[1]=net7_2 in[2]=net11_1 in[3]=net11_1 in[4]=net11_1 in[5]=net11_1 in[6]=net11_1 in[7]=net11_1 in[8]=net11_1 in[9]=net11_1 in[10]=net11_1 in[11]=net11_1 in[12]=net11_1 in[13]=net11_1 in[14]=net11_1 in[15]=net11_1 in[16]=net4_1 in[17]=gnd_dig in[18]=net6_1 out[0]=net1_1 out[1]=net10_1 out[2]=net11_1 out[3]=net12_1 #sftreg_fg =0
+
+# MITE_ADC
+.subckt meas_volt_mite in[0]=net1_1 out[0]=out_mite_adc #meas_fg =0.00001
+
+#GND_DIG 6
+.subckt tgate in[0]=vcc in[1]=gnd out=gnd_dig
+
+#wta_w_bias
+.subckt wta_w_bias in[0]=net9_1 in[1]=net8_1 out[0]=net7_1 #wta_w_bias_ls =0&wta_w_bias_wta_bias =1.000000e-08&wta_w_bias_buf_bias =2.000000e-06
+
+.subckt wta_w_bias in[0]=net9_2 in[1]=net8_1 out[0]=net7_2 #wta_w_bias_ls =0&wta_w_bias_wta_bias =1.000000e-08&wta_w_bias_buf_bias =2.000000e-06
+
+#NMIRROR 11
+.subckt nmirror_vmm in[0]=vcc out=net8_1 #nmirror_bias =1.000e-08
+
+#fgswitch
+.subckt fgswitch in[0]=net3_1 out[0]=net9_1 #fgswitch_ls =0&fgswitch_fgswc_ibias =9.000000e-06
+
+.subckt fgswitch in[0]=net3_2 out[0]=net9_2 #fgswitch_ls =0&fgswitch_fgswc_ibias =9.000000e-06
+
+.end

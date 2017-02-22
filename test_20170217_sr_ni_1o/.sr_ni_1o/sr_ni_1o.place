@@ -1,0 +1,17 @@
+Netlist file: /home/ubuntu/RASP_Workspace/sr_ni_1o//sr_ni_1o.net   Architecture file: /home/ubuntu/rasp30/vpr2swcs/./arch/rasp3_arch.xml
+Array size: 14 x 14 logic blocks
+
+#block name	x	y	subblk	block number
+#----------	--	--	------	------------
+net4_1		11	1	0	#0
+net2_1		10	1	0	#1
+net3_1		11	2	0	#2
+net1_1		10	2	0	#3
+out:net4_1	14	0	3	#4
+out:net3_1	14	0	0	#5
+out:net2_1	13	0	3	#6
+out:net1_1	13	0	0	#7
+net8_1		12	0	3	#8
+net7_1		12	0	0	#9
+net6_1		11	0	0	#10
+net5_1		9	0	0	#11
