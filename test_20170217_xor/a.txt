@@ -1,0 +1,873 @@
+
+VPR FPGA Placement and Routing.
+Version: Version 6.0 Full Release
+Compiled: Apr 17 2013.
+Original VPR by V. Betz.
+Timing-driven placement enhancements by A. Marquardt.
+Single-drivers enhancements by Andy Ye with additions by.
+Mark Fang, Jason Luu, Ted Campbell
+Heterogeneous stucture support by Jason Luu and Ted Campbell.
+T-VPack clustering integration by Jason Luu.
+Area-driven AAPack added by Jason Luu.
+This is free open source code under MIT license.
+
+Building complex block graph 
+Begin parsing packed FPGA netlist file
+Finished parsing packed FPGA netlist file
+Netlist generated from file /home/ubuntu/RASP_Workspace/test_20170217_xor/xor_30a.net
+Timing analysis: OFF
+
+Circuit netlist file: /home/ubuntu/RASP_Workspace/test_20170217_xor/xor_30a.net
+Circuit placement file: /home/ubuntu/RASP_Workspace/test_20170217_xor/xor_30a.place
+Circuit routing file: /home/ubuntu/RASP_Workspace/test_20170217_xor/xor_30a.route
+Operation:  RUN_FLOW
+
+Placer: DISABLED
+Router: ENABLED
+RouterOpts.route_type:  DETAILED
+RouterOpts.router_algorithm:  DIRECTED_SEARCH
+RouterOpts.base_cost_type:  DEMAND_ONLY
+RouterOpts.fixed_channel_width:  17
+RouterOpts.acc_fac:  1.000000
+RouterOpts.bb_factor:  3
+RouterOpts.bend_cost:  0.000000
+RouterOpts.first_iter_pres_fac:  10000.000000
+RouterOpts.initial_pres_fac:  10000.000000
+RouterOpts.pres_fac_mult:  1.300000
+RouterOpts.max_router_iterations:  50
+
+RoutingArch.directionality:  BI_DIRECTIONAL
+RoutingArch.switch_block_type:  SUBSET
+RoutingArch.Fs:  3
+
+
+Netlist num_nets:  21
+Netlist num_blocks:  16
+Netlist <EMPTY> blocks:  0
+Netlist clb blocks:  0
+Netlist cab blocks:  6
+Netlist cab2 blocks:  1
+Netlist inputs pins:  8
+Netlist output pins:  1
+
+The circuit will be mapped into a 7 x 14 array of clbs.
+
+Resource Usage:
+Netlist      0	blocks of type <EMPTY>
+Architecture 4	blocks of type <EMPTY>
+Netlist      9	blocks of type io
+Architecture 252	blocks of type io
+Netlist      0	blocks of type clb
+Architecture 42	blocks of type clb
+Netlist      6	blocks of type cab
+Architecture 42	blocks of type cab
+Netlist      1	blocks of type cab2
+Architecture 14	blocks of type cab2
+
+build rr_graph took 0.01 seconds
+Confirming Router Algorithm: DIRECTED_SEARCH.
+mst took 0 seconds
+routing iteration 1
+routing iteration took 0 seconds
+wirelength after first iteration 99, total available wirelength 3689, ratio 0.0268365
+Successfully routed after 1 routing iterations by Directed Search.
+
+Checking to ensure routing is legal ...
+Completed routing consistency check successfully.
+
+Serial number (magic cookie) for the routing is: -831250
+Circuit successfully routed with a channel width factor of 17.
+
+
+Average number of bends per net: 1.42105  Maximum # of bends: 4
+
+
+The number of routed nets (nonglobal): 19
+Wirelength results (all in units of 1 clb segments):
+	Total wirelength: 99   Average net length: 5.21053
+	Maximum net length: 10
+
+Wirelength results in terms of physical segments:
+	Total wiring segments used: 99   Av. wire segments per net: 5.21053
+	Maximum segments used by a net: 10
+
+	Total local nets with reserved CLB opins: 0
+
+
+X - Directed channels:
+
+j	max occ	av_occ		capacity
+0	0	0.00000  	17
+1	1	0.285714 	17
+2	4	0.571429 	17
+3	5	0.714286 	17
+4	6	1.57143  	17
+5	3	0.428571 	17
+6	1	0.142857 	17
+7	0	0.00000  	17
+8	0	0.00000  	17
+9	0	0.00000  	17
+10	0	0.00000  	17
+11	0	0.00000  	17
+12	0	0.00000  	17
+13	0	0.00000  	17
+14	0	0.00000  	17
+
+Y - Directed channels:
+
+i	max occ	av_occ		capacity
+0	8	3.71429  	17
+1	5	1.07143  	17
+2	0	0.00000  	17
+3	0	0.00000  	17
+4	0	0.00000  	17
+5	0	0.00000  	17
+6	2	0.357143 	17
+7	1	0.0714286	17
+
+Total Tracks in X-direction: 255  in Y-direction: 136
+
+Logic Area (in minimum width transistor areas, excludes I/Os and empty grid tiles):
+Total Logic Block Area (Warning, need to add pitch of routing to blocks with height > 3): 2.94e+06 
+Total Used Logic Block Area: 210000 
+
+Routing area (in minimum width transistor areas):
+Assuming no buffer sharing (pessimistic). Total: 1.63902e+07  Per logic tile: 167247.
+Assuming buffer sharing (slightly optimistic). Total: 5.82936e+06  Per logic tile: 59483.3
+
+
+Segment usage by type (index):
+Segment type       Fractional utilization
+------------       ----------------------
+       0                  0.0268
+
+Segment usage by length:
+Segment length       Fractional utilization
+--------------       ----------------------
+        1                   0.0268
+Routing took 0.01 seconds
+/home/ubuntu/RASP_Workspace/test_20170217_xor
+.subckt sftreg
+['net12_1', 'net12_2', 'net12_3', 'net12_4', 'net8_1', 'net8_1', 'net8_1', 'net8_1', 'net8_1', 'net8_1', 'net8_1', 'net8_1', 'net8_1', 'net8_1', 'net8_1', 'net8_1', 'net3_1', 'gnd_dig', 'net5_1', 'net1_1', 'net7_1', 'net8_1', 'net9_1', '0']
+sftreg
+.subckt meas_volt_mite
+['net1_1', 'out_mite_adc', '0.00001']
+meas_volt_mite
+.subckt tgate
+['vcc', 'gnd', 'gnd_dig']
+tgate
+.subckt wta_w_bias
+['net11_1', 'net6_1', 'net12_1', '0&wta_w_bias_wta_bias', '1.000000e-08&wta_w_bias_buf_bias', '2.000000e-06']
+wta_w_bias
+.subckt wta_w_bias
+['net11_2', 'net6_1', 'net12_2', '0&wta_w_bias_wta_bias', '1.000000e-08&wta_w_bias_buf_bias', '2.000000e-06']
+wta_w_bias
+.subckt wta_w_bias
+['net11_3', 'net6_1', 'net12_3', '0&wta_w_bias_wta_bias', '1.000000e-08&wta_w_bias_buf_bias', '2.000000e-06']
+wta_w_bias
+.subckt wta_w_bias
+['net11_4', 'net6_1', 'net12_4', '0&wta_w_bias_wta_bias', '1.000000e-08&wta_w_bias_buf_bias', '2.000000e-06']
+wta_w_bias
+.subckt nmirror_vmm
+['vcc', 'net6_1', '1.000e-08']
+nmirror_vmm
+.subckt vmm4x4
+['net10_1', 'net10_2', 'net10_3', 'net10_4', 'net11_1', 'net11_2', 'net11_3', 'net11_4', '4.00e-06,1.00e-10,1.00e-10,1.00e-10,1.00e-10,4.00e-06,4.00e-06,1.00e-10,3.00e-06,2.00e-06,2.00e-06,1.00e-10,1.00e-10,1.00e-10,1.00e-10,1.00e-10']
+vmm4x4
+vmm types: 4x4, 8x8, 12x12, 16x16: 0 0 0 0
+/home/ubuntu/rasp30/vtr_release/vpr/vpr /home/ubuntu/rasp30/vpr2swcs/./arch/rasp3a_arch.xml -route /home/ubuntu/RASP_Workspace/test_20170217_xor/xor_30a  -route_chan_width 17 -nodisp -timing_analysis off
+net1_1
+['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
+net12_4
+['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
+['net11_1', 'net11_2', 'net11_3', 'net11_4']
+['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
+net12_3
+['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
+net6_1
+['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
+net12_2
+['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
+net12_1
+['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
+gnd_dig
+['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
+out_mite_adc
+['open', 'open', 'open', 'open', 'open', 'open', 'open', 'open']
+ ------------- (net8_1) ------------- 
+|  OPIN  (1,4) --> CHANX  (1,3) T/P: 16 26 |  cab [ 1, 3] CHANX  (38,739) T16 XO6 SWC 
+| CHANX  (1,3) --> CHANY  (1,4) T/P: 16 -1 | clb [ 2, 3] SBLOCK wn (104 979) SWC 
+| CHANY  (1,4) -->  IPIN  (1,4) T/P: 16 19 |  clb [ 2, 4] CHANY  (104,708) T16 AXO3 ~~~~ PIN SINK ~~~~ || net (net8_1) -> pin 19 in 1 4
+SWC 
+| CHANY  (1,4) -->  IPIN  (1,4) T/P: 16 18 |  clb [ 2, 4] CHANY  (104,692) T16 AXO2 ~~~~ PIN SINK ~~~~ || net (net8_1) -> pin 18 in 1 4
+SWC 
+| CHANX  (1,3) --> CHANY  (0,4) T/P: 16 -1 | cab [ 1, 3] SBLOCK en (38 851) SWC 
+| CHANY  (0,4) -->  IPIN  (1,4) T/P: 16 17 | lala-land
+ cab [ 1, 4] CHANY  (38,1028) T16 XO1 ~~~~ PIN SINK ~~~~ || net (net8_1) -> pin 17 in 1 4
+SWC 
+| CHANY  (0,4) -->  IPIN  (1,4) T/P: 16 16 | lala-land
+ cab [ 1, 4] CHANY  (38,1012) T16 XO0 ~~~~ PIN SINK ~~~~ || net (net8_1) -> pin 16 in 1 4
+SWC 
+| CHANX  (1,3) -->  IPIN  (1,4) T/P: 16 11 |  cab [ 1, 3] CHANX  (38,691) T16 XI11 ~~~~ PIN SINK ~~~~ || net (net8_1) -> pin 11 in 1 4
+SWC 
+| CHANX  (1,3) -->  IPIN  (1,4) T/P: 16 10 |  cab [ 1, 3] CHANX  (38,675) T16 XI10 ~~~~ PIN SINK ~~~~ || net (net8_1) -> pin 10 in 1 4
+SWC 
+| CHANY  (1,4) -->  IPIN  (1,4) T/P: 16  5 |  clb [ 2, 4] CHANY  (104,644) T16 AXI5 ~~~~ PIN SINK ~~~~ || net (net8_1) -> pin 5 in 1 4
+SWC 
+| CHANY  (1,4) -->  IPIN  (1,4) T/P: 16  4 |  clb [ 2, 4] CHANY  (104,628) T16 AXI4 ~~~~ PIN SINK ~~~~ || net (net8_1) -> pin 4 in 1 4
+SWC 
+| CHANY  (0,4) -->  IPIN  (1,4) T/P: 16  3 | lala-land
+ cab [ 1, 4] CHANY  (38,996) T16 XI3 ~~~~ PIN SINK ~~~~ || net (net8_1) -> pin 3 in 1 4
+SWC 
+| CHANY  (0,4) -->  IPIN  (1,4) T/P: 16  2 | lala-land
+ cab [ 1, 4] CHANY  (38,1044) T16 XI2 ~~~~ PIN SINK ~~~~ || net (net8_1) -> pin 2 in 1 4
+SWC 
+| CHANY  (0,4) -->  IPIN  (1,4) T/P: 16  1 | lala-land
+ cab [ 1, 4] CHANY  (38,964) T16 XI1 ~~~~ PIN SINK ~~~~ || net (net8_1) -> pin 1 in 1 4
+SWC 
+| CHANY  (0,4) -->  IPIN  (1,4) T/P: 16  0 | lala-land
+ cab [ 1, 4] CHANY  (38,948) T16 XI0 ~~~~ PIN SINK ~~~~ || net (net8_1) -> pin 0 in 1 4
+SWC 
+ ------------- (net12_1) ------------- 
+|  OPIN  (1,2) --> CHANX  (1,2) T/P:  9 24 |  cab [ 1, 2] CHANX  (46,658) T9 O4 SWC 
+| CHANX  (1,2) --> CHANY  (1,3) T/P:  9 -1 | clb [ 2, 2] SBLOCK wn (112 978) SWC 
+| CHANY  (1,3) --> CHANY  (1,4) T/P:  9 -1 | clb [ 2, 3] SBLOCK sn (112 995) SWC 
+| CHANY  (1,4) -->  IPIN  (1,4) T/P:  9  6 |  clb [ 2, 4] CHANY  (112,660) T9 AXI6 ~~~~ PIN SINK ~~~~ || net (net12_1) -> pin 6 in 1 4
+SWC 
+ ------------- (net12_2) ------------- 
+|  OPIN  (1,6) --> CHANX  (1,6) T/P: 15 24 |  cab [ 1, 6] CHANX  (39,662) T15 O4 SWC 
+| CHANX  (1,6) --> CHANY  (1,6) T/P: 15 -1 | clb [ 2, 6] SBLOCK ws (105 966) SWC 
+| CHANY  (1,6) --> CHANY  (1,5) T/P: 15 -1 | clb [ 2, 5] SBLOCK ns (105 997) SWC 
+| CHANY  (1,5) --> CHANY  (1,4) T/P: 15 -1 | clb [ 2, 4] SBLOCK ns (105 996) SWC 
+| CHANY  (1,4) -->  IPIN  (1,4) T/P: 15  7 |  clb [ 2, 4] CHANY  (105,676) T15 AXI7 ~~~~ PIN SINK ~~~~ || net (net12_2) -> pin 7 in 1 4
+SWC 
+ ------------- (net12_3) ------------- 
+|  OPIN  (1,5) --> CHANX  (1,5) T/P:  9 24 |  cab [ 1, 5] CHANX  (46,661) T9 O4 SWC 
+| CHANX  (1,5) --> CHANY  (1,5) T/P:  9 -1 | clb [ 2, 5] SBLOCK ws (112 965) SWC 
+| CHANY  (1,5) --> CHANX  (1,4) T/P:  9 -1 | clb [ 2, 4] SBLOCK nw (112 980) SWC 
+| CHANX  (1,4) -->  IPIN  (1,4) T/P:  9  8 |  cab [ 1, 4] CHANX  (46,580) T9 I8 ~~~~ PIN SINK ~~~~ || net (net12_3) -> pin 8 in 1 4
+SWC 
+ ------------- (net12_4) ------------- 
+|  OPIN  (1,3) --> CHANX  (1,3) T/P:  4 24 |  cab [ 1, 3] CHANX  (52,659) T4 O4 SWC 
+| CHANX  (1,3) --> CHANY  (0,4) T/P:  4 -1 | cab [ 1, 3] SBLOCK en (52 851) SWC 
+| CHANY  (0,4) --> CHANX  (1,4) T/P:  4 -1 | cab [ 1, 4] SBLOCK se (52 788) SWC 
+| CHANX  (1,4) -->  IPIN  (1,4) T/P:  4  9 |  cab [ 1, 4] CHANX  (52,596) T4 I9 ~~~~ PIN SINK ~~~~ || net (net12_4) -> pin 9 in 1 4
+SWC 
+ ------------- (net3_1) ------------- 
+|  OPIN (0,12) --> CHANY (0,12) T/P: 16 16 |  cab [ 1,12] CHANY  (38,1132) T16 XO6 SWC 
+| CHANY (0,12) --> CHANY (0,11) T/P: 16 -1 | cab [ 1,11] SBLOCK ns (38 843) SWC 
+| CHANY (0,11) --> CHANY (0,10) T/P: 16 -1 | cab [ 1,10] SBLOCK ns (38 842) SWC 
+| CHANY (0,10) --> CHANY  (0,9) T/P: 16 -1 | cab [ 1, 9] SBLOCK ns (38 841) SWC 
+| CHANY  (0,9) --> CHANY  (0,8) T/P: 16 -1 | cab [ 1, 8] SBLOCK ns (38 840) SWC 
+| CHANY  (0,8) --> CHANY  (0,7) T/P: 16 -1 | cab [ 1, 7] SBLOCK ns (38 839) SWC 
+| CHANY  (0,7) --> CHANY  (0,6) T/P: 16 -1 | cab [ 1, 6] SBLOCK ns (38 838) SWC 
+| CHANY  (0,6) --> CHANY  (0,5) T/P: 16 -1 | cab [ 1, 5] SBLOCK ns (38 837) SWC 
+| CHANY  (0,5) --> CHANX  (1,4) T/P: 16 -1 | cab [ 1, 4] SBLOCK ne (38 852) SWC 
+| CHANX  (1,4) -->  IPIN  (1,4) T/P: 16 13 |  cab [ 1, 4] CHANX  (38,612) T16 I13 ~~~~ PIN SINK ~~~~ || net (net3_1) -> pin 13 in 1 4
+SWC 
+ ------------- (gnd_dig) ------------- 
+|  OPIN  (1,1) --> CHANX  (1,1) T/P: 11 24 |  cab [ 1, 1] CHANX  (44,657) T11 O4 SWC 
+| CHANX  (1,1) --> CHANY  (0,2) T/P: 11 -1 | cab [ 1, 1] SBLOCK en (44 849) SWC 
+| CHANY  (0,2) --> CHANY  (0,3) T/P: 11 -1 | cab [ 1, 2] SBLOCK sn (44 834) SWC 
+| CHANY  (0,3) --> CHANY  (0,4) T/P: 11 -1 | cab [ 1, 3] SBLOCK sn (44 835) SWC 
+| CHANY  (0,4) --> CHANX  (1,4) T/P: 11 -1 | cab [ 1, 4] SBLOCK se (44 788) SWC 
+| CHANX  (1,4) -->  IPIN  (1,4) T/P: 11 14 |  cab [ 1, 4] CHANX  (44,628) T11 I14 ~~~~ PIN SINK ~~~~ || net (gnd_dig) -> pin 14 in 1 4
+SWC 
+ ------------- (net5_1) ------------- 
+|  OPIN (0,13) --> CHANY (0,13) T/P:  8  1 |  cab [ 1,13] CHANY  (47,1053) T8 XI2 SWC 
+| CHANY (0,13) --> CHANY (0,12) T/P:  8 -1 | cab [ 1,12] SBLOCK ns (47 844) SWC 
+| CHANY (0,12) --> CHANY (0,11) T/P:  8 -1 | cab [ 1,11] SBLOCK ns (47 843) SWC 
+| CHANY (0,11) --> CHANY (0,10) T/P:  8 -1 | cab [ 1,10] SBLOCK ns (47 842) SWC 
+| CHANY (0,10) --> CHANY  (0,9) T/P:  8 -1 | cab [ 1, 9] SBLOCK ns (47 841) SWC 
+| CHANY  (0,9) --> CHANY  (0,8) T/P:  8 -1 | cab [ 1, 8] SBLOCK ns (47 840) SWC 
+| CHANY  (0,8) --> CHANY  (0,7) T/P:  8 -1 | cab [ 1, 7] SBLOCK ns (47 839) SWC 
+| CHANY  (0,7) --> CHANY  (0,6) T/P:  8 -1 | cab [ 1, 6] SBLOCK ns (47 838) SWC 
+| CHANY  (0,6) --> CHANY  (0,5) T/P:  8 -1 | cab [ 1, 5] SBLOCK ns (47 837) SWC 
+| CHANY  (0,5) --> CHANX  (1,4) T/P:  8 -1 | cab [ 1, 4] SBLOCK ne (47 852) SWC 
+| CHANX  (1,4) -->  IPIN  (1,4) T/P:  8 15 |  cab [ 1, 4] CHANX  (47,644) T8 I15 ~~~~ PIN SINK ~~~~ || net (net5_1) -> pin 15 in 1 4
+SWC 
+ ------------- (net1_1) ------------- 
+|  OPIN  (1,4) --> CHANX  (1,4) T/P: 15 24 |  cab [ 1, 4] CHANX  (39,660) T15 O4 SWC 
+| CHANX  (1,4) --> CHANX  (2,4) T/P: 15 -1 | clb [ 2, 4] SBLOCK we (105 1028) SWC 
+| CHANX  (2,4) --> CHANX  (3,4) T/P: 15 -1 | cab [ 3, 4] SBLOCK we (175 868) SWC 
+| CHANX  (3,4) --> CHANX  (4,4) T/P: 15 -1 | clb [ 4, 4] SBLOCK we (241 1028) SWC 
+| CHANX  (4,4) --> CHANX  (5,4) T/P: 15 -1 | cab [ 5, 4] SBLOCK we (311 868) SWC 
+| CHANX  (5,4) --> CHANX  (6,4) T/P: 15 -1 | clb [ 6, 4] SBLOCK we (377 1028) SWC 
+| CHANX  (6,4) --> CHANY  (6,4) T/P: 15 -1 | cab2 [ 7, 4] SBLOCK ws (447 804) SWC 
+| CHANY  (6,4) --> CHANY  (6,3) T/P: 15 -1 | cab2 [ 7, 3] SBLOCK ns (447 835) SWC 
+| CHANY  (6,3) --> CHANY  (6,2) T/P: 15 -1 | cab2 [ 7, 2] SBLOCK ns (447 834) SWC 
+| CHANY  (6,2) --> CHANY  (6,1) T/P: 15 -1 | cab2 [ 7, 1] SBLOCK ns (447 833) SWC 
+| CHANY  (6,1) -->  IPIN  (7,1) T/P: 15  0 | lala-land
+cab2 [ 7, 1] CHANY  (447,945) T15 XI0 ~~~~ PIN SINK ~~~~ || net (net1_1) -> pin 0 in 7 1
+SWC 
+ ------------- (net6_1) ------------- 
+|  OPIN  (1,5) --> CHANY  (1,5) T/P: 12 23 |  clb [ 2, 5] CHANY  (109,709) T12 AXO3 SWC 
+| CHANY  (1,5) --> CHANX  (1,5) T/P: 12 -1 | clb [ 2, 5] SBLOCK sw (109 965) SWC 
+| CHANX  (1,5) -->  IPIN  (1,5) T/P: 12  9 |  cab [ 1, 5] CHANX  (43,597) T12 I9 ~~~~ PIN SINK ~~~~ || net (net6_1) -> pin 9 in 1 5
+SWC 
+| CHANX  (1,5) --> CHANY  (0,6) T/P: 12 -1 | cab [ 1, 5] SBLOCK en (43 853) SWC 
+| CHANY  (0,6) -->  IPIN  (1,6) T/P: 12  0 | lala-land
+ cab [ 1, 6] CHANY  (43,950) T12 XI0 ~~~~ PIN SINK ~~~~ || net (net6_1) -> pin 0 in 1 6
+SWC 
+| CHANY  (1,5) --> CHANY  (1,4) T/P: 12 -1 | clb [ 2, 4] SBLOCK ns (109 996) SWC 
+| CHANY  (1,4) --> CHANX  (1,3) T/P: 12 -1 | clb [ 2, 3] SBLOCK nw (109 979) SWC 
+| CHANX  (1,3) --> CHANY  (0,3) T/P: 12 -1 | cab [ 1, 3] SBLOCK es (43 787) SWC 
+| CHANY  (0,3) -->  IPIN  (1,3) T/P: 12  0 | lala-land
+ cab [ 1, 3] CHANY  (43,947) T12 XI0 ~~~~ PIN SINK ~~~~ || net (net6_1) -> pin 0 in 1 3
+SWC 
+| CHANY  (0,3) --> CHANY  (0,2) T/P: 12 -1 | cab [ 1, 2] SBLOCK ns (43 834) SWC 
+| CHANY  (0,2) -->  IPIN  (1,2) T/P: 12  0 | lala-land
+ cab [ 1, 2] CHANY  (43,946) T12 XI0 ~~~~ PIN SINK ~~~~ || net (net6_1) -> pin 0 in 1 2
+SWC 
+ ------------- (net11_4) ------------- 
+|  OPIN  (1,3) --> CHANY  (1,3) T/P: 16 23 |  clb [ 2, 3] CHANY  (104,707) T16 AXO3 SWC 
+| CHANY  (1,3) -->  IPIN  (1,3) T/P: 16  6 |  clb [ 2, 3] CHANY  (104,659) T16 AXI6 ~~~~ PIN SINK ~~~~ || net (net11_4) -> pin 6 in 1 3
+SWC 
+ ------------- (net10_1) ------------- 
+|  OPIN  (0,8) --> CHANY  (0,8) T/P: 15 10 |  cab [ 1, 8] CHANY  (39,1096) T15 XI14 SWC 
+| CHANY  (0,8) --> CHANY  (0,7) T/P: 15 -1 | cab [ 1, 7] SBLOCK ns (39 839) SWC 
+| CHANY  (0,7) --> CHANY  (0,6) T/P: 15 -1 | cab [ 1, 6] SBLOCK ns (39 838) SWC 
+| CHANY  (0,6) --> CHANY  (0,5) T/P: 15 -1 | cab [ 1, 5] SBLOCK ns (39 837) SWC 
+| CHANY  (0,5) --> CHANY  (0,4) T/P: 15 -1 | cab [ 1, 4] SBLOCK ns (39 836) SWC 
+| CHANY  (0,4) --> CHANX  (1,3) T/P: 15 -1 | cab [ 1, 3] SBLOCK ne (39 851) SWC 
+| CHANX  (1,3) -->  IPIN  (1,3) T/P: 15  8 |  cab [ 1, 3] CHANX  (39,579) T15 I8 ~~~~ PIN SINK ~~~~ || net (net10_1) -> pin 8 in 1 3
+SWC 
+ ------------- (net10_2) ------------- 
+|  OPIN  (0,8) --> CHANY  (0,8) T/P: 14 13 |  cab [ 1, 8] CHANY  (40,1112) T14 XO2 SWC 
+| CHANY  (0,8) --> CHANY  (0,7) T/P: 14 -1 | cab [ 1, 7] SBLOCK ns (40 839) SWC 
+| CHANY  (0,7) --> CHANY  (0,6) T/P: 14 -1 | cab [ 1, 6] SBLOCK ns (40 838) SWC 
+| CHANY  (0,6) --> CHANY  (0,5) T/P: 14 -1 | cab [ 1, 5] SBLOCK ns (40 837) SWC 
+| CHANY  (0,5) --> CHANY  (0,4) T/P: 14 -1 | cab [ 1, 4] SBLOCK ns (40 836) SWC 
+| CHANY  (0,4) --> CHANX  (1,3) T/P: 14 -1 | cab [ 1, 3] SBLOCK ne (40 851) SWC 
+| CHANX  (1,3) -->  IPIN  (1,3) T/P: 14  9 |  cab [ 1, 3] CHANX  (40,595) T14 I9 ~~~~ PIN SINK ~~~~ || net (net10_2) -> pin 9 in 1 3
+SWC 
+ ------------- (net10_3) ------------- 
+|  OPIN  (0,8) --> CHANY  (0,8) T/P:  2 16 |  cab [ 1, 8] CHANY  (54,1128) T2 XO6 SWC 
+| CHANY  (0,8) --> CHANY  (0,7) T/P:  2 -1 | cab [ 1, 7] SBLOCK ns (54 839) SWC 
+| CHANY  (0,7) --> CHANY  (0,6) T/P:  2 -1 | cab [ 1, 6] SBLOCK ns (54 838) SWC 
+| CHANY  (0,6) --> CHANY  (0,5) T/P:  2 -1 | cab [ 1, 5] SBLOCK ns (54 837) SWC 
+| CHANY  (0,5) --> CHANY  (0,4) T/P:  2 -1 | cab [ 1, 4] SBLOCK ns (54 836) SWC 
+| CHANY  (0,4) --> CHANY  (0,3) T/P:  2 -1 | cab [ 1, 3] SBLOCK ns (54 835) SWC 
+| CHANY  (0,3) --> CHANX  (1,2) T/P:  2 -1 | cab [ 1, 2] SBLOCK ne (54 850) SWC 
+| CHANX  (1,2) -->  IPIN  (1,3) T/P:  2 11 |  cab [ 1, 2] CHANX  (54,690) T2 XI11 ~~~~ PIN SINK ~~~~ || net (net10_3) -> pin 11 in 1 3
+SWC 
+ ------------- (net10_4) ------------- 
+|  OPIN  (0,9) --> CHANY  (0,9) T/P: 13  1 |  cab [ 1, 9] CHANY  (41,1049) T13 XI2 SWC 
+| CHANY  (0,9) --> CHANY  (0,8) T/P: 13 -1 | cab [ 1, 8] SBLOCK ns (41 840) SWC 
+| CHANY  (0,8) --> CHANY  (0,7) T/P: 13 -1 | cab [ 1, 7] SBLOCK ns (41 839) SWC 
+| CHANY  (0,7) --> CHANY  (0,6) T/P: 13 -1 | cab [ 1, 6] SBLOCK ns (41 838) SWC 
+| CHANY  (0,6) --> CHANY  (0,5) T/P: 13 -1 | cab [ 1, 5] SBLOCK ns (41 837) SWC 
+| CHANY  (0,5) --> CHANY  (0,4) T/P: 13 -1 | cab [ 1, 4] SBLOCK ns (41 836) SWC 
+| CHANY  (0,4) --> CHANY  (0,3) T/P: 13 -1 | cab [ 1, 3] SBLOCK ns (41 835) SWC 
+| CHANY  (0,3) --> CHANX  (1,2) T/P: 13 -1 | cab [ 1, 2] SBLOCK ne (41 850) SWC 
+| CHANX  (1,2) -->  IPIN  (1,3) T/P: 13 12 |  cab [ 1, 2] CHANX  (41,706) T13 XI12 ~~~~ PIN SINK ~~~~ || net (net10_4) -> pin 12 in 1 3
+SWC 
+ ------------- (net11_1) ------------- 
+|  OPIN  (1,3) --> CHANY  (0,3) T/P: 16 20 | lala-land
+ cab [ 1, 3] CHANY  (38,1011) T16 XO0 SWC 
+| CHANY  (0,3) --> CHANX  (1,2) T/P: 16 -1 | cab [ 1, 2] SBLOCK ne (38 850) SWC 
+| CHANX  (1,2) --> CHANY  (1,2) T/P: 16 -1 | clb [ 2, 2] SBLOCK ws (104 962) SWC 
+| CHANY  (1,2) -->  IPIN  (1,2) T/P: 16  6 |  clb [ 2, 2] CHANY  (104,658) T16 AXI6 ~~~~ PIN SINK ~~~~ || net (net11_1) -> pin 6 in 1 2
+SWC 
+ ------------- (net11_2) ------------- 
+|  OPIN  (1,3) --> CHANY  (0,3) T/P:  5 21 | lala-land
+ cab [ 1, 3] CHANY  (51,1027) T5 XO1 SWC 
+| CHANY  (0,3) --> CHANY  (0,4) T/P:  5 -1 | cab [ 1, 3] SBLOCK sn (51 835) SWC 
+| CHANY  (0,4) --> CHANY  (0,5) T/P:  5 -1 | cab [ 1, 4] SBLOCK sn (51 836) SWC 
+| CHANY  (0,5) --> CHANX  (1,5) T/P:  5 -1 | cab [ 1, 5] SBLOCK se (51 789) SWC 
+| CHANX  (1,5) --> CHANY  (1,6) T/P:  5 -1 | clb [ 2, 5] SBLOCK wn (117 981) SWC 
+| CHANY  (1,6) -->  IPIN  (1,6) T/P:  5  6 |  clb [ 2, 6] CHANY  (117,662) T5 AXI6 ~~~~ PIN SINK ~~~~ || net (net11_2) -> pin 6 in 1 6
+SWC 
+ ------------- (net11_3) ------------- 
+|  OPIN  (1,3) --> CHANY  (1,3) T/P: 13 22 |  clb [ 2, 3] CHANY  (107,691) T13 AXO2 SWC 
+| CHANY  (1,3) --> CHANY  (1,4) T/P: 13 -1 | clb [ 2, 3] SBLOCK sn (107 995) SWC 
+| CHANY  (1,4) --> CHANY  (1,5) T/P: 13 -1 | clb [ 2, 4] SBLOCK sn (107 996) SWC 
+| CHANY  (1,5) -->  IPIN  (1,5) T/P: 13  6 |  clb [ 2, 5] CHANY  (107,661) T13 AXI6 ~~~~ PIN SINK ~~~~ || net (net11_3) -> pin 6 in 1 5
+SWC 
+ ------------- (vcc): ------------- 
+ ------------- (out_mite_adc) ------------- 
+|  OPIN  (7,1) --> CHANY  (6,1) T/P: 16 16 | lala-land
+cab2 [ 7, 1] CHANY  (446,1009) T16 XO0 SWC 
+| CHANY  (6,1) --> CHANX  (7,1) T/P: 16 -1 | cab2 [ 7, 1] SBLOCK se (446 785) SWC 
+| CHANX  (7,1) --> CHANY  (7,1) T/P: 16 -1 | io_e [ 8, 1] SBLOCK ws (477 1009) SWC 
+| CHANY  (7,1) -->  IPIN  (8,1) T/P: 16  0 | yeehaaa!
+io_e [ 8, 1] CHANY  (482,641) T16 E0 ~~~~ PIN SINK ~~~~ || net (out_mite_adc) -> pin 0 in 8 1
+SWC 
+Using a DAC
+Using a DAC
+Using a DAC
+I/O Blocks dev FGs
+NO FGSSSSSS!
+NO FGSSSSSS!
+NO FGSSSSSS!
+Using a DAC
+I/O Blocks dev FGs
+NO FGSSSSSS!
+Using a DAC
+I/O Blocks dev FGs
+NO FGSSSSSS!
+Using a DAC
+I/O Blocks dev FGs
+NO FGSSSSSS!
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+vcc
+tgate[0].in[0]
+local interconnect 1 vcc -> 19 tgate[0].in[0] (13 1) -> (47 17)
+gnd
+tgate[0].in[1]
+local interconnect 0 gnd -> 20 tgate[0].in[1] (12 0) -> (46 1)
+tgate[0].out[0]
+cab.O[4]
+local interconnect 120 tgate[0].out[0] -> 319 cab.O[4] (25 48) -> (59 769)
+getting here!
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+cab.I[6]
+wta_w_bias[0].in[0]
+local interconnect 8 cab.I[6] -> 279 wta_w_bias[0].in[0] (19 8) -> (53 130)
+cab.I[0]
+wta_w_bias[0].in[1]
+local interconnect 2 cab.I[0] -> 280 wta_w_bias[0].in[1] (21 2) -> (55 34)
+wta_w_bias[0].out[0]
+cab.O[4]
+local interconnect 35 wta_w_bias[0].out[0] -> 319 cab.O[4] (25 38) -> (59 610)
+getting here!
+wta_w_bias[0] wta_w_bias_ls[0] -> (29 19) -> (63 306)
+wta_w_bias[0] wta_w_bias_ls[0] -> (28 17) -> (62 274)
+wta_w_bias[0] wta_w_bias_ls[0] -> (21 24) -> (55 386)
+wta_w_bias[0] wta_w_bias_ls[0] -> (20 0) -> (54 2)
+wta_w_bias[0] wta_w_bias_ls[0] -> (19 23) -> (53 370)
+wta_w_bias[0] wta_w_bias_ls[0] -> (18 19) -> (52 306)
+wta_w_bias[0] wta_w_bias_wta_bias[0] -> (18 1) -> (52 18)
+wta_w_bias[0] wta_w_bias_buf_bias[0] -> (32 62) -> (66 994)
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+vmm4x4_dummy[0]
+vmm4x4[0].in[0]
+local interconnect 10 vmm4x4_dummy[0] -> 164 vmm4x4[0].in[0] (33 19) -> (67 307)
+vmm4x4_dummy[1]
+vmm4x4[0].in[1]
+local interconnect 11 vmm4x4_dummy[1] -> 165 vmm4x4[0].in[1] (32 20) -> (66 323)
+vmm4x4_dummy[2]
+vmm4x4[0].in[2]
+local interconnect 13 vmm4x4_dummy[2] -> 166 vmm4x4[0].in[2] (31 21) -> (65 339)
+vmm4x4_dummy[3]
+vmm4x4[0].in[3]
+local interconnect 14 vmm4x4_dummy[3] -> 167 vmm4x4[0].in[3] (30 22) -> (64 355)
+cab.I[6]
+wta_w_bias[0].in[0]
+local interconnect 8 cab.I[6] -> 279 wta_w_bias[0].in[0] (19 8) -> (53 131)
+vmm4x4[0].out[3]
+wta_w_bias[0].in[0]
+local interconnect 54 vmm4x4[0].out[3] -> 279 wta_w_bias[0].in[0] (19 22) -> (53 355)
+cab.I[0]
+wta_w_bias[0].in[1]
+local interconnect 2 cab.I[0] -> 280 wta_w_bias[0].in[1] (21 2) -> (55 35)
+vmm4x4[0].out[0]
+cab.O[0]
+local interconnect 57 vmm4x4[0].out[0] -> 315 cab.O[0] (29 40) -> (63 643)
+vmm4x4[0].out[1]
+cab.O[1]
+local interconnect 56 vmm4x4[0].out[1] -> 316 cab.O[1] (28 41) -> (62 659)
+vmm4x4[0].out[2]
+cab.O[2]
+local interconnect 55 vmm4x4[0].out[2] -> 317 cab.O[2] (27 42) -> (61 675)
+wta_w_bias[0].out[0]
+cab.O[4]
+local interconnect 35 wta_w_bias[0].out[0] -> 319 cab.O[4] (25 38) -> (59 611)
+getting here!
+vmm4x4[0] vmm4x4_target[0] -> (33 10) -> (67 163)
+vmm4x4[0] vmm4x4_target[1] -> (33 11) -> (67 179)
+vmm4x4[0] vmm4x4_target[2] -> (33 13) -> (67 211)
+vmm4x4[0] vmm4x4_target[3] -> (33 14) -> (67 227)
+vmm4x4[0] vmm4x4_target[4] -> (32 10) -> (66 163)
+vmm4x4[0] vmm4x4_target[5] -> (32 11) -> (66 179)
+vmm4x4[0] vmm4x4_target[6] -> (32 13) -> (66 211)
+vmm4x4[0] vmm4x4_target[7] -> (32 14) -> (66 227)
+vmm4x4[0] vmm4x4_target[8] -> (31 10) -> (65 163)
+vmm4x4[0] vmm4x4_target[9] -> (31 11) -> (65 179)
+vmm4x4[0] vmm4x4_target[10] -> (31 13) -> (65 211)
+vmm4x4[0] vmm4x4_target[11] -> (31 14) -> (65 227)
+vmm4x4[0] vmm4x4_target[12] -> (30 10) -> (64 163)
+vmm4x4[0] vmm4x4_target[13] -> (30 11) -> (64 179)
+vmm4x4[0] vmm4x4_target[14] -> (30 13) -> (64 211)
+vmm4x4[0] vmm4x4_target[15] -> (30 14) -> (64 227)
+wta_w_bias[0] wta_w_bias_ls[0] -> (29 19) -> (63 307)
+wta_w_bias[0] wta_w_bias_ls[0] -> (28 17) -> (62 275)
+wta_w_bias[0] wta_w_bias_ls[0] -> (21 24) -> (55 387)
+wta_w_bias[0] wta_w_bias_ls[0] -> (20 0) -> (54 3)
+wta_w_bias[0] wta_w_bias_ls[0] -> (19 23) -> (53 371)
+wta_w_bias[0] wta_w_bias_ls[0] -> (18 19) -> (52 307)
+wta_w_bias[0] wta_w_bias_wta_bias[0] -> (18 1) -> (52 19)
+wta_w_bias[0] wta_w_bias_buf_bias[0] -> (32 62) -> (66 995)
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+no LI need for I[13:15] so dont worry!
+no LI need for I[13:15] so dont worry!
+no LI need for I[13:15] so dont worry!
+sftreg[0].out[0]
+cab.O[4]
+local interconnect 53 sftreg[0].out[0] -> 319 cab.O[4] (25 54) -> (59 868)
+no LI needed dont worry!
+getting here!
+sftreg[0] sftreg_fg[0] -> (30 40) -> (64 644)
+sftreg[0] sftreg_fg[0] -> (30 41) -> (64 660)
+sftreg[0] sftreg_fg[0] -> (30 42) -> (64 676)
+sftreg[0] sftreg_fg[0] -> (30 43) -> (64 692)
+sftreg[0] sftreg_fg[0] -> (30 44) -> (64 708)
+sftreg[0] sftreg_fg[0] -> (30 45) -> (64 724)
+sftreg[0] sftreg_fg[0] -> (30 46) -> (64 740)
+sftreg[0] sftreg_fg[0] -> (30 47) -> (64 756)
+sftreg[0] sftreg_fg[0] -> (30 48) -> (64 772)
+sftreg[0] sftreg_fg[0] -> (30 49) -> (64 788)
+sftreg[0] sftreg_fg[0] -> (30 50) -> (64 804)
+sftreg[0] sftreg_fg[0] -> (30 51) -> (64 820)
+sftreg[0] sftreg_fg[0] -> (30 52) -> (64 836)
+sftreg[0] sftreg_fg[0] -> (30 53) -> (64 852)
+sftreg[0] sftreg_fg[0] -> (30 54) -> (64 868)
+sftreg[0] sftreg_fg[0] -> (30 55) -> (64 884)
+sftreg[0] sftreg_fg[0] -> (25 55) -> (59 884)
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+no LI needed dont worry!
+cab.I[6]
+wta_w_bias[0].in[0]
+local interconnect 8 cab.I[6] -> 279 wta_w_bias[0].in[0] (19 8) -> (53 133)
+cab.I[9]
+wta_w_bias[0].in[1]
+local interconnect 11 cab.I[9] -> 280 wta_w_bias[0].in[1] (21 11) -> (55 181)
+nmirror_vmm[0].out[0]
+wta_w_bias[0].in[1]
+local interconnect 41 nmirror_vmm[0].out[0] -> 280 wta_w_bias[0].in[1] (21 31) -> (55 501)
+wta_w_bias[0].out[0]
+cab.O[4]
+local interconnect 35 wta_w_bias[0].out[0] -> 319 cab.O[4] (25 38) -> (59 613)
+getting here!
+nmirror_vmm[0] nmirror_bias[0] -> (5 1) -> (39 21)
+wta_w_bias[0] wta_w_bias_ls[0] -> (29 19) -> (63 309)
+wta_w_bias[0] wta_w_bias_ls[0] -> (28 17) -> (62 277)
+wta_w_bias[0] wta_w_bias_ls[0] -> (21 24) -> (55 389)
+wta_w_bias[0] wta_w_bias_ls[0] -> (20 0) -> (54 5)
+wta_w_bias[0] wta_w_bias_ls[0] -> (19 23) -> (53 373)
+wta_w_bias[0] wta_w_bias_ls[0] -> (18 19) -> (52 309)
+wta_w_bias[0] wta_w_bias_wta_bias[0] -> (18 1) -> (52 21)
+wta_w_bias[0] wta_w_bias_buf_bias[0] -> (32 62) -> (66 997)
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+cab.I[6]
+wta_w_bias[0].in[0]
+local interconnect 8 cab.I[6] -> 279 wta_w_bias[0].in[0] (19 8) -> (53 134)
+cab.I[0]
+wta_w_bias[0].in[1]
+local interconnect 2 cab.I[0] -> 280 wta_w_bias[0].in[1] (21 2) -> (55 38)
+wta_w_bias[0].out[0]
+cab.O[4]
+local interconnect 35 wta_w_bias[0].out[0] -> 319 cab.O[4] (25 38) -> (59 614)
+getting here!
+wta_w_bias[0] wta_w_bias_ls[0] -> (29 19) -> (63 310)
+wta_w_bias[0] wta_w_bias_ls[0] -> (28 17) -> (62 278)
+wta_w_bias[0] wta_w_bias_ls[0] -> (21 24) -> (55 390)
+wta_w_bias[0] wta_w_bias_ls[0] -> (20 0) -> (54 6)
+wta_w_bias[0] wta_w_bias_ls[0] -> (19 23) -> (53 374)
+wta_w_bias[0] wta_w_bias_ls[0] -> (18 19) -> (52 310)
+wta_w_bias[0] wta_w_bias_wta_bias[0] -> (18 1) -> (52 22)
+wta_w_bias[0] wta_w_bias_buf_bias[0] -> (32 62) -> (66 998)
+I/O Blocks dev FGs
+!!!!!!!!!!!!!!int[4] -->  DEV FGs  -> (16 12) -> (458 192)
+!!!!!!!!!!!!!!int[5] -->  DEV FGs  -> (16 13) -> (458 208)
+0  1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 Hallelujah!
+gnd vcc net1_1                                                       out_mite_adc                                                         
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .     0 
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .     1 
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .     2 
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .     3 
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .     4 
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .     5 
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .     6 
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .     7 
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .     8 
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .     9 
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .     10
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .     11
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .     12
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .     13
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .     14
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .     15
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .     16
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .     17
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .     18
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .     19
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .     20
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .     21
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .     22
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .     23
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .     24
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .     25
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .     26
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .     27
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .     28
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .     29
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .     30
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .     31
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .     32
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .     33
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .     34
+.  .  X  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  net1_1 35
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .     36
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .     37
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .     38
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .     39
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .     40
+                                                      .  .  .  X  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  out_mite_adc
+                                                      .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  open
+                                                      .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  open
+                                                      .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  open
+                                                      .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  open
+                                                      .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  open
+                                                      .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  open
+                                                      .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  open
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+cab2.I[0]
+meas_volt_mite[0].in
+local interconnect 2 cab2.I[0] -> 35 meas_volt_mite[0].in (13 2) -> (455 33)
+local interconnect 2 cab2.I[0] -> 35 meas_volt_mite[0].in (12 2) -> (454 33)
+local interconnect 2 cab2.I[0] -> 35 meas_volt_mite[0].in (10 2) -> (452 33)
+local interconnect 2 cab2.I[0] -> 35 meas_volt_mite[0].in (9 2) -> (451 33)
+meas_volt_mite[0].out
+cab2.O[0]
+local interconnect 21 meas_volt_mite[0].out -> 41 cab2.O[0] (11 25) -> (453 401)
+local interconnect 21 meas_volt_mite[0].out -> 41 cab2.O[0] (11 26) -> (453 417)
+getting here!
+ok here too22
+I/O Blocks dev FGs
+!!!!!!!!!!!!!!int[0] -->  DEV FGs  -> (7 27) -> (483 433)
+[38, 739, 1, 0, 0, 0]
+[104, 979, 0, 0]
+[104, 708, 1, 0, 0, 0]
+[104, 692, 1, 0, 0, 0]
+[38, 851, 1, 0, 0, 0]
+[38, 1028, 0, 0]
+[38, 1012, 0, 0]
+[38, 691, 1, 0, 0, 0]
+[38, 675, 1, 0, 0, 0]
+[104, 644, 1, 0, 0, 0]
+[104, 628, 0, 0]
+[38, 996, 0, 0]
+[38, 1044, 0, 0]
+[38, 964, 0, 0]
+[38, 948, 0, 0]
+[46, 658, 1, 0, 0, 0]
+[112, 978, 0, 0]
+[112, 995, 0, 0]
+[112, 660, 1, 0, 0, 0]
+[39, 662, 1, 0, 0, 0]
+[105, 966, 0, 0]
+[105, 997, 0, 0]
+[105, 996, 0, 0]
+[105, 676, 1, 0, 0, 0]
+[46, 661, 1, 0, 0, 0]
+[112, 965, 0, 0]
+[112, 980, 0, 0]
+[46, 580, 0, 0]
+[52, 659, 1, 0, 0, 0]
+[52, 851, 1, 0, 0, 0]
+[52, 788, 1, 0, 0, 0]
+[52, 596, 0, 0]
+[38, 1132, 0, 0]
+[38, 843, 1, 0, 0, 0]
+[38, 842, 1, 0, 0, 0]
+[38, 841, 1, 0, 0, 0]
+[38, 840, 1, 0, 0, 0]
+[38, 839, 1, 0, 0, 0]
+[38, 838, 1, 0, 0, 0]
+[38, 837, 1, 0, 0, 0]
+[38, 852, 1, 0, 0, 0]
+[38, 612, 0, 0]
+[44, 657, 1, 0, 0, 0]
+[44, 849, 1, 0, 0, 0]
+[44, 834, 1, 0, 0, 0]
+[44, 835, 1, 0, 0, 0]
+[44, 788, 1, 0, 0, 0]
+[44, 628, 0, 0]
+[47, 1053, 0, 0]
+[47, 844, 1, 0, 0, 0]
+[47, 843, 1, 0, 0, 0]
+[47, 842, 1, 0, 0, 0]
+[47, 841, 1, 0, 0, 0]
+[47, 840, 1, 0, 0, 0]
+[47, 839, 1, 0, 0, 0]
+[47, 838, 1, 0, 0, 0]
+[47, 837, 1, 0, 0, 0]
+[47, 852, 1, 0, 0, 0]
+[47, 644, 1, 0, 0, 0]
+[39, 660, 1, 0, 0, 0]
+[105, 1028, 0, 0]
+[175, 868, 1, 0, 0, 0]
+[241, 1028, 0, 0]
+[311, 868, 1, 0, 0, 0]
+[377, 1028, 0, 0]
+[447, 804, 1, 0, 0, 0]
+[447, 835, 1, 0, 0, 0]
+[447, 834, 1, 0, 0, 0]
+[447, 833, 1, 0, 0, 0]
+[447, 945, 0, 0]
+[109, 709, 1, 0, 0, 0]
+[109, 965, 0, 0]
+[43, 597, 0, 0]
+[43, 853, 1, 0, 0, 0]
+[43, 950, 0, 0]
+[109, 996, 0, 0]
+[109, 979, 0, 0]
+[43, 787, 1, 0, 0, 0]
+[43, 947, 0, 0]
+[43, 834, 1, 0, 0, 0]
+[43, 946, 0, 0]
+[104, 707, 1, 0, 0, 0]
+[104, 659, 1, 0, 0, 0]
+[39, 1096, 0, 0]
+[39, 839, 1, 0, 0, 0]
+[39, 838, 1, 0, 0, 0]
+[39, 837, 1, 0, 0, 0]
+[39, 836, 1, 0, 0, 0]
+[39, 851, 1, 0, 0, 0]
+[39, 579, 0, 0]
+[40, 1112, 0, 0]
+[40, 839, 1, 0, 0, 0]
+[40, 838, 1, 0, 0, 0]
+[40, 837, 1, 0, 0, 0]
+[40, 836, 1, 0, 0, 0]
+[40, 851, 1, 0, 0, 0]
+[40, 595, 0, 0]
+[54, 1128, 0, 0]
+[54, 839, 1, 0, 0, 0]
+[54, 838, 1, 0, 0, 0]
+[54, 837, 1, 0, 0, 0]
+[54, 836, 1, 0, 0, 0]
+[54, 835, 1, 0, 0, 0]
+[54, 850, 1, 0, 0, 0]
+[54, 690, 1, 0, 0, 0]
+[41, 1049, 0, 0]
+[41, 840, 1, 0, 0, 0]
+[41, 839, 1, 0, 0, 0]
+[41, 838, 1, 0, 0, 0]
+[41, 837, 1, 0, 0, 0]
+[41, 836, 1, 0, 0, 0]
+[41, 835, 1, 0, 0, 0]
+[41, 850, 1, 0, 0, 0]
+[41, 706, 1, 0, 0, 0]
+[38, 1011, 0, 0]
+[38, 850, 1, 0, 0, 0]
+[104, 962, 0, 0]
+[104, 658, 1, 0, 0, 0]
+[51, 1027, 0, 0]
+[51, 835, 1, 0, 0, 0]
+[51, 836, 1, 0, 0, 0]
+[51, 789, 1, 0, 0, 0]
+[117, 981, 0, 0]
+[117, 662, 1, 0, 0, 0]
+[107, 691, 1, 0, 0, 0]
+[107, 995, 0, 0]
+[107, 996, 0, 0]
+[107, 661, 1, 0, 0, 0]
+[446, 1009, 0, 0]
+[446, 785, 1, 0, 0, 0]
+[477, 1009, 0, 0]
+[482, 641, 1, 0, 0, 0]
+[47, 17, 0, 0]
+[46, 1, 0, 0]
+[59, 769, 1, 0, 0, 0]
+[53, 130, 0, 0]
+[55, 34, 0, 0]
+[59, 610, 0, 0]
+[63, 306, '0', 0, 0]
+[62, 274, 0, 0]
+[55, 386, 0, 0]
+[54, 2, 0, 0]
+[53, 370, 0, 0]
+[52, 306, 0, 0]
+[52, 18, '1.000000e-08', 1, 0, 0]
+[66, 994, '2.000000e-06', 2, 0, 0]
+[67, 307, 0, 0]
+[66, 323, 0, 0]
+[65, 339, 0, 0]
+[64, 355, 0, 0]
+[53, 131, 0, 0]
+[53, 355, 0, 0]
+[55, 35, 0, 0]
+[63, 643, 1, 0, 0, 0]
+[62, 659, 1, 0, 0, 0]
+[61, 675, 1, 0, 0, 0]
+[59, 611, 0, 0]
+[67, 163, '4.00e-06', 1, 0, 0]
+[67, 179, '1.00e-10', 1, 0, 0]
+[67, 211, '1.00e-10', 1, 0, 0]
+[67, 227, '1.00e-10', 1, 0, 0]
+[66, 163, '1.00e-10', 1, 0, 0]
+[66, 179, '4.00e-06', 1, 0, 0]
+[66, 211, '4.00e-06', 1, 0, 0]
+[66, 227, '1.00e-10', 1, 0, 0]
+[65, 163, '3.00e-06', 1, 0, 0]
+[65, 179, '2.00e-06', 1, 0, 0]
+[65, 211, '2.00e-06', 1, 0, 0]
+[65, 227, '1.00e-10', 1, 0, 0]
+[64, 163, '1.00e-10', 1, 0, 0]
+[64, 179, '1.00e-10', 1, 0, 0]
+[64, 211, '1.00e-10', 1, 0, 0]
+[64, 227, '1.00e-10', 1, 0, 0]
+[63, 307, '0', 0, 0]
+[62, 275, 0, 0]
+[55, 387, 0, 0]
+[54, 3, 0, 0]
+[53, 371, 0, 0]
+[52, 307, 0, 0]
+[52, 19, '1.000000e-08', 1, 0, 0]
+[66, 995, '2.000000e-06', 2, 0, 0]
+[59, 868, 1, 0, 0, 0]
+[64, 644, 1, 0, 0, 0]
+[64, 660, 1, 0, 0, 0]
+[64, 676, 1, 0, 0, 0]
+[64, 692, 1, 0, 0, 0]
+[64, 708, 1, 0, 0, 0]
+[64, 724, 1, 0, 0, 0]
+[64, 740, 1, 0, 0, 0]
+[64, 756, 1, 0, 0, 0]
+[64, 772, 1, 0, 0, 0]
+[64, 788, 1, 0, 0, 0]
+[64, 804, 1, 0, 0, 0]
+[64, 820, 1, 0, 0, 0]
+[64, 836, 1, 0, 0, 0]
+[64, 852, 1, 0, 0, 0]
+[64, 868, 1, 0, 0, 0]
+[64, 884, 1, 0, 0, 0]
+[59, 884, 1, 0, 0, 0]
+[53, 133, 0, 0]
+[55, 181, 0, 0]
+[55, 501, 0, 0]
+[59, 613, 0, 0]
+[39, 21, '1.000e-08', 1, 0, 0]
+[63, 309, '0', 0, 0]
+[62, 277, 0, 0]
+[55, 389, 0, 0]
+[54, 5, 0, 0]
+[53, 373, 0, 0]
+[52, 309, 0, 0]
+[52, 21, '1.000000e-08', 1, 0, 0]
+[66, 997, '2.000000e-06', 2, 0, 0]
+[53, 134, 0, 0]
+[55, 38, 0, 0]
+[59, 614, 0, 0]
+[63, 310, '0', 0, 0]
+[62, 278, 0, 0]
+[55, 390, 0, 0]
+[54, 6, 0, 0]
+[53, 374, 0, 0]
+[52, 310, 0, 0]
+[52, 22, '1.000000e-08', 1, 0, 0]
+[66, 998, '2.000000e-06', 2, 0, 0]
+[458, 192, 0, 0]
+[458, 208, 0, 0]
+[455, 33, 0, 0]
+[454, 33, 0, 0]
+[452, 33, 0, 0]
+[451, 33, 0, 0]
+[453, 401, 0, 0]
+[453, 417, 0, 0]
+[473, 977, '0.00001', 4, 4, 0, 0, 0]
+[453, 17, 0, 0, 0, 0]
+[450, 17, 0, 0, 0, 0]
+[483, 433, 0, 0]
