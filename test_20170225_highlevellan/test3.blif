@@ -1,0 +1,10 @@
+.model test3
+.inputs net1_1 net1_2
+.outputs net2_1 net2_2
+  
+#vd_2ota
+.subckt vd_2ota in[0]=net1_1 out[0]=net2_1 #vd_2ota_ls =0&vd_2ota_fgota0_ibias =2.000000e-06&vd_2ota_fgota0_pbias =2.000000e-06&vd_2ota_fgota0_nbias =2.000000e-06&vd_2ota_ota0_ibias =2.000000e-06
+
+.subckt vd_2ota in[0]=net1_2 out[0]=net2_2 #vd_2ota_ls =0&vd_2ota_fgota0_ibias =2.000000e-06&vd_2ota_fgota0_pbias =2.000000e-06&vd_2ota_fgota0_nbias =2.000000e-06&vd_2ota_ota0_ibias =2.000000e-06
+
+.end

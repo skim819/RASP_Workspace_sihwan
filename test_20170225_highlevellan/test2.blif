@@ -1,0 +1,8 @@
+.model test2
+.inputs net1_1
+.outputs net2_1
+  
+#FGOTA 3
+.subckt fgota in[0]=net1_1 in[1]=net2_1 out[0]=net2_1 #fgota_bias =10e-9&fgota_p_bias =10e-9&fgota_n_bias =10e-9&fgota_small_cap =0
+  
+.end

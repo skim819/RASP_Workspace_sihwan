@@ -1,0 +1,8 @@
+.model test
+.inputs net0_1
+.outputs net0_1
+  
+# ota_buf
+.subckt ota_buf in[0]=net0_1 out[0]=net0_1 #ota_buf_ls =0&ota_buf_bias =2e-6
+  
+.end
